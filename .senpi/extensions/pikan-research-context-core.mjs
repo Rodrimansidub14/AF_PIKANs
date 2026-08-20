@@ -149,6 +149,14 @@ export function selectWorkflow(prompt, workflowContext = {}, roles = []) {
 	}
 
 	const winner = ranked[0];
+	const runnerUp = ranked[1];
+	const unresolvedTie = runnerUp
+		&& runnerUp.score === winner.score
+		&& Number(runnerUp.item?.priority ?? 0) === Number(winner.item?.priority ?? 0);
+	if (unresolvedTie) {
+		const role = roleList.find((candidate) => candidate?.id === defaultItem?.role) ?? defaultRole;
+		return routeResult({ item: defaultItem, role, explicit: false, confidence: "fallback" });
+	}
 	const role = roleList.find((candidate) => candidate?.id === winner.item?.role);
 	if (!role) {
 		return routeResult({

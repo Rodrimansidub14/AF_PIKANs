@@ -236,6 +236,39 @@ test("falls back conservatively when no workflow trigger matches", () => {
 	assert.equal(result.confidence, "fallback");
 });
 
+test("falls back conservatively on an unresolved workflow tie", () => {
+	const ambiguous = {
+		default: "literature",
+		ambiguity_policy: "conservative",
+		items: [
+			{
+				id: "literature",
+				role: "literature_scout",
+				priority: 10,
+				triggers: ["revisa"],
+				excludes: [],
+				stages: ["orient"],
+				gate_ids: [],
+			},
+			{
+				id: "notebook",
+				role: "notebook_engineer",
+				priority: 10,
+				triggers: ["revisa"],
+				excludes: [],
+				stages: ["inspect_contract"],
+				gate_ids: [],
+			},
+		],
+	};
+
+	const result = selectWorkflow("revisa esto", ambiguous, PACK.roles);
+
+	assert.equal(result.workflow.id, "literature");
+	assert.equal(result.role.id, "literature_scout");
+	assert.equal(result.confidence, "fallback");
+});
+
 test("explicit role remains an override over inferred workflow", () => {
 	const result = selectWorkflow("research-role=evaluator adapta el notebook", PACK.workflow, PACK.roles);
 
