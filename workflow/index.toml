@@ -1,0 +1,58 @@
+[meta]
+schema_version = 1
+default = "literature"
+ambiguity_policy = "conservative"
+
+[[workflow]]
+id = "literature"
+role = "literature_scout"
+priority = 10
+triggers = ["literatura", "fuente", "fuentes", "paper", "concepto", "marco teorico", "vault", "resume", "explica"]
+excludes = ["notebook", "ejecuta", "entrena", "metricas"]
+stages = ["orient", "extract_evidence", "propose_links"]
+gate_ids = ["scientific_claim"]
+
+[[workflow]]
+id = "hypothesis"
+role = "hypothesis_planner"
+priority = 20
+triggers = ["hipotesis", "falsacion", "pregunta de investigacion", "manifiesto", "presupuesto", "semillas"]
+excludes = ["ejecuta", "corre", "metricas finales"]
+stages = ["define_question", "draft_hypothesis", "draft_manifest"]
+gate_ids = ["scope", "hypothesis"]
+
+[[workflow]]
+id = "notebook"
+role = "notebook_engineer"
+priority = 30
+triggers = ["notebook", ".ipynb", "adapta", "crear notebook", "baseline", "candidato"]
+excludes = ["solo explica", "solo resume"]
+stages = ["inspect_contract", "edit_declared_surface", "audit"]
+gate_ids = ["scope", "code_surface"]
+
+[[workflow]]
+id = "run"
+role = "experiment_runner"
+priority = 40
+triggers = ["ejecuta", "corre", "entrena", "run-local", "corrida", "manifiesto"]
+excludes = ["solo planifica", "solo explica"]
+stages = ["validate_manifest", "run_local", "record_metrics"]
+gate_ids = ["hypothesis"]
+
+[[workflow]]
+id = "evaluation"
+role = "evaluator"
+priority = 35
+triggers = ["evalua", "evaluar", "metricas", "compara", "comparar", "resultado", "gate"]
+excludes = ["solo literatura"]
+stages = ["read_runs", "compute_metrics", "evaluate_gates"]
+gate_ids = ["scientific_claim"]
+
+[[workflow]]
+id = "synthesis"
+role = "research_synthesizer"
+priority = 25
+triggers = ["redacta", "escribe", "informe", "latex", "marco teorico", "claim", "sintetiza"]
+excludes = ["sin evidencia", "sin resultados"]
+stages = ["read_evidence", "draft_report", "link_sources"]
+gate_ids = ["scientific_claim"]
