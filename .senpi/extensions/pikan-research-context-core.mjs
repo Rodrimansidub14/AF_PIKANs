@@ -35,6 +35,7 @@ function protectedPath(root, candidate) {
 		resolve(root, ".git"),
 		resolve(root, ".senpi"),
 		resolve(root, "context"),
+		resolve(root, "workflow"),
 		resolve(root, "PIKAN-Vault", "PIKAN-Vault"),
 		resolve(root, "var", "context"),
 	];
@@ -195,7 +196,7 @@ export function filesystemDecision({ root, role, operation, canonicalPath }) {
 		return { allow: true };
 	}
 
-	if (pathMatchesDeclared(projectRoot, candidate, ["var/context"])) return { allow: true };
+	if (pathMatchesDeclared(projectRoot, candidate, ["var/context", "workflow"])) return { allow: true };
 	if (!pathMatchesDeclared(projectRoot, candidate, role?.read_paths)) {
 		return {
 			allow: false,
@@ -271,7 +272,7 @@ export function renderSystemPrompt({ pack, graph, role, workflow, prompt, ready,
 		"",
 		"Reglas operativas:",
 		"- Un agente propone; la aprobación humana decide claims, promoción de conocimiento, cambios de ontología y cambios del modelo/PDE.",
-		"- No modificar `context/`, `PIKAN-Vault/PIKAN-Vault`, `.senpi/`, `.git/` ni `var/context/`.",
+		"- No modificar `context/`, `workflow/`, `PIKAN-Vault/PIKAN-Vault`, `.senpi/`, `.git/` ni `var/context/`.",
 		"- No leer ni escribir repositorios fuera de este proyecto.",
 		"- Si la tarea requiere otro rol o una ruta no declarada, detente y solicita la decisión humana.",
 		"- Una nota bibliográfica respalda motivación o método; no sustituye evidencia experimental.",
