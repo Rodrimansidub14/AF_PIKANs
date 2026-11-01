@@ -1,0 +1,41 @@
+[
+ {
+  "seed": 3001,
+  "pool_size": 8192,
+  "n_candidates": 8192,
+  "unique_points": 3777,
+  "unique_fraction_of_pool": 0.4610595703125,
+  "effective_candidates": 559.0176924223234,
+  "mass_top5pct_candidates": 0.4355205996286641,
+  "band_fraction_resampled": 0.362060546875,
+  "band_fraction_training_pool": 0.10009765625,
+  "band_fraction_uniform_candidates": 0.1015625,
+  "residual_max_over_median": 129.07327290904618
+ },
+ {
+  "seed": 3002,
+  "pool_size": 8192,
+  "n_candidates": 8192,
+  "unique_points": 3701,
+  "unique_fraction_of_pool": 0.4517822265625,
+  "effective_candidates": 73.85949050318122,
+  "mass_top5pct_candidates": 0.44931479678434955,
+  "band_fraction_resampled": 0.458740234375,
+  "band_fraction_training_pool": 0.10009765625,
+  "band_fraction_uniform_candidates": 0.0965576171875,
+  "residual_max_over_median": 303.169943180396
+ },
+ {
+  "seed": 3003,
+  "pool_size": 8192,
+  "n_candidates": 8192,
+  "unique_points": 3745,
+  "unique_fraction_of_pool": 0.4571533203125,
+  "effective_candidates": 155.4734091128272,
+  "mass_top5pct_candidates": 0.45596661392424614,
+  "band_fraction_resampled": 0.4569091796875,
+  "band_fraction_training_pool": 0.0999755859375,
+  "band_fraction_uniform_candidates": 0.0958251953125,
+  "residual_max_over_median": 265.20716143604886
+ }
+]

@@ -1,0 +1,483 @@
+{
+ "info": {
+  "tiny": false,
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "seeds": [
+   3001,
+   3002,
+   3003,
+   3004,
+   3005,
+   3006,
+   3007,
+   3008,
+   3009,
+   3010
+  ],
+  "arms": "B,E1000L,E1000,E500L,E500",
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "ledger": [
+  {
+   "job": [
+    "raddiag",
+    "burgers",
+    0
+   ],
+   "slot": 0,
+   "start": 1.3970000054541742e-06,
+   "end": 260.00415006799994,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "replay",
+    "burgers",
+    1
+   ],
+   "slot": 1,
+   "start": 1.3970000054541742e-06,
+   "end": 380.00654352800007,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "replay",
+    "burgers",
+    2
+   ],
+   "slot": 0,
+   "start": 260.00415006799994,
+   "end": 620.0095571700001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "replay",
+    "burgers",
+    3
+   ],
+   "slot": 1,
+   "start": 380.00654352800007,
+   "end": 740.011780202,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "replay",
+    "burgers",
+    4
+   ],
+   "slot": 0,
+   "start": 620.0095571700001,
+   "end": 980.0154984110002,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "replay",
+    "burgers",
+    5
+   ],
+   "slot": 1,
+   "start": 740.011780202,
+   "end": 1100.0177043820001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "replay",
+    "burgers",
+    101
+   ],
+   "slot": 0,
+   "start": 980.0154984110002,
+   "end": 1340.020966542,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "replay",
+    "burgers",
+    102
+   ],
+   "slot": 1,
+   "start": 1100.0177043820001,
+   "end": 1460.023528301,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "replay",
+    "burgers",
+    103
+   ],
+   "slot": 0,
+   "start": 1340.020966542,
+   "end": 1700.0269825470002,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "replay",
+    "burgers",
+    104
+   ],
+   "slot": 1,
+   "start": 1460.023528301,
+   "end": 1800.029571406,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "replay",
+    "burgers",
+    105
+   ],
+   "slot": 0,
+   "start": 1700.0269825470002,
+   "end": 2060.033882551,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "burgers",
+    3001
+   ],
+   "slot": 1,
+   "start": 1800.029571406,
+   "end": 2400.0379178700005,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "burgers",
+    3002
+   ],
+   "slot": 0,
+   "start": 2060.033882551,
+   "end": 2660.041043716,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "burgers",
+    3003
+   ],
+   "slot": 1,
+   "start": 2400.0379178700005,
+   "end": 3000.045410222,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "burgers",
+    3004
+   ],
+   "slot": 0,
+   "start": 2660.041043716,
+   "end": 3260.04901126,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "burgers",
+    3005
+   ],
+   "slot": 1,
+   "start": 3000.045410222,
+   "end": 3600.0535230020005,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "burgers",
+    3006
+   ],
+   "slot": 0,
+   "start": 3260.04901126,
+   "end": 3860.056994906,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "burgers",
+    3007
+   ],
+   "slot": 1,
+   "start": 3600.0535230020005,
+   "end": 4200.061251357,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "burgers",
+    3008
+   ],
+   "slot": 0,
+   "start": 3860.056994906,
+   "end": 4460.064400212001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "burgers",
+    3009
+   ],
+   "slot": 1,
+   "start": 4200.061251357,
+   "end": 4800.068425108,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "burgers",
+    3010
+   ],
+   "slot": 0,
+   "start": 4460.064400212001,
+   "end": 5060.071836563,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "ac",
+    3001
+   ],
+   "slot": 1,
+   "start": 4800.068425108,
+   "end": 5340.075265573,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "ac",
+    3002
+   ],
+   "slot": 0,
+   "start": 5060.071836563,
+   "end": 5600.079551214,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "ac",
+    3003
+   ],
+   "slot": 1,
+   "start": 5340.075265573,
+   "end": 5860.083131162,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "ac",
+    3004
+   ],
+   "slot": 0,
+   "start": 5600.079551214,
+   "end": 6160.086573646,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "ac",
+    3007
+   ],
+   "slot": null,
+   "start": null,
+   "end": null,
+   "returncode": null,
+   "status": "not_started_cutoff"
+  },
+  {
+   "job": [
+    "factorial",
+    "ac",
+    3008
+   ],
+   "slot": null,
+   "start": null,
+   "end": null,
+   "returncode": null,
+   "status": "not_started_cutoff"
+  },
+  {
+   "job": [
+    "factorial",
+    "ac",
+    3009
+   ],
+   "slot": null,
+   "start": null,
+   "end": null,
+   "returncode": null,
+   "status": "not_started_cutoff"
+  },
+  {
+   "job": [
+    "factorial",
+    "ac",
+    3010
+   ],
+   "slot": null,
+   "start": null,
+   "end": null,
+   "returncode": null,
+   "status": "not_started_cutoff"
+  },
+  {
+   "job": [
+    "factorial",
+    "ac",
+    3005
+   ],
+   "slot": 1,
+   "start": 5860.083131162,
+   "end": 6400.089989995,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "factorial",
+    "ac",
+    3006
+   ],
+   "slot": 0,
+   "start": 6160.086573646,
+   "end": 6700.092528109,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "finished_runs": [
+  "burgers-B-seed1.json",
+  "burgers-B-seed101.json",
+  "burgers-B-seed102.json",
+  "burgers-B-seed103.json",
+  "burgers-B-seed104.json",
+  "burgers-B-seed105.json",
+  "burgers-B-seed2.json",
+  "burgers-B-seed3.json",
+  "burgers-B-seed3001.json",
+  "burgers-B-seed3002.json",
+  "burgers-B-seed3003.json",
+  "burgers-B-seed3004.json",
+  "burgers-B-seed3005.json",
+  "burgers-B-seed3006.json",
+  "burgers-B-seed3007.json",
+  "burgers-B-seed3008.json",
+  "burgers-B-seed3009.json",
+  "burgers-B-seed3010.json",
+  "burgers-B-seed4.json",
+  "burgers-B-seed5.json",
+  "burgers-E1000-seed3001.json",
+  "burgers-E1000-seed3002.json",
+  "burgers-E1000-seed3003.json",
+  "burgers-E1000-seed3004.json",
+  "burgers-E1000-seed3005.json",
+  "burgers-E1000-seed3006.json",
+  "burgers-E1000-seed3007.json",
+  "burgers-E1000-seed3008.json",
+  "burgers-E1000-seed3009.json",
+  "burgers-E1000-seed3010.json",
+  "burgers-E1000L-seed1.json",
+  "burgers-E1000L-seed101.json",
+  "burgers-E1000L-seed102.json",
+  "burgers-E1000L-seed103.json",
+  "burgers-E1000L-seed104.json",
+  "burgers-E1000L-seed105.json",
+  "burgers-E1000L-seed2.json",
+  "burgers-E1000L-seed3.json",
+  "burgers-E1000L-seed3001.json",
+  "burgers-E1000L-seed3002.json",
+  "burgers-E1000L-seed3003.json",
+  "burgers-E1000L-seed3004.json",
+  "burgers-E1000L-seed3005.json",
+  "burgers-E1000L-seed3006.json",
+  "burgers-E1000L-seed3007.json",
+  "burgers-E1000L-seed3008.json",
+  "burgers-E1000L-seed3009.json",
+  "burgers-E1000L-seed3010.json",
+  "burgers-E1000L-seed4.json",
+  "burgers-E1000L-seed5.json",
+  "burgers-E500-seed1.json",
+  "burgers-E500-seed101.json",
+  "burgers-E500-seed102.json",
+  "burgers-E500-seed103.json",
+  "burgers-E500-seed104.json",
+  "burgers-E500-seed105.json",
+  "burgers-E500-seed2.json",
+  "burgers-E500-seed3.json",
+  "burgers-E500-seed3001.json",
+  "burgers-E500-seed3002.json",
+  "burgers-E500-seed3003.json",
+  "burgers-E500-seed3004.json",
+  "burgers-E500-seed3005.json",
+  "burgers-E500-seed3006.json",
+  "burgers-E500-seed3007.json",
+  "burgers-E500-seed3008.json",
+  "burgers-E500-seed3009.json",
+  "burgers-E500-seed3010.json",
+  "burgers-E500-seed4.json",
+  "burgers-E500-seed5.json",
+  "burgers-E500L-seed3001.json",
+  "burgers-E500L-seed3002.json",
+  "burgers-E500L-seed3003.json",
+  "burgers-E500L-seed3004.json",
+  "burgers-E500L-seed3005.json",
+  "burgers-E500L-seed3006.json",
+  "burgers-E500L-seed3007.json",
+  "burgers-E500L-seed3008.json",
+  "burgers-E500L-seed3009.json",
+  "burgers-E500L-seed3010.json"
+ ],
+ "wall_seconds": 6700.095000743866,
+ "complete": false
+}
