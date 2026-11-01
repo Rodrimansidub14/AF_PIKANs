@@ -35,5 +35,8 @@ python -m pytest tests -q          # pruebas del código (algunas se saltan sin 
 - **Decisiones firmadas:** `experiments/mechanisms/EXP-0028-failure-attribution/decision.md` (EXP-0028, `accepted_exploratory`) y `decision-EXP-0029.md` (EXP-0029, `not_supported`). Los borradores quedaron en `_borradores/`.
 - **Claims aceptados:** C1 a C7 en `registry/claims.jsonl`.
 
+## Publicación
+El repositorio es público en https://github.com/Rodrimansidub14/AF_PIKANs. La versión citada en la tesis es la etiqueta `tesis-v1` (commit `17acd7a`).
+
 ## Pendiente
-Visibilidad del repositorio (privado o público), dónde alojar la evidencia pesada, y la URL de `CITATION.cff`.
+Dónde alojar la evidencia pesada (pesos, estados y trazas), con suma de verificación.
