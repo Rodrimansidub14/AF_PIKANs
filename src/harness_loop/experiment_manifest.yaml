@@ -1,0 +1,150 @@
+# Protocol-aligned harness manifest for adaptive PIKAN experiments.
+# Edit values per experiment. The runner records this manifest into local
+# memory and MLflow when MLflow is installed.
+
+project:
+  name: adaptive_pikan_focalization
+  ontology: pikan-research
+  # Vive en el repositorio de escritura, no en este. Se resuelve con
+  # src/thesis_workspace/paths.py ($THESIS_ROOT o ../ProyectoGrad).
+  protocol_source: ${THESIS_ROOT}/reports/archive/latex-legacy/protocoloFinal-it0/protocoloGrad_RM.pdf
+  methodology: DSRM + AutoResearch + harness loop + AlphaEvolve-style bounded search + MLflow evidence tracking
+
+execution:
+  interface: script
+  default_backend: local_cpu
+  remote_backends:
+    - kaggle_gpu_optional
+    - colab_gpu_optional
+  run_contract:
+    manifest_env_var: HARNESS_MANIFEST
+    output_dir_env_var: HARNESS_RUN_DIR
+    required_outputs:
+      - metrics.json
+      - decision_note.md
+
+iteration:
+  id: H001
+  experiment_id: experiment.H001
+  protocol_phase: phase_2_baseline_environment
+  domain_level: canonical_pde
+  problem_id: problem.heat_1d
+  model_id: model.pikan.baseline
+  focalization_id: focalization.baseline_none
+  hypothesis_id: H-CANON-BASE-001
+  status: candidate
+
+hypothesis:
+  ontology_id: hypothesis.canon.baseline
+  statement: >
+    A reproducible baseline PIKAN can solve the selected canonical PDE with
+    stable training and traceable error/residual artifacts.
+  expected_effect: baseline_reference_for_future_focalization
+  falsification_condition: >
+    The baseline is unstable, lacks complete artifacts, or cannot reproduce
+    reference metrics across at least two independent configurations.
+
+problem:
+  ontology_id: problem.heat_1d
+  name: heat_equation_1d
+  dimensionality: 1
+  reference_solution: analytical
+  critical_regions:
+    - high_residual_zones
+    - boundary_neighborhoods
+
+model:
+  ontology_id: model.pikan.baseline
+  family: PIKAN
+  implementation: src/research_pipeline/examples/train_stub.py
+  architecture:
+    depth: null
+    width: null
+    grid_size: null
+    spline_order: null
+
+training:
+  seeds: [11, 17]
+  epoch_budget: null
+  optimizer: adam
+  scheduler: null
+  collocation_points: null
+  boundary_points: null
+  loss_weights:
+    physics: 1.0
+    boundary: 1.0
+    initial: 1.0
+
+focalization:
+  ontology_id: focalization.baseline_none
+  enabled: false
+  family: baseline_none
+  signals: []
+  update_frequency_epochs: null
+  bounded_edit_surface:
+    - collocation_sampling_policy
+    - residual_threshold
+    - focalization_weight
+    - grid_update_policy
+    - loss_weight_schedule
+
+acceptance_gates:
+  min_independent_configurations: 2
+  require_complete_artifacts: true
+  max_cost_multiplier_vs_baseline: 1.5
+  metrics:
+    relative_l2_error:
+      direction: minimize
+      required: true
+    physics_residual_mean:
+      direction: minimize
+      required: true
+    critical_region_residual_mean:
+      direction: minimize
+      required: true
+    stability_score:
+      direction: maximize
+      required: true
+    wall_time_sec:
+      direction: minimize
+      required: false
+
+mlflow:
+  experiment_name: pikan_harness_canonical_pdes
+  tracking_uri: null
+  tags:
+    baseline_family: PIKAN
+    focalization_family: baseline_none
+    decision_status: candidate
+
+autoresearch:
+  autonomy_level: L2_human_verified_ai_execution
+  literature_grounding:
+    enabled: true
+    sources:
+      - PIKAN-Vault
+      - protocol_bibliography
+      - targeted_web_search
+  allowed_tasks:
+    - summarize_literature
+    - propose_falsifiable_hypotheses
+    - cluster_failed_runs
+    - draft_decision_notes
+    - audit_claims_against_evidence
+  blocked_tasks:
+    - accept_scientific_claim_without_human_review
+    - edit_core_model_code_without_approval
+    - invent_or_promote_unverified_citations
+  provenance_requirements:
+    - paper_or_source_for_literature_claims
+    - mlflow_run_or_harness_record_for_experimental_claims
+    - artifact_path_for_figures
+
+artifacts:
+  expected:
+    - config.yaml
+    - run_summary.json
+    - loss_curve.png
+    - residual_map.png
+    - prediction_error_map.png
+    - decision_note.md

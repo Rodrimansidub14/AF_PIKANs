@@ -1,0 +1,22 @@
+{
+  "project": {"name": "remote_infrastructure_probe", "ontology": "pikan-research"},
+  "iteration": {
+    "id": "INFRA-SMOKE", "experiment_id": "infra.smoke",
+    "protocol_phase": "infrastructure_test", "domain_level": "infrastructure",
+    "problem_id": "infra.arithmetic", "model_id": "infra.no_model",
+    "focalization_id": "infra.none", "hypothesis_id": "infra.contract_only"
+  },
+  "hypothesis": {
+    "statement": "The portable runtime preserves the artifact contract.",
+    "expected_effect": "Infrastructure validation only; no scientific evidence.",
+    "falsification_condition": "Missing artifacts, failed execution or mismatched provenance."
+  },
+  "problem": {"name": "arithmetic_contract_probe"},
+  "model": {"implementation": "src/research_pipeline/examples/infra_smoke.py"},
+  "training": {"seeds": [11, 17]},
+  "focalization": {"enabled": false, "bounded_edit_surface": []},
+  "acceptance_gates": {
+    "metrics": {"error": {"required": true, "direction": "minimize", "threshold": 0.0}}
+  },
+  "artifacts": {"expected": ["metrics.json", "decision_note.md"]}
+}

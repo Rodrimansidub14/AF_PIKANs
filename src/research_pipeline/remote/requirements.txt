@@ -1,0 +1,5 @@
+# Local transports need Python 3.13 (Colab requirement).
+# Core bundle/runtime remains compatible with Python 3.11+ and PyYAML.
+PyYAML>=6.0.2,<7
+kaggle>=1.7,<3
+colab-mcp @ git+https://github.com/googlecolab/colab-mcp@b9ab3899e0f1fa493390b1fd6d54aa2e464ecdf1

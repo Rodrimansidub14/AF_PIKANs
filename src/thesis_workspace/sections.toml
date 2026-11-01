@@ -1,0 +1,83 @@
+[[section]]
+source_tex = "a-prefacio.tex"
+note_path = "01_Secciones/00_Prefacio.md"
+chapter_title = "Prefacio"
+contains_own_chapter = false
+
+[[section]]
+source_tex = "b-resumen.tex"
+note_path = "01_Secciones/01_Resumen.md"
+chapter_title = "Resumen"
+contains_own_chapter = false
+
+[[section]]
+source_tex = "c-abstract.tex"
+note_path = "01_Secciones/02_Abstract.md"
+chapter_title = "Abstract"
+contains_own_chapter = false
+
+[[section]]
+source_tex = "d-introduccion.tex"
+note_path = "01_Secciones/10_Introduccion.md"
+chapter_title = "Introducción"
+contains_own_chapter = false
+
+[[section]]
+source_tex = "e-antecedentes.tex"
+note_path = "01_Secciones/20_Antecedentes.md"
+chapter_title = "Antecedentes"
+contains_own_chapter = false
+
+[[section]]
+source_tex = "f-justificacion.tex"
+note_path = "01_Secciones/30_Justificacion.md"
+chapter_title = "Justificación"
+contains_own_chapter = false
+
+[[section]]
+source_tex = "g-objetivos.tex"
+note_path = "01_Secciones/40_Objetivos.md"
+chapter_title = "Objetivos"
+contains_own_chapter = false
+
+[[section]]
+source_tex = "h-alcance.tex"
+note_path = "01_Secciones/50_Alcance.md"
+chapter_title = "Alcance"
+contains_own_chapter = false
+
+[[section]]
+source_tex = "i-marco_teorico.tex"
+note_path = "01_Secciones/60_Marco_Teorico.md"
+chapter_title = "Marco teórico"
+contains_own_chapter = false
+
+[[section]]
+source_tex = "j-capitulos.tex"
+note_path = "01_Secciones/70_Metodologia_y_Plan_de_Trabajo.md"
+chapter_title = "Metodología y Plan de trabajo"
+contains_own_chapter = true
+
+[[section]]
+source_tex = "k-conclusiones.tex"
+note_path = "01_Secciones/80_Conclusiones.md"
+chapter_title = "Conclusiones"
+contains_own_chapter = false
+
+[[section]]
+source_tex = "l-recomendaciones.tex"
+note_path = "01_Secciones/90_Recomendaciones.md"
+chapter_title = "Recomendaciones"
+contains_own_chapter = false
+
+[[section]]
+source_tex = "n-anexos.tex"
+note_path = "01_Secciones/95_Anexos.md"
+chapter_title = "Anexos"
+contains_own_chapter = false
+
+[[section]]
+source_tex = "o-glosario.tex"
+note_path = "01_Secciones/99_Glosario.md"
+chapter_title = "Glosario"
+contains_own_chapter = false
