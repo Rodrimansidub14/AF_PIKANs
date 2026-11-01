@@ -5,7 +5,10 @@ import { dirname, join, relative, resolve, sep } from "node:path";
 import { spawn } from "node:child_process";
 
 import {
+	canMutateCanonicalVault,
 	DEFAULT_ROLE,
+	externalMutationReason,
+	externalReadNotice,
 	filesystemDecision,
 	renderSystemPrompt,
 	selectWorkflow,
@@ -169,7 +172,6 @@ export default function pikanResearchContext(pi) {
 	const protectedRoots = projectRoot
 		? [
 			join(projectRoot, "context"),
-			join(projectRoot, "PIKAN-Vault", "PIKAN-Vault"),
 			join(projectRoot, ".senpi"),
 			join(projectRoot, "var", "context"),
 		]
@@ -199,7 +201,7 @@ export default function pikanResearchContext(pi) {
 	});
 
 	async function ensureContext() {
-		if (!state.root) throw new Error("ProyectoGrad root was not found from the current working directory.");
+		if (!state.root) throw new Error("AF_PIKANs root was not found from the current working directory.");
 		if (state.preparing) return state.preparing;
 		state.preparing = (async () => {
 			const fingerprint = await sourceFingerprint(state.root);
@@ -283,17 +285,32 @@ export default function pikanResearchContext(pi) {
 		return { systemPrompt: `${event.systemPrompt}\n\n${context}` };
 	});
 
-	pi.on("tool_call", async (event) => {
+	pi.on("tool_call", async (event, ctx) => {
 		if (event.toolName !== "bash") return undefined;
 		const command = String(event.input?.command ?? "");
 		const normalized = command.toLowerCase();
 		if (normalized.includes("obs-data")) {
 			return { block: true, reason: "Bash access to obs-data is forbidden for this project." };
 		}
-		const protectedTarget = ["pikan-vault", "context/", "context\\", "workflow/", "workflow\\", ".senpi", ".git"].some((token) => normalized.includes(token));
 		const mutation = /(^|\s)(rm|rm -rf|del|erase|mv|move|cp|copy|remove-item|move-item|copy-item|set-content|out-file|git\s+(reset|clean|checkout|apply|commit))\b|[>]{1,2}/i.test(command);
+		const externalMutation = state.root
+			? externalMutationReason({ root: state.root, command })
+			: undefined;
+		const canonicalVaultMutationAllowed = canMutateCanonicalVault({
+			role: { id: state.roleId },
+			command,
+		});
+		if (externalMutation && mutation && !canonicalVaultMutationAllowed) {
+			return { block: true, reason: externalMutation };
+		}
+		const protectedTarget = ["context/", "context\\", "workflow/", "workflow\\", ".senpi", ".git"].some((token) => normalized.includes(token))
+			|| (normalized.includes("pikan-vault") && !canonicalVaultMutationAllowed);
 		if (protectedTarget && mutation) {
 			return { block: true, reason: "Bash mutation of protected research-control paths is forbidden." };
+		}
+		if (!mutation && state.root) {
+			const externalRead = externalReadNotice({ root: state.root, command });
+			if (externalRead) notify(ctx, externalRead, "info");
 		}
 		return undefined;
 	});

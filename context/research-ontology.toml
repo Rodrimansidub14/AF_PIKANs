@@ -1,0 +1,188 @@
+# Ontología declarativa del ciclo de investigación PIKAN.
+# Este archivo es fuente de verdad; los grafos y reportes derivados viven en var/context/.
+
+[meta]
+schema_version = 1
+namespace = "pikan-research"
+updated = "2026-08-20"
+purpose = "Gobernar notebooks, experimentos y evidencia producidos con agentes."
+canonical_corpus = "PIKAN-Vault/PIKAN-Vault"
+
+[paths]
+vault = "PIKAN-Vault/PIKAN-Vault"
+notebooks = "notebooks"
+experiment_manifest = "src/harness_loop/experiment_manifest.yaml"
+generated_output = "var/context"
+
+[invariants]
+global = [
+  "Una afirmacion experimental requiere una corrida y artefactos trazables.",
+  "Una hipotesis declara una condicion de falsacion.",
+  "Baseline y candidato comparten problema, presupuesto y protocolo de semillas.",
+  "El error global no sustituye una metrica local cuando la hipotesis exige regiones criticas.",
+  "Cero, vacio y ausencia de medicion no son equivalentes.",
+  "Una nota de literatura respalda motivacion, no evidencia experimental.",
+  "La ausencia de un wikilink no prueba ausencia conceptual.",
+  "Un agente propone; la aprobacion humana decide.",
+]
+
+[[node_type]]
+id = "paper"
+source = "vault"
+directory = "papers"
+required_frontmatter = ["type"]
+recommended_frontmatter = ["title", "authors", "year", "layer", "status"]
+
+[[node_type]]
+id = "concept"
+source = "vault"
+directory = "concepts"
+required_frontmatter = ["type"]
+recommended_frontmatter = ["tags"]
+
+[[node_type]]
+id = "domain"
+source = "vault"
+directory = "domains"
+required_frontmatter = ["type"]
+recommended_frontmatter = ["tags"]
+
+[[node_type]]
+id = "frontier"
+source = "vault"
+directory = "frontiers"
+required_frontmatter = ["type"]
+recommended_frontmatter = ["tags"]
+
+[[node_type]]
+id = "index"
+source = "vault"
+directory = "."
+required_frontmatter = ["type"]
+recommended_frontmatter = ["tags"]
+
+[[node_type]]
+id = "problem"
+source = "experiment"
+description = "PDE, dominio, condiciones y solucion de referencia."
+
+[[node_type]]
+id = "model"
+source = "experiment"
+description = "PINN, PIKAN o variante arquitectural evaluada."
+
+[[node_type]]
+id = "focalization_mechanism"
+source = "experiment"
+description = "Senal, politica y parametros que guian la focalizacion."
+
+[[node_type]]
+id = "hypothesis"
+source = "experiment"
+description = "Afirmacion falsable con efecto esperado y criterio de rechazo."
+
+[[node_type]]
+id = "experiment"
+source = "experiment"
+description = "Instancia reproducible que combina problema, modelo, hipotesis y presupuesto."
+
+[[node_type]]
+id = "run"
+source = "experiment"
+description = "Ejecucion concreta de un experimento con semilla y entorno."
+
+[[node_type]]
+id = "metric"
+source = "experiment"
+description = "Medida con direccion, unidad y alcance declarado."
+
+[[node_type]]
+id = "artifact"
+source = "experiment"
+description = "Archivo reproducible producido por una corrida."
+
+[[node_type]]
+id = "evidence"
+source = "research"
+description = "Fuente que respalda una observacion, metodo o afirmacion."
+
+[[node_type]]
+id = "decision"
+source = "research"
+description = "Resultado humano de evaluar una corrida o propuesta."
+
+[[node_type]]
+id = "notebook"
+source = "notebook"
+description = "Interfaz reproducible de exploracion, baseline, candidato, analisis o reporte."
+
+[[relation_type]]
+id = "links_to"
+source = "wikilink_or_metadata"
+description = "Enlace explicito entre notas o recursos."
+
+[[relation_type]]
+id = "supports"
+source = "declared"
+description = "Una fuente respalda una afirmacion o decision."
+
+[[relation_type]]
+id = "extends"
+source = "declared"
+description = "Un concepto o arquitectura amplia otro."
+
+[[relation_type]]
+id = "evaluates"
+source = "declared"
+description = "Un experimento evalua un modelo o mecanismo."
+
+[[relation_type]]
+id = "instantiates"
+source = "declared"
+description = "Una corrida instancia un experimento."
+
+[[relation_type]]
+id = "uses"
+source = "declared"
+description = "Un notebook o experimento usa una entidad."
+
+[[relation_type]]
+id = "tests"
+source = "declared"
+description = "Un experimento prueba una hipotesis."
+
+[[relation_type]]
+id = "produces"
+source = "declared"
+description = "Una corrida produce una metrica o artefacto."
+
+[[relation_type]]
+id = "derived_from"
+source = "declared"
+description = "Un resultado deriva de una fuente o corrida."
+
+[[relation_type]]
+id = "compares_with"
+source = "declared"
+description = "Un candidato se compara con un baseline."
+
+[vocab.layer]
+values = ["FOUND", "ARCH", "APP", "FUTURE"]
+
+[vocab.notebook_role]
+values = ["exploration", "baseline", "candidate", "analysis", "reporting"]
+
+[vocab.run_status]
+values = ["dry_run", "completed", "failed", "accepted", "rejected", "deferred"]
+
+[vocab.evidence_status]
+values = ["observed", "derived", "inferred", "proposed", "accepted", "rejected"]
+
+[vocab.model_family]
+values = ["PINN", "PIKAN", "cPIKAN", "JPIKAN", "SPIKAN", "FEM", "FDM", "FVM"]
+
+[vocab.problem_stage]
+values = ["canonical_pde", "oscillatory_multiscale", "coupled_physics"]
+
+[vocab.focalization_family]
+values = ["baseline_none", "residual_guided", "internal_signal", "region_adaptive", "loss_schedule"]

@@ -1,0 +1,57 @@
+# Contrato de metadatos y salidas para notebooks de investigacion.
+
+[meta]
+schema_version = 1
+ontology = "pikan-research"
+metadata_key = "research"
+
+[metadata]
+required_for_all = ["notebook_id", "role"]
+required_for_experiment = ["problem_id", "model_id", "hypothesis_id", "source_of_truth"]
+allowed_roles = ["exploration", "baseline", "candidate", "analysis", "reporting"]
+allowed_source_of_truth = ["manifest", "src", "vault", "notebook"]
+
+[[role]]
+id = "exploration"
+purpose = "Explorar una idea o una implementacion sin producir evidencia final."
+required_metadata = ["notebook_id", "role"]
+required_outputs = []
+
+[[role]]
+id = "baseline"
+purpose = "Establecer una referencia reproducible antes de cambiar el mecanismo."
+required_metadata = ["notebook_id", "role", "problem_id", "model_id", "hypothesis_id", "source_of_truth"]
+required_outputs = ["metrics.json", "run_summary.json", "decision_note.md"]
+
+[[role]]
+id = "candidate"
+purpose = "Evaluar una variante acotada frente a un baseline comparable."
+required_metadata = ["notebook_id", "role", "problem_id", "model_id", "hypothesis_id", "source_of_truth"]
+required_outputs = ["metrics.json", "run_summary.json", "decision_note.md"]
+
+[[role]]
+id = "analysis"
+purpose = "Comparar corridas y preparar evidencia sin cambiar el entrenamiento."
+required_metadata = ["notebook_id", "role", "source_of_truth"]
+required_outputs = ["analysis_summary.md"]
+
+[[role]]
+id = "reporting"
+purpose = "Convertir evidencia aceptada en tablas, figuras o borradores."
+required_metadata = ["notebook_id", "role", "source_of_truth"]
+required_outputs = ["decision_note.md"]
+
+[[output]]
+id = "metrics"
+filename = "metrics.json"
+description = "Metricas con nombre, valor, direccion y alcance."
+
+[[output]]
+id = "run_summary"
+filename = "run_summary.json"
+description = "Estado, semilla, configuracion y procedencia de la corrida."
+
+[[output]]
+id = "decision_note"
+filename = "decision_note.md"
+description = "Decision provisional con gates, limitaciones y siguiente accion."

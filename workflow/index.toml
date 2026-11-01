@@ -56,3 +56,21 @@ triggers = ["redacta", "escribe", "informe", "latex", "marco teorico", "claim", 
 excludes = ["sin evidencia", "sin resultados"]
 stages = ["read_evidence", "draft_report", "link_sources"]
 gate_ids = ["scientific_claim"]
+
+[[workflow]]
+id = "mechanism"
+role = "mechanism_proposer"
+priority = 33
+triggers = ["mecanismo", "focalizacion", "focalización", "muestreo", "colocacion", "colocación", "variante", "propone", "candidato adaptativo"]
+excludes = ["solo explica", "solo literatura", "solo redacta"]
+stages = ["read_spec", "write_mechanism", "tier0_smoke"]
+gate_ids = ["scope", "code_surface"]
+
+[[workflow]]
+id = "baseline"
+role = "evaluator"
+priority = 37
+triggers = ["congelar", "umbral", "umbrales", "threshold", "referencia congelada", "congelar baseline"]
+excludes = ["solo explica"]
+stages = ["read_runs", "compute_metrics", "draft_baseline"]
+gate_ids = ["eval_integrity"]

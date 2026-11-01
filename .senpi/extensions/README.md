@@ -1,6 +1,6 @@
 # Integración Senpi del proyecto
 
-Esta extensión es local a `ProyectoGrad`. Senpi la descubre desde
+Esta extensión es local a `AF_PIKANs`. Senpi la descubre desde
 `.senpi/extensions/` cuando el proyecto está confiado.
 
 ## Activación
@@ -34,7 +34,11 @@ del investigador.
 ## Seguridad y derivados
 
 El adaptador ejecuta los comandos locales de `src.graph_engineering`, lee
-`PIKAN-Vault/PIKAN-Vault` y escribe únicamente artefactos regenerables en
-`var/context/`. Las escrituras de Senpi a `context/`, `workflow/`, el vault, `.senpi/`,
+`PIKAN-Vault/PIKAN-Vault` y, por defecto, escribe únicamente artefactos
+regenerables en `var/context/`. Las escrituras de Senpi a `context/`, `workflow/`, `.senpi/`,
 `.git/`, `var/context/` y cualquier ruta fuera del repositorio son rechazadas.
+La promoción de notas al vault canónico solo está declarada para
+`literature_scout` y requiere aprobación humana explícita.
+Las lecturas externas solicitadas se permiten solo en modo lectura y generan
+un aviso con la ruta; las escrituras externas siguen bloqueadas.
 `obs-data` queda fuera del proyecto y fuera del alcance del adaptador.

@@ -1,0 +1,132 @@
+# Politica de agentes para research automation.
+#
+# Arquitectura: proposer / verifier separados por una frontera de escritura.
+# El agente puede poner el build en verde; solo un humano puede hacer que un
+# claim sea verdadero.
+
+[meta]
+schema_version = 1
+ontology = "pikan-research"
+autonomy_level = "L2_human_verified_ai_execution"
+human_authority = "accept_scientific_claims_and_promote_canonical_knowledge"
+architecture = "proposer_verifier"
+
+[scope]
+allowed_repository_root = "."
+generated_write_root = "var/agent_runs"
+external_repository_access = "read_only_with_notice"
+# Approved explicitly by the researcher on 2026-09-20.
+# No filesystem writes outside this repository are authorized.
+external_write_access = "approved_services"
+external_write_services = ["kaggle"]
+external_write_actions = ["private_notebook_upload", "approved_campaign_run"]
+canonical_contract_write = "human_approval_required"
+
+# El verificador. Ningun rol puede escribir aqui bajo ninguna circunstancia.
+# Un agente que puede editar su propio grader, sus umbrales o la malla de
+# evaluacion puede aprobar cualquier mecanismo cambiando la vara en vez del
+# resultado. Aprobado por el investigador el 2026-09-22.
+verifier_root = "evals"
+protected_write_paths = [
+  "context",
+  "workflow",
+  ".senpi",
+  ".git",
+  "var/context",
+  "evals",
+  "registry/claims.jsonl",
+]
+
+# Superficie de codigo que el proposer puede escribir sin gate humano.
+proposer_code_surface = "src/mechanisms"
+
+[[role]]
+id = "literature_scout"
+purpose = "Extraer conceptos, fuentes, relaciones y evidencia desde PIKAN-Vault."
+allowed_actions = ["read_vault", "extract_evidence", "propose_links", "draft_note", "promote_evidence", "modify_vault_note"]
+read_paths = ["PIKAN-Vault/PIKAN-Vault", "context", "docs", "specs"]
+write_paths = ["var/agent_runs", "PIKAN-Vault/PIKAN-Vault"]
+approval_required = ["promote_evidence", "modify_vault_note", "modify_ontology"]
+
+[[role]]
+id = "hypothesis_planner"
+purpose = "Convertir una pregunta en una hipotesis y un pre-registro falsables."
+allowed_actions = ["read_vault", "read_protocol", "read_evals", "draft_hypothesis", "draft_spec", "draft_manifest"]
+read_paths = ["PIKAN-Vault/PIKAN-Vault", "specs", "context", "src/harness_loop", "evals", "registry", "experiments"]
+write_paths = ["var/agent_runs", "experiments"]
+approval_required = ["preregister_experiment", "activate_hypothesis", "change_acceptance_gates", "freeze_baseline"]
+
+[[role]]
+id = "mechanism_proposer"
+purpose = "Proponer e implementar mecanismos de focalizacion dentro de la superficie acotada."
+allowed_actions = ["read_spec", "read_manifest", "read_registry", "write_mechanism", "edit_declared_surface", "propose_variant"]
+# Lee la definicion del problema para implementar, pero NO los graders ni los
+# baselines: un mecanismo que conoce su metrica la optimiza en vez del problema.
+read_paths = ["src", "context", "experiments", "registry", "evals/problems", "evals/suites"]
+write_paths = ["var/agent_runs", "src/mechanisms"]
+approval_required = ["modify_core_model", "modify_pde_definition", "widen_edit_surface", "promote_mechanism"]
+
+[[role]]
+id = "notebook_engineer"
+purpose = "Crear o adaptar notebooks dentro de una superficie de edicion acotada."
+allowed_actions = ["read_contract", "read_manifest", "edit_notebook", "edit_declared_surface"]
+read_paths = ["notebooks", "src", "context", "experiments", "PIKAN-Vault/PIKAN-Vault"]
+write_paths = ["var/agent_runs", "notebooks"]
+approval_required = ["modify_core_model", "modify_pde_definition", "promote_notebook"]
+
+[[role]]
+id = "experiment_runner"
+purpose = "Ejecutar suites y manifests, y registrar corridas reproducibles."
+allowed_actions = ["validate_manifest", "run_suite", "run_local", "record_metrics", "write_artifacts", "append_registry"]
+read_paths = ["src", "context", "notebooks", "evals", "experiments", "registry"]
+write_paths = ["var", "artifacts", "registry/runs.jsonl"]
+# Tier 0 y 1 son libres. Tier 2 requiere presupuesto. Tier 3 requiere gate.
+approval_required = ["run_expensive_backend", "run_tier2", "run_tier3", "write_external_service"]
+
+[[role]]
+id = "evaluator"
+purpose = "Comparar corridas y calcular gates sin aprobar claims."
+allowed_actions = ["read_runs", "compute_metrics", "evaluate_gates", "cluster_failures", "draft_decision"]
+read_paths = ["var", "artifacts", "context", "evals", "experiments", "registry"]
+write_paths = ["var/agent_runs", "registry/failures.jsonl"]
+approval_required = ["accept_result", "promote_claim", "freeze_baseline", "modify_threshold"]
+
+[[role]]
+id = "research_synthesizer"
+purpose = "Preparar borradores de notas y escritura desde evidencia aceptada."
+allowed_actions = ["read_evidence", "draft_report", "draft_latex_section", "link_sources"]
+read_paths = ["PIKAN-Vault/PIKAN-Vault", "var", "artifacts", "context", "registry", "experiments", "specs"]
+# Escribe solo borradores. La promocion a experiments/ o a la escritura es un
+# acto humano, no una escritura de agente.
+write_paths = ["var/agent_runs"]
+approval_required = ["publish_claim", "modify_theory_text", "promote_draft"]
+
+[[gate]]
+id = "scope"
+description = "El investigador aprueba pregunta, problema y alcance."
+required_before = ["draft_hypothesis", "edit_notebook", "write_mechanism"]
+decision_owner = "human"
+
+[[gate]]
+id = "hypothesis"
+description = "El investigador firma el pre-registro: hipotesis, semillas, presupuesto y falsacion."
+required_before = ["run_local", "run_suite", "run_expensive_backend", "run_tier2", "run_tier3"]
+decision_owner = "human"
+
+[[gate]]
+id = "code_surface"
+description = "El investigador aprueba cambios fuera de la superficie declarada."
+required_before = ["modify_core_model", "modify_pde_definition", "widen_edit_surface"]
+decision_owner = "human"
+
+[[gate]]
+id = "eval_integrity"
+description = "Solo el investigador congela baselines y mueve umbrales. El verificador no se negocia."
+required_before = ["freeze_baseline", "modify_threshold", "change_acceptance_gates"]
+decision_owner = "human"
+
+[[gate]]
+id = "scientific_claim"
+description = "El investigador acepta o rechaza la interpretacion del resultado."
+required_before = ["promote_claim", "publish_claim", "modify_theory_text", "accept_result"]
+decision_owner = "human"

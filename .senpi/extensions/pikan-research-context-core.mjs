@@ -36,14 +36,62 @@ function protectedPath(root, candidate) {
 		resolve(root, ".senpi"),
 		resolve(root, "context"),
 		resolve(root, "workflow"),
-		resolve(root, "PIKAN-Vault", "PIKAN-Vault"),
 		resolve(root, "var", "context"),
+		// El verificador. Un agente que puede editar sus graders, sus umbrales o
+		// la malla de evaluacion puede aprobar cualquier mecanismo cambiando la
+		// vara en vez del resultado.
+		resolve(root, "evals"),
+		// Los claims aceptados los escribe el investigador, no un agente.
+		resolve(root, "registry", "claims.jsonl"),
 	];
 	return protectedRoots.find((protectedRoot) => pathStartsWith(protectedRoot, candidate));
 }
 
 function roleName(role) {
 	return String(role?.id ?? DEFAULT_ROLE);
+}
+
+export function canMutateCanonicalVault({ role, command }) {
+	const normalizedCommand = String(command ?? "")
+		.replaceAll("\\", "/")
+		.toLowerCase();
+	return roleName(role) === DEFAULT_ROLE
+		&& /(?:^|[^a-z0-9_-])pikan-vault\/pikan-vault(?:\/|$)/.test(normalizedCommand);
+}
+
+function commandPathCandidates(command) {
+	const text = String(command ?? "");
+	const candidates = new Set();
+	const quotedPattern = /["']((?:[A-Za-z]:[\\/]|\/)[^"']+)["']/g;
+	const unquotedPattern = /(?:^|[\s(])((?:[A-Za-z]:[\\/]|\/)[^\s"';&|]+)/g;
+
+	for (const match of text.matchAll(quotedPattern)) candidates.add(match[1]);
+	for (const match of text.matchAll(unquotedPattern)) candidates.add(match[1]);
+
+	return [...candidates].map((candidate) => candidate.replace(/[),.;]+$/, ""));
+}
+
+function externalCommandPaths({ root, command }) {
+	const projectRoot = resolve(root);
+	return commandPathCandidates(command)
+		.map((candidate) => resolve(candidate))
+		.filter((candidate) => !pathStartsWith(projectRoot, candidate));
+}
+
+function externalReadMessage(paths) {
+	return "Aviso: lectura externa en modo solo lectura — " + paths.join(", ") + ".";
+}
+
+export function externalReadNotice({ root, command }) {
+	const paths = externalCommandPaths({ root, command });
+	return paths.length ? externalReadMessage(paths) : undefined;
+}
+
+export function externalMutationReason({ root, command }) {
+	const paths = externalCommandPaths({ root, command });
+	return paths.length
+		? "Escritura externa bloqueada fuera de AF_PIKANs: " + paths.join(", ") + "."
+		: undefined;
 }
 
 export function isContained(root, candidate) {
@@ -180,14 +228,20 @@ export function filesystemDecision({ root, role, operation, canonicalPath }) {
 	const candidate = resolve(canonicalPath);
 	const projectRoot = resolve(root);
 	if (!isContained(projectRoot, candidate)) {
-		return { allow: false, reason: "Access is limited to the ProyectoGrad repository." };
+		if (operation === "read") {
+			return {
+				allow: true,
+				notice: externalReadMessage([candidate]),
+			};
+		}
+		return { allow: false, reason: "Access is limited to the AF_PIKANs repository." };
 	}
 
 	const protectedRoot = protectedPath(projectRoot, candidate);
 	if (protectedRoot && (operation === "write" || protectedRoot.endsWith(`${sep}.git`) || protectedRoot.endsWith(`${sep}.senpi`))) {
 		return {
 			allow: false,
-			reason: "Canonical contracts, PIKAN-Vault, generated context, and Senpi control files are protected.",
+			reason: "Canonical contracts, generated context, and Senpi control files are protected.",
 		};
 	}
 
@@ -280,8 +334,12 @@ export function renderSystemPrompt({ pack, graph, role, workflow, prompt, ready,
 		"",
 		"Reglas operativas:",
 		"- Un agente propone; la aprobación humana decide claims, promoción de conocimiento, cambios de ontología y cambios del modelo/PDE.",
-		"- No modificar `context/`, `workflow/`, `PIKAN-Vault/PIKAN-Vault`, `.senpi/`, `.git/` ni `var/context/`.",
-		"- No leer ni escribir repositorios fuera de este proyecto.",
+		"- No modificar `context/`, `workflow/`, `.senpi/`, `.git/` ni `var/context/`.",
+		"- `evals/` es el verificador y es de solo lectura para todo rol: graders, umbrales, baselines congelados y la malla de evaluación no se negocian. Si un resultado exige cambiar la vara, detente y pide el gate `eval_integrity`.",
+		"- Un mecanismo en `src/mechanisms/` no puede importar `evals`: un candidato que conoce su métrica la optimiza en vez del problema.",
+		"- Tier 0 y Tier 1 se ejecutan libremente. Tier 2 requiere presupuesto aprobado; Tier 3 requiere el gate `scientific_claim`.",
+		"- La promoción de notas a `PIKAN-Vault/PIKAN-Vault` requiere aprobación humana explícita y solo está declarada para `literature_scout`.",
+		"- Se permiten lecturas externas en modo solo lectura; antes de cada una informa al usuario la ruta exacta y el motivo. Las escrituras externas están bloqueadas.",
 		"- Si la tarea requiere otro rol o una ruta no declarada, detente y solicita la decisión humana.",
 		"- Una nota bibliográfica respalda motivación o método; no sustituye evidencia experimental.",
 		"",
