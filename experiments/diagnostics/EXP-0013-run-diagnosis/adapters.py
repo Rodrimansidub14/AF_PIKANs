@@ -229,7 +229,7 @@ def bundle_heat(path: Path, campaign: str) -> Bundle:
 def bundle_dfg_ab(path: Path, cohort: str) -> Bundle:
     sd = state_of(path)
     if cohort == "A":
-        mod = load_module("repo_dfg", REPO / "src/research_pipeline/sciml/dfg.py", REPO)
+        mod = load_module("repo_dfg", REPO / "src/sciml/dfg.py", REPO)
         net = mod.DFGRBFPIKAN()
         net.load_state_dict(sd, strict=True)
         kind = "rbf"

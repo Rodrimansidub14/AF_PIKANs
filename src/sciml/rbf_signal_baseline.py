@@ -542,7 +542,7 @@ def render_markdown(records: list[dict[str, Any]], hashes: dict[str, str]) -> st
         "",
         "## Medición y linaje",
         "",
-        "Los artefactos tabulares se generan con `python -m src.research_pipeline.sciml.rbf_signal_baseline`. `observed-signals.csv` conserva métricas medidas por run; `literature-crosswalk.json` conserva contexto y estatus de comparabilidad; `exploratory-signals.html` muestra solo resultados locales, sin superponer puntuaciones incompatibles de papers.",
+        "Los artefactos tabulares se generan con `python -m src.sciml.rbf_signal_baseline`. `observed-signals.csv` conserva métricas medidas por run; `literature-crosswalk.json` conserva contexto y estatus de comparabilidad; `exploratory-signals.html` muestra solo resultados locales, sin superponer puntuaciones incompatibles de papers.",
         "",
         "Entradas verificadas por SHA-256:",
         "",

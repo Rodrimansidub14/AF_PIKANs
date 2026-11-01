@@ -11,8 +11,8 @@ import csv
 import numpy as np
 os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG',':4096:8')
 import torch
-from src.research_pipeline.sciml.train import train,json_write
-from src.research_pipeline.sciml.model import build_model
+from src.sciml.train import train,json_write
+from src.sciml.model import build_model
 from src.research_pipeline.remote.reporting import log_wandb_figures,signal_unit
 
 
@@ -79,7 +79,7 @@ def evaluate_candidate_checkpoint(checkpoint_path,problem,out_dir,model_config,p
         # Keep the scalar Allen–Cahn evaluator optional for portable Burgers/Heat
         # bundles. Kaggle bundles intentionally include only the modules needed
         # by the declared campaign.
-        from src.research_pipeline.sciml.allen_cahn_evaluation import evaluate_allen_cahn
+        from src.sciml.allen_cahn_evaluation import evaluate_allen_cahn
         pool_path=Path(out_dir)/'pools.npz'
         with np.load(pool_path) as archive:
             pool_data={name:archive[name].copy() for name in archive.files}

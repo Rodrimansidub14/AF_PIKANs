@@ -4,8 +4,8 @@ try:
     import torch
 except ImportError:
     raise unittest.SkipTest('Run SciML tests with var/agent_runs/sciml-env/Scripts/python.exe')
-from src.research_pipeline.sciml.model import RBFPIKAN, derivatives
-from src.research_pipeline.sciml.sampling import pools
+from src.sciml.model import RBFPIKAN, derivatives
+from src.sciml.sampling import pools
 
 
 class BaselineTests(unittest.TestCase):
@@ -43,7 +43,7 @@ class BaselineTests(unittest.TestCase):
     def test_pina_preserves_physical_coordinate_order_and_residual(self):
         from pina import LabelTensor
         from pina.solver import PhysicsInformedSingleModelSolver
-        from src.research_pipeline.sciml.train import make_problem,physics
+        from src.sciml.train import make_problem,physics
         torch.set_default_dtype(torch.float64)
         for name in ('heat','burgers'):
             model=RBFPIKAN(name).double()

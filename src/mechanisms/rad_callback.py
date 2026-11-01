@@ -5,8 +5,8 @@ from pathlib import Path
 import numpy as np
 import torch
 from lightning.pytorch import Callback
-from src.research_pipeline.sciml.model import derivatives
-from src.research_pipeline.sciml.sampling import sobol
+from src.sciml.model import derivatives
+from src.sciml.sampling import sobol
 from .rad import sample_rad
 
 

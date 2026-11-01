@@ -1,6 +1,6 @@
 import unittest
 
-from src.research_pipeline.sciml.rbf_signal_baseline import (
+from src.sciml.rbf_signal_baseline import (
     ARCHITECTURE_PROFILES,
     LITERATURE_COMPARATORS,
     PROBLEM_SIGNAL_REGISTRY,

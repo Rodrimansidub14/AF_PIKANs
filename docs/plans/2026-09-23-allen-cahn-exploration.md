@@ -32,9 +32,9 @@
 ### Task 1: Allen–Cahn model, sampling, and trainer support
 
 **Files:**
-- Modify: `src/research_pipeline/sciml/model.py`
-- Modify: `src/research_pipeline/sciml/sampling.py`
-- Modify: `src/research_pipeline/sciml/train.py`
+- Modify: `src/sciml/model.py`
+- Modify: `src/sciml/sampling.py`
+- Modify: `src/sciml/train.py`
 - Test: `tests/test_allen_cahn_model.py`
 - Test: `tests/test_allen_cahn_sampling.py`
 - Test: `tests/test_allen_cahn_train.py`
@@ -52,8 +52,8 @@
 ### Task 2: Independent exploratory evaluation and artifacts
 
 **Files:**
-- Create: `src/research_pipeline/sciml/allen_cahn_evaluation.py`
-- Modify: `src/research_pipeline/sciml/campaign.py`
+- Create: `src/sciml/allen_cahn_evaluation.py`
+- Modify: `src/sciml/campaign.py`
 - Test: `tests/test_allen_cahn_evaluation.py`
 
 **Interfaces:**

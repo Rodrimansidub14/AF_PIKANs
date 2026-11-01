@@ -5,12 +5,12 @@ import pytest
 import torch
 import warnings
 
-from src.research_pipeline.sciml.dfg_campaign import (
+from src.sciml.dfg_campaign import (
     _boundary_signals,
     flatten_finite_metrics,
     summarize_residual_regions,
 )
-from src.research_pipeline.sciml.dfg import DFGRBFPIKAN, generate_dfg_pools
+from src.sciml.dfg import DFGRBFPIKAN, generate_dfg_pools
 
 
 def test_metric_flattening_emits_only_finite_numeric_contract_values():

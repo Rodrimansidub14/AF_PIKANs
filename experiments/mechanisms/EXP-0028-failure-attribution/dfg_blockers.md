@@ -1,6 +1,6 @@
 # EXP-0028 Fase 1c — DFG: qué falta (no se dejó `run_phase1c_dfg.py`)
 
-Investigado 2026-10-23 leyendo `src/research_pipeline/sciml/dfg.py` (`train_dfg`, `DFGConfig`, `steady_ns_residual`), `src/research_pipeline/sciml/dfg_campaign.py`, `src/mechanisms/residual_terms.py` (`DFGTerms`, `dfg_terms`), `tests/test_residual_terms.py` (test DFG), los workers `var/agent_runs/baseline-competitive-2026-09-27/bundles/dfg/{lbfgs-refinement/dfg_lbfgs_worker.py, current-cohort-refinement/dfg_rbf_lbfgs_worker.py}` y `ns2d-cg-20260930/dfg_long.py`.
+Investigado 2026-10-23 leyendo `src/sciml/dfg.py` (`train_dfg`, `DFGConfig`, `steady_ns_residual`), `src/sciml/dfg_campaign.py`, `src/mechanisms/residual_terms.py` (`DFGTerms`, `dfg_terms`), `tests/test_residual_terms.py` (test DFG), los workers `var/agent_runs/baseline-competitive-2026-09-27/bundles/dfg/{lbfgs-refinement/dfg_lbfgs_worker.py, current-cohort-refinement/dfg_rbf_lbfgs_worker.py}` y `ns2d-cg-20260930/dfg_long.py`.
 
 ## Lo que YA sirve (no hay que escribirlo)
 - Modelo `DFGRBFPIKAN` (2-16-16-3, `output_scales` dentro del forward): `RBFEdgeLayer` tiene la misma forma que `RBFEdge` (`coefficients` (O,I,G), `centers`, `width`, `base`; mismo forward), así que `GramPreconditioner.attach` funciona y `functional_call` arrastra las escalas.
@@ -14,7 +14,7 @@ Investigado 2026-10-23 leyendo `src/research_pipeline/sciml/dfg.py` (`train_dfg`
 4. **Puntuación.** `train_dfg` no puntúa campos (`field_relative_l2: None`). El error u/v/p contra el FEM DFG-L3 (malla 221×42, máscara del cilindro, presión con ancla en (2.2, 0.2)) vive en scripts post hoc de Kaggle (`followup-20260929/dfg-score-repair/score_repair.py`, `dfg_long.score`) y los QoI (Cd, Cl, Δp) en `evaluate_dfg_qois`. Falta una función `score(model)` local que cargue `ns2d-cg-20260930/reference/dfg_L3_fields.npz` (existe) y decidir la métrica primaria (u, aplanado o Cd). La referencia está aceptada solo como «de trabajo».
 5. **Estocasticidad.** B con minibatch es estocástico por paso; el GN se calcula sobre un subconjunto **determinista** del pool, no sobre el minibatch. Hay que declararlo; no impide B == ID (misma secuencia del generador).
 6. **Costo no medido.** `budget_vector.json` es de NS (3 salidas, 8 términos, 4 095 puntos). DFG (4 608 puntos, 11 términos, escalas) no está medido; medir con un `--timing` equivalente antes de pedir GPU. El paso de Adam con minibatch 1024 es mucho más barato que el lote completo de NS, así que el recalculo pesaría proporcionalmente más.
-7. **Empaque.** El bundle necesita `dfg.py` (depende de scipy `qmc`), la referencia FEM y cambiar el import (`src.research_pipeline.sciml.dfg` → módulo plano).
+7. **Empaque.** El bundle necesita `dfg.py` (depende de scipy `qmc`), la referencia FEM y cambiar el import (`src.sciml.dfg` → módulo plano).
 
 ## Veredicto
 No es viable sin reescribir la receta: los puntos 1 y 3 son la receta. Con dos decisiones del investigador (pasos fijos de Adam; L-BFGS de `sweep` con 500 iteraciones) el trabajo restante es mecánico y acotado: trainer propio (2), `prob.loss` de pool completo y `score` local (3, 4), medición (6) y bundle (7). El cómputo GPU sería menor que el de NS por el minibatch.

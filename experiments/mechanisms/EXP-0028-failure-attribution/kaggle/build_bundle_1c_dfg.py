@@ -28,7 +28,7 @@ SOURCES = {
     "regrid.py": M / "EXP-0024-wind-tunnel-protocol/regrid.py",
     "sweep.py": M / "EXP-0016-stall-handoff/sweep.py",
     "pikan_campaign.py": C1 / "pikan_campaign.py",                      # t1_trainer lo importa
-    "dfg.py": ROOT / "src/research_pipeline/sciml/dfg.py",             # DFGRBFPIKAN, generate_dfg_pools, evaluate_dfg_qois, train_dfg (scipy.stats.qmc)
+    "dfg.py": ROOT / "src/sciml/dfg.py",             # DFGRBFPIKAN, generate_dfg_pools, evaluate_dfg_qois, train_dfg (scipy.stats.qmc)
     "dfg_L3_fields.npz": REF,
 }
 KERNEL = dict(sub="kernel_1c_dfg", slug="af-pikans-exp-0028-phase1c-dfg", title="AF PIKANs EXP-0028 phase1c dfg", block="all", minutes=[40, 100])
@@ -45,7 +45,7 @@ def main():
         shutil.copyfile(s, ds / n)
     for n in ("gram_preconditioning.py", "residual_terms.py"):
         assert (ds / n).read_bytes() == (ROOT / "src/mechanisms" / n).read_bytes(), n
-    assert (ds / "dfg.py").read_bytes() == (ROOT / "src/research_pipeline/sciml/dfg.py").read_bytes()
+    assert (ds / "dfg.py").read_bytes() == (ROOT / "src/sciml/dfg.py").read_bytes()
     (ds / "dataset-metadata.json").write_text(json.dumps({"title": "AF PIKANs EXP-0028 bundle dfg", "id": DATASET, "licenses": [{"name": "other"}], "isPrivate": True}, indent=2))
     comps = {f"dataset_1c_dfg/{p.name}": sha(p) for p in sorted(ds.iterdir()) if p.name != "dataset-metadata.json"}
     template = (EXP28 / "kaggle_block_1c_dfg.py").read_text(encoding="utf-8")

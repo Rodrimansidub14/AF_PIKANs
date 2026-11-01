@@ -71,3 +71,12 @@ Todos pasan a minúsculas con guiones (convención en `specs/conventions/convenc
 | `notebooks/warmup/NAVIER STOKES/NS_PIKANS_geo_(1).ipynb` | `notebooks/warmup/navier-stokes/ns-pikans-geo-copia-1.ipynb` |
 | `notebooks/warmup/NAVIER STOKES/NS_PIKANS_geo_BASELINE.ipynb` | `notebooks/warmup/navier-stokes/ns-pikans-geo-baseline.ipynb` |
 | `notebooks/warmup/NAVIER STOKES/NS_PIKANS_geo_BASELINE_pre_pipeline_refactor_20260505.ipynb` | `notebooks/warmup/navier-stokes/ns-pikans-geo-baseline-pre-pipeline-refactor-20260505.ipynb` |
+
+## Fase 1 (2026-11-01): `sciml` sube un nivel
+
+| Antes | Ahora |
+|---|---|
+| `src/research_pipeline/sciml/` | `src/sciml/` |
+| `from src.research_pipeline.sciml...` | `from src.sciml...` |
+
+Se reescribieron las referencias vivas (código, pruebas, manifiestos de entrada, specs y notebooks). Quedaron **sin tocar**, como registro de lo que se ejecutó: `registry/`, `evals/`, `experiments/**/results/`, `experiments/**/kaggle/dataset*/`, `experiments/**/agent-runs/` y `docs/archive/`. Los resultados y el registro se verificaron con SHA-256 antes y después: 4 122 archivos idénticos.

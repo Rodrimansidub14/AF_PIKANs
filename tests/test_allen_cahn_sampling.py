@@ -1,6 +1,6 @@
 import numpy as np
 
-from src.research_pipeline.sciml.sampling import pools
+from src.sciml.sampling import pools
 
 
 def test_allen_cahn_sobol_pools_are_reproducible_independent_and_in_domain():

@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 import torch
 
-from src.research_pipeline.sciml.dfg import (
+from src.sciml.dfg import (
     DFGConfig,
     DFGRBFPIKAN,
     generate_dfg_pools,

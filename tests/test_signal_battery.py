@@ -4,8 +4,8 @@ import pytest
 
 torch = pytest.importorskip("torch")
 
-from src.research_pipeline.sciml import signal_battery as sb  # noqa: E402
-from src.research_pipeline.sciml.model import build_model  # noqa: E402
+from src.sciml import signal_battery as sb  # noqa: E402
+from src.sciml.model import build_model  # noqa: E402
 
 
 @pytest.fixture(scope="module")

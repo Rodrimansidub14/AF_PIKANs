@@ -4,9 +4,9 @@ import tempfile
 import unittest
 import numpy as np
 import torch
-from src.research_pipeline.sciml.train import train,make_problem
-from src.research_pipeline.sciml.sampling import pools
-from src.research_pipeline.sciml.model import build_model
+from src.sciml.train import train,make_problem
+from src.sciml.sampling import pools
+from src.sciml.model import build_model
 from src.mechanisms.rad_callback import RADCallback
 
 

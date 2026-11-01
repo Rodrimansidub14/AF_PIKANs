@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 
-from src.research_pipeline.sciml.model import build_model
+from src.sciml.model import build_model
 
 
 def test_allen_cahn_hard_transform_enforces_initial_and_dirichlet_traces():

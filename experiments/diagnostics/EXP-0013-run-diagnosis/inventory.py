@@ -123,10 +123,10 @@ def try_load(problem: str, campaign: str, path: Path):
             m.load_state_dict(sd, strict=True)
             return "ok", "af_sciml_model.build_model('heat', rbf_fixed)"
         if campaign.startswith("cohort-A"):
-            mod = load_module("repo_dfg", REPO / "src/research_pipeline/sciml/dfg.py", REPO)
+            mod = load_module("repo_dfg", REPO / "src/sciml/dfg.py", REPO)
             m = mod.DFGRBFPIKAN()
             m.load_state_dict(sd, strict=True)
-            return "ok", "src.research_pipeline.sciml.dfg.DFGRBFPIKAN"
+            return "ok", "src.sciml.dfg.DFGRBFPIKAN"
         if campaign.startswith("cohort-"):
             src = BL / "kaggle-outputs/dfg-lbfgs-refinement/dfg-re20-lbfgs-refinement/run-1790581871213606372/run_campaign_source.py"
             mod = load_module("dfg_runner_source", src)

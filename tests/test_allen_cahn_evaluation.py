@@ -4,12 +4,12 @@ from pathlib import Path
 
 import numpy as np
 
-from src.research_pipeline.sciml.allen_cahn_evaluation import (
+from src.sciml.allen_cahn_evaluation import (
     allen_cahn_energy,
     evaluate_allen_cahn,
 )
-from src.research_pipeline.sciml.model import build_model
-from src.research_pipeline.sciml.sampling import pools
+from src.sciml.model import build_model
+from src.sciml.sampling import pools
 
 
 def test_allen_cahn_energy_uses_declared_double_well_functional():

@@ -47,7 +47,7 @@ import arnes_round1c as a1c          # noqa: E402  (importa gram_preconditioning
 gp, pc, pt = a1c.gp, a1c.pc, a1c.pt
 PROBLEMS = ["ac_d1e-3", "ac_d2e-4", "burgers", "kpp", "ns"]
 HOOKS_PENDIENTES = {
-    "dfg": "Sin problema listo para el mecanismo: DFGRBFPIKAN (src/research_pipeline/sciml/dfg.py) usa output_scales y minibatches, gn_blocks._forward no lo replica; falta adaptador (prob.residual_terms con terminos de PDE+borde y pesos) y pools del DFG.",
+    "dfg": "Sin problema listo para el mecanismo: DFGRBFPIKAN (src/sciml/dfg.py) usa output_scales y minibatches, gn_blocks._forward no lo replica; falta adaptador (prob.residual_terms con terminos de PDE+borde y pesos) y pools del DFG.",
     "piezo": "No existe PiezoProblem ni modelo RBF en src/ ni en la campana; falta portar el codigo de Gonzalez (8 salidas, bordes duros por levantamiento, formulacion mixta) y un forward/residual vectorial.",
 }
 EPS = gp.EPS_REL

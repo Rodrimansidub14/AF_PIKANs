@@ -18,7 +18,7 @@ import torch
 from scipy.spatial import cKDTree
 from scipy.stats import qmc
 
-from src.research_pipeline.sciml.dfg import (
+from src.sciml.dfg import (
     CYLINDER_CENTER,
     CYLINDER_RADIUS,
     DOMAIN_X,

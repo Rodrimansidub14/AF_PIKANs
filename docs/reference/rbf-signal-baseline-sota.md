@@ -58,7 +58,7 @@ Para convertir la hipótesis de interpretabilidad en evidencia hacen falta: (1) 
 ## Reproducción de los artefactos
 
 ```powershell
-& '.\var\agent_runs\sciml-env\Scripts\python.exe' -m src.research_pipeline.sciml.rbf_signal_baseline --repo-root . --out var/agent_runs/rbf-signal-baseline-20260924
+& '.\var\agent_runs\sciml-env\Scripts\python.exe' -m src.sciml.rbf_signal_baseline --repo-root . --out var/agent_runs/rbf-signal-baseline-20260924
 ```
 
 El constructor lee los CSV/JSON de las corridas terminadas bajo `var/agent_runs`, calcula estadísticas a nivel de semilla, registra SHA-256, y escribe README, tablas CSV, crosswalk bibliográfico, registro de señales y visualización Plotly. No lee `evals/`, modifica graders/umbrales ni inicia entrenamiento; la salida declara `scientific_accepted=false`.

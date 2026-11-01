@@ -22,7 +22,7 @@ def assert_launch_ready(manifest):
 def main():
     manifest=json.loads(Path(os.environ['HARNESS_MANIFEST']).read_text(encoding='utf-8'))
     assert_launch_ready(manifest)
-    from src.research_pipeline.sciml import campaign
+    from src.sciml import campaign
     job=int(os.environ['HARNESS_SEED']); arm,seed=job_spec(job)
     out=Path(os.environ['HARNESS_RUN_DIR']); out.mkdir(parents=True,exist_ok=True)
     manifest['comparison']={'job_id':job,'arm':arm,'paired_seed':seed}

@@ -43,7 +43,7 @@ def main():
     for n in NEW_FILES:
         shutil.copyfile(SLICE / n, ds / n)
     assert (ds / "gram_preconditioning.py").read_bytes() == (ROOT / "src/mechanisms/gram_preconditioning.py").read_bytes(), "gram_preconditioning.py difiere de src/"
-    assert (ds / "dfg.py").read_bytes() == (ROOT / "src/research_pipeline/sciml/dfg.py").read_bytes(), "dfg.py difiere de src/"
+    assert (ds / "dfg.py").read_bytes() == (ROOT / "src/sciml/dfg.py").read_bytes(), "dfg.py difiere de src/"
     for p in sorted(base.iterdir()):
         if p.name not in SKIP:
             assert (ds / p.name).read_bytes() == p.read_bytes(), f"{p.name} difiere de dataset_1e"

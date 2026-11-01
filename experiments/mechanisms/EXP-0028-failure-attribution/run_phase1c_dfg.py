@@ -48,13 +48,13 @@ rt = gp._residual_terms_module()
 
 
 def _load_dfg():
-    if BUNDLE is not None:                                   # bundle plano: dfg.py copiado de src/research_pipeline/sciml/dfg.py
+    if BUNDLE is not None:                                   # bundle plano: dfg.py copiado de src/sciml/dfg.py
         spec = importlib.util.spec_from_file_location("dfg_flat", str(BUNDLE / "dfg.py"))
         mod = importlib.util.module_from_spec(spec)
         sys.modules["dfg_flat"] = mod
         spec.loader.exec_module(mod)
         return mod
-    from src.research_pipeline.sciml import dfg as mod
+    from src.sciml import dfg as mod
     return mod
 
 
