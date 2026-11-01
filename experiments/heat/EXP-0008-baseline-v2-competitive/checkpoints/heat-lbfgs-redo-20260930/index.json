@@ -1,0 +1,10 @@
+{
+ "campaign": "heat-lbfgs-redo-20260930",
+ "sha256": {
+  "results/seed-901/checkpoint-lbfgs-redo.pt": "b9933bc68da49a074820f22902c5f5c52b755306f924095508aa34de3a0ea414",
+  "results/seed-902/checkpoint-lbfgs-redo.pt": "e88c1c9f0f3f07e6013a7883200f440a5a164b8ef1a7097a4af49c711259e8cb",
+  "results/seed-903/checkpoint-lbfgs-redo.pt": "c3bdc1fe5a1e8db3e885ea07fa8ce1a28df40896121c4074117f0df3c00b32a1",
+  "results/seed-904/checkpoint-lbfgs-redo.pt": "a4a5c4339cee14af9dd9a970d8f006333bbf78cbbf727b234dbeaf5d815e1d0a",
+  "results/seed-905/checkpoint-lbfgs-redo.pt": "6dfb4d3b2dac7a7b5a8f8f491c97f974e197b592b3c52ff81e58c47b7307d4ef"
+ }
+}
