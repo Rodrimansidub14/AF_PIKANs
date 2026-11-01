@@ -1,0 +1,232 @@
+{
+  "main": {
+    "id": "e406de7429bc1aac",
+    "type": "split",
+    "children": [
+      {
+        "id": "8c361b17a4f2ad76",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "734519253a97f510",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Protocolo/BETA/Metodología.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Metodología"
+            }
+          },
+          {
+            "id": "591f400b54a353a8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Columnas pendientes de comentario - Masters.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Columnas pendientes de comentario - Masters"
+            }
+          },
+          {
+            "id": "ed95166db1fb97f6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Sin título.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Sin título"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0a052be03b82f825",
+    "type": "split",
+    "children": [
+      {
+        "id": "1efae2e43249909b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d632ca91c8812d84",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "b0bf035e86bf2f0a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "9e4513d0b9087f52",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5c3f67c012924ad9",
+    "type": "split",
+    "children": [
+      {
+        "id": "84feaf78f88e3f82",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8f2c2678f00ab52a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes"
+            }
+          },
+          {
+            "id": "81122949da3ebd6d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes"
+            }
+          },
+          {
+            "id": "fbcf42ae8777c666",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "a13c84f9dcaa7ea1",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas las propiedades"
+            }
+          },
+          {
+            "id": "e07fcc7a3011f600",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false
+    }
+  },
+  "active": "ed95166db1fb97f6",
+  "lastOpenFiles": [
+    "Sin título.md",
+    "Protocolo/BETA/Metodología.md",
+    "Protocolo/BETA/Justificación.md",
+    "Columnas pendientes de comentario - Masters.md",
+    "Protocolo/BETA/Intro.md",
+    "Protocolo/BETA/Justificación",
+    "Protocolo/BETA",
+    "00_INDEX.md",
+    "Grad/Bienvenido.md",
+    "concepts/Causal_Masking_and_Attention.md",
+    "concepts/Multiscale_Physics.md",
+    "papers/Vaswani_2017_Attention.md",
+    "papers/Wang_2024_CausalPINNs.md",
+    "_templates/paper_template.md",
+    "papers/Raissi_2019_PINNs.md"
+  ]
+}
