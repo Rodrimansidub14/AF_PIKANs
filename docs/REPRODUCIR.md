@@ -36,7 +36,7 @@ python -m pytest tests -q          # pruebas del código (algunas se saltan sin 
 - **Claims aceptados:** C1 a C7 en `registry/claims.jsonl`.
 
 ## Publicación
-El repositorio es público en https://github.com/Rodrimansidub14/AF_PIKANs. La versión citada en la tesis es la etiqueta `tesis-v1` (commit `17acd7a`).
+El repositorio es público en https://github.com/Rodrimansidub14/AF_PIKANs. La versión citada en la tesis es la etiqueta `tesis-v1` (commit `4d04917`).
 
 ## Pendiente
 Dónde alojar la evidencia pesada (pesos, estados y trazas), con suma de verificación.
