@@ -1,0 +1,341 @@
+{
+ "info": {
+  "tiny": false,
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "cutoff_s": 3600.0,
+  "hard_cap_s": 5400.0,
+  "seeds": [
+   2001,
+   2002,
+   2003,
+   2004,
+   2005
+  ],
+  "problems": [
+   "ac",
+   "burgers"
+  ],
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "ledger_phase1": [
+  {
+   "job": [
+    "ac",
+    2001,
+    "B,R,E,O,Orand"
+   ],
+   "slot": 0,
+   "start": 1.8019999856733193e-06,
+   "end": 580.006647346,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    2002,
+    "B,R,E,O,Orand"
+   ],
+   "slot": 1,
+   "start": 1.8019999856733193e-06,
+   "end": 580.006647346,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    2004,
+    "B,R,E,O,Orand"
+   ],
+   "slot": 1,
+   "start": 580.006647346,
+   "end": 1140.013664111,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    2003,
+    "B,R,E,O,Orand"
+   ],
+   "slot": 0,
+   "start": 580.006647346,
+   "end": 1160.015812655,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    2005,
+    "B,R,E,O,Orand"
+   ],
+   "slot": 1,
+   "start": 1140.013664111,
+   "end": 1700.021392073,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    2001,
+    "B,R,E,O,Orand"
+   ],
+   "slot": 0,
+   "start": 1160.015812655,
+   "end": 1740.023774729,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    2002,
+    "B,R,E,O,Orand"
+   ],
+   "slot": 1,
+   "start": 1700.021392073,
+   "end": 2300.029560032,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    2003,
+    "B,R,E,O,Orand"
+   ],
+   "slot": 0,
+   "start": 1740.023774729,
+   "end": 2340.032140051,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    2004,
+    "B,R,E,O,Orand"
+   ],
+   "slot": 1,
+   "start": 2300.029560032,
+   "end": 2920.037654683,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    2005,
+    "B,R,E,O,Orand"
+   ],
+   "slot": 0,
+   "start": 2340.032140051,
+   "end": 2940.038343824,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "ledger_phase2": [
+  {
+   "job": [
+    "ac",
+    2001,
+    "Om"
+   ],
+   "slot": 0,
+   "start": 2.9170000743761193e-06,
+   "end": 120.0028484569998,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    2002,
+    "Om"
+   ],
+   "slot": 1,
+   "start": 2.9170000743761193e-06,
+   "end": 120.0028484569998,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    2003,
+    "Om"
+   ],
+   "slot": 0,
+   "start": 120.0028484569998,
+   "end": 240.00653718400008,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    2004,
+    "Om"
+   ],
+   "slot": 1,
+   "start": 120.0028484569998,
+   "end": 240.00653718400008,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    2005,
+    "Om"
+   ],
+   "slot": 0,
+   "start": 240.00653718400008,
+   "end": 360.0101795759997,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    2001,
+    "Om"
+   ],
+   "slot": 1,
+   "start": 240.00653718400008,
+   "end": 360.0101795759997,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    2002,
+    "Om"
+   ],
+   "slot": 0,
+   "start": 360.0101795759997,
+   "end": 480.0140204489999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    2003,
+    "Om"
+   ],
+   "slot": 1,
+   "start": 360.0101795759997,
+   "end": 480.0140204489999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    2004,
+    "Om"
+   ],
+   "slot": 0,
+   "start": 480.0140204489999,
+   "end": 600.017736108,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    2005,
+    "Om"
+   ],
+   "slot": 1,
+   "start": 480.0140204489999,
+   "end": 600.017736108,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "freq_a0_O": {
+  "ac": 0.875,
+  "burgers": 0.8
+ },
+ "om_problems": [
+  "ac",
+  "burgers"
+ ],
+ "finished_runs": [
+  "ac-B-seed2001.json",
+  "ac-B-seed2002.json",
+  "ac-B-seed2003.json",
+  "ac-B-seed2004.json",
+  "ac-B-seed2005.json",
+  "ac-E-seed2001.json",
+  "ac-E-seed2002.json",
+  "ac-E-seed2003.json",
+  "ac-E-seed2004.json",
+  "ac-E-seed2005.json",
+  "ac-O-seed2001.json",
+  "ac-O-seed2002.json",
+  "ac-O-seed2003.json",
+  "ac-O-seed2004.json",
+  "ac-O-seed2005.json",
+  "ac-Om-seed2001.json",
+  "ac-Om-seed2002.json",
+  "ac-Om-seed2003.json",
+  "ac-Om-seed2004.json",
+  "ac-Om-seed2005.json",
+  "ac-Orand-seed2001.json",
+  "ac-Orand-seed2002.json",
+  "ac-Orand-seed2003.json",
+  "ac-Orand-seed2004.json",
+  "ac-Orand-seed2005.json",
+  "ac-R-seed2001.json",
+  "ac-R-seed2002.json",
+  "ac-R-seed2003.json",
+  "ac-R-seed2004.json",
+  "ac-R-seed2005.json",
+  "burgers-B-seed2001.json",
+  "burgers-B-seed2002.json",
+  "burgers-B-seed2003.json",
+  "burgers-B-seed2004.json",
+  "burgers-B-seed2005.json",
+  "burgers-E-seed2001.json",
+  "burgers-E-seed2002.json",
+  "burgers-E-seed2003.json",
+  "burgers-E-seed2004.json",
+  "burgers-E-seed2005.json",
+  "burgers-O-seed2001.json",
+  "burgers-O-seed2002.json",
+  "burgers-O-seed2003.json",
+  "burgers-O-seed2004.json",
+  "burgers-O-seed2005.json",
+  "burgers-Om-seed2001.json",
+  "burgers-Om-seed2002.json",
+  "burgers-Om-seed2003.json",
+  "burgers-Om-seed2004.json",
+  "burgers-Om-seed2005.json",
+  "burgers-Orand-seed2001.json",
+  "burgers-Orand-seed2002.json",
+  "burgers-Orand-seed2003.json",
+  "burgers-Orand-seed2004.json",
+  "burgers-Orand-seed2005.json",
+  "burgers-R-seed2001.json",
+  "burgers-R-seed2002.json",
+  "burgers-R-seed2003.json",
+  "burgers-R-seed2004.json",
+  "burgers-R-seed2005.json"
+ ],
+ "wall_seconds": 3540.0608236789703,
+ "complete": true
+}
