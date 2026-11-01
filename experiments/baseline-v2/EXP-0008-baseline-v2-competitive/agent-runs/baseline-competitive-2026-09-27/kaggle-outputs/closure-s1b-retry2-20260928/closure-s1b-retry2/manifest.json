@@ -1,0 +1,71 @@
+{
+  "actual_session_seconds": 86.563,
+  "artifacts": [
+    {
+      "path": "dfg/checkpoint_field_scores.json",
+      "sha256": "4ce2bcd75a0ba74ee590e0c0d2343299db8073d8767ba979037894350d1e6eb9",
+      "size_bytes": 63
+    },
+    {
+      "path": "dfg-worker.log",
+      "sha256": "2eb6c32f7cbd48a0140d995e45988fd6863a46acc86df5119ab85d4497f7ba4e",
+      "size_bytes": 58170
+    },
+    {
+      "path": "s1b.json",
+      "sha256": "387977e88948d7c2ef1f3ac0a34a470396fb3bf936486433022d6339f480df52",
+      "size_bytes": 315
+    },
+    {
+      "path": "s1b_final.json",
+      "sha256": "df5310fe0f0f9a45ad60a7d39c6512d1e691723da6550dd80fa77ca2c3d68e8c",
+      "size_bytes": 563
+    },
+    {
+      "path": "s1b_retry.json",
+      "sha256": "19185a323982222ad8d6b077c6361b0c09f63aba8a8ad60cb5fb351b702ba04f",
+      "size_bytes": 235
+    }
+  ],
+  "ended_at_utc": "2026-09-28T19:47:46Z",
+  "internal_watchdog_seconds": 1680.0,
+  "kernel_slug": "rodrimandub/af-pikans-competitive-baseline-s1b-retry2-20260928",
+  "kernel_source_files": [
+    {
+      "path": "solve_dfg.py",
+      "sha256": "ae8a7cc487c674d428c9f8ad93da40d8e4b1135daf9752ab2422a0933604cad5"
+    },
+    {
+      "path": "make_mesh.geo",
+      "sha256": "7753bb03d6c394643b1601fe771f1b878d2dc59e70cf9070b8e9b1ca433ffabb"
+    }
+  ],
+  "kernel_sources": [
+    "rodrimandub/af-pikans-allen-cahn-t4x2-20260927",
+    "rodrimandub/af-pikans-allen-cahn-score-only-20260927",
+    "rodrimandub/allen-cahn-deepxde-reference-20260928",
+    "rodrimandub/af-pikans-dfg-rbf-refinement-20260928",
+    "rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927"
+  ],
+  "machine": {
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "numpy": "2.0.2",
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "visible_gpu_count": 2
+  },
+  "parts": {
+    "s1a": "/kaggle/working/closure-s1b-retry2/s1a.json",
+    "s1b": "/kaggle/working/closure-s1b-retry2/s1b.json"
+  },
+  "push_cap_seconds": 1800.0,
+  "reference_accepted": false,
+  "schema_version": 1,
+  "scientific_accepted": false,
+  "session": "S1b-infrastructure-retry",
+  "started_at_utc": "2026-09-28T19:46:19Z",
+  "status": "partial"
+}

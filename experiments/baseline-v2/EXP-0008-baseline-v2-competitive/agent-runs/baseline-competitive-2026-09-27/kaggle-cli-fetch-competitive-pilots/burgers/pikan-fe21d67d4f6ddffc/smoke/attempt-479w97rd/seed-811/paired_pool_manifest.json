@@ -1,0 +1,51 @@
+{
+  "archive": "paired_pools.npz",
+  "archive_sha256": "12a870951f29d02535e168463c389331073e3947f8151622f1599279c2869996",
+  "arrays": {
+    "diagnostic": {
+      "dtype": "<f8",
+      "sha256": "a3cdb7b5b5f80874a2d467380729b06e22ed2a126cc277cc099488553422bfe2",
+      "shape": [
+        2048,
+        2
+      ]
+    },
+    "initial": {
+      "dtype": "<f8",
+      "sha256": "ba4ce05bd7a765df1e650866a4c801114fd4d63aaf775a7ea2d771596f84083c",
+      "shape": [
+        1024,
+        2
+      ]
+    },
+    "interior": {
+      "dtype": "<f8",
+      "sha256": "6839ce03df2c19d81ded7851fedda19bff6b0b95b38ac58cc5d38fccba3f3455",
+      "shape": [
+        8192,
+        2
+      ]
+    },
+    "left": {
+      "dtype": "<f8",
+      "sha256": "2839c5b1ed7fc9927885502e49b8d0ec55ad7c41dac6d1f118e242ecc7f22362",
+      "shape": [
+        512,
+        2
+      ]
+    },
+    "right": {
+      "dtype": "<f8",
+      "sha256": "855e0815316f30099e844720b760aa50ae7dc1ee7c0e68f6da04675fefe26949",
+      "shape": [
+        512,
+        2
+      ]
+    }
+  },
+  "content_sha256": "d26c9e3f6696acc6a359ff4f8e1226088397459addb893e9846c373afce7b21e",
+  "exactly_shared": true,
+  "scipy_version": "1.16.3",
+  "seed": 811,
+  "source": "generated once by src.research_pipeline.sciml.sampling.pools"
+}

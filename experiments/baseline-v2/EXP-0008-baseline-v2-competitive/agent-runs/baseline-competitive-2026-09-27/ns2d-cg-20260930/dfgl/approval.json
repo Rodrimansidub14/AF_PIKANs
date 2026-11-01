@@ -1,0 +1,11 @@
+{
+  "approved_by": "researcher, chat 2026-10-01: 'usa la cuota actual en 6 horas'; cap 4 h of 6.89 h remaining",
+  "session_cap_seconds": 14400,
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "component_sha256": {
+    "pikan_campaign.py": "3a2c836ea3615b4a933a5c35550a6f80cc269ffd1e5cac2623fa82b86b84b619",
+    "dfg_long.py": "792bcbf53f2453eef7598fd4a20f0c51bd0c7fe9ca1ea1b294b5f5c8d8d59b84",
+    "dfg_L3_fields.npz": "936fc178e6bc63b1c72388b76c269e2eb56ff78a93c14903df512a7d7202bb7a"
+  }
+}

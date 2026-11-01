@@ -1,0 +1,471 @@
+% Fragmento listo para integrarse en el marco teórico.
+% Las cuatro figuras se esperan en la ruta de figuras del documento principal:
+% p1-poisson.pdf, p2-burgers.pdf, p3-allen-cahn.pdf y p4-dfg.pdf.
+% Este fragmento interpreta los contratos de P1--P4; no sustituye la
+% especificación experimental del capítulo de metodología.
+
+\section{Lectura física de los problemas canónicos}
+\label{sec:lectura-fisica-pdes}
+
+Las ecuaciones diferenciales parciales del proyecto no son ejemplos
+intercambiables. Cada una concentra una dificultad física distinta: Poisson
+representa un equilibrio elíptico con variación distribuida; Burgers separa
+transporte no lineal y difusión en una transición estrecha; Allen--Cahn
+combina reacción, difusión y capas de interfaz; y el benchmark DFG exige
+respetar simultáneamente inercia, viscosidad, incompresibilidad, geometría y
+balances integrales. Esta lectura sirve para entender qué significa que una
+aproximación represente bien un campo. Los contratos exactos del banco de
+problemas se conservan en el capítulo de metodología; aquí se explican sus
+consecuencias físicas y las magnitudes que hacen visibles.
+
+Cada problema se acompaña de dos figuras con funciones distintas. La
+ilustración en tinta, realizada con Fiziko, describe el sistema y sus datos.
+La gráfica en color representa una solución exacta o numérica e identifica
+su método de obtención. Los cálculos siguientes verifican referencias para
+la explicación del problema; no evalúan todavía el mecanismo adaptativo
+PIKAN propuesto.
+
+\subsection{P1. Poisson: equilibrio y frecuencia distribuida}
+
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth,height=.30\textheight,keepaspectratio]{p1-problem.pdf}
+\caption[P1: ilustración del problema de Poisson]{Ilustración de P1 con Fiziko: placa cuadrada, fuente distribuida y valor impuesto en los bordes. Puede interpretarse como una diferencia de temperatura respecto de la frontera. Para $k=4$, la fuente manufacturada alterna generación y extracción; el dibujo identifica los datos y no representa un campo calculado.}\label{fig:p1-problem}
+\end{figure}
+
+
+Considérese el cuadrado unitario $\Omega=(0,1)^2$ y el problema
+\begin{equation}
+-\Delta u=f_k \quad \text{en }\Omega,
+\qquad u=0 \quad \text{en }\partial\Omega,
+\qquad
+u_k^*(x,y)=\sin(k\pi x)\sin(k\pi y),
+\label{eq:expansion-p1-poisson}
+\end{equation}
+donde
+\begin{equation}
+f_k(x,y)=2(k\pi)^2u_k^*(x,y).
+\label{eq:expansion-p1-source}
+\end{equation}
+La función $u_k^*$ se anula en los cuatro lados, por lo que satisface la
+condición de Dirichlet sin corrección adicional. Además,
+$\partial_{xx}u_k^*=-(k\pi)^2u_k^*$ y
+$\partial_{yy}u_k^*=-(k\pi)^2u_k^*$; por tanto,
+$-\Delta u_k^*=2(k\pi)^2u_k^*=f_k$. La igualdad es una verificación por
+sustitución de la solución manufacturada, no una aproximación de los valores
+de $u$.
+
+La interpretación física más simple es un estado estacionario: el operador
+$-\Delta$ mide cómo la curvatura del campo compensa una fuente distribuida.
+Si $u$ representa temperatura en un medio homogéneo, $f$ puede representar
+generación interna de calor; si representa un potencial, $f$ desempeña el
+papel de una densidad de fuente. En ambos casos no hay una dirección de
+propagación ni una condición inicial. La frontera fija el nivel del campo y
+el interior ajusta su curvatura para satisfacer el balance.
+
+El parámetro $k$ cambia la escala espacial sin cambiar la amplitud máxima de
+$u_k^*$. Los ceros consecutivos de $\sin(k\pi x)$ están separados por
+$1/k$, mientras que la curvatura y la fuente crecen como $k^2$. Para leer
+la oscilación sin mezclarla con una región de interés arbitraria, puede
+tomarse el corte
+\begin{equation}
+u_k^*\!\left(x,\frac{1}{2k}\right)=\sin(k\pi x),
+\label{eq:expansion-p1-corte}
+\end{equation}
+porque $\sin(k\pi/(2k))=1$. Así, $k=1$ muestra una variación amplia y
+$k=4$ muestra cuatro semiondas en la misma longitud. La familia permite
+preguntar si la representación resuelve frecuencia distribuida en todo el
+dominio; una ganancia en P1 no puede interpretarse automáticamente como
+localización de capacidad en una interfaz o frente.
+
+\paragraph{Solución y comprobación.}
+Los mapas se obtienen de la fórmula exacta. Como comprobación independiente,
+se discretiza $-\Delta$ con el stencil centrado de cinco puntos y se resuelve
+el sistema disperso con Dirichlet homogéneo. Al pasar de 33 a 65 y 129 nodos
+por eje, el error relativo discreto se reduce aproximadamente por cuatro en
+cada refinamiento, coherente con segundo orden. El residual algebraico se
+comprueba por separado: resolver bien el sistema discreto no elimina su
+error de discretización. Esta comparación aplica el método de diferencias
+finitas desarrollado más adelante sin usar datos de entrenamiento.
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{p1-solution.pdf}
+\caption[P1: solución y comprobación]{Solución exacta de Poisson para $k=1$ y $k=4$, cortes en $y=1/(2k)$ y comprobación independiente por diferencias finitas para $k=4$. Se resuelve el sistema discreto con 33, 65 y 129 nodos por eje. El panel de error compara la aproximación con la fórmula exacta en los nodos interiores; la pendiente de referencia es de segundo orden.}\label{fig:expansion-p1-poisson}
+\end{figure}
+
+
+La forma débil hace explícita la misma lectura. Para una prueba $v$ que se
+anula en $\partial\Omega$,
+\begin{equation}
+\int_\Omega \nabla u\cdot\nabla v\,\mathrm d x
+ =\int_\Omega f_kv\,\mathrm d x.
+\label{eq:expansion-p1-debil}
+\end{equation}
+El lado izquierdo mide el trabajo asociado a los gradientes y el derecho la
+acción de la fuente. Una discretización puede aproximar esta identidad aun
+cuando el campo local tenga error; por ello se deben distinguir balance
+integral, error de campo y error de derivadas. Esta distinción es central al
+comparar una aproximación neuronal con una referencia clásica
+\cite{evans1998pde,fenics2016}.
+
+\subsection{P2. Burgers: transporte no lineal, difusión y frente}
+
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth,height=.30\textheight,keepaspectratio]{p2-problem.pdf}
+\caption[P2: ilustración del transporte y la difusión]{Ilustración de P2 con Fiziko: medio unidimensional en el que el propio campo controla el transporte y la viscosidad suaviza el frente. Las flechas explican el mecanismo de Burgers y las fronteras corresponden a trazas de la onda exacta. Es un modelo escalar, no una reconstrucción de un conducto tridimensional.}\label{fig:p2-problem}
+\end{figure}
+
+
+En $x\in[-1,1]$ y $t\in[0,1]$, el segundo contrato es
+\begin{equation}
+u_t+u\,u_x-\nu u_{xx}=0,
+\qquad
+u^*(x,t)=c-A\tanh q,
+\qquad
+q=\frac{A(x-ct-x_0)}{2\nu}.
+\label{eq:expansion-p2-burgers}
+\end{equation}
+La condición inicial y las dos condiciones de frontera son las trazas de
+$u^*$:
+\begin{equation}
+u(x,0)=u^*(x,0),
+\qquad
+u(-1,t)=u^*(-1,t),
+\qquad
+u(1,t)=u^*(1,t).
+\label{eq:expansion-p2-conditions}
+\end{equation}
+Se fijan $A=0.5$, $x_0=-0.25$,
+$c\in\{0,0.5\}$ y $\nu\in\{0.02,0.005\}$. El centro del frente está en
+$x_f(t)=ct+x_0$: con $c=0$ permanece estacionario y con $c=0.5$ recorre
+media unidad durante el intervalo temporal. La frontera dependiente del
+tiempo no es un forzamiento añadido; es la traza necesaria para mantener la
+onda exacta al entrar o salir del dominio.
+
+La sustitución muestra qué términos se equilibran. Si
+$S=\operatorname{sech}^2q$, entonces
+\begin{equation}
+u_x=-\frac{A^2}{2\nu}S,
+\qquad
+u_t=-c\,u_x,
+\qquad
+u_{xx}=\frac{A^3}{2\nu^2}S\tanh q.
+\label{eq:expansion-p2-derivatives}
+\end{equation}
+Como $u-c=-A\tanh q$,
+\begin{equation}
+u_t+u u_x=(u-c)u_x
+ =\frac{A^3}{2\nu}S\tanh q
+ =\nu u_{xx}.
+\label{eq:expansion-p2-balance}
+\end{equation}
+El término $u u_x$ transporta la forma mediante la velocidad local; la
+difusión $\nu u_{xx}$ impide que la transición se vuelva discontinua. El
+ancho característico $\ell=2\nu/A$ vale $0.08$ cuando $\nu=0.02$ y
+$0.02$ cuando $\nu=0.005$. El máximo del gradiente tiene magnitud
+$A^2/(2\nu)$, que pasa de $6.25$ a $25$ al reducir $\nu$. La amplitud del
+campo apenas cambia, pero la derivada que entra en el residual se concentra
+en una región cuatro veces más estrecha.
+
+Esta relación explica por qué P2 es una prueba de resolución localizada. Una
+aproximación puede tener valores razonables fuera del frente y, al mismo
+tiempo, perder la curvatura que equilibra transporte y difusión. También
+explica por qué movimiento y estrechamiento son dificultades distintas: $c$
+cambia la posición de la señal en el espacio-tiempo, mientras $\nu$ cambia
+la escala de sus derivadas. La familia y sus ondas viajeras tienen antecedente
+analítico en la literatura de Burgers \cite{burgerswaves2025}; los cuatro
+cruces de parámetros pertenecen al contrato finito de este proyecto.
+
+\paragraph{Solución y comprobación.}
+La gráfica representa la onda exacta y sus trazas, no un ajuste a muestras.
+La sustitución de sus derivadas verifica la identidad de Burgers para los
+cuatro cruces de $c$ y $\nu$ del contrato, con residual del orden del
+redondeo de doble precisión. Por ello esta fórmula sirve como referencia
+directa para medir error de campo y error del frente en futuras aproximaciones.
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{p2-solution.pdf}
+\caption[P2: solución y comprobación]{Solución exacta de Burgers con $A=0.5$, $c=0.5$, $x_0=-0.25$ y $\nu=0.02$: mapa espacio--tiempo y perfiles a $t=0,0.5,1$. La línea discontinua del mapa sigue $x_f(t)=ct+x_0$. Las condiciones iniciales y de frontera son las trazas de la misma solución.}\label{fig:expansion-p2-burgers}
+\end{figure}
+
+
+\subsection{P3. Allen--Cahn: reacción, energía e interfaz}
+
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth,height=.30\textheight,keepaspectratio]{p3-problem.pdf}
+\caption[P3: ilustración de fases e interfaz]{Ilustración de P3 con Fiziko: regiones de fase y una zona de transición, con difusión y reacción. Los símbolos $-1$ y $+1$ identifican estados preferidos. La disposición de fases es conceptual; la evolución del dato inicial se muestra por separado en la gráfica de solución.}\label{fig:p3-problem}
+\end{figure}
+
+
+El tercer problema conserva el contrato del ejemplo documentado de DeepXDE:
+\begin{align}
+u_t-d u_{xx}-5(u-u^3)&=0,
+&&x\in[-1,1],\quad t\in[0,1],\quad d=0.001,\\
+u(x,0)&=x^2\cos(\pi x),
+&&u(-1,t)=u(1,t)=-1.
+\label{eq:expansion-p3-allen-cahn}
+\end{align}
+Puede escribirse como un flujo de gradiente de la energía
+\begin{equation}
+\mathcal E[u]=\int_{-1}^{1}
+\left[\frac d2|u_x|^2+W(u)\right]\,\mathrm d x,
+\qquad
+W(u)=\frac54(u^2-1)^2.
+\label{eq:expansion-p3-energy}
+\end{equation}
+En efecto, $W'(u)=5(u^3-u)$ y la ecuación equivale a
+$u_t=d u_{xx}-W'(u)$. La reacción $5(u-u^3)$ empuja el campo hacia los
+estados estables $u=\pm1$ y hace inestable el estado $u=0$; el término
+difusivo penaliza cambios espaciales demasiado bruscos. La solución debe
+resolver ambos impulsos, además de acomodarse al dato inicial y a las
+fronteras fijadas en $-1$.
+
+La escala de una interfaz se obtiene al equilibrar difusión y reacción. Para
+el perfil estacionario idealizado que conecta $-1$ con $+1$,
+\begin{equation}
+u_{\rm kink}(x)=
+\tanh\!\left(\frac{x-x_c}{\ell_{\rm AC}}\right),
+\qquad
+\ell_{\rm AC}=\sqrt{\frac{2d}{5}}=0.02.
+\label{eq:expansion-p3-kink}
+\end{equation}
+La cifra $0.02$ es la escala del perfil de transición para $d=0.001$; no es
+una afirmación de que la evolución con el dato inicial del contrato tenga una
+única interfaz de ese ancho en todo tiempo. El estado inicial
+$x^2\cos(\pi x)$ puede producir varias zonas de transición, y las
+condiciones $u(\pm1,t)=-1$ influyen en su evolución. La máscara física de
+una interfaz debe construirse a partir del campo de referencia cuando se
+evalúa el problema, no a partir de la forma idealizada de esta explicación.
+
+\paragraph{Solución numérica y sensibilidad a la resolución.}
+Se discretiza el término difusivo con diferencias centradas de segundo
+orden y se integra el sistema de ecuaciones ordinarias mediante BDF, usando
+su Jacobiano disperso analítico. Las fronteras se fijan exactamente en $-1$.
+Se comparan 401, 801 y 1601 nodos espaciales sobre 301 tiempos de salida
+comunes. La diferencia máxima entre los dos últimos refinamientos es
+$4.36\times10^{-4}$, y el cociente entre diferencias sucesivas es 3.94.
+Al reducir las tolerancias relativas de $10^{-9}$ a $10^{-11}$ y absolutas
+de $10^{-11}$ a $10^{-13}$ en la malla fina, la diferencia máxima es
+$6.14\times10^{-9}$: en esta comparación domina la sensibilidad espacial.
+Estas son comprobaciones de autoconvergencia y de tolerancia, no una cota
+demostrada del error absoluto.
+
+La energía discreta usa diferencias entre nodos para aproximar
+$\int d|u_x|^2/2+W(u)\,dx$ y decrece en los tiempos de salida. Para una
+solución suave con fronteras fijas, multiplicar
+$u_t=d u_{xx}-W'(u)$ por $u_t$ e integrar da
+\[
+\frac{\mathrm d\mathcal E}{\mathrm dt}=-\int_{-1}^1|u_t|^2\,dx\leq0.
+\]
+Así se relaciona el panel de energía con el mecanismo físico. Allen--Cahn
+describe un parámetro de orden no conservado: la reacción puede cambiar su
+integral espacial, aunque la energía disminuya. La forma de los frentes
+resulta del problema inicial completo, a diferencia del perfil ideal de una
+sola interfaz en la recta.
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{p3-solution.pdf}
+\caption[P3: solución y comprobación]{Solución numérica del problema Allen--Cahn con $d=0.001$, $u(x,0)=x^2\cos(\pi x)$ y $u(\pm1,t)=-1$. Se emplean diferencias centradas y BDF, con 1601 nodos en la solución mostrada. Los paneles incluyen campo, cortes, energía discreta y diferencias entre refinamientos, evaluadas en nodos y tiempos comunes.}\label{fig:expansion-p3-allen-cahn}
+\end{figure}
+
+
+Allen--Cahn introduce una diferencia importante respecto de Burgers. En
+Burgers la transición se mueve por un balance entre advección y difusión; en
+Allen--Cahn la transición también puede cambiar porque el campo desciende por
+un potencial local con dos estados preferidos. Por eso el valor de $u$ y su
+gradiente tienen interpretaciones simultáneas: estar cerca de $\pm1$ indica
+fase, mientras que $|u_x|$ identifica una interfaz. Una representación que
+suaviza demasiado la interfaz puede reducir una medida global y aun así
+desplazar el lugar donde el campo cambia de fase. La formulación y las
+condiciones se mantienen coherentes con el ejemplo de DeepXDE versión 1.12.2
+\cite{deepxdeAC}.
+
+\subsection{P4. Navier--Stokes: flujo DFG alrededor de un cilindro}
+
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth,height=.30\textheight,keepaspectratio]{p4-problem.pdf}
+\caption[P4: ilustración del canal con cilindro]{Ilustración de P4 con Fiziko: canal y cilindro fijo, entrada parabólica, paredes sin deslizamiento y salida natural. Las flechas de entrada son datos prescritos. La geometría y las fronteras se distinguen de las líneas de corriente calculadas en la figura de solución.}\label{fig:p4-problem}
+\end{figure}
+
+
+El benchmark DFG 2D-1 considera flujo estacionario incompresible alrededor de
+un cilindro. El dominio es el canal
+\begin{equation}
+\Omega=([0,2.2]\times[0,0.41])
+\setminus\overline{B_{0.05}(0.2,0.2)},
+\label{eq:expansion-p4-domain}
+\end{equation}
+con densidad unitaria, viscosidad cinemática $\nu=0.001$ y campos
+$\mathbf u=(u,v)$ y $p$. El sistema local es
+\begin{align}
+u u_x+v u_y+p_x-\nu(u_{xx}+u_{yy})&=0,\\
+u v_x+v v_y+p_y-\nu(v_{xx}+v_{yy})&=0,\\
+u_x+v_y&=0.
+\label{eq:expansion-p4-ns}
+\end{align}
+Los dos primeros renglones expresan el balance de momento: la convección
+transporta momento, el gradiente de presión lo redistribuye y la viscosidad
+disipa gradientes. El tercero impone que el volumen no se comprima; no es una
+ecuación auxiliar que pueda omitirse sin cambiar el problema.
+
+La entrada del canal prescribe el perfil parabólico
+\begin{equation}
+\mathbf u_{\rm in}(y)=
+\left(\frac{4(0.3)y(0.41-y)}{0.41^2},0\right),
+\label{eq:expansion-p4-inlet}
+\end{equation}
+cuya velocidad máxima es $0.3$ en la línea media y cuya media transversal
+es $0.2$. Las paredes del canal y la circunferencia del cilindro tienen
+condición de no deslizamiento, $\mathbf u=\mathbf0$. En la salida se usa,
+con la convención del benchmark para el operador Laplaciano,
+\begin{equation}
+\nu\,\partial_n\mathbf u-p\mathbf n=\mathbf0.
+\label{eq:expansion-p4-outlet}
+\end{equation}
+Esta condición deja salir el flujo sin fijar artificialmente un valor de
+presión adicional. Con $L=0.1$ como diámetro y $U=0.2$ como velocidad de
+referencia, $Re=UL/\nu=20$, de modo que el caso es laminar y permite
+examinar la estela sin convertir el problema en un estudio de turbulencia.
+
+La forma integral conecta la PDE con las cantidades de ingeniería. Como
+$\nabla\cdot\mathbf u=0$ y $\nu$ es constante, para un volumen de control
+$K\subset\Omega$ sin fuerza volumétrica se obtiene
+\begin{equation}
+\int_{\partial K}
+\left[\mathbf u(\mathbf u\cdot\mathbf n)+p\mathbf n
+      -\nu(\nabla\mathbf u)\mathbf n\right]\,\mathrm d s=\mathbf0.
+\label{eq:expansion-p4-integral}
+\end{equation}
+Cada cara intercambia flujo convectivo, presión y esfuerzo viscoso. Sobre el
+cilindro, la tracción según la convención usada en el contrato es
+$\boldsymbol\sigma_b\mathbf n$, con
+$\boldsymbol\sigma_b=\nu\nabla\mathbf u-pI$. Por tanto,
+\begin{equation}
+\begin{pmatrix}F_D\\F_L\end{pmatrix}
+ =\int_S\boldsymbol\sigma_b\mathbf n\,\mathrm d s,
+\qquad
+C_D=\frac{2F_D}{U^2L},
+\qquad
+C_L=\frac{2F_L}{U^2L}.
+\label{eq:expansion-p4-forces}
+\end{equation}
+En esta integral, $\mathbf n$ apunta hacia fuera del cilindro y hacia el
+fluido; es el opuesto de la normal exterior del dominio fluido sobre esa
+frontera interna. Declarar esta orientación evita invertir los signos de
+las fuerzas.
+
+La solución permite leer el balance espacialmente. El obstáculo desvía el
+flujo hacia los pasos laterales, donde aumenta la rapidez, mientras que el
+no deslizamiento obliga a anularla en la superficie. La presión participa
+en esa desviación y en el frenado frontal; la viscosidad transmite el efecto
+de las paredes al fluido cercano. La presión no se calcula mediante una
+ley de estado de compresibilidad: en este modelo ajusta el campo de
+velocidad para satisfacer simultáneamente el balance y la restricción
+$\nabla\!\cdot\mathbf u=0$. Las líneas de corriente son tangentes a la
+velocidad calculada; al ser estacionario este caso, también describen
+trayectorias de partículas ideales del campo resuelto.
+
+El benchmark publica valores de arrastre, sustentación y caída de presión que
+se usan como controles externos en la metodología; no son resultados
+producidos por esta propuesta \cite{dfgRe20}.
+
+\paragraph{Solución FEM y comprobación.}
+La discretización empleó elementos triangulares Taylor--Hood \(P_2/P_1\) para
+velocidad y presión. Cada nivel se generó con Delaunay y una frontera
+poligonal explícita para el cilindro; el número de segmentos de esa frontera
+creció junto con la resolución de fondo. La convección se continuó mediante
+Picard y se remató con correcciones de Newton. La tabla resume la corrida
+completa que produjo los campos de la figura.
+
+\begin{center}
+\small
+\begin{tabular}{lrrrrrr}
+\hline
+nivel & $n_x\times n_y$ & segmentos & elementos & $N_u$ & $N_p$ & Picard+Newton\\
+\hline
+grueso & $34\times8$ & 32 & 734 & 3168 & 425 & 18+1\\
+medio  & $52\times12$ & 48 & 1526 & 6456 & 851 & 18+1\\
+fino   & $76\times18$ & 64 & 3100 & 12904 & 1676 & 18+1\\
+\hline
+\end{tabular}
+\end{center}
+
+En el nivel fino, el residuo débil libre fue
+\(2.11\times10^{-18}\), el residuo de continuidad débil
+\(1.95\times10^{-18}\), el error de traza de entrada
+\(4.14\times10^{-17}\) y el máximo de no deslizamiento
+\(7.22\times10^{-16}\). El cierre integral de flujo fue
+\(2.54\times10^{-15}\) relativo, con flujos de entrada y salida
+\(-0.0820\) y \(0.0820\), respectivamente; la traza de salida evaluada con
+la condición natural tuvo norma \(7.18\times10^{-7}\). La norma \(L^2\) de
+la divergencia evaluada dentro de los elementos bajó de
+\(1.40\times10^{-1}\) a \(6.21\times10^{-2}\); la restricción débil de
+continuidad se reporta por separado porque es la que impone el espacio mixto.
+
+Los funcionales obtenidos en las tres mallas fueron
+\[
+\begin{array}{c|rrr}
+ & C_D & C_L & \Delta p\\\hline
+\text{gruesa} & 5.51699 & 0.00544 & 0.11364\\
+\text{media}  & 5.52807 & 0.01015 & 0.12186\\
+\text{fina}   & 5.52153 & -0.00651 & 0.11555
+\end{array}
+\]
+con \(\Delta p=p(0.15,0.2)-p(0.25,0.2)\) y
+\(\boldsymbol\sigma=\nu\nabla\mathbf u-pI\) integrada con la normal
+exterior al cilindro. Como control externo, el benchmark publica
+\(C_D=5.57953523384\), \(C_L=0.010618948146\) y
+\(\Delta p=0.11752016697\)~\cite{dfgRe20}. La comparación entre niveles da
+ cambios relativos medio--fino de \(0.24\%\) en velocidad y \(0.99\%\) en
+ presión de media cero, pero \(5.18\%\) en \(\Delta p\); además, el signo de
+ \(C_L\) no se estabiliza. Por ello estos resultados documentan una solución
+ FEM reproducible y sus balances, pero no se presentan como certificación de
+ convergencia de todas las cantidades integrales. Las imágenes de velocidad,
+ presión y líneas de corriente se obtuvieron exclusivamente interpolando el
+ campo resuelto y enmascarando el mismo polígono sólido de la malla.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{p4-solution.pdf}
+\caption[P4: solución FEM de velocidad y presión]{Solución FEM calculada del problema estacionario de Navier--Stokes
+DFG 2D-1 a $\mathrm{Re}=20$ en la malla fina Taylor--Hood $P_2/P_1$.
+Las tres filas muestran, respectivamente, la magnitud de velocidad, la
+presión y las líneas de corriente calculadas a partir de los grados de
+libertad resueltos; el cilindro poligonal y su máscara sólida se conservan en
+los tres paneles. La entrada tiene velocidad máxima $0.3\,\mathrm{m/s}$ y
+media $0.2\,\mathrm{m/s}$, las paredes y el cilindro son no deslizantes, y la
+salida usa $\nu\,\partial_n\mathbf u-p\mathbf n=0$. La corrida satisface
+residuo débil y balance de flujo, pero la tabla de refinamiento no estabiliza
+el funcional de sustentación; por tanto la imagen se presenta como solución
+reproducible con verificación de balances, sin certificado de convergencia
+integral.}\label{fig:expansion-p4-dfg}
+\end{figure}
+
+
+El carácter canónico de DFG proviene de que un campo visualmente plausible no
+garantiza el balance. Una pequeña violación de $u_x+v_y=0$ acumula flujo
+espurio; una presión con nivel o signo inconsistente altera la tracción; y
+una salida mal impuesta puede contaminar la estela. Por eso el desempeño debe
+leerse en campos y en observables integrales: arrastre, sustentación y caída
+de presión. La geometría curva y el no deslizamiento junto al cilindro
+introducen gradientes donde una descripción global suave puede parecer
+adecuada lejos de la superficie y fallar en la región que determina las
+fuerzas.
+
+\subsection{Lectura conjunta del cuarteto}
+
+P1 cambia la frecuencia en todo el dominio; P2 concentra una derivada en un
+frente que puede moverse; P3 combina un potencial local con una interfaz cuya
+escala se obtiene de un balance reacción--difusión; y P4 exige compatibilidad
+entre campos, frontera curva y cantidades integrales. La secuencia permite
+separar cuatro preguntas físicas: si una representación resuelve variación
+distribuida, si conserva una transición transportada, si mantiene estados y
+interfaces, y si satisface un balance vectorial con incompresibilidad.
+
+Las parejas de ilustración y solución acompañan esas preguntas desde dos
+perspectivas: los datos del sistema y el campo que los satisface. En P1 y P2
+se dispone de soluciones exactas; en P3 y P4 se usan aproximaciones numéricas
+con comprobaciones de resolución y balance. Su propósito es preparar la lectura de
+las métricas y referencias del capítulo de metodología. La evidencia de una
+hipótesis sobre adaptación solo podrá provenir de comparaciones reproducibles
+con esas referencias; las ilustraciones presentes aquí explican el problema,
+pero no sustituyen tal evidencia.

@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "runner_return_code": 0,
+  "runner_sha256": "47c02c9279e564729feee848f4f9266a746aa19869727dcb47d682ad0a103241",
+  "visible_gpus": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "notebook_cell_wall_seconds": 3472.648912451,
+  "session_quota_cap_seconds": 7200.0,
+  "execution_cap_seconds": 6900.0,
+  "output_directory": "/kaggle/working/allen-cahn-t4x2/campaign",
+  "runner_log": "/kaggle/working/allen-cahn-t4x2/runner.log",
+  "field_reference": "GPU FD-RK4 candidate only; failed gates block scoring, and passing scores still need independent review before acceptance"
+}

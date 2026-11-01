@@ -1,0 +1,32 @@
+La referencia numérica P5 se resolvió en el rectángulo efectivo
+de dimensiones \(L=0.1\,\mathrm{m}\) y \(H=10^{-3}\,\mathrm{m}\), dividido en
+dos capas con interfaz alineada en \(y=H/2\). Se usaron triángulos
+conformes cuadráticos \(P_2\), una regla de cuadratura de Dunavant de siete
+puntos y el sistema acoplado físico
+\[
+\begin{bmatrix}K_{dd}&K_{d\phi}\\K_{\phi d}&-K_{\phi\phi}\end{bmatrix}
+\begin{bmatrix}d\\\phi\end{bmatrix}=0,
+\]
+con el orden global \((d_x,d_y,\phi)\) por nodo. El borde izquierdo se fijó
+en \(d=(0,0)\); los demás bordes mecánicos son naturales, mientras que
+\(\phi=0\) en la cara inferior, \(\phi=100\,\mathrm{V}\) en la superior y los
+extremos laterales tienen \(D\!\cdot n=0\). La interfaz comparte los grados
+de libertad conformes y por ello impone continuidad de \(d\) y \(\phi\), con
+las condiciones de transmisión naturales para tracción y flujo normal.
+
+La malla fina usada en la figura tiene 3072 elementos y 6369 nodos \(P_2\).
+La flecha en \((L,H/2)\) es
+\(d_y=-1.059806\times10^{-5}\,\mathrm{m}\); el cambio relativo entre las dos mallas más finas es
+0.311\%. La carga libre del electrodo superior, por unidad de espesor
+fuera del plano, es
+\(Q_T=1.053905\times10^{-6}\,\mathrm{C/m}\) y cambia
+0.002\% en esa misma comparación. El residual infinito de los grados
+de libertad libres es
+\(2.284210\times10^{-18}\) en las unidades escaladas de P5. Para no invertir la convención
+de signos, \(Q_T=-\int_{\Gamma_T}D\!\cdot n\,ds\): el residual eléctrico
+de potencial prescrito es el flujo saliente del material y tiene el signo
+opuesto al de la carga libre sobre el electrodo. La deformada del panel
+correspondiente se amplifica por el factor calculado
+28.3071; ese factor es solo visual. Esta salida es una referencia
+numérica didáctica de la formulación efectiva 2-D, no una validación
+experimental ni una aprobación de resultados de investigación.

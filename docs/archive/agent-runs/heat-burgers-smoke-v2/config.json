@@ -1,0 +1,136 @@
+{
+  "project": {
+    "name": "AF_PIKANs",
+    "ontology": "pikan-research"
+  },
+  "iteration": {
+    "id": "integration-heat-burgers-v2",
+    "experiment_id": "EXP-0002",
+    "protocol_phase": "exploratory",
+    "domain_level": "canonical_pde",
+    "problem_id": "heat_and_burgers",
+    "model_id": "rbf_fixed_3648",
+    "focalization_id": "none",
+    "hypothesis_id": "signal_observation"
+  },
+  "hypothesis": {
+    "statement": "Observe internal RBF signals under fixed scrambled Sobol sampling before designing focalization.",
+    "expected_effect": "Measured signals and validation errors, without a superiority claim.",
+    "falsification_condition": "Nonfinite training, invalid derivative checks, missing evidence; informative-signal hypothesis remains undecided."
+  },
+  "problem": {
+    "sequence": [
+      "heat",
+      "burgers"
+    ],
+    "heat": {
+      "alpha": 0.1,
+      "x": [
+        0,
+        1
+      ],
+      "t": [
+        0,
+        1
+      ]
+    },
+    "burgers": {
+      "nu": 0.02,
+      "c": 0,
+      "A": 0.5,
+      "x0": -0.25,
+      "x": [
+        -1,
+        1
+      ],
+      "t": [
+        0,
+        1
+      ]
+    }
+  },
+  "model": {
+    "implementation": "src/research_pipeline/sciml/campaign.py",
+    "widths": [
+      2,
+      16,
+      16,
+      1
+    ],
+    "rbf_count": 11,
+    "rbf_centers": [
+      -1.05,
+      1.05
+    ],
+    "rbf_width": 0.21,
+    "rbf_trainable_geometry": false,
+    "hidden_activation": "tanh",
+    "edge_base": "silu",
+    "initialization_std": "0.1/sqrt(input_width)",
+    "precision": "float64"
+  },
+  "training": {
+    "seeds": [
+      101
+    ],
+    "steps_per_problem": 3,
+    "seconds_per_problem": 60,
+    "interior_points": 64,
+    "boundary_points": 32,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "sampling": "scrambled_sobol_fixed",
+    "seed_offsets": {
+      "interior": 1,
+      "diagnostic": 2,
+      "boundary": 3,
+      "initial": 4
+    },
+    "diagnostic_every": 2,
+    "diagnostic_points": 16,
+    "sensitivity_points": 2,
+    "cpu_threads": 2,
+    "accelerator": "cpu"
+  },
+  "tracking": {
+    "entity": "man22611-uvg",
+    "project": "AF_PIKANS",
+    "mode": "offline"
+  },
+  "remote": {
+    "enable_internet": true,
+    "runtime_dependencies": [
+      "pina-mathlab==0.3.2.post2609",
+      "wandb==0.30.0",
+      "plotly==7.1.0",
+      "scipy==1.15.3"
+    ]
+  },
+  "focalization": {
+    "enabled": false,
+    "bounded_edit_surface": []
+  },
+  "acceptance_gates": {
+    "metrics": {
+      "heat/relative_l2_error": {
+        "required": true,
+        "direction": "minimize"
+      },
+      "burgers/relative_l2_error": {
+        "required": true,
+        "direction": "minimize"
+      }
+    }
+  },
+  "artifacts": {
+    "expected": [
+      "metrics.json",
+      "decision_note.md",
+      "problem_status.json",
+      "versions.json",
+      "config.json",
+      "evidence_hashes.json"
+    ]
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "parameter_decisions_file": "experiments/EXP-0003-allen-cahn-rbf-sobol/parameter-decisions.md",
+  "project": {
+    "name": "AF_PIKANs",
+    "ontology": "pikan-research"
+  },
+  "iteration": {
+    "id": "allen-cahn-rbf-sobol-EXP-0003",
+    "experiment_id": "EXP-0003",
+    "protocol_phase": "exploratory",
+    "domain_level": "canonical_pde",
+    "problem_id": "allen_cahn_1d",
+    "model_id": "rbf_fixed",
+    "focalization_id": "none_fixed_sobol",
+    "hypothesis_id": "allen_cahn_signal_profile"
+  },
+  "hypothesis": {
+    "statement": "Measure reproducible training, sampling, autodifferentiation, residual, basis, trace, energy, and runtime signals for the declared 1D Allen\u2013Cahn problem using fixed RBF-PIKAN and scrambled Sobol points.",
+    "expected_effect": "Produce a per-seed exploratory profile that can inform a later, separately preregistered sampling hypothesis; no improvement over another method is expected or tested.",
+    "falsification_condition": "A technical run is invalid if parameters, predictions, derivatives, residuals, or required traces are non-finite; a smaller residual alone does not establish solution quality or superiority."
+  },
+  "problem": {
+    "sequence": [
+      "allen_cahn"
+    ],
+    "allen_cahn": {
+      "evaluation_id": "allen_cahn_1d",
+      "definition": "allen_cahn_deepxde_1_12_2_dirichlet",
+      "diffusion": 0.001,
+      "reaction": 5.0,
+      "residual_scale": 6.001,
+      "initial_condition": "x^2*cos(pi*x)",
+      "boundary_values": [
+        -1.0,
+        -1.0
+      ],
+      "hard_transform": "x^2*cos(pi*x)+t*(1-x^2)*N(x,t)",
+      "x": [
+        -1.0,
+        1.0
+      ],
+      "t": [
+        0.0,
+        1.0
+      ],
+      "field_error_status": "locked_pending_reference",
+      "evaluation_times": [
+        0.5,
+        1.0
+      ],
+      "energy_points": 17,
+      "diagnostic_grid": {
+        "nx": 17,
+        "nt": 9
+      },
+      "evaluation_chunk_size": 32
+    }
+  },
+  "model": {
+    "id": "rbf_fixed",
+    "label": "RBF-PIKAN fija",
+    "implementation": "src/research_pipeline/sciml/campaign.py",
+    "architecture": [
+      2,
+      16,
+      16,
+      1
+    ],
+    "basis_count": 11,
+    "centers": [
+      -1.05,
+      1.05
+    ],
+    "width": 0.21,
+    "geometry_trainable": false,
+    "expected_parameters": 3648
+  },
+  "training": {
+    "accelerator": "cpu",
+    "cpu_threads": 2,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "batch_size": 16,
+    "sampling": "scrambled_sobol_fixed",
+    "interior_points": 64,
+    "heldout_points": 128,
+    "boundary_points": 16,
+    "diagnostic_points": 16,
+    "sensitivity_points": 2,
+    "diagnostic_every": 4,
+    "metric_log_every": 2,
+    "steps_per_problem": 8,
+    "seconds_per_problem": 120,
+    "seeds": [
+      101
+    ],
+    "seed_offsets": {
+      "interior": 1,
+      "diagnostic": 2,
+      "boundary": 3,
+      "initial": 4,
+      "heldout": 5
+    },
+    "problem_overrides": {}
+  },
+  "focalization": {
+    "enabled": false,
+    "bounded_edit_surface": []
+  },
+  "acceptance_gates": {
+    "metrics": {
+      "allen_cahn/normalized_residual_mean": {
+        "direction": "minimize",
+        "required": true,
+        "threshold": null
+      }
+    },
+    "scientific_acceptance": false,
+    "field_error": "locked_pending_reference"
+  },
+  "budget": {
+    "approval": "explicit_user_request_in_conversation",
+    "approved": true,
+    "max_seed_training_seconds": 1200,
+    "max_seed_count": 3,
+    "max_parallel_seeds": 2,
+    "max_total_gpu_seconds": 3600,
+    "hardware": "2xNvidiaTeslaT4"
+  },
+  "research_status": {
+    "execution_authorized": true,
+    "scientific_preregistration_signed": false,
+    "baseline_frozen": false,
+    "scientific_accepted": false,
+    "field_error_locked": true,
+    "remote_exact_bundle_approval_required": true
+  },
+  "tracking": {
+    "entity": "man22611-uvg",
+    "project": "AF_PIKANS",
+    "group": "allen-cahn-rbf-sobol-EXP-0003",
+    "mode": "offline"
+  },
+  "remote": {
+    "enable_internet": true,
+    "machine_shape": "NvidiaTeslaT4",
+    "max_parallel_seeds": 2,
+    "run_timeout_sec": 2100,
+    "setup_timeout_sec": 900,
+    "runtime_dependencies": [
+      "pina-mathlab==0.3.2.post2609",
+      "wandb==0.30.0",
+      "plotly==7.1.0",
+      "scipy==1.15.3",
+      "pandas==2.2.3"
+    ]
+  },
+  "artifacts": {
+    "expected": [
+      "metrics.json",
+      "decision_note.md",
+      "problem_status.json",
+      "versions.json",
+      "config.json",
+      "provenance.json",
+      "hardware.json",
+      "gpu_telemetry.csv",
+      "gpu_telemetry_status.json",
+      "allen_cahn/pools.npz",
+      "allen_cahn/sampling_signals.json",
+      "allen_cahn/history.jsonl",
+      "allen_cahn/diagnostic_signals.json",
+      "allen_cahn/training_summary.json",
+      "allen_cahn/validation.json",
+      "allen_cahn/validation.npz",
+      "allen_cahn/validation.html",
+      "allen_cahn/energy.csv",
+      "allen_cahn/energy.html",
+      "allen_cahn/training-losses-log.html",
+      "allen_cahn/training-signals-log.html",
+      "allen_cahn/signals.json"
+    ]
+  }
+}

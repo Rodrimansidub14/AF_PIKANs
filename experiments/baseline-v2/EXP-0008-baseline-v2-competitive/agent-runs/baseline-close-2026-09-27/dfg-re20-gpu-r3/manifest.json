@@ -1,0 +1,213 @@
+{
+  "acceptance_gates": {
+    "scientific_acceptance": false,
+    "metrics": {
+      "qoi_rel_error/drag_coefficient": {
+        "direction": "minimize",
+        "threshold": null,
+        "required": true
+      },
+      "heldout/global/momentum_x_rms": {
+        "direction": "minimize",
+        "threshold": null,
+        "required": true
+      }
+    },
+    "require_complete_artifacts": true
+  },
+  "artifacts": {
+    "expected": [
+      "metrics.json",
+      "decision_note.md",
+      "dfg_training_pools.npz",
+      "dfg_rbf_pikan.pt",
+      "run.json",
+      "training_history.csv",
+      "dfg_heldout_points.npz",
+      "dfg_heldout_residuals.npz",
+      "dfg_metrics_nested.json",
+      "sampling_signals.json",
+      "diagnostic_signals.json",
+      "dfg_training_losses.html",
+      "dfg_fields.html",
+      "dfg_fields.vtr",
+      "provenance.json",
+      "config.json",
+      "hardware.json",
+      "versions.json",
+      "quantitative_signals.csv",
+      "wandb_status.json"
+    ]
+  },
+  "budget": {
+    "approval": "explicit_user_request_in_current_conversation",
+    "approved": true,
+    "hardware": "2xNvidiaTeslaT4",
+    "max_parallel_seeds": 2,
+    "max_seed_count": 2,
+    "max_seed_training_seconds": 1500,
+    "max_total_gpu_seconds": 3000
+  },
+  "focalization": {
+    "bounded_edit_surface": [],
+    "enabled": false,
+    "family": "baseline_none",
+    "signals": [
+      "interior_sampling_coverage",
+      "boundary_sobol_coverage",
+      "heldout_normalized_residual_global",
+      "heldout_normalized_residual_near_cylinder",
+      "heldout_normalized_residual_wake",
+      "heldout_normalized_residual_far_field",
+      "boundary_velocity_and_outlet_traction_error",
+      "cylinder_drag_lift_pressure_drop_error",
+      "autodifferentiation_cost",
+      "rbf_basis_activation_and_coefficient_norms",
+      "gpu_time_and_memory"
+    ]
+  },
+  "hypothesis": {
+    "expected_effect": "Establish a reproducible, literature-grounded four-problem baseline and quantify which regions/signals deserve later focalization experiments; this fixed-Sobol run does not test an adaptive mechanism.",
+    "statement": "A fixed-center RBF-PIKAN trained on the canonical DFG 2D-1 Re20 Navier-Stokes problem can produce reproducible integral quantities and physically interpretable held-out residual, boundary, sampling, autodifferentiation, and basis-use signals under a fixed compute budget.",
+    "falsification_condition": "A run is technically invalid if CUDA is unavailable, artifacts are incomplete, required values are non-finite, boundary definitions differ from FEATFLOW, or the training/held-out Sobol streams overlap."
+  },
+  "iteration": {
+    "domain_level": "canonical_pde",
+    "experiment_id": "EXP-0007",
+    "focalization_id": "none_fixed_sobol",
+    "hypothesis_id": "fixed-rbf-dfg-re20-reference-qois",
+    "id": "baseline-dfg-re20-rbf-r3-20260927",
+    "model_id": "model.pikan.rbf_fixed_dfg",
+    "problem_id": "dfg_2d_1_steady_re20",
+    "protocol_phase": "exploratory"
+  },
+  "model": {
+    "basis_count": 11,
+    "architecture": [
+      2,
+      16,
+      16,
+      3
+    ],
+    "dtype": "float32",
+    "label": "Fixed Gaussian RBF-PIKAN for DFG Re20",
+    "width": 0.35,
+    "framework": "PyTorch direct AD",
+    "family": "PIKAN",
+    "activation": "tanh after RBF-KAN hidden edge layer",
+    "ontology_id": "model.pikan.rbf_fixed_dfg",
+    "centers": "fixed equally spaced centers [-1,1] per edge",
+    "id": "dfg_rbf_fixed_2_16_16_3",
+    "geometry_trainable": false,
+    "implementation": "src/research_pipeline/sciml/dfg_campaign.py",
+    "rationale": "Direct PyTorch is used for the multi-output second-derivative residual, natural outlet traction and FEATFLOW integrated cylinder-force QoIs."
+  },
+  "parameter_decisions_file": "experiments/EXP-0003-allen-cahn-rbf-sobol/parameter-decisions.md",
+  "parameter_decisions_markdown": "# DFG Re20 — decisiones de parámetro para el baseline exploratorio\n\n## Problema canónico y referencia\n\nSe usa el benchmark FEATFLOW DFG 2D-1 estacionario a Re=20. El dominio es [0,2.2] × [0,0.41], el cilindro tiene centro (0.2,0.2), radio 0.05, ν=0.001 y ρ=1. La entrada es parabólica con Umax=0.3 y Umean=0.2; paredes y cilindro no-slip; la salida usa el do-nothing natural de tracción. Los QoI comparables son Cd=5.57953523384, Cl=0.010618948146 y Δp frente-menos-detrás=0.11752016697. Referencia primaria: https://wwwold.mathematik.tu-dortmund.de/~featflow/en/benchmarks/cfdbenchmarking/flow/dfg_benchmark1_re20.html.\n\n## Arquitectura y optimización\n\nRBF-PIKAN fija centros gaussianos equiespaciados en [-1,1], ancho 0.35 y 11 bases por arista; red [2,16,16,3] para (u,v,p), salida escalada físicamente y dtype float32. Solo se entrenan coeficientes/bases lineales. PyTorch directo calcula derivadas segundas, tracción de salida y fuerzas integradas; se omite PINA en este problema porque esas magnitudes requieren el residual/operador DFG específico. Adam lr=0.001, lote interior 1024, lote por traza 256, máximo 50 000 pasos o 1 200 s por semilla; sin scheduler ni L-BFGS. Tope total 6 000 GPU-s y dos semillas concurrentes sobre hasta dos T4.\n\n## Muestreo y evaluación independiente\n\nCada semilla genera 16 384 puntos interiores mediante Sobol scrambled con rechazo del disco cerrado del cilindro; 512 puntos por segmento se generan con secuencias Sobol 1D independientes y parametrización angular del cilindro sin duplicar extremos. Se guarda cada pool, semillas, rechazos y SHA-256. La evaluación usa otros 16 384 puntos de un stream Sobol independiente (offset +100 000); no optimiza pesos ni elige checkpoints. Se reportan discrepancia centrada y distancias a vecino en coordenadas normalizadas, junto con RMS/media absoluta/p95 de los tres residuales normalizados globalmente, a distancia ≤0.15 del centro del cilindro, en la estela (x>0.25…0.8, |y−0.2|≤0.05) y aguas abajo x>0.8. Trazas aparte: perfil de entrada, no-slip en paredes/cilindro y tracción normal en salida.\n\n## Semillas, métricas y límites\n\nSemillas 301–305; reporte por semilla, media/desviación y error absoluto/relativo en Cd, Cl y Δp frente a FEATFLOW. Señales de autodiferenciación (segundos/punto, puntos/s), GPU (pico de memoria/tiempo), cobertura de bases RBF y normas de coeficientes quedan registradas en CSV/JSON/W&B. PyVista exporta la malla rectilínea VTR sin ventana; Plotly registra contornos del campo, entrenamiento y residuales held-out en escala logarítmica. No se dispone aquí de un campo FEM convergido independiente; no se reporta error L2 de campo ni se declara SOTA/aceptación científica.\n\nEste baseline fija mediciones; no habilita todavía adaptación. Siguiendo AutoResearch se conserva un evaluador inmutable, un presupuesto fijo, hipótesis falsables y un artefacto por iteración; cambios posteriores deben ser una intervención acotada, pareada y validada con el mismo protocolo. Referencias del programa: Raissi et al. (2019), PINNacle (Li et al., 2023), FEATFLOW DFG 2D-1, y Karpathy autoresearch program.md. Las comparaciones bibliográficas se documentan con sus PDE, referencia y presupuesto para evitar contrastar métricas incompatibles.\n\n## Bundle revision\n\nThis bundle includes the tested VTR export and tensor-detach warning fix. The PyVista output was opened locally without a graphics window; shape 221×42×1, 9,282 grid points, fields (u,v,p), cylinder mask. The five-seed remote campaign remains exploratory and scientific_accepted=false.\n",
+  "problem": {
+    "dfg": {
+      "outlet": "natural do-nothing traction nu*grad(u)n-p*n=0",
+      "cylinder_center": [
+        0.2,
+        0.2
+      ],
+      "heldout_boundary_points": 512,
+      "near_cylinder_distance": 0.15,
+      "field_reference_status": "not_available_in_this_runner",
+      "reynolds_number": 20,
+      "reference_qois": {
+        "lift_coefficient": 0.010618948146,
+        "drag_coefficient": 5.57953523384,
+        "pressure_difference_front_minus_rear": 0.11752016697
+      },
+      "domain_x": [
+        0.0,
+        2.2
+      ],
+      "heldout_points": 16384,
+      "definition": "FEATFLOW DFG benchmark 2D-1, steady Re=20",
+      "reference_source": "https://wwwold.mathematik.tu-dortmund.de/~featflow/en/benchmarks/cfdbenchmarking/flow/dfg_benchmark1_re20.html",
+      "domain_y": [
+        0.0,
+        0.41
+      ],
+      "cylinder_radius": 0.05,
+      "no_slip": [
+        "lower_wall",
+        "upper_wall",
+        "cylinder"
+      ],
+      "heldout_seed_offset": 100000,
+      "kinematic_viscosity": 0.001,
+      "inlet": "parabolic, maximum 0.3, mean 0.2",
+      "density": 1.0,
+      "qoi_surface_points": 512
+    },
+    "sequence": [
+      "dfg_2d_1_steady_re20"
+    ],
+    "ontology_id": "problem.navier_stokes_dfg_2d1_re20",
+    "name": "Steady incompressible flow around a cylinder, DFG 2D-1 Re20"
+  },
+  "project": {
+    "name": "AF_PIKANs",
+    "ontology": "pikan-research"
+  },
+  "remote": {
+    "machine_shape": "NvidiaTeslaT4",
+    "runtime_dependencies": [
+      "wandb==0.30.0",
+      "plotly==7.1.0",
+      "scipy==1.15.3",
+      "pandas==2.2.3",
+      "pyvista==0.49.0",
+      "vtk==9.3.1"
+    ],
+    "enable_internet": true,
+    "setup_timeout_sec": 900,
+    "allow_gpu_count_fallback": true,
+    "run_timeout_sec": 1500,
+    "max_parallel_seeds": 2
+  },
+  "research_status": {
+    "baseline_frozen": false,
+    "execution_authorized": true,
+    "field_error_locked": true,
+    "remote_exact_bundle_approval_required": true,
+    "scientific_accepted": false,
+    "scientific_preregistration_signed": false
+  },
+  "schema_version": 1,
+  "tracking": {
+    "entity": "man22611-uvg",
+    "project": "AF_PIKANS",
+    "mode": "offline",
+    "group": "baseline-close-dfg-re20-r3-20260927"
+  },
+  "training": {
+    "interior_points": 16384,
+    "max_steps": 50000,
+    "dtype": "float32",
+    "batch_size": 1024,
+    "compute_budget_gpu_seconds": 6000,
+    "learning_rate": 0.001,
+    "accelerator": "gpu",
+    "boundary_batch_size": 256,
+    "heldout_points": 16384,
+    "sampling": "fixed scrambled Sobol; rejection outside cylinder; independent boundary parameterizations",
+    "optimizer": "Adam",
+    "seeds": [
+      301,
+      302,
+      303,
+      304,
+      305
+    ],
+    "heldout_policy": "independent fixed scrambled Sobol stream, never used for optimization or checkpoint selection",
+    "lbfgs": "none",
+    "max_parallel_seeds": 2,
+    "boundary_points": 512,
+    "seconds_per_seed": 1200,
+    "scheduler": "none"
+  }
+}

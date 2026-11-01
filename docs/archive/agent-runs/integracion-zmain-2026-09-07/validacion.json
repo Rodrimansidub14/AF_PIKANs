@@ -1,0 +1,27 @@
+{
+  "files": 25,
+  "pages": 61,
+  "citations": 42,
+  "equations": 56,
+  "figures": 9,
+  "canonical_problem_ids": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "missing_citations": [],
+  "missing_refs": [],
+  "compile_issues": [],
+  "burgers_analytic_max_residuals": [
+    2.220446049250313e-16,
+    8.881784197001252e-16,
+    6.661338147750939e-16,
+    1.7763568394002505e-15
+  ],
+  "spline_partition_error": 2.220446049250313e-16,
+  "spline_derivative_partition_error": 8.881784197001252e-16,
+  "pvdf_C_min_eigenvalue": 775000000.0,
+  "scope": "Document and mathematical checks only; mechanism not trained"
+}

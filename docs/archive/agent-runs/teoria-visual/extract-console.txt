@@ -1,0 +1,25 @@
+Annotation sizes differ: 4 vs. 0
+Annotation sizes differ: 3 vs. 0
+Annotation sizes differ: 1 vs. 0
+Annotation sizes differ: 2 vs. 0
+Annotation sizes differ: 1 vs. 0
+Annotation sizes differ: 2 vs. 0
+Annotation sizes differ: 1 vs. 0
+Annotation sizes differ: 1 vs. 0
+Annotation sizes differ: 2 vs. 0
+Annotation sizes differ: 6 vs. 0
+Annotation sizes differ: 4 vs. 0
+Annotation sizes differ: 4 vs. 0
+Annotation sizes differ: 7 vs. 0
+Annotation sizes differ: 7 vs. 0
+Annotation sizes differ: 3 vs. 0
+Annotation sizes differ: 3 vs. 0
+Annotation sizes differ: 9 vs. 0
+Annotation sizes differ: 4 vs. 0
+Annotation sizes differ: 5 vs. 0
+Annotation sizes differ: 4 vs. 0
+Annotation sizes differ: 3 vs. 0
+Annotation sizes differ: 1 vs. 0
+Annotation sizes differ: 1 vs. 0
+Annotation sizes differ: 14 vs. 0
+Extracted 34 pages; theory: 30 selected: [3, 5, 8, 22, 23, 24, 25]

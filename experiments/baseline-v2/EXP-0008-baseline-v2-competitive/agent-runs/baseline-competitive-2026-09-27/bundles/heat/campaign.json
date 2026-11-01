@@ -1,0 +1,68 @@
+{
+  "status": "DRAFT_UNVERIFIED",
+  "campaign_id": "heat-tier2-t4x2-torch-2026-09-27",
+  "problem": {
+    "equation": "u_t=0.1u_xx",
+    "x": [0.0, 1.0],
+    "t": [0.0, 1.0],
+    "initial_condition": "u(x,0)=sin(pi*x)",
+    "boundary_conditions": "u(0,t)=u(1,t)=0",
+    "reference": "sin(pi*x)*exp(-0.1*pi^2*t)"
+  },
+  "arms": [
+    {"id": "H-RBF", "runner_id": "rbf", "model_id": "rbf_fixed"},
+    {"id": "H-BS", "runner_id": "bspline", "model_id": "bspline_cubic"},
+    {"id": "H-FNN", "runner_id": "fnn", "model_id": "torch_tanh_fnn_20x3_hard_trace", "description": "PyTorch port of DeepXDE tutorial architecture and optimizer recipe; not DeepXDE execution or paper reproduction"}
+  ],
+  "cohorts": {"smoke": [900], "paired_tier2": [901, 902, 903, 904, 905]},
+  "common_training": {
+    "pool_generator": "torch.quasirandom.SobolEngine scrambled; streams 10*seed+1/+3/+4",
+    "pool_counts": {"interior": 4096, "initial": 1024, "left_boundary": 512, "right_boundary": 512},
+    "precision": "float64",
+    "trace_transform": "sin(pi*x)+t*x*(1-x)*raw(x,t)",
+    "loss": "mean(((u_t-0.1*u_xx)/1.1)^2), full-batch interior pool",
+    "step_caps": {"H-RBF": 20000, "H-BS": 20000, "H-FNN_adam": 20000},
+    "tier2_gpu_seconds_per_arm_seed": 600,
+    "smoke_gpu_seconds_per_arm": 120,
+    "time_checkpoints_seconds": [120, 300, 600]
+  },
+  "evaluation": {
+    "common_development_grid": {"id": "heat-dev-257x129-v1", "nx": 257, "nt": 129, "device": "CUDA"},
+    "protected_final_grid": {"nx": 512, "nt": 256, "trainer_access": false, "scored_after_all_training": true},
+    "smoke_quality_scores": false,
+    "metrics": ["weighted relative field L2", "field RMSE/max", "IC/BC RMSE/max", "PDE residual RMS", "energy relative L2"]
+  },
+  "resource_caps": {
+    "kaggle_machine_shape": "NvidiaTeslaT4 (GPU T4 x2)",
+    "session_quota_cap_hours": 2.0,
+    "cli_hard_timeout_seconds": 7200,
+    "startup_allowance_before_first_notebook_cell_seconds": 300,
+    "notebook_internal_watchdog_seconds": 6900,
+    "notebook_close_margin_seconds": 60,
+    "wall_time_allowances_seconds": {
+      "post_first_cell_setup_and_pools": 300,
+      "tier2_training": 4800,
+      "tier2_development_scoring": 480,
+      "smoke_training": 240,
+      "smoke_finite_checks": 20,
+      "final_confirmation_scoring": 960,
+      "artifact_flush": 40,
+      "close_margin": 60
+    },
+    "maximum_total_wall_seconds_including_startup": 7200,
+    "aggregate_device_seconds_cap": 14400,
+    "aggregate_device_gpu_hours_cap": 4.0,
+    "tier2_plus_smoke_device_seconds": 9360,
+    "score_allowance_device_seconds": 2730,
+    "held_reserve_device_seconds": 2310,
+    "max_parallel_runs": 2,
+    "network_install": false
+  },
+  "differences_from_literature": [
+    "alpha, pool, hard trace, precision, residual scaling, and development grid are AF adaptations",
+    "H-FNN uses PyTorch directly; it is not DeepXDE library execution and not a literal tutorial reproduction",
+    "H-RBF/H-BS use a static model snapshot in a new full-batch Torch loop, not historical PINA minibatch runs",
+    "Torch Sobol pools are not byte-identical to historical SciPy/PINA Sobol pools"
+  ],
+  "execution": {"submitted": false, "remote_run": false, "approval_file_created": false}
+}

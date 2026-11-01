@@ -1,0 +1,9 @@
+{
+  "bundle_id": "82b921a6932a5f73069395592b7fc8bc1bf8653684a8241c30a5aef3876b6860",
+  "approved_by": "researcher (explicit instruction in current Codex conversation, 2026-09-27)",
+  "scope": "approved",
+  "hypothesis": "approved",
+  "code_surface": "approved",
+  "remote_execution": true,
+  "decision": "Run exploratory fixed-Sobol Heat + Allen-Cahn GPU extension, seeds 104/105, up to two Nvidia T4 workers; permit one visible GPU if Kaggle exposes only one; total configured training cap 3000 GPU seconds; preserve scientific_accepted=false."
+}

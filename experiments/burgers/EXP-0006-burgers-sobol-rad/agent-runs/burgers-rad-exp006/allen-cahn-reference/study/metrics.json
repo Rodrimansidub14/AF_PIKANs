@@ -1,0 +1,204 @@
+{
+  "canonical_reference": false,
+  "contract": {
+    "dirichlet_boundary": -1.0,
+    "evaluation_times": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "initial_condition": "x^2*cos(pi*x)",
+    "pde": "u_t - 0.001*u_xx - 5*(u-u^3) = 0",
+    "projection": "linear interpolation in x onto the fixed report grid",
+    "report_grid": {
+      "include_boundary": true,
+      "nt": 256,
+      "nx": 512
+    },
+    "space_method": "second-order centered finite differences",
+    "t_bounds": [
+      0.0,
+      1.0
+    ],
+    "time_method": "SciPy solve_ivp method=BDF with sparse analytic Jacobian",
+    "x_bounds": [
+      -1.0,
+      1.0
+    ]
+  },
+  "convergence_contract": {
+    "base_temporal_tolerances": {
+      "atol": 1e-10,
+      "rtol": 1e-08
+    },
+    "declared_minimum_resolutions": 3,
+    "field_change_limit": 0.005,
+    "field_change_metric": "trapezoid-weighted relative L2 between consecutive fields on report grid",
+    "full_reference_convergence_claim": false,
+    "last_spatial_energy_change": 0.000325663630214082,
+    "last_spatial_energy_threshold_met": true,
+    "last_spatial_field_change": 6.273860863069746e-05,
+    "last_spatial_field_threshold_met": true,
+    "qoi_change_limit": 0.001,
+    "qoi_change_metric": "maximum relative change in energy at four declared evaluation times",
+    "reason_not_to_unlock": "candidate artifact; subsequent-change criterion unresolved and human verifier review required",
+    "spatial_node_counts": [
+      513,
+      1025,
+      2049
+    ],
+    "subsequent_change_fraction": {
+      "decision": "unresolved: problem.yaml does not define effect or comparison",
+      "declared_fraction": 0.1,
+      "observed_successive_field_change_ratio": 0.5361051671605849
+    },
+    "temporal_tolerance_difference": {
+      "baseline": "space_2049_rtol_1e-08_atol_1e-10",
+      "max_relative_energy_change": 2.3458266635667703e-08,
+      "tight": "space_2049_rtol_1e-10_atol_1e-12",
+      "weighted_relative_l2_field_change": 1.2649683947536747e-08
+    },
+    "tight_temporal_tolerances": {
+      "atol": 1e-12,
+      "rtol": 1e-10
+    }
+  },
+  "energy_by_run_at_evaluation_times": {
+    "space_1025_rtol_1e-08_atol_1e-10": [
+      1.5954664405394645,
+      1.1088501850232804,
+      0.5221752601002616,
+      0.2743808852339764
+    ],
+    "space_2049_rtol_1e-08_atol_1e-10": [
+      1.595466571464648,
+      1.1088516557403822,
+      0.522198012225131,
+      0.27447027021856163
+    ],
+    "space_2049_rtol_1e-10_atol_1e-12": [
+      1.5954665777590131,
+      1.108851667818497,
+      0.5221980182779759,
+      0.27447027665715856
+    ],
+    "space_513_rtol_1e-08_atol_1e-10": [
+      1.595465918052934,
+      1.1088443233498766,
+      0.5220844843544428,
+      0.2740239087741444
+    ]
+  },
+  "primary_candidate_field": "space_2049_rtol_1e-10_atol_1e-12",
+  "provenance": {
+    "candidate_npz": "allen_cahn_candidate_reference.npz",
+    "candidate_npz_sha256": "3ed3bb0a275b7c57113a56662a6b7b035648f33b1fa44c418157407b40a20eb0",
+    "cpu_count": 8,
+    "generated_at_utc": "2026-09-23T22:39:20.378881+00:00",
+    "numpy": "2.3.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "scipy": "1.18.0",
+    "source_script": "allen_cahn_bdf_reference.py",
+    "source_script_sha256": "66ec42c9783e38a7f8803e90038dde42bc1789c861c1d793390c5b855f7ad820",
+    "thread_limits": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    }
+  },
+  "runs": [
+    {
+      "all_values_finite": true,
+      "atol": 1e-10,
+      "boundary_max_abs_error": 0.0,
+      "elapsed_sec": 0.5122135000001435,
+      "energy_monotone_within_tolerance": true,
+      "energy_monotonicity_tolerance": 2.003267077418944e-08,
+      "initial_max_abs_error": 6.679726830909077e-25,
+      "interior_count": 511,
+      "label": "space_513_rtol_1e-08_atol_1e-10",
+      "max_energy_increase_abs": 0.0,
+      "message": "The solver successfully reached the end of the integration interval.",
+      "nfev": 457,
+      "njev": 1,
+      "nlu": 32,
+      "node_count": 513,
+      "rtol": 1e-08,
+      "spacing": 0.00390625,
+      "success": true
+    },
+    {
+      "all_values_finite": true,
+      "atol": 1e-10,
+      "boundary_max_abs_error": 0.0,
+      "elapsed_sec": 0.4882409999995616,
+      "energy_monotone_within_tolerance": true,
+      "energy_monotonicity_tolerance": 2.0032672326259786e-08,
+      "initial_max_abs_error": 6.679726830909077e-25,
+      "interior_count": 1023,
+      "label": "space_1025_rtol_1e-08_atol_1e-10",
+      "max_energy_increase_abs": 0.0,
+      "message": "The solver successfully reached the end of the integration interval.",
+      "nfev": 456,
+      "njev": 1,
+      "nlu": 32,
+      "node_count": 1025,
+      "rtol": 1e-08,
+      "spacing": 0.001953125,
+      "success": true
+    },
+    {
+      "all_values_finite": true,
+      "atol": 1e-10,
+      "boundary_max_abs_error": 0.0,
+      "elapsed_sec": 0.6777069999998275,
+      "energy_monotone_within_tolerance": true,
+      "energy_monotonicity_tolerance": 2.003267271841195e-08,
+      "initial_max_abs_error": 1.6940658945086007e-21,
+      "interior_count": 2047,
+      "label": "space_2049_rtol_1e-08_atol_1e-10",
+      "max_energy_increase_abs": 0.0,
+      "message": "The solver successfully reached the end of the integration interval.",
+      "nfev": 459,
+      "njev": 1,
+      "nlu": 33,
+      "node_count": 2049,
+      "rtol": 1e-08,
+      "spacing": 0.0009765625,
+      "success": true
+    }
+  ],
+  "sanity_checks": {
+    "all_solvers_succeeded": true,
+    "all_values_finite": true,
+    "diffusion_rhs_for_quadratic": 0.002,
+    "energy_monotone_within_tolerance": true,
+    "manufactured_residual_at_u_0_2": 0.038000000000000034,
+    "max_boundary_abs_error": 0.0,
+    "max_initial_abs_error": 1.6940658945086007e-21,
+    "operator_signs_ok": true,
+    "quadratic_laplacian_center": 2.0,
+    "reaction_rhs_at_quarter": 1.171875
+  },
+  "scientific_acceptance": false,
+  "spatial_refinement_differences": [
+    {
+      "coarse": "space_513_rtol_1e-08_atol_1e-10",
+      "fine": "space_1025_rtol_1e-08_atol_1e-10",
+      "max_relative_energy_change": 0.0013010252500920587,
+      "weighted_relative_l2_field_change": 0.00011702668146808728
+    },
+    {
+      "coarse": "space_1025_rtol_1e-08_atol_1e-10",
+      "fine": "space_2049_rtol_1e-08_atol_1e-10",
+      "max_relative_energy_change": 0.000325663630214082,
+      "weighted_relative_l2_field_change": 6.273860863069746e-05
+    }
+  ],
+  "study_status": "candidate_only",
+  "verifier_unlocked": false
+}

@@ -1,0 +1,10 @@
+{
+  "bundle_id": "e81e5f86808711fe543fcc67a585e6140c356111310983af705a2bb09a933751",
+  "approved_by": "Rodrigo Mansilla",
+  "scope": "approved",
+  "hypothesis": "approved",
+  "code_surface": "approved",
+  "remote_execution": true,
+  "authorization_basis": "Instrucción explícita del investigador: salta directo a la corrida en gpu.",
+  "authorized_at": "2026-09-24"
+}

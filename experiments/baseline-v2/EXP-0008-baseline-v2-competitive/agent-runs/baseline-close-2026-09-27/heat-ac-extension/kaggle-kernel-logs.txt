@@ -1,0 +1,417 @@
+[{"stream_name":"stderr","time":6.358547317,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.358595082,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.358599577,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.358602167,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.926146136,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.926176369,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.926181412,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.926185362,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":8.002304192,"data":"Bundle verified: 4a303acb996ecd4e959f1020367ebf8d86448a300406dcc9481e5ad689af1008 source files: 22\n"}
+,{"stream_name":"stdout","time":8.036179498,"data":"Installing pinned dependencies: pina-mathlab==0.3.2.post2609, wandb==0.30.0, plotly==7.1.0, scipy==1.15.3, pandas==2.2.3\n"}
+,{"stream_name":"stdout","time":10.069401703,"data":"Collecting pina-mathlab==0.3.2.post2609\n"}
+,{"stream_name":"stdout","time":10.088036828,"data":"  Downloading pina_mathlab-0.3.2.post2609-py3-none-any.whl.metadata (15 kB)\n"}
+,{"stream_name":"stdout","time":10.272176686,"data":"Collecting pina-mathlab==0.3.2.post2609\n"}
+,{"stream_name":"stdout","time":10.272203683,"data":"  Downloading pina_mathlab-0.3.2.post2609-py3-none-any.whl.metadata (15 kB)\n"}
+,{"stream_name":"stdout","time":10.34407711,"data":"Collecting wandb==0.30.0\n"}
+,{"stream_name":"stdout","time":10.349841196,"data":"  Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl.metadata (11 kB)\n"}
+,{"stream_name":"stdout","time":10.460717137,"data":"Collecting plotly==7.1.0\n"}
+,{"stream_name":"stdout","time":10.465167024,"data":"  Downloading plotly-7.1.0-py3-none-any.whl.metadata (8.8 kB)\n"}
+,{"stream_name":"stdout","time":10.546093317,"data":"Collecting wandb==0.30.0\n"}
+,{"stream_name":"stdout","time":10.546112145,"data":"  Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl.metadata (11 kB)\n"}
+,{"stream_name":"stdout","time":10.546117695,"data":"Collecting plotly==7.1.0\n"}
+,{"stream_name":"stdout","time":10.546121592,"data":"  Downloading plotly-7.1.0-py3-none-any.whl.metadata (8.8 kB)\n"}
+,{"stream_name":"stdout","time":10.790300428,"data":"Collecting scipy==1.15.3\n"}
+,{"stream_name":"stdout","time":10.795023865,"data":"  Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)\n"}
+,{"stream_name":"stdout","time":10.815417104,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 2.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":10.992425014,"data":"Collecting scipy==1.15.3\n"}
+,{"stream_name":"stdout","time":10.992444594,"data":"  Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)\n"}
+,{"stream_name":"stdout","time":10.992449734000001,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 2.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":11.173583874,"data":"Collecting pandas==2.2.3\n"}
+,{"stream_name":"stdout","time":11.180420825,"data":"  Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)\n"}
+,{"stream_name":"stdout","time":11.204248408,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 3.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":11.258038666000001,"data":"Requirement already satisfied: torch in /usr/local/lib/python3.12/dist-packages (from pina-mathlab==0.3.2.post2609) (2.10.0+cu128)\n"}
+,{"stream_name":"stdout","time":11.367258139,"data":"Collecting lightning (from pina-mathlab==0.3.2.post2609)\n"}
+,{"stream_name":"stdout","time":11.372895283,"data":"  Downloading lightning-2.6.6-py3-none-any.whl.metadata (45 kB)\n"}
+,{"stream_name":"stdout","time":11.375851989,"data":"Collecting pandas==2.2.3\n"}
+,{"stream_name":"stdout","time":11.375869011,"data":"  Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)\n"}
+,{"stream_name":"stdout","time":11.375872404,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 3.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":11.375875582,"data":"Requirement already satisfied: torch in /usr/local/lib/python3.12/dist-packages (from pina-mathlab==0.3.2.post2609) (2.10.0+cu128)\n"}
+,{"stream_name":"stdout","time":11.375878365,"data":"Collecting lightning (from pina-mathlab==0.3.2.post2609)\n"}
+,{"stream_name":"stdout","time":11.375880716,"data":"  Downloading lightning-2.6.6-py3-none-any.whl.metadata (45 kB)\n"}
+,{"stream_name":"stdout","time":11.387812585,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.0/45.0 kB 2.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":11.511388151,"data":"Collecting torch_geometric (from pina-mathlab==0.3.2.post2609)\n"}
+,{"stream_name":"stdout","time":11.516807539,"data":"  Downloading torch_geometric-2.8.0.post1-py3-none-any.whl.metadata (64 kB)\n"}
+,{"stream_name":"stdout","time":11.534387443,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.4/64.4 kB 3.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":11.547033735,"data":"Requirement already satisfied: matplotlib in /usr/local/lib/python3.12/dist-packages (from pina-mathlab==0.3.2.post2609) (3.10.0)\n"}
+,{"stream_name":"stdout","time":11.553462734,"data":"Requirement already satisfied: click\u003e=8.2.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (8.3.3)\n"}
+,{"stream_name":"stdout","time":11.589948497,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.0/45.0 kB 2.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":11.589971854,"data":"Collecting torch_geometric (from pina-mathlab==0.3.2.post2609)\n"}
+,{"stream_name":"stdout","time":11.589978284,"data":"  Downloading torch_geometric-2.8.0.post1-py3-none-any.whl.metadata (64 kB)\n"}
+,{"stream_name":"stdout","time":11.589984024,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.4/64.4 kB 3.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":11.589989924,"data":"Requirement already satisfied: matplotlib in /usr/local/lib/python3.12/dist-packages (from pina-mathlab==0.3.2.post2609) (3.10.0)\n"}
+,{"stream_name":"stdout","time":11.589995415,"data":"Requirement already satisfied: click\u003e=8.2.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (8.3.3)\n"}
+,{"stream_name":"stdout","time":11.610829311,"data":"Collecting opentelemetry-api\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":11.615484158,"data":"  Downloading opentelemetry_api-1.45.0-py3-none-any.whl.metadata (1.4 kB)\n"}
+,{"stream_name":"stdout","time":11.67486846,"data":"Collecting opentelemetry-exporter-otlp-proto-http\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":11.678946114,"data":"  Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl.metadata (3.1 kB)\n"}
+,{"stream_name":"stdout","time":11.746235045,"data":"Collecting opentelemetry-sdk\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":11.750564674,"data":"  Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl.metadata (1.6 kB)\n"}
+,{"stream_name":"stdout","time":11.76614848,"data":"Requirement already satisfied: packaging in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (26.1)\n"}
+,{"stream_name":"stdout","time":11.767209607,"data":"Requirement already satisfied: platformdirs in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.9.6)\n"}
+,{"stream_name":"stdout","time":11.768224831,"data":"Requirement already satisfied: protobuf!=5.28.0,!=5.29.0,\u003c8,\u003e=5 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (5.29.5)\n"}
+,{"stream_name":"stdout","time":11.770768318,"data":"Requirement already satisfied: pydantic\u003c3,\u003e=2.6 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.12.3)\n"}
+,{"stream_name":"stdout","time":11.771719755,"data":"Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (6.0.3)\n"}
+,{"stream_name":"stdout","time":11.773060927,"data":"Requirement already satisfied: requests\u003c3,\u003e=2.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.32.4)\n"}
+,{"stream_name":"stdout","time":11.774182421999999,"data":"Requirement already satisfied: typing-extensions\u003c5,\u003e=4.8 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.15.0)\n"}
+,{"stream_name":"stdout","time":11.775900956,"data":"Requirement already satisfied: xxhash\u003e=3.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (3.6.0)\n"}
+,{"stream_name":"stdout","time":11.783869944,"data":"Requirement already satisfied: narwhals\u003e=1.15.1 in /usr/local/lib/python3.12/dist-packages (from plotly==7.1.0) (2.20.0)\n"}
+,{"stream_name":"stdout","time":11.793681124999999,"data":"Requirement already satisfied: numpy\u003c2.5,\u003e=1.23.5 in /usr/local/lib/python3.12/dist-packages (from scipy==1.15.3) (2.0.2)\n"}
+,{"stream_name":"stdout","time":11.805950776,"data":"Requirement already satisfied: python-dateutil\u003e=2.8.2 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2.9.0.post0)\n"}
+,{"stream_name":"stdout","time":11.807568384,"data":"Requirement already satisfied: pytz\u003e=2020.1 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2025.2)\n"}
+,{"stream_name":"stdout","time":11.808594465,"data":"Requirement already satisfied: tzdata\u003e=2022.7 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2026.1)\n"}
+,{"stream_name":"stdout","time":11.813265374,"data":"Collecting opentelemetry-api\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":11.813283104,"data":"  Downloading opentelemetry_api-1.45.0-py3-none-any.whl.metadata (1.4 kB)\n"}
+,{"stream_name":"stdout","time":11.813288658,"data":"Collecting opentelemetry-exporter-otlp-proto-http\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":11.81329318,"data":"  Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl.metadata (3.1 kB)\n"}
+,{"stream_name":"stdout","time":11.813297769,"data":"Collecting opentelemetry-sdk\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":11.81331155,"data":"  Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl.metadata (1.6 kB)\n"}
+,{"stream_name":"stdout","time":11.813315661,"data":"Requirement already satisfied: packaging in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (26.1)\n"}
+,{"stream_name":"stdout","time":11.813325077,"data":"Requirement already satisfied: platformdirs in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.9.6)\n"}
+,{"stream_name":"stdout","time":11.813328286,"data":"Requirement already satisfied: protobuf!=5.28.0,!=5.29.0,\u003c8,\u003e=5 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (5.29.5)\n"}
+,{"stream_name":"stdout","time":11.813331044,"data":"Requirement already satisfied: pydantic\u003c3,\u003e=2.6 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.12.3)\n"}
+,{"stream_name":"stdout","time":11.81334551,"data":"Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (6.0.3)\n"}
+,{"stream_name":"stdout","time":11.813375721,"data":"Requirement already satisfied: requests\u003c3,\u003e=2.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.32.4)\n"}
+,{"stream_name":"stdout","time":11.813380939,"data":"Requirement already satisfied: typing-extensions\u003c5,\u003e=4.8 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.15.0)\n"}
+,{"stream_name":"stdout","time":11.813384858,"data":"Requirement already satisfied: xxhash\u003e=3.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (3.6.0)\n"}
+,{"stream_name":"stdout","time":11.81338848,"data":"Requirement already satisfied: narwhals\u003e=1.15.1 in /usr/local/lib/python3.12/dist-packages (from plotly==7.1.0) (2.20.0)\n"}
+,{"stream_name":"stdout","time":11.813392244,"data":"Requirement already satisfied: numpy\u003c2.5,\u003e=1.23.5 in /usr/local/lib/python3.12/dist-packages (from scipy==1.15.3) (2.0.2)\n"}
+,{"stream_name":"stdout","time":11.81339603,"data":"Requirement already satisfied: python-dateutil\u003e=2.8.2 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2.9.0.post0)\n"}
+,{"stream_name":"stdout","time":11.813399678,"data":"Requirement already satisfied: pytz\u003e=2020.1 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2025.2)\n"}
+,{"stream_name":"stdout","time":11.813403384,"data":"Requirement already satisfied: tzdata\u003e=2022.7 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2026.1)\n"}
+,{"stream_name":"stdout","time":11.823667204,"data":"Requirement already satisfied: googleapis-common-protos~=1.52 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (1.74.0)\n"}
+,{"stream_name":"stdout","time":11.854224184,"data":"Collecting opentelemetry-exporter-http-transport==0.66b0 (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":11.858429531,"data":"  Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":11.893555848,"data":"Collecting opentelemetry-exporter-otlp-common==0.66b0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":11.897796885,"data":"  Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl.metadata (1.9 kB)\n"}
+,{"stream_name":"stdout","time":11.972222208,"data":"Collecting opentelemetry-exporter-otlp-proto-common==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":11.976512972,"data":"  Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl.metadata (1.8 kB)\n"}
+,{"stream_name":"stdout","time":12.02580866,"data":"Requirement already satisfied: googleapis-common-protos~=1.52 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (1.74.0)\n"}
+,{"stream_name":"stdout","time":12.025843088,"data":"Collecting opentelemetry-exporter-http-transport==0.66b0 (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.025847347,"data":"  Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":12.025850124,"data":"Collecting opentelemetry-exporter-otlp-common==0.66b0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.025852799,"data":"  Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl.metadata (1.9 kB)\n"}
+,{"stream_name":"stdout","time":12.025855365,"data":"Collecting opentelemetry-exporter-otlp-proto-common==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.025857852,"data":"  Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl.metadata (1.8 kB)\n"}
+,{"stream_name":"stdout","time":12.050246916,"data":"Collecting opentelemetry-proto==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.054383318,"data":"  Downloading opentelemetry_proto-1.45.0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":12.081653068,"data":"Requirement already satisfied: urllib3\u003e=1.26 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (2.5.0)\n"}
+,{"stream_name":"stdout","time":12.140054883,"data":"Collecting opentelemetry-semantic-conventions==0.66b0 (from opentelemetry-sdk\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.144284482,"data":"  Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl.metadata (2.4 kB)\n"}
+,{"stream_name":"stdout","time":12.168194587,"data":"Requirement already satisfied: annotated-types\u003e=0.6.0 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.7.0)\n"}
+,{"stream_name":"stdout","time":12.16946859,"data":"Requirement already satisfied: pydantic-core==2.41.4 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (2.41.4)\n"}
+,{"stream_name":"stdout","time":12.171171008,"data":"Requirement already satisfied: typing-inspection\u003e=0.4.2 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.4.2)\n"}
+,{"stream_name":"stdout","time":12.175784349,"data":"Requirement already satisfied: six\u003e=1.5 in /usr/local/lib/python3.12/dist-packages (from python-dateutil\u003e=2.8.2-\u003epandas==2.2.3) (1.17.0)\n"}
+,{"stream_name":"stdout","time":12.182324119,"data":"Requirement already satisfied: charset_normalizer\u003c4,\u003e=2 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.4.7)\n"}
+,{"stream_name":"stdout","time":12.183533119,"data":"Requirement already satisfied: idna\u003c4,\u003e=2.5 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.13)\n"}
+,{"stream_name":"stdout","time":12.185119911,"data":"Requirement already satisfied: certifi\u003e=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (2026.4.22)\n"}
+,{"stream_name":"stdout","time":12.218967147,"data":"Requirement already satisfied: fsspec\u003c2028.0,\u003e=2022.5.0 in /usr/local/lib/python3.12/dist-packages (from fsspec[http]\u003c2028.0,\u003e=2022.5.0-\u003elightning-\u003epina-mathlab==0.3.2.post2609) (2025.3.0)\n"}
+,{"stream_name":"stdout","time":12.221235118,"data":"Requirement already satisfied: lightning-utilities\u003c2.0,\u003e=0.10.0 in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (0.15.3)\n"}
+,{"stream_name":"stdout","time":12.225150303,"data":"Requirement already satisfied: torchmetrics\u003c3.0,\u003e0.7.0 in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (1.9.0)\n"}
+,{"stream_name":"stdout","time":12.228215778,"data":"Requirement already satisfied: tqdm\u003c6.0,\u003e=4.57.0 in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (4.67.3)\n"}
+,{"stream_name":"stdout","time":12.23055559,"data":"Requirement already satisfied: pytorch-lightning in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (2.6.5)\n"}
+,{"stream_name":"stdout","time":12.239776441,"data":"Requirement already satisfied: filelock in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.29.0)\n"}
+,{"stream_name":"stdout","time":12.241606145,"data":"Requirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (81.0.0)\n"}
+,{"stream_name":"stdout","time":12.243333335,"data":"Requirement already satisfied: sympy\u003e=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (1.14.0)\n"}
+,{"stream_name":"stdout","time":12.244777554,"data":"Requirement already satisfied: networkx\u003e=2.5.1 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.6.1)\n"}
+,{"stream_name":"stdout","time":12.245844247,"data":"Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.1.6)\n"}
+,{"stream_name":"stdout","time":12.24792311,"data":"Requirement already satisfied: cuda-bindings==12.9.4 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.9.4)\n"}
+,{"stream_name":"stdout","time":12.24912149,"data":"Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.93 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.93)\n"}
+,{"stream_name":"stdout","time":12.250449833,"data":"Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.90)\n"}
+,{"stream_name":"stdout","time":12.25188456,"data":"Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.90)\n"}
+,{"stream_name":"stdout","time":12.252386058,"data":"Collecting opentelemetry-proto==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.252402383,"data":"  Downloading opentelemetry_proto-1.45.0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":12.252407844,"data":"Requirement already satisfied: urllib3\u003e=1.26 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (2.5.0)\n"}
+,{"stream_name":"stdout","time":12.25241283,"data":"Collecting opentelemetry-semantic-conventions==0.66b0 (from opentelemetry-sdk\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.252416954,"data":"  Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl.metadata (2.4 kB)\n"}
+,{"stream_name":"stdout","time":12.252431822,"data":"Requirement already satisfied: annotated-types\u003e=0.6.0 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.7.0)\n"}
+,{"stream_name":"stdout","time":12.252435921,"data":"Requirement already satisfied: pydantic-core==2.41.4 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (2.41.4)\n"}
+,{"stream_name":"stdout","time":12.252439733,"data":"Requirement already satisfied: typing-inspection\u003e=0.4.2 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.4.2)\n"}
+,{"stream_name":"stdout","time":12.252444234,"data":"Requirement already satisfied: six\u003e=1.5 in /usr/local/lib/python3.12/dist-packages (from python-dateutil\u003e=2.8.2-\u003epandas==2.2.3) (1.17.0)\n"}
+,{"stream_name":"stdout","time":12.252448907,"data":"Requirement already satisfied: charset_normalizer\u003c4,\u003e=2 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.4.7)\n"}
+,{"stream_name":"stdout","time":12.25245354,"data":"Requirement already satisfied: idna\u003c4,\u003e=2.5 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.13)\n"}
+,{"stream_name":"stdout","time":12.252457619,"data":"Requirement already satisfied: certifi\u003e=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (2026.4.22)\n"}
+,{"stream_name":"stdout","time":12.252461748,"data":"Requirement already satisfied: fsspec\u003c2028.0,\u003e=2022.5.0 in /usr/local/lib/python3.12/dist-packages (from fsspec[http]\u003c2028.0,\u003e=2022.5.0-\u003elightning-\u003epina-mathlab==0.3.2.post2609) (2025.3.0)\n"}
+,{"stream_name":"stdout","time":12.252466205,"data":"Requirement already satisfied: lightning-utilities\u003c2.0,\u003e=0.10.0 in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (0.15.3)\n"}
+,{"stream_name":"stdout","time":12.252471196,"data":"Requirement already satisfied: torchmetrics\u003c3.0,\u003e0.7.0 in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (1.9.0)\n"}
+,{"stream_name":"stdout","time":12.25247532,"data":"Requirement already satisfied: tqdm\u003c6.0,\u003e=4.57.0 in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (4.67.3)\n"}
+,{"stream_name":"stdout","time":12.252479379,"data":"Requirement already satisfied: pytorch-lightning in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (2.6.5)\n"}
+,{"stream_name":"stdout","time":12.252483368,"data":"Requirement already satisfied: filelock in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.29.0)\n"}
+,{"stream_name":"stdout","time":12.252487299,"data":"Requirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (81.0.0)\n"}
+,{"stream_name":"stdout","time":12.252491237,"data":"Requirement already satisfied: sympy\u003e=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (1.14.0)\n"}
+,{"stream_name":"stdout","time":12.252504884,"data":"Requirement already satisfied: networkx\u003e=2.5.1 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.6.1)\n"}
+,{"stream_name":"stdout","time":12.252510539,"data":"Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.1.6)\n"}
+,{"stream_name":"stdout","time":12.252517615,"data":"Requirement already satisfied: cuda-bindings==12.9.4 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.9.4)\n"}
+,{"stream_name":"stdout","time":12.252524293,"data":"Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.93 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.93)\n"}
+,{"stream_name":"stdout","time":12.252527206,"data":"Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.90)\n"}
+,{"stream_name":"stdout","time":12.25339796,"data":"Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (9.10.2.21)\n"}
+,{"stream_name":"stdout","time":12.254680071,"data":"Requirement already satisfied: nvidia-cublas-cu12==12.8.4.1 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.4.1)\n"}
+,{"stream_name":"stdout","time":12.256044369,"data":"Requirement already satisfied: nvidia-cufft-cu12==11.3.3.83 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (11.3.3.83)\n"}
+,{"stream_name":"stdout","time":12.257373023,"data":"Requirement already satisfied: nvidia-curand-cu12==10.3.9.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (10.3.9.90)\n"}
+,{"stream_name":"stdout","time":12.258699792,"data":"Requirement already satisfied: nvidia-cusolver-cu12==11.7.3.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (11.7.3.90)\n"}
+,{"stream_name":"stdout","time":12.260236823,"data":"Requirement already satisfied: nvidia-cusparse-cu12==12.5.8.93 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.5.8.93)\n"}
+,{"stream_name":"stdout","time":12.261792172,"data":"Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (0.7.1)\n"}
+,{"stream_name":"stdout","time":12.26312351,"data":"Requirement already satisfied: nvidia-nccl-cu12==2.27.5 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (2.27.5)\n"}
+,{"stream_name":"stdout","time":12.264397646,"data":"Requirement already satisfied: nvidia-nvshmem-cu12==3.4.5 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.4.5)\n"}
+,{"stream_name":"stdout","time":12.265742703,"data":"Requirement already satisfied: nvidia-nvtx-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.90)\n"}
+,{"stream_name":"stdout","time":12.26718805,"data":"Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.93 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.93)\n"}
+,{"stream_name":"stdout","time":12.268599172,"data":"Requirement already satisfied: nvidia-cufile-cu12==1.13.1.3 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (1.13.1.3)\n"}
+,{"stream_name":"stdout","time":12.270032095,"data":"Requirement already satisfied: triton==3.6.0 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.6.0)\n"}
+,{"stream_name":"stdout","time":12.27440113,"data":"Requirement already satisfied: cuda-pathfinder~=1.1 in /usr/local/lib/python3.12/dist-packages (from cuda-bindings==12.9.4-\u003etorch-\u003epina-mathlab==0.3.2.post2609) (1.5.3)\n"}
+,{"stream_name":"stdout","time":12.304911976,"data":"Requirement already satisfied: contourpy\u003e=1.0.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (1.3.3)\n"}
+,{"stream_name":"stdout","time":12.306262308,"data":"Requirement already satisfied: cycler\u003e=0.10 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (0.12.1)\n"}
+,{"stream_name":"stdout","time":12.311364493,"data":"Requirement already satisfied: fonttools\u003e=4.22.0 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (4.62.1)\n"}
+,{"stream_name":"stdout","time":12.312845225,"data":"Requirement already satisfied: kiwisolver\u003e=1.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (1.5.0)\n"}
+,{"stream_name":"stdout","time":12.317658552,"data":"Requirement already satisfied: pillow\u003e=8 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (11.3.0)\n"}
+,{"stream_name":"stdout","time":12.31888122,"data":"Requirement already satisfied: pyparsing\u003e=2.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (3.3.2)\n"}
+,{"stream_name":"stdout","time":12.328335526,"data":"Requirement already satisfied: aiohttp in /usr/local/lib/python3.12/dist-packages (from torch_geometric-\u003epina-mathlab==0.3.2.post2609) (3.13.5)\n"}
+,{"stream_name":"stdout","time":12.334139557,"data":"Requirement already satisfied: psutil\u003e=5.8.0 in /usr/local/lib/python3.12/dist-packages (from torch_geometric-\u003epina-mathlab==0.3.2.post2609) (5.9.5)\n"}
+,{"stream_name":"stdout","time":12.382243669,"data":"Requirement already satisfied: aiohappyeyeballs\u003e=2.5.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (2.6.1)\n"}
+,{"stream_name":"stdout","time":12.383438842,"data":"Requirement already satisfied: aiosignal\u003e=1.4.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (1.4.0)\n"}
+,{"stream_name":"stdout","time":12.384810068,"data":"Requirement already satisfied: attrs\u003e=17.3.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (26.1.0)\n"}
+,{"stream_name":"stdout","time":12.386643685,"data":"Requirement already satisfied: frozenlist\u003e=1.1.1 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (1.8.0)\n"}
+,{"stream_name":"stdout","time":12.387878571,"data":"Requirement already satisfied: multidict\u003c7.0,\u003e=4.5 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (6.7.1)\n"}
+,{"stream_name":"stdout","time":12.389572728,"data":"Requirement already satisfied: propcache\u003e=0.2.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (0.4.1)\n"}
+,{"stream_name":"stdout","time":12.393712656,"data":"Requirement already satisfied: yarl\u003c2.0,\u003e=1.17.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (1.23.0)\n"}
+,{"stream_name":"stdout","time":12.423081771,"data":"Requirement already satisfied: mpmath\u003c1.4,\u003e=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy\u003e=1.13.3-\u003etorch-\u003epina-mathlab==0.3.2.post2609) (1.3.0)\n"}
+,{"stream_name":"stdout","time":12.454164928,"data":"Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.90)\n"}
+,{"stream_name":"stdout","time":12.454182917,"data":"Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (9.10.2.21)\n"}
+,{"stream_name":"stdout","time":12.454188118,"data":"Requirement already satisfied: nvidia-cublas-cu12==12.8.4.1 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.4.1)\n"}
+,{"stream_name":"stdout","time":12.4542016,"data":"Requirement already satisfied: nvidia-cufft-cu12==11.3.3.83 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (11.3.3.83)\n"}
+,{"stream_name":"stdout","time":12.454205995,"data":"Requirement already satisfied: nvidia-curand-cu12==10.3.9.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (10.3.9.90)\n"}
+,{"stream_name":"stdout","time":12.454210057,"data":"Requirement already satisfied: nvidia-cusolver-cu12==11.7.3.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (11.7.3.90)\n"}
+,{"stream_name":"stdout","time":12.454214084,"data":"Requirement already satisfied: nvidia-cusparse-cu12==12.5.8.93 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.5.8.93)\n"}
+,{"stream_name":"stdout","time":12.45421809,"data":"Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (0.7.1)\n"}
+,{"stream_name":"stdout","time":12.454222059,"data":"Requirement already satisfied: nvidia-nccl-cu12==2.27.5 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (2.27.5)\n"}
+,{"stream_name":"stdout","time":12.454232191,"data":"Requirement already satisfied: nvidia-nvshmem-cu12==3.4.5 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.4.5)\n"}
+,{"stream_name":"stdout","time":12.454236566,"data":"Requirement already satisfied: nvidia-nvtx-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.90)\n"}
+,{"stream_name":"stdout","time":12.454240577,"data":"Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.93 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.93)\n"}
+,{"stream_name":"stdout","time":12.454244567,"data":"Requirement already satisfied: nvidia-cufile-cu12==1.13.1.3 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (1.13.1.3)\n"}
+,{"stream_name":"stdout","time":12.454249477,"data":"Requirement already satisfied: triton==3.6.0 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.6.0)\n"}
+,{"stream_name":"stdout","time":12.454253442,"data":"Requirement already satisfied: cuda-pathfinder~=1.1 in /usr/local/lib/python3.12/dist-packages (from cuda-bindings==12.9.4-\u003etorch-\u003epina-mathlab==0.3.2.post2609) (1.5.3)\n"}
+,{"stream_name":"stdout","time":12.454257614,"data":"Requirement already satisfied: contourpy\u003e=1.0.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (1.3.3)\n"}
+,{"stream_name":"stdout","time":12.454261637,"data":"Requirement already satisfied: cycler\u003e=0.10 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (0.12.1)\n"}
+,{"stream_name":"stdout","time":12.454265615,"data":"Requirement already satisfied: fonttools\u003e=4.22.0 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (4.62.1)\n"}
+,{"stream_name":"stdout","time":12.454269739,"data":"Requirement already satisfied: kiwisolver\u003e=1.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (1.5.0)\n"}
+,{"stream_name":"stdout","time":12.454273728,"data":"Requirement already satisfied: pillow\u003e=8 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (11.3.0)\n"}
+,{"stream_name":"stdout","time":12.45428115,"data":"Requirement already satisfied: pyparsing\u003e=2.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (3.3.2)\n"}
+,{"stream_name":"stdout","time":12.454285245,"data":"Requirement already satisfied: aiohttp in /usr/local/lib/python3.12/dist-packages (from torch_geometric-\u003epina-mathlab==0.3.2.post2609) (3.13.5)\n"}
+,{"stream_name":"stdout","time":12.454289351,"data":"Requirement already satisfied: psutil\u003e=5.8.0 in /usr/local/lib/python3.12/dist-packages (from torch_geometric-\u003epina-mathlab==0.3.2.post2609) (5.9.5)\n"}
+,{"stream_name":"stdout","time":12.454293416,"data":"Requirement already satisfied: aiohappyeyeballs\u003e=2.5.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (2.6.1)\n"}
+,{"stream_name":"stdout","time":12.454297644,"data":"Requirement already satisfied: aiosignal\u003e=1.4.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (1.4.0)\n"}
+,{"stream_name":"stdout","time":12.454301701,"data":"Requirement already satisfied: attrs\u003e=17.3.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (26.1.0)\n"}
+,{"stream_name":"stdout","time":12.454306505,"data":"Requirement already satisfied: frozenlist\u003e=1.1.1 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (1.8.0)\n"}
+,{"stream_name":"stdout","time":12.454310715,"data":"Requirement already satisfied: multidict\u003c7.0,\u003e=4.5 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (6.7.1)\n"}
+,{"stream_name":"stdout","time":12.454314966,"data":"Requirement already satisfied: propcache\u003e=0.2.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (0.4.1)\n"}
+,{"stream_name":"stdout","time":12.45431897,"data":"Requirement already satisfied: yarl\u003c2.0,\u003e=1.17.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (1.23.0)\n"}
+,{"stream_name":"stdout","time":12.454323155,"data":"Requirement already satisfied: mpmath\u003c1.4,\u003e=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy\u003e=1.13.3-\u003etorch-\u003epina-mathlab==0.3.2.post2609) (1.3.0)\n"}
+,{"stream_name":"stdout","time":12.458383314,"data":"Requirement already satisfied: MarkupSafe\u003e=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2-\u003etorch-\u003epina-mathlab==0.3.2.post2609) (3.0.3)\n"}
+,{"stream_name":"stdout","time":12.52780762,"data":"Downloading pina_mathlab-0.3.2.post2609-py3-none-any.whl (327 kB)\n"}
+,{"stream_name":"stdout","time":12.551241227,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 328.0/328.0 kB 15.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.558368398,"data":"Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl (26.1 MB)\n"}
+,{"stream_name":"stdout","time":12.660767739,"data":"Requirement already satisfied: MarkupSafe\u003e=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2-\u003etorch-\u003epina-mathlab==0.3.2.post2609) (3.0.3)\n"}
+,{"stream_name":"stdout","time":12.660790944,"data":"Downloading pina_mathlab-0.3.2.post2609-py3-none-any.whl (327 kB)\n"}
+,{"stream_name":"stdout","time":12.660796935,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 328.0/328.0 kB 15.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.66080271,"data":"Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl (26.1 MB)\n"}
+,{"stream_name":"stdout","time":12.766647093,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.1/26.1 MB 69.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.771565737,"data":"Downloading plotly-7.1.0-py3-none-any.whl (9.7 MB)\n"}
+,{"stream_name":"stdout","time":12.862924817,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 108.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.869273365,"data":"Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.3 MB)\n"}
+,{"stream_name":"stdout","time":12.96956761,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.1/26.1 MB 69.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.969595137,"data":"Downloading plotly-7.1.0-py3-none-any.whl (9.7 MB)\n"}
+,{"stream_name":"stdout","time":12.969599205,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 108.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.969602632,"data":"Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.3 MB)\n"}
+,{"stream_name":"stdout","time":13.188831551,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 56.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.194253107,"data":"Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)\n"}
+,{"stream_name":"stdout","time":13.314567005,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 99.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.319056061,"data":"Downloading opentelemetry_api-1.45.0-py3-none-any.whl (60 kB)\n"}
+,{"stream_name":"stdout","time":13.337596238,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.0/60.0 kB 3.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.341915106,"data":"Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl (22 kB)\n"}
+,{"stream_name":"stdout","time":13.361555071,"data":"Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":13.381468487,"data":"Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":13.390819985,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 56.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.390839111,"data":"Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)\n"}
+,{"stream_name":"stdout","time":13.390843746,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 99.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.390848498,"data":"Downloading opentelemetry_api-1.45.0-py3-none-any.whl (60 kB)\n"}
+,{"stream_name":"stdout","time":13.390852319,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.0/60.0 kB 3.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.390858579,"data":"Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl (22 kB)\n"}
+,{"stream_name":"stdout","time":13.390873855,"data":"Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":13.390877473,"data":"Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":13.397527843,"data":"Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl (15 kB)\n"}
+,{"stream_name":"stdout","time":13.412657168,"data":"Downloading opentelemetry_proto-1.45.0-py3-none-any.whl (72 kB)\n"}
+,{"stream_name":"stdout","time":13.431171791,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 3.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.435295469,"data":"Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl (140 kB)\n"}
+,{"stream_name":"stdout","time":13.452616276,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.1/140.1 kB 8.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.456765549,"data":"Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl (206 kB)\n"}
+,{"stream_name":"stdout","time":13.475243467,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.3/206.3 kB 12.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.480748238,"data":"Downloading lightning-2.6.6-py3-none-any.whl (849 kB)\n"}
+,{"stream_name":"stdout","time":13.503546586,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 849.3/849.3 kB 40.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.508861036999999,"data":"Downloading torch_geometric-2.8.0.post1-py3-none-any.whl (1.3 MB)\n"}
+,{"stream_name":"stdout","time":13.534288023,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 57.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.599647749,"data":"Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl (15 kB)\n"}
+,{"stream_name":"stdout","time":13.599665053,"data":"Downloading opentelemetry_proto-1.45.0-py3-none-any.whl (72 kB)\n"}
+,{"stream_name":"stdout","time":13.599669595,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 3.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.59969077,"data":"Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl (140 kB)\n"}
+,{"stream_name":"stdout","time":13.599694576,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.1/140.1 kB 8.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.599698928,"data":"Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl (206 kB)\n"}
+,{"stream_name":"stdout","time":13.599702809,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.3/206.3 kB 12.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.599741002,"data":"Downloading lightning-2.6.6-py3-none-any.whl (849 kB)\n"}
+,{"stream_name":"stdout","time":13.59974457,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 849.3/849.3 kB 40.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.59974877,"data":"Downloading torch_geometric-2.8.0.post1-py3-none-any.whl (1.3 MB)\n"}
+,{"stream_name":"stdout","time":13.599752737,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 57.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.021862737,"data":"Installing collected packages: scipy, plotly, opentelemetry-proto, opentelemetry-api, pandas, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, opentelemetry-exporter-http-transport, torch_geometric, opentelemetry-sdk, opentelemetry-exporter-otlp-common, opentelemetry-exporter-otlp-proto-http, wandb, lightning, pina-mathlab\n"}
+,{"stream_name":"stdout","time":16.022205266,"data":"  Attempting uninstall: scipy\n"}
+,{"stream_name":"stdout","time":16.223477219,"data":"    Found existing installation: scipy 1.16.3\n"}
+,{"stream_name":"stdout","time":16.224250889,"data":"Installing collected packages: scipy, plotly, opentelemetry-proto, opentelemetry-api, pandas, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, opentelemetry-exporter-http-transport, torch_geometric, opentelemetry-sdk, opentelemetry-exporter-otlp-common, opentelemetry-exporter-otlp-proto-http, wandb, lightning, pina-mathlab\n"}
+,{"stream_name":"stdout","time":16.224268637,"data":"  Attempting uninstall: scipy\n"}
+,{"stream_name":"stdout","time":16.39328125,"data":"    Uninstalling scipy-1.16.3:\n"}
+,{"stream_name":"stdout","time":16.425544416,"data":"    Found existing installation: scipy 1.16.3\n"}
+,{"stream_name":"stdout","time":16.425563686,"data":"    Uninstalling scipy-1.16.3:\n"}
+,{"stream_name":"stdout","time":18.047427399,"data":"      Successfully uninstalled scipy-1.16.3\n"}
+,{"stream_name":"stdout","time":18.248485411,"data":"      Successfully uninstalled scipy-1.16.3\n"}
+,{"stream_name":"stdout","time":22.356250396,"data":"  Attempting uninstall: plotly\n"}
+,{"stream_name":"stdout","time":22.558856457,"data":"  Attempting uninstall: plotly\n"}
+,{"stream_name":"stdout","time":22.576750446,"data":"    Found existing installation: plotly 5.24.1\n"}
+,{"stream_name":"stdout","time":22.779038894,"data":"    Found existing installation: plotly 5.24.1\n"}
+,{"stream_name":"stdout","time":24.374804948,"data":"    Uninstalling plotly-5.24.1:\n"}
+,{"stream_name":"stdout","time":24.577063257,"data":"    Uninstalling plotly-5.24.1:\n"}
+,{"stream_name":"stdout","time":34.186559907,"data":"      Successfully uninstalled plotly-5.24.1\n"}
+,{"stream_name":"stdout","time":34.389031374,"data":"      Successfully uninstalled plotly-5.24.1\n"}
+,{"stream_name":"stdout","time":36.716573367,"data":"  Attempting uninstall: opentelemetry-proto\n"}
+,{"stream_name":"stdout","time":36.918903712,"data":"  Attempting uninstall: opentelemetry-proto\n"}
+,{"stream_name":"stdout","time":37.045080831,"data":"    Found existing installation: opentelemetry-proto 1.38.0\n"}
+,{"stream_name":"stdout","time":37.064429989,"data":"    Uninstalling opentelemetry-proto-1.38.0:\n"}
+,{"stream_name":"stdout","time":37.092613014,"data":"      Successfully uninstalled opentelemetry-proto-1.38.0\n"}
+,{"stream_name":"stdout","time":37.197012977,"data":"  Attempting uninstall: opentelemetry-api\n"}
+,{"stream_name":"stdout","time":37.247199622,"data":"    Found existing installation: opentelemetry-proto 1.38.0\n"}
+,{"stream_name":"stdout","time":37.247241697,"data":"    Uninstalling opentelemetry-proto-1.38.0:\n"}
+,{"stream_name":"stdout","time":37.247246281,"data":"      Successfully uninstalled opentelemetry-proto-1.38.0\n"}
+,{"stream_name":"stdout","time":37.247249692,"data":"  Attempting uninstall: opentelemetry-api\n"}
+,{"stream_name":"stdout","time":37.536734325,"data":"    Found existing installation: opentelemetry-api 1.38.0\n"}
+,{"stream_name":"stdout","time":37.554745459,"data":"    Uninstalling opentelemetry-api-1.38.0:\n"}
+,{"stream_name":"stdout","time":37.624463727,"data":"      Successfully uninstalled opentelemetry-api-1.38.0\n"}
+,{"stream_name":"stdout","time":37.683208106,"data":"  Attempting uninstall: pandas\n"}
+,{"stream_name":"stdout","time":37.726021334,"data":"    Found existing installation: pandas 2.3.3\n"}
+,{"stream_name":"stdout","time":37.738979035,"data":"    Found existing installation: opentelemetry-api 1.38.0\n"}
+,{"stream_name":"stdout","time":37.738998076,"data":"    Uninstalling opentelemetry-api-1.38.0:\n"}
+,{"stream_name":"stdout","time":37.739003092,"data":"      Successfully uninstalled opentelemetry-api-1.38.0\n"}
+,{"stream_name":"stdout","time":37.739006768,"data":"  Attempting uninstall: pandas\n"}
+,{"stream_name":"stdout","time":37.739010554000004,"data":"    Found existing installation: pandas 2.3.3\n"}
+,{"stream_name":"stdout","time":38.017379502,"data":"    Uninstalling pandas-2.3.3:\n"}
+,{"stream_name":"stdout","time":38.224393683,"data":"    Uninstalling pandas-2.3.3:\n"}
+,{"stream_name":"stdout","time":39.286839098,"data":"      Successfully uninstalled pandas-2.3.3\n"}
+,{"stream_name":"stdout","time":39.489520448,"data":"      Successfully uninstalled pandas-2.3.3\n"}
+,{"stream_name":"stdout","time":44.058122457,"data":"  Attempting uninstall: opentelemetry-semantic-conventions\n"}
+,{"stream_name":"stdout","time":44.260313589,"data":"  Attempting uninstall: opentelemetry-semantic-conventions\n"}
+,{"stream_name":"stdout","time":44.404818871,"data":"    Found existing installation: opentelemetry-semantic-conventions 0.59b0\n"}
+,{"stream_name":"stdout","time":44.416471091,"data":"    Uninstalling opentelemetry-semantic-conventions-0.59b0:\n"}
+,{"stream_name":"stdout","time":44.492457688,"data":"      Successfully uninstalled opentelemetry-semantic-conventions-0.59b0\n"}
+,{"stream_name":"stdout","time":44.60694553,"data":"    Found existing installation: opentelemetry-semantic-conventions 0.59b0\n"}
+,{"stream_name":"stdout","time":44.606968723,"data":"    Uninstalling opentelemetry-semantic-conventions-0.59b0:\n"}
+,{"stream_name":"stdout","time":44.606975166,"data":"      Successfully uninstalled opentelemetry-semantic-conventions-0.59b0\n"}
+,{"stream_name":"stdout","time":44.616058592,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-common\n"}
+,{"stream_name":"stdout","time":44.818150246,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-common\n"}
+,{"stream_name":"stdout","time":44.919816168,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-common 1.38.0\n"}
+,{"stream_name":"stdout","time":44.924995119,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-common-1.38.0:\n"}
+,{"stream_name":"stdout","time":44.936639747,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-common-1.38.0\n"}
+,{"stream_name":"stdout","time":45.122318414,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-common 1.38.0\n"}
+,{"stream_name":"stdout","time":45.122361788,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-common-1.38.0:\n"}
+,{"stream_name":"stdout","time":45.122369325,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-common-1.38.0\n"}
+,{"stream_name":"stdout","time":45.979297333,"data":"  Attempting uninstall: opentelemetry-sdk\n"}
+,{"stream_name":"stdout","time":46.152961406,"data":"    Found existing installation: opentelemetry-sdk 1.38.0\n"}
+,{"stream_name":"stdout","time":46.162426721,"data":"    Uninstalling opentelemetry-sdk-1.38.0:\n"}
+,{"stream_name":"stdout","time":46.181728754,"data":"  Attempting uninstall: opentelemetry-sdk\n"}
+,{"stream_name":"stdout","time":46.181755678,"data":"    Found existing installation: opentelemetry-sdk 1.38.0\n"}
+,{"stream_name":"stdout","time":46.18176111,"data":"    Uninstalling opentelemetry-sdk-1.38.0:\n"}
+,{"stream_name":"stdout","time":46.216392229,"data":"      Successfully uninstalled opentelemetry-sdk-1.38.0\n"}
+,{"stream_name":"stdout","time":46.355069158,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-http\n"}
+,{"stream_name":"stdout","time":46.418893578,"data":"      Successfully uninstalled opentelemetry-sdk-1.38.0\n"}
+,{"stream_name":"stdout","time":46.418920335,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-http\n"}
+,{"stream_name":"stdout","time":46.668226578,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-http 1.38.0\n"}
+,{"stream_name":"stdout","time":46.6730772,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-http-1.38.0:\n"}
+,{"stream_name":"stdout","time":46.683697222,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-http-1.38.0\n"}
+,{"stream_name":"stdout","time":46.70947713,"data":"  Attempting uninstall: wandb\n"}
+,{"stream_name":"stdout","time":46.87065558,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-http 1.38.0\n"}
+,{"stream_name":"stdout","time":46.870679316,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-http-1.38.0:\n"}
+,{"stream_name":"stdout","time":46.870689172,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-http-1.38.0\n"}
+,{"stream_name":"stdout","time":46.870692112,"data":"  Attempting uninstall: wandb\n"}
+,{"stream_name":"stdout","time":46.877682846,"data":"    Found existing installation: wandb 0.26.1\n"}
+,{"stream_name":"stdout","time":47.010429447,"data":"    Uninstalling wandb-0.26.1:\n"}
+,{"stream_name":"stdout","time":47.079808817,"data":"    Found existing installation: wandb 0.26.1\n"}
+,{"stream_name":"stdout","time":47.079825032,"data":"    Uninstalling wandb-0.26.1:\n"}
+,{"stream_name":"stdout","time":59.60620501,"data":"      Successfully uninstalled wandb-0.26.1\n"}
+,{"stream_name":"stdout","time":59.808398639,"data":"      Successfully uninstalled wandb-0.26.1\n"}
+,{"stream_name":"stderr","time":61.787631418,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":61.787661851,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":61.787668976,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":61.787673846,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.787678744,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.2.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.787683829,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.787688238,"data":"google-adk 1.29.0 requires opentelemetry-api\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-api 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.787693331,"data":"google-adk 1.29.0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.787786438,"data":"opentelemetry-exporter-gcp-logging 1.11.0a0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.35.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":61.787867079,"data":"Successfully installed lightning-2.6.6 opentelemetry-api-1.45.0 opentelemetry-exporter-http-transport-0.66b0 opentelemetry-exporter-otlp-common-0.66b0 opentelemetry-exporter-otlp-proto-common-1.45.0 opentelemetry-exporter-otlp-proto-http-1.45.0 opentelemetry-proto-1.45.0 opentelemetry-sdk-1.45.0 opentelemetry-semantic-conventions-0.66b0 pandas-2.2.3 pina-mathlab-0.3.2.post2609 plotly-7.1.0 scipy-1.15.3 torch_geometric-2.8.0.post1 wandb-0.30.0\n"}
+,{"stream_name":"stderr","time":61.990635956,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":61.990672748,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":61.990678468,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":61.990682188,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.990685794,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.2.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.990689258,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.990693074,"data":"google-adk 1.29.0 requires opentelemetry-api\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-api 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.990696911,"data":"google-adk 1.29.0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.990700792,"data":"opentelemetry-exporter-gcp-logging 1.11.0a0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.35.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.990704578,"data":"\n"}
+,{"stream_name":"stderr","time":61.990707734,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":61.99071197,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":61.990715403,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":61.990718817,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.990722376,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.2.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.990725883,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.990730011,"data":"google-adk 1.29.0 requires opentelemetry-api\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-api 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.990733825,"data":"google-adk 1.29.0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":61.990739003,"data":"opentelemetry-exporter-gcp-logging 1.11.0a0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.35.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":61.991414691,"data":"Successfully installed lightning-2.6.6 opentelemetry-api-1.45.0 opentelemetry-exporter-http-transport-0.66b0 opentelemetry-exporter-otlp-common-0.66b0 opentelemetry-exporter-otlp-proto-common-1.45.0 opentelemetry-exporter-otlp-proto-http-1.45.0 opentelemetry-proto-1.45.0 opentelemetry-sdk-1.45.0 opentelemetry-semantic-conventions-0.66b0 pandas-2.2.3 pina-mathlab-0.3.2.post2609 plotly-7.1.0 scipy-1.15.3 torch_geometric-2.8.0.post1 wandb-0.30.0\n"}
+,{"stream_name":"stdout","time":67.856584803,"data":"index, name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":67.85712178,"data":"0, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":67.857145464,"data":"1, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":67.86553487,"data":"index, name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":67.86555979,"data":"0, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":67.865565506,"data":"1, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stderr","time":72.542213929,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":72.542245795,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":72.542252759,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":72.542270153,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":72.542275932,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":72.543387521,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":72.555396425,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":72.55540983,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":72.555415362,"data":"Exception encountered at \"In [4]\":\n"}
+,{"stream_name":"stderr","time":72.555420541,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":72.555425335,"data":"KeyError                                  Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":72.555430821,"data":"/tmp/ipykernel_25/3996450670.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":72.555436663,"data":"     18         sampling_rows.append({\n"}
+,{"stream_name":"stderr","time":72.555441923,"data":"     19             'problem': problem, 'seed': seed, 'interior_n': len(data['interior']),\n"}
+,{"stream_name":"stderr","time":72.55544733,"data":"---\u003e 20             'diagnostic_n': len(data['diagnostic']), 'boundary_n': len(data['left']) + len(data['right']),\n"}
+,{"stream_name":"stderr","time":72.555452135,"data":"     21             'initial_n': len(data['initial']), 'sobol_centered_discrepancy': qmc.discrepancy(points, method='CD'),\n"}
+,{"stream_name":"stderr","time":72.555457154,"data":"     22             'nn_min': np.min(neighbors), 'nn_median': np.median(neighbors),\n"}
+,{"stream_name":"stderr","time":72.555462085,"data":"\n"}
+,{"stream_name":"stderr","time":72.555466863,"data":"KeyError: 'left'\n"}
+,{"stream_name":"stderr","time":72.555471584,"data":"\n"}
+,{"stream_name":"stderr","time":74.613832509,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":74.613867584,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":74.755390317,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":74.755414109,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":75.386186936,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":75.696050891,"data":"[NbConvertApp] Writing 126151 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":78.059594155,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":78.923176886,"data":"[NbConvertApp] Writing 446011 bytes to __results__.html\n"}
+]

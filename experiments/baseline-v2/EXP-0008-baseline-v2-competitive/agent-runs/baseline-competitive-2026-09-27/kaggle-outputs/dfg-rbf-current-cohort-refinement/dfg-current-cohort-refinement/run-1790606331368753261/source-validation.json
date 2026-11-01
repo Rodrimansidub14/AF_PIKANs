@@ -1,0 +1,168 @@
+{
+  "gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "input_dataset_id": "rodrimandub/af-pikans-dfg-rbf-inputs-20260928",
+  "input_dataset_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928",
+  "numpy": "2.0.2",
+  "official_module_sha256": {
+    "src/research_pipeline/sciml/dfg.py": "3aee5c92e1f05db0752eff3a57d4c995215cde6b781866d61eb99ebd7fcee7d4",
+    "src/research_pipeline/sciml/dfg_campaign.py": "1a6268624520dee7ee9aeadfe7d2c0bf23329427b54030fc821c7771130cbf13"
+  },
+  "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+  "scipy": "1.16.3",
+  "seeds_by_source": {
+    "r3": [
+      301,
+      302
+    ],
+    "r4": [
+      303,
+      304,
+      305
+    ]
+  },
+  "source_by_seed": {
+    "301": {
+      "checkpoint_sha256": "b80aca8372a5e0cb59271a9ab5b0f882c926f26a45fca56506ab609acd0250bf",
+      "files": {
+        "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/dfg_rbf_pikan.pt",
+        "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/dfg_training_pools.npz",
+        "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/manifest_snapshot.json",
+        "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/provenance.json",
+        "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/run.json"
+      },
+      "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+      "pool_sha256": "d1aec7ef727830e2cf00777e36a8fcb98df3e2b9b5e824a8553d96cf77c10402",
+      "provenance_training_seed": 301,
+      "run_seed": 301,
+      "seed": 301,
+      "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301",
+      "sha256": {
+        "dfg_rbf_pikan.pt": "b80aca8372a5e0cb59271a9ab5b0f882c926f26a45fca56506ab609acd0250bf",
+        "dfg_training_pools.npz": "d1aec7ef727830e2cf00777e36a8fcb98df3e2b9b5e824a8553d96cf77c10402",
+        "manifest_snapshot.json": "721b61747d0dd483c566b5ca41c29f445ccbfe50d06214d991d081fe34dead63",
+        "provenance.json": "df890e1b3e7aa92903987e21c4723c9a6aa9637bff397be71f257bcd0196a202",
+        "run.json": "9fc5e4611ce1c4e1775f8a7765f145806e64c75515bcc94fd9314e8cf478eb0b"
+      },
+      "source": "r3",
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+      "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3"
+    },
+    "302": {
+      "checkpoint_sha256": "85e15ab0d212e042cdbbb08f54fabaed3a330d1db32b0c5039c9a21b23ca1567",
+      "files": {
+        "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/dfg_rbf_pikan.pt",
+        "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/dfg_training_pools.npz",
+        "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/manifest_snapshot.json",
+        "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/provenance.json",
+        "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/run.json"
+      },
+      "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+      "pool_sha256": "11988a7d7c310443e5addb07711908b48cd1361124740bb8c0c9ea9a96c42ca0",
+      "provenance_training_seed": 302,
+      "run_seed": 302,
+      "seed": 302,
+      "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302",
+      "sha256": {
+        "dfg_rbf_pikan.pt": "85e15ab0d212e042cdbbb08f54fabaed3a330d1db32b0c5039c9a21b23ca1567",
+        "dfg_training_pools.npz": "11988a7d7c310443e5addb07711908b48cd1361124740bb8c0c9ea9a96c42ca0",
+        "manifest_snapshot.json": "eacb82912ad356cc14aba9bdbe8167cdb60de82ca3d7bb567dbc81a79ff76330",
+        "provenance.json": "9b3596bbbe0c11d4af99dbef2c68079825f40ddfdc748ca67325a0263aa5bf10",
+        "run.json": "3d0f2edd7f9c07956e0eba36059b956031b4fc2e0a9cee88fc00a36f8f9e16f6"
+      },
+      "source": "r3",
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+      "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3"
+    },
+    "303": {
+      "checkpoint_sha256": "0602af82c611770dc2da14f969157eea5e4730baa945493fb5b9c0caa91a5c15",
+      "files": {
+        "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/dfg_rbf_pikan.pt",
+        "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/dfg_training_pools.npz",
+        "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/manifest_snapshot.json",
+        "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/provenance.json",
+        "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/run.json"
+      },
+      "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+      "pool_sha256": "5b20353af42277abf3fc21c73feb26fa30adde9c6949e5031923bb1b881a4cbc",
+      "provenance_training_seed": 303,
+      "run_seed": 303,
+      "seed": 303,
+      "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303",
+      "sha256": {
+        "dfg_rbf_pikan.pt": "0602af82c611770dc2da14f969157eea5e4730baa945493fb5b9c0caa91a5c15",
+        "dfg_training_pools.npz": "5b20353af42277abf3fc21c73feb26fa30adde9c6949e5031923bb1b881a4cbc",
+        "manifest_snapshot.json": "2d38aa34538503061370d941458ba243e178215bd8e7e9870737ad685545a0c6",
+        "provenance.json": "cb43f73ed6cd1a539fdcbba41d9310607cc87cd33e7a6d23af7b56069c17837a",
+        "run.json": "d78a0a84f3ff091aeae1d8db7ed9dc119e7c144fb4421543eb4dfc69311a94c0"
+      },
+      "source": "r4",
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+      "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4"
+    },
+    "304": {
+      "checkpoint_sha256": "ca3acb0663fb40781c9813e85763c3e83c3578e2899999c305a0264dd462e9fb",
+      "files": {
+        "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/dfg_rbf_pikan.pt",
+        "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/dfg_training_pools.npz",
+        "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/manifest_snapshot.json",
+        "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/provenance.json",
+        "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/run.json"
+      },
+      "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+      "pool_sha256": "d0783ab93c5c28f0026a54cb3564a9139bdbdcf42f6f070622783df058e2c6ca",
+      "provenance_training_seed": 304,
+      "run_seed": 304,
+      "seed": 304,
+      "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304",
+      "sha256": {
+        "dfg_rbf_pikan.pt": "ca3acb0663fb40781c9813e85763c3e83c3578e2899999c305a0264dd462e9fb",
+        "dfg_training_pools.npz": "d0783ab93c5c28f0026a54cb3564a9139bdbdcf42f6f070622783df058e2c6ca",
+        "manifest_snapshot.json": "3ad3d48be14b312be6ddd3cb896b496b118333592776b0d6386d0d5a377856eb",
+        "provenance.json": "6a5f9ddc716c1d42b1aaf59b103992f1cef56637694d5d70df7c124f6b6cb119",
+        "run.json": "6a1f3773579acf130475bd1fa4d8554f8b116b7d6fee33543e34b5ec0c57bff6"
+      },
+      "source": "r4",
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+      "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4"
+    },
+    "305": {
+      "checkpoint_sha256": "5401b1cbc22e2393a7c25c3b1aff0468c536f7eb8fc23a15675641754d6f891e",
+      "files": {
+        "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/dfg_rbf_pikan.pt",
+        "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/dfg_training_pools.npz",
+        "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/manifest_snapshot.json",
+        "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/provenance.json",
+        "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/run.json"
+      },
+      "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+      "pool_sha256": "24af3e1e58ef8fb3797455d1ab44eae47100832beb5d3668c2107751f5fa104b",
+      "provenance_training_seed": 305,
+      "run_seed": 305,
+      "seed": 305,
+      "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305",
+      "sha256": {
+        "dfg_rbf_pikan.pt": "5401b1cbc22e2393a7c25c3b1aff0468c536f7eb8fc23a15675641754d6f891e",
+        "dfg_training_pools.npz": "24af3e1e58ef8fb3797455d1ab44eae47100832beb5d3668c2107751f5fa104b",
+        "manifest_snapshot.json": "b0f80b22a41b485ce586d4586ba8ce2bc09a86236e9f7e86b60e73d4025ab802",
+        "provenance.json": "9dc8edc5cd566c7e24f77e893589868e8f8531db9c1850dfa13707dac791e8de",
+        "run.json": "09675ffdd976c6a39781f314658eccd5db230b07621f056ca5da991ad937c532"
+      },
+      "source": "r4",
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+      "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4"
+    }
+  },
+  "source_kernels": {
+    "r3": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+    "r4": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4"
+  },
+  "source_mounts": {
+    "r3": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+    "r4": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4"
+  },
+  "status": "validated",
+  "torch": "2.10.0+cu128"
+}

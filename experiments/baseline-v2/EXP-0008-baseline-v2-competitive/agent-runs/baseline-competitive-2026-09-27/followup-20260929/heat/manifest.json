@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "session": "S2-B-spline-completion-followup-2026-09-29",
+  "kernel_slug": "rodrimandub/af-pikans-heat-b-spline-completion-20260929",
+  "private": true,
+  "session_cap_seconds": 6480,
+  "per_seed_cap_seconds": 1930,
+  "training_schedule": "five B-spline seeds 901-905; two T4 workers in parallel; no Adam step reduction",
+  "pool_source_kernel": "rodrimandub/af-pikans-heat-tier2-torch-pilot-t4x2",
+  "pool_hashes": {
+    "901": "318cdd951dc76a19ce0be65dd170beaffdf40741d4e11301abda5a8b2fe18f51",
+    "902": "c89cd6ae60703dcb8cdf04448e2d50f8cdc02324446c1807dcfb3a2145b926d6",
+    "903": "0e3557a470006da65b348dd066ba73ccad768c6682e3c337c5392c1e8bc6d4e7",
+    "904": "f3067f1997a1b17947fc3910fd4f70db0e5fded96cb87ef3f87a12f43ea05825",
+    "905": "dc567fc082828a68ac5483975659f155644d9040cf01916147758e1b5e6736b0"
+  },
+  "optimizer": {
+    "dtype": "float64",
+    "adam_updates": 20000,
+    "learning_rate": 0.001,
+    "lbfgs_backend": "PyTorch L-BFGS using DeepXDE 1.12.2 settings",
+    "maxiter": 15000,
+    "maxfun": 18750,
+    "history_size": 100,
+    "tolerance_grad": 1e-08,
+    "tolerance_change": 0.0,
+    "line_search_fn": "strong_wolfe",
+    "chunk_iter": 25,
+    "chunk_max_eval": 32
+  },
+  "confirmation_grid": "heat-confirmatory-512x256-v1",
+  "optional_reference": "DeepXDE alpha=0.1 skipped; no residual cap after planning both approved items",
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "source_hashes": {
+    "campaign_entrypoint_sha256": "2a6d94eff4ca9fac2e2260afad1437143169d072063d0be00e3066e9a0ec96fc",
+    "source_template_sha256": "b9817660fec6edad5b2a159b8d1b6289a6c03fd1278514bb9c6e56204465d985",
+    "prior_campaign_entrypoint_sha256": "a0526d95f79f12db6f2ad45ddb5f23383c917f21c173e3b2ab57d6a9f4ea5c00"
+  }
+}

@@ -1,0 +1,127 @@
+\chapter{Metodología}
+\label{sec:metodologia}
+
+\section{Enfoque metodológico}
+\label{subsec:enfoque-metodologico}
+
+La investigación se desarrolló mediante la Metodología de Investigación en Ciencia del Diseño (DSRM, por sus siglas en inglés), debido a que se diseñó, implementó y evaluó un artefacto computacional dentro de un contexto técnico definido \cite{peffers2007dsrm}. El artefacto consistió en un mecanismo de focalización adaptativa acoplado al entrenamiento de redes de Kolmogorov-Arnold informadas por física (PIKAN), cuyo objetivo fue redistribuir la capacidad de aprendizaje hacia regiones del dominio con mayor complejidad física.
+
+Las seis actividades de DSRM se aplicaron de forma iterativa. Primero, se identificó el problema de representación localizada en regiones con alta variación o residual físico. Segundo, se definieron como objetivos la reducción del error y del residual en dichas regiones, la estabilidad del entrenamiento y un costo computacional controlado. Tercero, se diseñaron la implementación PIKAN de referencia y el mecanismo de focalización. Cuarto, el artefacto se demostró en tres niveles de complejidad: un problema canónico, un problema oscilatorio o multiescala y un sistema piezoeléctrico acoplado. Quinto, se evaluó mediante métricas globales, locales y computacionales. Finalmente, se comunicaron las configuraciones, corridas, artefactos y decisiones por medio del registro experimental y de este documento \cite{peffers2007dsrm}.
+
+La secuencia experimental siguió una lógica de verificación progresiva. La implementación base se verificó con soluciones analíticas o referencias numéricas; después se aisló el efecto del mecanismo en problemas controlados; por último, se trasladó la configuración seleccionada a dominios con mayor complejidad física. Cuando una etapa no satisfizo sus criterios, la configuración se revisó antes de continuar.
+
+\section{Unidad de análisis y alcance}
+\label{subsec:unidad-analisis}
+
+La unidad de análisis fue una corrida experimental completa, definida por el problema, la semilla, la arquitectura, la política de muestreo, la función de pérdida, el optimizador y la configuración de focalización. Las corridas se organizaron en pares control–intervención. Dentro de cada par se conservaron la ecuación, el dominio, las condiciones iniciales y de frontera, la solución de referencia, la arquitectura, el presupuesto de entrenamiento, los puntos iniciales y la semilla; únicamente cambió el componente correspondiente al mecanismo estudiado.
+
+La variable independiente fue el estado del mecanismo de focalización: desactivado en la línea base, activado en el modelo candidato y modificado en las ablaciones. Las variables dependientes fueron el error relativo global, el error y el residual en regiones críticas, la estabilidad, el tiempo de ejecución y el costo computacional. Esta definición permitió distinguir una mejora numérica agregada de una mejora localizada y físicamente relevante \cite{grossmann2024,krishnapriyan2021,shukla2024fair}.
+
+El estudio se concentró en caracterizar el mecanismo de focalización sobre un sustrato PIKAN. Por esta razón, no se planteó un \textit{benchmark} exhaustivo entre familias de redes. Las estrategias de muestreo o refinamiento adaptativo se utilizaron como antecedentes y controles secundarios cuando resultaron pertinentes \cite{lu2021deepxde,wu2023sampling,kharazmi2021hpvpinns}.
+
+\section{Arquitectura base y mecanismo de focalización}
+\label{subsec:arquitectura-base-mecanismo}
+
+Se implementó una PIKAN como condición de control, de acuerdo con formulaciones recientes de redes de Kolmogorov-Arnold informadas por física \cite{toscano2025pikans,shukla2024fair,wang2025kinn}. La arquitectura se configuró con \textbf{[COMPLETAR: profundidad]} capas, \textbf{[COMPLETAR: ancho]} unidades, tamaño de malla \textbf{[COMPLETAR]}, orden de spline \textbf{[COMPLETAR]} y \textbf{[COMPLETAR]} parámetros entrenables. La misma arquitectura se utilizó en la condición focalizada.
+
+El mecanismo se implementó como una tubería de cuatro operaciones. Primero, se calculó una señal local a partir de \textbf{[COMPLETAR: señal aprobada]}. Segundo, la señal se transformó mediante \textbf{[COMPLETAR: normalización o transformación]}. Tercero, la puntuación resultante se convirtió en \textbf{[COMPLETAR: pesos, probabilidades de muestreo o actualizaciones de representación]}. Cuarto, la intervención se aplicó en \textbf{[COMPLETAR: punto de inyección]} con una frecuencia de \textbf{[COMPLETAR]} épocas. La configuración neutra anuló la intervención y reprodujo la línea base, con lo cual se comprobó que el mecanismo no alteró otras partes del modelo.
+
+La selección definitiva del punto de inyección, la señal y la notación quedó documentada en las notas de decisión DEC-001 (punto de inyección), DEC-002 (mecanismo frente a aplicación), DEC-003 (señal y residual) y DEC-004 (notación del residual), conservadas en el registro de decisiones de Tesis-Studio.
+
+Se realizaron ablaciones sobre la fuente de la señal, su transformación, la intensidad de focalización y la frecuencia de actualización. Cada ablación modificó un único componente con respecto a la configuración principal, de modo que su efecto pudo atribuirse a esa decisión y no a cambios simultáneos.
+
+\section{Protocolo experimental común}
+\label{subsec:protocolo-comun}
+
+\subsection{Definición de los problemas y soluciones de referencia}
+
+Para cada experimento se especificaron la ecuación diferencial, el dominio, las variables, los parámetros físicos, las unidades y las condiciones iniciales y de frontera. Cuando existió una solución analítica, esta se evaluó directamente sobre un conjunto independiente. Cuando no existió, se generó una referencia mediante \textbf{[COMPLETAR: método numérico o software]}, con resolución \textbf{[COMPLETAR]}, tolerancia \textbf{[COMPLETAR]} y un estudio de convergencia basado en \textbf{[COMPLETAR]}. La referencia se obtuvo de forma independiente del modelo evaluado.
+
+\subsection{Generación de puntos de entrenamiento y evaluación}
+
+Se generaron conjuntos separados para las condiciones iniciales, las condiciones de frontera, la colocación interior y la evaluación final. Se utilizaron \textbf{[COMPLETAR]} puntos iniciales, \textbf{[COMPLETAR]} puntos de frontera, \textbf{[COMPLETAR]} puntos de colocación y \textbf{[COMPLETAR]} puntos de evaluación. El conjunto de evaluación se mantuvo fijo y no participó en el entrenamiento.
+
+Dentro de cada par control–intervención se compartió la misma realización inicial de puntos. Cuando la focalización modificó el muestreo, se conservaron el conjunto original y el historial de puntos añadidos, retirados o reponderados. Las regiones críticas se definieron antes de analizar los resultados mediante \textbf{[COMPLETAR: regla física o umbral aprobado]}, para evitar una selección retrospectiva favorable al modelo candidato \cite{lu2021deepxde,wu2023sampling}.
+
+\subsection{Función de pérdida y entrenamiento}
+
+La función objetivo se construyó como una suma ponderada de los términos exigidos por cada problema:
+
+$$
+\mathcal{L}=\lambda_f\mathcal{L}_f+\lambda_b\mathcal{L}_b+\lambda_0\mathcal{L}_0+\lambda_c\mathcal{L}_c,
+$$
+
+donde $\mathcal{L}_f$ representó el residual de la ecuación, $\mathcal{L}_b$ las condiciones de frontera, $\mathcal{L}_0$ las condiciones iniciales y $\mathcal{L}_c$ los términos de acoplamiento cuando correspondieron. Los pesos utilizados fueron $\lambda_f=$ \textbf{[COMPLETAR]}, $\lambda_b=$ \textbf{[COMPLETAR]}, $\lambda_0=$ \textbf{[COMPLETAR]} y $\lambda_c=$ \textbf{[COMPLETAR]}. Estos valores se conservaron entre control e intervención, excepto en la ablación que examinó explícitamente una política de ponderación.
+
+Los modelos se entrenaron con el optimizador \textbf{[COMPLETAR]}, tasa de aprendizaje \textbf{[COMPLETAR]}, planificador \textbf{[COMPLETAR]} y un presupuesto de \textbf{[COMPLETAR]} épocas o pasos. Se emplearon las semillas \textbf{[COMPLETAR LISTA FINAL]} y la misma inicialización por semilla dentro de cada par. El entrenamiento se detuvo al completar el presupuesto o al satisfacer \textbf{[COMPLETAR: criterio de parada]}. Las terminaciones por valores no finitos, memoria insuficiente o límite de tiempo se registraron como fallas de estabilidad y no se descartaron.
+
+\subsection{Evaluación independiente y registro}
+
+Al finalizar cada corrida, el modelo se evaluó sobre el conjunto independiente. Se almacenaron la predicción, la solución de referencia, el error punto a punto, el residual físico y la máscara de regiones críticas. Las figuras y tablas se generaron desde estos artefactos.
+
+Cada corrida recibió un identificador único y un manifiesto inmutable. Se registraron la revisión del código, la configuración, la semilla, el entorno, las métricas, el tiempo, las curvas de pérdida y los mapas de residual y error. MLflow se utilizó como índice de corridas y artefactos \cite{zaharia2018mlflow}. Una repetición conservó un identificador independiente; cuando se modificó una configuración, se generó una corrida nueva en lugar de sobrescribir la anterior.
+
+\section{Procedimiento experimental por nivel de complejidad}
+\label{subsec:procedimiento-dominios}
+
+\subsection{Nivel I: problema canónico}
+
+Se seleccionó \textbf{[COMPLETAR: PDE canónica]}, definida en \textbf{[COMPLETAR: dominio]} con \textbf{[COMPLETAR: condiciones]}. La solución analítica se utilizó para verificar el residual, las condiciones y la diferenciación automática de la implementación \cite{lagaris1998,raissi2019,grossmann2024}.
+
+Primero se generaron los conjuntos de entrenamiento y evaluación. Después se entrenó la PIKAN de control con todas las semillas. A continuación se activó el mecanismo y se repitió el entrenamiento con las mismas configuraciones. Finalmente, se ejecutaron las ablaciones aprobadas. Se calcularon el error relativo, los residuales global y crítico, la estabilidad y el costo. La etapa se consideró completada cuando la línea base reprodujo la referencia dentro de \textbf{[COMPLETAR: tolerancia]}, todos los artefactos estuvieron disponibles y la configuración neutra reprodujo el comportamiento del control.
+
+\subsection{Nivel II: problema oscilatorio o multiescala}
+
+Se seleccionó \textbf{[COMPLETAR: ecuación]}, cuya solución presentó \textbf{[COMPLETAR: alta frecuencia, escalas separadas o gradientes localizados]}. La referencia se obtuvo mediante \textbf{[COMPLETAR]} y la región crítica se definió como \textbf{[COMPLETAR]}. Esta etapa examinó el comportamiento del mecanismo en condiciones de representación más exigentes \cite{rahaman2019,tancik2020,wang2021eigenvector}.
+
+Se mantuvieron la secuencia, el emparejamiento por semilla y las reglas de registro del Nivel I. El control y el candidato compartieron arquitectura, presupuesto y puntos iniciales. Además de las métricas comunes, se calculó \textbf{[COMPLETAR: métrica espectral o multiescala]}. La etapa se consideró superada cuando el efecto apareció de manera consistente en \textbf{[COMPLETAR]} semillas y el sobrecosto no excedió \textbf{[COMPLETAR]} con respecto a la línea base.
+
+\subsection{Nivel III: sistema piezoeléctrico acoplado}
+
+Se formuló un sistema piezoeléctrico compuesto por \textbf{[COMPLETAR: campos y ecuaciones]}, en la geometría \textbf{[COMPLETAR]}, con propiedades constitutivas \textbf{[COMPLETAR]}, excitación \textbf{[COMPLETAR]} y condiciones de frontera \textbf{[COMPLETAR]}. La referencia se generó mediante \textbf{[COMPLETAR: solución analítica o FEM]}, con el estudio de convergencia \textbf{[COMPLETAR]} \cite{tandis2025piezoelectric,mouratidou2026shunted}.
+
+La pérdida incorporó los residuales de los campos mecánico y eléctrico, las condiciones de frontera y los términos de acoplamiento. Se aplicó la configuración de focalización seleccionada en los niveles anteriores y se mantuvo el mismo protocolo emparejado. Se calcularon métricas por campo, el residual de acoplamiento, el desempeño en regiones críticas, la estabilidad y el costo. Con este procedimiento se establecieron las condiciones de utilidad y las limitaciones del mecanismo en un sistema físico acoplado.
+
+\section{Métricas y análisis estadístico}
+\label{subsec:metricas}
+
+El error relativo discreto $L_2$ entre la predicción $\hat{u}$ y la referencia $u$, evaluadas en los mismos $N$ puntos, se calculó mediante
+
+$$
+\varepsilon_{L_2}=\frac{\left(\sum_{i=1}^{N}|\hat{u}_i-u_i|^2\right)^{1/2}}{\left(\sum_{i=1}^{N}|u_i|^2\right)^{1/2}}.
+$$
+
+El residual físico global se resumió sobre el conjunto completo de evaluación, mientras que el residual crítico se calculó sobre la máscara predefinida. La estabilidad se caracterizó mediante la proporción de corridas completas, la presencia de valores no finitos y la variabilidad entre semillas. El costo se expresó como tiempo de pared y \textbf{[COMPLETAR: memoria, energía o costo monetario, si se registró]}.
+
+La comparación principal se realizó de manera emparejada por semilla. Para cada par se calcularon la diferencia absoluta y la razón entre el candidato y el control. Las métricas se resumieron mediante \textbf{[COMPLETAR: media o mediana]}, acompañadas de \textbf{[COMPLETAR: desviación estándar, rango intercuartílico o intervalo de confianza]}. También se reportaron los valores individuales y las corridas fallidas. Los umbrales de aceptación utilizados fueron \textbf{[COMPLETAR]}, definidos antes del análisis final.
+
+\section{Implementación y reproducibilidad}
+\label{subsec:reproducibilidad}
+
+La implementación se realizó en Python \textbf{[COMPLETAR VERSIÓN]} con \textbf{[COMPLETAR: PyTorch, DeepXDE o pykan y versiones]}, bibliotecas compatibles con diferenciación automática \cite{paszke2019pytorch,lu2021deepxde,liu2024kan}. Las corridas se ejecutaron en \textbf{[COMPLETAR: sistema operativo y hardware]}, con precisión \textbf{[COMPLETAR]}. Los cuadernos se utilizaron para exploración y visualización, mientras que los experimentos oficiales se ejecutaron mediante una interfaz basada en manifiestos.
+
+La reproducción de una corrida requirió recuperar la revisión de código \textbf{[COMPLETAR]}, instalar el entorno declarado, cargar el manifiesto, generar o recuperar la referencia, ejecutar el control y la intervención, evaluar ambos sobre el conjunto fijo y regenerar tablas y figuras desde los artefactos. Los archivos mínimos conservados fueron la configuración resuelta, el resumen de corrida, la curva de pérdida, el mapa de residual, el mapa de error y la nota de decisión.
+
+\section{Criterio de interpretación}
+\label{subsec:analisis-refinamiento}
+
+El análisis distinguió la validez de la implementación, el efecto local del mecanismo y la relación entre dicho efecto y su costo. Una reducción del error global sin mejora en la región crítica no se consideró suficiente para respaldar la hipótesis central. De igual forma, una mejora aislada en una semilla no se interpretó como evidencia concluyente. Las fallas y los resultados negativos se conservaron para delimitar las condiciones de aplicación del mecanismo.
+
+Los valores de desempeño y su interpretación se presentaron en el capítulo de resultados. En este capítulo se conservaron el procedimiento, los criterios establecidos antes del análisis y las desviaciones documentadas con respecto al protocolo.
+
+\chapter{Plan de trabajo}
+\label{sec:plan-trabajo}
+
+El plan de trabajo se organizó en fases parcialmente solapadas. Las primeras fases produjeron la revisión bibliográfica, la especificación del problema, las decisiones del mecanismo y el protocolo experimental. Las fases siguientes comprendieron la implementación de la línea base, la focalización, las ablaciones y la evaluación en los tres niveles de complejidad. El registro experimental y la redacción se mantuvieron durante todo el proceso. El paso entre niveles dependió de la evidencia y de los criterios definidos, no únicamente del cumplimiento cronológico. El cronograma de referencia, con sus siete fases e hitos verificables, se presenta en la Figura~\ref{fig:cronograma-gantt}.
+
+\clearpage
+\begin{landscape}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=1.15\linewidth,height=0.86\textheight,keepaspectratio]{cronograma_gantt.png}
+    \caption{Cronograma de actividades del trabajo de graduación.}
+    \label{fig:cronograma-gantt}
+  \end{figure}
+\end{landscape}
+
+\clearpage

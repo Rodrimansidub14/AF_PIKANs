@@ -1,0 +1,1 @@
+Paired training artifacts only. RBF and Vanilla received identical per-seed Sobol arrays. No protected evaluator or field score was called during training. Vanilla used Adam only; no L-BFGS stage was appended. Any later score is confirmatory only, never for tuning. Scientific acceptance is false.

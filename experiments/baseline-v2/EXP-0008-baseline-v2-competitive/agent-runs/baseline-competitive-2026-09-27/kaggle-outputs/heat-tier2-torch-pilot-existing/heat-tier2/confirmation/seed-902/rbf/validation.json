@@ -1,0 +1,36 @@
+{
+  "alpha": 0.1,
+  "cpu_role": "artifact serialization only",
+  "evaluation_gpu_seconds_estimate": 0.7850512820004951,
+  "evaluation_wall_seconds": 0.8174585990000196,
+  "grid": {
+    "nt": 256,
+    "nx": 512,
+    "t": [
+      0.0,
+      1.0
+    ],
+    "x": [
+      0.0,
+      1.0
+    ]
+  },
+  "grid_id": "heat-confirmatory-512x256-v1",
+  "metrics": {
+    "bc_max_abs": 1.2246467991473532e-16,
+    "bc_rmse": 8.659560562354933e-17,
+    "energy_relative_l2": 0.0001841836775093743,
+    "field_max_abs": 0.00020090575473230565,
+    "field_relative_l2": 0.00015603093619750237,
+    "field_rmse": 7.293760027899217e-05,
+    "ic_max_abs": 0.0,
+    "ic_rmse": 0.0,
+    "pde_residual_rms": 0.00035328618226251006
+  },
+  "protected_512x256_grid_loaded": false,
+  "protected_512x256_grid_scored": true,
+  "residual_points": 2048,
+  "residual_sampling": "deterministic linspace indices into interior development-grid nodes",
+  "scoring_device": "cuda:0",
+  "status": "DRAFT_UNVERIFIED"
+}

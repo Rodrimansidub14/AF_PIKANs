@@ -1,0 +1,43 @@
+{
+  "checkpoint_selection": "existing final checkpoints only; no reference-based selection",
+  "confirmatory_scoring_only": true,
+  "dtype": "float64",
+  "gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "heldout_pool_hashes": {
+    "401": "067392c7b13d6bf5df896b59b0f603e5837b9469479e1655f735ce9f3b902858",
+    "402": "511159afd3330d1ff79fa980e0020c1bfc5f0d50aa5071d71515acf651570d99",
+    "403": "5352b7d911364dd70db740c766d770beda1895cde40ac3f154ae906b98321e4b",
+    "404": "97267f785cd5a3598d8d2f3a75e6a26ed6f65e2431544070a3cccef9d9bf370a",
+    "405": "2fc0d2999ca42e751aab4e010998c0b681ff18a98c758fea28c9e9681fb72197"
+  },
+  "internet_enabled": false,
+  "reference_accepted": false,
+  "reference_field_score_status": "candidate_only",
+  "reference_path": "/kaggle/input/notebooks/rodrimandub/af-pikans-allen-cahn-competitive-pilot-t4x2/allen-cahn-t4x2/campaign/reference/ac_gpu_reference_candidate.npz",
+  "reference_ready_for_review": true,
+  "reference_sha256": "8ce9fb2090e286a55f144e0d32580b04dc058a661d7af504e0a5ca2890a26903",
+  "scientific_accepted": false,
+  "scoring_device_policy": "sequential scoring, alternating cuda:0 and cuda:1",
+  "session_quota_cap_seconds_including_setup": 2400.0,
+  "source_campaign_root": "/kaggle/input/notebooks/rodrimandub/af-pikans-allen-cahn-competitive-pilot-t4x2/allen-cahn-t4x2/campaign",
+  "source_kernel": "rodrimandub/af-pikans-allen-cahn-competitive-pilot-t4x2",
+  "source_runner_sha256_embedded": "47c02c9279e564729feee848f4f9266a746aa19869727dcb47d682ad0a103241",
+  "source_training_status_by_endpoint": {
+    "AC-DeepXDE-MLP|401": "score_budget_exhausted",
+    "AC-DeepXDE-MLP|402": "score_budget_exhausted",
+    "AC-DeepXDE-MLP|403": "score_budget_exhausted",
+    "AC-DeepXDE-MLP|404": "score_budget_exhausted",
+    "AC-DeepXDE-MLP|405": "score_budget_exhausted",
+    "AC-RBF-Sobol|401": "score_budget_exhausted",
+    "AC-RBF-Sobol|402": "score_budget_exhausted",
+    "AC-RBF-Sobol|403": "score_budget_exhausted",
+    "AC-RBF-Sobol|404": "score_budget_exhausted",
+    "AC-RBF-Sobol|405": "score_budget_exhausted"
+  },
+  "status": "score_only_running",
+  "training_repeated": false,
+  "watchdog_seconds_from_first_code_cell": 2100.0
+}

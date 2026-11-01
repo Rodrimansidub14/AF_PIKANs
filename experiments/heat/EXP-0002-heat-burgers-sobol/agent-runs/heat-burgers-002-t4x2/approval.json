@@ -1,0 +1,10 @@
+{
+  "approved_by": "Rodrigo Mansilla",
+  "authorization_source": "Conversation: authorized Heat and Burgers exploratory rerun, T4x2 in parallel, PINA/PyTorch RBF-PIKAN, W&B, quantitative tables and Plotly outputs.",
+  "bundle_id": "fe336f6b22460c2b4f6b31693910f37dc19a5cb2499cfbc5615a1a2219a70490",
+  "code_surface": "approved",
+  "hypothesis": "approved",
+  "interpretation": "Exploratory evidence only. Scientific settings retained; instrumentation and execution optimized. No SOTA or claim acceptance.",
+  "remote_execution": true,
+  "scope": "approved"
+}

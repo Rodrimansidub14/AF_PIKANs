@@ -1,0 +1,25 @@
+{
+  "status": "descriptive_exploration",
+  "records": 166,
+  "problems_with_local_runs": [
+    "allen_cahn",
+    "burgers",
+    "heat"
+  ],
+  "scientific_accepted": false,
+  "direct_literature_head_to_head": false,
+  "input_sha256": {
+    "screen_primary": "783a60f142adaa4e0f9619ce8ebebdebe1c7c9b838ab6cc2a475ce30135e2ce5",
+    "screen_signals": "a0355820ac9219273de6e4c40529002ff7b28780b92d50d5107c84d40d5c35ea",
+    "burgers_residual_error": "f3ece994a40050e6b25c868f85db0e47974b068817dc9e56db92c366b98f1b0b",
+    "allen_cahn": "e13aa82d2aa54a1601e5c3605360f8f79f185c8aa3ebf49334a4b7ad09c52aa2"
+  },
+  "artifacts": [
+    "README.md",
+    "observed-signals.csv",
+    "literature-crosswalk.json",
+    "architecture-observability.json",
+    "signal-registry.json",
+    "exploratory-signals.html"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+ "problem": "piezo_2d",
+ "campaign": "piezo-daniel-recipe",
+ "stage": "adam_final",
+ "seed": "20260728",
+ "l2": {
+  "rbf_u": 0.09028182269370832,
+  "rbf_v": 0.09406567914827266,
+  "rbf_phi": 0.04849305829030764,
+  "rbf_ckpt": "experiments/piezo/EXP-0009-piezo-indirect-rbf/results/daniel-recipe-20261003/results/rbf16-seed-20260728/checkpoint-rbf-seed-20260728.pt",
+  "mlp_u": 0.14417965270763433,
+  "mlp_v": 0.19825333800239558,
+  "mlp_phi": 0.04681510177165923,
+  "mlp_ckpt": "experiments/piezo/EXP-0009-piezo-indirect-rbf/results/daniel-recipe-20261003/results/mlp-seed-20260728/checkpoint-mlp-seed-20260728.pt"
+ }
+}

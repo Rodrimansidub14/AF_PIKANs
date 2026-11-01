@@ -1,0 +1,33 @@
+{
+    "session":  "S1b infrastructure retry 2",
+    "status":  "partial",
+    "root_cause_previous_attempt":  "The embedded asset materializer referenced base64 without importing it; failed after T4x2 validation but before micromamba/FEM.",
+    "repair":  "Add explicit base64 import; stage solve_dfg.py and make_mesh.geo under /kaggle/working; skip completed S1a.",
+    "kernel_id":  "rodrimandub/af-pikans-competitive-baseline-s1b-retry2-20260928",
+    "session_cap_seconds":  1800,
+    "worker_cap_seconds":  1450,
+    "scientific_accepted":  false,
+    "reference_accepted":  false,
+    "source_hashes":  {
+                          "closure_s1b_retry.py":  "569cba5c03376fc1d87a9b1925ca48a80450229cc91ebfff243fc2b8f318d02e",
+                          "solve_dfg.py":  "ae8a7cc487c674d428c9f8ad93da40d8e4b1135daf9752ab2422a0933604cad5",
+                          "make_mesh.geo":  "7753bb03d6c394643b1601fe771f1b878d2dc59e70cf9070b8e9b1ca433ffabb"
+                      },
+    "dependencies":  [
+                         "rodrimandub/af-pikans-allen-cahn-t4x2-20260927",
+                         "rodrimandub/af-pikans-allen-cahn-score-only-20260927",
+                         "rodrimandub/allen-cahn-deepxde-reference-20260928",
+                         "rodrimandub/af-pikans-dfg-rbf-refinement-20260928",
+                         "rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927"
+                     ],
+    "quota_before_push":  {
+                              "available_hours":  15.78,
+                              "session_cap_hours":  0.5,
+                              "projected_available_after_cap_hours":  15.28,
+                              "minimum_required_after_cap_hours":  12,
+                              "refresh_at_utc":  "2026-10-03T00:00:00Z"
+                          },
+    "push_time_utc":  "2026-09-28T19:46:11.820Z",
+    "actual_session_seconds":  86.563,
+    "output_directory":  "kaggle-outputs/closure-s1b-retry2-20260928/"
+}

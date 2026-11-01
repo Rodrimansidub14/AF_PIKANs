@@ -1,0 +1,11 @@
+{
+  "refresh_count": 3,
+  "seconds": 0.7926336999998966,
+  "consumed_changed_batches": 3,
+  "candidate_evaluations": 384,
+  "candidate_points": 128,
+  "power": 2.0,
+  "uniform_fraction": 0.5,
+  "sampling_with_replacement": true,
+  "loss_importance_correction": false
+}

@@ -1,0 +1,22 @@
+{
+  "arm": "AC-DeepXDE-MLP",
+  "boundary_max_abs": 0.0,
+  "confirmatory_scoring_only": true,
+  "heldout_pde_residual_rms_normalized": 0.0023947501066322596,
+  "heldout_test_scored": true,
+  "initial_max_abs": 0.0,
+  "max_absolute_error": 0.5687316649852979,
+  "max_snapshot_relative_l2": 0.13525731408247696,
+  "post_training_score_status": "score_only_complete",
+  "reference_accepted": false,
+  "reference_candidate_sha256": "8ce9fb2090e286a55f144e0d32580b04dc058a661d7af504e0a5ca2890a26903",
+  "reference_status": "candidate_only; independent review still required",
+  "relative_weighted_space_time_l2": 0.08998827936274066,
+  "saved_pool_sha256": "2fc0d2999ca42e751aab4e010998c0b681ff18a98c758fea28c9e9681fb72197",
+  "scientific_accepted": false,
+  "seed": 405,
+  "source_checkpoint_sha256": "b5290fb473e15e6f49a08d45e127bab76b80453977013d8a6c1e76fe42b81e1e",
+  "source_training_status": "score_budget_exhausted",
+  "status": "DRAFT_UNVERIFIED",
+  "training_repeated": false
+}

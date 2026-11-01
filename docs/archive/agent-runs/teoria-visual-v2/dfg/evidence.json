@@ -1,0 +1,537 @@
+{
+  "problem": {
+    "id": "P4",
+    "name": "DFG 2D-1 stationary cylinder benchmark",
+    "domain": "[0,2.2] x [0,0.41] minus polygonal approximation of circle center (0.2,0.2), radius 0.05",
+    "nu": 0.001,
+    "rho": 1.0,
+    "inlet_umax": 0.3,
+    "inlet_mean": 0.2,
+    "reynolds": 20.000000000000004,
+    "outflow": "nu partial_n u - p n = 0; no pressure Dirichlet condition",
+    "source_url": "https://wwwold.mathematik.tu-dortmund.de/~featflow/en/benchmarks/cfdbenchmarking/flow/dfg_benchmark1_re20.html"
+  },
+  "method": {
+    "finite_element": "Taylor-Hood P2/P1 on triangles",
+    "nonlinear": "Picard fixed-point continuation followed by Newton corrections",
+    "mesh": "Delaunay triangulation with explicit polygonal cylinder boundary; circle segment count increases with level",
+    "plot_mask": "same polygon used by the final mesh; solid is never interpolated",
+    "picard_max": 35,
+    "newton_max": 12,
+    "nonlinear_tol": 2e-09,
+    "python": "C:\\Users\\rodri\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "scalar_interpolation_test": {
+      "function": "p(x,y)=x+2y",
+      "max_abs_error": 4.440892098500626e-16,
+      "points_checked": 170,
+      "pass": true
+    },
+    "packages": {
+      "scikit-fem": "12.0.2",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1"
+    }
+  },
+  "levels": [
+    {
+      "name": "coarse",
+      "nx": 34,
+      "ny": 8,
+      "ncircle": 32,
+      "h_proxy": 0.06470588235294118,
+      "vertices": 425,
+      "elements": 734,
+      "boundary_facets": {
+        "inlet": 8,
+        "outlet": 8,
+        "bottom": 34,
+        "top": 34,
+        "cylinder": 32
+      },
+      "dofs_velocity": 3168,
+      "dofs_pressure": 425,
+      "picard": {
+        "converged": true,
+        "iterations": 18,
+        "records": [
+          {
+            "iteration": 1,
+            "change": 0.9942411402523699,
+            "residual": 0.00037237520998164274
+          },
+          {
+            "iteration": 2,
+            "change": 0.23724644238354695,
+            "residual": 9.225013943842484e-05
+          },
+          {
+            "iteration": 3,
+            "change": 0.08335790911422784,
+            "residual": 3.567663217379223e-05
+          },
+          {
+            "iteration": 4,
+            "change": 0.031267519585327974,
+            "residual": 1.3234766910562766e-05
+          },
+          {
+            "iteration": 5,
+            "change": 0.010256462879286894,
+            "residual": 4.635913379045251e-06
+          },
+          {
+            "iteration": 6,
+            "change": 0.0030924520116619807,
+            "residual": 1.4407665749851043e-06
+          },
+          {
+            "iteration": 7,
+            "change": 0.0008518318132189575,
+            "residual": 4.1210898341869343e-07
+          },
+          {
+            "iteration": 8,
+            "change": 0.00022495481002122777,
+            "residual": 1.1343666373965398e-07
+          },
+          {
+            "iteration": 9,
+            "change": 5.9773122184824045e-05,
+            "residual": 3.077172959042224e-08
+          },
+          {
+            "iteration": 10,
+            "change": 1.6214282490337553e-05,
+            "residual": 8.41786133967141e-09
+          },
+          {
+            "iteration": 11,
+            "change": 4.536727177161783e-06,
+            "residual": 2.3554835640392465e-09
+          },
+          {
+            "iteration": 12,
+            "change": 1.3040376806431475e-06,
+            "residual": 6.71630415344105e-10
+          },
+          {
+            "iteration": 13,
+            "change": 3.766267821356264e-07,
+            "residual": 1.933877983417203e-10
+          },
+          {
+            "iteration": 14,
+            "change": 1.1024907956438775e-07,
+            "residual": 5.656925637302944e-11
+          },
+          {
+            "iteration": 15,
+            "change": 3.2688135504350364e-08,
+            "residual": 1.665255164777131e-11
+          },
+          {
+            "iteration": 16,
+            "change": 9.63139089355202e-09,
+            "residual": 4.888323223323032e-12
+          },
+          {
+            "iteration": 17,
+            "change": 2.846172567371726e-09,
+            "residual": 1.4537035489801566e-12
+          },
+          {
+            "iteration": 18,
+            "change": 8.570736099744555e-10,
+            "residual": 4.373559561906258e-13
+          }
+        ]
+      },
+      "newton": {
+        "converged": true,
+        "iterations": 1,
+        "records": [
+          {
+            "iteration": 1,
+            "change": 3.6408815327017243e-10,
+            "residual_before": 4.389817601699116e-13,
+            "residual": 3.730121673965133e-18
+          }
+        ]
+      },
+      "diagnostics": {
+        "divergence_l2": 0.14022094967665924,
+        "continuity_weak": 3.623366921478364e-18,
+        "weak_residual_free": 3.730121673965133e-18,
+        "inlet_trace_l2": 3.6631017368287603e-17,
+        "outlet_natural_l2": 1.6261160073889801e-06,
+        "inlet_flux": -0.08199999999999999,
+        "outlet_flux": 0.08200000000000002,
+        "cylinder_flux": -2.98562186867181e-19,
+        "flux_closure_abs": 2.7457013428761734e-17,
+        "flux_closure_rel": 3.348416271800212e-16,
+        "Fd": 0.011033970147950531,
+        "Fl": 1.0882012933270986e-05,
+        "Cd": 5.516985073975264,
+        "Cl": 0.0054410064666354915,
+        "p_diff": 0.1136372128948386,
+        "noslip_max": 5.226549155076169e-16,
+        "mesh_area_min": 1.62323772456728e-05
+      },
+      "elapsed_s": 5.031281199999285
+    },
+    {
+      "name": "medium",
+      "nx": 52,
+      "ny": 12,
+      "ncircle": 48,
+      "h_proxy": 0.04230769230769231,
+      "vertices": 851,
+      "elements": 1526,
+      "boundary_facets": {
+        "inlet": 12,
+        "outlet": 12,
+        "bottom": 52,
+        "top": 52,
+        "cylinder": 48
+      },
+      "dofs_velocity": 6456,
+      "dofs_pressure": 851,
+      "picard": {
+        "converged": true,
+        "iterations": 18,
+        "records": [
+          {
+            "iteration": 1,
+            "change": 0.9959506977130422,
+            "residual": 0.00018457377998839798
+          },
+          {
+            "iteration": 2,
+            "change": 0.2186437647895813,
+            "residual": 4.876181387771259e-05
+          },
+          {
+            "iteration": 3,
+            "change": 0.0782070418944211,
+            "residual": 1.8487374968992336e-05
+          },
+          {
+            "iteration": 4,
+            "change": 0.029199178249193092,
+            "residual": 6.6678349366490284e-06
+          },
+          {
+            "iteration": 5,
+            "change": 0.009937368806333882,
+            "residual": 2.409062190738696e-06
+          },
+          {
+            "iteration": 6,
+            "change": 0.003149215808673064,
+            "residual": 7.708341637051603e-07
+          },
+          {
+            "iteration": 7,
+            "change": 0.0009077531953392456,
+            "residual": 2.27965067189495e-07
+          },
+          {
+            "iteration": 8,
+            "change": 0.0002487439865032624,
+            "residual": 6.409375696938911e-08
+          },
+          {
+            "iteration": 9,
+            "change": 6.81879422461648e-05,
+            "residual": 1.7642847035328982e-08
+          },
+          {
+            "iteration": 10,
+            "change": 1.9162327083789473e-05,
+            "residual": 4.916512776937051e-09
+          },
+          {
+            "iteration": 11,
+            "change": 5.612466354406948e-06,
+            "residual": 1.4186946699494906e-09
+          },
+          {
+            "iteration": 12,
+            "change": 1.7003981482411493e-06,
+            "residual": 4.235301752356007e-10
+          },
+          {
+            "iteration": 13,
+            "change": 5.213428324404998e-07,
+            "residual": 1.2932456088639162e-10
+          },
+          {
+            "iteration": 14,
+            "change": 1.6047365016333062e-07,
+            "residual": 3.9949269136039454e-11
+          },
+          {
+            "iteration": 15,
+            "change": 4.953077684042833e-08,
+            "residual": 1.231686013630891e-11
+          },
+          {
+            "iteration": 16,
+            "change": 1.5198012045050654e-08,
+            "residual": 3.7874752775022e-12
+          },
+          {
+            "iteration": 17,
+            "change": 4.677457935516295e-09,
+            "residual": 1.1639150918435714e-12
+          },
+          {
+            "iteration": 18,
+            "change": 1.4472161807134057e-09,
+            "residual": 3.6014837394325587e-13
+          }
+        ]
+      },
+      "newton": {
+        "converged": true,
+        "iterations": 1,
+        "records": [
+          {
+            "iteration": 1,
+            "change": 6.486140261881964e-10,
+            "residual_before": 3.612690130471754e-13,
+            "residual": 2.8418063569773967e-18
+          }
+        ]
+      },
+      "diagnostics": {
+        "divergence_l2": 0.09294488349745293,
+        "continuity_weak": 2.706126093770424e-18,
+        "weak_residual_free": 2.8418063569773967e-18,
+        "inlet_trace_l2": 3.884002314209743e-17,
+        "outlet_natural_l2": 8.301617663350485e-07,
+        "inlet_flux": -0.08199999999999999,
+        "outlet_flux": 0.08200000000000027,
+        "cylinder_flux": -5.602572747803265e-20,
+        "flux_closure_abs": 2.774997304288111e-16,
+        "flux_closure_rel": 3.384143054009892e-15,
+        "Fd": 0.01105613309634295,
+        "Fl": 2.0296254761475936e-05,
+        "Cd": 5.5280665481714735,
+        "Cl": 0.010148127380737965,
+        "p_diff": 0.12186471859320008,
+        "noslip_max": 5.221254833340114e-16,
+        "mesh_area_min": 2.7331422579700827e-06
+      },
+      "elapsed_s": 11.967825899999298
+    },
+    {
+      "name": "fine",
+      "nx": 76,
+      "ny": 18,
+      "ncircle": 64,
+      "h_proxy": 0.028947368421052635,
+      "vertices": 1676,
+      "elements": 3100,
+      "boundary_facets": {
+        "inlet": 18,
+        "outlet": 18,
+        "bottom": 76,
+        "top": 76,
+        "cylinder": 64
+      },
+      "dofs_velocity": 12904,
+      "dofs_pressure": 1676,
+      "picard": {
+        "converged": true,
+        "iterations": 18,
+        "records": [
+          {
+            "iteration": 1,
+            "change": 0.9970644606651153,
+            "residual": 9.325936682061096e-05
+          },
+          {
+            "iteration": 2,
+            "change": 0.19928272018002638,
+            "residual": 2.6664019056374504e-05
+          },
+          {
+            "iteration": 3,
+            "change": 0.073436121241365,
+            "residual": 1.0219212318657481e-05
+          },
+          {
+            "iteration": 4,
+            "change": 0.027023551654412267,
+            "residual": 3.6041095738685906e-06
+          },
+          {
+            "iteration": 5,
+            "change": 0.009361906143406812,
+            "residual": 1.2880581250530806e-06
+          },
+          {
+            "iteration": 6,
+            "change": 0.0030413804005975627,
+            "residual": 4.100210843514694e-07
+          },
+          {
+            "iteration": 7,
+            "change": 0.0008927733674878979,
+            "residual": 1.205758008804553e-07
+          },
+          {
+            "iteration": 8,
+            "change": 0.0002485670863910361,
+            "residual": 3.381742976571481e-08
+          },
+          {
+            "iteration": 9,
+            "change": 6.916584936704415e-05,
+            "residual": 9.316433771260202e-09
+          },
+          {
+            "iteration": 10,
+            "change": 1.9755924307268504e-05,
+            "residual": 2.612919070774834e-09
+          },
+          {
+            "iteration": 11,
+            "change": 5.907454663825204e-06,
+            "residual": 7.656726615583287e-10
+          },
+          {
+            "iteration": 12,
+            "change": 1.8294883119525543e-06,
+            "residual": 2.3369303242012647e-10
+          },
+          {
+            "iteration": 13,
+            "change": 5.725505270271394e-07,
+            "residual": 7.296406982535137e-11
+          },
+          {
+            "iteration": 14,
+            "change": 1.792856948148142e-07,
+            "residual": 2.2892431981617765e-11
+          },
+          {
+            "iteration": 15,
+            "change": 5.597613543529054e-08,
+            "residual": 7.14871731593501e-12
+          },
+          {
+            "iteration": 16,
+            "change": 1.738144335415456e-08,
+            "residual": 2.2172055214535514e-12
+          },
+          {
+            "iteration": 17,
+            "change": 5.395668285032601e-09,
+            "residual": 6.848863727979156e-13
+          },
+          {
+            "iteration": 18,
+            "change": 1.6808419684590079e-09,
+            "residual": 2.137024219683745e-13
+          }
+        ]
+      },
+      "newton": {
+        "converged": true,
+        "iterations": 1,
+        "records": [
+          {
+            "iteration": 1,
+            "change": 7.659586123584e-10,
+            "residual_before": 2.1427480685160461e-13,
+            "residual": 2.106813149141184e-18
+          }
+        ]
+      },
+      "diagnostics": {
+        "divergence_l2": 0.062117184556452605,
+        "continuity_weak": 1.951892236369109e-18,
+        "weak_residual_free": 2.106813149141184e-18,
+        "inlet_trace_l2": 4.1408938541841767e-17,
+        "outlet_natural_l2": 7.180805521368638e-07,
+        "inlet_flux": -0.082,
+        "outlet_flux": 0.08200000000000021,
+        "cylinder_flux": 1.2095687193132492e-19,
+        "flux_closure_abs": 2.0828777398914817e-16,
+        "flux_closure_rel": 2.5400948047457093e-15,
+        "Fd": 0.011043050070847356,
+        "Fl": -1.3013313497283531e-05,
+        "Cd": 5.521525035423677,
+        "Cl": -0.0065066567486417645,
+        "p_diff": 0.1155460969527734,
+        "noslip_max": 7.216713831953707e-16,
+        "mesh_area_min": 1.6781434860613308e-06
+      },
+      "elapsed_s": 26.822069899999406
+    }
+  ],
+  "convergence": {
+    "pairwise": [
+      {
+        "from": "coarse",
+        "to": "medium",
+        "valid": true,
+        "velocity_grid_rel_l2": 0.0058142271600508,
+        "pressure_grid_rel_l2_zero_mean": 0.017606040068778448,
+        "Cd_rel_change": 0.002004584080102064,
+        "Cl_rel_change": 0.4638413312624555,
+        "p_diff_rel_change": 0.0675134345144303
+      },
+      {
+        "from": "medium",
+        "to": "fine",
+        "valid": true,
+        "velocity_grid_rel_l2": 0.0023797289011603354,
+        "pressure_grid_rel_l2_zero_mean": 0.009915570839675238,
+        "Cd_rel_change": 0.0011833274239363707,
+        "Cl_rel_change": 1.6411682179898497,
+        "p_diff_rel_change": 0.051849474674610645
+      }
+    ],
+    "criterion": {
+      "velocity_grid_rel_l2": "< 0.03",
+      "pressure_grid_rel_l2_zero_mean": "< 0.05",
+      "Cd_rel_change": "< 0.03",
+      "p_diff_rel_change": "< 0.03"
+    },
+    "converged_under_declared_criterion": false,
+    "status": "not_certified"
+  },
+  "reference": {
+    "Cd": 5.57953523384,
+    "Cl": 0.010618948146,
+    "p_diff": 0.11752016697
+  },
+  "final_metrics": {
+    "divergence_l2": 0.062117184556452605,
+    "continuity_weak": 1.951892236369109e-18,
+    "weak_residual_free": 2.106813149141184e-18,
+    "inlet_trace_l2": 4.1408938541841767e-17,
+    "outlet_natural_l2": 7.180805521368638e-07,
+    "inlet_flux": -0.082,
+    "outlet_flux": 0.08200000000000021,
+    "cylinder_flux": 1.2095687193132492e-19,
+    "flux_closure_abs": 2.0828777398914817e-16,
+    "flux_closure_rel": 2.5400948047457093e-15,
+    "Fd": 0.011043050070847356,
+    "Fl": -1.3013313497283531e-05,
+    "Cd": 5.521525035423677,
+    "Cl": -0.0065066567486417645,
+    "p_diff": 0.1155460969527734,
+    "noslip_max": 7.216713831953707e-16,
+    "mesh_area_min": 1.6781434860613308e-06
+  },
+  "limitations": [
+    "The obstacle is polygonal at each level; circle-segment refinement is explicit.",
+    "No certificate is issued unless the declared field and QoI convergence criteria pass.",
+    "The figures show the resolved fields only; the separate illustration contains no solved field.",
+    "Drag/lift use sigma = nu grad(u) - p I and the outward-from-cylinder normal."
+  ]
+}

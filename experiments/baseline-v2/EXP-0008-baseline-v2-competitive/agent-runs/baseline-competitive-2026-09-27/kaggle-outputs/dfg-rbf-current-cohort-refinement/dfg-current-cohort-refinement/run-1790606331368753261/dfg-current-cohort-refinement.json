@@ -1,0 +1,1881 @@
+{
+  "expected_seeds": 5,
+  "field_reference_status": "missing_converged_FEM_field",
+  "field_relative_l2": null,
+  "gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "input_dataset_id": "rodrimandub/af-pikans-dfg-rbf-inputs-20260928",
+  "input_dataset_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928",
+  "lbfgs_chunk_size": 1024,
+  "lbfgs_seconds_per_seed_cap": 540.0,
+  "model_family": "RBF-PIKAN only",
+  "official_module_sha256": {
+    "src/research_pipeline/sciml/dfg.py": "3aee5c92e1f05db0752eff3a57d4c995215cde6b781866d61eb99ebd7fcee7d4",
+    "src/research_pipeline/sciml/dfg_campaign.py": "1a6268624520dee7ee9aeadfe7d2c0bf23329427b54030fc821c7771130cbf13"
+  },
+  "quota_cap_seconds": 7200.0,
+  "results": [
+    {
+      "after": {
+        "checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-301/checkpoint-lbfgs.pt",
+        "checkpoint_sha256": "a8dd18c11ae715a014076654a13187466d5916c1b51b82f0f84affe2a1f6821f",
+        "cuda_device_index": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 0.36664717600001495,
+        "featflow_reference": {
+          "drag_coefficient": 5.57953523384,
+          "lift_coefficient": 0.010618948146,
+          "pressure_difference": 0.11752016697
+        },
+        "field_relative_l2": null,
+        "heldout_point_count": 16384,
+        "heldout_points_origin": "official_r4_scrambled_sobol_generator_reconstructed_from_heldout_seed",
+        "heldout_points_sha256": "030de619e9b3a0ed0bcc53256b59db28220ee9d9bca13040c4cc97fb32c5677a",
+        "heldout_residual_regions": {
+          "far_field": {
+            "continuity_mean_abs": 0.006507683657515757,
+            "continuity_p95_abs": 0.014764774963259689,
+            "continuity_rms": 0.0080195093917857,
+            "count": 10517,
+            "momentum_x_mean_abs": 0.006147038613317565,
+            "momentum_x_p95_abs": 0.01680515892803669,
+            "momentum_x_rms": 0.008068032224818373,
+            "momentum_y_mean_abs": 0.004844178571009129,
+            "momentum_y_p95_abs": 0.01275502126663922,
+            "momentum_y_rms": 0.006261713481490564
+          },
+          "global": {
+            "continuity_mean_abs": 0.01059961582257074,
+            "continuity_p95_abs": 0.031963824108242986,
+            "continuity_rms": 0.02505161392404915,
+            "count": 16384,
+            "momentum_x_mean_abs": 0.009592747785358124,
+            "momentum_x_p95_abs": 0.028718893881887163,
+            "momentum_x_rms": 0.01861000384150402,
+            "momentum_y_mean_abs": 0.009014039548300379,
+            "momentum_y_p95_abs": 0.0256928216665983,
+            "momentum_y_rms": 0.024643794072108004
+          },
+          "near_cylinder": {
+            "continuity_mean_abs": 0.035386273214786775,
+            "continuity_p95_abs": 0.09476579427719121,
+            "continuity_rms": 0.08070161665076905,
+            "count": 1147,
+            "momentum_x_mean_abs": 0.03498991517544543,
+            "momentum_x_p95_abs": 0.10931858420372009,
+            "momentum_x_rms": 0.05777004966777521,
+            "momentum_y_mean_abs": 0.03807362711353231,
+            "momentum_y_p95_abs": 0.10695191249251368,
+            "momentum_y_rms": 0.08571793201386872
+          },
+          "wake": {
+            "continuity_mean_abs": 0.014089525610016904,
+            "continuity_p95_abs": 0.034551963210105896,
+            "continuity_rms": 0.022160502759686514,
+            "count": 1011,
+            "momentum_x_mean_abs": 0.019460878367346637,
+            "momentum_x_p95_abs": 0.05424165166914463,
+            "momentum_x_rms": 0.03002803577898695,
+            "momentum_y_mean_abs": 0.011387820156271782,
+            "momentum_y_p95_abs": 0.0408174991607666,
+            "momentum_y_rms": 0.020116920965434083
+          }
+        },
+        "heldout_residual_seconds": 0.31772627499981354,
+        "heldout_seed": 100301,
+        "peak_cuda_memory_allocated_bytes": 93453824,
+        "qoi_delta_vs_before": {
+          "drag_coefficient": 0.3903260669247408,
+          "lift_coefficient": 0.114136630896716,
+          "pressure_difference": 0.03159873187541962
+        },
+        "qoi_errors_vs_featflow": {
+          "drag_relative_error": 0.7615016380569289,
+          "lift_absolute_error": 0.018513527964514068,
+          "pressure_difference_relative_error": 0.1333329924136376
+        },
+        "qois_1024": {
+          "drag_coefficient": 1.3307101409732403,
+          "drag_force": 0.002661420281946481,
+          "lift_coefficient": -0.007894587122511126,
+          "lift_force": -1.5789174245022254e-05,
+          "pressure_difference": 0.10185085143893957
+        },
+        "qois_512": {
+          "drag_coefficient": 1.3307100136744896,
+          "drag_force": 0.0026614200273489797,
+          "lift_coefficient": -0.007894579818514068,
+          "lift_force": -1.578915963702814e-05,
+          "pressure_difference": 0.10185085143893957
+        },
+        "quadrature_512_to_1024_absolute_change": {
+          "drag_coefficient": 1.2729875065176088e-07,
+          "lift_coefficient": 7.30399705821394e-09,
+          "pressure_difference": 0.0
+        },
+        "scientific_accepted": false,
+        "seed": 301,
+        "source": "r3",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+        "stage": "lbfgs_refined",
+        "status": "scored"
+      },
+      "before": {
+        "checkpoint": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/dfg_rbf_pikan.pt",
+        "checkpoint_sha256": "b80aca8372a5e0cb59271a9ab5b0f882c926f26a45fca56506ab609acd0250bf",
+        "cuda_device_index": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 3.7990894010000034,
+        "featflow_reference": {
+          "drag_coefficient": 5.57953523384,
+          "lift_coefficient": 0.010618948146,
+          "pressure_difference": 0.11752016697
+        },
+        "field_relative_l2": null,
+        "heldout_point_count": 16384,
+        "heldout_points_origin": "official_r4_scrambled_sobol_generator_reconstructed_from_heldout_seed",
+        "heldout_points_sha256": "030de619e9b3a0ed0bcc53256b59db28220ee9d9bca13040c4cc97fb32c5677a",
+        "heldout_residual_regions": {
+          "far_field": {
+            "continuity_mean_abs": 0.005586859104641303,
+            "continuity_p95_abs": 0.01335286721587179,
+            "continuity_rms": 0.006939137772249247,
+            "count": 10517,
+            "momentum_x_mean_abs": 0.0064554283414459766,
+            "momentum_x_p95_abs": 0.015250832773745044,
+            "momentum_x_rms": 0.008038577719228768,
+            "momentum_y_mean_abs": 0.006897867873773127,
+            "momentum_y_p95_abs": 0.01415387000888586,
+            "momentum_y_rms": 0.00813478389932131
+          },
+          "global": {
+            "continuity_mean_abs": 0.017257226112949553,
+            "continuity_p95_abs": 0.08160761669278144,
+            "continuity_rms": 0.045096578400564885,
+            "count": 16384,
+            "momentum_x_mean_abs": 0.013234905871839509,
+            "momentum_x_p95_abs": 0.05006443895399543,
+            "momentum_x_rms": 0.028096868340452132,
+            "momentum_y_mean_abs": 0.012132775488672976,
+            "momentum_y_p95_abs": 0.03732336219400161,
+            "momentum_y_rms": 0.027941051616771774
+          },
+          "near_cylinder": {
+            "continuity_mean_abs": 0.08224615469776295,
+            "continuity_p95_abs": 0.2141372501850129,
+            "continuity_rms": 0.13790082886172492,
+            "count": 1147,
+            "momentum_x_mean_abs": 0.05949409123966446,
+            "momentum_x_p95_abs": 0.17363655865192415,
+            "momentum_x_rms": 0.08946413060659647,
+            "momentum_y_mean_abs": 0.052663521429502716,
+            "momentum_y_p95_abs": 0.13476563245058062,
+            "momentum_y_rms": 0.09449026464032693
+          },
+          "wake": {
+            "continuity_mean_abs": 0.01582649844845077,
+            "continuity_p95_abs": 0.04535704106092453,
+            "continuity_rms": 0.02349377843692382,
+            "count": 1011,
+            "momentum_x_mean_abs": 0.013501801288959135,
+            "momentum_x_p95_abs": 0.03829268738627434,
+            "momentum_x_rms": 0.02123753309446468,
+            "momentum_y_mean_abs": 0.012542910038946798,
+            "momentum_y_p95_abs": 0.03723476454615593,
+            "momentum_y_rms": 0.02043238254086553
+          }
+        },
+        "heldout_residual_seconds": 0.3650712659999158,
+        "heldout_seed": 100301,
+        "peak_cuda_memory_allocated_bytes": 93453824,
+        "qoi_errors_vs_featflow": {
+          "drag_relative_error": 0.8314583729041982,
+          "lift_absolute_error": 0.13265015886123005,
+          "pressure_difference_relative_error": 0.4022122213164181
+        },
+        "qois_1024": {
+          "drag_coefficient": 0.9403840189640196,
+          "drag_force": 0.0018807680379280395,
+          "lift_coefficient": -0.1220312167738868,
+          "lift_force": -0.00024406243354777366,
+          "pressure_difference": 0.07025211956351995
+        },
+        "qois_512": {
+          "drag_coefficient": 0.9403839467497488,
+          "drag_force": 0.0018807678934994981,
+          "lift_coefficient": -0.12203121071523006,
+          "lift_force": -0.00024406242143046016,
+          "pressure_difference": 0.07025211956351995
+        },
+        "quadrature_512_to_1024_absolute_change": {
+          "drag_coefficient": 7.221427078540898e-08,
+          "lift_coefficient": 6.058656742968793e-09,
+          "pressure_difference": 0.0
+        },
+        "scientific_accepted": false,
+        "seed": 301,
+        "source": "r3",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+        "stage": "adam_checkpoint_before_lbfgs",
+        "status": "scored"
+      },
+      "field_relative_l2": null,
+      "scientific_accepted": false,
+      "seed": 301,
+      "source": "r3",
+      "source_artifacts": {
+        "checkpoint_sha256": "b80aca8372a5e0cb59271a9ab5b0f882c926f26a45fca56506ab609acd0250bf",
+        "files": {
+          "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/dfg_rbf_pikan.pt",
+          "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/dfg_training_pools.npz",
+          "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/manifest_snapshot.json",
+          "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/provenance.json",
+          "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/run.json"
+        },
+        "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+        "pool_sha256": "d1aec7ef727830e2cf00777e36a8fcb98df3e2b9b5e824a8553d96cf77c10402",
+        "provenance_training_seed": 301,
+        "run_seed": 301,
+        "seed": 301,
+        "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301",
+        "sha256": {
+          "dfg_rbf_pikan.pt": "b80aca8372a5e0cb59271a9ab5b0f882c926f26a45fca56506ab609acd0250bf",
+          "dfg_training_pools.npz": "d1aec7ef727830e2cf00777e36a8fcb98df3e2b9b5e824a8553d96cf77c10402",
+          "manifest_snapshot.json": "721b61747d0dd483c566b5ca41c29f445ccbfe50d06214d991d081fe34dead63",
+          "provenance.json": "df890e1b3e7aa92903987e21c4723c9a6aa9637bff397be71f257bcd0196a202",
+          "run.json": "9fc5e4611ce1c4e1775f8a7765f145806e64c75515bcc94fd9314e8cf478eb0b"
+        },
+        "source": "r3",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+        "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3"
+      },
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+      "status": "complete",
+      "training": {
+        "boundary_points_per_set": {
+          "cylinder": 512,
+          "inlet": 512,
+          "lower_wall": 512,
+          "outlet": 512,
+          "upper_wall": 512
+        },
+        "chunk_size": 1024,
+        "cuda_index_visible_to_worker": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 540.008910474,
+        "field_relative_l2": null,
+        "global_device_index": 0,
+        "input_checkpoint_sha256": "b80aca8372a5e0cb59271a9ab5b0f882c926f26a45fca56506ab609acd0250bf",
+        "input_pool_sha256": "d1aec7ef727830e2cf00777e36a8fcb98df3e2b9b5e824a8553d96cf77c10402",
+        "interior_points": 16384,
+        "last_loss": 0.0010319044517927978,
+        "lbfgs_steps": 317,
+        "loss_components": {
+          "boundary_cylinder": 3.262493555666879e-05,
+          "boundary_inlet": 1.7986718376050703e-05,
+          "boundary_lower_wall": 1.1722498129529413e-05,
+          "boundary_outlet_traction": 2.697185209399322e-06,
+          "boundary_upper_wall": 2.2553025701199658e-05,
+          "pde_continuity": 0.00036509699930320494,
+          "pde_momentum_x": 0.0002968366161439917,
+          "pde_momentum_y": 0.00028238647337275324
+        },
+        "optimizer": "torch.optim.LBFGS",
+        "output_checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-301/checkpoint-lbfgs.pt",
+        "output_checkpoint_sha256": "a8dd18c11ae715a014076654a13187466d5916c1b51b82f0f84affe2a1f6821f",
+        "peak_cuda_memory_allocated_bytes": 96851456,
+        "pool_policy": "saved full pool, fixed order, deterministic chunked closure",
+        "process_returncode": 0,
+        "scientific_accepted": false,
+        "seconds_cap": 540.0,
+        "seed": 301,
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+        "source_provenance_sha256": "df890e1b3e7aa92903987e21c4723c9a6aa9637bff397be71f257bcd0196a202",
+        "source_run_sha256": "9fc5e4611ce1c4e1775f8a7765f145806e64c75515bcc94fd9314e8cf478eb0b",
+        "stage": "deterministic_full_pool_LBFGS_continuation",
+        "status": "lbfgs_refined",
+        "stop_reason": "time_cap_during_closure",
+        "wave": 1,
+        "wave_timed_out": false,
+        "worker_wall_seconds": 540.028885707
+      }
+    },
+    {
+      "after": {
+        "checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-302/checkpoint-lbfgs.pt",
+        "checkpoint_sha256": "8e4c5493f9bcb893634883c4ee387ef199447e15b9f4e101eb2a5c6c203027cc",
+        "cuda_device_index": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 0.36951678700006596,
+        "featflow_reference": {
+          "drag_coefficient": 5.57953523384,
+          "lift_coefficient": 0.010618948146,
+          "pressure_difference": 0.11752016697
+        },
+        "field_relative_l2": null,
+        "heldout_point_count": 16384,
+        "heldout_points_origin": "official_r4_scrambled_sobol_generator_reconstructed_from_heldout_seed",
+        "heldout_points_sha256": "c00020b21de5748a41735b9b2372cdb3cce3053159ab079ff9e2f9d42d9d1b5d",
+        "heldout_residual_regions": {
+          "far_field": {
+            "continuity_mean_abs": 0.004875182667378894,
+            "continuity_p95_abs": 0.012152030505239962,
+            "continuity_rms": 0.006226689625458487,
+            "count": 10517,
+            "momentum_x_mean_abs": 0.004862773249078583,
+            "momentum_x_p95_abs": 0.012471544556319682,
+            "momentum_x_rms": 0.006321769563672244,
+            "momentum_y_mean_abs": 0.0038024262541185776,
+            "momentum_y_p95_abs": 0.009296187385916702,
+            "momentum_y_rms": 0.004808933633261137
+          },
+          "global": {
+            "continuity_mean_abs": 0.008603526319264976,
+            "continuity_p95_abs": 0.025342951714992477,
+            "continuity_rms": 0.02014864881355421,
+            "count": 16384,
+            "momentum_x_mean_abs": 0.00808361473190189,
+            "momentum_x_p95_abs": 0.025040126964449867,
+            "momentum_x_rms": 0.018822259975992347,
+            "momentum_y_mean_abs": 0.0076128618124101655,
+            "momentum_y_p95_abs": 0.022868386562913654,
+            "momentum_y_rms": 0.024993682102021332
+          },
+          "near_cylinder": {
+            "continuity_mean_abs": 0.03274988711796188,
+            "continuity_p95_abs": 0.100671100616455,
+            "continuity_rms": 0.06540492960646759,
+            "count": 1148,
+            "momentum_x_mean_abs": 0.030240337762905394,
+            "momentum_x_p95_abs": 0.07928608171641827,
+            "momentum_x_rms": 0.06264004144778977,
+            "momentum_y_mean_abs": 0.03515608386141763,
+            "momentum_y_p95_abs": 0.10048696212470526,
+            "momentum_y_rms": 0.08953744826134839
+          },
+          "wake": {
+            "continuity_mean_abs": 0.01301304081321827,
+            "continuity_p95_abs": 0.03450863808393478,
+            "continuity_rms": 0.023088656486369506,
+            "count": 1008,
+            "momentum_x_mean_abs": 0.015521545507403466,
+            "momentum_x_p95_abs": 0.058648101985454545,
+            "momentum_x_rms": 0.025831210035262536,
+            "momentum_y_mean_abs": 0.0143969939509834,
+            "momentum_y_p95_abs": 0.04771003574132919,
+            "momentum_y_rms": 0.024358607868447086
+          }
+        },
+        "heldout_residual_seconds": 0.32207549500049026,
+        "heldout_seed": 100302,
+        "peak_cuda_memory_allocated_bytes": 93453824,
+        "qoi_delta_vs_before": {
+          "drag_coefficient": 0.4387808351102782,
+          "lift_coefficient": -0.0019259317079048724,
+          "pressure_difference": 0.02804721985012293
+        },
+        "qoi_errors_vs_featflow": {
+          "drag_relative_error": 0.7259214652984418,
+          "lift_absolute_error": 0.030159850822423888,
+          "pressure_difference_relative_error": 0.07819421361365965
+        },
+        "qois_1024": {
+          "drag_coefficient": 1.529230899745317,
+          "drag_force": 0.003058461799490635,
+          "lift_coefficient": 0.04077882472734805,
+          "lift_force": 8.155764945469611e-05,
+          "pressure_difference": 0.10833076993003488
+        },
+        "qois_512": {
+          "drag_coefficient": 1.5292308412065827,
+          "drag_force": 0.003058461682413166,
+          "lift_coefficient": 0.04077879896842389,
+          "lift_force": 8.15575979368478e-05,
+          "pressure_difference": 0.10833076993003488
+        },
+        "quadrature_512_to_1024_absolute_change": {
+          "drag_coefficient": 5.853873430439194e-08,
+          "lift_coefficient": 2.5758924160346197e-08,
+          "pressure_difference": 0.0
+        },
+        "scientific_accepted": false,
+        "seed": 302,
+        "source": "r3",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+        "stage": "lbfgs_refined",
+        "status": "scored"
+      },
+      "before": {
+        "checkpoint": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/dfg_rbf_pikan.pt",
+        "checkpoint_sha256": "85e15ab0d212e042cdbbb08f54fabaed3a330d1db32b0c5039c9a21b23ca1567",
+        "cuda_device_index": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 0.3833835249999993,
+        "featflow_reference": {
+          "drag_coefficient": 5.57953523384,
+          "lift_coefficient": 0.010618948146,
+          "pressure_difference": 0.11752016697
+        },
+        "field_relative_l2": null,
+        "heldout_point_count": 16384,
+        "heldout_points_origin": "official_r4_scrambled_sobol_generator_reconstructed_from_heldout_seed",
+        "heldout_points_sha256": "c00020b21de5748a41735b9b2372cdb3cce3053159ab079ff9e2f9d42d9d1b5d",
+        "heldout_residual_regions": {
+          "far_field": {
+            "continuity_mean_abs": 0.006310209434586232,
+            "continuity_p95_abs": 0.01626794636249542,
+            "continuity_rms": 0.0080532425523647,
+            "count": 10517,
+            "momentum_x_mean_abs": 0.005438703062224148,
+            "momentum_x_p95_abs": 0.013732686638832084,
+            "momentum_x_rms": 0.007075090242971446,
+            "momentum_y_mean_abs": 0.004190791119747517,
+            "momentum_y_p95_abs": 0.010156554542481891,
+            "momentum_y_rms": 0.00537043062389321
+          },
+          "global": {
+            "continuity_mean_abs": 0.01654327366333641,
+            "continuity_p95_abs": 0.07335750460624692,
+            "continuity_rms": 0.03690578276459536,
+            "count": 16384,
+            "momentum_x_mean_abs": 0.011938598619432028,
+            "momentum_x_p95_abs": 0.04226655736565586,
+            "momentum_x_rms": 0.0281947887024368,
+            "momentum_y_mean_abs": 0.010769567869469532,
+            "momentum_y_p95_abs": 0.038087480142712564,
+            "momentum_y_rms": 0.03627941568429148
+          },
+          "near_cylinder": {
+            "continuity_mean_abs": 0.07658340804845108,
+            "continuity_p95_abs": 0.20906581655144688,
+            "continuity_rms": 0.1108386093395643,
+            "count": 1148,
+            "momentum_x_mean_abs": 0.05729483561091391,
+            "momentum_x_p95_abs": 0.17357582300901384,
+            "momentum_x_rms": 0.09510395350015233,
+            "momentum_y_mean_abs": 0.05991447450859206,
+            "momentum_y_p95_abs": 0.20263994410633956,
+            "momentum_y_rms": 0.13026268749934922
+          },
+          "wake": {
+            "continuity_mean_abs": 0.02072900752463038,
+            "continuity_p95_abs": 0.06373262032866475,
+            "continuity_rms": 0.03104389903870398,
+            "count": 1008,
+            "momentum_x_mean_abs": 0.017853618303672106,
+            "momentum_x_p95_abs": 0.0536307170987129,
+            "momentum_x_rms": 0.02509117855557621,
+            "momentum_y_mean_abs": 0.015662731271179706,
+            "momentum_y_p95_abs": 0.04363841339945793,
+            "momentum_y_rms": 0.0277260241189371
+          }
+        },
+        "heldout_residual_seconds": 0.33694750500006876,
+        "heldout_seed": 100302,
+        "peak_cuda_memory_allocated_bytes": 93453824,
+        "qoi_errors_vs_featflow": {
+          "drag_relative_error": 0.8045625736920341,
+          "lift_absolute_error": 0.03208578253032876,
+          "pressure_difference_relative_error": 0.31685299510843656
+        },
+        "qois_1024": {
+          "drag_coefficient": 1.0904500895159421,
+          "drag_force": 0.0021809001790318847,
+          "lift_coefficient": 0.04270475536223074,
+          "lift_force": 8.540951072446151e-05,
+          "pressure_difference": 0.08028355007991195
+        },
+        "qois_512": {
+          "drag_coefficient": 1.0904500060963045,
+          "drag_force": 0.0021809000121926093,
+          "lift_coefficient": 0.04270473067632876,
+          "lift_force": 8.540946135265754e-05,
+          "pressure_difference": 0.08028355007991195
+        },
+        "quadrature_512_to_1024_absolute_change": {
+          "drag_coefficient": 8.341963764202376e-08,
+          "lift_coefficient": 2.4685901982290925e-08,
+          "pressure_difference": 0.0
+        },
+        "scientific_accepted": false,
+        "seed": 302,
+        "source": "r3",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+        "stage": "adam_checkpoint_before_lbfgs",
+        "status": "scored"
+      },
+      "field_relative_l2": null,
+      "scientific_accepted": false,
+      "seed": 302,
+      "source": "r3",
+      "source_artifacts": {
+        "checkpoint_sha256": "85e15ab0d212e042cdbbb08f54fabaed3a330d1db32b0c5039c9a21b23ca1567",
+        "files": {
+          "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/dfg_rbf_pikan.pt",
+          "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/dfg_training_pools.npz",
+          "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/manifest_snapshot.json",
+          "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/provenance.json",
+          "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/run.json"
+        },
+        "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+        "pool_sha256": "11988a7d7c310443e5addb07711908b48cd1361124740bb8c0c9ea9a96c42ca0",
+        "provenance_training_seed": 302,
+        "run_seed": 302,
+        "seed": 302,
+        "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302",
+        "sha256": {
+          "dfg_rbf_pikan.pt": "85e15ab0d212e042cdbbb08f54fabaed3a330d1db32b0c5039c9a21b23ca1567",
+          "dfg_training_pools.npz": "11988a7d7c310443e5addb07711908b48cd1361124740bb8c0c9ea9a96c42ca0",
+          "manifest_snapshot.json": "eacb82912ad356cc14aba9bdbe8167cdb60de82ca3d7bb567dbc81a79ff76330",
+          "provenance.json": "9b3596bbbe0c11d4af99dbef2c68079825f40ddfdc748ca67325a0263aa5bf10",
+          "run.json": "3d0f2edd7f9c07956e0eba36059b956031b4fc2e0a9cee88fc00a36f8f9e16f6"
+        },
+        "source": "r3",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+        "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3"
+      },
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+      "status": "complete",
+      "training": {
+        "boundary_points_per_set": {
+          "cylinder": 512,
+          "inlet": 512,
+          "lower_wall": 512,
+          "outlet": 512,
+          "upper_wall": 512
+        },
+        "chunk_size": 1024,
+        "cuda_index_visible_to_worker": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 540.018703328,
+        "field_relative_l2": null,
+        "global_device_index": 1,
+        "input_checkpoint_sha256": "85e15ab0d212e042cdbbb08f54fabaed3a330d1db32b0c5039c9a21b23ca1567",
+        "input_pool_sha256": "11988a7d7c310443e5addb07711908b48cd1361124740bb8c0c9ea9a96c42ca0",
+        "interior_points": 16384,
+        "last_loss": 0.0007217663344363245,
+        "lbfgs_steps": 331,
+        "loss_components": {
+          "boundary_cylinder": 4.210737461107783e-05,
+          "boundary_inlet": 8.438742952421308e-06,
+          "boundary_lower_wall": 9.81579432846047e-06,
+          "boundary_outlet_traction": 8.07662445367896e-07,
+          "boundary_upper_wall": 9.988520105252974e-06,
+          "pde_continuity": 0.00026057009290525457,
+          "pde_momentum_x": 0.0001757667359925108,
+          "pde_momentum_y": 0.0002142714110959787
+        },
+        "optimizer": "torch.optim.LBFGS",
+        "output_checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-302/checkpoint-lbfgs.pt",
+        "output_checkpoint_sha256": "8e4c5493f9bcb893634883c4ee387ef199447e15b9f4e101eb2a5c6c203027cc",
+        "peak_cuda_memory_allocated_bytes": 96851456,
+        "pool_policy": "saved full pool, fixed order, deterministic chunked closure",
+        "process_returncode": 0,
+        "scientific_accepted": false,
+        "seconds_cap": 540.0,
+        "seed": 302,
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+        "source_provenance_sha256": "9b3596bbbe0c11d4af99dbef2c68079825f40ddfdc748ca67325a0263aa5bf10",
+        "source_run_sha256": "3d0f2edd7f9c07956e0eba36059b956031b4fc2e0a9cee88fc00a36f8f9e16f6",
+        "stage": "deterministic_full_pool_LBFGS_continuation",
+        "status": "lbfgs_refined",
+        "stop_reason": "time_cap_during_closure",
+        "wave": 1,
+        "wave_timed_out": false,
+        "worker_wall_seconds": 540.041790185
+      }
+    },
+    {
+      "after": {
+        "checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-303/checkpoint-lbfgs.pt",
+        "checkpoint_sha256": "b024883d314c2ecbe88718153fcadc003b0a7d973337197fce3e731ad0f4ef7c",
+        "cuda_device_index": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 0.4024941970001237,
+        "featflow_reference": {
+          "drag_coefficient": 5.57953523384,
+          "lift_coefficient": 0.010618948146,
+          "pressure_difference": 0.11752016697
+        },
+        "field_relative_l2": null,
+        "heldout_point_count": 16384,
+        "heldout_points_origin": "official_r4_scrambled_sobol_generator_reconstructed_from_heldout_seed",
+        "heldout_points_sha256": "dd4006cdfbe2942c5dc1a20c3b9dcf8d32c63ebc3755a743ad26f86eb4048ab3",
+        "heldout_residual_regions": {
+          "far_field": {
+            "continuity_mean_abs": 0.005927330719450291,
+            "continuity_p95_abs": 0.014758506137877709,
+            "continuity_rms": 0.007447182012001103,
+            "count": 10519,
+            "momentum_x_mean_abs": 0.005863176935439329,
+            "momentum_x_p95_abs": 0.014397552516311413,
+            "momentum_x_rms": 0.007552633503644424,
+            "momentum_y_mean_abs": 0.004124335476668899,
+            "momentum_y_p95_abs": 0.010441053286194806,
+            "momentum_y_rms": 0.0052918206054881995
+          },
+          "global": {
+            "continuity_mean_abs": 0.009600435662910467,
+            "continuity_p95_abs": 0.028608582168817516,
+            "continuity_rms": 0.019412488178225048,
+            "count": 16384,
+            "momentum_x_mean_abs": 0.009268667812442288,
+            "momentum_x_p95_abs": 0.02935868790373194,
+            "momentum_x_rms": 0.016180317643547763,
+            "momentum_y_mean_abs": 0.008093194156227002,
+            "momentum_y_p95_abs": 0.024804192874580605,
+            "momentum_y_rms": 0.018451104722216515
+          },
+          "near_cylinder": {
+            "continuity_mean_abs": 0.034290539457193285,
+            "continuity_p95_abs": 0.09759703278541565,
+            "continuity_rms": 0.05968418551728158,
+            "count": 1151,
+            "momentum_x_mean_abs": 0.031619805354118465,
+            "momentum_x_p95_abs": 0.09799215570092201,
+            "momentum_x_rms": 0.04658651274027427,
+            "momentum_y_mean_abs": 0.03431477291895065,
+            "momentum_y_p95_abs": 0.0998445600271225,
+            "momentum_y_rms": 0.06171454825906995
+          },
+          "wake": {
+            "continuity_mean_abs": 0.012718295024353125,
+            "continuity_p95_abs": 0.03536503463983535,
+            "continuity_rms": 0.01851668795630607,
+            "count": 1008,
+            "momentum_x_mean_abs": 0.017494566299160758,
+            "momentum_x_p95_abs": 0.06549691185355182,
+            "momentum_x_rms": 0.028095259737788272,
+            "momentum_y_mean_abs": 0.01589902546818069,
+            "momentum_y_p95_abs": 0.05989142823964356,
+            "momentum_y_rms": 0.026210574667931308
+          }
+        },
+        "heldout_residual_seconds": 0.3540451059991483,
+        "heldout_seed": 100303,
+        "peak_cuda_memory_allocated_bytes": 93453824,
+        "qoi_delta_vs_before": {
+          "drag_coefficient": 0.38874939454091195,
+          "lift_coefficient": 0.07230988206417549,
+          "pressure_difference": 0.030533074866980314
+        },
+        "qoi_errors_vs_featflow": {
+          "drag_relative_error": 0.7463725906175065,
+          "lift_absolute_error": 0.006788525220719172,
+          "pressure_difference_relative_error": 0.10976094405853559
+        },
+        "qois_1024": {
+          "drag_coefficient": 1.415123228499881,
+          "drag_force": 0.0028302464569997625,
+          "lift_coefficient": 0.017407448233764684,
+          "lift_force": 3.4814896467529376e-05,
+          "pressure_difference": 0.10462104249745607
+        },
+        "qois_512": {
+          "drag_coefficient": 1.4151230669171844,
+          "drag_force": 0.002830246133834369,
+          "lift_coefficient": 0.017407473366719172,
+          "lift_force": 3.481494673343835e-05,
+          "pressure_difference": 0.10462104249745607
+        },
+        "quadrature_512_to_1024_absolute_change": {
+          "drag_coefficient": 1.6158269655619506e-07,
+          "lift_coefficient": 2.5132954488416015e-08,
+          "pressure_difference": 0.0
+        },
+        "scientific_accepted": false,
+        "seed": 303,
+        "source": "r4",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+        "stage": "lbfgs_refined",
+        "status": "scored"
+      },
+      "before": {
+        "checkpoint": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/dfg_rbf_pikan.pt",
+        "checkpoint_sha256": "0602af82c611770dc2da14f969157eea5e4730baa945493fb5b9c0caa91a5c15",
+        "cuda_device_index": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 0.3847298630000182,
+        "featflow_reference": {
+          "drag_coefficient": 5.57953523384,
+          "lift_coefficient": 0.010618948146,
+          "pressure_difference": 0.11752016697
+        },
+        "field_relative_l2": null,
+        "heldout_point_count": 16384,
+        "heldout_points_origin": "official_r4_scrambled_sobol_generator_reconstructed_from_heldout_seed",
+        "heldout_points_sha256": "dd4006cdfbe2942c5dc1a20c3b9dcf8d32c63ebc3755a743ad26f86eb4048ab3",
+        "heldout_residual_regions": {
+          "far_field": {
+            "continuity_mean_abs": 0.0056923162222789914,
+            "continuity_p95_abs": 0.013461348228156568,
+            "continuity_rms": 0.007046456275682141,
+            "count": 10519,
+            "momentum_x_mean_abs": 0.005498473342040579,
+            "momentum_x_p95_abs": 0.01302970433607698,
+            "momentum_x_rms": 0.00694114935342457,
+            "momentum_y_mean_abs": 0.0040733586000090485,
+            "momentum_y_p95_abs": 0.009760083816945554,
+            "momentum_y_rms": 0.005106305132580285
+          },
+          "global": {
+            "continuity_mean_abs": 0.016218646105487622,
+            "continuity_p95_abs": 0.08283011168241496,
+            "continuity_rms": 0.03711809898888165,
+            "count": 16384,
+            "momentum_x_mean_abs": 0.011296786833247197,
+            "momentum_x_p95_abs": 0.04277618993073697,
+            "momentum_x_rms": 0.024369105446861578,
+            "momentum_y_mean_abs": 0.009693667031300271,
+            "momentum_y_p95_abs": 0.03633061777800321,
+            "momentum_y_rms": 0.026215182209780814
+          },
+          "near_cylinder": {
+            "continuity_mean_abs": 0.07162146082311402,
+            "continuity_p95_abs": 0.19230426847934723,
+            "continuity_rms": 0.1019015260019882,
+            "count": 1151,
+            "momentum_x_mean_abs": 0.049973456959744235,
+            "momentum_x_p95_abs": 0.1577019840478897,
+            "momentum_x_rms": 0.0764853986399617,
+            "momentum_y_mean_abs": 0.05176494772736951,
+            "momentum_y_p95_abs": 0.16267970204353333,
+            "momentum_y_rms": 0.0903323762900792
+          },
+          "wake": {
+            "continuity_mean_abs": 0.012514795832675956,
+            "continuity_p95_abs": 0.04308716133236883,
+            "continuity_rms": 0.018595189865394404,
+            "count": 1008,
+            "momentum_x_mean_abs": 0.017578860081393654,
+            "momentum_x_p95_abs": 0.059094353765249234,
+            "momentum_x_rms": 0.028930748860467027,
+            "momentum_y_mean_abs": 0.014429935164282632,
+            "momentum_y_p95_abs": 0.04175403397530317,
+            "momentum_y_rms": 0.023099996732175786
+          }
+        },
+        "heldout_residual_seconds": 0.33744621800002506,
+        "heldout_seed": 100303,
+        "peak_cuda_memory_allocated_bytes": 93453824,
+        "qoi_errors_vs_featflow": {
+          "drag_relative_error": 0.8160467441532954,
+          "lift_absolute_error": 0.06552135684345632,
+          "pressure_difference_relative_error": 0.369572307964908
+        },
+        "qois_1024": {
+          "drag_coefficient": 1.0263737307212635,
+          "drag_force": 0.0020527474614425276,
+          "lift_coefficient": -0.054902392798072894,
+          "lift_force": -0.00010980478559614582,
+          "pressure_difference": 0.07408796763047576
+        },
+        "qois_512": {
+          "drag_coefficient": 1.0263736723762724,
+          "drag_force": 0.0020527473447525453,
+          "lift_coefficient": -0.05490240869745632,
+          "lift_force": -0.00010980481739491267,
+          "pressure_difference": 0.07408796763047576
+        },
+        "quadrature_512_to_1024_absolute_change": {
+          "drag_coefficient": 5.834499106072144e-08,
+          "lift_coefficient": 1.5899383427886438e-08,
+          "pressure_difference": 0.0
+        },
+        "scientific_accepted": false,
+        "seed": 303,
+        "source": "r4",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+        "stage": "adam_checkpoint_before_lbfgs",
+        "status": "scored"
+      },
+      "field_relative_l2": null,
+      "scientific_accepted": false,
+      "seed": 303,
+      "source": "r4",
+      "source_artifacts": {
+        "checkpoint_sha256": "0602af82c611770dc2da14f969157eea5e4730baa945493fb5b9c0caa91a5c15",
+        "files": {
+          "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/dfg_rbf_pikan.pt",
+          "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/dfg_training_pools.npz",
+          "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/manifest_snapshot.json",
+          "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/provenance.json",
+          "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/run.json"
+        },
+        "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+        "pool_sha256": "5b20353af42277abf3fc21c73feb26fa30adde9c6949e5031923bb1b881a4cbc",
+        "provenance_training_seed": 303,
+        "run_seed": 303,
+        "seed": 303,
+        "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303",
+        "sha256": {
+          "dfg_rbf_pikan.pt": "0602af82c611770dc2da14f969157eea5e4730baa945493fb5b9c0caa91a5c15",
+          "dfg_training_pools.npz": "5b20353af42277abf3fc21c73feb26fa30adde9c6949e5031923bb1b881a4cbc",
+          "manifest_snapshot.json": "2d38aa34538503061370d941458ba243e178215bd8e7e9870737ad685545a0c6",
+          "provenance.json": "cb43f73ed6cd1a539fdcbba41d9310607cc87cd33e7a6d23af7b56069c17837a",
+          "run.json": "d78a0a84f3ff091aeae1d8db7ed9dc119e7c144fb4421543eb4dfc69311a94c0"
+        },
+        "source": "r4",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+        "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4"
+      },
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+      "status": "complete",
+      "training": {
+        "boundary_points_per_set": {
+          "cylinder": 512,
+          "inlet": 512,
+          "lower_wall": 512,
+          "outlet": 512,
+          "upper_wall": 512
+        },
+        "chunk_size": 1024,
+        "cuda_index_visible_to_worker": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 540.005098517,
+        "field_relative_l2": null,
+        "global_device_index": 0,
+        "input_checkpoint_sha256": "0602af82c611770dc2da14f969157eea5e4730baa945493fb5b9c0caa91a5c15",
+        "input_pool_sha256": "5b20353af42277abf3fc21c73feb26fa30adde9c6949e5031923bb1b881a4cbc",
+        "interior_points": 16384,
+        "last_loss": 0.0009521592866121864,
+        "lbfgs_steps": 330,
+        "loss_components": {
+          "boundary_cylinder": 4.079908467247151e-05,
+          "boundary_inlet": 1.2323657756496686e-05,
+          "boundary_lower_wall": 1.1845156222989317e-05,
+          "boundary_outlet_traction": 1.1753692206184496e-06,
+          "boundary_upper_wall": 1.4884614756738301e-05,
+          "pde_continuity": 0.0003483939763100352,
+          "pde_momentum_x": 0.0002649256985023385,
+          "pde_momentum_y": 0.00025781172917049844
+        },
+        "optimizer": "torch.optim.LBFGS",
+        "output_checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-303/checkpoint-lbfgs.pt",
+        "output_checkpoint_sha256": "b024883d314c2ecbe88718153fcadc003b0a7d973337197fce3e731ad0f4ef7c",
+        "peak_cuda_memory_allocated_bytes": 96851456,
+        "pool_policy": "saved full pool, fixed order, deterministic chunked closure",
+        "process_returncode": 0,
+        "scientific_accepted": false,
+        "seconds_cap": 540.0,
+        "seed": 303,
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+        "source_provenance_sha256": "cb43f73ed6cd1a539fdcbba41d9310607cc87cd33e7a6d23af7b56069c17837a",
+        "source_run_sha256": "d78a0a84f3ff091aeae1d8db7ed9dc119e7c144fb4421543eb4dfc69311a94c0",
+        "stage": "deterministic_full_pool_LBFGS_continuation",
+        "status": "lbfgs_refined",
+        "stop_reason": "time_cap_during_closure",
+        "wave": 2,
+        "wave_timed_out": false,
+        "worker_wall_seconds": 540.088769883
+      }
+    },
+    {
+      "after": {
+        "checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-304/checkpoint-lbfgs.pt",
+        "checkpoint_sha256": "85b57fd9939ac9558a9f0a3b55ccf914490436721f56e948fb34a16124b80e17",
+        "cuda_device_index": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 0.3895084329999463,
+        "featflow_reference": {
+          "drag_coefficient": 5.57953523384,
+          "lift_coefficient": 0.010618948146,
+          "pressure_difference": 0.11752016697
+        },
+        "field_relative_l2": null,
+        "heldout_point_count": 16384,
+        "heldout_points_origin": "official_r4_scrambled_sobol_generator_reconstructed_from_heldout_seed",
+        "heldout_points_sha256": "5b856f5f8e206b213caba689f08f9000638b74ce678987751507e26c7b9cf82b",
+        "heldout_residual_regions": {
+          "far_field": {
+            "continuity_mean_abs": 0.005159476729922156,
+            "continuity_p95_abs": 0.0133155897259712,
+            "continuity_rms": 0.006664143652312782,
+            "count": 10517,
+            "momentum_x_mean_abs": 0.004633609134823821,
+            "momentum_x_p95_abs": 0.011414562352001648,
+            "momentum_x_rms": 0.00588855227729292,
+            "momentum_y_mean_abs": 0.0045488232310475565,
+            "momentum_y_p95_abs": 0.010513283498585222,
+            "momentum_y_rms": 0.005608248752442114
+          },
+          "global": {
+            "continuity_mean_abs": 0.008539761294852788,
+            "continuity_p95_abs": 0.027331757545471187,
+            "continuity_rms": 0.01919286229424551,
+            "count": 16384,
+            "momentum_x_mean_abs": 0.007796621989857755,
+            "momentum_x_p95_abs": 0.023598440364003173,
+            "momentum_x_rms": 0.016325386663135714,
+            "momentum_y_mean_abs": 0.007695664237696409,
+            "momentum_y_p95_abs": 0.020814705360680787,
+            "momentum_y_rms": 0.030291019456198418
+          },
+          "near_cylinder": {
+            "continuity_mean_abs": 0.03201681958831059,
+            "continuity_p95_abs": 0.08740162216126916,
+            "continuity_rms": 0.06107075943553988,
+            "count": 1154,
+            "momentum_x_mean_abs": 0.03287249244103915,
+            "momentum_x_p95_abs": 0.10197102651000019,
+            "momentum_x_rms": 0.05340404295153563,
+            "momentum_y_mean_abs": 0.03455850511817165,
+            "momentum_y_p95_abs": 0.09683200269937511,
+            "momentum_y_rms": 0.11057020196847331
+          },
+          "wake": {
+            "continuity_mean_abs": 0.011172027859966554,
+            "continuity_p95_abs": 0.03226897120475766,
+            "continuity_rms": 0.022468350818647696,
+            "count": 1005,
+            "momentum_x_mean_abs": 0.015000160693640435,
+            "momentum_x_p95_abs": 0.06233152300119392,
+            "momentum_x_rms": 0.025051539875505784,
+            "momentum_y_mean_abs": 0.01057122287230997,
+            "momentum_y_p95_abs": 0.043036066740751236,
+            "momentum_y_rms": 0.020027802968089703
+          }
+        },
+        "heldout_residual_seconds": 0.342076343999679,
+        "heldout_seed": 100304,
+        "peak_cuda_memory_allocated_bytes": 93453824,
+        "qoi_delta_vs_before": {
+          "drag_coefficient": 0.29728536736509725,
+          "lift_coefficient": -0.015395164210646356,
+          "pressure_difference": 0.021714581176638603
+        },
+        "qoi_errors_vs_featflow": {
+          "drag_relative_error": 0.7425294193405971,
+          "lift_absolute_error": 0.023053940777784165,
+          "pressure_difference_relative_error": 0.09719179219153026
+        },
+        "qois_1024": {
+          "drag_coefficient": 1.436566289573864,
+          "drag_force": 0.0028731325791477285,
+          "lift_coefficient": -0.012435021085764006,
+          "lift_force": -2.487004217152802e-05,
+          "pressure_difference": 0.10609817132353783
+        },
+        "qois_512": {
+          "drag_coefficient": 1.4365661764663817,
+          "drag_force": 0.002873132352932764,
+          "lift_coefficient": -0.012434992631784164,
+          "lift_force": -2.4869985263568335e-05,
+          "pressure_difference": 0.10609817132353783
+        },
+        "quadrature_512_to_1024_absolute_change": {
+          "drag_coefficient": 1.1310748226911471e-07,
+          "lift_coefficient": 2.8453979842441024e-08,
+          "pressure_difference": 0.0
+        },
+        "scientific_accepted": false,
+        "seed": 304,
+        "source": "r4",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+        "stage": "lbfgs_refined",
+        "status": "scored"
+      },
+      "before": {
+        "checkpoint": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/dfg_rbf_pikan.pt",
+        "checkpoint_sha256": "ca3acb0663fb40781c9813e85763c3e83c3578e2899999c305a0264dd462e9fb",
+        "cuda_device_index": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 0.40230200000002014,
+        "featflow_reference": {
+          "drag_coefficient": 5.57953523384,
+          "lift_coefficient": 0.010618948146,
+          "pressure_difference": 0.11752016697
+        },
+        "field_relative_l2": null,
+        "heldout_point_count": 16384,
+        "heldout_points_origin": "official_r4_scrambled_sobol_generator_reconstructed_from_heldout_seed",
+        "heldout_points_sha256": "5b856f5f8e206b213caba689f08f9000638b74ce678987751507e26c7b9cf82b",
+        "heldout_residual_regions": {
+          "far_field": {
+            "continuity_mean_abs": 0.005434458863902751,
+            "continuity_p95_abs": 0.012825539335608482,
+            "continuity_rms": 0.006752869944003345,
+            "count": 10517,
+            "momentum_x_mean_abs": 0.004449985801897248,
+            "momentum_x_p95_abs": 0.010966007784008979,
+            "momentum_x_rms": 0.005748669011742188,
+            "momentum_y_mean_abs": 0.00468992339154781,
+            "momentum_y_p95_abs": 0.011771236732602114,
+            "momentum_y_rms": 0.005953268114872931
+          },
+          "global": {
+            "continuity_mean_abs": 0.012825875097334016,
+            "continuity_p95_abs": 0.06014728024601932,
+            "continuity_rms": 0.031051631272545854,
+            "count": 16384,
+            "momentum_x_mean_abs": 0.009461306065229103,
+            "momentum_x_p95_abs": 0.03449436053633688,
+            "momentum_x_rms": 0.021047651146142415,
+            "momentum_y_mean_abs": 0.010257031554812945,
+            "momentum_y_p95_abs": 0.034178449586033735,
+            "momentum_y_rms": 0.03800726721140629
+          },
+          "near_cylinder": {
+            "continuity_mean_abs": 0.05371135780047077,
+            "continuity_p95_abs": 0.13325484246015537,
+            "continuity_rms": 0.0943391396544708,
+            "count": 1154,
+            "momentum_x_mean_abs": 0.04636081495321581,
+            "momentum_x_p95_abs": 0.1265312172472476,
+            "momentum_x_rms": 0.06879391175950235,
+            "momentum_y_mean_abs": 0.055718823801272147,
+            "momentum_y_p95_abs": 0.14423956945538505,
+            "momentum_y_rms": 0.13825145424674065
+          },
+          "wake": {
+            "continuity_mean_abs": 0.012168443369776455,
+            "continuity_p95_abs": 0.03483433797955512,
+            "continuity_rms": 0.02105378797559442,
+            "count": 1005,
+            "momentum_x_mean_abs": 0.014795110826334217,
+            "momentum_x_p95_abs": 0.06344256848096845,
+            "momentum_x_rms": 0.02628877478528528,
+            "momentum_y_mean_abs": 0.012949721795733815,
+            "momentum_y_p95_abs": 0.04697044864296913,
+            "momentum_y_rms": 0.020725441118490787
+          }
+        },
+        "heldout_residual_seconds": 0.35106387199999745,
+        "heldout_seed": 100304,
+        "peak_cuda_memory_allocated_bytes": 93453824,
+        "qoi_errors_vs_featflow": {
+          "drag_relative_error": 0.7958108047796665,
+          "lift_absolute_error": 0.007658776567137808,
+          "pressure_difference_relative_error": 0.2819650250459543
+        },
+        "qois_1024": {
+          "drag_coefficient": 1.139280844517994,
+          "drag_force": 0.0022785616890359886,
+          "lift_coefficient": 0.002960163146093609,
+          "lift_force": 5.92032629218722e-06,
+          "pressure_difference": 0.08438359014689922
+        },
+        "qois_512": {
+          "drag_coefficient": 1.1392808091012845,
+          "drag_force": 0.0022785616182025696,
+          "lift_coefficient": 0.0029601715788621923,
+          "lift_force": 5.920343157724386e-06,
+          "pressure_difference": 0.08438359014689922
+        },
+        "quadrature_512_to_1024_absolute_change": {
+          "drag_coefficient": 3.541670956508369e-08,
+          "lift_coefficient": 8.432768583248318e-09,
+          "pressure_difference": 0.0
+        },
+        "scientific_accepted": false,
+        "seed": 304,
+        "source": "r4",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+        "stage": "adam_checkpoint_before_lbfgs",
+        "status": "scored"
+      },
+      "field_relative_l2": null,
+      "scientific_accepted": false,
+      "seed": 304,
+      "source": "r4",
+      "source_artifacts": {
+        "checkpoint_sha256": "ca3acb0663fb40781c9813e85763c3e83c3578e2899999c305a0264dd462e9fb",
+        "files": {
+          "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/dfg_rbf_pikan.pt",
+          "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/dfg_training_pools.npz",
+          "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/manifest_snapshot.json",
+          "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/provenance.json",
+          "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/run.json"
+        },
+        "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+        "pool_sha256": "d0783ab93c5c28f0026a54cb3564a9139bdbdcf42f6f070622783df058e2c6ca",
+        "provenance_training_seed": 304,
+        "run_seed": 304,
+        "seed": 304,
+        "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304",
+        "sha256": {
+          "dfg_rbf_pikan.pt": "ca3acb0663fb40781c9813e85763c3e83c3578e2899999c305a0264dd462e9fb",
+          "dfg_training_pools.npz": "d0783ab93c5c28f0026a54cb3564a9139bdbdcf42f6f070622783df058e2c6ca",
+          "manifest_snapshot.json": "3ad3d48be14b312be6ddd3cb896b496b118333592776b0d6386d0d5a377856eb",
+          "provenance.json": "6a5f9ddc716c1d42b1aaf59b103992f1cef56637694d5d70df7c124f6b6cb119",
+          "run.json": "6a1f3773579acf130475bd1fa4d8554f8b116b7d6fee33543e34b5ec0c57bff6"
+        },
+        "source": "r4",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+        "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4"
+      },
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+      "status": "complete",
+      "training": {
+        "boundary_points_per_set": {
+          "cylinder": 512,
+          "inlet": 512,
+          "lower_wall": 512,
+          "outlet": 512,
+          "upper_wall": 512
+        },
+        "chunk_size": 1024,
+        "cuda_index_visible_to_worker": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 540.0418985860001,
+        "field_relative_l2": null,
+        "global_device_index": 1,
+        "input_checkpoint_sha256": "ca3acb0663fb40781c9813e85763c3e83c3578e2899999c305a0264dd462e9fb",
+        "input_pool_sha256": "d0783ab93c5c28f0026a54cb3564a9139bdbdcf42f6f070622783df058e2c6ca",
+        "interior_points": 16384,
+        "last_loss": 0.0007616998082085047,
+        "lbfgs_steps": 333,
+        "loss_components": {
+          "boundary_cylinder": 4.96722204843536e-05,
+          "boundary_inlet": 1.1183195965713821e-05,
+          "boundary_lower_wall": 1.1202484529349022e-05,
+          "boundary_outlet_traction": 1.049209458869882e-06,
+          "boundary_upper_wall": 1.0256951100018341e-05,
+          "pde_continuity": 0.00027984957614535233,
+          "pde_momentum_x": 0.00021032509175711311,
+          "pde_momentum_y": 0.00018816107876773458
+        },
+        "optimizer": "torch.optim.LBFGS",
+        "output_checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-304/checkpoint-lbfgs.pt",
+        "output_checkpoint_sha256": "85b57fd9939ac9558a9f0a3b55ccf914490436721f56e948fb34a16124b80e17",
+        "peak_cuda_memory_allocated_bytes": 96851456,
+        "pool_policy": "saved full pool, fixed order, deterministic chunked closure",
+        "process_returncode": 0,
+        "scientific_accepted": false,
+        "seconds_cap": 540.0,
+        "seed": 304,
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+        "source_provenance_sha256": "6a5f9ddc716c1d42b1aaf59b103992f1cef56637694d5d70df7c124f6b6cb119",
+        "source_run_sha256": "6a1f3773579acf130475bd1fa4d8554f8b116b7d6fee33543e34b5ec0c57bff6",
+        "stage": "deterministic_full_pool_LBFGS_continuation",
+        "status": "lbfgs_refined",
+        "stop_reason": "time_cap_during_closure",
+        "wave": 2,
+        "wave_timed_out": false,
+        "worker_wall_seconds": 540.09542904
+      }
+    },
+    {
+      "after": {
+        "checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-305/checkpoint-lbfgs.pt",
+        "checkpoint_sha256": "d146da0a237da93d0e2c54c9e14af156ef78278336ceb05916df314b3c6dd4e4",
+        "cuda_device_index": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 0.3990577229999417,
+        "featflow_reference": {
+          "drag_coefficient": 5.57953523384,
+          "lift_coefficient": 0.010618948146,
+          "pressure_difference": 0.11752016697
+        },
+        "field_relative_l2": null,
+        "heldout_point_count": 16384,
+        "heldout_points_origin": "official_r4_scrambled_sobol_generator_reconstructed_from_heldout_seed",
+        "heldout_points_sha256": "807363d81fec086b5c5495fdfb05b8e6cb15f60170041ffc20cea14d10290441",
+        "heldout_residual_regions": {
+          "far_field": {
+            "continuity_mean_abs": 0.006162980880829728,
+            "continuity_p95_abs": 0.014344088500365613,
+            "continuity_rms": 0.007582568781993725,
+            "count": 10520,
+            "momentum_x_mean_abs": 0.005336510988320631,
+            "momentum_x_p95_abs": 0.014510461362078772,
+            "momentum_x_rms": 0.007104702227444322,
+            "momentum_y_mean_abs": 0.004394627057305986,
+            "momentum_y_p95_abs": 0.011639979341998693,
+            "momentum_y_rms": 0.005762973831259965
+          },
+          "global": {
+            "continuity_mean_abs": 0.009594546297765572,
+            "continuity_p95_abs": 0.02735684029757976,
+            "continuity_rms": 0.018759390261076873,
+            "count": 16384,
+            "momentum_x_mean_abs": 0.008592628655051726,
+            "momentum_x_p95_abs": 0.025867391750216483,
+            "momentum_x_rms": 0.017970103168240898,
+            "momentum_y_mean_abs": 0.008371007337871883,
+            "momentum_y_p95_abs": 0.02643456254154441,
+            "momentum_y_rms": 0.02720969309015634
+          },
+          "near_cylinder": {
+            "continuity_mean_abs": 0.03508485131553744,
+            "continuity_p95_abs": 0.09778597950935364,
+            "continuity_rms": 0.057016893580621106,
+            "count": 1153,
+            "momentum_x_mean_abs": 0.03361105677067542,
+            "momentum_x_p95_abs": 0.10242488980293261,
+            "momentum_x_rms": 0.05855095963414473,
+            "momentum_y_mean_abs": 0.039716247562253414,
+            "momentum_y_p95_abs": 0.10483063012361518,
+            "momentum_y_rms": 0.09711200854727901
+          },
+          "wake": {
+            "continuity_mean_abs": 0.013696929121438125,
+            "continuity_p95_abs": 0.0386446937918663,
+            "continuity_rms": 0.02224872476204103,
+            "count": 1006,
+            "momentum_x_mean_abs": 0.0158715397411139,
+            "momentum_x_p95_abs": 0.055639189667999744,
+            "momentum_x_rms": 0.0279906544520721,
+            "momentum_y_mean_abs": 0.015642161300904848,
+            "momentum_y_p95_abs": 0.05326380021870136,
+            "momentum_y_rms": 0.022871775999927558
+          }
+        },
+        "heldout_residual_seconds": 0.350775618000398,
+        "heldout_seed": 100305,
+        "peak_cuda_memory_allocated_bytes": 93453824,
+        "qoi_delta_vs_before": {
+          "drag_coefficient": 0.42350886350348604,
+          "lift_coefficient": -0.037924737318277016,
+          "pressure_difference": 0.029203005833551288
+        },
+        "qoi_errors_vs_featflow": {
+          "drag_relative_error": 0.712691015416357,
+          "lift_absolute_error": 0.14987870972330652,
+          "pressure_difference_relative_error": 0.07587269608605812
+        },
+        "qois_1024": {
+          "drag_coefficient": 1.603050668519726,
+          "drag_force": 0.003206101337039453,
+          "lift_coefficient": -0.13925975683934397,
+          "lift_force": -0.000278519513678688,
+          "pressure_difference": 0.10860359505750239
+        },
+        "qois_512": {
+          "drag_coefficient": 1.6030506024832294,
+          "drag_force": 0.0032061012049664594,
+          "lift_coefficient": -0.13925976157730652,
+          "lift_force": -0.0002785195231546131,
+          "pressure_difference": 0.10860359505750239
+        },
+        "quadrature_512_to_1024_absolute_change": {
+          "drag_coefficient": 6.603649671532708e-08,
+          "lift_coefficient": 4.7379625500720834e-09,
+          "pressure_difference": 0.0
+        },
+        "scientific_accepted": false,
+        "seed": 305,
+        "source": "r4",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+        "stage": "lbfgs_refined",
+        "status": "scored"
+      },
+      "before": {
+        "checkpoint": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/dfg_rbf_pikan.pt",
+        "checkpoint_sha256": "5401b1cbc22e2393a7c25c3b1aff0468c536f7eb8fc23a15675641754d6f891e",
+        "cuda_device_index": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 0.3821798170000079,
+        "featflow_reference": {
+          "drag_coefficient": 5.57953523384,
+          "lift_coefficient": 0.010618948146,
+          "pressure_difference": 0.11752016697
+        },
+        "field_relative_l2": null,
+        "heldout_point_count": 16384,
+        "heldout_points_origin": "official_r4_scrambled_sobol_generator_reconstructed_from_heldout_seed",
+        "heldout_points_sha256": "807363d81fec086b5c5495fdfb05b8e6cb15f60170041ffc20cea14d10290441",
+        "heldout_residual_regions": {
+          "far_field": {
+            "continuity_mean_abs": 0.006375240813141238,
+            "continuity_p95_abs": 0.014987413585186004,
+            "continuity_rms": 0.007846640376392836,
+            "count": 10520,
+            "momentum_x_mean_abs": 0.006866805136128157,
+            "momentum_x_p95_abs": 0.015940593276172876,
+            "momentum_x_rms": 0.008518512451976394,
+            "momentum_y_mean_abs": 0.006561780410865081,
+            "momentum_y_p95_abs": 0.01821534223854541,
+            "momentum_y_rms": 0.008623437019457125
+          },
+          "global": {
+            "continuity_mean_abs": 0.017331872539960713,
+            "continuity_p95_abs": 0.08335292004048804,
+            "continuity_rms": 0.03847444382951257,
+            "count": 16384,
+            "momentum_x_mean_abs": 0.014952485317866415,
+            "momentum_x_p95_abs": 0.05233475249260662,
+            "momentum_x_rms": 0.032671492890130625,
+            "momentum_y_mean_abs": 0.012669981465201596,
+            "momentum_y_p95_abs": 0.048299127444624765,
+            "momentum_y_rms": 0.031144754767213612
+          },
+          "near_cylinder": {
+            "continuity_mean_abs": 0.08098646853739479,
+            "continuity_p95_abs": 0.1998333930969238,
+            "continuity_rms": 0.10898840894703318,
+            "count": 1153,
+            "momentum_x_mean_abs": 0.07415571144975057,
+            "momentum_x_p95_abs": 0.2137174963951111,
+            "momentum_x_rms": 0.10839204956057308,
+            "momentum_y_mean_abs": 0.054525280137871876,
+            "momentum_y_p95_abs": 0.13537126183509815,
+            "momentum_y_rms": 0.10152145331950713
+          },
+          "wake": {
+            "continuity_mean_abs": 0.01678642617616336,
+            "continuity_p95_abs": 0.04932893067598343,
+            "continuity_rms": 0.02477426783054816,
+            "count": 1006,
+            "momentum_x_mean_abs": 0.019840288721644096,
+            "momentum_x_p95_abs": 0.050360905937850475,
+            "momentum_x_rms": 0.030052140430656515,
+            "momentum_y_mean_abs": 0.014038936221341081,
+            "momentum_y_p95_abs": 0.04412290174514055,
+            "momentum_y_rms": 0.02064011411694191
+          }
+        },
+        "heldout_residual_seconds": 0.33319783300004246,
+        "heldout_seed": 100305,
+        "peak_cuda_memory_allocated_bytes": 93453824,
+        "qoi_errors_vs_featflow": {
+          "drag_relative_error": 0.7885949833552806,
+          "lift_absolute_error": 0.1119539724050295,
+          "pressure_difference_relative_error": 0.32436626605355223
+        },
+        "qois_1024": {
+          "drag_coefficient": 1.1795418289102602,
+          "drag_force": 0.002359083657820521,
+          "lift_coefficient": -0.10133502923368477,
+          "lift_force": -0.0002026700584673696,
+          "pressure_difference": 0.0794005892239511
+        },
+        "qois_512": {
+          "drag_coefficient": 1.1795417389797433,
+          "drag_force": 0.002359083477959487,
+          "lift_coefficient": -0.1013350242590295,
+          "lift_force": -0.00020267004851805905,
+          "pressure_difference": 0.0794005892239511
+        },
+        "quadrature_512_to_1024_absolute_change": {
+          "drag_coefficient": 8.993051681116526e-08,
+          "lift_coefficient": 4.974655271050565e-09,
+          "pressure_difference": 0.0
+        },
+        "scientific_accepted": false,
+        "seed": 305,
+        "source": "r4",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+        "stage": "adam_checkpoint_before_lbfgs",
+        "status": "scored"
+      },
+      "field_relative_l2": null,
+      "scientific_accepted": false,
+      "seed": 305,
+      "source": "r4",
+      "source_artifacts": {
+        "checkpoint_sha256": "5401b1cbc22e2393a7c25c3b1aff0468c536f7eb8fc23a15675641754d6f891e",
+        "files": {
+          "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/dfg_rbf_pikan.pt",
+          "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/dfg_training_pools.npz",
+          "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/manifest_snapshot.json",
+          "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/provenance.json",
+          "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/run.json"
+        },
+        "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+        "pool_sha256": "24af3e1e58ef8fb3797455d1ab44eae47100832beb5d3668c2107751f5fa104b",
+        "provenance_training_seed": 305,
+        "run_seed": 305,
+        "seed": 305,
+        "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305",
+        "sha256": {
+          "dfg_rbf_pikan.pt": "5401b1cbc22e2393a7c25c3b1aff0468c536f7eb8fc23a15675641754d6f891e",
+          "dfg_training_pools.npz": "24af3e1e58ef8fb3797455d1ab44eae47100832beb5d3668c2107751f5fa104b",
+          "manifest_snapshot.json": "b0f80b22a41b485ce586d4586ba8ce2bc09a86236e9f7e86b60e73d4025ab802",
+          "provenance.json": "9dc8edc5cd566c7e24f77e893589868e8f8531db9c1850dfa13707dac791e8de",
+          "run.json": "09675ffdd976c6a39781f314658eccd5db230b07621f056ca5da991ad937c532"
+        },
+        "source": "r4",
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+        "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4"
+      },
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+      "status": "complete",
+      "training": {
+        "boundary_points_per_set": {
+          "cylinder": 512,
+          "inlet": 512,
+          "lower_wall": 512,
+          "outlet": 512,
+          "upper_wall": 512
+        },
+        "chunk_size": 1024,
+        "cuda_index_visible_to_worker": 0,
+        "device": "Tesla T4",
+        "elapsed_seconds": 540.053738979,
+        "field_relative_l2": null,
+        "global_device_index": 0,
+        "input_checkpoint_sha256": "5401b1cbc22e2393a7c25c3b1aff0468c536f7eb8fc23a15675641754d6f891e",
+        "input_pool_sha256": "24af3e1e58ef8fb3797455d1ab44eae47100832beb5d3668c2107751f5fa104b",
+        "interior_points": 16384,
+        "last_loss": 0.0009046911119412471,
+        "lbfgs_steps": 332,
+        "loss_components": {
+          "boundary_cylinder": 6.608348485315219e-05,
+          "boundary_inlet": 1.084383711713599e-05,
+          "boundary_lower_wall": 1.1189917131559923e-05,
+          "boundary_outlet_traction": 1.8082101860272815e-06,
+          "boundary_upper_wall": 9.38644734560512e-06,
+          "pde_continuity": 0.0003087679497184581,
+          "pde_momentum_x": 0.00022777799222239992,
+          "pde_momentum_y": 0.00026883327336690854
+        },
+        "optimizer": "torch.optim.LBFGS",
+        "output_checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-305/checkpoint-lbfgs.pt",
+        "output_checkpoint_sha256": "d146da0a237da93d0e2c54c9e14af156ef78278336ceb05916df314b3c6dd4e4",
+        "peak_cuda_memory_allocated_bytes": 96851456,
+        "pool_policy": "saved full pool, fixed order, deterministic chunked closure",
+        "process_returncode": 0,
+        "scientific_accepted": false,
+        "seconds_cap": 540.0,
+        "seed": 305,
+        "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+        "source_provenance_sha256": "9dc8edc5cd566c7e24f77e893589868e8f8531db9c1850dfa13707dac791e8de",
+        "source_run_sha256": "09675ffdd976c6a39781f314658eccd5db230b07621f056ca5da991ad937c532",
+        "stage": "deterministic_full_pool_LBFGS_continuation",
+        "status": "lbfgs_refined",
+        "stop_reason": "time_cap_during_closure",
+        "wave": 3,
+        "wave_timed_out": false,
+        "worker_wall_seconds": 540.121526358
+      }
+    }
+  ],
+  "scientific_accepted": false,
+  "seeds": [
+    301,
+    302,
+    303,
+    304,
+    305
+  ],
+  "seeds_by_source": {
+    "r3": [
+      301,
+      302
+    ],
+    "r4": [
+      303,
+      304,
+      305
+    ]
+  },
+  "session_wall_seconds_from_first_code_cell": 1649.597257601,
+  "soft_deadline_seconds": 3500.0,
+  "source_by_seed": {
+    "301": {
+      "checkpoint_sha256": "b80aca8372a5e0cb59271a9ab5b0f882c926f26a45fca56506ab609acd0250bf",
+      "files": {
+        "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/dfg_rbf_pikan.pt",
+        "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/dfg_training_pools.npz",
+        "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/manifest_snapshot.json",
+        "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/provenance.json",
+        "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301/run.json"
+      },
+      "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+      "pool_sha256": "d1aec7ef727830e2cf00777e36a8fcb98df3e2b9b5e824a8553d96cf77c10402",
+      "provenance_training_seed": 301,
+      "run_seed": 301,
+      "seed": 301,
+      "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-301",
+      "sha256": {
+        "dfg_rbf_pikan.pt": "b80aca8372a5e0cb59271a9ab5b0f882c926f26a45fca56506ab609acd0250bf",
+        "dfg_training_pools.npz": "d1aec7ef727830e2cf00777e36a8fcb98df3e2b9b5e824a8553d96cf77c10402",
+        "manifest_snapshot.json": "721b61747d0dd483c566b5ca41c29f445ccbfe50d06214d991d081fe34dead63",
+        "provenance.json": "df890e1b3e7aa92903987e21c4723c9a6aa9637bff397be71f257bcd0196a202",
+        "run.json": "9fc5e4611ce1c4e1775f8a7765f145806e64c75515bcc94fd9314e8cf478eb0b"
+      },
+      "source": "r3",
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+      "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3"
+    },
+    "302": {
+      "checkpoint_sha256": "85e15ab0d212e042cdbbb08f54fabaed3a330d1db32b0c5039c9a21b23ca1567",
+      "files": {
+        "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/dfg_rbf_pikan.pt",
+        "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/dfg_training_pools.npz",
+        "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/manifest_snapshot.json",
+        "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/provenance.json",
+        "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302/run.json"
+      },
+      "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+      "pool_sha256": "11988a7d7c310443e5addb07711908b48cd1361124740bb8c0c9ea9a96c42ca0",
+      "provenance_training_seed": 302,
+      "run_seed": 302,
+      "seed": 302,
+      "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3/runs/seed-302",
+      "sha256": {
+        "dfg_rbf_pikan.pt": "85e15ab0d212e042cdbbb08f54fabaed3a330d1db32b0c5039c9a21b23ca1567",
+        "dfg_training_pools.npz": "11988a7d7c310443e5addb07711908b48cd1361124740bb8c0c9ea9a96c42ca0",
+        "manifest_snapshot.json": "eacb82912ad356cc14aba9bdbe8167cdb60de82ca3d7bb567dbc81a79ff76330",
+        "provenance.json": "9b3596bbbe0c11d4af99dbef2c68079825f40ddfdc748ca67325a0263aa5bf10",
+        "run.json": "3d0f2edd7f9c07956e0eba36059b956031b4fc2e0a9cee88fc00a36f8f9e16f6"
+      },
+      "source": "r3",
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+      "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3"
+    },
+    "303": {
+      "checkpoint_sha256": "0602af82c611770dc2da14f969157eea5e4730baa945493fb5b9c0caa91a5c15",
+      "files": {
+        "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/dfg_rbf_pikan.pt",
+        "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/dfg_training_pools.npz",
+        "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/manifest_snapshot.json",
+        "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/provenance.json",
+        "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303/run.json"
+      },
+      "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+      "pool_sha256": "5b20353af42277abf3fc21c73feb26fa30adde9c6949e5031923bb1b881a4cbc",
+      "provenance_training_seed": 303,
+      "run_seed": 303,
+      "seed": 303,
+      "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-303",
+      "sha256": {
+        "dfg_rbf_pikan.pt": "0602af82c611770dc2da14f969157eea5e4730baa945493fb5b9c0caa91a5c15",
+        "dfg_training_pools.npz": "5b20353af42277abf3fc21c73feb26fa30adde9c6949e5031923bb1b881a4cbc",
+        "manifest_snapshot.json": "2d38aa34538503061370d941458ba243e178215bd8e7e9870737ad685545a0c6",
+        "provenance.json": "cb43f73ed6cd1a539fdcbba41d9310607cc87cd33e7a6d23af7b56069c17837a",
+        "run.json": "d78a0a84f3ff091aeae1d8db7ed9dc119e7c144fb4421543eb4dfc69311a94c0"
+      },
+      "source": "r4",
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+      "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4"
+    },
+    "304": {
+      "checkpoint_sha256": "ca3acb0663fb40781c9813e85763c3e83c3578e2899999c305a0264dd462e9fb",
+      "files": {
+        "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/dfg_rbf_pikan.pt",
+        "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/dfg_training_pools.npz",
+        "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/manifest_snapshot.json",
+        "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/provenance.json",
+        "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304/run.json"
+      },
+      "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+      "pool_sha256": "d0783ab93c5c28f0026a54cb3564a9139bdbdcf42f6f070622783df058e2c6ca",
+      "provenance_training_seed": 304,
+      "run_seed": 304,
+      "seed": 304,
+      "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-304",
+      "sha256": {
+        "dfg_rbf_pikan.pt": "ca3acb0663fb40781c9813e85763c3e83c3578e2899999c305a0264dd462e9fb",
+        "dfg_training_pools.npz": "d0783ab93c5c28f0026a54cb3564a9139bdbdcf42f6f070622783df058e2c6ca",
+        "manifest_snapshot.json": "3ad3d48be14b312be6ddd3cb896b496b118333592776b0d6386d0d5a377856eb",
+        "provenance.json": "6a5f9ddc716c1d42b1aaf59b103992f1cef56637694d5d70df7c124f6b6cb119",
+        "run.json": "6a1f3773579acf130475bd1fa4d8554f8b116b7d6fee33543e34b5ec0c57bff6"
+      },
+      "source": "r4",
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+      "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4"
+    },
+    "305": {
+      "checkpoint_sha256": "5401b1cbc22e2393a7c25c3b1aff0468c536f7eb8fc23a15675641754d6f891e",
+      "files": {
+        "dfg_rbf_pikan.pt": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/dfg_rbf_pikan.pt",
+        "dfg_training_pools.npz": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/dfg_training_pools.npz",
+        "manifest_snapshot.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/manifest_snapshot.json",
+        "provenance.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/provenance.json",
+        "run.json": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305/run.json"
+      },
+      "manifest_model_id": "dfg_rbf_fixed_2_16_16_3",
+      "pool_sha256": "24af3e1e58ef8fb3797455d1ab44eae47100832beb5d3668c2107751f5fa104b",
+      "provenance_training_seed": 305,
+      "run_seed": 305,
+      "seed": 305,
+      "seed_directory": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4/runs/seed-305",
+      "sha256": {
+        "dfg_rbf_pikan.pt": "5401b1cbc22e2393a7c25c3b1aff0468c536f7eb8fc23a15675641754d6f891e",
+        "dfg_training_pools.npz": "24af3e1e58ef8fb3797455d1ab44eae47100832beb5d3668c2107751f5fa104b",
+        "manifest_snapshot.json": "b0f80b22a41b485ce586d4586ba8ce2bc09a86236e9f7e86b60e73d4025ab802",
+        "provenance.json": "9dc8edc5cd566c7e24f77e893589868e8f8531db9c1850dfa13707dac791e8de",
+        "run.json": "09675ffdd976c6a39781f314658eccd5db230b07621f056ca5da991ad937c532"
+      },
+      "source": "r4",
+      "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+      "source_mount": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4"
+    }
+  },
+  "source_kernels": {
+    "r3": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+    "r4": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4"
+  },
+  "source_mounts": {
+    "r3": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+    "r4": "/kaggle/input/af-pikans-dfg-rbf-inputs-20260928/rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4"
+  },
+  "status": "lbfgs_refinement_complete",
+  "successful_refined_and_scored_seeds": 5,
+  "training_waves": [
+    {
+      "seeds": [
+        301,
+        302
+      ],
+      "wall_seconds": 546.081869158,
+      "wave": 1,
+      "workers": {
+        "301": {
+          "boundary_points_per_set": {
+            "cylinder": 512,
+            "inlet": 512,
+            "lower_wall": 512,
+            "outlet": 512,
+            "upper_wall": 512
+          },
+          "chunk_size": 1024,
+          "cuda_index_visible_to_worker": 0,
+          "device": "Tesla T4",
+          "elapsed_seconds": 540.008910474,
+          "field_relative_l2": null,
+          "global_device_index": 0,
+          "input_checkpoint_sha256": "b80aca8372a5e0cb59271a9ab5b0f882c926f26a45fca56506ab609acd0250bf",
+          "input_pool_sha256": "d1aec7ef727830e2cf00777e36a8fcb98df3e2b9b5e824a8553d96cf77c10402",
+          "interior_points": 16384,
+          "last_loss": 0.0010319044517927978,
+          "lbfgs_steps": 317,
+          "loss_components": {
+            "boundary_cylinder": 3.262493555666879e-05,
+            "boundary_inlet": 1.7986718376050703e-05,
+            "boundary_lower_wall": 1.1722498129529413e-05,
+            "boundary_outlet_traction": 2.697185209399322e-06,
+            "boundary_upper_wall": 2.2553025701199658e-05,
+            "pde_continuity": 0.00036509699930320494,
+            "pde_momentum_x": 0.0002968366161439917,
+            "pde_momentum_y": 0.00028238647337275324
+          },
+          "optimizer": "torch.optim.LBFGS",
+          "output_checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-301/checkpoint-lbfgs.pt",
+          "output_checkpoint_sha256": "a8dd18c11ae715a014076654a13187466d5916c1b51b82f0f84affe2a1f6821f",
+          "peak_cuda_memory_allocated_bytes": 96851456,
+          "pool_policy": "saved full pool, fixed order, deterministic chunked closure",
+          "process_returncode": 0,
+          "scientific_accepted": false,
+          "seconds_cap": 540.0,
+          "seed": 301,
+          "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+          "source_provenance_sha256": "df890e1b3e7aa92903987e21c4723c9a6aa9637bff397be71f257bcd0196a202",
+          "source_run_sha256": "9fc5e4611ce1c4e1775f8a7765f145806e64c75515bcc94fd9314e8cf478eb0b",
+          "stage": "deterministic_full_pool_LBFGS_continuation",
+          "status": "lbfgs_refined",
+          "stop_reason": "time_cap_during_closure",
+          "wave": 1,
+          "wave_timed_out": false,
+          "worker_wall_seconds": 540.028885707
+        },
+        "302": {
+          "boundary_points_per_set": {
+            "cylinder": 512,
+            "inlet": 512,
+            "lower_wall": 512,
+            "outlet": 512,
+            "upper_wall": 512
+          },
+          "chunk_size": 1024,
+          "cuda_index_visible_to_worker": 0,
+          "device": "Tesla T4",
+          "elapsed_seconds": 540.018703328,
+          "field_relative_l2": null,
+          "global_device_index": 1,
+          "input_checkpoint_sha256": "85e15ab0d212e042cdbbb08f54fabaed3a330d1db32b0c5039c9a21b23ca1567",
+          "input_pool_sha256": "11988a7d7c310443e5addb07711908b48cd1361124740bb8c0c9ea9a96c42ca0",
+          "interior_points": 16384,
+          "last_loss": 0.0007217663344363245,
+          "lbfgs_steps": 331,
+          "loss_components": {
+            "boundary_cylinder": 4.210737461107783e-05,
+            "boundary_inlet": 8.438742952421308e-06,
+            "boundary_lower_wall": 9.81579432846047e-06,
+            "boundary_outlet_traction": 8.07662445367896e-07,
+            "boundary_upper_wall": 9.988520105252974e-06,
+            "pde_continuity": 0.00026057009290525457,
+            "pde_momentum_x": 0.0001757667359925108,
+            "pde_momentum_y": 0.0002142714110959787
+          },
+          "optimizer": "torch.optim.LBFGS",
+          "output_checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-302/checkpoint-lbfgs.pt",
+          "output_checkpoint_sha256": "8e4c5493f9bcb893634883c4ee387ef199447e15b9f4e101eb2a5c6c203027cc",
+          "peak_cuda_memory_allocated_bytes": 96851456,
+          "pool_policy": "saved full pool, fixed order, deterministic chunked closure",
+          "process_returncode": 0,
+          "scientific_accepted": false,
+          "seconds_cap": 540.0,
+          "seed": 302,
+          "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+          "source_provenance_sha256": "9b3596bbbe0c11d4af99dbef2c68079825f40ddfdc748ca67325a0263aa5bf10",
+          "source_run_sha256": "3d0f2edd7f9c07956e0eba36059b956031b4fc2e0a9cee88fc00a36f8f9e16f6",
+          "stage": "deterministic_full_pool_LBFGS_continuation",
+          "status": "lbfgs_refined",
+          "stop_reason": "time_cap_during_closure",
+          "wave": 1,
+          "wave_timed_out": false,
+          "worker_wall_seconds": 540.041790185
+        }
+      }
+    },
+    {
+      "seeds": [
+        303,
+        304
+      ],
+      "wall_seconds": 544.0811973450001,
+      "wave": 2,
+      "workers": {
+        "303": {
+          "boundary_points_per_set": {
+            "cylinder": 512,
+            "inlet": 512,
+            "lower_wall": 512,
+            "outlet": 512,
+            "upper_wall": 512
+          },
+          "chunk_size": 1024,
+          "cuda_index_visible_to_worker": 0,
+          "device": "Tesla T4",
+          "elapsed_seconds": 540.005098517,
+          "field_relative_l2": null,
+          "global_device_index": 0,
+          "input_checkpoint_sha256": "0602af82c611770dc2da14f969157eea5e4730baa945493fb5b9c0caa91a5c15",
+          "input_pool_sha256": "5b20353af42277abf3fc21c73feb26fa30adde9c6949e5031923bb1b881a4cbc",
+          "interior_points": 16384,
+          "last_loss": 0.0009521592866121864,
+          "lbfgs_steps": 330,
+          "loss_components": {
+            "boundary_cylinder": 4.079908467247151e-05,
+            "boundary_inlet": 1.2323657756496686e-05,
+            "boundary_lower_wall": 1.1845156222989317e-05,
+            "boundary_outlet_traction": 1.1753692206184496e-06,
+            "boundary_upper_wall": 1.4884614756738301e-05,
+            "pde_continuity": 0.0003483939763100352,
+            "pde_momentum_x": 0.0002649256985023385,
+            "pde_momentum_y": 0.00025781172917049844
+          },
+          "optimizer": "torch.optim.LBFGS",
+          "output_checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-303/checkpoint-lbfgs.pt",
+          "output_checkpoint_sha256": "b024883d314c2ecbe88718153fcadc003b0a7d973337197fce3e731ad0f4ef7c",
+          "peak_cuda_memory_allocated_bytes": 96851456,
+          "pool_policy": "saved full pool, fixed order, deterministic chunked closure",
+          "process_returncode": 0,
+          "scientific_accepted": false,
+          "seconds_cap": 540.0,
+          "seed": 303,
+          "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+          "source_provenance_sha256": "cb43f73ed6cd1a539fdcbba41d9310607cc87cd33e7a6d23af7b56069c17837a",
+          "source_run_sha256": "d78a0a84f3ff091aeae1d8db7ed9dc119e7c144fb4421543eb4dfc69311a94c0",
+          "stage": "deterministic_full_pool_LBFGS_continuation",
+          "status": "lbfgs_refined",
+          "stop_reason": "time_cap_during_closure",
+          "wave": 2,
+          "wave_timed_out": false,
+          "worker_wall_seconds": 540.088769883
+        },
+        "304": {
+          "boundary_points_per_set": {
+            "cylinder": 512,
+            "inlet": 512,
+            "lower_wall": 512,
+            "outlet": 512,
+            "upper_wall": 512
+          },
+          "chunk_size": 1024,
+          "cuda_index_visible_to_worker": 0,
+          "device": "Tesla T4",
+          "elapsed_seconds": 540.0418985860001,
+          "field_relative_l2": null,
+          "global_device_index": 1,
+          "input_checkpoint_sha256": "ca3acb0663fb40781c9813e85763c3e83c3578e2899999c305a0264dd462e9fb",
+          "input_pool_sha256": "d0783ab93c5c28f0026a54cb3564a9139bdbdcf42f6f070622783df058e2c6ca",
+          "interior_points": 16384,
+          "last_loss": 0.0007616998082085047,
+          "lbfgs_steps": 333,
+          "loss_components": {
+            "boundary_cylinder": 4.96722204843536e-05,
+            "boundary_inlet": 1.1183195965713821e-05,
+            "boundary_lower_wall": 1.1202484529349022e-05,
+            "boundary_outlet_traction": 1.049209458869882e-06,
+            "boundary_upper_wall": 1.0256951100018341e-05,
+            "pde_continuity": 0.00027984957614535233,
+            "pde_momentum_x": 0.00021032509175711311,
+            "pde_momentum_y": 0.00018816107876773458
+          },
+          "optimizer": "torch.optim.LBFGS",
+          "output_checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-304/checkpoint-lbfgs.pt",
+          "output_checkpoint_sha256": "85b57fd9939ac9558a9f0a3b55ccf914490436721f56e948fb34a16124b80e17",
+          "peak_cuda_memory_allocated_bytes": 96851456,
+          "pool_policy": "saved full pool, fixed order, deterministic chunked closure",
+          "process_returncode": 0,
+          "scientific_accepted": false,
+          "seconds_cap": 540.0,
+          "seed": 304,
+          "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+          "source_provenance_sha256": "6a5f9ddc716c1d42b1aaf59b103992f1cef56637694d5d70df7c124f6b6cb119",
+          "source_run_sha256": "6a1f3773579acf130475bd1fa4d8554f8b116b7d6fee33543e34b5ec0c57bff6",
+          "stage": "deterministic_full_pool_LBFGS_continuation",
+          "status": "lbfgs_refined",
+          "stop_reason": "time_cap_during_closure",
+          "wave": 2,
+          "wave_timed_out": false,
+          "worker_wall_seconds": 540.09542904
+        }
+      }
+    },
+    {
+      "seeds": [
+        305
+      ],
+      "wall_seconds": 544.0784015610002,
+      "wave": 3,
+      "workers": {
+        "305": {
+          "boundary_points_per_set": {
+            "cylinder": 512,
+            "inlet": 512,
+            "lower_wall": 512,
+            "outlet": 512,
+            "upper_wall": 512
+          },
+          "chunk_size": 1024,
+          "cuda_index_visible_to_worker": 0,
+          "device": "Tesla T4",
+          "elapsed_seconds": 540.053738979,
+          "field_relative_l2": null,
+          "global_device_index": 0,
+          "input_checkpoint_sha256": "5401b1cbc22e2393a7c25c3b1aff0468c536f7eb8fc23a15675641754d6f891e",
+          "input_pool_sha256": "24af3e1e58ef8fb3797455d1ab44eae47100832beb5d3668c2107751f5fa104b",
+          "interior_points": 16384,
+          "last_loss": 0.0009046911119412471,
+          "lbfgs_steps": 332,
+          "loss_components": {
+            "boundary_cylinder": 6.608348485315219e-05,
+            "boundary_inlet": 1.084383711713599e-05,
+            "boundary_lower_wall": 1.1189917131559923e-05,
+            "boundary_outlet_traction": 1.8082101860272815e-06,
+            "boundary_upper_wall": 9.38644734560512e-06,
+            "pde_continuity": 0.0003087679497184581,
+            "pde_momentum_x": 0.00022777799222239992,
+            "pde_momentum_y": 0.00026883327336690854
+          },
+          "optimizer": "torch.optim.LBFGS",
+          "output_checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-305/checkpoint-lbfgs.pt",
+          "output_checkpoint_sha256": "d146da0a237da93d0e2c54c9e14af156ef78278336ceb05916df314b3c6dd4e4",
+          "peak_cuda_memory_allocated_bytes": 96851456,
+          "pool_policy": "saved full pool, fixed order, deterministic chunked closure",
+          "process_returncode": 0,
+          "scientific_accepted": false,
+          "seconds_cap": 540.0,
+          "seed": 305,
+          "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+          "source_provenance_sha256": "9dc8edc5cd566c7e24f77e893589868e8f8531db9c1850dfa13707dac791e8de",
+          "source_run_sha256": "09675ffdd976c6a39781f314658eccd5db230b07621f056ca5da991ad937c532",
+          "stage": "deterministic_full_pool_LBFGS_continuation",
+          "status": "lbfgs_refined",
+          "stop_reason": "time_cap_during_closure",
+          "wave": 3,
+          "wave_timed_out": false,
+          "worker_wall_seconds": 540.121526358
+        }
+      }
+    }
+  ],
+  "watchdog_seconds_from_first_code_cell": 6800.0
+}

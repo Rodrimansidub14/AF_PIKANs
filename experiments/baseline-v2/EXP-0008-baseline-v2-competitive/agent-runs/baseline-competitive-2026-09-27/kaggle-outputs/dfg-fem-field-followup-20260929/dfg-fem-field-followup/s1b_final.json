@@ -1,0 +1,21 @@
+{
+  "checkpoint_field_scores": {
+    "per_seed": [],
+    "status": "field_reference_incomplete"
+  },
+  "fem_summary": null,
+  "process_returncode": 0,
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "worker": {
+    "log": "/kaggle/working/dfg-fem-field-followup/dfg-worker.log",
+    "part": "s1b",
+    "process_returncode": 1,
+    "scientific_accepted": false,
+    "session_elapsed_seconds": 77.521,
+    "solver_summary": null,
+    "status": "partial_or_failed",
+    "updated_at_utc": "2026-09-29T06:31:03Z",
+    "worker_elapsed_seconds": 70.805
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "status": "DRAFT_UNVERIFIED",
+  "campaign_id": "allen-cahn-t4-competitive-2026-09-27",
+  "execution_authorized": false,
+  "problem": {
+    "equation": "u_t = 0.001*u_xx + 5*(u-u^3)",
+    "domain": {"x": [-1.0, 1.0], "t": [0.0, 1.0]},
+    "initial_condition": "u(x,0)=x^2*cos(pi*x)",
+    "boundary_conditions": "u(-1,t)=u(1,t)=-1",
+    "hard_transform": "x^2*cos(pi*x) + t*(1-x^2)*N(x,t)",
+    "protocol": "../../reference-protocol-ac-dfg.md"
+  },
+  "arms": [
+    {
+      "id": "AC-RBF-Sobol",
+      "role": "incumbent control rerun on strict CUDA",
+      "architecture": "RBF-PIKAN [2,16,16,1], 11 fixed Gaussian edge bases, width 0.21, SiLU base",
+      "implementation": "run_campaign.py",
+      "notes": "Recreates the declared EXP-0003 model geometry and hard transform; the old EXP-0003 device field is discrepant and its score is context only."
+    },
+    {
+      "id": "AC-DeepXDE-MLP",
+      "role": "strong direct-contract comparator",
+      "architecture": "tanh MLP [2,20,20,20,20,1], Glorot-uniform hidden layers",
+      "implementation": "run_campaign.py",
+      "source": "https://deepxde.readthedocs.io/en/latest/demos/pinn_forward/allen.cahn.html",
+      "notes": "Same PDE, hard transform, point pools and evaluator. This is a matched-time Adam-only adaptation, not a reproduction of the tutorial's full 40,000-Adam-step plus L-BFGS recipe."
+    }
+  ],
+  "training": {
+    "hardware": "Kaggle GPU T4x2; one isolated process per T4, paired arms run concurrently",
+    "strict_cuda_no_fallback": true,
+    "dtype": "float64",
+    "optimizer": "Adam only, learning rate 0.001; the same elapsed-time cap applies to both arms",
+    "learning_rate_adam": 0.001,
+    "seeds": [401, 402, 403, 404, 405],
+    "paired_seeds": true,
+    "interior_pool_count": 8192,
+    "heldout_residual_count": 16384,
+    "training_batch_size": 1024,
+    "pool_policy": "per-seed scrambled Sobol, shared byte-identical coordinates between arms",
+    "checkpoint_gpu_seconds": [120, 300, 480, 600],
+    "per_arm_seed_gpu_seconds_cap": 600,
+    "parallel_schedule": "for each seed, run RBF and MLP simultaneously on separate T4s; process seed pairs sequentially",
+    "checkpoint_selection": "final state at cap; no selection by reference field, held-out field, or FEATFLOW/published scores"
+  },
+  "reference": {
+    "method": "GPU torch.float64 finite-difference method-of-lines with explicit RK4; independent of training and evaluation data",
+    "device": "cuda-only",
+    "hard_wall_cap_seconds": 2700,
+    "spatial_intervals": [2048, 4096, 8192],
+    "base_dt": 0.00001,
+    "temporal_check_dt": 0.000005,
+    "snapshot_times": "0,0.005,...,1.0",
+    "required_spatial_gates": {
+      "two_consecutive_refinements": true,
+      "relative_space_time_l2_max": 0.00005,
+      "max_snapshot_relative_l2_max": 0.00005
+    },
+    "required_temporal_gate": {
+      "relative_space_time_l2_max": 0.0000001,
+      "max_snapshot_relative_l2_max": 0.0000001
+    },
+    "acceptance": "candidate only; the field score stays blocked unless the generated grid passes gates and is independently reviewed",
+    "existing_bdf_candidate": "../../reference/ac_bdf/runs/20260927T175610Z-8f26e215/manifest.json",
+    "existing_bdf_status": "evaluation_ready=false; provenance review still required"
+  },
+  "evaluation": {
+    "primary": "relative weighted space-time L2 on the single GPU-generated reference grid; spatial and temporal trapezoid weights",
+    "secondary": [
+      "relative spatial L2 at every saved time and its maximum",
+      "maximum absolute field error",
+      "held-out PDE residual RMS on a fixed 16384-point Sobol pool",
+      "exact-transform IC/BC trace error",
+      "Allen-Cahn energy at t=0,0.25,0.5,0.75,1.0"
+    ],
+    "training_or_selection_may_read_reference": false,
+    "scoring_wall_cap_seconds": 600,
+    "reference_failure_behavior": "write reference_status.json with blocked status and stop before computing field scores"
+  },
+  "stop_rule": {
+    "kaggle_session_quota_cap_hours_including_setup": 2.0,
+    "script_wall_cap_seconds_after_external_setup_reserve": 6900,
+    "stop_each_run": "first of 600 synchronized elapsed seconds, non-finite loss/gradient, pair deadline, or fatal runtime failure",
+    "stop_campaign": "hard script wall deadline; reference hard cap 2700s; scoring allowance 600s; stop before a new seed pair if its run cap cannot fit",
+    "t4x2_quota_accounting": "one hour of T4x2 Kaggle session runtime charges one quota hour; active device allocation is separately reported",
+    "optional_smoke": "120 seconds per arm; consume from the safety reserve, never add beyond the 2-hour session cap",
+    "no_seed_replacement_after_scientific_failure": true,
+    "no_budget_extension_or_score_based_checkpoint_choice": true,
+    "if_reference_gates_fail": "do not publish field scores; end the campaign or report only non-field diagnostics"
+  },
+  "provenance": {
+    "scientific_accepted": false,
+    "bundle_ready": false,
+    "approval_file_created": false,
+    "hashes_created": false,
+    "execution_status": "not run; no Kaggle upload, preflight, validation, training, or reference solve performed"
+  }
+}

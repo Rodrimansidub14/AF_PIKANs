@@ -1,0 +1,47 @@
+{
+  "arm": "DFG-Tanh-MLP",
+  "checkpoint_sha256": "a9a31314b33c8f0608b4341a086dbc7aacabd2c18ae7d95f25df4a39ebb2d959",
+  "cuda_device_index": 0,
+  "device": "Tesla T4",
+  "diagnostics": {
+    "cylinder_velocity_rmse_over_umean": 0.009761336259543896,
+    "heldout_continuity_rms": 0.03180755297888106,
+    "heldout_momentum_x_rms": 0.022023799510073466,
+    "heldout_momentum_y_rms": 0.024430526717656737,
+    "inlet_velocity_rmse_over_umean": 0.0046732304617762566,
+    "lower_wall_velocity_rmse_over_umean": 0.0056656417436897755,
+    "upper_wall_velocity_rmse_over_umean": 0.005864002741873264
+  },
+  "featflow_reference": {
+    "drag_coefficient": 5.57953523384,
+    "lift_coefficient": 0.010618948146,
+    "pressure_difference": 0.11752016697
+  },
+  "field_reference_status": "missing_converged_FEM_field",
+  "field_relative_l2": null,
+  "qoi_errors": {
+    "drag_relative_error": 0.14349844639803036,
+    "lift_absolute_error": 0.04216520930756578,
+    "pressure_difference_relative_error": 0.18009703999812657
+  },
+  "qois": {
+    "drag_coefficient": 4.778880596160889,
+    "drag_force": 0.009557761251926422,
+    "lift_coefficient": -0.03154626116156578,
+    "lift_force": -6.309252057690173e-05,
+    "pressure_difference": 0.0963551327586174,
+    "pressure_front": 0.0946328341960907,
+    "pressure_rear": -0.0017222992610186338,
+    "qoi_force_convention": "FEATFLOW sigma=nu*grad(u)-pI; direct sigma*n traction with radial-outward cylinder normal",
+    "surface_count": 512
+  },
+  "quadrature_512_to_1024_absolute_change": {
+    "drag_coefficient": 0.0,
+    "lift_coefficient": 1.6391277313232422e-07,
+    "pressure_difference": 0.0
+  },
+  "scientific_accepted": false,
+  "seed": 503,
+  "stage": "lbfgs_refined",
+  "status": "scored"
+}

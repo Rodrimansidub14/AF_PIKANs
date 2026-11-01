@@ -1,0 +1,17 @@
+{
+  "burgers/checkpoint-000008.pt": "c14e5d290ef72b665350e94e5877e86db60800f8d022b87a812a6a960349f214",
+  "burgers/diagnostic-000000.npz": "7fb0c97b3bd9f0f9bd9be00f654aefcf91d936155e6fe7464649363f9a1d7c49",
+  "burgers/diagnostic-000004.npz": "2cc7aceba100bd3ccff7123561f0a6b2ec518ba5f057eb46433b2be1a98939a9",
+  "burgers/diagnostic-000008.npz": "c5504f7cc0fa172019b47cc3840f7aef05163d565b3639405f2aaf4bd7546e7d",
+  "burgers/diagnostic_signals.json": "4131814c5e71d35ae828162ddcdc19e87bab147a2fcce2f40df6667a9a07e537",
+  "burgers/history.jsonl": "8964dfcac88e60282b8b26285933339405fb824da67da22fc41cef5adabacc07",
+  "burgers/pools.npz": "a4066ea1bee4258185bdf28979d40f827fc57fdf3842e5cfdb5c082abe54a554",
+  "burgers/sampling_signals.json": "6950de5c846a876788132a3afcd14831bee3a51d63dd51e4ae0f1186129fdcab",
+  "burgers/signals.json": "9f89cb1bd4ccfc7abeefcb71f86e5af8a46fc8121cc893dfe4f13364cc2ae2ff",
+  "burgers/training-losses-log.html": "74257a5a49b9c5c53c2add812a2a85749b9bc72ebb387381e14edf2e19ceeca4",
+  "burgers/training-signals-log.html": "d79cffa4dc770aa358c060df19ec4278932ea341a31af567a862b441294808f2",
+  "burgers/training_summary.json": "18c38df04ebddb8efc6e6a1c6908c3cedef8916edc988a96f28afe9f00cacb54",
+  "burgers/validation.html": "e3b643770e06a295d2c5daa30835859ea4e9b464020ce53c8ad8f4df1ecbc2fc",
+  "burgers/validation.json": "87ded3ec533e195fa206b479319d22d084c251d7d1f5c8e249850f457c847e82",
+  "burgers/validation.npz": "1f6265be9db4448d1bf55b1aff09d2757e2c60e3a86975de3ed9fde39b816bc9"
+}

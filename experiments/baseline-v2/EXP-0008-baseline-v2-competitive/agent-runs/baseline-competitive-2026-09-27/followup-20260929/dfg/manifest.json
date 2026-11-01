@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "session": "DFG-FEM-field-followup-retry5-2026-09-29",
+  "kernel_slug": "rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-5-20260929",
+  "private": true,
+  "accelerator": "NvidiaTeslaT4 x2 required and checked by entrypoint",
+  "session_cap_seconds": 1281.024,
+  "worker_cap_seconds": 1100,
+  "watchdog_seconds": 1220,
+  "kernel_sources": [
+    "rodrimandub/af-pikans-dfg-rbf-refinement-20260928",
+    "rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927"
+  ],
+  "gmsh_python_package": "gmsh==4.15.2 installed into the micromamba DOLFINx interpreter from PyPI",
+  "fixed_field_scoring_contract_declared_before_scoring": {
+    "grid": {
+      "x": {
+        "start": 0.0,
+        "stop": 2.2,
+        "count": 221,
+        "endpoint": true
+      },
+      "y": {
+        "start": 0.0,
+        "stop": 0.41,
+        "count": 42,
+        "endpoint": true
+      },
+      "ordering": "numpy.meshgrid(indexing='xy'); row-major flattened",
+      "mask": "exclude points with (x-0.2)^2+(y-0.2)^2 <= 0.05^2"
+    },
+    "pressure_gauge": {
+      "method": "subtract pressure at fixed outlet point from FEM and each checkpoint",
+      "outlet_anchor_xy": [
+        2.2,
+        0.2
+      ]
+    },
+    "metrics": [
+      "u_relative_l2",
+      "v_relative_l2",
+      "p_relative_l2_gauge_fixed_outlet"
+    ],
+    "cohorts": {
+      "current_rbf": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "refinement_rbf_and_tanh_mlp": [
+        501,
+        502,
+        503,
+        504,
+        505
+      ]
+    },
+    "reference_level": "DFG-L3 (third of three requested mesh levels)",
+    "retraining": false
+  },
+  "features": "P2/P1 Taylor-Hood, Newton, natural do-nothing outlet, three Gmsh-refined levels; no retraining",
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "source_hashes": {
+    "entrypoint_sha256": "19f99139f982be660a758ecc27cb3e06c3ad728298a55ab6fa0d907e949c9c23",
+    "solver_sha256": "83d7e19304df6fea3cbde365fcd01f8e1bf970ff36d3c1c31ec949c97102a62d",
+    "mesh_geo_sha256": "7753bb03d6c394643b1601fe771f1b878d2dc59e70cf9070b8e9b1ca433ffabb"
+  }
+}

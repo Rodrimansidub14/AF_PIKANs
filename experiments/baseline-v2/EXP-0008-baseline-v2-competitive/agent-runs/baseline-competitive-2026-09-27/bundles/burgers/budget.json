@@ -1,0 +1,43 @@
+{
+  "status": "approved_for_execution_unsubmitted",
+  "seeds": [
+    811,
+    812,
+    813,
+    814,
+    815
+  ],
+  "per_seed_pair": {
+    "rbf_training_device_seconds": 900,
+    "vanilla_training_device_seconds": 900,
+    "paired_training_device_seconds": 1800,
+    "process_allowance_wall_seconds": 120,
+    "paired_wall_timeout_seconds": 1920
+  },
+  "tier2_training_device_seconds": "5 * 2 * 900 = 9000 (2.5 aggregate device-hours)",
+  "smoke_device_seconds": "2 * 60 = 120; one pair, sequential on one T4",
+  "process_telemetry_allowance_device_seconds": "5 * 120 = 600; paired wall allowance is 120 s per seed",
+  "endpoint_scoring_device_seconds": "5 seed waves * 2 concurrent T4 scorers * 90 s = 900 device-s; endpoint scores only",
+  "endpoint_scoring_wall_seconds": "5 * 90 = 450 session seconds, both scorers in parallel per seed",
+  "tier2_parallel_schedule_wall_seconds": "ceil(5/2) * (2 * 900 + 120) = 5760 session seconds",
+  "startup_allowance_before_first_cell_wall_seconds": 300,
+  "setup_allowance_wall_seconds": 300,
+  "smoke_wall_seconds": 240,
+  "artifact_flush_allowance_wall_seconds": 90,
+  "session_close_margin_wall_seconds": 60,
+  "internal_watchdog_wall_seconds_from_first_cell": 6900,
+  "cli_hard_timeout_wall_seconds": 7200,
+  "wall_accounting": "300 startup + 300 setup + 240 smoke + 5760 training/process + 450 endpoint scoring + 90 artifact flush + 60 close = 7200 s (2 quota-hours)",
+  "aggregate_device_seconds_cap": 14400,
+  "aggregate_device_seconds_planned": 10620,
+  "aggregate_device_seconds_unallocated": 3780,
+  "accelerator": "2x Tesla T4; at most two seed pairs concurrently; each pair arms sequential on one GPU; endpoint scorers use both T4s concurrently",
+  "network_dependency_install": "none; no pip install",
+  "retries": 0,
+  "note": "Caps and allowances only, not measured performance. The revised smoke target is 60 seconds per arm, with a 240-second wall cap; v5 reached the smoke but timed out at that cap. Score waves have a hard 90-second cap; if an endpoint scorer exceeds it, stop and mark the campaign incomplete. Do not replace seeds.",
+  "budget_approved": true,
+  "execution_authorized": true,
+  "approval_note": "The session budget and remote execution were authorized in this task. No approval.json is inside the bundle. Prior v5 reached the remote smoke but timed out before confirmatory training; this regenerated bundle lowers the smoke target.",
+  "machine_shape": "NvidiaTeslaT4",
+  "visible_cuda_devices_required": 2
+}

@@ -1,0 +1,10 @@
+{
+  "actual_session_seconds": 18.062,
+  "error": "RuntimeError: P2 vector reconstruction did not reproduce the saved scalar trace: 1.0087241995592293",
+  "part": "score_repair",
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "session_elapsed_seconds": 18.062,
+  "status": "failed_partial",
+  "updated_at_utc": "2026-09-29T09:07:47Z"
+}

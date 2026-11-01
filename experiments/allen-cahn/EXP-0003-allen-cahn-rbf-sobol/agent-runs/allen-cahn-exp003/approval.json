@@ -1,0 +1,10 @@
+{
+  "bundle_id": "7d9fafd823f3e3150907ed029be678103e23c129fcab265aba61da9bff233338",
+  "approved_by": "Rodrigo Mansilla",
+  "scope": "approved",
+  "hypothesis": "approved",
+  "code_surface": "approved",
+  "remote_execution": true,
+  "approved_at": "2026-09-24T04:03:28.350241+00:00",
+  "authorization_basis": "Explicit user instruction to implement the Burgers sampling work and then start the Allen-Cahn exploratory phase."
+}

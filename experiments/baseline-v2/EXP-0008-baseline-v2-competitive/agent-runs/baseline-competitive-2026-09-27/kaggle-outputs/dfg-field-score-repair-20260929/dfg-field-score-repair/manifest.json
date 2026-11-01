@@ -1,0 +1,84 @@
+{
+  "actual_session_seconds": 16.75,
+  "artifacts": [
+    {
+      "path": "checkpoint_field_scores.partial.json",
+      "sha256": "550eb76df7235ebc92d94e35cba4de0f487a687a31dae2a2269badc89a4e6477",
+      "size_bytes": 1775
+    },
+    {
+      "path": "score_repair.json",
+      "sha256": "033bfd15d66324df32efb27eea6c7e49d4a137c11f4c05ef2f019e33734ab70a",
+      "size_bytes": 325
+    },
+    {
+      "path": "setup.log",
+      "sha256": "7e31ba29cd1f9b83418a1dffe5ce2b1383752c97fb96f42a00ec4171d51ff15c",
+      "size_bytes": 963
+    }
+  ],
+  "ended_at_utc": "2026-09-29T08:38:54Z",
+  "error": "ValueError: Could not map 25224 FEM dof coordinates to saved Gmsh nodes",
+  "fixed_field_scoring_contract": {
+    "cohorts": {
+      "current_rbf": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "refinement_rbf_and_tanh_mlp": [
+        501,
+        502,
+        503,
+        504,
+        505
+      ]
+    },
+    "grid": {
+      "mask": "exclude points with (x-0.2)^2+(y-0.2)^2 <= 0.05^2",
+      "ordering": "numpy.meshgrid(indexing='xy'); row-major flattened",
+      "source": "saved FEM DFG-L3 fields_on_common_grid.npz; declared before checkpoint scoring",
+      "x": {
+        "count": 221,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 2.2
+      },
+      "y": {
+        "count": 42,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 0.41
+      }
+    },
+    "metrics": [
+      "u_relative_l2",
+      "v_relative_l2",
+      "p_relative_l2_gauge_fixed_outlet"
+    ],
+    "pressure_gauge": {
+      "method": "subtract pressure at fixed outlet grid point",
+      "outlet_anchor_xy": [
+        2.2,
+        0.2
+      ]
+    },
+    "reference_level": "DFG-L3 (third of three requested mesh levels)",
+    "retraining": false
+  },
+  "kernel_slug": "rodrimandub/af-pikans-dfg-field-score-repair-20260929",
+  "method": "reconstruct both P2 velocity components from saved DOLFINx coefficients and the saved L3 Gmsh mesh; score frozen checkpoints only",
+  "push_cap_seconds": 527.108,
+  "reference_accepted": false,
+  "retraining": false,
+  "schema_version": 1,
+  "scientific_accepted": false,
+  "session": "DFG-field-score-repair-2026-09-29",
+  "source_code_sha256": "c3e7b4fb21295fcd654bac69f53fdf931dec3d7a68ecd8734282e3c18fe267b0",
+  "source_session": "rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-5-20260929",
+  "started_at_utc": "2026-09-29T08:38:37Z",
+  "status": "failed_partial",
+  "traceback": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 299, in main\n    velocity_node_map = coordinate_map(mesh_xy, velocity_dof_xyz, np)\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/kaggle/src/script.py\", line 89, in coordinate_map\n    raise ValueError(f\"Could not map {missing} FEM dof coordinates to saved Gmsh nodes\")\nValueError: Could not map 25224 FEM dof coordinates to saved Gmsh nodes\n"
+}

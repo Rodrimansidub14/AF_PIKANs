@@ -1,0 +1,67 @@
+{
+  "session": "S3",
+  "s1a_status": "candidate_complete",
+  "input_roots": {
+    "allen_cahn": "/kaggle/input/notebooks/rodrimandub/af-pikans-allen-cahn-t4x2-20260927/allen-cahn-t4x2",
+    "s1": "/kaggle/input/notebooks/rodrimandub/af-pikans-competitive-baseline-s1-20260928/closure-s1"
+  },
+  "reference_paths": {
+    "FD8192": "campaign/reference/ac_gpu_reference_candidate.npz",
+    "ETDRK4": "allen_cahn/etdrk4_reference.npz"
+  },
+  "model_source_sha256": "47c02c9279e564729feee848f4f9266a746aa19869727dcb47d682ad0a103241",
+  "checkpoint_hashes": {
+    "AC-RBF-Sobol": {
+      "401": "083ac1f119d564cff7e3732df9ce7684e577f41ae2d214d00c6a306c812b3239",
+      "402": "a90cc8a725659620e365b32898bd850af023e9a64ca213a887e8891aa57e48a4",
+      "403": "75c0f1dfd55e62ac01777eedb11fe15b95990a36b0b475278cd2fbfcdcc85635",
+      "404": "b0a6b989ecfdbb730b4722622095ef9216cf862850939c2f2960ff82f289f293",
+      "405": "97c04caeb60efb5bf3a3fb800c1f7cf113ff75dbf56eee75791a01985d7c12c9"
+    },
+    "AC-DeepXDE-MLP": {
+      "401": "ae42552e644eda1aef86c1b517bda3d907961f43e907ab6e75096fa75969b99b",
+      "402": "bebcbd69edd51bc440b9e1d361c61deb6e6b0c70e71555ee95b335cf74c0ac6e",
+      "403": "551bddf472e0d796ff835f9e493a3335eb989ca1a543cbb87d33c5434688ef14",
+      "404": "0271a09851e804aa4e31034cb6d63f26be2699647fee81f1835d33bfbd46d30d",
+      "405": "b5290fb473e15e6f49a08d45e127bab76b80453977013d8a6c1e76fe42b81e1e"
+    }
+  },
+  "pool_hashes": {
+    "401": "067392c7b13d6bf5df896b59b0f603e5837b9469479e1655f735ce9f3b902858",
+    "402": "511159afd3330d1ff79fa980e0020c1bfc5f0d50aa5071d71515acf651570d99",
+    "403": "5352b7d911364dd70db740c766d770beda1895cde40ac3f154ae906b98321e4b",
+    "404": "97267f785cd5a3598d8d2f3a75e6a26ed6f65e2431544070a3cccef9d9bf370a",
+    "405": "2fc0d2999ca42e751aab4e010998c0b681ff18a98c758fea28c9e9681fb72197"
+  },
+  "reference_hashes": {
+    "FD8192": "8ce9fb2090e286a55f144e0d32580b04dc058a661d7af504e0a5ca2890a26903",
+    "ETDRK4": "f004af6ec0d98ff9ae0a4121d3f82ade4db9d01f0943c349871bd47182b4ac94"
+  },
+  "checkpoint_local_paths": {
+    "AC-RBF-Sobol": {
+      "401": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/AC-RBF-Sobol/seed-401/checkpoint-final.pt",
+      "402": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/AC-RBF-Sobol/seed-402/checkpoint-final.pt",
+      "403": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/AC-RBF-Sobol/seed-403/checkpoint-final.pt",
+      "404": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/AC-RBF-Sobol/seed-404/checkpoint-final.pt",
+      "405": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/AC-RBF-Sobol/seed-405/checkpoint-final.pt"
+    },
+    "AC-DeepXDE-MLP": {
+      "401": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/AC-DeepXDE-MLP/seed-401/checkpoint-final.pt",
+      "402": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/AC-DeepXDE-MLP/seed-402/checkpoint-final.pt",
+      "403": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/AC-DeepXDE-MLP/seed-403/checkpoint-final.pt",
+      "404": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/AC-DeepXDE-MLP/seed-404/checkpoint-final.pt",
+      "405": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/AC-DeepXDE-MLP/seed-405/checkpoint-final.pt"
+    }
+  },
+  "pool_local_paths": {
+    "401": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/pools/seed-401.npz",
+    "402": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/pools/seed-402.npz",
+    "403": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/pools/seed-403.npz",
+    "404": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/pools/seed-404.npz",
+    "405": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/pools/seed-405.npz"
+  },
+  "reference_local_paths": {
+    "FD8192": "kaggle-outputs/allen-cahn-t4x2-v1-20260928/allen-cahn-t4x2/campaign/reference/ac_gpu_reference_candidate.npz",
+    "ETDRK4": "kaggle-outputs/closure-s1-20260928/closure-s1/allen_cahn/etdrk4_reference.npz"
+  }
+}

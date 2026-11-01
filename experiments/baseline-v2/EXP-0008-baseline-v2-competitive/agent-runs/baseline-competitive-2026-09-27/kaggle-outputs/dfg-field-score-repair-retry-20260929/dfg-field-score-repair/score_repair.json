@@ -1,0 +1,10 @@
+{
+  "actual_session_seconds": 13.648,
+  "error": "ValueError: FEM DOF coordinates are not Gmsh nodes within tolerance: {'count': 25231, 'unique_mesh_nodes': 25231, 'max_nearest_distance': 0.0014978431279271806, 'p99_nearest_distance': 0.0013242431058332158, 'distance_tolerance': 1e-06}",
+  "part": "score_repair",
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "session_elapsed_seconds": 13.648,
+  "status": "failed_partial",
+  "updated_at_utc": "2026-09-29T08:52:45Z"
+}

@@ -1,0 +1,119 @@
+{
+  "grid": {
+    "space_points": 512,
+    "time_points": 256
+  },
+  "metrics": {
+    "AC-DeepXDE-MLP": {
+      "mean": 0.07879919461235244,
+      "n": 5,
+      "sample_sd": 0.017712833315878782
+    },
+    "AC-RBF-Sobol": {
+      "mean": 0.01650555102422435,
+      "n": 5,
+      "sample_sd": 0.0024355930436585306
+    }
+  },
+  "paired_difference_summary": {
+    "mean": -0.06229364358812807,
+    "n": 5,
+    "sample_sd": 0.016030269121331216
+  },
+  "paired_seed_differences_RBF_minus_MLP": [
+    {
+      "RBF_minus_MLP": -0.03922888440985726,
+      "seed": 401
+    },
+    {
+      "RBF_minus_MLP": -0.07745984582560964,
+      "seed": 402
+    },
+    {
+      "RBF_minus_MLP": -0.052653663190365345,
+      "seed": 403
+    },
+    {
+      "RBF_minus_MLP": -0.0679684059888483,
+      "seed": 404
+    },
+    {
+      "RBF_minus_MLP": -0.0741574185259598,
+      "seed": 405
+    }
+  ],
+  "per_seed": [
+    {
+      "arm": "AC-DeepXDE-MLP",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-allen-cahn-score-only-20260927/allen-cahn-score-only/run-1790600803211630363/scores/AC-DeepXDE-MLP/seed-401/checkpoint-final.pt",
+      "checkpoint_sha256": "ae42552e644eda1aef86c1b517bda3d907961f43e907ab6e75096fa75969b99b",
+      "relative_weighted_space_time_l2": 0.05465031925751487,
+      "seed": 401
+    },
+    {
+      "arm": "AC-DeepXDE-MLP",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-allen-cahn-score-only-20260927/allen-cahn-score-only/run-1790600803211630363/scores/AC-DeepXDE-MLP/seed-402/checkpoint-final.pt",
+      "checkpoint_sha256": "bebcbd69edd51bc440b9e1d361c61deb6e6b0c70e71555ee95b335cf74c0ac6e",
+      "relative_weighted_space_time_l2": 0.09677494566534757,
+      "seed": 402
+    },
+    {
+      "arm": "AC-DeepXDE-MLP",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-allen-cahn-score-only-20260927/allen-cahn-score-only/run-1790600803211630363/scores/AC-DeepXDE-MLP/seed-403/checkpoint-final.pt",
+      "checkpoint_sha256": "551bddf472e0d796ff835f9e493a3335eb989ca1a543cbb87d33c5434688ef14",
+      "relative_weighted_space_time_l2": 0.06602192581915506,
+      "seed": 403
+    },
+    {
+      "arm": "AC-DeepXDE-MLP",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-allen-cahn-score-only-20260927/allen-cahn-score-only/run-1790600803211630363/scores/AC-DeepXDE-MLP/seed-404/checkpoint-final.pt",
+      "checkpoint_sha256": "0271a09851e804aa4e31034cb6d63f26be2699647fee81f1835d33bfbd46d30d",
+      "relative_weighted_space_time_l2": 0.08656197292243671,
+      "seed": 404
+    },
+    {
+      "arm": "AC-DeepXDE-MLP",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-allen-cahn-score-only-20260927/allen-cahn-score-only/run-1790600803211630363/scores/AC-DeepXDE-MLP/seed-405/checkpoint-final.pt",
+      "checkpoint_sha256": "b5290fb473e15e6f49a08d45e127bab76b80453977013d8a6c1e76fe42b81e1e",
+      "relative_weighted_space_time_l2": 0.0899868093973079,
+      "seed": 405
+    },
+    {
+      "arm": "AC-RBF-Sobol",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-allen-cahn-score-only-20260927/allen-cahn-score-only/run-1790600803211630363/scores/AC-RBF-Sobol/seed-401/checkpoint-final.pt",
+      "checkpoint_sha256": "083ac1f119d564cff7e3732df9ce7684e577f41ae2d214d00c6a306c812b3239",
+      "relative_weighted_space_time_l2": 0.015421434847657617,
+      "seed": 401
+    },
+    {
+      "arm": "AC-RBF-Sobol",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-allen-cahn-score-only-20260927/allen-cahn-score-only/run-1790600803211630363/scores/AC-RBF-Sobol/seed-402/checkpoint-final.pt",
+      "checkpoint_sha256": "a90cc8a725659620e365b32898bd850af023e9a64ca213a887e8891aa57e48a4",
+      "relative_weighted_space_time_l2": 0.019315099839737927,
+      "seed": 402
+    },
+    {
+      "arm": "AC-RBF-Sobol",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-allen-cahn-score-only-20260927/allen-cahn-score-only/run-1790600803211630363/scores/AC-RBF-Sobol/seed-403/checkpoint-final.pt",
+      "checkpoint_sha256": "75c0f1dfd55e62ac01777eedb11fe15b95990a36b0b475278cd2fbfcdcc85635",
+      "relative_weighted_space_time_l2": 0.013368262628789715,
+      "seed": 403
+    },
+    {
+      "arm": "AC-RBF-Sobol",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-allen-cahn-score-only-20260927/allen-cahn-score-only/run-1790600803211630363/scores/AC-RBF-Sobol/seed-404/checkpoint-final.pt",
+      "checkpoint_sha256": "b0a6b989ecfdbb730b4722622095ef9216cf862850939c2f2960ff82f289f293",
+      "relative_weighted_space_time_l2": 0.018593566933588407,
+      "seed": 404
+    },
+    {
+      "arm": "AC-RBF-Sobol",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-allen-cahn-score-only-20260927/allen-cahn-score-only/run-1790600803211630363/scores/AC-RBF-Sobol/seed-405/checkpoint-final.pt",
+      "checkpoint_sha256": "97c04caeb60efb5bf3a3fb800c1f7cf113ff75dbf56eee75791a01985d7c12c9",
+      "relative_weighted_space_time_l2": 0.015829390871348086,
+      "seed": 405
+    }
+  ],
+  "reference": "ETDRK4 candidate; human acceptance pending",
+  "status": "complete"
+}

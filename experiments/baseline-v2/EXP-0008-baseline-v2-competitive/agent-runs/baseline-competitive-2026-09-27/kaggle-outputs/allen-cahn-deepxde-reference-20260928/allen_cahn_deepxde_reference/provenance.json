@@ -1,0 +1,99 @@
+{
+  "benchmark": "DeepXDE Allen-Cahn example",
+  "deepxde_version_requested": "1.12.2",
+  "source_tag": "v1.12.2",
+  "source_commit_short": "414e457",
+  "source_url": "https://github.com/lululxvi/deepxde/blob/v1.12.2/examples/pinn_forward/Allen_Cahn.py",
+  "dataset_url": "https://raw.githubusercontent.com/lululxvi/deepxde/v1.12.2/examples/dataset/Allen_Cahn.mat",
+  "dataset_tag": "v1.12.2",
+  "dataset_sha256_expected": "f9175685675685ab8d2a850f0d212d16c709f55ed89b8fe078493ddcd3724aa0",
+  "dataset_git_blob_sha1": "2617d4be2746ea1689e04b9d29f0217ac1899a5f",
+  "dataset_sha256_observed": "f9175685675685ab8d2a850f0d212d16c709f55ed89b8fe078493ddcd3724aa0",
+  "dataset_raw_shapes": {
+    "t": [
+      1,
+      101
+    ],
+    "u": [
+      101,
+      201
+    ],
+    "x": [
+      1,
+      201
+    ]
+  },
+  "dataset_u_shape": [
+    101,
+    201
+  ],
+  "dataset_x_reconstruction": "No aplica: x estaba presente en el .mat.",
+  "runtime": {
+    "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+    "deepxde": "1.12.2",
+    "torch": "2.10.0+cu128",
+    "scipy": "1.16.3",
+    "numpy": "2.0.2",
+    "cuda_available": true,
+    "cuda_device_count": 2,
+    "cuda_devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "training_device": "cuda:0",
+    "backend": "pytorch",
+    "default_float": "DeepXDE default (float32)"
+  },
+  "setup_status": "ready",
+  "setup_error": null,
+  "notes": [
+    "The official v1.12.2 Allen_Cahn.mat has t (1, 101) and u (101, 201), but no x variable.",
+    "u is used unchanged; x is reconstructed from the upstream Interval(-1, 1) and u.shape[1].",
+    "DeepXDE runs on cuda:0; Kaggle T4x2 is required, but this reference FNN does not use data parallelism.",
+    "The 7200-second clock starts in the first code cell; Kaggle queue and kernel provisioning happen before Python starts and are not observable here."
+  ],
+  "reference_status": "ready",
+  "setup_shared_seconds": 11.442,
+  "training": {
+    "adam_steps": 40000,
+    "adam_optimizer": "Adam",
+    "adam_learning_rate": 0.001,
+    "lbfgs_optimizer": "DeepXDE L-BFGS defaults for v1.12.2",
+    "samples": {
+      "domain": 8000,
+      "boundary": 400,
+      "initial": 800
+    },
+    "architecture": [
+      2,
+      20,
+      20,
+      20,
+      1
+    ],
+    "activation": "tanh",
+    "initializer": "Glorot normal",
+    "hard_output_transform": "x^2*cos(pi*x) + t*(1-x^2)*NN(x,t)",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "reference_metrics": {
+    "field_l2_relative": "DeepXDE l2_relative_error over all official u grid points",
+    "residual": "mean(abs(u_t - 0.001*u_xx - 5*(u-u^3))) over the same grid",
+    "initial_condition": "max abs error against x^2*cos(pi*x) on the official x raster at t=0",
+    "boundary_condition": "max abs error against -1 at x=-1,+1 on the official t raster",
+    "energy": "integral_x [0.5*d*u_x^2 + 1.25*(u^2-1)^2] dx; report initial/final/delta/mean"
+  },
+  "cost_accounting": {
+    "active_gpu_seconds": "wall seconds on cuda:0",
+    "allocated_gpu_seconds": "wall seconds times two attached T4 devices",
+    "allocated_gpu_hours": "allocated_gpu_seconds / 3600",
+    "cost_usd_estimate": "null unless KAGGLE_T4X2_USD_PER_HOUR is explicitly set"
+  },
+  "notebook_finish_utc": "2026-09-28T07:07:26.912950+00:00"
+}

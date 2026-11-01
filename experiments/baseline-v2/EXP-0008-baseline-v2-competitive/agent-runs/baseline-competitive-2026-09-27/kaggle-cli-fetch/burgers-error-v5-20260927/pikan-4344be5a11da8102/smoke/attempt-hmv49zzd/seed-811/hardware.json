@@ -1,0 +1,8 @@
+{
+  "cuda_runtime": "12.8",
+  "cuda_visible_devices": "0",
+  "gpu_name": "Tesla T4",
+  "gpu_slot": "0",
+  "timing": "one assigned CUDA device; synchronized time includes training and logging",
+  "visible_device_count": 1
+}

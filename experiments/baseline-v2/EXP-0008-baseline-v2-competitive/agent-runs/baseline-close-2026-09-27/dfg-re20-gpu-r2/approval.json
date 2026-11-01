@@ -1,0 +1,9 @@
+{
+  "decision": "Run canonical DFG 2D-1 Re20 fixed-RBF-PIKAN exploratory baseline, seeds 301-305, up to two T4 workers with fallback to one available T4; max 1200 training seconds per seed, 6000 total GPU-training seconds; PyVista VTR/Plotly visualizations and W&B offline; field-reference error remains unavailable and scientific_accepted stays false.",
+  "approved_by": "researcher (explicit instruction in current Codex conversation, 2026-09-27)",
+  "bundle_id": "c310ca9ba9708b4c324ac64bee454057d78cdd3d474ab60198e8369a6723d303",
+  "code_surface": "approved",
+  "remote_execution": true,
+  "hypothesis": "approved",
+  "scope": "approved"
+}

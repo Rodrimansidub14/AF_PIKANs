@@ -1,0 +1,104 @@
+{
+  "checkpoint": "/kaggle/working/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-302/checkpoint-lbfgs.pt",
+  "checkpoint_sha256": "8e4c5493f9bcb893634883c4ee387ef199447e15b9f4e101eb2a5c6c203027cc",
+  "cuda_device_index": 0,
+  "device": "Tesla T4",
+  "elapsed_seconds": 0.36951678700006596,
+  "featflow_reference": {
+    "drag_coefficient": 5.57953523384,
+    "lift_coefficient": 0.010618948146,
+    "pressure_difference": 0.11752016697
+  },
+  "field_relative_l2": null,
+  "heldout_point_count": 16384,
+  "heldout_points_origin": "official_r4_scrambled_sobol_generator_reconstructed_from_heldout_seed",
+  "heldout_points_sha256": "c00020b21de5748a41735b9b2372cdb3cce3053159ab079ff9e2f9d42d9d1b5d",
+  "heldout_residual_regions": {
+    "far_field": {
+      "continuity_mean_abs": 0.004875182667378894,
+      "continuity_p95_abs": 0.012152030505239962,
+      "continuity_rms": 0.006226689625458487,
+      "count": 10517,
+      "momentum_x_mean_abs": 0.004862773249078583,
+      "momentum_x_p95_abs": 0.012471544556319682,
+      "momentum_x_rms": 0.006321769563672244,
+      "momentum_y_mean_abs": 0.0038024262541185776,
+      "momentum_y_p95_abs": 0.009296187385916702,
+      "momentum_y_rms": 0.004808933633261137
+    },
+    "global": {
+      "continuity_mean_abs": 0.008603526319264976,
+      "continuity_p95_abs": 0.025342951714992477,
+      "continuity_rms": 0.02014864881355421,
+      "count": 16384,
+      "momentum_x_mean_abs": 0.00808361473190189,
+      "momentum_x_p95_abs": 0.025040126964449867,
+      "momentum_x_rms": 0.018822259975992347,
+      "momentum_y_mean_abs": 0.0076128618124101655,
+      "momentum_y_p95_abs": 0.022868386562913654,
+      "momentum_y_rms": 0.024993682102021332
+    },
+    "near_cylinder": {
+      "continuity_mean_abs": 0.03274988711796188,
+      "continuity_p95_abs": 0.100671100616455,
+      "continuity_rms": 0.06540492960646759,
+      "count": 1148,
+      "momentum_x_mean_abs": 0.030240337762905394,
+      "momentum_x_p95_abs": 0.07928608171641827,
+      "momentum_x_rms": 0.06264004144778977,
+      "momentum_y_mean_abs": 0.03515608386141763,
+      "momentum_y_p95_abs": 0.10048696212470526,
+      "momentum_y_rms": 0.08953744826134839
+    },
+    "wake": {
+      "continuity_mean_abs": 0.01301304081321827,
+      "continuity_p95_abs": 0.03450863808393478,
+      "continuity_rms": 0.023088656486369506,
+      "count": 1008,
+      "momentum_x_mean_abs": 0.015521545507403466,
+      "momentum_x_p95_abs": 0.058648101985454545,
+      "momentum_x_rms": 0.025831210035262536,
+      "momentum_y_mean_abs": 0.0143969939509834,
+      "momentum_y_p95_abs": 0.04771003574132919,
+      "momentum_y_rms": 0.024358607868447086
+    }
+  },
+  "heldout_residual_seconds": 0.32207549500049026,
+  "heldout_seed": 100302,
+  "peak_cuda_memory_allocated_bytes": 93453824,
+  "qoi_delta_vs_before": {
+    "drag_coefficient": 0.4387808351102782,
+    "lift_coefficient": -0.0019259317079048724,
+    "pressure_difference": 0.02804721985012293
+  },
+  "qoi_errors_vs_featflow": {
+    "drag_relative_error": 0.7259214652984418,
+    "lift_absolute_error": 0.030159850822423888,
+    "pressure_difference_relative_error": 0.07819421361365965
+  },
+  "qois_1024": {
+    "drag_coefficient": 1.529230899745317,
+    "drag_force": 0.003058461799490635,
+    "lift_coefficient": 0.04077882472734805,
+    "lift_force": 8.155764945469611e-05,
+    "pressure_difference": 0.10833076993003488
+  },
+  "qois_512": {
+    "drag_coefficient": 1.5292308412065827,
+    "drag_force": 0.003058461682413166,
+    "lift_coefficient": 0.04077879896842389,
+    "lift_force": 8.15575979368478e-05,
+    "pressure_difference": 0.10833076993003488
+  },
+  "quadrature_512_to_1024_absolute_change": {
+    "drag_coefficient": 5.853873430439194e-08,
+    "lift_coefficient": 2.5758924160346197e-08,
+    "pressure_difference": 0.0
+  },
+  "scientific_accepted": false,
+  "seed": 302,
+  "source": "r3",
+  "source_kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+  "stage": "lbfgs_refined",
+  "status": "scored"
+}

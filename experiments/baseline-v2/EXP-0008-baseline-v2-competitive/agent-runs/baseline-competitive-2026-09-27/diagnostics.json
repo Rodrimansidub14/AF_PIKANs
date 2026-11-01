@@ -1,0 +1,86 @@
+{
+  "source": "var\\agent_runs\\baseline-close-2026-09-27\\delivery",
+  "purpose": "descriptive diagnosis from archived results; spatial points are not independent replicas",
+  "burgers_sobol": {
+    "front_to_complement_field_rmse_ratio": {
+      "n": 5,
+      "mean": 30.694537635556184,
+      "sample_sd": 14.866384811378861
+    },
+    "front_to_complement_residual_rmse_ratio": {
+      "n": 5,
+      "mean": 9.00184162147348,
+      "sample_sd": 2.6578747426416918
+    },
+    "initial_max_abs_error": {
+      "n": 5,
+      "mean": 0.01422596089904188,
+      "sample_sd": 0.007877183046752674
+    },
+    "boundary_max_abs_error": {
+      "n": 5,
+      "mean": 0.0081385130547182,
+      "sample_sd": 0.006854253347914774
+    }
+  },
+  "allen_cahn": {
+    "field_relative_l2_provisional": {
+      "n": 5,
+      "mean": 0.018432329964442072,
+      "sample_sd": 0.003375771795116444
+    },
+    "normalized_residual_mean": {
+      "n": 5,
+      "mean": 0.0012198820098066215,
+      "sample_sd": 0.0008412495083927747
+    },
+    "field_error_to_residual_mean_ratio": {
+      "n": 5,
+      "mean": 20.538186164602248,
+      "sample_sd": 10.343378370553086
+    }
+  },
+  "dfg": {
+    "near_to_global_continuity_rms_ratio": {
+      "n": 5,
+      "mean": 2.9354808783175477,
+      "sample_sd": 0.13859366586278737
+    },
+    "near_to_global_momentum_x_rms_ratio": {
+      "n": 5,
+      "mean": 3.2563950156476866,
+      "sample_sd": 0.0956685555259979
+    },
+    "near_to_global_momentum_y_rms_ratio": {
+      "n": 5,
+      "mean": 3.4630561485175098,
+      "sample_sd": 0.15407452064748925
+    },
+    "cylinder_velocity_rms_normalized": {
+      "n": 5,
+      "mean": 0.02064586766064167,
+      "sample_sd": 0.0069389939402096585
+    }
+  },
+  "heat": {
+    "cohorts": [
+      "EXP-0005",
+      "extension-r3"
+    ],
+    "models": [
+      "bspline_cubic",
+      "mlp_tanh",
+      "rbf_fixed"
+    ],
+    "rbf_combined_after_static_equivalence_audit": {
+      "n": 5,
+      "mean": 0.00019829403788528089,
+      "sample_sd": 0.0002381989408684063
+    },
+    "rbf_combined_training_and_diagnostics_sec": {
+      "n": 5,
+      "mean": 190.966282264,
+      "sample_sd": 6.359059565006379
+    }
+  }
+}

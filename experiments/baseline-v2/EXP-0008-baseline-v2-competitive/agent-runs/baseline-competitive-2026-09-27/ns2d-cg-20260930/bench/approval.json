@@ -1,0 +1,33 @@
+{
+  "bundle": "bench",
+  "slug": "af-pikans-ns-ac-bench-20260930",
+  "cli": [
+    "bench",
+    "--device",
+    "cuda:0",
+    "--seconds",
+    "8",
+    "--both-dtypes",
+    "--ns-ref",
+    "@NS",
+    "--ac-ref",
+    "@AC",
+    "--out",
+    "@OUT/bench"
+  ],
+  "session_cap_seconds": 900.0,
+  "approved_by": "researcher, explicit instruction in active conversation 2026-09-30: steps 1-5 approved, 12 h remaining, keep 6 h in reserve (spend <= 6 h GPU in total)",
+  "scope": "approved",
+  "hypothesis": "exploratory_unsigned_preregistration",
+  "code_surface": "var/agent_runs only",
+  "remote_execution": true,
+  "accelerator": "NvidiaTeslaT4 (T4x2)",
+  "internet": false,
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "component_sha256": {
+    "pikan_campaign.py": "0fe48b38c83d273a76feba8dea75c941a1f4d6710445ce3e06dba50ad83a1cc3",
+    "notebook.ipynb": "489529d1ab3fbabe301187f69d42195be9cf70c53c14a4792cf420e7ab43f990",
+    "kernel-metadata.json": "ae4ab3bd9efced19b83ff999c1b7438728f9931f5f6f6d9c2e985ca92716d32c"
+  }
+}

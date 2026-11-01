@@ -1,0 +1,64 @@
+{
+  "missing_citations": [],
+  "duplicate_bib_keys": [],
+  "duplicate_labels": [],
+  "missing_labels": [],
+  "missing_figures": [],
+  "cited_sources": 28,
+  "figures_in_document": 8,
+  "unresolved_editorial_markers": [],
+  "independent_finite_difference_checks": {
+    "errors": {
+      "poisson_distribuido": 1.917625272304246e-10,
+      "poisson_localizado": 6.22059402488838e-11,
+      "burgers": 5.496767485624332e-10,
+      "allen_cahn": 4.839382228283284e-10,
+      "kovasznay_continuidad": 1.486033518460772e-12,
+      "kovasznay_momento_x": 1.4411485893539577e-09,
+      "kovasznay_momento_y": 2.214379513088005e-10
+    },
+    "threshold": 0.0001,
+    "method": "fourth-order central differences, h=2e-4, 200 seeded interior points"
+  },
+  "figure_calculations": {
+    "spline_partition_error": 2.220446049250313e-16,
+    "fem_poisson": [
+      {
+        "n": 8,
+        "nodes": 81,
+        "triangles": 128,
+        "relative_l2": 0.04226734266765843,
+        "h1_seminorm_error": 0.4317981173036431,
+        "linear_relative_residual": 1.598794560171179e-15
+      },
+      {
+        "n": 16,
+        "nodes": 289,
+        "triangles": 512,
+        "relative_l2": 0.01075498013278202,
+        "h1_seminorm_error": 0.21753633105008793,
+        "linear_relative_residual": 6.7615786316781785e-15,
+        "l2_order": 1.9745385537771727,
+        "h1_order": 0.9891005854130355
+      },
+      {
+        "n": 32,
+        "nodes": 1089,
+        "triangles": 2048,
+        "relative_l2": 0.002700879343326773,
+        "h1_seminorm_error": 0.10897542335225487,
+        "linear_relative_residual": 3.259242198919021e-14,
+        "l2_order": 1.9935037630057464,
+        "h1_order": 0.9972535592772587
+      }
+    ],
+    "scope": "Illustrative mathematics and Poisson FEM only; no mechanism training"
+  },
+  "pdf_pages": 33,
+  "layout_review": "All 33 pages rendered and inspected in contact sheets; figures independently inspected",
+  "foundation_page_share_approx": 0.42857142857142855,
+  "foundation_page_share_note": "Approximate page spans: sections 6.1-6.3 pp.6-11; chapter 6 pp.6-19; shared pages make this an editorial estimate",
+  "pages_with_unresolved_question_marks": [],
+  "pdf_text_characters": 60985,
+  "latex_warnings": []
+}

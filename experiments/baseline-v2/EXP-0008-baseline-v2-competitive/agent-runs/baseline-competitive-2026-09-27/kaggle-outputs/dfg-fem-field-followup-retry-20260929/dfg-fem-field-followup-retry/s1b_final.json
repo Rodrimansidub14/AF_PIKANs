@@ -1,0 +1,61 @@
+{
+  "checkpoint_field_scores": {
+    "per_seed": [],
+    "status": "field_reference_incomplete"
+  },
+  "fem_summary": {
+    "completed_level_count": 0,
+    "elapsed_seconds": 0.367,
+    "environment_versions": {
+      "dolfinx": "0.11.0",
+      "gmsh_binary": "4.15.2",
+      "petsc": "(3, 25, 5)",
+      "python": "3.12.13",
+      "ufl": "2026.1.0"
+    },
+    "error": "ModuleNotFoundError: No module named 'gmsh': dolfinx.io.gmsh.read_from_msh requires Gmsh.",
+    "evidence_ready_for_human_gate": false,
+    "levels": [],
+    "planned_level_count": 3,
+    "reference_accepted": false,
+    "reference_qoi_errors_vs_featflow": null,
+    "scientific_accepted": false,
+    "session_cap_seconds": 1386.837929017,
+    "status": "failed_partial",
+    "two_finest_mesh_relative_changes": null
+  },
+  "process_returncode": 0,
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "worker": {
+    "log": "/kaggle/working/dfg-fem-field-followup-retry/dfg-worker.log",
+    "part": "s1b",
+    "process_returncode": 1,
+    "scientific_accepted": false,
+    "session_elapsed_seconds": 85.569,
+    "solver_summary": {
+      "completed_level_count": 0,
+      "elapsed_seconds": 0.367,
+      "environment_versions": {
+        "dolfinx": "0.11.0",
+        "gmsh_binary": "4.15.2",
+        "petsc": "(3, 25, 5)",
+        "python": "3.12.13",
+        "ufl": "2026.1.0"
+      },
+      "error": "ModuleNotFoundError: No module named 'gmsh': dolfinx.io.gmsh.read_from_msh requires Gmsh.",
+      "evidence_ready_for_human_gate": false,
+      "levels": [],
+      "planned_level_count": 3,
+      "reference_accepted": false,
+      "reference_qoi_errors_vs_featflow": null,
+      "scientific_accepted": false,
+      "session_cap_seconds": 1386.837929017,
+      "status": "failed_partial",
+      "two_finest_mesh_relative_changes": null
+    },
+    "status": "partial_or_failed",
+    "updated_at_utc": "2026-09-29T06:41:12Z",
+    "worker_elapsed_seconds": 77.89
+  }
+}

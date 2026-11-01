@@ -1,0 +1,15 @@
+{
+  "code_file": "heat-tier2-t4x2.ipynb",
+  "competition_sources": [],
+  "dataset_sources": [],
+  "enable_gpu": "true",
+  "enable_internet": "false",
+  "id": "rodrimandub/af-pikans-heat-tier2-torch-pilot-t4x2",
+  "is_private": "true",
+  "kernel_sources": [],
+  "kernel_type": "notebook",
+  "language": "python",
+  "machine_shape": "NvidiaTeslaT4",
+  "model_sources": [],
+  "title": "AF PIKANs Heat Tier2 Torch Pilot T4x2"
+}

@@ -1,0 +1,96 @@
+{
+  "common_families": {
+    "sampling": [
+      "Sobol discrepancy",
+      "nearest-neighbor distances",
+      "domain/BC/IC coverage",
+      "train-diagnostic separation"
+    ],
+    "training": [
+      "component losses",
+      "gradient norm/quantiles",
+      "gradient signal-to-noise by spatial partition",
+      "fitting/transition/diffusion phase",
+      "steps, throughput and stopping reason"
+    ],
+    "autodiff": [
+      "u and PDE derivatives by quantile",
+      "term-wise residual scales",
+      "finite/nonfinite derivative counts"
+    ],
+    "rbf_basis": [
+      "activation footprint",
+      "occupancy",
+      "effective basis count",
+      "coefficient norm",
+      "seed stability"
+    ],
+    "outcome": [
+      "independent held-out residual",
+      "field error when reference is unlocked",
+      "problem-specific physics/QoIs"
+    ],
+    "cost": [
+      "train and diagnostic seconds",
+      "memory",
+      "GPU utilization provenance",
+      "diagnostic overhead"
+    ]
+  },
+  "problem_signals": {
+    "heat": {
+      "contract": "heat_1d_alpha_0.1_sin_pi",
+      "problem_specific": [
+        "modal_decay",
+        "thermal_energy_decay",
+        "u_xx_scale",
+        "initial_boundary_trace"
+      ],
+      "question": "¿La cobertura de bases y los derivados predicen pérdida de modos o error térmico?",
+      "next_diagnostic": "Descomponer u(x,t) en modos seno y correlacionar la cola modal con activación RBF en validación fija."
+    },
+    "burgers": {
+      "contract": "burgers_1d_raissi_pinnacle_transient",
+      "problem_specific": [
+        "front_position_and_width",
+        "shock_gradient",
+        "viscous_dissipation",
+        "initial_boundary_trace"
+      ],
+      "question": "¿Qué combinación de residual, derivadas y cobertura de bases localiza error alrededor del frente?",
+      "next_diagnostic": "Mantener la evaluación independiente y medir residual/error por bandas del frente, además de correlación y enriquecimiento por semilla."
+    },
+    "allen_cahn": {
+      "contract": "allen_cahn_deepxde_1_12_2_dirichlet",
+      "problem_specific": [
+        "interface_and_energy_dissipation",
+        "interface_position_and_width",
+        "double_well_balance",
+        "initial_boundary_trace"
+      ],
+      "question": "¿La actividad de bases y la tasa de disipación predicen la localización y evolución de la interfaz?",
+      "next_diagnostic": "Converger y desbloquear la referencia de campo; medir error de interfaz y energía frente a Sobol en puntos held-out."
+    },
+    "dfg_ns": {
+      "contract": "dfg_2d1_re20_incompressible",
+      "problem_specific": [
+        "divergence_and_momentum_balance",
+        "cylinder_wall_shear",
+        "drag_lift_pressure_drop",
+        "wake_length"
+      ],
+      "question": "¿Qué señales detectan defectos de conservación y error en magnitudes integrales de flujo?",
+      "next_diagnostic": "Primero fijar solver FEM convergido, malla, normalización, QoIs DFG y descomposición de residuo por ecuación."
+    },
+    "poisson": {
+      "contract": "scope_pending",
+      "problem_specific": [
+        "flux_balance",
+        "corner_singularity_or_smoothness",
+        "boundary_trace"
+      ],
+      "question": "¿Las bases fijas resuelven modos suaves y singularidades de esquina con señales distintas?",
+      "next_diagnostic": "Conservar como problema candidato; reabrir solo tras decidir el alcance de la tesis."
+    }
+  }
+}

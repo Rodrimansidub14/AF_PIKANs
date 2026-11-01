@@ -1,0 +1,18 @@
+{
+  "bundle_id": "c349281ede3181b8984ee0de6bf95db8b7406a77e40daa07a4bcdc197ab93a2b",
+  "execution_valid": true,
+  "fetch_attempt": 1,
+  "kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+  "poll_interval_sec": 60,
+  "provider_status": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4 has status \"KernelWorkerStatus.ERROR\"",
+  "report": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\baseline-close-2026-09-27\\dfg-re20-gpu-r4\\download-attempts\\attempt-01\\evaluation.json",
+  "runs": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\baseline-close-2026-09-27\\dfg-re20-gpu-r4\\download-attempts\\attempt-01\\pikan-c349281ede3181b8\\runs",
+  "status": "fetched",
+  "transport_warning": "Kaggle CLI returned a non-zero exit after writing output; the matching campaign and required artifacts passed local validation.",
+  "updated_at": "2026-09-27T14:55:56.849667+00:00",
+  "wandb_sync": {
+    "run_count": 3,
+    "status": "synced",
+    "synced_count": 3
+  }
+}

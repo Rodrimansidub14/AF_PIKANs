@@ -1,0 +1,37 @@
+{
+  "finished_at_utc": "2026-09-27T15:39:11.325618+00:00",
+  "python": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\sciml-env\\Scripts\\python.exe",
+  "local_validation_skipped": true,
+  "notebooks": [
+    {
+      "notebook": "heat-results.ipynb",
+      "status": "executed",
+      "elapsed_seconds": 40.56207720001112,
+      "code_cells_executed": 5
+    },
+    {
+      "notebook": "burgers-results.ipynb",
+      "status": "executed",
+      "elapsed_seconds": 13.530995299981441,
+      "code_cells_executed": 5
+    },
+    {
+      "notebook": "allen-cahn-results.ipynb",
+      "status": "executed",
+      "elapsed_seconds": 13.903296700009378,
+      "code_cells_executed": 6
+    },
+    {
+      "notebook": "dfg-results.ipynb",
+      "status": "executed",
+      "elapsed_seconds": 14.26099469998735,
+      "code_cells_executed": 5
+    },
+    {
+      "notebook": "baselines-results.ipynb",
+      "status": "executed",
+      "elapsed_seconds": 11.544718299992383,
+      "code_cells_executed": 2
+    }
+  ]
+}

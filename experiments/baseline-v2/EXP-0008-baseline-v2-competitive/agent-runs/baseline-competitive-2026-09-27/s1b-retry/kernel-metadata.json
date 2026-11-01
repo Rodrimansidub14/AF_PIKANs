@@ -1,0 +1,22 @@
+{
+  "id": "rodrimandub/af-pikans-competitive-baseline-s1b-retry-20260928",
+  "title": "AF PIKANs Competitive Baseline S1b Retry 20260928",
+  "code_file": "closure_s1b_retry.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [
+    "rodrimandub/af-pikans-allen-cahn-t4x2-20260927",
+    "rodrimandub/af-pikans-allen-cahn-score-only-20260927",
+    "rodrimandub/allen-cahn-deepxde-reference-20260928",
+    "rodrimandub/af-pikans-dfg-rbf-refinement-20260928",
+    "rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927"
+  ],
+  "model_sources": []
+}

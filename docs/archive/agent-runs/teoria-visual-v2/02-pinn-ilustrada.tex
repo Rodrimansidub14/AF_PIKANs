@@ -1,0 +1,84 @@
+\section{Redes neuronales informadas por física (PINNs)}
+El aprendizaje científico combina modelos de datos y estructura matemática. Dentro de este campo, una red neuronal informada por física (PINN, por sus siglas en inglés) puede representar la solución de una PDE y ajustarse mediante ecuaciones, fronteras y observaciones \cite{karniadakis2021}. Esto difiere de aprender un operador que transforma funciones de entrada en funciones de salida, como DeepONet o FNO: una red de solución suele entrenarse para una instancia, mientras un operador aprendido busca reutilizar entrenamiento entre instancias \cite{lu2021deeponet,li2021fno}.
+
+En la jerarquía habitual, el aprendizaje automático es una parte de la inteligencia artificial; el aprendizaje profundo utiliza composiciones de varias capas. Una red neuronal artificial (ANN) es una familia de aproximadores y una red profunda (DNN) contiene varias transformaciones sucesivas. El MLP es una arquitectura concreta dentro de esa familia. Estas categorías ubican el vocabulario sin suponer que profundidad o aprendizaje impliquen por sí solos información física.
+
+\subsection{MLP y diferenciación automática}
+Un perceptrón multicapa (MLP, por sus siglas en inglés) compone transformaciones afines y no lineales. Con $h^{(0)}=z$,
+\begin{equation}
+a^{(\ell+1)}=W^{(\ell)}h^{(\ell)}+b^{(\ell)},\qquad
+h^{(\ell+1)}=\sigma(a^{(\ell+1)}).
+\end{equation}
+Las matrices $W$ y sesgos $b$ son parámetros aprendibles. Una activación como $\tanh$ introduce no linealidad y derivadas suaves. Para un residual fuerte de segundo orden, una red ReLU ordinaria tiene segunda derivada clásica nula casi en todas partes, lo que limita su uso directo; formulaciones débiles y otras activaciones cambian esta situación \cite{lagaris1998,raissi2019}.
+
+La diferenciación automática aplica la regla de la cadena a las operaciones del programa. Para $y=\sigma(a)$ y $a=w x+b$,
+\begin{equation}
+y_x=w\sigma'(a),\qquad y_{xx}=w^2\sigma''(a),\qquad y_w=x\sigma'(a).
+\end{equation}
+La derivación respecto a coordenadas construye la física; la derivación respecto a parámetros permite optimizar. Ambas atraviesan el mismo grafo computacional, pero responden a preguntas diferentes. La exactitud algebraica de la regla de la cadena no elimina redondeo ni errores en la ecuación programada. Tampoco convierte al aproximador en una solución exacta.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{architecture.pdf}
+\caption[Arquitecturas MLP y KAN: redibujo conceptual.]{Diagrama propio con Fiziko/MetaPost de la comparación MLP--KAN de Liu et al. \cite{liu2024kan}, sección de arquitectura: el MLP aprende pesos con activaciones nodales fijas; KAN aprende funciones univariadas en aristas y suma en nodos. Se modificó la disposición gráfica y el número de nodos; no se reproduce un experimento del artículo.}\label{fig:arquitecturas}
+\end{figure}
+
+\subsection{Construcción de la pérdida PINN}
+Una PINN sustituye $\mathbf u$ por $\mathbf u_\theta$ en la ecuación diferencial. A partir de \eqref{eq:error-residual}, una formulación continua penaliza residual interior y discrepancias de frontera e iniciales. Con escalas positivas $R_a$ para ecuaciones y escalas apropiadas para condiciones, se definen cantidades adimensionales $\tilde r_a$, $\tilde b_b$ y $\tilde i_v$. Una discretización por colocación produce
+\begin{align}
+\mathcal L_r&=\sum_a\frac{\lambda_a}{N_r}\sum_{i=1}^{N_r}|\tilde r_a(z_i)|^2,\\
+\mathcal L_B&=\sum_b\frac{\lambda_b^B}{N_b}\sum_{j=1}^{N_b}|\tilde b_b(z_j)|^2,\qquad
+\mathcal L_I=\sum_v\frac{\lambda_v^I}{N_0}\sum_{k=1}^{N_0}|\tilde i_v(x_k)|^2,\\
+\mathcal L&=\mathcal L_r+\mathcal L_B+\mathcal L_I+\lambda_D\mathcal L_D.
+\label{eq:perdida-pinn}
+\end{align}
+$\mathcal L_D$ representa datos observados cuando existen; no es obligatorio. Los pesos $\lambda$ controlan compromisos de optimización y no reemplazan unidades consistentes. Los puntos de colocación son evaluaciones, no elementos de una malla FEM. La versión original de PINNs popularizó el uso conjunto de datos y residuales diferenciables para problemas directos e inversos \cite{raissi2019}.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{pinn-loss.pdf}
+\caption[Construcción de la pérdida PINN.]{Diagrama propio con Fiziko/MetaPost de la construcción PINN de Raissi et al. \cite{raissi2019}: los términos de residual, frontera y datos se agregan con pesos explícitos. El término de datos es opcional; para la variante directa sin datos interiores se fija $\lambda_d=0$. La disposición es propia y representa la agregación de la pérdida, no un entrenamiento ejecutado.}\label{fig:perdida}
+\end{figure}
+
+Para Poisson, por ejemplo, el residual es $r=-u_{\theta,xx}-u_{\theta,yy}-f$. El signo de $f$ pertenece al contrato de la PDE. Para una ecuación evolutiva aparece además $u_{\theta,t}$. En una frontera con flujo, derivar la red y contraer con la normal construye el dato natural; no basta con evaluar sus salidas.
+
+Una condición esencial puede imponerse por construcción. Si $g$ es un levantamiento y $d$ se anula en la frontera, $u_\theta=g+dN_\theta$ satisface el valor prescrito. Sin embargo,
+\begin{equation}
+\Delta(dN_\theta)=d\Delta N_\theta+2\nabla d\cdot\nabla N_\theta+N_\theta\Delta d.
+\end{equation}
+La transformación altera las derivadas y el condicionamiento del problema de optimización. Imposición fuerte y penalización son alternativas que deben describirse al interpretar resultados \cite{lu2021deepxde,wang2023expertguide}.
+
+\subsection{Representación, optimización y cobertura}
+Hay tres fuentes conceptuales de dificultad: el espacio de funciones puede ser insuficiente; el optimizador puede no hallar buenos parámetros dentro de ese espacio; y la pérdida discreta puede no representar adecuadamente la física continua. Una red más grande atiende la primera posibilidad, pero también cambia costo y optimización. Más puntos mejoran cobertura, pero no garantizan capacidad representacional. Una pérdida de entrenamiento decreciente puede coexistir con error localizado persistente \cite{krishnapriyan2021,deryckmishra2022}.
+
+El sesgo espectral describe tendencias de aprendizaje hacia ciertas frecuencias bajo arquitecturas y regímenes específicos \cite{rahaman2019}. En una PDE, las derivadas pueden amplificar altas frecuencias y modificar ese panorama. Codificaciones de Fourier alteran el espectro accesible y la dinámica de aprendizaje \cite{tancik2020,wang2021eigenvector}. No se sigue de estos resultados que toda MLP sea incapaz de representar capas, ni que toda KAN sea automáticamente superior.
+
+La optimización básica actualiza $\theta_{k+1}=\theta_k-\eta\nabla_\theta\mathcal L$. La escala y dirección de los gradientes de cada término importan: un residual de gran magnitud puede dominar aunque corresponda a un campo bien aproximado. Adam incorpora estimaciones de momentos; métodos cuasi-Newton utilizan información de curvatura aproximada. La elección de algoritmo, precisión y calendario pertenece a las condiciones de un resultado, no a una propiedad intrínseca de PINN \cite{wang2023expertguide}.
+
+\section{Estrategias del estado del arte: qué objeto cambia}
+El estado del arte (SOTA, por sus siglas en inglés) incluye intervenciones sobre la evaluación de física, la pérdida y el espacio de aproximación. La siguiente organización distingue esos objetos para interpretar qué explica una mejora, antes de comparar arquitecturas o cifras de error.
+\subsection{Muestreo y ponderación adaptativa}
+El refinamiento residual añade o redistribuye puntos donde la ecuación se incumple más. Una familia de densidades empleada en muestreo adaptativo tiene la forma
+\begin{equation}
+q(z)=\frac{|r(z)|^k/\mathbb E_\mu|r|^k+c}{Z},\qquad k,c\geq0,
+\label{eq:rad}
+\end{equation}
+con $Z$ normalizador y $\mu$ una medida de referencia \cite{wu2023sampling}. El término $c$ evita concentrar toda la masa en una región. Para sistemas, la definición del residual agregado requiere escalas entre ecuaciones.
+
+Si $q$ es densidad respecto a $\mu$ y es positiva donde contribuye el integrando,
+\begin{equation}
+\mathbb E_q\left[\frac{r^2}{q}\right]=\int\frac{r^2}{q}q\,d\mu=\mathbb E_\mu[r^2].
+\end{equation}
+Sin la corrección $1/q$, el funcional esperado se transforma en $\int q r^2d\mu$. Por ello, cambiar muestreo puede cambiar simultáneamente cobertura y ponderación efectiva. El residual orienta atención hacia incumplimiento; no identifica por sí solo si la causa es poca capacidad, mala optimización o una frontera conflictiva.
+
+\subsection{Formulaciones variacionales y entrenamiento causal}
+En una PINN variacional, una función de prueba $v_j$ da un residual integrado $R_j=\int r v_j$. Integrar por partes reduce el orden de derivación de la solución y explicita flujos. En hp-VPINNs, particiones y grados de las pruebas introducen resolución variacional local \cite{kharazmi2021hpvpinns}. Las funciones de prueba y el aproximador de solución son objetos distintos; aumentar una familia no equivale a aumentar la otra.
+
+Para evolución, el entrenamiento causal reduce la contribución de tiempos tardíos cuando etapas anteriores no se han resuelto. Una expresión representativa es
+\begin{equation}
+w_n=\exp\left(-\epsilon_c\sum_{j<n}\mathcal L_j\right).
+\end{equation}
+La pérdida acumulada anterior controla la participación posterior \cite{wang2024causal}. Esta estrategia atiende propagación temporal del error; no desplaza por sí misma nudos o bases. La combinación de adaptaciones requiere distinguir qué parte cambia la representación y cuál organiza el entrenamiento.
+
+\subsection{Descomposición del dominio y bases finitas}
+Una representación descompuesta puede expresarse como $u_\theta(x)=\sum_s w_s(x)N_{\theta_s}(x)$, donde ventanas $w_s$ localizan subredes. Si $\sum_sw_s=1$, forman una partición de unidad. Sus derivadas también contribuyen a la PDE: $\nabla(w_sN_s)=w_s\nabla N_s+N_s\nabla w_s$. Omitir esos términos altera el modelo.
+
+FBPINNs hace explícita esta localización mediante bases de subdominio; FBKAN traslada descomposición a redes KAN \cite{moseley2023,howard2024}. AB-PINNs estudia adaptación de bases y subdominios guiada por residual \cite{abpinn2025}. Estos antecedentes descartan la afirmación de que las redes informadas por física carecen de mecanismos de localidad. La cuestión abierta es qué información y qué operación de adaptación resultan útiles bajo restricciones concretas.

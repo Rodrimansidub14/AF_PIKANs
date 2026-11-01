@@ -1,0 +1,15 @@
+{
+  "code_file": "experiment.ipynb",
+  "competition_sources": [],
+  "dataset_sources": [],
+  "enable_gpu": true,
+  "enable_internet": true,
+  "id": "rodrigomansilla/af-pikans-arch-screen-rbf-fixed-exp005",
+  "is_private": true,
+  "kernel_sources": [],
+  "kernel_type": "notebook",
+  "language": "python",
+  "machine_shape": "NvidiaTeslaT4",
+  "model_sources": [],
+  "title": "af pikans arch screen rbf fixed exp005"
+}

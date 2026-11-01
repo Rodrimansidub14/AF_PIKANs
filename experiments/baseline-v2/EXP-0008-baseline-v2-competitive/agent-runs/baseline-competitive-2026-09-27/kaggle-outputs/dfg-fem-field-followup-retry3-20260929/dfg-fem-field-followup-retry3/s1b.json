@@ -1,0 +1,32 @@
+{
+  "log": "/kaggle/working/dfg-fem-field-followup-retry3/dfg-worker.log",
+  "part": "s1b",
+  "process_returncode": 1,
+  "scientific_accepted": false,
+  "session_elapsed_seconds": 86.355,
+  "solver_summary": {
+    "completed_level_count": 0,
+    "elapsed_seconds": 3.691,
+    "environment_versions": {
+      "dolfinx": "0.11.0",
+      "gmsh_binary": "4.15.2",
+      "gmsh_python": "4.15.2",
+      "petsc": "(3, 25, 5)",
+      "python": "3.12.13",
+      "ufl": "2026.1.0"
+    },
+    "error": "NotImplementedError: Cannot take length of non-vector expression.",
+    "evidence_ready_for_human_gate": false,
+    "levels": [],
+    "planned_level_count": 3,
+    "reference_accepted": false,
+    "reference_qoi_errors_vs_featflow": null,
+    "scientific_accepted": false,
+    "session_cap_seconds": 1186.968972249,
+    "status": "failed_partial",
+    "two_finest_mesh_relative_changes": null
+  },
+  "status": "partial_or_failed",
+  "updated_at_utc": "2026-09-29T07:14:06Z",
+  "worker_elapsed_seconds": 78.765
+}

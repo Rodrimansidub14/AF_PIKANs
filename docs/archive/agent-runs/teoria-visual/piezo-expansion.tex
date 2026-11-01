@@ -1,0 +1,237 @@
+% Módulo de expansión para capitulos/marco/04-piezo.tex.
+%
+% Integración prevista: después de la forma débil y antes de la subsección
+% «Antecedente local y lectura de sus figuras». El módulo aplica las
+% convenciones ya definidas en el capítulo al caso P5 y no repite la
+% metodología de entrenamiento. Usa las figuras que el equipo preparará en
+% figuras/revision2026/; ambas son esquemas, no soluciones FEM.
+
+\subsection{Caso concreto: bimorfo efectivo de PVDF}
+\label{subsec:piezo-bimorfo-expansion}
+
+El caso P5 aplica el constitutivo piezoeléctrico ya definido a un bimorfo
+efectivo de PVDF. Dos capas unidas reciben una diferencia de potencial entre
+sus caras principales. La cadena física que interesa distinguir puede resumirse
+en dos líneas:
+\[
+  \begin{aligned}
+  \text{potencial }\varphi
+    &\;\longrightarrow\;\text{campo }\mathbf E=-\nabla\varphi
+    \;\longrightarrow\;\text{acoplamiento }e,\\[-.2ex]
+  &\text{deformación y tensión}
+    \;\longrightarrow\;\text{flexión}.
+  \end{aligned}
+\]
+El efecto directo relaciona deformación con respuesta eléctrica; el inverso
+relaciona campo eléctrico con deformación. En la viga, cada capa tendería a
+cambiar su longitud según su polarización, pero la unión impide que las dos
+capas alcancen deformaciones longitudinales independientes. Esa incompatibilidad
+es la causa mecánica de la curvatura \cite{khan2018bimorph,lahmer2008}.
+
+\subsubsection{Geometría, variables y orientación}
+
+El dominio efectivo es
+\[
+  \Omega=(0,L)\times(0,H),\qquad
+  L=0.1\,\mathrm{m},\qquad H=0.001\,\mathrm{m},
+\]
+con $x$ a lo largo de la viga y $y$ en su altura. La interfaz perfectamente
+unida es $y=H/2$; cada capa tiene espesor $H/2$. Se escriben
+\[
+  \Omega^-=(0,L)\times(0,H/2),\qquad
+  \Omega^+=(0,L)\times(H/2,H),
+\]
+y se toma como normal común $\boldsymbol n=(0,1)$, dirigida de la capa
+inferior a la superior. Las fronteras son
+\[
+  \Gamma_L=\{0\}\times[0,H],\quad
+  \Gamma_R=\{L\}\times[0,H],\quad
+  \Gamma_B=[0,L]\times\{0\},\quad
+  \Gamma_T=[0,L]\times\{H\}.
+\]
+
+Las incógnitas son el desplazamiento material
+$\mathbf d=(d_x,d_y)$, en metros, y el potencial $\varphi$, en voltios. El
+desplazamiento eléctrico $\mathbf D$, en $\mathrm{C}/\mathrm{m}^{2}$, es un
+flujo electromagnético y no un desplazamiento material. Se conserva la
+convención del capítulo: la deformación usa cortante ingenieril y
+\[
+  \mathbf E=-\nabla\varphi=(-\varphi_{,x},-\varphi_{,y}).
+\]
+La flecha de la figura siguiente se exagera para hacer visible la tendencia;
+no es una magnitud calculada.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.97\linewidth]{p5-bimorfo.pdf}
+  \caption[Geometría y mecanismo cualitativo del bimorfo PVDF.]{Esquema del
+  problema P5: dominio, interfaz $y=H/2$, ejes, longitud $L$, altura total
+  $H$, empotramiento, superficies libres, electrodos
+  $\varphi=100\,\mathrm{V}$ y $\varphi=0\,\mathrm{V}$, aislamiento en los
+  extremos y signos opuestos del acoplamiento en las dos capas. Con $x$ hacia
+  la derecha y $y$ hacia arriba, la convención adoptada produce una tendencia
+  de extensión arriba y contracción abajo; por eso se dibuja una flexión hacia
+  abajo. El contorno se exagera solo para comunicar el mecanismo: no es una
+  solución FEM ni contiene un valor de flecha.}
+  \label{fig:p5-bimorfo}
+\end{figure}
+
+\subsubsection{Constitutivo particular y ecuaciones fuertes}
+
+La forma constitutiva general del capítulo se mantiene. Para hacer explícita
+la convención de P5, sea
+\[
+  e_{21}^{0}=0.02904\,\mathrm{C}/\mathrm{m}^{2},\qquad
+  e_{22}^{0}=0.05157\,\mathrm{C}/\mathrm{m}^{2},\qquad
+  \eta_-=+1,\quad \eta_+=-1,
+\]
+y defínase, en cada capa,
+\begin{equation}
+  e_\ell=\eta_\ell
+  \begin{bmatrix}
+    0&0&0\\
+    e_{21}^{0}&e_{22}^{0}&0
+  \end{bmatrix},
+  \qquad \ell\in\{-,+\}.
+  \label{eq:p5-expansion-e-sign}
+\end{equation}
+Esta notación reproduce los signos opuestos de $e_{21}$ y $e_{22}$ de la
+tabla del caso, y fija en cero los otros elementos de $e$. Si
+$\mathbf d=(u,v)$ y los coeficientes son constantes dentro de cada material,
+la ley del capítulo se lee
+\begin{align}
+  \sigma_{xx}&=C_{11}u_{,x}+C_{12}v_{,y}
+       +\eta_\ell e_{21}^{0}\varphi_{,y},
+  &\sigma_{yy}&=C_{12}u_{,x}+C_{22}v_{,y}
+       +\eta_\ell e_{22}^{0}\varphi_{,y},
+  \label{eq:p5-expansion-stress-normal}\\
+  \sigma_{xy}&=C_{66}(u_{,y}+v_{,x}),
+  &D_x&=-\kappa_x\varphi_{,x},
+  \label{eq:p5-expansion-stress-shear}\\
+  &&D_y&=\eta_\ell(e_{21}^{0}u_{,x}+e_{22}^{0}v_{,y})
+       -\kappa_y\varphi_{,y}.
+  \label{eq:p5-expansion-flux}
+\end{align}
+Los términos con $e$ son los que transmiten el campo eléctrico al esfuerzo y
+la deformación al flujo. El término $-\kappa_y\varphi_{,y}$ es la respuesta
+dieléctrica; el signo negativo procede de $\mathbf E=-\nabla\varphi$ y no de
+una permitividad negativa.
+
+Sin fuerza volumétrica ni carga libre, el equilibrio cuasiestático en cada
+capa es
+\begin{equation}
+  \partial_x\sigma_{xx}+\partial_y\sigma_{xy}=0,\qquad
+  \partial_x\sigma_{xy}+\partial_y\sigma_{yy}=0,\qquad
+  \partial_xD_x+\partial_yD_y=0.
+  \label{eq:p5-expansion-balances}
+\end{equation}
+Al sustituir las expresiones anteriores, las tres PDE fuertes por material
+quedan
+\begin{align}
+  C_{11}u_{,xx}+C_{66}u_{,yy}+(C_{12}+C_{66})v_{,xy}
+      +\eta_\ell e_{21}^{0}\varphi_{,xy}&=0,\\
+  C_{66}v_{,xx}+C_{22}v_{,yy}+(C_{12}+C_{66})u_{,xy}
+      +\eta_\ell e_{22}^{0}\varphi_{,yy}&=0,\\
+  \eta_\ell e_{21}^{0}u_{,xy}+\eta_\ell e_{22}^{0}v_{,yy}
+      -\kappa_x\varphi_{,xx}-\kappa_y\varphi_{,yy}&=0.
+  \label{eq:p5-expansion-pdes}
+\end{align}
+Estas formas se aplican dentro de $\Omega^-$ y $\Omega^+$ por separado. No
+se atraviesa $y=H/2$ con una sola PDE de coeficientes suaves: el cambio de
+material se completa con transmisión de campos y flujos.
+
+\subsubsection{Fronteras e interfaz}
+
+El contrato mecánico y eléctrico del caso concreto es
+\begin{align}
+  \mathbf d&=\mathbf 0 &&\text{en }\Gamma_L, &
+  \sigma\boldsymbol n&=\mathbf 0
+       &&\text{en }\Gamma_R\cup\Gamma_T\cup\Gamma_B,\\
+  \varphi&=100\,\mathrm{V} &&\text{en }\Gamma_T, &
+  \varphi&=0 &&\text{en }\Gamma_B,\\
+  \mathbf D\cdot\boldsymbol n&=0
+       &&\text{en }\Gamma_L\cup\Gamma_R.
+  \label{eq:p5-expansion-bc}
+\end{align}
+En los extremos aislados, $D_x=0$. En las caras con potencial fijado no se
+prescribe simultáneamente el flujo: la carga superficial del electrodo es una
+salida del problema. En las esquinas se usan las trazas de cada segmento, sin
+imponer una normal única que combine datos incompatibles en un punto aislado.
+
+Sea $[q]=q^+-q^-$ el salto al pasar de la capa inferior a la superior. Una
+interfaz perfectamente unida, sin carga superficial, exige
+\begin{equation}
+  [\mathbf d]=\mathbf 0,\qquad [\varphi]=0,\qquad
+  [\sigma\boldsymbol n]=\mathbf 0,\qquad
+  [\mathbf D\cdot\boldsymbol n]=0
+  \quad\text{en }y=H/2.
+  \label{eq:p5-expansion-interface}
+\end{equation}
+Con $\boldsymbol n=(0,1)$, las condiciones naturales equivalen a
+$[\sigma_{xy}]=[\sigma_{yy}]=0$ y $[D_y]=0$. Esto no exige continuidad de
+todo el tensor ni de todas las derivadas. En general no se impone una
+condición independiente sobre el flujo tangencial; en este P5 concreto, sin
+embargo, la primera fila de $e$ es cero y $\kappa_x$ es igual en las capas.
+Si la traza de $\varphi$ es diferenciable a lo largo de la interfaz, entonces
+$\varphi_{,x}$ y $D_x=-\kappa_x\varphi_{,x}$ también son continuos. Las
+derivadas normales de $u$, $v$ y $\varphi$ sí pueden saltar aunque los tres
+campos sean continuos.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.88\linewidth]{p5-interfaz.pdf}
+  \caption[Continuidad de potencial y flujo en una interfaz dieléctrica.]{Ejemplo
+  didáctico escalar, normalizado y sin acoplamiento piezoeléctrico. En
+  $\hat y=y/H$, con $\hat\kappa_1=1$, $\hat\kappa_2=2$,
+  $\hat\varphi(0)=0$ y $\hat\varphi(1)=1$, las pendientes son $4/3$ y
+  $2/3$, mientras $\hat D=-4/3$ es continuo en $\hat y=1/2$. La figura
+  ilustra continuidad de campo y flujo frente a salto de derivada; no es una
+  solución del PVDF P5 ni usa sus permitividades.}
+  \label{fig:p5-interfaz}
+\end{figure}
+
+Para leer la figura sin atribuirle física adicional, considérese la ley
+escalar
+\begin{equation}
+  \hat D=-\hat\kappa(\hat y)\frac{\mathrm d\hat\varphi}{\mathrm d\hat y},
+  \qquad
+  \hat\kappa_1=1\ (0<\hat y<1/2),\qquad
+  \hat\kappa_2=2\ (1/2<\hat y<1).
+  \label{eq:p5-expansion-didactic-interface}
+\end{equation}
+Sin carga libre, $\hat D$ es constante. Las pendientes
+$\mathrm d\hat\varphi/\mathrm d\hat y=4/3$ y $2/3$ producen
+$\hat D=-4/3$ a ambos lados, y
+$(1/2)(4/3)+(1/2)(2/3)=1$ satisface el voltaje total normalizado. El ejemplo
+solo explica una regla de transmisión; no asigna $\hat\kappa_1$ o
+$\hat\kappa_2$ al PVDF y no es un perfil extraído de FEM.
+
+\subsubsection{Lectura de signos y distinción de esquema y solución}
+
+Si el potencial aumenta desde la cara inferior a la superior,
+$\varphi_{,y}>0$ y $E_y=-\varphi_{,y}<0$. Para una capa libre de tensión,
+la tendencia constitutiva es
+\begin{equation}
+  s_\ell^{\,\mathrm{libre}}=-(C^E)^{-1}e_\ell^T\nabla\varphi.
+  \label{eq:p5-expansion-free-strain}
+\end{equation}
+Con los signos opuestos de $e_{21}$ y $e_{22}$ y los valores positivos de
+$C_{11}$, $C_{22}$ y $C_{12}$ de la especificación, la lectura axial da
+$\varepsilon_{xx}^{\mathrm{libre},+}>0$ arriba y
+$\varepsilon_{xx}^{\mathrm{libre},-}<0$ abajo en esta convención. La unión
+convierte esa diferencia en una tendencia de curvatura hacia abajo, que es lo
+que comunica la primera figura. La flecha, su magnitud y la distribución de
+curvatura deben obtenerse del campo acoplado; no se presentan como resultados.
+Como control de escala, si se sustituye el gradiente nominal
+$\varphi_{,y}=E_0=10^5\,\mathrm{V}/\mathrm{m}$ en una capa libre y se usan
+los $C$ y $e$ especificados, la capa superior da aproximadamente
+$(\varepsilon_{xx},\varepsilon_{yy})=(7.04\times10^{-7},
+2.16\times10^{-6})$ y la inferior cambia ambos signos. Es una deducción
+constitutiva local, no una solución FEM de la viga.
+
+El signo de $D_y$ no se deduce solo de $\varphi_{,y}$ porque en
+\eqref{eq:p5-expansion-flux} compiten la parte dieléctrica y la polarización
+inducida por la deformación. Invertir el voltaje debe invertir las respuestas
+del modelo lineal; reducir 100 V a 50 V debe reducir aproximadamente a la
+mitad sus magnitudes después de verificar la solución. Son comprobaciones de
+simetría, no mediciones ya realizadas.

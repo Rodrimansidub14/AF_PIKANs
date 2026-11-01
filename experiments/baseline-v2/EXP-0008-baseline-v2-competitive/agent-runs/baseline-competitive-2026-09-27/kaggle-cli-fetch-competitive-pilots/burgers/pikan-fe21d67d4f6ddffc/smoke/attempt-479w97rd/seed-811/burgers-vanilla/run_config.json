@@ -1,0 +1,110 @@
+{
+  "batch_sampling": "independent seeded sampling with replacement from the fixed pool",
+  "batch_size_per_condition": 1024,
+  "device": {
+    "name": "Tesla T4",
+    "timer": "synchronized per-update elapsed device wall time",
+    "visible_device_index": 0
+  },
+  "dirichlet_boundary": 0.0,
+  "domain": {
+    "t": [
+      0.0,
+      1.0
+    ],
+    "x": [
+      -1.0,
+      1.0
+    ]
+  },
+  "gpu_seconds_cap": 60,
+  "initial_condition": "-sin(pi*x)",
+  "loss_contract": {
+    "condition_weights": "sum of four condition mean-square losses",
+    "initial": "-sin(pi*x)",
+    "left_right": "u=0",
+    "pde": "(u_t + u*u_x - nu*u_xx)/residual_scale",
+    "residual_scale": 2.003183098861838
+  },
+  "max_updates": 20000,
+  "model": {
+    "activation": "tanh",
+    "architecture": [
+      2,
+      100,
+      100,
+      100,
+      100,
+      100,
+      1
+    ],
+    "family": "mlp",
+    "id": "vanilla_mlp_tanh_5x100",
+    "parameters": 40801
+  },
+  "nu": 0.003183098861837907,
+  "optimizer": {
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "learning_rate": 0.001,
+    "name": "Adam"
+  },
+  "pool": {
+    "archive": "pools.npz",
+    "archive_sha256": "12a870951f29d02535e168463c389331073e3947f8151622f1599279c2869996",
+    "array_sha256": {
+      "diagnostic": "a3cdb7b5b5f80874a2d467380729b06e22ed2a126cc277cc099488553422bfe2",
+      "initial": "ba4ce05bd7a765df1e650866a4c801114fd4d63aaf775a7ea2d771596f84083c",
+      "interior": "6839ce03df2c19d81ded7851fedda19bff6b0b95b38ac58cc5d38fccba3f3455",
+      "left": "2839c5b1ed7fc9927885502e49b8d0ec55ad7c41dac6d1f118e242ecc7f22362",
+      "right": "855e0815316f30099e844720b760aa50ae7dc1ee7c0e68f6da04675fefe26949"
+    },
+    "content_sha256": "d26c9e3f6696acc6a359ff4f8e1226088397459addb893e9846c373afce7b21e",
+    "counts": {
+      "diagnostic": 2048,
+      "initial": 1024,
+      "interior": 8192,
+      "left": 512,
+      "right": 512
+    },
+    "origin": {
+      "array_sha256": {
+        "diagnostic": "a3cdb7b5b5f80874a2d467380729b06e22ed2a126cc277cc099488553422bfe2",
+        "initial": "ba4ce05bd7a765df1e650866a4c801114fd4d63aaf775a7ea2d771596f84083c",
+        "interior": "6839ce03df2c19d81ded7851fedda19bff6b0b95b38ac58cc5d38fccba3f3455",
+        "left": "2839c5b1ed7fc9927885502e49b8d0ec55ad7c41dac6d1f118e242ecc7f22362",
+        "right": "855e0815316f30099e844720b760aa50ae7dc1ee7c0e68f6da04675fefe26949"
+      },
+      "content_sha256": "d26c9e3f6696acc6a359ff4f8e1226088397459addb893e9846c373afce7b21e",
+      "counts": {
+        "diagnostic": 2048,
+        "initial": 1024,
+        "interior": 8192,
+        "left": 512,
+        "right": 512
+      },
+      "origin": "generated once by src.research_pipeline.sciml.sampling.pools",
+      "scipy_version": "1.16.3",
+      "seed": 811,
+      "seed_streams": {
+        "diagnostic": 8112,
+        "initial_space": 8114,
+        "interior": 8111,
+        "left_right_time": 8113
+      }
+    }
+  },
+  "precision": "float64",
+  "problem": "burgers",
+  "scoring": "not run by train_one; scoring is a separate post-training command",
+  "seed": 811,
+  "validation_problem": "burgers_pinnacle_1d",
+  "versions": {
+    "numpy": "2.0.2",
+    "python": "3.12.13",
+    "scipy": "1.16.3",
+    "torch": "2.10.0+cu128"
+  }
+}

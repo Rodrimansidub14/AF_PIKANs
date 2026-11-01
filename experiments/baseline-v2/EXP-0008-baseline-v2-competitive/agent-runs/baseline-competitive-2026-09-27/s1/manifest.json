@@ -1,0 +1,45 @@
+{
+  "session": "S1",
+  "kernel_slug": "rodrimandub/af-pikans-competitive-baseline-s1-20260928",
+  "status": "pushed_running",
+  "machine_shape": "NvidiaTeslaT4 (T4x2)",
+  "private": true,
+  "session_cap_seconds": 1800,
+  "internal_watchdog_seconds": 1680,
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "parts": {
+    "S1a_allen_cahn": {
+      "method": "sine-pseudospectral diagonal Laplacian with Kassam-Trefethen ETDRK4; float64",
+      "contract": "u_t=0.001*u_xx+5*(u-u^3), x[-1,1], t[0,1], u(x,0)=x^2*cos(pi*x), u(+-1,t)=-1",
+      "resolutions": [
+        {"N_intervals": 4096, "dt": 0.00002},
+        {"N_intervals": 8192, "dt": 0.00002},
+        {"N_intervals": 8192, "dt": 0.00001}
+      ],
+      "comparison_grid": {"space_points": 512, "time_points": 256, "space_time_trapezoid_weights": true},
+      "outputs": ["ETDRK4-vs-FD8192 relative weighted L2 and max absolute difference", "ETDRK4 spatial and temporal convergence", "DeepXDE Allen_Cahn.mat interpolation comparison", "rescoring of ten existing RBF/MLP checkpoints"]
+    },
+    "S1b_dfg": {
+      "method": "stationary Taylor-Hood P2/P1, Newton continuation, natural do-nothing outlet, FEATFLOW traction QoIs",
+      "mesh_levels": ["DFG-L0", "DFG-L1", "DFG-L2"],
+      "fixed_field_grid": {"x_points": 221, "y_points": 42, "exclude_cylinder_interior": true},
+      "pressure_gauge_anchor": [2.2, 0.2],
+      "worker_cap_seconds": 1450,
+      "evidence_targets": {"Cd_relative_vs_FEATFLOW_max": 0.005, "Cl_absolute_vs_FEATFLOW_max": 0.0005, "delta_p_relative_vs_FEATFLOW_max": 0.005, "two_finest_mesh_relative_change_max": 0.002},
+      "outputs": ["mesh/QoI convergence evidence", "fixed-grid FEM fields", "field relative L2 for cohorts 301-305 and 501-505", "paired RBF/MLP differences for seeds 501-505"]
+    }
+  },
+  "inputs": {
+    "allen_cahn_campaign": "rodrimandub/af-pikans-allen-cahn-t4x2-20260927",
+    "allen_cahn_checkpoints": "rodrimandub/af-pikans-allen-cahn-score-only-20260927",
+    "deepxde_mat": "rodrimandub/allen-cahn-deepxde-reference-20260928",
+    "dfg_current_rbf_301_305": "rodrimandub/af-pikans-dfg-rbf-refinement-20260928",
+    "dfg_old_rbf_mlp_501_505": "rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927"
+  },
+  "sources": [
+    "https://fhg-iisb.github.io/jNO/tutorials/08-fem-and-varpinns/navier-stokes-cylinder-dfg/",
+    "https://wwwold.mathematik.tu-dortmund.de/~featflow/en/benchmarks/cfdbenchmarking/flow/dfg_benchmark1_re20.html",
+    "https://deepxde.readthedocs.io/en/latest/demos/pinn_forward/allen.cahn.html"
+  ]
+}

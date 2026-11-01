@@ -1,0 +1,11 @@
+{
+  "part": "s1a_progress",
+  "resolution": "N8192_dt1e-5",
+  "resolution_elapsed_seconds": 208.479,
+  "scientific_accepted": false,
+  "session_elapsed_seconds": 427.703,
+  "status": "running",
+  "step": 100000,
+  "total_steps": 100000,
+  "updated_at_utc": "2026-09-28T19:30:46Z"
+}

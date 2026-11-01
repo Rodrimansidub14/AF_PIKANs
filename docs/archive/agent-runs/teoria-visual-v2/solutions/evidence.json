@@ -1,0 +1,106 @@
+{
+  "numpy": "2.3.2",
+  "scipy": "1.18.0",
+  "poisson": {
+    "method": "Centered finite differences, second order; Dirichlet zero; exact manufactured reference",
+    "k": 4,
+    "runs": [
+      {
+        "nodes_per_axis": 33,
+        "unknowns": 961,
+        "h": 0.03125,
+        "relative_l2_grid_error": 0.012950746721879037,
+        "relative_algebraic_residual": 1.8917443543245764e-15
+      },
+      {
+        "nodes_per_axis": 65,
+        "unknowns": 3969,
+        "h": 0.015625,
+        "relative_l2_grid_error": 0.00321896444007897,
+        "relative_algebraic_residual": 7.0752345782186104e-15
+      },
+      {
+        "nodes_per_axis": 129,
+        "unknowns": 16129,
+        "h": 0.0078125,
+        "relative_l2_grid_error": 0.000803577679371605,
+        "relative_algebraic_residual": 2.929306277848019e-14
+      }
+    ],
+    "error_ratios": [
+      4.023264923535881,
+      4.00579125417743
+    ]
+  },
+  "burgers": {
+    "method": "Exact viscous traveling wave evaluated on finite-domain initial and boundary traces",
+    "A": 0.5,
+    "c": 0.5,
+    "nu": 0.02,
+    "x0": -0.25,
+    "max_analytic_residual_all_contract_parameters": 2.6645352591003757e-15
+  },
+  "allen_cahn": {
+    "method": "Second-order centered differences + BDF, sparse exact Jacobian",
+    "d": 0.001,
+    "domain": [
+      -1,
+      1
+    ],
+    "time": [
+      0,
+      1
+    ],
+    "initial": "x^2 cos(pi x)",
+    "boundaries": "u(-1,t)=u(1,t)=-1",
+    "runs": [
+      {
+        "nodes": 401,
+        "h": 0.0050000000000000044,
+        "rtol": 1e-09,
+        "atol": 1e-11,
+        "nfev": 660,
+        "nlu": 44,
+        "seconds": 0.33726060000026337,
+        "max_energy_increment": -0.002286491367803567
+      },
+      {
+        "nodes": 801,
+        "h": 0.0024999999999999467,
+        "rtol": 1e-09,
+        "atol": 1e-11,
+        "nfev": 667,
+        "nlu": 45,
+        "seconds": 0.3547085000000152,
+        "max_energy_increment": -0.0022857198935711254
+      },
+      {
+        "nodes": 1601,
+        "h": 0.0012499999999999734,
+        "rtol": 1e-09,
+        "atol": 1e-11,
+        "nfev": 670,
+        "nlu": 45,
+        "seconds": 0.44136729999991076,
+        "max_energy_increment": -0.0022855312233844294
+      },
+      {
+        "nodes": 1601,
+        "h": 0.0012499999999999734,
+        "rtol": 1e-11,
+        "atol": 1e-13,
+        "nfev": 932,
+        "nlu": 83,
+        "seconds": 0.9090664000004836,
+        "max_energy_increment": -0.0022855312227193503
+      }
+    ],
+    "successive_mesh_linf_differences": [
+      0.001718146430840728,
+      0.00043642884373584767
+    ],
+    "observed_ratio": 3.9368306093917362,
+    "temporal_tolerance_linf_difference": 6.136325003680554e-09,
+    "scope": "Self-convergence and temporal sensitivity; not a proof of absolute error. No PINN training."
+  }
+}

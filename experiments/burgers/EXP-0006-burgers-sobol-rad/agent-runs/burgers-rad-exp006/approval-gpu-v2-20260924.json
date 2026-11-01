@@ -1,0 +1,10 @@
+{
+  "bundle_id": "667171477e167edb0631f7994b31c0ddc271b6d0263f7a601b7daf6d77b08613",
+  "approved_by": "Rodrigo Mansilla",
+  "scope": "approved",
+  "hypothesis": "approved",
+  "code_surface": "approved",
+  "remote_execution": true,
+  "authorization_basis": "Relanzamiento de la misma corrida GPU tras corregir un fallo de empaquetado; se conservan PDE, brazos, semillas y presupuesto.",
+  "authorized_at": "2026-09-24"
+}

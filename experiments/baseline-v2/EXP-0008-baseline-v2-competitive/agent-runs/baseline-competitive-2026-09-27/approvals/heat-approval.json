@@ -1,0 +1,18 @@
+{
+  "bundle_id": "heat-tier2-review:3c71d580acdbb9b9a2d4c0c9a2f8d713134d9eef760e398a9ad2487fa394950b",
+  "bundle_zip_sha256": "3c71d580acdbb9b9a2d4c0c9a2f8d713134d9eef760e398a9ad2487fa394950b",
+  "approved_by": "researcher (explicit instruction in active conversation, 2026-09-27)",
+  "scope": "Heat paired competitive baseline pilot",
+  "remote_execution": true,
+  "problem": "Heat 1D",
+  "accelerator": "NvidiaTeslaT4 (2x T4)",
+  "max_session_seconds": 7200,
+  "global_campaign_cap_hours": 8,
+  "scientific_acceptance": false,
+  "scientific_preregistration_signed": false,
+  "component_hashes": {
+    "notebook": "31d182947e16ef2994e69e25f0c5b19895ec1e2c82bebb6b53ff33d6a73e2e8c",
+    "metadata": "26f3dcf64df6a6c42a6a6b12cd84479a2b9fece9dfc03cad9d8afa0d9d20a6bf",
+    "zip": "3c71d580acdbb9b9a2d4c0c9a2f8d713134d9eef760e398a9ad2487fa394950b"
+  }
+}

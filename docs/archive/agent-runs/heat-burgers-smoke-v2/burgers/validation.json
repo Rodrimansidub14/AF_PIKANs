@@ -1,0 +1,31 @@
+{
+  "checkpoint": "checkpoint-000003.pt",
+  "final_test_used": false,
+  "grid": {
+    "kind": "fixed_uniform_tensor",
+    "nt": 65,
+    "nx": 129
+  },
+  "metrics": {
+    "boundary_max_abs_error": 0.5246212181388681,
+    "complement_n_points": 6370.0,
+    "complement_residual_max_abs": 0.5256456995245012,
+    "complement_residual_p95_abs": 0.3166601395242169,
+    "complement_residual_rmse_abs": 0.1558009437406415,
+    "field_max_abs": 0.5520521487125836,
+    "field_p95_abs": 0.5237625616055618,
+    "field_relative_l2": 0.9303832775538062,
+    "field_rmse_abs": 0.44619614526689083,
+    "front_n_points": 2015.0,
+    "front_residual_max_abs": 0.38028463889339403,
+    "front_residual_p95_abs": 0.25859495119650805,
+    "front_residual_rmse_abs": 0.1389263091023561,
+    "initial_max_abs_error": 0.5234516825761307,
+    "residual_max_abs": 0.5256456995245012,
+    "residual_p95_abs": 0.3061651015721543,
+    "residual_rmse_abs": 0.1518862574279716
+  },
+  "problem": "burgers",
+  "scientific_accepted": false,
+  "step": 3
+}

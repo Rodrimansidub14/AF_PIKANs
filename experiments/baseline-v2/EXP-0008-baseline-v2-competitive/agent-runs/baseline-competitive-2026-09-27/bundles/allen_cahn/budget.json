@@ -1,0 +1,47 @@
+{
+  "status": "DRAFT_UNVERIFIED",
+  "quota_unit": "Kaggle accelerator-session wall seconds; T4x2 quota is charged by session runtime, not multiplied by visible GPUs",
+  "quota_cap_seconds": 7200,
+  "quota_cap_hours": 2.0,
+  "script_wall_cap_seconds": 6900,
+  "setup_reserve_seconds": 300,
+  "active_device_seconds_are_allocation_caps_not_measured_utilization": true,
+  "quota_source": "https://www.kaggle.com/product-feedback/361104",
+  "components": {
+    "training": {
+      "arms": 2,
+      "paired_seeds": [401, 402, 403, 404, 405],
+      "wall_seconds_per_seed_pair": 600,
+      "gpu_seconds_per_arm_seed": 600,
+      "runs": 10,
+      "subtotal_wall_seconds": 3000,
+      "subtotal_active_device_seconds": 6000,
+      "parallelism": "Both arms for each seed run concurrently, one process per T4; five seed pairs remain sequential."
+    },
+    "independent_gpu_reference": {
+      "hard_cap_wall_seconds": 2700,
+      "hard_cap_active_device_seconds": 2700,
+      "purpose": "FD-RK4 spatial refinements plus temporal halving on cuda:0; failure or timeout blocks all field scoring"
+    },
+    "common_scoring": {
+      "wall_seconds_cap": 600,
+      "active_device_seconds_cap": 600,
+      "purpose": "fixed-reference inference, held-out residual and metric export"
+    },
+    "unallocated_safety_reserve": {
+      "seconds": 600,
+      "use": "absorbs startup overhead, checkpoint/score variance, or an optional smoke; never hyperparameter search or seed replacement"
+    }
+  },
+  "arithmetic": "300 setup + 2700 reference + 3000 paired training wall + 600 scoring + 600 reserve = 7200 quota seconds",
+  "device_seconds_arithmetic": "2700 reference + 6000 training + 600 scoring = 9300 active-device allocation seconds (2.5833 T4-device-hours); T4x2 second device is idle during reference and scoring",
+  "parallelism": {"required_visible_t4_devices": 2, "max_active_seed_runs": 2, "two_arms_same_seed_run_concurrently": true, "one_process_per_visible_t4": true},
+  "notes": [
+    "The five paired seeds fit arithmetically only if the reference passes within 2700 seconds and both arm processes actually run concurrently on separate T4s.",
+    "The 2-hour quota includes an external 300-second setup allowance; script execution stops by 6900 seconds.",
+    "An optional 240-second transport smoke is charged to the 600-second safety reserve; it must not be added to a full run after that reserve is spent.",
+    "T4 runtime for the GPU reference is unknown; 2700 seconds is a hard stop, not an estimate or promise.",
+    "If reference generation exceeds its cap or fails its convergence gates, the campaign must not emit field-error scores.",
+    "Kaggle quota is measured as session runtime for T4x2; device-seconds count only the T4 actually assigned to each process."
+  ]
+}

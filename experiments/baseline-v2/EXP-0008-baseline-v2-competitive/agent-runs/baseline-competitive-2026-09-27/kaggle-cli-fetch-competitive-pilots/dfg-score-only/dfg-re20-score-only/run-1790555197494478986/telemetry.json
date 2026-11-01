@@ -1,0 +1,506 @@
+{
+  "campaign_wall_seconds": 13.618207509000058,
+  "cuda": "12.8",
+  "endpoint_telemetry": [
+    {
+      "arm": "DFG-Tanh-MLP",
+      "cuda_device_index": 1,
+      "cuda_peak_memory_allocated_bytes": 38156288,
+      "cuda_peak_memory_reserved_bytes": 44040192,
+      "device": "Tesla T4",
+      "phase_wall_seconds": {
+        "critical_region_seconds": 0.08394001300007403,
+        "heldout_and_boundary_seconds": 0.4010640669998793,
+        "qoi1024_seconds": 0.006998708000082843,
+        "qoi512_seconds": 2.7112955720001537
+      },
+      "saved_pool_sha256": "34cf429bd05508949b76ae068129347fb9e29817e816ef3f1c2fccfb625fce25",
+      "seed": 501,
+      "source_checkpoint_sha256": "e8d15a3e708ec3ea77ecf58a8d46bbc7999149acf4d8ee8425b7b8467a611847",
+      "source_training_summary": {
+        "arm": "DFG-Tanh-MLP",
+        "cap_overrun_seconds": 0.024701542999991943,
+        "device": "Tesla T4",
+        "dtype": "float32",
+        "elapsed_gpu_wall_seconds": 1200.024701543,
+        "field_reference_status": "missing_converged_FEM_field",
+        "field_relative_l2": null,
+        "model_id": "dfg_tanh_mlp_5x64",
+        "parameters": 17027,
+        "pool_provenance": {
+          "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+          "heldout": {
+            "accepted_before_truncation": 16241,
+            "candidate_count": 16384,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 900502
+          },
+          "interior": {
+            "accepted_before_truncation": 32485,
+            "candidate_count": 32768,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 501
+          }
+        },
+        "scientific_accepted": false,
+        "seed": 501,
+        "smoke_only": false,
+        "status": "DRAFT_UNVERIFIED",
+        "steps": 30116
+      },
+      "total_scoring_wall_seconds": 3.203509638000014
+    },
+    {
+      "arm": "DFG-RBF-PIKAN",
+      "cuda_device_index": 0,
+      "cuda_peak_memory_allocated_bytes": 54780928,
+      "cuda_peak_memory_reserved_bytes": 60817408,
+      "device": "Tesla T4",
+      "phase_wall_seconds": {
+        "critical_region_seconds": 0.16923182200002884,
+        "heldout_and_boundary_seconds": 0.7921362390000013,
+        "qoi1024_seconds": 0.013051609000058306,
+        "qoi512_seconds": 2.71090932900006
+      },
+      "saved_pool_sha256": "34cf429bd05508949b76ae068129347fb9e29817e816ef3f1c2fccfb625fce25",
+      "seed": 501,
+      "source_checkpoint_sha256": "a7a5bf67de256b1ba81972995f342090500b5d0577615aff1e89dd8a27f57981",
+      "source_training_summary": {
+        "arm": "DFG-RBF-PIKAN",
+        "cap_overrun_seconds": 0.07118660500009355,
+        "device": "Tesla T4",
+        "dtype": "float32",
+        "elapsed_gpu_wall_seconds": 1200.071186605,
+        "field_reference_status": "missing_converged_FEM_field",
+        "field_relative_l2": null,
+        "model_id": "dfg_rbf_fixed_2_16_16_3",
+        "parameters": 4032,
+        "pool_provenance": {
+          "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+          "heldout": {
+            "accepted_before_truncation": 16241,
+            "candidate_count": 16384,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 900502
+          },
+          "interior": {
+            "accepted_before_truncation": 32485,
+            "candidate_count": 32768,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 501
+          }
+        },
+        "scientific_accepted": false,
+        "seed": 501,
+        "smoke_only": false,
+        "status": "DRAFT_UNVERIFIED",
+        "steps": 15078
+      },
+      "total_scoring_wall_seconds": 3.685666203999972
+    },
+    {
+      "arm": "DFG-Tanh-MLP",
+      "cuda_device_index": 1,
+      "cuda_peak_memory_allocated_bytes": 38156288,
+      "cuda_peak_memory_reserved_bytes": 44040192,
+      "device": "Tesla T4",
+      "phase_wall_seconds": {
+        "critical_region_seconds": 0.08462819900000795,
+        "heldout_and_boundary_seconds": 0.3939294390002033,
+        "qoi1024_seconds": 0.007159961000070325,
+        "qoi512_seconds": 0.008193823000056
+      },
+      "saved_pool_sha256": "ea3b4fd544f998d17b438243aebdffa3448d412297bc4cf3fca452550429c2bb",
+      "seed": 502,
+      "source_checkpoint_sha256": "76de6e2f5f9b8e456309e7159110b5c2119920b47047b1391a013b01f4f6963a",
+      "source_training_summary": {
+        "arm": "DFG-Tanh-MLP",
+        "cap_overrun_seconds": 0.02506842800016784,
+        "device": "Tesla T4",
+        "dtype": "float32",
+        "elapsed_gpu_wall_seconds": 1200.0250684280002,
+        "field_reference_status": "missing_converged_FEM_field",
+        "field_relative_l2": null,
+        "model_id": "dfg_tanh_mlp_5x64",
+        "parameters": 17027,
+        "pool_provenance": {
+          "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+          "heldout": {
+            "accepted_before_truncation": 16244,
+            "candidate_count": 16384,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 900503
+          },
+          "interior": {
+            "accepted_before_truncation": 32486,
+            "candidate_count": 32768,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 502
+          }
+        },
+        "scientific_accepted": false,
+        "seed": 502,
+        "smoke_only": false,
+        "status": "DRAFT_UNVERIFIED",
+        "steps": 29135
+      },
+      "total_scoring_wall_seconds": 0.49413606999996773
+    },
+    {
+      "arm": "DFG-RBF-PIKAN",
+      "cuda_device_index": 0,
+      "cuda_peak_memory_allocated_bytes": 54780928,
+      "cuda_peak_memory_reserved_bytes": 60817408,
+      "device": "Tesla T4",
+      "phase_wall_seconds": {
+        "critical_region_seconds": 0.16793366299998524,
+        "heldout_and_boundary_seconds": 0.7887312410000504,
+        "qoi1024_seconds": 0.010775676000093881,
+        "qoi512_seconds": 0.014890511999965383
+      },
+      "saved_pool_sha256": "ea3b4fd544f998d17b438243aebdffa3448d412297bc4cf3fca452550429c2bb",
+      "seed": 502,
+      "source_checkpoint_sha256": "d03d4340b139a17cd708be7f7c84a82934a725a0e91598e350a0e4d594b4fb26",
+      "source_training_summary": {
+        "arm": "DFG-RBF-PIKAN",
+        "cap_overrun_seconds": 0.02944614299985915,
+        "device": "Tesla T4",
+        "dtype": "float32",
+        "elapsed_gpu_wall_seconds": 1200.0294461429999,
+        "field_reference_status": "missing_converged_FEM_field",
+        "field_relative_l2": null,
+        "model_id": "dfg_rbf_fixed_2_16_16_3",
+        "parameters": 4032,
+        "pool_provenance": {
+          "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+          "heldout": {
+            "accepted_before_truncation": 16244,
+            "candidate_count": 16384,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 900503
+          },
+          "interior": {
+            "accepted_before_truncation": 32486,
+            "candidate_count": 32768,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 502
+          }
+        },
+        "scientific_accepted": false,
+        "seed": 502,
+        "smoke_only": false,
+        "status": "DRAFT_UNVERIFIED",
+        "steps": 14643
+      },
+      "total_scoring_wall_seconds": 0.9828331600001547
+    },
+    {
+      "arm": "DFG-Tanh-MLP",
+      "cuda_device_index": 1,
+      "cuda_peak_memory_allocated_bytes": 38156288,
+      "cuda_peak_memory_reserved_bytes": 44040192,
+      "device": "Tesla T4",
+      "phase_wall_seconds": {
+        "critical_region_seconds": 0.07815737700002501,
+        "heldout_and_boundary_seconds": 0.384142914999984,
+        "qoi1024_seconds": 0.007029289999991306,
+        "qoi512_seconds": 0.0064324720001422975
+      },
+      "saved_pool_sha256": "4e6bc94d82431dc79b23abff2ea4a25701158e48b67f996e5e72ef314e15d389",
+      "seed": 503,
+      "source_checkpoint_sha256": "0e99943fc35f5e94c364cb885ba2da667256bf173320f4da6261fb25120c1c1a",
+      "source_training_summary": {
+        "arm": "DFG-Tanh-MLP",
+        "cap_overrun_seconds": 0.03734896400010257,
+        "device": "Tesla T4",
+        "dtype": "float32",
+        "elapsed_gpu_wall_seconds": 1200.037348964,
+        "field_reference_status": "missing_converged_FEM_field",
+        "field_relative_l2": null,
+        "model_id": "dfg_tanh_mlp_5x64",
+        "parameters": 17027,
+        "pool_provenance": {
+          "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+          "heldout": {
+            "accepted_before_truncation": 16242,
+            "candidate_count": 16384,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 900504
+          },
+          "interior": {
+            "accepted_before_truncation": 32484,
+            "candidate_count": 32768,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 503
+          }
+        },
+        "scientific_accepted": false,
+        "seed": 503,
+        "smoke_only": false,
+        "status": "DRAFT_UNVERIFIED",
+        "steps": 29251
+      },
+      "total_scoring_wall_seconds": 0.4758970140001111
+    },
+    {
+      "arm": "DFG-RBF-PIKAN",
+      "cuda_device_index": 0,
+      "cuda_peak_memory_allocated_bytes": 54780928,
+      "cuda_peak_memory_reserved_bytes": 60817408,
+      "device": "Tesla T4",
+      "phase_wall_seconds": {
+        "critical_region_seconds": 0.16191483900001913,
+        "heldout_and_boundary_seconds": 0.7740092770000047,
+        "qoi1024_seconds": 0.010989848999997776,
+        "qoi512_seconds": 0.012540331000082006
+      },
+      "saved_pool_sha256": "4e6bc94d82431dc79b23abff2ea4a25701158e48b67f996e5e72ef314e15d389",
+      "seed": 503,
+      "source_checkpoint_sha256": "424d4f242069a627fea07535915cc67b3a6a22ab875560669c7f30210cdad266",
+      "source_training_summary": {
+        "arm": "DFG-RBF-PIKAN",
+        "cap_overrun_seconds": 0.007957659000112471,
+        "device": "Tesla T4",
+        "dtype": "float32",
+        "elapsed_gpu_wall_seconds": 1200.007957659,
+        "field_reference_status": "missing_converged_FEM_field",
+        "field_relative_l2": null,
+        "model_id": "dfg_rbf_fixed_2_16_16_3",
+        "parameters": 4032,
+        "pool_provenance": {
+          "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+          "heldout": {
+            "accepted_before_truncation": 16242,
+            "candidate_count": 16384,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 900504
+          },
+          "interior": {
+            "accepted_before_truncation": 32484,
+            "candidate_count": 32768,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 503
+          }
+        },
+        "scientific_accepted": false,
+        "seed": 503,
+        "smoke_only": false,
+        "status": "DRAFT_UNVERIFIED",
+        "steps": 14297
+      },
+      "total_scoring_wall_seconds": 0.959840265999901
+    },
+    {
+      "arm": "DFG-Tanh-MLP",
+      "cuda_device_index": 1,
+      "cuda_peak_memory_allocated_bytes": 38156288,
+      "cuda_peak_memory_reserved_bytes": 44040192,
+      "device": "Tesla T4",
+      "phase_wall_seconds": {
+        "critical_region_seconds": 0.07881417399994461,
+        "heldout_and_boundary_seconds": 0.3620898470001066,
+        "qoi1024_seconds": 0.006153830999892307,
+        "qoi512_seconds": 0.006722791000129291
+      },
+      "saved_pool_sha256": "0d4dde2d82c7ad4ec45ee5e7003097a84dd08fc4f2ee5be400d72bf13fca6b7b",
+      "seed": 504,
+      "source_checkpoint_sha256": "3ecdc414558334037bac939b82e16d8266ed50c01897bd46af9af3718df0aac7",
+      "source_training_summary": {
+        "arm": "DFG-Tanh-MLP",
+        "cap_overrun_seconds": 0.03477411400035635,
+        "device": "Tesla T4",
+        "dtype": "float32",
+        "elapsed_gpu_wall_seconds": 1200.0347741140004,
+        "field_reference_status": "missing_converged_FEM_field",
+        "field_relative_l2": null,
+        "model_id": "dfg_tanh_mlp_5x64",
+        "parameters": 17027,
+        "pool_provenance": {
+          "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+          "heldout": {
+            "accepted_before_truncation": 16241,
+            "candidate_count": 16384,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 900505
+          },
+          "interior": {
+            "accepted_before_truncation": 32482,
+            "candidate_count": 32768,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 504
+          }
+        },
+        "scientific_accepted": false,
+        "seed": 504,
+        "smoke_only": false,
+        "status": "DRAFT_UNVERIFIED",
+        "steps": 29646
+      },
+      "total_scoring_wall_seconds": 0.4540904390000833
+    },
+    {
+      "arm": "DFG-RBF-PIKAN",
+      "cuda_device_index": 0,
+      "cuda_peak_memory_allocated_bytes": 54780928,
+      "cuda_peak_memory_reserved_bytes": 60817408,
+      "device": "Tesla T4",
+      "phase_wall_seconds": {
+        "critical_region_seconds": 0.1508631010001409,
+        "heldout_and_boundary_seconds": 0.7676916360001087,
+        "qoi1024_seconds": 0.010377134999998816,
+        "qoi512_seconds": 0.012421672000073158
+      },
+      "saved_pool_sha256": "0d4dde2d82c7ad4ec45ee5e7003097a84dd08fc4f2ee5be400d72bf13fca6b7b",
+      "seed": 504,
+      "source_checkpoint_sha256": "dead59e2ba24880840d0436e79fb14eeaed037186aa159ec270174bb974d4f13",
+      "source_training_summary": {
+        "arm": "DFG-RBF-PIKAN",
+        "cap_overrun_seconds": 0.01692525000044043,
+        "device": "Tesla T4",
+        "dtype": "float32",
+        "elapsed_gpu_wall_seconds": 1200.0169252500004,
+        "field_reference_status": "missing_converged_FEM_field",
+        "field_relative_l2": null,
+        "model_id": "dfg_rbf_fixed_2_16_16_3",
+        "parameters": 4032,
+        "pool_provenance": {
+          "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+          "heldout": {
+            "accepted_before_truncation": 16241,
+            "candidate_count": 16384,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 900505
+          },
+          "interior": {
+            "accepted_before_truncation": 32482,
+            "candidate_count": 32768,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 504
+          }
+        },
+        "scientific_accepted": false,
+        "seed": 504,
+        "smoke_only": false,
+        "status": "DRAFT_UNVERIFIED",
+        "steps": 14950
+      },
+      "total_scoring_wall_seconds": 0.9416280450000158
+    },
+    {
+      "arm": "DFG-Tanh-MLP",
+      "cuda_device_index": 1,
+      "cuda_peak_memory_allocated_bytes": 38156288,
+      "cuda_peak_memory_reserved_bytes": 44040192,
+      "device": "Tesla T4",
+      "phase_wall_seconds": {
+        "critical_region_seconds": 0.07955130400000598,
+        "heldout_and_boundary_seconds": 0.35123056599991287,
+        "qoi1024_seconds": 0.006790631000058056,
+        "qoi512_seconds": 0.00699872400014101
+      },
+      "saved_pool_sha256": "c05a0b6b3c62f7fee7c6cd0c7982df522bad1984bfa4759398d9d6362dad885b",
+      "seed": 505,
+      "source_checkpoint_sha256": "35221e504b4e943c3a5ddcdd3a06917c110736246d98140d0da4e50cc6650c61",
+      "source_training_summary": {
+        "arm": "DFG-Tanh-MLP",
+        "cap_overrun_seconds": 0.03019053099978919,
+        "device": "Tesla T4",
+        "dtype": "float32",
+        "elapsed_gpu_wall_seconds": 1200.0301905309998,
+        "field_reference_status": "missing_converged_FEM_field",
+        "field_relative_l2": null,
+        "model_id": "dfg_tanh_mlp_5x64",
+        "parameters": 17027,
+        "pool_provenance": {
+          "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+          "heldout": {
+            "accepted_before_truncation": 16241,
+            "candidate_count": 16384,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 900506
+          },
+          "interior": {
+            "accepted_before_truncation": 32485,
+            "candidate_count": 32768,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 505
+          }
+        },
+        "scientific_accepted": false,
+        "seed": 505,
+        "smoke_only": false,
+        "status": "DRAFT_UNVERIFIED",
+        "steps": 28972
+      },
+      "total_scoring_wall_seconds": 0.444929706000039
+    },
+    {
+      "arm": "DFG-RBF-PIKAN",
+      "cuda_device_index": 0,
+      "cuda_peak_memory_allocated_bytes": 54780928,
+      "cuda_peak_memory_reserved_bytes": 60817408,
+      "device": "Tesla T4",
+      "phase_wall_seconds": {
+        "critical_region_seconds": 0.1723167600000579,
+        "heldout_and_boundary_seconds": 0.7646908780000103,
+        "qoi1024_seconds": 0.010486372000059418,
+        "qoi512_seconds": 0.012365976999944905
+      },
+      "saved_pool_sha256": "c05a0b6b3c62f7fee7c6cd0c7982df522bad1984bfa4759398d9d6362dad885b",
+      "seed": 505,
+      "source_checkpoint_sha256": "187623d092445b9793ac19a4d21a155ea7a7235fe0d54dda65a912dc7323bb18",
+      "source_training_summary": {
+        "arm": "DFG-RBF-PIKAN",
+        "cap_overrun_seconds": 0.049294395000288205,
+        "device": "Tesla T4",
+        "dtype": "float32",
+        "elapsed_gpu_wall_seconds": 1200.0492943950003,
+        "field_reference_status": "missing_converged_FEM_field",
+        "field_relative_l2": null,
+        "model_id": "dfg_rbf_fixed_2_16_16_3",
+        "parameters": 4032,
+        "pool_provenance": {
+          "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+          "heldout": {
+            "accepted_before_truncation": 16241,
+            "candidate_count": 16384,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 900506
+          },
+          "interior": {
+            "accepted_before_truncation": 32485,
+            "candidate_count": 32768,
+            "sampling": "scrambled Sobol with rejection of closed cylinder",
+            "seed": 505
+          }
+        },
+        "scientific_accepted": false,
+        "seed": 505,
+        "smoke_only": false,
+        "status": "DRAFT_UNVERIFIED",
+        "steps": 15017
+      },
+      "total_scoring_wall_seconds": 0.9599947340000199
+    }
+  ],
+  "numpy": "2.0.2",
+  "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+  "quota_cap_seconds_including_setup": 1800.0,
+  "scipy": "1.16.3",
+  "soft_deadline_seconds_from_first_code_cell": 1580.0,
+  "source_hardware": {
+    "cuda": "12.8",
+    "device": "Tesla T4",
+    "python": "3.12.13",
+    "status": "DRAFT_UNVERIFIED",
+    "torch": "2.10.0+cu128"
+  },
+  "source_runner_sha256": "4c02809600beb9b543d1bceffe2037ed7d05f5ff654d010b22984227b2cb35a9",
+  "status": "score_only_complete",
+  "torch": "2.10.0+cu128",
+  "visible_gpus": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "watchdog_seconds_from_first_code_cell": 1680.0
+}

@@ -1,0 +1,138 @@
+{
+  "status": "proposed_not_frozen",
+  "scope": "EXP-0005 canonical Burgers independent validation only",
+  "baseline_id_proposed": "burgers_pinnacle_1d@rbf_fixed-exp005-validation-v1",
+  "scientific_accepted": false,
+  "final_test_used": false,
+  "seeds": {
+    "101": {
+      "boundary_max_abs_error": 0.012985192135758931,
+      "complement_field_rmse_abs": 0.010987781650514028,
+      "complement_field_rmse_normalized": 0.010987781650514028,
+      "complement_n_points": 130729.0,
+      "complement_residual_max_abs": 0.5114853835261619,
+      "complement_residual_p95_abs": 0.09078597420967809,
+      "complement_residual_rmse_abs": 0.047896099208824906,
+      "field_max_abs": 0.44193141184900386,
+      "field_p95_abs": 0.022164746316097925,
+      "field_relative_l2": 0.037515422252000614,
+      "field_rmse_abs": 0.02304295552787073,
+      "field_rmse_normalized": 0.02304295552787073,
+      "front_field_rmse_abs": 0.19044646540738838,
+      "front_field_rmse_normalized": 0.19044646540738838,
+      "front_n_points": 1496.0,
+      "front_residual_max_abs": 1.567952770700174,
+      "front_residual_p95_abs": 1.2703630598971376,
+      "front_residual_rmse_abs": 0.6138533570703717,
+      "initial_max_abs_error": 0.01958313564391978,
+      "residual_max_abs": 1.567952770700174,
+      "residual_mean_abs": 0.039125832706061146,
+      "residual_mean_abs_normalized": 0.019531830479346365,
+      "residual_p95_abs": 0.09485884650836444,
+      "residual_rmse_abs": 0.0808973560648169
+    },
+    "102": {
+      "boundary_max_abs_error": 0.00843101928284578,
+      "complement_field_rmse_abs": 0.014382582371633087,
+      "complement_field_rmse_normalized": 0.014382582371633087,
+      "complement_n_points": 130729.0,
+      "complement_residual_max_abs": 0.7669100329479122,
+      "complement_residual_p95_abs": 0.07894206637866137,
+      "complement_residual_rmse_abs": 0.04178600049788456,
+      "field_max_abs": 1.1247900807339777,
+      "field_p95_abs": 0.027824237142278774,
+      "field_relative_l2": 0.09895329145331003,
+      "field_rmse_abs": 0.06077970491651488,
+      "field_rmse_normalized": 0.06077970491651488,
+      "front_field_rmse_abs": 0.5545211599327985,
+      "front_field_rmse_normalized": 0.5545211599327985,
+      "front_n_points": 1496.0,
+      "front_residual_max_abs": 1.0993019012087828,
+      "front_residual_p95_abs": 0.7810387470827118,
+      "front_residual_rmse_abs": 0.3646210314362816,
+      "initial_max_abs_error": 0.027274090444690605,
+      "residual_max_abs": 1.0993019012087828,
+      "residual_mean_abs": 0.02987540243091476,
+      "residual_mean_abs_normalized": 0.014913964903103103,
+      "residual_p95_abs": 0.08494910438380097,
+      "residual_rmse_abs": 0.0568775000733655
+    },
+    "103": {
+      "boundary_max_abs_error": 0.010431746256652219,
+      "complement_field_rmse_abs": 0.007403237569002726,
+      "complement_field_rmse_normalized": 0.007403237569002726,
+      "complement_n_points": 130729.0,
+      "complement_residual_max_abs": 0.4260640140826304,
+      "complement_residual_p95_abs": 0.05936978310781828,
+      "complement_residual_rmse_abs": 0.02867636664803057,
+      "field_max_abs": 0.33312578081832567,
+      "field_p95_abs": 0.015562349055791099,
+      "field_relative_l2": 0.02567424057298268,
+      "field_rmse_abs": 0.015769791414344137,
+      "field_rmse_normalized": 0.015769791414344137,
+      "front_field_rmse_abs": 0.13091418896384652,
+      "front_field_rmse_normalized": 0.13091418896384652,
+      "front_n_points": 1496.0,
+      "front_residual_max_abs": 1.1042233800411025,
+      "front_residual_p95_abs": 0.6773138593928536,
+      "front_residual_rmse_abs": 0.316261803114675,
+      "initial_max_abs_error": 0.020504483539647955,
+      "residual_max_abs": 1.1042233800411025,
+      "residual_mean_abs": 0.02068550334568813,
+      "residual_mean_abs_normalized": 0.010326316829171109,
+      "residual_p95_abs": 0.0635975669608837,
+      "residual_rmse_abs": 0.04413749330541696
+    }
+  },
+  "aggregate": {
+    "field_relative_l2": {
+      "mean": 0.05404765142609777,
+      "std": 0.03933752376013332,
+      "max": 0.09895329145331003
+    },
+    "front_field_rmse_normalized": {
+      "mean": 0.29196060476801117,
+      "std": 0.2293241305030253,
+      "max": 0.5545211599327985
+    },
+    "residual_rmse_abs": {
+      "mean": 0.060637449814533124,
+      "std": 0.01866614030978444,
+      "max": 0.0808973560648169
+    },
+    "boundary_max_abs_error": {
+      "mean": 0.01061598589175231,
+      "std": 0.0022826696598301603,
+      "max": 0.012985192135758931
+    },
+    "initial_max_abs_error": {
+      "mean": 0.022453903209419448,
+      "std": 0.004199746923749566,
+      "max": 0.027274090444690605
+    }
+  },
+  "source_sha256": {
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-101\\burgers\\validation.json": "bf6825e2a46ac0e76f719f599ebe94239bf822b0c956ae6cd99944e761076280",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-101\\burgers\\validation.npz": "1d7993fe9f85baf50e03e2bbbb76c453f72bc0da2431fab858e8e29543b284af",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-101\\burgers\\training_summary.json": "e96b7b59c586647bdab87ebb254824dc16d00281bf256bcb1853dd48c43f43d1",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-102\\burgers\\validation.json": "f52d77c47528e0dc4e2fda1f1c5528a5e863accb4ddaab90cd3812bdef89448f",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-102\\burgers\\validation.npz": "da092a788db069bfdb2f8d99bca498b30239025221cc1140552dd4ee9b4f7d68",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-102\\burgers\\training_summary.json": "a23922cb47144d9db6bda78214e37847a807585e645e30c5ef21652b8fef2c92",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-103\\burgers\\validation.json": "59f07a12565ff8396d599bec5ab53b2fd9c76ca63ab75c3757d761a591a6837b",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-103\\burgers\\validation.npz": "24d9ac2c48d793668559c1e7c6040b2e3d1baaa49140aa5b31d8d5c87b5c2984",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-103\\burgers\\training_summary.json": "0f47608f9da913c7f36bb28f6ed3d8bd12f35a03a918b9af677810ed68c13ede"
+  },
+  "proposed_physical_upper_envelope": {
+    "front_field_rmse_normalized": 0.5545211599327985,
+    "residual_rmse_abs": 0.0808973560648169,
+    "boundary_max_abs_error": 0.012985192135758931,
+    "initial_max_abs_error": 0.027274090444690605
+  },
+  "proposed_minimum_effect": {
+    "relative_reduction": 0.2,
+    "paired_geometric_error_ratio_upper": 0.8,
+    "historical_mean_relative_l2_times_0_8": 0.043238121140878216,
+    "rationale": "Project proposal: 20% practical improvement. Factor is a human policy choice, not a literature optimum; absolute value derived from measured pilot mean. Not an active verifier threshold."
+  },
+  "limitations": "n=3 pilot; maxima are descriptive guard proposals, not justified physical tolerances or frozen verifier thresholds"
+}

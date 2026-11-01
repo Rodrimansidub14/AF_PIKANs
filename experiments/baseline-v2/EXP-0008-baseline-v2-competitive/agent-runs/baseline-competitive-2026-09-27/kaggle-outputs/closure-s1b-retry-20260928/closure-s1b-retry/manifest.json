@@ -1,0 +1,35 @@
+{
+  "actual_session_seconds": 7.51,
+  "artifacts": [
+    {
+      "path": "s1b_retry.json",
+      "sha256": "f96c1399370dae4f77f10f725fd141b143a7e20b1976c145f3bb0907c92f3de2",
+      "size_bytes": 653
+    }
+  ],
+  "ended_at_utc": "2026-09-28T19:41:41Z",
+  "internal_watchdog_seconds": 1680.0,
+  "kernel_slug": "rodrimandub/af-pikans-competitive-baseline-s1b-retry-20260928",
+  "kernel_source_files": [],
+  "kernel_sources": [
+    "rodrimandub/af-pikans-allen-cahn-t4x2-20260927",
+    "rodrimandub/af-pikans-allen-cahn-score-only-20260927",
+    "rodrimandub/allen-cahn-deepxde-reference-20260928",
+    "rodrimandub/af-pikans-dfg-rbf-refinement-20260928",
+    "rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927"
+  ],
+  "machine": {
+    "gpu_validation": "failed_or_not_reached"
+  },
+  "parts": {
+    "s1a": "/kaggle/working/closure-s1b-retry/s1a.json",
+    "s1b": "/kaggle/working/closure-s1b-retry/s1b.json"
+  },
+  "push_cap_seconds": 1800.0,
+  "reference_accepted": false,
+  "schema_version": 1,
+  "scientific_accepted": false,
+  "session": "S1b-infrastructure-retry",
+  "started_at_utc": "2026-09-28T19:41:33Z",
+  "status": "failed"
+}

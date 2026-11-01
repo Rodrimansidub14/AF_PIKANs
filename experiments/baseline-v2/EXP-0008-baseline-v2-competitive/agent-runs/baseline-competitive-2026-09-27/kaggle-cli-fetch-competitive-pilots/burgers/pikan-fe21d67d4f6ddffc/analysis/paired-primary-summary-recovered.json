@@ -1,0 +1,22 @@
+{
+  "bootstrap_95_percentile_interval_ratio": [
+    0.5351625603753098,
+    0.9869469553755579
+  ],
+  "decision": "descriptive_only_pending_signed preregistration",
+  "geometric_mean_rbf_over_vanilla": 0.7442726953147512,
+  "margin_signed": false,
+  "n_pairs": 5,
+  "paired_log_ratio_values": {
+    "811": 0.054262779484422645,
+    "812": -0.9542281426347443,
+    "813": -0.32938557560339793,
+    "814": 0.06980929157290339,
+    "815": -0.3171972795321305
+  },
+  "primary_endpoint": "final checkpoint only, scored after all training; no intermediate checkpoint scores",
+  "proposed_noninferiority_margin": 1.1,
+  "scientific_accepted": false,
+  "scores_used_for_tuning": false,
+  "summary_device": "Tesla T4"
+}

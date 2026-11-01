@@ -1,0 +1,15 @@
+{
+  "id": "rodrimandub/af-pikans-dfg-daniel-cfg-20260930",
+  "title": "AF PIKANs DFG Daniel Cfg 20260930",
+  "code_file": "notebook.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "false",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

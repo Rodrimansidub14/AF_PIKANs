@@ -1,0 +1,21 @@
+{
+  "status": "failed_partial",
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "evidence_ready_for_human_gate": false,
+  "session_cap_seconds": 1386.837929017,
+  "elapsed_seconds": 0.367,
+  "planned_level_count": 3,
+  "completed_level_count": 0,
+  "environment_versions": {
+    "python": "3.12.13",
+    "dolfinx": "0.11.0",
+    "gmsh_binary": "4.15.2",
+    "petsc": "(3, 25, 5)",
+    "ufl": "2026.1.0"
+  },
+  "reference_qoi_errors_vs_featflow": null,
+  "two_finest_mesh_relative_changes": null,
+  "levels": [],
+  "error": "ModuleNotFoundError: No module named 'gmsh': dolfinx.io.gmsh.read_from_msh requires Gmsh."
+}

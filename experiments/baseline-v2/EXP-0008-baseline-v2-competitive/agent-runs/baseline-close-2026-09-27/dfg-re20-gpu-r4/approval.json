@@ -1,0 +1,9 @@
+{
+  "decision": "Continue the already-authorized DFG Re20 baseline with only seeds 303-305 after r3 training of seeds 301-302 completed on two Tesla T4 GPUs but the runtime failed while hashing a W&B symlink. This new exact-hash bundle contains only the safe artifact-inventory fix; model, PDE, sampling, optimizer, metrics, and time budget per seed are unchanged.",
+  "approved_by": "researcher (explicit instruction to execute the four GPU baselines, 2026-09-27)",
+  "bundle_id": "c349281ede3181b8984ee0de6bf95db8b7406a77e40daa07a4bcdc197ab93a2b",
+  "scope": "approved",
+  "hypothesis": "approved",
+  "code_surface": "approved",
+  "remote_execution": true
+}

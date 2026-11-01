@@ -1,0 +1,20 @@
+{
+  "provider_kernel": "rodrigomansilla/af-pikans-burgers-sobol-rad-exp006-v3",
+  "provider_state_at_last_observation": "CANCEL_ACKNOWLEDGED",
+  "download_state": "incomplete_timeout_after_1200_seconds",
+  "locally_complete_outputs": 4,
+  "locally_complete_jobs": [
+    1201,
+    1202,
+    1203,
+    1204
+  ],
+  "locally_complete_pairs": 0,
+  "sobol_outputs_available": 0,
+  "rad_complete_outputs": 4,
+  "rad_partial_job": 1205,
+  "required_jobs": 10,
+  "required_pairs": 5,
+  "comparison_status": "not calculable: Sobol outputs were not in the partial transfer",
+  "scientific_accepted": false
+}

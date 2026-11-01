@@ -1,0 +1,19 @@
+{
+  "allen_cahn/checkpoint-000008.pt": "e22c93019dcd4c3bd8dfc516ec6ed70834c874c744a9b52e0bc211d9f84d39d6",
+  "allen_cahn/diagnostic-000000.npz": "95f267c199575c4c863aeddb0a116cedc4b8ba3060339f81dd31c9b87fff4835",
+  "allen_cahn/diagnostic-000004.npz": "d24084d59dc6293de8f8fa81138f3855e57273e48768918f42b04aa3e74f5b9e",
+  "allen_cahn/diagnostic-000008.npz": "c535aa1c1b84be7f3ba4ff5245127276fc06ade52d5aa060e672794cefa9b837",
+  "allen_cahn/diagnostic_signals.json": "8de6a78ac680de06e8f0219b8ad93e8eee5a7b696df804d5bffdd07b753b037f",
+  "allen_cahn/energy.csv": "6f9b1c7e0fa6c4db4bd4e6781d460bb0a370a155c56d4093dcc9381ca5229431",
+  "allen_cahn/energy.html": "c0dfab8ce8aeaf784aa548bb7c06395d1aeb4be964b5c55d40481984f28a7e3f",
+  "allen_cahn/history.jsonl": "5b79997269058fb8fed316a87d1f66fd0e705b4e2080d0cbfca39d633cefd252",
+  "allen_cahn/pools.npz": "78f22b09edca0ad761d8b0cde2155817c3ae85f7476a2b628b489028a16ac837",
+  "allen_cahn/sampling_signals.json": "519fa515bcd6bd9d72e50d52718ab096dd34ca13d280d70b3e913704d184f22e",
+  "allen_cahn/signals.json": "8cdc21de9f41c89eb51398f0d4c640cf42d6035f092f67079a29e850be58c1e2",
+  "allen_cahn/training-losses-log.html": "d2889d957f05197e3c05b3c8350c08e2b450b38ab5b2576a63294b0425f5eb8d",
+  "allen_cahn/training-signals-log.html": "af1edd8e715404f7d2dc4f560ba0fa61b1d1d91537c054a7afc72f0d82b1fc43",
+  "allen_cahn/training_summary.json": "3cf823773b2b7f9e4e55573314654b82e685f13e3f346fe16ee78dfa7362ae68",
+  "allen_cahn/validation.html": "c9f9328414eb2b8a0632cd2ff09fd59141a66e66d1332bad6d21dfc3fbefbee9",
+  "allen_cahn/validation.json": "7904a4f5c1897205bc4c4d46bb3cb9b97f97e40ac194e735a6be8e6c766e079a",
+  "allen_cahn/validation.npz": "ac1e6d35193422be6b0680b887e251af26410e5072dcab235ae5bba9fe41aa61"
+}

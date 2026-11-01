@@ -1,0 +1,35 @@
+{
+  "seed": 3,
+  "status": "complete",
+  "recipe_complete": true,
+  "adam_steps": 40000,
+  "lbfgs_completed": true,
+  "field_l2_relative": 0.02081439085304737,
+  "mean_abs_residual": 0.002386013977229595,
+  "ic_max_abs_error": 1.1426158280647414e-07,
+  "bc_max_abs_error": 0.0,
+  "energy_initial": 2.0032669917773456,
+  "energy_final": 0.24018331167341506,
+  "energy_delta": -1.7630836801039305,
+  "energy_mean": 1.0820869701844718,
+  "elapsed_seconds": 684.963,
+  "active_gpu_seconds": 684.963,
+  "allocated_gpu_seconds": 1369.927,
+  "allocated_gpu_hours": 0.380535,
+  "cost_usd_estimate": null,
+  "cost_basis": "Kaggle does not expose monetary billing; GPU time is recorded.",
+  "stop_reason": null,
+  "phase": "lbfgs",
+  "phase_step": 53000,
+  "training": {
+    "adam_requested": 40000,
+    "adam_completed": 40000,
+    "lbfgs_requested": true,
+    "lbfgs_completed": true
+  },
+  "energy_definition": "integral_x [0.5*d*u_x^2 + 1.25*(u^2-1)^2] dx; trapezoid on official x raster",
+  "metrics_grid_shape": [
+    101,
+    201
+  ]
+}

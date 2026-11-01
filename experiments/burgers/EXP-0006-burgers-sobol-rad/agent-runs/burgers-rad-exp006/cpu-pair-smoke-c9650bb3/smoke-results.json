@@ -1,0 +1,28 @@
+[
+  {
+    "job": 201,
+    "comparison": {
+      "job_id": 201,
+      "arm": "sobol",
+      "paired_seed": 201
+    },
+    "steps": 8,
+    "validation_finite": true,
+    "log_figures_present": true,
+    "wandb_offline_files": 1,
+    "scientific_evidence": false
+  },
+  {
+    "job": 1201,
+    "comparison": {
+      "job_id": 1201,
+      "arm": "rad",
+      "paired_seed": 201
+    },
+    "steps": 8,
+    "validation_finite": true,
+    "log_figures_present": true,
+    "wandb_offline_files": 1,
+    "scientific_evidence": false
+  }
+]

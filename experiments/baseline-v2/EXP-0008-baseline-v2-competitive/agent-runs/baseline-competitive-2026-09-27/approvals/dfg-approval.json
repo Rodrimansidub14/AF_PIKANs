@@ -1,0 +1,18 @@
+{
+  "bundle_id": "dfg-re20-t4x2:3ae4b7c7940543795d81c200233c6ca9aa68d9a86e10f263bf0b074ed5314677:5d13d1c27ffe2d91561328bb34021f1ddf8b5181f0f5738b98f2e1b2d9e11250:4c02809600beb9b543d1bceffe2037ed7d05f5ff654d010b22984227b2cb35a9",
+  "approved_by": "researcher (explicit instruction in active conversation, 2026-09-27)",
+  "scope": "DFG paired T4x2 competitive baseline pilot",
+  "remote_execution": true,
+  "problem": "Navier-Stokes DFG 2D-1 Re=20",
+  "accelerator": "NvidiaTeslaT4 (2x T4)",
+  "max_session_seconds": 7200,
+  "global_campaign_cap_hours": 8,
+  "scientific_acceptance": false,
+  "scientific_preregistration_signed": false,
+  "field_relative_l2": null,
+  "component_hashes": {
+    "notebook": "3ae4b7c7940543795d81c200233c6ca9aa68d9a86e10f263bf0b074ed5314677",
+    "metadata": "5d13d1c27ffe2d91561328bb34021f1ddf8b5181f0f5738b98f2e1b2d9e11250",
+    "runner": "4c02809600beb9b543d1bceffe2037ed7d05f5ff654d010b22984227b2cb35a9"
+  }
+}

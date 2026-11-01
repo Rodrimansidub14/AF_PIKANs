@@ -64,3 +64,10 @@ debug.log
 /.agents/
 
 # ── Notebooks: se versionan sin salidas (ver .gitattributes y tools/nbstrip.py)
+
+# ── Copias de código y entornos dentro de campañas migradas desde var/ ────
+# Son instantáneas del código enviado a Kaggle; se regeneran con el script de bundle.
+/experiments/**/agent-runs/**/bundle/
+/experiments/**/agent-runs/**/vendor/
+/experiments/**/agent-runs/**/adapters/
+/docs/archive/agent-runs/**/node_modules/

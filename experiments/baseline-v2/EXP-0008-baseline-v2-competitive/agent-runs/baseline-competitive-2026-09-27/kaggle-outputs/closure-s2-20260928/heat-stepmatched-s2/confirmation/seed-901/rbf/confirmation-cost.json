@@ -1,0 +1,31 @@
+{
+  "allocated_gpu_seconds_estimate": 1.150947804000225,
+  "arm": "rbf",
+  "checkpoint": "/kaggle/working/heat-stepmatched-s2/runs/tier2/seed-901/rbf/checkpoint-final.pt",
+  "device": "Tesla T4",
+  "evaluation_gpu_seconds_estimate": 1.150947804000225,
+  "gpu_total_memory_bytes": 15636037632,
+  "grid": {
+    "nt": 256,
+    "nx": 512
+  },
+  "grid_id": "heat-confirmatory-512x256-v1",
+  "metrics": {
+    "bc_max_abs": 1.2246467991473532e-16,
+    "bc_rmse": 8.659560562354933e-17,
+    "energy_relative_l2": 1.7321071289263725e-06,
+    "field_max_abs": 4.527916037371654e-06,
+    "field_relative_l2": 2.2188066033388002e-06,
+    "field_rmse": 1.0355823665566591e-06,
+    "ic_max_abs": 0.0,
+    "ic_rmse": 0.0,
+    "pde_residual_rms": 0.0002142084847913174
+  },
+  "pool_sha256": "318cdd951dc76a19ce0be65dd170beaffdf40741d4e11301abda5a8b2fe18f51",
+  "protected_grid_generated_only_in_this_post_training_scorer": true,
+  "score_stage": "post-training confirmation only",
+  "scoring_used_for_training_or_selection": false,
+  "seed": 901,
+  "status": "DRAFT_UNVERIFIED",
+  "training_code_imported_protected_grid": false
+}

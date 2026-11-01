@@ -1,0 +1,59 @@
+{
+  "checkpoint": "checkpoint-000008.pt",
+  "energy": [
+    {
+      "energy": 2.003383699149178,
+      "time": 0.0,
+      "u_max": 0.053814857676340755,
+      "u_min": -1.0
+    },
+    {
+      "energy": 1.9768331475180738,
+      "time": 0.5,
+      "u_max": 0.0021130687869586953,
+      "u_min": -1.0
+    },
+    {
+      "energy": 1.9036493754874857,
+      "time": 1.0,
+      "u_max": -0.06771056760677369,
+      "u_min": -1.0
+    }
+  ],
+  "field_error_status": "locked_pending_reference",
+  "field_reference_used": false,
+  "final_test_used": false,
+  "heldout_point_count": 128,
+  "heldout_sampling": "independent_scrambled_sobol",
+  "metrics": {
+    "boundary_trace_max_abs_error": 0.0,
+    "energy_change": -0.09973432366169233,
+    "energy_final": 1.9036493754874857,
+    "energy_increase_count": 0,
+    "energy_initial": 2.003383699149178,
+    "energy_interval_count": 2,
+    "energy_relative_change": -0.04978293659075331,
+    "heldout_normalized_residual_abs_p95": 0.3036967914840283,
+    "heldout_normalized_residual_rmse": 0.1495440228288827,
+    "heldout_point_count": 128,
+    "heldout_residual_abs_max": 1.935943446631922,
+    "heldout_residual_abs_p50": 0.3323428583565464,
+    "heldout_residual_abs_p95": 1.822484445695654,
+    "heldout_residual_rmse_abs": 0.8974136809961253,
+    "initial_trace_max_abs_error": 5.551115123125783e-17,
+    "normalized_residual_mean": 0.1057218972781925
+  },
+  "model_id": "rbf_fixed",
+  "phase": "exploratory",
+  "problem": "allen_cahn_1d",
+  "residual_score": {
+    "direction": "minimize",
+    "n": 128,
+    "name": "normalized_residual_mean",
+    "reason": "ok",
+    "scope": "eval_grid:allen_cahn_1d",
+    "value": 0.1057218972781925
+  },
+  "scientific_accepted": false,
+  "step": 8
+}

@@ -1,0 +1,526 @@
+{
+  "confirmatory_scoring_only": true,
+  "dtype": "float32",
+  "featflow_reference": {
+    "drag_coefficient": 5.57953523384,
+    "lift_coefficient": 0.010618948146,
+    "pressure_difference": 0.11752016697
+  },
+  "featflow_source": "https://wwwold.mathematik.tu-dortmund.de/~featflow/en/benchmarks/cfdbenchmarking/flow/dfg_benchmark1_re20.html",
+  "field_reference_status": "missing_converged_FEM_field",
+  "field_relative_l2": null,
+  "gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "internet_enabled": false,
+  "paired_scoring": "two endpoints concurrently, one per visible T4",
+  "pool_sha256_by_seed": {
+    "501": "34cf429bd05508949b76ae068129347fb9e29817e816ef3f1c2fccfb625fce25",
+    "502": "ea3b4fd544f998d17b438243aebdffa3448d412297bc4cf3fca452550429c2bb",
+    "503": "4e6bc94d82431dc79b23abff2ea4a25701158e48b67f996e5e72ef314e15d389",
+    "504": "0d4dde2d82c7ad4ec45ee5e7003097a84dd08fc4f2ee5be400d72bf13fca6b7b",
+    "505": "c05a0b6b3c62f7fee7c6cd0c7982df522bad1984bfa4759398d9d6362dad885b"
+  },
+  "qoi_force_convention": "sigma=nu*grad(u)-pI; traction sigma*n with radial-outward cylinder normal",
+  "scientific_accepted": false,
+  "score_soft_deadline_seconds_from_first_code_cell": 1580.0,
+  "session_quota_cap_seconds_including_setup": 1800.0,
+  "source_campaign_root": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-re20-competitive-pilot-t4x2/dfg-re20-t4x2/campaign",
+  "source_campaign_wall_seconds": 6040.349847953001,
+  "source_hardware": {
+    "cuda": "12.8",
+    "device": "Tesla T4",
+    "python": "3.12.13",
+    "status": "DRAFT_UNVERIFIED",
+    "torch": "2.10.0+cu128"
+  },
+  "source_kernel": "rodrimandub/af-pikans-dfg-re20-competitive-pilot-t4x2",
+  "source_runner_sha256": "4c02809600beb9b543d1bceffe2037ed7d05f5ff654d010b22984227b2cb35a9",
+  "source_session_summary": [
+    {
+      "path": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-re20-competitive-pilot-t4x2/dfg-re20-t4x2/session_summary.json",
+      "summary": {
+        "claim_limit": "No directly matching published DFG Re=20 PINN SOTA was identified; QoI comparison only.",
+        "execution_cap_seconds": 6900.0,
+        "featflow_qois": {
+          "Cd": 5.57953523384,
+          "Cl": 0.010618948146,
+          "delta_p": 0.11752016697
+        },
+        "field_reference_status": "missing_converged_FEM_field",
+        "field_relative_l2": null,
+        "notebook_cell_wall_seconds": 6055.347175893,
+        "output_directory": "/kaggle/working/dfg-re20-t4x2/campaign",
+        "runner_log": "/kaggle/working/dfg-re20-t4x2/runner.log",
+        "runner_return_code": 0,
+        "runner_sha256": "4c02809600beb9b543d1bceffe2037ed7d05f5ff654d010b22984227b2cb35a9",
+        "session_quota_cap_seconds": 7200.0,
+        "status": "complete",
+        "visible_gpus": [
+          "Tesla T4",
+          "Tesla T4"
+        ]
+      }
+    }
+  ],
+  "source_status_by_endpoint": {
+    "DFG-RBF-PIKAN|501": "score_budget_exhausted",
+    "DFG-RBF-PIKAN|502": "score_budget_exhausted",
+    "DFG-RBF-PIKAN|503": "score_budget_exhausted",
+    "DFG-RBF-PIKAN|504": "score_budget_exhausted",
+    "DFG-RBF-PIKAN|505": "score_budget_exhausted",
+    "DFG-Tanh-MLP|501": "score_budget_exhausted",
+    "DFG-Tanh-MLP|502": "score_budget_exhausted",
+    "DFG-Tanh-MLP|503": "score_budget_exhausted",
+    "DFG-Tanh-MLP|504": "score_budget_exhausted",
+    "DFG-Tanh-MLP|505": "score_budget_exhausted"
+  },
+  "status": "score_only_running",
+  "training_history_last_record": {
+    "DFG-RBF-PIKAN|501": {
+      "continuity": 0.0010248117614537477,
+      "cylinder": 0.00020041214884258807,
+      "elapsed_gpu_wall_seconds": 1193.9032372699999,
+      "inlet": 0.00022775055549573153,
+      "lower_wall": 0.00017023712280206382,
+      "momentum_x": 0.0005654101260006428,
+      "momentum_y": 0.0005261582555249333,
+      "outlet": 2.6706036805990152e-05,
+      "step": 15000,
+      "total_loss": 0.002819517394527793,
+      "upper_wall": 7.803121116012335e-05
+    },
+    "DFG-RBF-PIKAN|502": {
+      "continuity": 0.0015047525521367788,
+      "cylinder": 0.0004298480344004929,
+      "elapsed_gpu_wall_seconds": 1196.6096236489998,
+      "inlet": 0.0002508370380382985,
+      "lower_wall": 0.0002942797145806253,
+      "momentum_x": 0.0005328793195076287,
+      "momentum_y": 0.0005562387523241341,
+      "outlet": 5.995929313939996e-05,
+      "step": 14600,
+      "total_loss": 0.003955251071602106,
+      "upper_wall": 0.0003264564147684723
+    },
+    "DFG-RBF-PIKAN|503": {
+      "continuity": 0.0011902661062777042,
+      "cylinder": 0.0006358810933306813,
+      "elapsed_gpu_wall_seconds": 1192.0344437920003,
+      "inlet": 0.00017957776435650885,
+      "lower_wall": 0.00027855500229634345,
+      "momentum_x": 0.0005921100964769721,
+      "momentum_y": 0.0006753967609256506,
+      "outlet": 1.267007155547617e-05,
+      "step": 14200,
+      "total_loss": 0.0037178341299295425,
+      "upper_wall": 0.000153377273818478
+    },
+    "DFG-RBF-PIKAN|504": {
+      "continuity": 0.0010955797042697668,
+      "cylinder": 0.0005675668362528086,
+      "elapsed_gpu_wall_seconds": 1196.064919676,
+      "inlet": 0.0006682768580503762,
+      "lower_wall": 0.00040531306876800954,
+      "momentum_x": 0.0006666482076980174,
+      "momentum_y": 0.00035898579517379403,
+      "outlet": 2.5950024792109616e-05,
+      "step": 14900,
+      "total_loss": 0.0040347701869904995,
+      "upper_wall": 0.0002464498393237591
+    },
+    "DFG-RBF-PIKAN|505": {
+      "continuity": 0.0011940754484385252,
+      "cylinder": 0.0006542148184962571,
+      "elapsed_gpu_wall_seconds": 1198.7212647779997,
+      "inlet": 0.00015898182755336165,
+      "lower_wall": 0.00024853728245943785,
+      "momentum_x": 0.0008751442073844373,
+      "momentum_y": 0.0004102196544408798,
+      "outlet": 4.927645932184532e-05,
+      "step": 15000,
+      "total_loss": 0.003964859992265701,
+      "upper_wall": 0.00037441059248521924
+    },
+    "DFG-Tanh-MLP|501": {
+      "continuity": 0.0015706840204074979,
+      "cylinder": 0.0003156219609081745,
+      "elapsed_gpu_wall_seconds": 1199.394693123,
+      "inlet": 9.836952085606754e-05,
+      "lower_wall": 0.00014652381651103497,
+      "momentum_x": 0.000485538097564131,
+      "momentum_y": 0.0002759808558039367,
+      "outlet": 3.3099331631092355e-06,
+      "step": 30100,
+      "total_loss": 0.0030178690794855356,
+      "upper_wall": 0.00012184079241706058
+    },
+    "DFG-Tanh-MLP|502": {
+      "continuity": 0.0005382625968195498,
+      "cylinder": 0.00018057211127597839,
+      "elapsed_gpu_wall_seconds": 1198.630555685,
+      "inlet": 5.342344593373127e-05,
+      "lower_wall": 6.20907885604538e-05,
+      "momentum_x": 0.0002895039797294885,
+      "momentum_y": 0.00016983914247248322,
+      "outlet": 1.1698193702613935e-06,
+      "step": 29100,
+      "total_loss": 0.0013343686005100608,
+      "upper_wall": 3.9506747270934284e-05
+    },
+    "DFG-Tanh-MLP|503": {
+      "continuity": 0.010464106686413288,
+      "cylinder": 0.0010283327428624034,
+      "elapsed_gpu_wall_seconds": 1198.0263977980003,
+      "inlet": 0.0021362551487982273,
+      "lower_wall": 0.00045010290341451764,
+      "momentum_x": 0.002736486494541168,
+      "momentum_y": 0.001500711776316166,
+      "outlet": 1.9780954971793108e-06,
+      "step": 29200,
+      "total_loss": 0.018837619572877884,
+      "upper_wall": 0.0005196462152525783
+    },
+    "DFG-Tanh-MLP|504": {
+      "continuity": 0.0003515704011078924,
+      "cylinder": 0.0005688223754987121,
+      "elapsed_gpu_wall_seconds": 1198.1710564739997,
+      "inlet": 7.436172018060461e-05,
+      "lower_wall": 0.00012391575728543103,
+      "momentum_x": 0.00016168318688869476,
+      "momentum_y": 0.00011363036173861474,
+      "outlet": 5.914079793001292e-06,
+      "step": 29600,
+      "total_loss": 0.001556759001687169,
+      "upper_wall": 0.00015686103142797947
+    },
+    "DFG-Tanh-MLP|505": {
+      "continuity": 0.0006516840076074004,
+      "cylinder": 0.0008687990484759212,
+      "elapsed_gpu_wall_seconds": 1197.1405982119995,
+      "inlet": 6.510112143587321e-05,
+      "lower_wall": 6.652675801888108e-05,
+      "momentum_x": 0.00028901384212076664,
+      "momentum_y": 0.00017929603927768767,
+      "outlet": 1.8722225831879769e-06,
+      "step": 28900,
+      "total_loss": 0.0023888859432190657,
+      "upper_wall": 0.0002665929787326604
+    }
+  },
+  "training_repeated": false,
+  "training_summaries": {
+    "DFG-RBF-PIKAN|501": {
+      "arm": "DFG-RBF-PIKAN",
+      "cap_overrun_seconds": 0.07118660500009355,
+      "device": "Tesla T4",
+      "dtype": "float32",
+      "elapsed_gpu_wall_seconds": 1200.071186605,
+      "field_reference_status": "missing_converged_FEM_field",
+      "field_relative_l2": null,
+      "model_id": "dfg_rbf_fixed_2_16_16_3",
+      "parameters": 4032,
+      "pool_provenance": {
+        "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+        "heldout": {
+          "accepted_before_truncation": 16241,
+          "candidate_count": 16384,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 900502
+        },
+        "interior": {
+          "accepted_before_truncation": 32485,
+          "candidate_count": 32768,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 501
+        }
+      },
+      "scientific_accepted": false,
+      "seed": 501,
+      "smoke_only": false,
+      "status": "DRAFT_UNVERIFIED",
+      "steps": 15078
+    },
+    "DFG-RBF-PIKAN|502": {
+      "arm": "DFG-RBF-PIKAN",
+      "cap_overrun_seconds": 0.02944614299985915,
+      "device": "Tesla T4",
+      "dtype": "float32",
+      "elapsed_gpu_wall_seconds": 1200.0294461429999,
+      "field_reference_status": "missing_converged_FEM_field",
+      "field_relative_l2": null,
+      "model_id": "dfg_rbf_fixed_2_16_16_3",
+      "parameters": 4032,
+      "pool_provenance": {
+        "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+        "heldout": {
+          "accepted_before_truncation": 16244,
+          "candidate_count": 16384,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 900503
+        },
+        "interior": {
+          "accepted_before_truncation": 32486,
+          "candidate_count": 32768,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 502
+        }
+      },
+      "scientific_accepted": false,
+      "seed": 502,
+      "smoke_only": false,
+      "status": "DRAFT_UNVERIFIED",
+      "steps": 14643
+    },
+    "DFG-RBF-PIKAN|503": {
+      "arm": "DFG-RBF-PIKAN",
+      "cap_overrun_seconds": 0.007957659000112471,
+      "device": "Tesla T4",
+      "dtype": "float32",
+      "elapsed_gpu_wall_seconds": 1200.007957659,
+      "field_reference_status": "missing_converged_FEM_field",
+      "field_relative_l2": null,
+      "model_id": "dfg_rbf_fixed_2_16_16_3",
+      "parameters": 4032,
+      "pool_provenance": {
+        "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+        "heldout": {
+          "accepted_before_truncation": 16242,
+          "candidate_count": 16384,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 900504
+        },
+        "interior": {
+          "accepted_before_truncation": 32484,
+          "candidate_count": 32768,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 503
+        }
+      },
+      "scientific_accepted": false,
+      "seed": 503,
+      "smoke_only": false,
+      "status": "DRAFT_UNVERIFIED",
+      "steps": 14297
+    },
+    "DFG-RBF-PIKAN|504": {
+      "arm": "DFG-RBF-PIKAN",
+      "cap_overrun_seconds": 0.01692525000044043,
+      "device": "Tesla T4",
+      "dtype": "float32",
+      "elapsed_gpu_wall_seconds": 1200.0169252500004,
+      "field_reference_status": "missing_converged_FEM_field",
+      "field_relative_l2": null,
+      "model_id": "dfg_rbf_fixed_2_16_16_3",
+      "parameters": 4032,
+      "pool_provenance": {
+        "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+        "heldout": {
+          "accepted_before_truncation": 16241,
+          "candidate_count": 16384,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 900505
+        },
+        "interior": {
+          "accepted_before_truncation": 32482,
+          "candidate_count": 32768,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 504
+        }
+      },
+      "scientific_accepted": false,
+      "seed": 504,
+      "smoke_only": false,
+      "status": "DRAFT_UNVERIFIED",
+      "steps": 14950
+    },
+    "DFG-RBF-PIKAN|505": {
+      "arm": "DFG-RBF-PIKAN",
+      "cap_overrun_seconds": 0.049294395000288205,
+      "device": "Tesla T4",
+      "dtype": "float32",
+      "elapsed_gpu_wall_seconds": 1200.0492943950003,
+      "field_reference_status": "missing_converged_FEM_field",
+      "field_relative_l2": null,
+      "model_id": "dfg_rbf_fixed_2_16_16_3",
+      "parameters": 4032,
+      "pool_provenance": {
+        "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+        "heldout": {
+          "accepted_before_truncation": 16241,
+          "candidate_count": 16384,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 900506
+        },
+        "interior": {
+          "accepted_before_truncation": 32485,
+          "candidate_count": 32768,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 505
+        }
+      },
+      "scientific_accepted": false,
+      "seed": 505,
+      "smoke_only": false,
+      "status": "DRAFT_UNVERIFIED",
+      "steps": 15017
+    },
+    "DFG-Tanh-MLP|501": {
+      "arm": "DFG-Tanh-MLP",
+      "cap_overrun_seconds": 0.024701542999991943,
+      "device": "Tesla T4",
+      "dtype": "float32",
+      "elapsed_gpu_wall_seconds": 1200.024701543,
+      "field_reference_status": "missing_converged_FEM_field",
+      "field_relative_l2": null,
+      "model_id": "dfg_tanh_mlp_5x64",
+      "parameters": 17027,
+      "pool_provenance": {
+        "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+        "heldout": {
+          "accepted_before_truncation": 16241,
+          "candidate_count": 16384,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 900502
+        },
+        "interior": {
+          "accepted_before_truncation": 32485,
+          "candidate_count": 32768,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 501
+        }
+      },
+      "scientific_accepted": false,
+      "seed": 501,
+      "smoke_only": false,
+      "status": "DRAFT_UNVERIFIED",
+      "steps": 30116
+    },
+    "DFG-Tanh-MLP|502": {
+      "arm": "DFG-Tanh-MLP",
+      "cap_overrun_seconds": 0.02506842800016784,
+      "device": "Tesla T4",
+      "dtype": "float32",
+      "elapsed_gpu_wall_seconds": 1200.0250684280002,
+      "field_reference_status": "missing_converged_FEM_field",
+      "field_relative_l2": null,
+      "model_id": "dfg_tanh_mlp_5x64",
+      "parameters": 17027,
+      "pool_provenance": {
+        "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+        "heldout": {
+          "accepted_before_truncation": 16244,
+          "candidate_count": 16384,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 900503
+        },
+        "interior": {
+          "accepted_before_truncation": 32486,
+          "candidate_count": 32768,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 502
+        }
+      },
+      "scientific_accepted": false,
+      "seed": 502,
+      "smoke_only": false,
+      "status": "DRAFT_UNVERIFIED",
+      "steps": 29135
+    },
+    "DFG-Tanh-MLP|503": {
+      "arm": "DFG-Tanh-MLP",
+      "cap_overrun_seconds": 0.03734896400010257,
+      "device": "Tesla T4",
+      "dtype": "float32",
+      "elapsed_gpu_wall_seconds": 1200.037348964,
+      "field_reference_status": "missing_converged_FEM_field",
+      "field_relative_l2": null,
+      "model_id": "dfg_tanh_mlp_5x64",
+      "parameters": 17027,
+      "pool_provenance": {
+        "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+        "heldout": {
+          "accepted_before_truncation": 16242,
+          "candidate_count": 16384,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 900504
+        },
+        "interior": {
+          "accepted_before_truncation": 32484,
+          "candidate_count": 32768,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 503
+        }
+      },
+      "scientific_accepted": false,
+      "seed": 503,
+      "smoke_only": false,
+      "status": "DRAFT_UNVERIFIED",
+      "steps": 29251
+    },
+    "DFG-Tanh-MLP|504": {
+      "arm": "DFG-Tanh-MLP",
+      "cap_overrun_seconds": 0.03477411400035635,
+      "device": "Tesla T4",
+      "dtype": "float32",
+      "elapsed_gpu_wall_seconds": 1200.0347741140004,
+      "field_reference_status": "missing_converged_FEM_field",
+      "field_relative_l2": null,
+      "model_id": "dfg_tanh_mlp_5x64",
+      "parameters": 17027,
+      "pool_provenance": {
+        "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+        "heldout": {
+          "accepted_before_truncation": 16241,
+          "candidate_count": 16384,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 900505
+        },
+        "interior": {
+          "accepted_before_truncation": 32482,
+          "candidate_count": 32768,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 504
+        }
+      },
+      "scientific_accepted": false,
+      "seed": 504,
+      "smoke_only": false,
+      "status": "DRAFT_UNVERIFIED",
+      "steps": 29646
+    },
+    "DFG-Tanh-MLP|505": {
+      "arm": "DFG-Tanh-MLP",
+      "cap_overrun_seconds": 0.03019053099978919,
+      "device": "Tesla T4",
+      "dtype": "float32",
+      "elapsed_gpu_wall_seconds": 1200.0301905309998,
+      "field_reference_status": "missing_converged_FEM_field",
+      "field_relative_l2": null,
+      "model_id": "dfg_tanh_mlp_5x64",
+      "parameters": 17027,
+      "pool_provenance": {
+        "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+        "heldout": {
+          "accepted_before_truncation": 16241,
+          "candidate_count": 16384,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 900506
+        },
+        "interior": {
+          "accepted_before_truncation": 32485,
+          "candidate_count": 32768,
+          "sampling": "scrambled Sobol with rejection of closed cylinder",
+          "seed": 505
+        }
+      },
+      "scientific_accepted": false,
+      "seed": 505,
+      "smoke_only": false,
+      "status": "DRAFT_UNVERIFIED",
+      "steps": 28972
+    }
+  },
+  "watchdog_seconds_from_first_code_cell": 1680.0
+}

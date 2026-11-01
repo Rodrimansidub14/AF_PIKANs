@@ -1,0 +1,22 @@
+{
+  "run_count": 3,
+  "runs": [
+    {
+      "exit_code": 0,
+      "run": "offline-run-20260927_143147-8lc82k8d",
+      "status": "synced"
+    },
+    {
+      "exit_code": 0,
+      "run": "offline-run-20260927_143147-pof8ds20",
+      "status": "synced"
+    },
+    {
+      "exit_code": 0,
+      "run": "offline-run-20260927_145203-nymszcff",
+      "status": "synced"
+    }
+  ],
+  "status": "synced",
+  "synced_count": 3
+}

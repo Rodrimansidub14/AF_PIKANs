@@ -1,0 +1,13 @@
+# Hipótesis y contrato Burgers pareado
+
+**Hipótesis/preregistración no firmada, EXP-0007; campaña confirmatoria incompleta.** El presupuesto y la ejecución remota fueron autorizados en esta tarea, pero no existe aceptación científica. Las versiones remotas 1–5 no produjeron resultados confirmatorios; v5 alcanzó el smoke y excedió su cap de pared antes de la fase confirmatoria. Cinco pares nuevos 811–815 porque la comparación de hashes de seeds históricas 201–205 no se realizó.
+
+La instancia es (u_t+u u_x-(0.01/\pi)u_{xx}=0), (x\in[-1,1]), (t\in[0,1]), (u(x,0)=-\sin(\pi x)), Dirichlet cero. Cada par genera una sola pool Sobol scrambled: 8,192 interiores, 1,024 iniciales y 512 por frontera. Se archivan matrices y hashes. Se registra la versión SciPy preinstalada; no se instala ningún paquete desde el notebook.
+
+Los brazos RBF fijo y Vanilla PINNacle MLP tanh 5×100 usan float64, Adam (10^{-3}), 20,000 updates como máximo y 900 GPU-s por brazo. Vanilla no usa L-BFGS. El batch size por condición es 1,024; por la ruta Torch-only, las filas se extraen con reemplazo desde las pools, una desviación del data loader original que se debe revisar antes de afirmar réplica literal. Checkpoints temporales en 120/300/600/900 GPU-s y checkpoint final.
+
+**Stop rule:** una seed termina por el primer límite entre 20,000 updates y 900 segundos. No hay stop por score, reemplazo de semillas ni selección de checkpoints. Un hash distinto, valor no finito o artefacto ausente invalida el par; con menos de cinco pares no hay conclusión confirmatoria. Smoke de 60 segundos por brazo (120 GPU-s planeados; 240 s de cap de pared), sin scoring. Los scores comunes Cole–Hopf/Gauss–Hermite 128 sobre 1025×129 solo se calculan después de que terminen todos los entrenamientos.
+
+El margen de 10% se propone sin firma: si se aprueba previamente, la no inferioridad se falsaría si el límite inferior unilateral del 95% de la razón geométrica (L2_{RBF}/L2_{Vanilla}) excede 1.10. El resultado Vanilla PINNacle publicado (1.45\times10^{-2}\pm1.59\times10^{-3}) se mantiene como contexto porque usa referencia FEM discretizada, no la referencia Cole–Hopf AF.
+
+**Presupuesto de sesión:** 2 horas de cuota Kaggle para este problema; cinco parejas, dos T4, dos parejas concurrentes. Desglose de peor caso en `budget.json`: 300 s de startup previo a la primera celda, 300 setup, 240 smoke, 5,760 training/proceso (tres waves), 450 scoring final (cinco waves con los dos T4 en paralelo), 90 escritura de artefactos y 60 cierre = 7,200 s. El watchdog interno es 6,900 s desde la primera celda; los GPU-s son caps y allowances, no rendimiento medido.

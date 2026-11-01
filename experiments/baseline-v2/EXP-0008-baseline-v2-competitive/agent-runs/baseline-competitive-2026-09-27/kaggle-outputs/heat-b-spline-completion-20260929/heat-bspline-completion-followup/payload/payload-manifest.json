@@ -1,0 +1,37 @@
+{
+  "arms": [
+    "H-RBF",
+    "H-BS",
+    "H-FNN (Torch port of tutorial architecture/recipe)"
+  ],
+  "budget": {
+    "accelerator": "NvidiaTeslaT4 (T4x2)",
+    "aggregate_device_seconds_cap": 14400,
+    "session_quota_cap_hours": 2
+  },
+  "cohort": {
+    "paired_tier2": [
+      901,
+      902,
+      903,
+      904,
+      905
+    ],
+    "smoke": [
+      900
+    ]
+  },
+  "evaluation": "development 257x129 CUDA score per Tier2 run; after all training, separate CUDA-only confirmation pass on generated 512x256 grid",
+  "files": {
+    "af_sciml_model.py": "934687a265c2b2cae0c375cc30365e2d52e0b1d3edfff7cd977db0b59e4d7767",
+    "heat_common_eval.py": "5a2216d4a703869c9696af9ca3cb374b8808d0eb6f1bc6d85eac0f231661233b",
+    "heat_comparison_runner.py": "50bc658284e27c31a14e958dcf03671f757ed0b443657599e779f13ae1230fea",
+    "heat_final_eval.py": "f1e822407cbbae7fee30923908a83fe716d856a9c6c6b3381fb10ab1575d50af",
+    "heat_stepmatched_runner.py": "ddd40c596042014f32439cb74dc31b467c20a74d16d9f0a29df2c014cad3f1f4"
+  },
+  "model_snapshot": "af_sciml_model.py copied verbatim from src/research_pipeline/sciml/model.py",
+  "pool": "Torch scrambled SobolEngine; interior 4096, IC 1024, boundaries 512 each; same NPZ across arms per seed",
+  "runtime_dependencies": "Kaggle-preinstalled Torch and NumPy only; no pip or network",
+  "status": "PENDING_HUMAN_SIGNATURE",
+  "training": "float64; exact saved v4 Sobol pools; 20,000 Adam updates plus DeepXDE 1.12.2 PyTorch L-BFGS defaults; RBF and B-spline only"
+}

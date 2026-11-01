@@ -1,0 +1,99 @@
+{
+  "generated": "2026-09-10",
+  "scope": "Fiziko/MetaPost physical problem illustrations and conceptual diagrams",
+  "library": {
+    "name": "Fiziko",
+    "source": "../../teoria-visual/fiziko/upstream/fiziko.mp",
+    "commit": "54a63dba8e6700a5e70d3508838edebcbf0f45fe",
+    "license": "GPL-3.0",
+    "capabilities_used": [
+      "variable-width tubes",
+      "shaded spheres",
+      "fine hatching for surfaces"
+    ]
+  },
+  "external_references": [
+    {
+      "url": "https://github.com/jemmybutton/fiziko",
+      "observed": "The project describes a MetaPost library for black-and-white physics textbook illustrations, including variable-width lines, shaded spheres and tubes."
+    },
+    {
+      "url": "https://openai.com/index/navier-stokes-solution/",
+      "observed": "The page describes a snapshot of local incompressible motion with faster/slower rotation marks and inward-spiraling, axially stretching trajectories; no such solution visual is asserted here."
+    }
+  ],
+  "figures": [
+    {
+      "id": "P1",
+      "source": "p1-problem.mp",
+      "pdf": "p1-problem.pdf",
+      "png": "p1-problem.png",
+      "caption": "Placa cuadrada de Poisson: fuente distribuida y u=0 en los cuatro bordes.",
+      "references": ["../../../../capitulos/metodologia/01-problemas.tex", "../../../../capitulos/marco/02-pinn.tex"],
+      "status": "physical problem schematic; not a numerical solution"
+    },
+    {
+      "id": "P2",
+      "source": "p2-problem.mp",
+      "pdf": "p2-problem.pdf",
+      "png": "p2-problem.png",
+      "caption": "Instantanea espacial del medio de Burgers: frente de difusion, transporte no lineal y trazas exactas.",
+      "references": ["../../../../capitulos/metodologia/01-problemas.tex"],
+      "status": "spatial problem schematic; no time axis or solution trajectory"
+    },
+    {
+      "id": "P3",
+      "source": "p3-problem.mp",
+      "pdf": "p3-problem.pdf",
+      "png": "p3-problem.png",
+      "caption": "Allen--Cahn conceptual: fases -1 y +1, zona de transicion y reaccion/difusion.",
+      "references": ["../../../../capitulos/metodologia/01-problemas.tex"],
+      "status": "conceptual state schematic; not a solution"
+    },
+    {
+      "id": "P4",
+      "source": "p4-problem.mp",
+      "pdf": "p4-problem.pdf",
+      "png": "p4-problem.png",
+      "caption": "Navier--Stokes: flujo DFG alrededor de un cilindro, perfil de entrada prescrito y Re=20.",
+      "references": ["../../../../capitulos/metodologia/01-problemas.tex"],
+      "status": "geometry and boundary-condition schematic; no streamlines or solved flow field"
+    },
+    {
+      "id": "P5",
+      "source": "p5-problem.mp",
+      "pdf": "p5-problem.pdf",
+      "png": "p5-problem.png",
+      "caption": "Bimorfo PVDF: dos capas adheridas, campo electrico hacia abajo, electrodos 100/0 V, empotramiento izquierdo y aislamiento D.n=0.",
+      "references": ["../../../../capitulos/metodologia/01-problemas.tex"],
+      "status": "straight physical schematic; no deformation or magnification claim"
+    },
+    {
+      "id": "ARCH",
+      "source": "architecture.mp",
+      "pdf": "architecture.pdf",
+      "png": "architecture.png",
+      "caption": "Arquitecturas conceptuales MLP y KAN: pesos/activacion nodal frente a funciones aprendibles en aristas y suma nodal.",
+      "references": ["../../../../capitulos/marco/02-pinn.tex", "../../../../capitulos/marco/03-kan.tex"],
+      "status": "conceptual architecture diagram"
+    },
+    {
+      "id": "HEAT",
+      "source": "heat-rod.mp",
+      "pdf": "heat-rod.pdf",
+      "png": "heat-rod.png",
+      "caption": "Varilla introductoria de difusion: extremo caliente, extremo frio y flujo q=-k dT/dx.",
+      "references": ["../../../../capitulos/metodologia/01-problemas.tex"],
+      "status": "introductory operator schematic; explicitly not Burgers"
+    },
+    {
+      "id": "PINN-LOSS",
+      "source": "pinn-loss.mp",
+      "pdf": "pinn-loss.pdf",
+      "png": "pinn-loss.png",
+      "caption": "Perdida PINN conceptual: residuo PDE, frontera y datos se agregan con pesos lambda.",
+      "references": ["../../../../capitulos/marco/02-pinn.tex"],
+      "status": "conceptual loss diagram"
+    }
+  ]
+}

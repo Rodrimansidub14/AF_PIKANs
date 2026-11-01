@@ -1,0 +1,23 @@
+{
+  "checkpoint": "checkpoint-000003.pt",
+  "final_test_used": false,
+  "grid": {
+    "kind": "fixed_uniform_tensor",
+    "nt": 65,
+    "nx": 129
+  },
+  "metrics": {
+    "boundary_max_abs_error": 7.682113372783629e-17,
+    "field_max_abs": 0.6022855687783613,
+    "field_p95_abs": 0.5239532585740788,
+    "field_relative_l2": 0.5963770792015007,
+    "field_rmse_abs": 0.2785366032764034,
+    "initial_max_abs_error": 1.1102230246251565e-16,
+    "residual_max_abs": 1.2169607713755404,
+    "residual_p95_abs": 0.9560841814085091,
+    "residual_rmse_abs": 0.6768384463582263
+  },
+  "problem": "heat",
+  "scientific_accepted": false,
+  "step": 3
+}

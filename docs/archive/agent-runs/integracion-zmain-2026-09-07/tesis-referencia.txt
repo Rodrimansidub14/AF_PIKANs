@@ -1,0 +1,3693 @@
+PAGINA_PDF 1
+UNIVERSIDAD DEL V ALLE DE GUATEMALA
+Facultad de Ingeniería
+Desarrollo de una herramienta de simulación para modelar el
+efecto piezoeléctrico utilizandoPINNs
+Trabajo de graduación presentado por José Daniel González Carrillo
+para optar al grado académico de Licenciado en Ingeniería en Ciencias
+de la Computación y Tecnologías de la Información
+Guatemala,
+2024
+
+PAGINA_PDF 2
+
+
+PAGINA_PDF 3
+
+
+PAGINA_PDF 4
+
+
+PAGINA_PDF 5
+UNIVERSIDAD DEL V ALLE DE GUATEMALA
+Facultad de Ingeniería
+Desarrollo de una herramienta de simulación para modelar el
+efecto piezoeléctrico utilizandoPINNs
+Trabajo de graduación presentado por José Daniel González Carrillo
+para optar al grado académico de Licenciado en Ingeniería en Ciencias
+de la Computación y Tecnologías de la Información
+Guatemala,
+2024
+
+PAGINA_PDF 6
+
+
+PAGINA_PDF 7
+Vo.Bo.:
+(f)
+PhD. Luke Daniel Shaw
+Tribunal Examinador:
+(f)
+PhD. Guadalupe Barrios
+(f)
+PhD. Gabriel Barrientos
+(f)
+MSc. Luis Furlán
+Fecha de aprobación: Guatemala, 4 de diciembre de 2024.
+
+
+PAGINA_PDF 8
+
+
+PAGINA_PDF 9
+Dedicatoria
+Dedico este proyecto a Dios, porque sin su bendición no hubiera podido realizar absolu-
+tamente nada de lo que he plasmado aquí. Porque siempre me dio su mano en los momentos
+más difíciles y me iluminó cuando más lo necesité.
+A mi mamá, porque es la que siempre ha estado a mi lado, mi apoyo más grande. Ella
+siempre se ha preocupado porque yo salga adelante, me ha inspirado a superarme y ha
+sido un gran ejemplo a seguir. Es la que me ha dado su hombro en los momentos más
+difíciles y su sonrisa más brillante en las alegrías más grandes. Soportó mi mal humor y mis
+frustraciones, y siempre estuvo ahí para darme un abrazo. Es incondicional para mí y su
+sabiduría me ayuda a dilucidar el camino siempre que lo necesito. Mi gran amiga.
+A mi papá, porque ve un potencial en mí que no logro ver. Porque siempre me empuja
+a dar lo mejor de mí. Porque ha sudado para siempre darme las mejores oportunidades y
+porque ha sido un ejemplo de trabajo duro. Porque siempre ha estado ahí para darme un
+consejo cuando lo necesito y más que un padre, ha sido un amigo. Porque se ha emocionado
+tanto o más que yo por mis logros y siempre está orgulloso de mí. Por estar presente.
+A mi novia Natalia, porque en este último año ha sido fuente de mis alegrías más grandes.
+Porque definitivamente, ha hecho este camino más suave. Por estar ahí para apoyarme en
+mis días, dándome todo su amor y por recordarme de lo que soy capaz. Porque ha volado a
+mi lado y ha quedado marcada en mi corazón.
+A mi perro Charlie, porque la suavidad de su amor ha aliviado la carga y el estrés de los
+días. Porque me ha enseñado a tomarme la vida con más alegría y a disfrutar con intensidad
+todos los momentos.
+v
+
+PAGINA_PDF 10
+
+
+PAGINA_PDF 11
+Agradecimientos
+En primer lugar, agradezco a mi supervisor, Ph.D. Gabriel Barrientos. Él fue el que me
+propuso el desarrollo de este proyecto tan retador. Siempre me instó a empujar mis límites y
+me acompañó en todo el proceso. Fue un verdadero guía, brindándome mucha información
+e ideas valiosas, sin las cuales definitivamente no hubiera podido completar este trabajo.
+Siempre estuvo para responder mis preguntas, hasta las más obvias y me brindó su tiempo
+cuando yo lo necesité. Su apoyo y seguimiento del proyecto fueron cruciales.
+También agradezco a mi asesor, M.Sc. Luke Shaw, quien me ayudó a desentrañar los hilos
+más complejos de este trabajo, especialmente en la parte matemática y de programación.
+Con mucha paciencia siempre leyó mi trabajo y me hizo pulirlo, así yo ya no quisiera. Él
+tomó la responsabilidad de asesorarme, a pesar de que tenía que entregar su tesis de Ph.D.
+Fue una gran ayuda para completar el proyecto.
+Finalmente, agradezco al Centro de Estudios en Informática Aplicada (CEIA) de la
+Universidad del Valle de Guatemala, por haberme permitido realizar mis prácticas. Esto me
+facilitó mucho el desarrollo de este trabajo, permitiéndome dedicarle todo mi tiempo.
+vii
+
+PAGINA_PDF 12
+
+
+PAGINA_PDF 13
+Índice
+Dedicatoria v
+Agradecimientos vii
+Lista de figuras xiii
+Lista de tablas xv
+Resumen xvii
+Abstract xix
+1. Introducción 1
+2. Justificación 3
+3. Objetivos 5
+3.1. Objetivo general . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3.2. Objetivos específicos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+4. Aprendizaje automático informado por la física 7
+4.1. Ecuaciones diferenciales . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+4.1.1. Concepto y definición . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+4.1.2. Clasificación de ecuaciones diferenciales . . . . . . . . . . . . . . . . . 8
+4.1.3. Condiciones iniciales y de frontera . . . . . . . . . . . . . . . . . . . . 10
+4.1.4. Operadores comunes de identidades de cálculo vectorial . . . . . . . . 11
+4.2. Piezoelectricidad . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+4.2.1. Historia . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+4.2.2. Descripción física del efecto piezoeléctrico . . . . . . . . . . . . . . . . 13
+4.2.3. Descripción matemática del efecto piezoeléctrico . . . . . . . . . . . . 14
+4.2.4. Viga en voladizo piezoeléctrica . . . . . . . . . . . . . . . . . . . . . . 16
+4.3. Introducción a Machine Learning(ML) . . . . . . . . . . . . . . . . . . . . . 19
+4.3.1. Concepto . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+4.3.2. Clasificación . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+ix
+
+PAGINA_PDF 14
+4.4. Aspectos básicos de redes neuronales . . . . . . . . . . . . . . . . . . . . . . . 22
+4.4.1. Red Neuronal Feedforward. . . . . . . . . . . . . . . . . . . . . . . . . 22
+4.4.2. Funciones de activación . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+4.4.3. Elementos para el entrenamiento de una red neuronal . . . . . . . . . 29
+4.4.4. Diferenciación automática . . . . . . . . . . . . . . . . . . . . . . . . . 37
+4.5. PINNs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38
+4.5.1. Teorema de aproximación universal . . . . . . . . . . . . . . . . . . . . 39
+4.5.2. Implementación . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+5. PINN para modelar piezoelectricidad 45
+5.1. Exploración del funcionamiento de PINNs . . . . . . . . . . . . . . . . . . . . 45
+5.1.1. Ecuación de calor . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 45
+5.1.2. Navier-Stokes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 51
+5.2. Aplicación a piezoelectricidad . . . . . . . . . . . . . . . . . . . . . . . . . . . 58
+5.2.1. Efecto piezoeléctrico indirecto . . . . . . . . . . . . . . . . . . . . . . . 58
+5.2.2. Efecto piezoeléctrico directo . . . . . . . . . . . . . . . . . . . . . . . . 69
+6. Resultados 73
+6.1. Gestión y seguimiento de experimentos . . . . . . . . . . . . . . . . . . . . . . 73
+6.2. Efecto piezoeléctrico indirecto . . . . . . . . . . . . . . . . . . . . . . . . . . . 76
+6.2.1. Resultados del entrenamiento de las redes neuronales . . . . . . . . . . 76
+6.2.2. Resultados de PINN y comparación con FEM para viga en voladizo
+bajo efecto piezoeléctrico indirecto . . . . . . . . . . . . . . . . . . . . 77
+6.2.3. Resultados de error relativo L2 para arquitecturas de PINN usadas
+para efecto piezoeléctrico indirecto . . . . . . . . . . . . . . . . . . . . 85
+6.3. Efecto piezoeléctrico directo . . . . . . . . . . . . . . . . . . . . . . . . . . . . 85
+6.3.1. Resultados del entrenamiento de red neuronal . . . . . . . . . . . . . . 85
+7. Discusión 89
+8. Conclusiones 93
+9. Recomendaciones 95
+10.Bibliografía 97
+11.Anexos 103
+x
+
+PAGINA_PDF 15
+Lista de figuras
+1. Efecto piezoeléctrico. Figura de la izquierda representa una generación de
+voltaje a partir de deformación, efecto directo. Figura de la derecha representa
+el efecto indirecto, que es una deformación por aplicación de voltaje. . . . . . 13
+2. Modificación en la estructura de un material piezoeléctrico, cuando una fuerza
+es aplicada. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+3. Diagrama de Heckmann, que relaciona las propiedades térmicas, mecánicas y
+eléctricas de un cristal en interacciones termodinámicas [7]. . . . . . . . . . . 15
+4. Viga en voladizo piezoeléctrica. . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+5. Viga en voladizo con dos capas piezoeléctricas. . . . . . . . . . . . . . . . . . 18
+6. Jerarquía de la inteligencia artificial [35] . . . . . . . . . . . . . . . . . . . . . 20
+7. Red neuronal con capas de entrada, ocultas y de salida. . . . . . . . . . . . . 21
+8. Diagrama de un perceptrón. . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+9. Ajuste de regresión lineal. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+10. Función de activación ReLU. . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+11. Función de activación sigmoide. . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+12. Función de activación tanh. . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+13. Capa de salida de red neuronal (Capak) conectada a una capa anteriork− 1. 33
+14. Diagrama de arquitectura de una PINN [44]. . . . . . . . . . . . . . . . . . . . 43
+15. Arquitectura de PINN para ecuación de calor. . . . . . . . . . . . . . . . . . . 48
+16. Resultado de PINN para ecuación de calor. . . . . . . . . . . . . . . . . . . . 50
+17. Resultado de FDM para ecuación de calor. . . . . . . . . . . . . . . . . . . . . 51
+18. Configuración de problema de mecánica de fluidos. . . . . . . . . . . . . . . . 51
+19. Condiciones de frontera para Navier-Stokes: (a) condiciones de frontera para
+velocidad en eje horizontal, (b) condiciones de frontera para velocidad en eje
+vertical, (c) condiciones de frontera para presión. . . . . . . . . . . . . . . . . 53
+20. Puntos de colocación para Navier-Stokes. . . . . . . . . . . . . . . . . . . . . . 54
+21. Esquema de arquitectura de PINN para Navier-Stokes. . . . . . . . . . . . . . 55
+22. Pérdida de red neuronal para Navier-Stokes en escala logarítmica. . . . . . . . 56
+23. Resultados de PINN para Navier-Stokes. a) Velocidad horizontal de fluido a
+partir de Navier-Stokes modelada con PINN; b) Velocidad vertical de fluido
+a partir de Navier-Stokes modelada con PINN; c) Presión de fluido a partir
+de Navier-Stokes modelada con PINN. . . . . . . . . . . . . . . . . . . . . . . 57
+xi
+
+PAGINA_PDF 16
+24. Condiciones de frontera para viga en voladizo piezoeléctrica paralela. . . . . . 59
+25. Puntos empleados para satisfacer las condiciones de frontera de estrés y des-
+plazamiento. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 61
+26. Puntos generados para evaluar en PINN en la configuración de la viga en
+voladizo bajo el efecto piezoeléctrico indirecto. . . . . . . . . . . . . . . . . . . 61
+27. Ejemplo de inclusión de coeficientes de material en conjunto de datos para
+cada punto de colocación en configuración de viga. . . . . . . . . . . . . . . . 62
+28. Esquema de arquitectura uniforme de PINN para efecto piezoeléctrico indirecto. 63
+29. EsquemadearquitecturapiramidaldePINNparaefectopiezoeléctricoindirecto. 65
+30. Configuración de sistema con condiciones de frontera para viga en voladizo
+paralela bajo efecto piezoeléctrico directo. . . . . . . . . . . . . . . . . . . . . 70
+31. Vista de herramienta de almacenamiento de experimentos en MLflow . . . . . 74
+32. Ejemplo de detalles del experimento en MLflow. a) parámetros registrados de
+experimento; b) métricas registradas de experimento. . . . . . . . . . . . . . . 74
+33. Métricas importantes y pérdida almacenada por experimento en MLflow. . . . 75
+34. Gráficos almacenados en experimento de MLflow. . . . . . . . . . . . . . . . . 75
+35. Pérdida de entrenamiento de PINN para viga en voladizo con dimensiones en
+metros para arquitectura uniforme de red neuronal. . . . . . . . . . . . . . . . 76
+36. Pérdida de entrenamiento de PINN para viga en voladizo con dimensiones en
+metros para arquitectura piramidal de red neuronal. . . . . . . . . . . . . . . 77
+37. Resultado para el desplazamiento horizontal obtenido con PINN uniforme. (a)
+Desplazamientohorizontal(PINN);(b)Desplazamientohorizontal(FEM);(c)
+Error absoluto entre PINN y FEM. . . . . . . . . . . . . . . . . . . . . . . . . 78
+38. Resultado para el desplazamiento vertical obtenido con PINN uniforme. (a)
+Desplazamientovertical(PINN);(b)Desplazamientovertical(FEM);(c)Error
+absoluto entre PINN y FEM. . . . . . . . . . . . . . . . . . . . . . . . . . . . 79
+39. Resultado para el potencial eléctrico obtenido con PINN uniforme. (a) Poten-
+cial eléctrico (PINN); (b) Potencial eléctrico (FEM); (c) Error absoluto entre
+PINN y FEM. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 80
+40. Comparación de la deformación de la viga piezoeléctrica bajo el efecto indi-
+recto modelada con PINN y FEM. (a) Deformación de la viga con PINN; (b)
+Deformación de la viga con FEM. . . . . . . . . . . . . . . . . . . . . . . . . . 81
+41. Resultado para el desplazamiento horizontal obtenido con PINN piramidal,
+y comparación con FEM. (a) Desplazamiento horizontal (PINN); (b) Despla-
+zamiento horizontal (FEM); (c) Error absoluto entre PINN y FEM. . . . . . . 82
+42. Resultado para el desplazamiento vertical obtenido con PINN piramidal, y
+comparación con FEM. (a) Desplazamiento vertical (PINN); (b) Desplaza-
+miento vertical (FEM); (c) Error absoluto entre PINN y FEM. . . . . . . . . 83
+43. Resultado para el potencial eléctrico obtenido con PINN piramidal, y com-
+paración con FEM. (a) Potencial eléctrico (PINN); (b) Potencial eléctrico
+(FEM); (c) Error absoluto entre PINN y FEM. . . . . . . . . . . . . . . . . . 84
+44. Comparación de la deformación de la viga piezoeléctrica bajo el efecto indi-
+recto modelada con PINN y FEM. (a) Deformación de la viga con PINN; (b)
+Deformación de la viga con FEM. . . . . . . . . . . . . . . . . . . . . . . . . . 86
+45. PérdidadeentrenamientoenescalalogarítmicadePINNparavigaenvoladizo
+con dimensiones en metros bajo efecto piezoeléctrico directo para arquitectura
+uniforme de red neuronal. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 87
+xii
+
+PAGINA_PDF 17
+46. Desplazamiento horizontal de viga en voladizo bajo efecto piezoeléctrico di-
+recto modelado por PINN. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 87
+47. Desplazamiento vertical de viga en voladizo bajo efecto piezoeléctrico directo
+modelado por PINN. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 88
+48. Potencial eléctrico de viga en voladizo bajo efecto piezoeléctrico directo mo-
+delado por PINN. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 88
+49. Deformación de viga en voladizo bajo efecto piezoeléctrico directo modelado
+por PINN. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 88
+xiii
+
+PAGINA_PDF 18
+
+
+PAGINA_PDF 19
+Lista de tablas
+1. Propiedades del material utilizado. . . . . . . . . . . . . . . . . . . . . . . . . 46
+2. Arquitectura de la red neuronal. . . . . . . . . . . . . . . . . . . . . . . . . . 49
+3. Arquitectura de la red neuronal con 4 capas ocultas y 50 neuronas cada una. 54
+4. Propiedades de material PVDF para capa superior de viga en voladizo para-
+lela piezoeléctrica en metros [29]. . . . . . . . . . . . . . . . . . . . . . . . . . 58
+5. Propiedades de material PVDF para capa inferior de viga en voladizo paralela
+piezoeléctrica en metros [29]. . . . . . . . . . . . . . . . . . . . . . . . . . . . 59
+6. Arquitectura de la red neuronal con 4 capas ocultas y 300 neuronas cada una. 64
+7. Arquitectura de la red neuronal piramidal con múltiples capas ocultas. . . . . 66
+8. Resultados de pérdida, tiempo de entrenamiento y cantidad de parámetros
+para arquitecturas de PINN para efecto piezoeléctrico indirecto. . . . . . . . . 77
+9. Comparación de los valores de la norma L2 entre las predicciones de las ar-
+quitecturas de PINN y los resultados de FEM. . . . . . . . . . . . . . . . . . . 85
+10. Resultados de pérdida y tiempo de entrenamiento para PINN para efecto
+piezoeléctrico directo. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 85
+xv
+
+PAGINA_PDF 20
+
+
+PAGINA_PDF 21
+Resumen
+Elpresenteproyectoaprovechaelrecientedesarrollodeunparadigmaderedesneuronales
+orientado a la simulación de sistemas descritos por ecuaciones diferenciales, conocido como
+Redes Neuronales Informadas por la Física (PINNs por sus siglas en inglés). Las PINNs
+han sido utilizadas para solucionar distintos problemas que involucran sistemas físicos, tales
+como mecánica de fluidos o transmisión de calor. Este trabajo extiende su aplicación a la
+modelación del fenómeno piezoeléctrico.
+Los materiales piezoeléctricos presentan una relación electro-mecánica, lo cuál les per-
+mite generar electricidad al deformarse, conocido como el efecto piezoeléctrico directo, o
+deformarse cuando se les aplica electricidad, siendo este el efecto piezoeléctrico indirecto.
+Durante esta investigación se identificó el conjunto de ecuaciones diferenciales que permi-
+ten describir el comportamiento piezoeléctrico. A partir de esto, la metodología propuesta
+incorpora este conjunto de ecuaciones en una red neuronal, junto con las condiciones especí-
+ficas necesarias para modelar un dispositivo conocido como viga en voladizo piezoeléctrica,
+generando una PINN.
+Inicialmente la PINN fue utilizada para modelar el efecto piezoeléctrico indirecto para
+la viga en voladizo. Para evaluar la efectividad del modelo, se compararon los resultados
+obtenidos con simulaciones obtenidas del Método de los Elementos Finitos (FEM por sus
+siglas en inglés). A partir de esto se obtuvieron bajos errores, validando la capacidad de la
+PINNparamodelarestefenómeno.Posteriormenteserealizóunavariacióndelaarquitectura
+original de la PINN, que resultó en una optimización en tiempo y precisión de la solución al
+problema. Finalmente, esta arquitectura optimizada fue empleada para modelar el fenómeno
+piezoeléctrico directo, igualmente para una viga en voladizo.
+Este proyecto representa, según el conocimiento del autor, una de las primeras implemen-
+taciones exitosas de una PINN para la modelación del efecto piezoeléctrico, tanto directo
+como indirecto. Los resultados obtenidos demuestran la efectividad del acercamiento em-
+pleado. Además, la metolodogía utilizada sienta una base que puede permitir la modelación
+de dispositivos piezoeléctricos más complejos en el futuro.
+xvii
+
+PAGINA_PDF 22
+
+
+PAGINA_PDF 23
+Abstract
+This thesis leverages the recent development of a neural network paradigm known as
+Physics-Informed Neural Networks (PINNs), used to simulate systems described by diffe-
+rential equations. PINNs have been demonstrated to be effective at solving various problems
+involvingphysicalsystems,suchasfluidmechanicsandheattransfer.Thisworkextendstheir
+application to the modeling of the piezoelectric effect.
+Piezoelectric materials exhibit an electro-mechanical relationship, which allows them to
+generate electricity when deformed, known as the direct piezoelectric effect, or to deform
+when electricity is applied, known as the indirect piezoelectric effect. During this research,
+the set of differential equations that describe piezoelectric behavior was identified. Based on
+this, the proposed methodology incorporates these equations into a neural network, along
+with the specific conditions necessary to model a device known as a piezoelectric cantilever
+beam, generating a PINN.
+Initially, the PINN was used to model the indirect piezoelectric effect for the cantilever
+beam. To evaluate the model’s effectiveness, the results were compared with simulations
+obtained from the Finite Element Method (FEM). This comparison yielded low errors, va-
+lidating the PINN’s capability to model this phenomenon. Subsequently, a variation of the
+original PINN architecture was implemented, resulting in optimization of both computatio-
+nal time and solution accuracy. Finally, this optimized architecture was employed to model
+the direct piezoelectric effect, also for a cantilever beam.
+This project represents, to the author’s knowledge, one of the first successful imple-
+mentations of a PINN for modeling the direct and indirect piezoelectric effect. The results
+obtained demonstrate the effectiveness of the employed approach. Furthermore, the metho-
+dology establishes a foundation that may enable the modeling of more complex piezoelectric
+devices in the future.
+xix
+
+PAGINA_PDF 24
+
+
+PAGINA_PDF 25
+CAPÍTULO 1
+Introducción
+Las ecuaciones diferenciales parciales (PDEs por sus siglas en inglés) son una herramienta
+matemática que permite modelar funciones que dependen de distintas variables independien-
+tes al mismo tiempo. Su flexibilidad y expresividad hace que sean ampliamente utilizadas en
+distintas áreas de ciencia y tecnología [1]. Su principal aplicación es en física, donde modela
+fenómenos en óptica, aerodinámica, física cuántica, entre otros. El proceso para encontrar
+las soluciones de estas ecuaciones muchas veces no es trivial, e incluso a veces imposible de
+forma analítica. Por lo tanto, en muchos escenarios se requiere de métodos computacionales
+que ayuden a encontrar aproximaciones de la solución de las ecuaciones diferenciales que
+modelan problemas físicos [2].
+Entre los distintos algoritmos creados para la modelación y resolución de PDEs de pro-
+blemas físicos, el Método de los Elementos Finitos (FEM por sus siglas en inglés) se perfila
+como uno de los más populares. Este se ha destacado por su eficiencia, precisión y madurez
+para resolver problemas científicos e industriales complejos. Además, a lo largo de su histo-
+ria, se ha presentado como un método de vanguardia tecnológica [3]. Sin embargo, a pesar
+de su eficacia, también presenta limitaciones en cuanto a flexibilidad y generalización de
+las soluciones, especialmente en escenarios de alta complejidad [4]. Entonces, para fomentar
+nuevos avances y descubrimientos científicos, el desarrollo de nuevas herramientas que usen
+tecnologías innovadoras es imprescindible.
+Con los recientes avances en Aprendizaje Automático, particularmente en Aprendizaje
+Profundo oDeep Learning, se ha abierto la oportunidad de solucionar problemas anterior-
+mente imposibles [5]. Por esta razón se ha adoptado en distintas áreas de la ciencia y la
+industria, entre las que destacan visión por computadora, medicina, modelos de lenguaje
+natural e Inteligencia Artificial Generativa. La intersección entre esta tecnología innovadora
+y la computación científica se puede encontrar en las Redes Neuronales Informadas por la
+Física (PINNs por sus siglas en inglés), un área de rápido crecimiento. Este término acu-
+ñado tan solo en el 2019 plantea un nuevo paradigma para abordar fenómenos científicos,
+empleando redes neuronales que integran las ecuaciones diferenciales que los describen, la
+capacidad de usar observaciones experimentales y el poder computacional delDeep Lear-
+1
+
+PAGINA_PDF 26
+ning [6]. Esta técnica tiene un potencial para revolucionar la modelación y simulación de
+problemas científicos, así como nuevos descubrimientos y aplicaciones.
+Una de estas aplicaciones es el uso de dispositivos piezoeléctricos. La piezoelectricidad es
+una propiedad de ciertos cristales, que les permite generar una carga eléctrica cuando se les
+aplica una fuerza mecánica (efecto piezoeléctrico directo) y viceversa (efecto piezoeléctrico
+indirecto) [7]. Esta capacidad ha causado que puedan ser usados en distintas áreas. Por
+ejemplo, forman parte de equipo médico para extracción de imágenes [8]. También pueden
+ser usados en la recolección de energía eléctrica a partir de energía mecánica, área en la
+que se han investigado innovaciones como pavimentos que generen electricidad a partir de la
+fuerza de los vehículos [9]. En general, tienen un gran potencial para ser uno de los materiales
+del futuro, sin embargo, su diseño puede ser complejo y requerir múltiples iteraciones [10].
+Por lo que una herramienta de simulación eficiente es necesaria para poder modelar nuevos
+dispositivos piezoeléctricos que permitan innovar de distintas maneras. De esta forma, este
+proyecto explorará el uso deDeep Learning, para crear una herramienta que permita la
+simulación del fenómeno piezoeléctrico. Se hará uso de PINNs, que integren las leyes físicas
+de la piezoelectricidad, en forma de ecuaciones diferenciales parciales. A partir de esto, se
+espera obtener un modelo que genere soluciones adecuadas para el fenómeno piezoeléctrico.
+2
+
+PAGINA_PDF 27
+CAPÍTULO 2
+Justificación
+Las PDEs son de vital importancia en el estudio de fenómenos que involucran múltiples
+variables,comotiempoyespacio,permitiendomodelarcomportamientosmuycomplejos.Las
+PDEs proporcionan un mecanismo matemático que permite describir estos fenómenos con
+bastante precisión. Es posible comprender el comportamiento de los problemas estudiados,
+al resolver las PDEs, pudiendo predecir y optimizar sistemas que dependan de ellas [1]. Esto
+hace que sean ampliamente usadas en áreas de la física, biología, economía, entre otras,
+convirtiéndose en herramientas que potencian avances científicos y tecnológicos [11].
+Por otra parte, los materiales piezoeléctricos son cruciales en una amplia gama de apli-
+caciones tecnológicas. En primer lugar, los actuadores hacen uso del efecto piezoeléctrico
+indirecto. Estos tienen una gran precisión, por lo que son usados en sistemas robóticos, me-
+dicina, biotecnología, industria aeroespacial, entre otros [12]. En segundo lugar, los sensores
+piezoeléctricos son utilizados en evaluación de turbinas y motores de jets, así como biosenso-
+res para diagnóstico de problemas médicos, entre otras aplicaciones. [13], [14]. Finalmente,
+se puede mencionar el uso de piezoelectricidad en la conversión de energía del cinética a
+energía eléctrica. Esta capacidad les da el potencial para hacer dispositivos electrónicos más
+baratos y eficientes, así como incrementar el uso de energía renovable [15]. Es evidente en-
+tonces que la piezoelectricidad tiene un papel fundamental en diversas áreas tecnológicas.
+Sus características la posicionan como una tecnología clave en el desarrollo de soluciones
+sostenibles para el futuro.
+El potencial de las PINNs para resolver PDEs que tienen una alta complejidad, además
+de su capacidad de integrar datos experimentales al proceso de simulación, hacen que sea un
+paradigma prometedor para el desarrollo de la computación científica. A pesar de no ser el
+único acercamiento que hace uso de redes neuronales para resolver problemas físicos, tiene
+ciertas ventajas. Una de ellas, es que la integración de las PDEs en la simulación asegura
+resultados que son consistentes con las leyes físicas fundamentales, mejorando así la validez
+y la fiabilidad de las simulaciones. Otra ventaja, es la relativa facilidad del uso de las PINNs,
+debido a que se pueden basar en arquitecturas de redes neuronales relativamente simples.
+Además, integrar y expresar las PDEs en las PINNs es relativamente sencillo, haciendo uso
+3
+
+PAGINA_PDF 28
+de la autodiferenciación. [4], [16]
+A partir de esto, surge la necesidad de realizar un proyecto que aproveche el impulso
+inicial de métodos innovadores, para poder crear una herramienta que permitan superar
+los límites y mejorar los métodos de computación científica para resolución de PDEs [3].
+Además, el uso de PINNs en este contexto, puede ser un paso inicial hacia una herramienta
+más económica y eficiente para investigar dispositivos piezoeléctricos, proveyendo una mayor
+flexibilidad en el desarrollo de estos, permitiendo iterar y perfeccionarlos más rápidamente,
+fomentando avances tecnológicos.
+4
+
+PAGINA_PDF 29
+CAPÍTULO 3
+Objetivos
+3.1. Objetivo general
+Desarrollar una herramienta de simulación que permita modelar el comportamiento pie-
+zoeléctrico, usandoDeep Learning.
+3.2. Objetivos específicos
+Identificar las bases teóricas necesarias para comprender el fenómeno físico piezoeléc-
+trico que se busca modelar.
+Desarrollar una Red Neuronal Informada por la Física (PINN) que tenga aplicación
+con piezoelectricidad.
+Optimizar los hiperparámetros de la PINN para incrementar la precisión y eficiencia
+del modelo.
+Validar la precisión del modelo.
+5
+
+PAGINA_PDF 30
+
+
+PAGINA_PDF 31
+CAPÍTULO 4
+Aprendizaje automático informado por la física
+4.1. Ecuaciones diferenciales
+En esta sección se presenta una base teórica breve para las ecuaciones diferenciales. Se
+introduce el concepto y definición de una ecuación diferencial, una clasificación de estas y
+algunos operadores vectoriales diferenciales que se emplean comúnmente. En este contexto,
+un operador es una herramienta matemática que actúa sobre funciones o campos vectoriales
+para transformarlos, obteniendo información clave sobre sus propiedades. Entre los operado-
+res más utilizados se encuentran el gradiente, que indica la dirección y magnitud del cambio
+más rápido de una función escalar, y la divergencia, que mide la tendencia de un campo
+vectorial a expandirse o contraerse en un punto. [17]
+4.1.1. Concepto y definición
+Una ecuación diferencial, es una ecuación que relaciona una o más funciones y sus deri-
+vadas. Las incógnitas de la ecuación son las funciones mencionadas y uno de los principales
+objetivos es encontrar la solución de estas [18]. Las ecuaciones diferenciales son usadas para
+describir matemáticamente un cambio continuo de un sistema físico. Comúnmente son uti-
+lizadas en campos como biología, física, economía y ciencias sociales [1]. Dos ejemplos de
+ecuaciones diferenciales son los siguientes,
+md2u
+dt2 =F, (1)
+∂U
+∂t =k∂2U
+∂x2. (2)
+La Ecuación 1, busca explicar el movimiento de un cuerpo cuando se le aplica una fuerza.
+Describe como cambia la velocidad del cuando se le aplica una fuerza. Para esto relaciona la
+7
+
+PAGINA_PDF 32
+segunda derivada del desplazamientou, la masam del cuerpo y una fuerzaF aplicada a este
+[19]. La Ecuación 2, describe el cambio de la temperaturaU en un cuerpo unidimensional
+a lo largo del tiempo y de la posiciónx a lo largo del cuerpo, así como de una constante de
+difusión térmicak [1].
+Es importante evidenciar que se pueden relacionar distintas funciones y que las derivadas
+de estas pueden darse con respecto a una o más variables. Por lo tanto, usando una definición
+más formal, una ecuación que contiene a las derivadas de una o más funciones desconocidas
+(o variables dependientes) respecto a una o más variables independientes, se conoce como
+ecuación diferencial [18].
+Existen distintas notaciones para expresar las derivadas en las ecuaciones diferenciales
+[18]. Se utilizarán tres notaciones a lo largo de este trabajo. La principal será lanotación
+de Leibniz,
+dy
+dx, d2y
+dx2, d3y
+dx3,...,
+∂y
+∂x, ∂2y
+∂x2, ∂3y
+∂x3,...,
+para derivadas totales, o para derivadas parciales, respectivamente. En la Ecuación 2 se
+observa el uso de esta notación, donde la funciónU se puede derivar con respecto a dos
+distintas variables independientes. Es importante evidenciar, que, con derivadas parciales,
+las segundas derivadas se pueden realizar con respecto a la misma variable de la primera
+derivada, o con respecto a otra variable independiente.
+También se puede emplear lanotación prima, donde el número de apóstrofes representa
+el grado de la derivada,
+y′, y ′′, y ′′′,...
+Finalmente, se tiene lanotación de subíndice, que indica las variables independientes
+con respecto a las que se está derivando,
+ux,uy,uxx,uyy,uxy,uyx,...
+Esta notación sirve para proporcionar una forma más compacta de escribir derivadas
+parciales. Cuando se usa doble subíndice, significa una derivada de grado 2, con respecto a
+las variables indicadas en el subíndice. El orden de las derivadas parciales van de acuerdo
+con los subíndices es de izquierda a derecha.
+4.1.2. Clasificación de ecuaciones diferenciales
+Según su definición, una ecuación diferencial no solo involucra funciones cuyas derivadas
+se dan solo con respecto a una variable independiente, sino que puede ser respecto a más de
+8
+
+PAGINA_PDF 33
+una. Por esto, se genera una clasificación dependiendo de las derivadas presentes. Una ecua-
+ción diferencial ordinaria (ODE por sus siglas en inglés) es aquella que contiene derivadas
+totales de posiblemente distintas funciones, con respecto a una única variable independiente.
+Las ODEs son usadas principalmente en la modelación de sistemas mecánicos, reacciones
+químicas, circuitos eléctricos y dinámicas poblacionales. Un ejemplo de ODE es la Ecua-
+ción 1. El orden de una ecuación diferencial es el grado de la mayor derivada presente en
+la ecuación. Simbólicamente, una ODE den-ésimo orden se expresa de la siguiente manera
+[20]
+F (x,y,y ′,...,y (n)) = 0.
+En contraste, una ecuación diferencial parcial (PDE por sus siglas en inglés), es una
+ecuación diferencial que involucra una o más funciones de dos o más variables y sus derivadas
+parciales.Estoquieredecirquelasfuncionesdependendedosomásvariablesindependientes.
+Un ejemplo de una PDE es la Ecuación 2. El orden de una PDE significa lo mismo que para
+una ODE, es decir, al grado de la derivada más alta presente en la ecuación. [1]
+La forma general de una PDE escalar de primer orden es [18]
+F (x,y,u,u x,uy) = 0,
+donde u es la función desconocida, yx e y son las variables independientes. Para una
+PDE escalar de segundo orden, su forma más general es [1]
+F (x,y,u,u x,uy,uxx,uxy,uyy) = 0.
+Por otra parte, algunas PDEs populares son las siguientes [21]:
+Ecuaciones de Maxwell: Las ecuaciones de Maxwell describen el comportamiento
+de los campos eléctricos y magnéticos, estableciendo la relación entre las fuerzas de
+ambos campos, con la carga eléctrica y la densidad de flujo magnética.
+Ecuaciones de Navier-Stokes: Las ecuaciones de Navier-Stokes describen el movi-
+miento de los fluidos, relacionando la velocidad, densidad, presión y viscosidad de los
+fluidos.
+Ecuación de Schrödinger: Fundamental en la mecánica cuántica, describe cómo
+evoluciona en el tiempo el estado cuántico de un sistema, al relacionar la masa, energía
+potencial y energía total de una partícula.
+Ecuaciones de la relatividad general de Einstein: Describen cómo la masa y la
+energía influyen en la curvatura del espacio-tiempo, ayudando a explicar fenómenos
+gravitacionales como la formación de agujeros negros y la expansión del universo.
+9
+
+PAGINA_PDF 34
+4.1.3. Condiciones iniciales y de frontera
+Las ecuaciones diferenciales suelen tener familias de funciones como soluciones, las cuales
+pueden ser múltiples e incluso infinitas. Por lo tanto, para encontrar una solución específica
+para la ecuación diferencial, se definen condiciones extra, que la función debe satisfacer [20].
+Estas condiciones se clasifican como condiciones iniciales y de frontera.
+4.1.3.1. Condiciones iniciales
+Al estudiar ecuaciones diferenciales relacionadas con fenómenos físicos, una condición
+inicial establece el estado del sistema en algún punto particular del tiempot0 [22]. En este
+caso, el tiempo, una variable independiente, es una forma efectiva y sencilla de comprender
+la condición. Sin embargo, se podrían dar condiciones iniciales para otras variables indepen-
+dientes. Las condiciones iniciales se pueden dar para valores de la función y también para
+derivadas de esta.
+Siguiendo con la Ecuación 2, un ejemplo de condición inicial es
+U(x, 0) =f(x).
+Lo cual quiere significa que en el tiempo inicial (en este caso cero), el objeto tiene una
+distribución de temperatura, es decir, cada punto del objeto estudiado tiene una temperatura
+dada por la funciónf(x). Conforme pase el tiempo, la temperatura irá cambiando, pero ese
+es el estado inicial del sistema.
+4.1.3.2. Condiciones de frontera
+Cuando se modela un sistema usando una ecuación diferencial parcial (PDE), es necesa-
+rio definir el problema en un dominio específicoΩ. Este dominio puede ser, por ejemplo, una
+varilla unidimensional limitada por un intervalo, una región en el plano, o un volumen tridi-
+mensional [1]. Definir el funcionamiento de la función o funciones de la ecuación diferencial
+en Ω, es necesario para encontrar una solución única del problema y se describe mediante
+las condiciones de frontera [18]. Estas condiciones pueden ser de varios tipos, las cuales se
+describen a continuación [1]:
+Condición de Dirichlet: Se especifican los valores de la función o funciones solución
+en distintos puntos de la frontera. La forma en la que se define esto es
+u(x) =g(x) para x∈∂Ω,
+donde g(x) es una función dada y∂Ω es la frontera del dominioΩ .
+Condición de Neumann: El valor de la derivada normal de la función o funciones
+es especificado en los puntos de la frontera. Esto se define como
+∂u
+∂n (x) =h(x) para x∈∂Ω,
+10
+
+PAGINA_PDF 35
+donde h(x) es una función preestablecida y ∂u
+∂n es la derivada deu en la dirección
+normal a la frontera.
+CondicióndeRobin :EsunacombinacióndelascondicionesdeDirichletyNeumann.
+Su forma es
+αu(x) +β∂u
+∂n (x) =q(x) para x∈∂Ω,
+donde α∈ R, β∈ R y q(x)∈ R son especificados en el problema.
+4.1.4. Operadores comunes de identidades de cálculo vectorial
+A continuación, se mencionarán algunos operadores comunes que se encuentran al ex-
+presar ecuaciones diferenciales, cuya definición se dió al inicio de este capítulo. [17]
+4.1.4.1. Divergencia
+La divergencia de un campo vectorial es una operación escalar que indica si las líneas de
+flujo en el campo son paralelas o no. Un ejemplo es el flujo de un gas en un tubo, donde las
+líneas permanecen paralelas, si el tubo es uniforme. Sin embargo, si el tubo se estrecha, las
+líneas de flujo convergen. La divergencia ayuda a entender si un campo vectorial se expande
+o converge hacia cierto punto. Es una medida importante en áreas de la física, como en el
+análisis de flujos de fluidos y campos electromagnéticos.
+La divergencia end dimensiones se expresa de la siguiente forma,
+∇· F =
+dX
+i=1
+∂Fi
+∂xi
+,
+donde F = (F1,F 2,...,F d) es el campo vectorial end dimensiones yFi es la componente
+del campo en la direcciónxi con i = 1, 2,...,d .
+4.1.4.2. Gradiente
+El gradiente es la derivada de una función escalar. Cuando se aplica produce un vector.
+Este describe la dirección y magnitud del mayor cambio de una función escalar en un espacio
+dado. Esto quiere decir que este vector apunta en la dirección donde está la pendiente más
+pronunciada de la función.
+Para una función escalar end dimensiones f, el gradiente se expresa de la siguiente
+forma,
+∇f =
+∂f
+∂x1
+, ∂f
+∂x2
+,..., ∂f
+∂xd
+
+,
+11
+
+PAGINA_PDF 36
+donde f es una función escalar ded variables x1,x 2,...,x d, y el gradiente∇f es un
+vector cuyas componentes son las derivadas parciales def respecto a cada variable.
+4.1.4.3. Laplaciano
+El Laplaciano es un operador que se aplica a funciones escalares o vectoriales. En el caso
+de una función escalar, el Laplaciano mide la suma de las segundas derivadas parciales res-
+pecto a cada una de las variables espaciales, proporcionando información sobre la curvatura
+de la función en un punto dado. Es utilizado en diversas áreas de la física y las matemáticas,
+especialmente en ecuaciones diferenciales parciales, como en la ecuación de calor, la ecuación
+de Poisson y la ecuación de ondas.
+Para una función escalar f en d dimensiones, el Laplaciano se puede expresar de la
+siguiente forma,
+∆f =
+dX
+i=1
+∂2f
+∂x2
+i
+,
+dondef es una función escalar ded variablesx1,x 2,...,x d, y∆f representa la suma de
+las segundas derivadas parciales def respecto a cada variablexi.
+4.2. Piezoelectricidad
+En esta sección se da una introducción a la piezoelectricidad, mencionando su historia,
+su funcionamiento físico y su descripción matemática.
+4.2.1. Historia
+La piezoelectricidad (del griego piezein, πιέζω, que significa estrujar o apretar) es un
+fenómeno en el cual ciertos cristales generan una carga eléctrica cuando se les aplica una
+presiónmecánica.Lahistoriadelosmaterialespiezoeléctricosseremontasiglosatrás,cuando
+nativos de India se percataron de que un cristal conocido como turmalina, atraía a cenizas
+calientes cuando se ponía en contacto con ellas. A partir de esto, en 1756, el físico alemán
+Aepinus describió el origen eléctrico de este comportamiento. Se nombró piroelectricidad
+en 1824 y se trata de una polarización en el material debido a la absorción de energía
+calorífica. Esta propiedad está estrechamente relacionada con la piezoelectricidad ya que
+ambos fenómenos involucran la generación de carga eléctrica en cristales bajo diferentes
+estímulos. [23]
+El primer artículo científico publicado donde se menciona el efecto piezoeléctrico y la
+cristalografía fue publicado por los hermanos Pierre y Jacques Curie en 1880. Encontraron
+carga en cristales como la mencionada turmalina, cuarzo y sal de Seignette, al aplicarles una
+fuerza mecánica. Ellos fueron los descubridores del efecto piezoeléctrico directo. El efecto
+12
+
+PAGINA_PDF 37
+inverso, conocido como el efecto piezoeléctrico indirecto, donde se genera una deformación
+en presencia de una carga o voltaje, fue descrito por Lippman, un físico francés, en 1881, al
+hacer una deducción matemática a partir de principios termodinámicos. [24]
+Hasta inicios del siglo XX se empezaron a ver las primeras aplicaciones de estos mate-
+riales. La primera fue el sonar, en donde cuarzo piezoeléctrico se usaba para producir ondas
+ultrasónicas y como sensor. Luego de la segunda guerra mundial, se empezaron a realizar
+dispositivos más industriales que hicieron uso de materiales piezoeléctricos. Entre estos se
+encuentran pequeños micrófonos, acelerómetros, transductores cerámicos, entre otros. En la
+década de 1960, científicos japoneses inventaron nuevas aplicaciones, entre las que se en-
+cuentran filtros de señales, encendedores piezo cerámicos y transductores ultrasónicos de
+aire usados en medicina. [25]
+Actualmente, la investigación se orienta al desarrollo de dispositivos piezoeléctricos com-
+puestos, los cuales tienen múltiples capas piezoeléctricas muy delgadas, que permiten mayor
+deformación. También son ampliamente usados en control de sonido y vibración, donde dos
+materiales predominan. Uno es el Titanato de Zirconato de Plomo (PZT por sus siglas en
+inglés), que es usado comúnmente como actuador, teniendo alta precisión. Por otra parte,
+está el Fluoruro de Polivinilideno (PVDF por sus siglas en inglés), usado como sensor. [7],
+[24]
+4.2.2. Descripción física del efecto piezoeléctrico
+El efecto piezoeléctrico tiene dos formas de presentarse, como se mencionó previamente.
+El primero es el efecto piezoeléctrico directo, que se observa en la Figura 1. Acá, se genera un
+voltaje a partir de la aplicación de una fuerza mecánica al material, que es una deformación
+de este. El segundo es el efecto indirecto, en donde el material se deforma a partir de una
+aplicación de voltaje. [7]
+Figura 1: Efecto piezoeléctrico. Figura de la izquierda representa una generación de voltaje a partir
+de deformación, efecto directo. Figura de la derecha representa el efecto indirecto, que es una
+deformación por aplicación de voltaje.
+13
+
+PAGINA_PDF 38
+Los materiales piezoeléctricos son cristales. Los cristales son materiales sólidos, cuyas
+moléculas, átomos o iones, están altamente ordenados microscópicamente [26]. Los cristales
+se pueden clasificar según su simetría, lo que se refiere a las formas en las cuales puede ser
+manipulado y seguir teniendo la misma apariencia. Un cristal podría ser rotado o reflejado
+y mantener su misma apariencia [27]. A partir de esto surgen 32 grupos de simetría, a los
+cuales pertenecen distintos cristales según la simetría que mantienen en un punto fijo de
+su estructura. De los 32 grupos de cristales, 11 grupos tienen centros de simetría y 21 no.
+De estos últimos, uno tiene una simetría especial. Los cristales de estos 20 grupos pueden
+generar electricidad por una fuerza mecánica, siendo piezoeléctricos [7]. De estos, 10 grupos
+son los cristales piroeléctricos.
+Los cristales piezoeléctricos tienen una estructura característica. Cuando no sufren nin-
+guna deformación, tienen una distribución balanceada de cargas positivas y negativas. Sin
+embargo, estos cristales son no centrosimétricos, lo cual significa que no existe un punto
+en el cristal que lo divida en dos mitades equivalentes. Esto implica que a pesar de este
+balance cuando no hay deformación, cuando se aplica una fuerza al material, las moléculas,
+que son las que tienen las cargas, cambian su posición. Este cambio, modifica la distribución
+de las cargas y se genera una separación entre las cargas positivas y negativas, generando
+un potencial eléctrico en el cristal. Esto se observa en la Figura 2, donde están las cargas
+distribuidas aleatoriamente cuando el material está sin perturbación. Al momento de ser
+comprimido, las cargas de mueven y se alinean, generando el potencial mencionado. [28]
+Figura 2: Modificación en la estructura de un material piezoeléctrico, cuando una fuerza es
+aplicada.
+4.2.3. Descripción matemática del efecto piezoeléctrico
+La relación entre los distintos factores involucrados en interacciones termodinámicas en-
+tre las propiedades térmicas, mecánicas y eléctricas de un cristal se puede observar en la
+Figura 3. De este diagrama se puede observar la relación entre los factores que generan
+el efecto piezoeléctrico directo y el indirecto. Para el directo, una deformación genera un
+desplazamiento dieléctrico, que a su vez genera un campo eléctrico. En el efecto indirecto,
+un campo eléctrico genera una deformación mecánica en el cristal. En las aplicaciones con-
+sideradas para el presente trabajo, no se toman en cuenta efectos térmicos, debido a que se
+asumen procesos adiabáticos. [7]
+14
+
+PAGINA_PDF 39
+Figura 3: Diagrama de Heckmann, que relaciona las propiedades térmicas, mecánicas y eléctricas
+de un cristal en interacciones termodinámicas [7].
+15
+
+PAGINA_PDF 40
+El fenómeno piezoeléctrico es modelado por medio de ecuaciones constitutivas, que per-
+miten expresar las relaciones entre las propiedades del diagrama de la Figura 3 [23]. Estas
+ecuaciones constitutivas pueden tener la siguiente forma,
+⃗ σ=cE⃗S−eT⃗E (3)
+⃗D =e⃗S +ϵS⃗E (4)
+En estas ecuaciones,⃗ σcorresponde al vector de estrés mecánico. Luego se tienecE, que es
+un tensor de elasticidad propio del material piezoeléctrico que se está estudiando. El tensor
+⃗S corresponde a la deformación del material,eT es el tensor de coeficientes piezoeléctricos,
+⃗E es el vector de campo eléctrico y finalmente⃗D es el vector de desplazamiento dieléctrico.
+La primera ecuación se refiere al efecto piezoeléctrico indirecto, en donde se genera un estrés
+mecánico⃗ σ, en respuesta a un campo eléctrico aplicado⃗E. La segunda ecuación describe el
+efecto piezoeléctrico directo, donde se genera un desplazamiento eléctrico⃗D, en respuesta a
+un estrés mecánico⃗ σque está relacionado con la deformación⃗S. [7]
+En tres dimensiones, la relación entre estos campos se puede expresar de forma tensorial,
+
+
+σ1
+σ2
+σ3
+σ4
+σ5
+σ6
+D1
+D2
+D3
+
+
+=
+
+
+cE
+11 cE
+12 cE
+13 · · · · · − e13
+cE
+12 cE
+11 cE
+13 · · · · · − e13
+cE
+13 cE
+13 cE
+33 · · · · · − e33
+· · · cE
+44 · · · − e15 ·
+· · · · cE
+44 · − e15 · ·
+· · · · · cE
+66 · · ·
+· · · · e15 · ϵS
+11 · ·
+· · · e15 · · · ϵS
+11 ·
+e13 e13 e33 · · · · · ϵS
+33
+
+
+
+
+S1
+S2
+S3
+S4
+S5
+S6
+E1
+E2
+E3
+
+
+(5)
+Existen distintas formas de expresar las ecuaciones constitutivas, sin embargo, esta forma
+es la más utilizada para realizar ciertas simulaciones [7].
+4.2.4. Viga en voladizo piezoeléctrica
+Existen distintos dispositivos que pueden ser creados a partir de un material piezo-
+eléctrico. De particular interés para este trabajo, se busca estudiar una viga en voladizo
+piezoeléctrica, como la que se observa en la Figura 4. Esta viga está hecha de un material
+piezoeléctrico, el cual puede deformarse por una carga eléctrica o generar una cuando se
+deforma. La viga se modela en dos dimensiones.
+16
+
+PAGINA_PDF 41
+Figura 4: Viga en voladizo piezoeléctrica.
+Para modelar esta viga en voladizo, se pueden usar las ecuaciones constitutivas de la
+piezoelectricidad. Estas son expresadas por la Ecuación 3 y la Ecuación 4. Además, se
+introduce otro conjunto de ecuaciones diferenciales para poder modelar el sistema completo
+[29],
+∇· σ + f = 0, (6)
+∇· D = 0. (7)
+Donde f es un vector que indica una posible fuerza aplicada a la viga, lo cual puede
+servir para el efecto piezoeléctrico directo. Esta fuerza se puede observar en la Figura 4. Es
+opcional, en caso se modele el efecto directo, lo cual genera voltaje. Si se modela el indirecto,
+la fuerza es 0 y se aplica un voltaje. Estas ecuaciones son elípticas, debido a que se asume
+un estado estable o estacionario. Sin embargo, se podrían añadir términos para modelar el
+sistema respecto al tiempo [7]. Las funciones para este caso solo tienen dos entradas, que son
+las coordenadas del objeto en dos dimensiones. Este conjunto de ecuaciones no es aplicable
+únicamente para la viga en voladizo, puede ser para cualquier dispositivo piezoeléctrico. Se
+incluyen acá para poder integrarlas con las condiciones de frontera propias de esta viga en
+voladizo.
+De la Figura 4, también se puede observar que la viga está fija del lado izquierdo y está
+libre del lado derecho. Esto permite un movimiento oscilante de la viga. Como es un sistema
+en estado estacionario, solo se tienen condiciones de frontera [29]
+
+
+
+u(x) = ¯u, ∀x∈ Ωu,
+φ(x) = ¯φ, ∀x∈ Ωφ,
+σ(x)· n = 0, ∀x∈ Ωt,
+D· n = 0 ∀x∈ Ωp.
+(8)
+Donde ¯u es un desplazamiento definido,¯φ un potencial eléctrico definido yn el vector
+17
+
+PAGINA_PDF 42
+normal en las fronteras. También,Ωu corresponde a todos los puntos donde se desea definir
+un desplazamiento con cierto valor;Ωφ se refiere a la frontera donde se define un potencial
+establecido que debe cumplir la funciónφ; Ωt se refiere a la frontera donde se busca aplicar
+la derivada normal del estrés;Ωp son aquellos puntos donde se debe aplicar la condición de
+frontera para el desplazamiento dieléctrico.
+La viga en voladizo puede constar de distintas capas de materiales piezoeléctricos, como
+se observa en la Figura 5. En dado caso, es necesario especificar las propiedades de estos
+materiales. Esta configuración puede causar que una capa se comprima y la otra se estire.
+Se pueden seguir aplicando las mismas condiciones de frontera y ecuaciones. [29]
+Figura 5: Viga en voladizo con dos capas piezoeléctricas.
+La viga se modela en dos dimensiones, por lo que los tensores de las ecuaciones consti-
+tutivas de la Ecuación 5 cambian, debido a que ya no se manejan en tres dimensiones,
+
+
+σ11
+σ22
+σ12
+D1
+D2
+
+
+=
+
+
+c11 c12 0 e11 e31
+c12 c22 0 e13 e33
+0 0 c33 e14 e34
+e11 e13 e14 −ϵ1 0
+e31 e33 e34 0 −ϵ2
+
+
+
+
+S1
+S2
+S3
+−E1
+−E2
+
+
+. (9)
+En este caso se modificaron ligeramente las notaciones de algunos elementos.
+Este problema se puede modelar en términos de desplazamiento y de potencial eléctrico,
+para tener concordancia con las condiciones de frontera. Por lo tanto, se pueden hacer susti-
+tuciones por la deformaciónS y el campo eléctricoE, en la matriz presentada anteriormente.
+[30]
+Para hacer estas sustituciones se pueden usar las siguientes igualdades,
+
+
+S1
+S2
+S3
+
+ =
+
+
+∂u
+∂x∂u
+∂y
+1
+2
+
+∂u
+∂y + ∂v
+∂x
+
+
+,
+E1
+E2
+
+=−
+ ∂φ
+∂x∂φ
+∂y.
+!
+(10)
+18
+
+PAGINA_PDF 43
+4.3. Introducción a Machine Learning (ML)
+En esta sección se presenta una descripción básica del concepto demachine learning o
+aprendizaje automático y una clasificación de este.
+4.3.1. Concepto
+La inteligencia artificial (IA) es una ciencia que estudia el desarrollo de acciones racio-
+nales por parte de agentes inteligentes. Estos últimos generalmente se implementan usando
+máquinas o computadoras, buscando simular la inteligencia humana y la capacidad de so-
+lución de problemas. La IA abarca distintos campos, que van desde lógica, decisiones en
+problemas de juegos como ajedrez, demostración de teoremas matemáticos, aprendizaje, ro-
+bótica, procesamiento de lenguaje natural, entre otros. Entre estas áreas, se encuentra una
+que se ha vuelto popular recientemente y es elmachine learning. [31]
+El machine learning se enfoca en el uso de algoritmos o modelos que involucran apren-
+dizaje estadístico y optimización. Estos permiten a las máquinas identificar patrones en
+conjuntos de datos, usualmente para generar una predicción o clasificación, sin necesidad
+de una intervención manual humana. El proceso típico de aprendizaje toma tres pasos. El
+primero es un proceso de decisión, donde, a partir de los datos y una serie de pasos, se genera
+una conjetura del patrón que se busca. Luego, se usa una función de pérdida, que mide que
+tan buena o mala es la conjetura realizada con respecto al patrón real. Finalmente, se usa
+un proceso de optimización, que modifican parámetros del modelo de ML para que se ajuste
+al patrón buscado. [32]
+LosalgoritmosdeMLrelativamentebásicos,enmuchasocasionesrequierendelacreación
+de características de los datos [33]. Por ejemplo, es muy probable que si los datos son audio
+y el modelo los recibe sin preprocesar, no podrá aprender ningún patrón. Sin embargo, si
+se obtienen características específicas del audio, como sus frecuencias o su amplitud, es más
+factible que el modelo genere buenos resultados. Este proceso puede ser manual y complejo,
+requiriendo conocimiento del dominio, dando espacio a que el conjunto de características
+elegido no sea el adecuado y no se obtenga un buen modelo.
+El aprendizaje por representación es un conjunto de métodos que permiten a una má-
+quina aprender a partir de datos sin preprocesar y encontrar características necesarias para
+encontrar patrones en los datos, sin intervención humana. Esto fue la base para una nueva
+subrama de ML, conocida como aprendizaje profundo odeep learning(DL). En la Figura 6,
+se puede observar la jerarquía de la inteligencia artificial. Eldeep learning usa múltiples
+capas de representación para encontrar las características que permiten describir un patrón
+o función muy compleja en un conjunto de datos. Las características elegidas para esta
+representación se eligen automáticamente, eliminando el problema de la elección manual.
+[34]
+El deep learning, se apoya en el uso de redes neuronales para sus capas de representación.
+Estas, brevemente, se pueden describir como un conjunto de nodos que buscan simular el
+comportamiento de las neuronas humanas [31]. Las redes neuronales se ordenan por capas
+que tienen múltiples nodos, los cuales se conectan con los de las capas adyacentes y se basan
+19
+
+PAGINA_PDF 44
+Artificial 
+intelligence
+Estudio 
+de 
+acciones 
+racionales 
+por 
+parte 
+de 
+una 
+máquina
+Machine 
+learning
+Algoritmos 
+que 
+usan 
+datos 
+para 
+aprender 
+patrones 
+y 
+generar 
+predicciones
+Deep 
+learning
+Uso 
+de 
+aprendizaje 
+por 
+representación 
+para 
+obtención 
+de 
+características 
+automáticas 
+de 
+datos
+Neural 
+Networks
+Emulación 
+de 
+funcionamiento 
+de 
+neuronas 
+biológicas 
+para 
+aprendizaje 
+de 
+funciones 
+y 
+patrones
+Figura 6: Jerarquía de la inteligencia artificial [35]
+.
+20
+
+PAGINA_PDF 45
+en el paso de información entre estas capas [34]. El términodeep en DL, se refiere a la
+cantidad de capas que hay en una red neuronal. Un diagrama básico de una red neuronal se
+encuentra en la Figura 7.
+1Entrada 1
+2Entrada 2
+3Entrada 3
+1 Salida 1
+2 Salida 2
+Capas
+ocultas
+Capa de
+entrada
+Capas
+ocultas
+Figura 7: Red neuronal con capas de entrada, ocultas y de salida.
+Lasredesneuronalesyel deep learning,handemostradoserunaherramientamuyefectiva
+para resolver distintos tipos de problemas. Un ejemplo de esto es el reconocimiento de
+imágenes de texto escrito a mano y la identificación de elementos de un video en tiempo real
+para vehículos autónomos, como transeúntes u otros vehículos [34]. También, recientemente
+una de sus aplicaciones más populares es la inteligencia artificial generativa y procesamiento
+de lenguaje natural, como ChatGPT [36].
+4.3.2. Clasificación
+Los algoritmos demachine learning se pueden clasificar según el tipo de problema que
+buscan resolver y el uso que le dan a los datos que tienen a su disposición [33]. Esta clasifi-
+cación se aplica a todos los algoritmos que engloba el ML según la Figura 6.
+Aprendizaje supervisado
+El aprendizaje supervisado hace uso de un conjunto de datos previamente etiquetados.
+Esto quiere decir, que los datos traen un conjunto de características y una variable
+cuyos valores son correctos. Esta comúnmente se conoce como verdad fundamental
+o ground truth. El objetivo del modelo es ajustar sus parámetros hasta encontrar el
+patrón en las características de los datos, según la verdad fundamental. Una vez se
+logre esto, se puede hacer clasificación o predicciones con nuevas observaciones de los
+datos.
+Dos de los principales problemas que se buscan resolver con este enfoque son la re-
+gresión y la clasificación. La regresión consiste en usar modelos de ML para encontrar
+una función que mapee las características del conjunto de datos, a un valor continuo,
+según la ground truth. Por ejemplo, se puede predecir el valor de una vivienda o la
+temperatura futura de un sistema. Por otra parte, en la clasificación, se busca prede-
+cir una variable categórica. Esto significa que hay un conjunto limitado de clases que
+21
+
+PAGINA_PDF 46
+se pueden obtener como salida del modelo [32]. Se puede clasificar, por ejemplo, una
+grabación del corazón como anómala o normal.
+Aprendizaje no supervisado
+El aprendizaje no supervisado usa algoritmos que permiten analizar conjuntos de datos
+sin etiquetar. Se busca encontrar patrones ocultos o agrupar los datos, sin la necesidad
+de una intervención humana. Es muy útil para una exploración profunda de datos,
+permitiendo encontrar características o relaciones sutiles. También puede servir para
+una segmentación de clientes en una empresa o la recomendación de productos a
+clientes.
+Aprendizaje semisupervisado
+El aprendizaje semisupervisado es un punto medio entre el aprendizaje supervisado y
+el aprendizaje no supervisado. Estos algoritmos utilizan un conjunto de datos relati-
+vamente pequeño el cuál está etiquetado. Este guía el aprendizaje para clasificación
+y extracción de características, de un conjunto de datos mucho más grande. Si es
+muy costoso etiquetar los conjuntos de datos o no se tienen suficientes, este tipo de
+aprendizaje puede ser una solución efectiva.
+4.4. Aspectos básicos de redes neuronales
+A continuación, se presenta el concepto de las redes neuronales básicas, ciertos elementos
+que las conforman y que permiten su funcionamiento y aprendizaje. El enfoque principal
+será en las redes neuronales más básicas conocidas comofeedforward.
+4.4.1. Red Neuronal Feedforward
+Una neurona es una célula cerebral que procesa información. Para esto la recopila, la
+analiza y la transmite a otras neuronas, usando señales eléctricas. Inspirándose en este
+funcionamiento, la neurociencia computacional y la inteligencia artificial han desarrollado
+modelos matemáticos conocidos como neuronas artificiales o nodos, términos que se
+usarán intercambiadamente a lo largo del trabajo, los cuales son las unidades básicas de
+las redes neuronales actuales. El funcionamiento de los nodos está definido por una función
+lineal que busca aprender una discriminación entre un conjunto de datos. [31]
+Una variación específica de nodo, conocida como perceptrón, puede tener un conjunto de
+una o más entradas, a las cuales están asociados pesos, que son parámetros que se ajustarán
+de acuerdo con algún tipo de los aprendizajes mencionados en secciones anteriores. Además,
+se tiene un sesgo en la función lineal que ayuda a aprender funciones más complejas.[34].
+Para un solo nodo, la función es de la siguiente forma,
+z =
+dX
+i=1
+wixi +b, (11)
+22
+
+PAGINA_PDF 47
+donde:
+wi son los pesos que dan la importancia a cada característica de la entradaxi del
+conjunto de datos,
+xi es lai-ésima entrada,
+b es el sesgo que permite ajustar la función lineal,
+d es la cantidad de entradas,
+z es la salida de la neurona, que es un valor escalar.
+Generalmente,sebuscaelaprendizajedefuncionescomplejaspormediodelosnodos,por
+lo que se aplica una función de activación al resultado de la ecuación anterior. La función de
+activación introduce una no linealidad en la salida de la neurona, lo cual le permite aprender
+patrones más complejos.[34]
+La aplicación de la función de activación es de la siguiente forma,
+a =σ(z), (12)
+donde σ es la función de activación aplicada al nodo. En este trabajo, entiende que la
+función de activaciónσ puede aplicarse tanto a escalares como a vectores. Esto significa que,
+cuando se utiliceσ(z), se entenderá queσ se aplica a cada componente dez si este es un
+vector, o directamente siz es un escalar. Se darán más detalles en las siguientes secciones
+sobre funciones de activación.
+Una forma gráfica de un nodo se puede observar en la Figura 8. Donde se observan las
+distintas entradas, la suma de estas con los pesos y sesgos y luego la aplicación de la función
+de activación para generar la salida.
+x1
+x2
+x3
+P σ salida
+Suma ponderada Función de activaciónw0
+w1
+w2
+Figura 8: Diagrama de un perceptrón.
+Cuando los perceptrones se combinan y se organizan en capas, se forma una red neuronal
+feedforward. En su forma más básica, esto es un perceptrón multicapa (MLP por sus siglas en
+inglés). Las capas del MLP son consecutivas y se caracterizan por tener a todas las unidades
+23
+
+PAGINA_PDF 48
+de una capa, totalmente conectadas a las neuronas de la capa adyacente siguiente, como se
+observa en la Figura 7. Esto quiere decir que un nodo de una capa está conectada a todos
+los nodos de la siguiente capa. [31]
+Para una red neuronalfeedforward, se tienen tres tipos de capas, que son la capa de
+entrada, las capas ocultas y la capa de salida [34].
+En la capa de entrada es donde inicia el flujo de información, siendo este el lugar donde
+ingresan los datos, de los cuales se desea encontrar un patrón o aproximar una función
+objetivo.
+Luego de la capa de entrada, se tiene un conjunto de capas ocultas que contienen múl-
+tiples nodos o neuronas, cuya cantidad es flexible y se puede ajustar de acuerdo a las ne-
+cesidades del problema. Se pueden tener tantas capas ocultas como se necesite al definir
+la arquitectura. Estas capas, sirven para aprender automáticamente características de los
+datos, como se mencionó en el aprendizaje por representación. Cada capa, puede aprender
+distintas características de los datos, permitiendo a la red crear abstracciones complejas de
+la información.
+Finalmente se llega a la capa de salida, que es la responsable de producir el resultado
+final de la red. Puede servir para clasificar datos o realizar una regresión de estos. El nombre
+feedforward se da debido a que la información viaja desde la capa de entrada hasta la de
+salida de forma secuencial, sin ciclos ni retornos, en un paso hacia adelante.
+Basado en la representación por capas, se puede usar notación vectorial para definir la
+salida de cada capai del MLP comoai y los sesgosbi. Los pesos que conectan los nodos de
+la capa (i− 1) y los de la capai se pueden denotar como la matrizWi. La capa de entrada
+tiene un índice 0 y la de salida un índicek, dondek + 1 representa la cantidad de capas en
+la red neuronal. Entoncesai tiene la siguiente forma,
+ai(x) =
+
+
+
+x, i = 0
+σi(Wiai−1 +bi), i = 1, 2,...,k − 1
+Wiai−1 +bi, i =k.
+Donde las dimensiones de cada variable están definidas de la siguiente forma,
+x∈ Rd0 es el vector de entrada, donded0 es la dimensión de los datos de entrada,
+Wi∈ Rdi×di−1 es la matriz de pesos de la capai, dondedi es la cantidad de nodos en
+la capai y di−1 es la cantidad de nodos en la capa(i− 1),
+bi∈ Rdi es el vector de sesgos para la capai,
+ai(x)∈ Rdi es el vector de salida de la capai,
+σi es la función de activación aplicada en la capai.
+El objetivo principal de una red neuronal feedforward es aproximar una funciónf∗.
+Esta función podría ser un clasificador de aprendizaje supervisado, que busca asignar una
+24
+
+PAGINA_PDF 49
+categoría a una entrada x, donde y = f∗(x). Una red neuronal feedforward define una
+relación y = f(x;θ), donde se busca aprender los valores de los parámetrosθ, siendoθ =
+{Wi,bi}k
+i=1, que resulten en la mejor función de aproximación para un patrón dado en los
+datos. Estos parámetrosθ son el conjunto de pesos y sesgos de cada uno de los nodos de la
+red neuronal. [34]
+4.4.2. Funciones de activación
+Una red neuronal que no haga uso de funciones de activación se comporta de forma muy
+similar a un modelo de regresión lineal [31]. Sin funciones de activación, las combinaciones de
+los nodos solo pueden aproximar relaciones lineales entre las entradas y las salidas, pudiendo
+predecir funciones relativamente simples. Una regresión lineal es como la de la Figura 9, la
+cuál es un método estadístico que busca encontrar la relación entre una variable dependiente
+y una o más independientes [33]. El objetivo es encontrar la línea recta que más se ajusta a
+la relación entre los datos.
+57.5 60.0 62.5 65.0 67.5 70.0 72.5 75.0 77.5
+Estatura (pulgadas)
+200
+220
+240
+260
+280Peso (libras)
+Regresión Lineal
+Datos reales
+Línea de regresión
+Figura 9: Ajuste de regresión lineal.
+Al introducir funciones de activación a las capas de una red neuronal, se da la capacidad
+de capturar relaciones no lineales entre las variables de entrada y salida. De esta forma,
+la red neuronal puede aprender y representar patrones complejos, permitiendo modelar y
+predecir fenómenos más sofisticados. [31]
+Las funciones de activación buscan imitar un mecanismo de las neuronas biológicas,
+donde estas se activan dependiendo de la intensidad de los estímulos nerviosos y el paso de
+información [31]. Se usan para computar un valor en base a la Ecuación 12, el cual se usa
+para decidir si el nodo se activa, es decir, si pasa información. Son principalmente empleadas
+por los nodos de las capas ocultas y existen diferentes tipos que pueden producir diversos
+resultados. Los casos de uso de estas son un área de investigación activa [34].
+Existen funciones de activación binarias, las cuales indican si un nodo debe ser activado
+o no, en base a cierto valor límite [37]. Un ejemplo puede ser,
+25
+
+PAGINA_PDF 50
+σ(z) =
+(
+0 si z <0
+1 si z≥ 0.
+También están las funciones de activación lineales, donde el valor de activación es pro-
+porcional al input, lo cual, como su nombre lo indica, no añade ningún tipo de no linealidad
+a la red neuronal [37]. Si se usa esta función en todos los nodos, es equivalente a tener una
+red neuronal de una sola capa. Su forma es la siguiente,
+σ(z) =z.
+Finalmente, se encuentran las funciones de activación no lineales, las cuales introdu-
+cen la no linealidad deseada para poder aprender patrones complejos en los datos [31]. A
+continuación, se presentan las más comunes.
+Aunque se definen para un escalarx, es importante recordar que estas funciones pueden
+aplicarse de manera componente a componente cuando la entrada es un vectorz∈ Rd,
+es decir, cada componente del vector se procesa individualmente por la función de activa-
+ción. Esto también es aplicable para las funciones de activación no lineales que se verán a
+continuación.
+De forma que, la función de activación definida para un escalarz, es fácilmente extendible
+al caso vectorial. Para un vectorz∈ Rd, la función se aplica componente a componente, es
+decir,
+σ(z) =
+
+
+σ(z1)
+σ(z2)
+...
+σ(zd)
+
+
+donde zi es la i-ésima componente del vectorz.
+Las funciones de activación que se verán a continuación, entran en el conjunto de fun-
+ciones comúnmente conocidas como funciones de activaciónsquashing. Esto quiere decir que
+comprimen el rango de las entradas a un intervalo finito, generalmente entre 0 y 1, o entre
+−1 y 1. Este comportamiento es útil para mantener los valores de salida dentro de un rango
+controlado, lo que facilita el entrenamiento de la red neuronal y previene que las activaciones
+crezcan de manera descontrolada. [34]
+4.4.2.1. ReLU
+Esta función de activación, conocida como Unidad Lineal Rectificada (ReLU por sus
+siglas en inglés), es de las más usadas actualmente y parece que tuviera el mismo mecanismo
+que una función de activación lineal. Sin embargo, debido a que divide el dominio en dos
+partes, como se observa en la Figura 10, permite no activar a todas las neuronas al mismo
+26
+
+PAGINA_PDF 51
+tiempo. Es computacionalmente eficiente comparada con las siguientes funciones que se
+mencionarán y ayuda a la convergencia del aprendizaje de la red neuronal.
+Se puede expresar como,
+ReLU(z) = m´ ax(0,z )
+.
+10.0
+ 7.5
+ 5.0
+ 2.5
+ 0.0 2.5 5.0 7.5 10.0
+z
+0
+2
+4
+6
+8
+10ReLU(z)
+ReLU
+Figura 10: Función de activación ReLU.
+4.4.2.2. Sigmoide
+La función de activación sigmoide es muy común y era la más utilizada antes de ReLU.
+En la capa de salida es comúnmente usada para dar una probabilidad de que una observación
+pertenezca a una de dos clases. Su forma se puede observar en la Figura 11.
+Se puede expresar de la forma,
+Sigmoide(z) = 1
+1 +e−z.
+Al ser usadas en las capas ocultas, tienden a tener valores muy altos cuandox es muy
+positivo y valores muy bajos cuandox es muy negativo. Esto puede causar problemas en el
+aprendizaje basado en gradiente, que se verá más adelante. Por esto, es necesario evaluar en
+qué problemas es viable utilizarla.
+27
+
+PAGINA_PDF 52
+10.0
+ 7.5
+ 5.0
+ 2.5
+ 0.0 2.5 5.0 7.5 10.0
+z
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0Sigmoide(z)
+Sigmoide
+Figura 11: Función de activación sigmoide.
+4.4.2.3. Tanh
+La función de activación tanh, puede facilitar un aprendizaje más rápido a la red neu-
+ronal, debido a que está acotada entre -1 y 1, debido al equilibrio de los valores positivos
+y negativos. Se usa comúnmente en las capas ocultas de las redes neuronales feedforward.
+Puede llevar a una mejor convergencia que la función sigmoide. Su forma se puede observar
+en la Figura 12.
+Su ecuación es la siguiente,
+tanh(x) = ez−e−z
+ez +e−z.
+10.0
+ 7.5
+ 5.0
+ 2.5
+ 0.0 2.5 5.0 7.5 10.0
+z
+1.00
+0.75
+0.50
+0.25
+0.00
+0.25
+0.50
+0.75
+1.00
+tanh(z)
+tanh
+Figura 12: Función de activación tanh.
+28
+
+PAGINA_PDF 53
+4.4.3. Elementos para el entrenamiento de una red neuronal
+En un paso hacia adelante, los datos de entrada de la red neuronal viajan a través de
+todas las capas de una red neuronal y esta produce un resultado [34]. Sea una clasificación o
+una regresión, es necesario determinar qué tan bueno fue el resultado y optimizar la red para
+que se ajuste mejor a la función objetivo. Este proceso se repite por un número determinado
+de épocas o hasta cumplir con una métrica establecida. Cada época corresponde a un ciclo
+completo a través del conjunto de datos de entrenamiento, lo que permite que el modelo
+ajuste sus parámetros iterativamente a medida que aprende de los errores cometidos en las
+predicciones. El uso de múltiples épocas mejora la capacidad del modelo para generalizar,
+ya que permite la optimización progresiva de los pesos y sesgos de la red.
+Durante el entrenamiento, en cada iteración dentro de una época, se calcula una función
+de pérdida para determinar qué tan bueno fue el resultado, y con base en esa métrica, se
+ajustan los parámetros del modelo para acercarse más a la función objetivo, por medio de
+backpropagation. Este proceso se repite por el número de épocas determinado, hasta que
+los parámetros converjan a un valor óptimo o se alcance una condición de parada, como la
+mejora en una métrica específica o la estabilización de la pérdida.
+Para lograr el entrenamiento de la red, se utilizan distintos mecanismos en conjunto, que
+permiten iterar sobre los parámetros del modelo para ajustarlos. A continuación, considera-
+mos estos elementos bajo un enfoque de aprendizaje supervisado, en el cual contamos con
+un conjunto de datos de entrenamiento{(x(i),y (i))}N
+i=1, dondex(i) representa las entradas y
+y(i) las etiquetas o valores objetivo correspondientes, yN es la cantidad total de ejemplos
+en el conjunto de datos.
+4.4.3.1. Funciones de pérdida
+El primero de estos mecanismos, es una función de pérdida, el cual es un método para
+evaluar que tan bien se ajusta la red neuronal a la función objetivo. Si las predicciones son
+totalmente erróneas, la función de pérdida será muy alta. Si son buenas, será lo contrario,
+debido a que la diferencia entre los datos reales y los predichos, es baja. En el entrenamiento
+delaredneuronal,sebuscaoptimizarlosparámetrosmencionados,enrelaciónconlapérdida
+obtenida en cada paso hacia adelante. En cada iteración de entrenamiento, se espera que
+la pérdida se reduzca, indicando que la red neuronal está aprendiendo los patrones en los
+datos de entrada. [34]
+Generalmente, la función de pérdida computa la diferencia entre los valores predichos
+por la red y los valores reales que se desea obtener, para cada observación. El valor obtenido
+es conocido como error de predicción y el objetivo del modelo es minimizarlo.
+Existen diferentes tipos de funciones de pérdida que aplican para distintos casos.
+Mean Squared Error (MSE)
+Esta función de pérdida cuantifica la magnitud del error a partir del promedio de
+las diferencias cuadradas entre los valores predichos y los reales. Al usar los valores al
+cuadrado, se busca penalizar fuertemente las desviaciones de los resultados erróneos. Se
+29
+
+PAGINA_PDF 54
+usa principalmente en tareas de regresión, donde pueden existir muchos datos atípicos
+y se busca penalizarlos.
+Se expresa de la siguiente manera,
+MSE = 1
+N
+NX
+i=1
+∥y(i)− ˆy(i)∥2, (13)
+donde:
+• N es la cantidad de ejemplos en el conjunto de datos de entrenamiento,
+• yi∈ Rd es el vector de valores predichos para la observacióni,
+• ˆyi∈ Rd es el vector de valores reales para la observacióni,
+• d es la dimensión de los vectoresyi y ˆyi, es decir, la cantidad de salidas de la red
+neuronal,
+• ∥y(i)− ˆy(i)∥2 denota la norma ℓ2, es decir, la suma de los cuadrados de las
+diferencias entre cada componente del vector predicho con el real.
+Mean Absolute Error (MAE)
+Esta función de pérdida calcula el promedio del valor absoluto de las diferencias entre
+las predicciones y los valores reales. A diferencia de MSE, trata todos los errores por
+igual sin importar su magnitud. Se usa principalmente para tareas de regresión, donde
+no se desea penalizar con tanta fuerza los datos atípicos.
+Se expresa de la siguiente manera,
+MAE = 1
+N
+NX
+i=1
+∥y(i)− ˆy(i)∥1, (14)
+donde:
+• N es la cantidad de ejemplos en el conjunto de datos de entrenamiento,
+• yi∈ Rd es el vector de valores predichos para la observacióni,
+• ˆyi∈ Rd es el vector de valores reales para la observacióni,
+• d es la dimensión de los vectoresyi y ˆyi, es decir, la cantidad de salidas de la red
+neuronal,
+• ∥y(i)− ˆy(i)∥1 denota la normaℓ1, es decir, la suma de los valores absolutos de las
+diferencias entre cada componente del vector predicho con el real.
+Binary Cross-Entropy Loss
+A diferencia de las anteriores, esta función de pérdida se utiliza para problemas de
+clasificación binaria. Se asume que el modelo genera una predicción de la probabilidad
+de que una observación pertenezca o no a una de las clases. A partir de esto, se
+cuantifica la diferencia entre las predicciones generadas por el modelo y las clases
+reales.
+Se expresa de la siguiente forma,
+30
+
+PAGINA_PDF 55
+BCE =− 1
+N
+ 
+yT log(ˆy) + (1− y)T log(1− ˆy)
+
+, (15)
+donde:
+• N es la cantidad de ejemplos en el conjunto de datos de entrenamiento,
+• y = [y1,...,y N]T es el vector de etiquetas binarias reales para cada observación,
+donde yi∈{ 0, 1},
+• ˆy = [ˆy1,..., ˆyN]T es el vector de probabilidades predichas por el modelo para la
+clase 1 en cada observación, dondeˆyi∈ [0, 1].
+Estas funciones de pérdida son comúnmente utilizadas en los problemas de ML. Sin em-
+bargo, es posible personalizar una función de pérdida en base a los objetivos del aprendizaje,
+como se verá más adelante. Es posible crear funciones más complejas, basándose en el uso
+de funciones más simples como las presentadas en esta sección.
+4.4.3.2. Descenso de gradiente
+Ahoraqueyasetienecomoobjetivominimizarelerrorcalculado,respectolosparámetros
+θ de la red neuronal, usando la función de pérdida, es necesario un método para realizar
+la optimización. La forma más común de hacer esta optimización en redes neuronales es
+por medio del algoritmo de descenso de gradiente, que se observa en el Algoritmo 1. Este
+algoritmo busca encontrar el valor mínimo de la función por medio del ajuste deθ. [34]
+Como ya se mencionó anteriormente, un gradiente es una forma de medir qué tan inclina-
+da es una línea o una curva en cierto punto y la dirección de esta inclinación. Este gradiente
+es aplicado a la función de pérdida que permite guiar al algoritmo de forma iterativa para
+encontrar el mínimo de la función de pérdida, por medio de la actualización deθ. En el
+algoritmo se busca encontrar puntos mínimos globales de la función, aunque en ocasiones
+es suficiente con encontrar mínimos locales [34]. Un punto mínimo global es aquel donde la
+función tiene su menor valor en todo el dominio [38]. Un punto mínimo local es aquel en
+donde la función tiene un valor menor en comparación con otros en su vecindad [38].
+Para ejecutar el algoritmo es necesario definir la cantidad de iteraciones que se realizarán
+de este. Además, también es necesario definir una tasa de aprendizaje olearning rate, lo
+cual indica qué porcentaje se usará del gradiente computado para ajustar los pesos de la red
+neuronal. Una mayor tasa de aprendizaje puede acelerar la convergencia y aprendizaje, pero
+puede causar un estancamiento en mínimos locales. Una menor tasa de aprendizaje puede
+ser más lenta, pero puede llevar a encontrar el mínimo global. [34]
+31
+
+PAGINA_PDF 56
+Algoritmo 1Descenso de gradiente para redes neuronales
+1: Inicializar los parámetrosθ de la red neuronal (incluyendo pesos y sesgos) con valores
+aleatorios.
+2: Repetir
+3: Calcular el gradiente de la función de pérdida L(θ) con respecto a θ, utilizando
+backpropagation.
+4: Actualizar los parámetrosθ usando la tasa de aprendizajeη:
+θ =θ−η∇θL(θ)
+5: Hasta queEl número de iteraciones se cumple o el valor de la pérdidaL(θ) esté por
+debajo de un umbralϵ.
+4.4.3.3. Backpropagation
+El gradiente de la pérdida, que se observa en el paso 4 del Algoritmo 1, contiene las
+derivadas de la función de pérdida con relación a cada uno de los pesos y sesgos de la
+red neuronal. Para un modelo con muchos nodos, esto puede volverse computacionalmente
+pesado. Por lo que es necesario un algoritmo eficiente que pueda calcular las derivadas. Este
+algoritmo es conocido comobackpropagation (retropropagación en español). Cada una de
+estas derivadas puede servir para entender qué tanta responsabilidad tiene cada uno de los
+parámetros en la pérdida o error de la red neuronal, en la iteración actual. [39]
+Para entender el funcionamiento debackpropagation, es necesario primero comprender la
+regla de la cadena en cálculo diferencial. Esta regla se aplica cuando se tiene una composición
+de funciones, es decir, el resultado de una función se utiliza como entrada para otra función.
+Esto es precisamente lo que ocurre en el funcionamiento de una red neuronal, donde la salida
+de cada capa se convierte en la entrada para la siguiente. [34]
+La regla de la cadena expresa la derivada de una composición de funciones de la siguiente
+manera,
+da
+db = da
+dc· dc
+db. (16)
+En este caso, la funcióna depende dec, que a su vez depende deb. Esta dependencia
+se puede expresar comoa(c(b)). La Ecuación 16 significa que la derivada dea con respecto
+a b se calcula multiplicando la derivada dea con respecto a c por la derivada dec con
+respecto av. De manera similar, en una red neuronal, las funciones que componen el modelo
+están encadenadas, y para calcular la derivada de la función de pérdida con respecto a los
+parámetros, se deben multiplicar todas las derivadas intermedias.
+Ahora, es necesario calcular las derivadas parciales de la pérdidaL, con respecto a los
+parámetros W, que son los pesos, yb, que son los sesgos. Por simplicidad, se explicará el
+funcionamiento del algoritmo para la capa de salidak que se observa en la Figura 13, y
+luego se extenderá a las demás capas.
+32
+
+PAGINA_PDF 57
+Capa k− 1
+Capa k
+Figura 13: Capa de salida de red neuronal (Capak) conectada a una capa anteriork− 1.
+El objetivo es realizar el cálculo de las derivadas de la pérdida con respecto a los pará-
+metros de la última capak,
+∂L
+∂bk
+, ∂L
+∂Wk
+, (17)
+donde:
+bk es el vector de sesgos de la capak,
+Wk es la matriz de pesos de la capak.
+Para calcular estas derivadas, es necesario seguir el flujo de la información desde los
+parámetros hasta el coste final, lo que implica una composición de funciones a lo largo de
+las capas de la red. Esta composición se da de la siguiente forma,
+zk =Wkak−1 +bk,
+ak =σ(zk),
+Error de la red neuronal=L (ak).
+Donde zk es el vector resultante de la suma ponderada de las activaciones de la capa
+anterior;ak el resultado de aplicar la función de activaciónσ a la suma ponderada; el error de
+la red neuronal es el resultado de aplicar la función de pérdida aak. Este es el funcionamiento
+del paso hacia adelante en una red neuronal. Primero se computa la suma ponderada de las
+entradas de la red, luego se aplica una función de activación y finalmente en la capa de
+salida, se evalúa la función de pérdida.
+Ahora, para encontrar las derivadas respecto a los parámetros, se puede aplicar la regla
+de la cadena de la siguiente forma,
+∂L
+∂bk
+= ∂L
+∂ak
+· ∂ak
+∂zk
+· ∂zk
+∂bk
+, (18)
+33
+
+PAGINA_PDF 58
+∂L
+∂Wk
+= ∂L
+∂ak
+· ∂ak
+∂zk
+· ∂zk
+∂Wk
+. (19)
+El cálculo de las derivadas intermedias es relativamente simple. La primera∂L
+∂ak
+, significa
+cómo varía el error de la red con respecto a la salida. Se asume que se está usando MSE en
+la red neuronal para realizar el cálculo del error. La pérdida expresada en términos deak,
+que son las predicciones de la red neuronal, expresada en la Ecuación 13 comoˆy, es de la
+siguiente forma,
+L(ak) = 1
+N
+NX
+i=1
+(y(i)−a(i)
+k )2.
+A pesar de que el siguiente análisis puede ser extendido para una cantidad arbitraria de
+ejemplos, el siguiente análisis se realizará con un solo ejemplo de aprendizaje (i.e.N = 1),
+por simplicidad. Por lo tanto, MSE para un solo ejemplo es de la siguiente manera,
+L(ak) = (y−ak)2.
+Es posible encontrar la derivada deL respecto aak de la siguiente forma,
+∂L
+∂ak
+=−2(y−ak).
+También para entender como varía la función de activaciónak en relación con la suma
+ponderada zk, suponiendo que la función de activación es la sigmoide,
+ak(zk) = 1
+1 +e−zk
+.
+Por lo que,
+∂ak
+∂zk
+=ak(zk)· (1−ak(zk)).
+Finalmente,
+∂zk
+∂bk
+= 1, ∂zk
+∂Wk
+=ak−1.
+Luego es posible multiplicar cada una de las derivadas obtenidas para la regla de la
+cadena establecida anteriormente en la Ecuación 18 y la Ecuación 19. De estas mismas
+ecuaciones, el término
+34
+
+PAGINA_PDF 59
+∂L
+∂ak
+· ∂ak
+∂zk
+,
+se puede decir que es∂L
+∂zk
+, por la regla de la cadena. Lo cual mide en que grado se modifica
+el error de la red neuronal, en base al cambio en la suma ponderada de las neuronas. Esto
+se conoce como error imputado de la neurona y se representa de la siguiente forma,
+δk = ∂L
+∂ak
+· ∂ak
+∂zk
+.
+Así que la Ecuación 18 y la Ecuación 19 se simplifican a,
+∂L
+∂bk
+=δk, ∂L
+∂wk
+=δk·ak−1.
+El cálculo de las derivadas de los parámetros del resto de las capas se simplifica. Siguen
+siendo composiciones que involucran más funciones. Para la capa oculta, previa a la de
+salida, de nuevo se necesitan las derivadas por la regla de la cadena,
+∂L
+∂bk−1
+= ∂L
+∂ak
+· ∂ak
+∂zk
+· ∂zk
+∂ak−1
+· ∂ak−1
+∂zk−1
+· ∂zk−1
+∂bk−1
+,
+∂L
+∂Wk−1
+= ∂L
+∂ak
+· ∂ak
+∂zk
+· ∂zk
+∂ak−1
+· ∂ak−1
+∂zk−1
+· ∂zk−1
+∂Wk−1
+.
+Sin embargo, es posible simplificar estas expresiones utilizando valores computados pre-
+viamente y derivadas conocidas,
+∂L
+∂bk−1
+=δk· ∂zk
+∂ak−1
+· ∂ak−1
+∂zk−1
+,
+∂L
+∂Wk−1
+=δk· ∂zk
+∂ak−1
+· ∂ak−1
+∂zk−1
+·ak−2.
+Además, se puede obtener información útil de la siguiente relación,
+δk−1 =δk· ∂zk
+∂ak−1
+· ∂ak−1
+∂zk−1
+,
+donde δk−1 representa el gradiente propagado hacia atrás para la capak− 1.
+Luego, las derivadas finales respecto a los parámetrosbk−1 y Wk−1 se simplifican de la
+siguiente manera,
+35
+
+PAGINA_PDF 60
+∂L
+∂bk−1
+=δk−1, ∂L
+∂Wk−1
+=δk−1·ak−2.
+De esta forma, será posible encontrar las derivadas de los parámetros de la red, usando
+información de las derivadas de las capas siguientes, para las cuales ya se computaron las
+respectivas derivadas. Este algoritmo es relativamente sencillo de implementar, además de
+ser bastante eficiente para la computación de las derivadas. Es generalizable para distintos
+tipos de redes neuronales y potencia el aprendizaje de estas con respecto a los datos. Es
+bastante escalable en relación con la cantidad de parámetros de la red neuronal. [39]
+4.4.3.4. Optimizadores
+Los optimizadores son métodos o algoritmos que se usan para minimizar el error que
+se obtiene a través de la función de pérdida. Ya se describió el algoritmo de descenso de
+gradiente, el cuál es un optimizador. Sin embargo, existen algunos otros que son más sofis-
+ticados y pueden ayudar a la red neuronal a aprender más rápidamente. A continuación, se
+detallan brevemente los dos optimizadores que se utilizan en este trabajo.
+ADAM
+Adaptive Moment Estimation(ADAM) es un algoritmo de optimización que ajusta la
+tasa de aprendizaje para cada parámetro de la red neuronal, permitiendo una actua-
+lización más precisa y eficiente de los pesos y sesgos. Permite manejar eficientemente
+grandes volúmenes de datos y modelos con muchos parámetros. [40]
+Usa un mecanismo conocido comoMomentum, el cual implica mantener un promedio
+móvil exponencialmente ponderado de los gradientes computados anteriormente. In-
+volucra este valor en la actualización de los pesos, ayudando a que la convergencia sea
+más rápida y estable.
+Es útil en escenarios complejos, donde existen muchos datos que potencialmente pue-
+dan tener ruido. Es usado ampliamente en tareas deDeep Learning, visión por compu-
+tadora y modelos de procesamiento de lenguaje natural.
+L-BFGS
+Los métodos como descenso de gradiente hacen uso de derivadas parciales de primer
+orden para encontrar el mínimo de la función. Sin embargo, existen otros métodos
+como el método de Newton que hacen uso de derivadas parciales de segundo orden.
+Estos métodos pueden ser más efectivos para encontrar el mínimo de la función, debido
+a que no solo dan la dirección en la que debe moverse en la función, si no que también
+el tamaño del paso que se debe tomar. [41]
+El método de Newton necesita calcular la matriz Hessiana, la cuál contiene todas
+las segundas derivadas de una función con respecto a las variables independientes.
+También para su funcionamiento necesita calcular su inversa, lo cual puede ser alta-
+mente costoso en términos computacionales. En BFGS, que se basa en el método de
+Newton, la Hessiana puede incrementar su tamaño en base a la cantidad de variables
+independientes del problema. Por lo que actualizarla puede ser muy ineficiente.
+36
+
+PAGINA_PDF 61
+Limited-memory Broyden–Fletcher–Goldfarb–Shanno(L-BFGS)seclasificacomoQuasi-
+Newtoniano, puesto que aproxima la inversa de la Hessiana por medio de un método
+de gradiente, lo cuál es menos costoso. Además, esto también soluciona el problema
+del incremento de tamaño de la Hessiana.
+Entre sus beneficios es que se puede tener una convergencia en el entrenamiento rápida,
+debido a la información que incluye de la función. Sin embargo, puede ser más intensa
+computacionalmente que un método basado en descenso de gradiente sencillo.
+4.4.4. Diferenciación automática
+Comosepudoobservarenlasecciónanterior,lacomputaciónautomáticadelasderivadas
+es de vital importancia para el entrenamiento de las redes neuronales. En muchas ocasiones,
+alintroducirnuevosmodelosdeMLquerequierenelcálculodederivadas,estoseharealizado
+de forma manual. Sin embargo, este proceso es costoso y complejo. También se ha buscado
+hacer empleando métodos numéricos, pero ha generado errores de aproximación. Finalmente
+se ha buscado realizar con diferenciación simbólica, pero esta ha sido demasiado engorrosa.
+La diferenciación automática (AD, por sus siglas en inglés) se ha vuelto muy popular, porque
+permite propagar las derivadas a través de los cálculos necesarios en un modelo demachine
+learning, usando la regla de la cadena. De hecho, el algoritmo de descenso de gradiente que
+se explicó anteriormente hace uso de la diferenciación automática. [42]
+Como se mencionó, distintos métodos de diferenciación han fallado al momento de
+computar gradientes en modelos de ML. A continuación, se da una breve explicación de
+los métodos de diferenciación numérica y simbólica y la razón de sus fallas:
+Diferenciación numérica
+Esta es una técnica para computar los gradientes para optimizar una red neuronal,
+usando el límite de la definición de una derivada [38],
+df
+dx = l´ ım
+h→0
+f(x +h)−f(x)
+h . (20)
+Para computar un gradiente de una función, se puede usar de la siguiente forma,
+∂f
+∂xi
+= f(x +hei)−f(x)
+h para i = 1, 2,...,d, (21)
+donde se computa la derivada de la función objetivo, con respecto a todas las variables
+independientes de interés. Acá,ei es un vector unitario para la dimensióni, yh es un
+escalar que representa un cambio pequeño, acorde a la definición de la derivada [42].
+Su implementación no es difícil, pero computar el gradiente se convierte en un algorit-
+mo de complejidadO(d). Considerando que en muchas ocasiones las entradas de una
+red neuronal son grandes, el tiempo para computar los gradientes aumenta considera-
+blemente. Además, la necesidad de un valor deh pequeño puede causar inestabilidad.
+Finalmente, la representación numérica por parte de las computadoras es limitada. Ge-
+neralmente para este proceso se usan valores de punto flotante, los cuales tienen cierto
+37
+
+PAGINA_PDF 62
+límite de representación y esto puede generar imprecisiones en los cálculos, además de
+requerir mucha memoria. De esta forma se reduce la escalabilidad del algoritmo y se
+pueden generar errores en la optimización de la red neuronal. [43]
+Diferenciación simbólica
+La diferenciación simbólica es un proceso sistemático por el cual se transforma una
+expresión que la componen símbolos y operadores aritméticos, en otra expresión que
+representa su derivada. Esto es similar al proceso manual, pero se usa un algoritmo
+para automatizarlo. Acá no se obtienen las imprecisiones de diferenciación numérica,
+porque se obtiene una expresión que es exactamente la derivada de la función. Sin em-
+bargo, el mayor problema proviene de un crecimiento de las expresiones simbólicas, que
+se puede salir de control. Considerando que, como se mencionó, las redes neuronales
+usan composición de funciones, hacer derivadas de estas puede resultar en un proce-
+so impráctico. También puede ser computacionalmente costoso evaluar las derivadas
+simbólicas, debido a que estas pueden ser expresiones inmanejables. [43]
+La diferenciación automática, permite expresar las composiciones de funciones con las
+variables que las componen y operaciones elementales, que son suma, resta, substracción,
+división y multiplicación. Toda la computación numérica se desarrolla alrededor de estas
+operaciones, concatenando los valores de derivadas conocidas de las cuales depende el cálculo
+de una nueva derivada. La AD tiene dos formas principales, el modo hacia adelante y modo
+reverso. [42]
+Modo hacia adelante
+Esta técnica evalúa simultáneamente el valor de la función y sus derivadas, utilizando
+pares de valores conocidos comodual numbers. Estos valores son propagados hacia
+adelante, en cada operación aritmética de la cadena, hasta la salida de la función. Es
+útil cuando se desea una precisión exacta de las derivadas y es eficiente para funciones
+con pocas entradas.
+Modo reverso
+Todo el proceso de AD parece muy conocido a una sección previa de este trabajo y
+es que como se mencionó, el descenso de gradiente hace uso de él. La forma en la que
+lo usa es conbackpropagation, método que se explicó anteriormente. El modo reverso
+de la diferenciación automática esencialmente esbackpropagation. Es el método más
+utilizado para el cálculo de derivadas en ML.
+4.5. PINNs
+Como se mencionó anteriormente, el entrenamiento de un modelo de ML generalmente
+consta de un conjunto de características de datos que son ingresadas como entradas. A
+partir de estas se genera una salida, basada en un algoritmo que ha aprendido un patrón
+en los datos. Particularmente en sistemas físicos o ingenieriles, este acercamiento puede ser
+complejo, debido a que la adquisición de datos relacionados al problema puede ser muy
+difícil. Debido a esta falta de datos, muchos algoritmos de ML y particularmente dedeep
+38
+
+PAGINA_PDF 63
+learning, fallan al momento de hacer predicciones acertadas. Sin embargo, hay un factor
+extra que no siempre se toma en cuenta y puede ser de gran ayuda en la resolución de estos
+problemas, el conocimiento teórico. [44]
+Existe una buena cantidad de conocimiento teórico de diversos sistemas. Este conoci-
+miento muchas veces se da en forma de leyes o principios físicos, que ayudan a describir los
+problemas, los cuales pueden expresarse como PDEs. Sin embargo, estas no suelen ser incor-
+poradas en los métodos de aprendizaje tradicionales. A pesar de esto, integrarlas puede traer
+un gran beneficio, debido a que pueden actuar como un regularizador. Esto puede ayudar a
+forzar a que el modelo aprenda la función o funciones que modelan el comportamiento del
+sistema y que genere soluciones correctas al problema. Al integrar esta información en un
+modelo, se puede aumentar la información que este tiene para generar estas soluciones. [6]
+A partir de esto, surgen las Redes Neuronales Informadas por la Física (PINNs por sus
+siglas en inglés). Este modelo permite integrar el conocimiento teórico existente, incorpo-
+rándolo en su arquitectura y proceso de aprendizaje. Combinan la potencia de las redes
+neuronales con la precisión de las ecuaciones físicas. Esto permite modelar problemas que
+no son triviales y brindan soluciones para escenarios de los cuales previamente no se tenía
+información, por su capacidad de generalización. Se basan principalmente en el teorema de
+aproximación universal de las redes neuronales. Este y las características básicas del modelo
+se describirán a continuación. [6]
+4.5.1. Teorema de aproximación universal
+El teorema de aproximación universal es una propiedad de las redes neuronales feedfor-
+ward, sobre la cual se basa el uso de PINNs. Este establece que una red neuronal feedforward
+que tenga una capa de salida lineal y al menos una capa oculta con cualquier función de ac-
+tivaciónsquashing, como la sigmoide o tanh, puede aproximar cualquier función continua en
+un subconjunto deRn, con un factor de error arbitrario, dado que tenga suficientes unidades
+o nodos ocultos. Las derivadas de la red neuronal también pueden aproximar las derivadas
+de la función con precisión arbitraria.[34]
+Este teorema quiere decir que, sin importar qué función se busque aproximar o aprender,
+una red neuronal feedforward lo suficientemente grande podrá hacerlo. Al decirsuficiente-
+mente grande, se refiere a tener una cantidad suficiente de capas ocultas y de nodos en
+estas. Es importante notar que el teorema indica que existe una red neuronal suficientemen-
+te grande, pero no indica el tamaño. Podría requerirse una red de tamaño exponencial o
+prohibitivamente grande, que haga imposible el aprendizaje y su implementación.
+El teorema es de gran importancia, debido a que, al poder aproximar cualquier función,
+la red neuronal puede aprender las soluciones de cualquier PDE o conjunto de estas, con alta
+precisión. Por lo tanto, esto proporciona una base teórica para poder usar redes neuronales
+en la resolución de problemas físicos.
+39
+
+PAGINA_PDF 64
+4.5.2. Implementación
+Considerando una ecuación diferencial parcial parametrizada para una función u =
+u(t,x ), donde
+u : Rd+1→ R,
+dondedse refiere a la cantidad de dimensiones espaciales y se le suma la dimensión temporal.
+Esta función tiene un codominio escalar. Además,t∈ [0,T ] y x∈ Ω⊂ Rd.
+La ecuación diferencial parcial toma la forma,
+∂u
+∂t +N [u] = 0, t ∈ [0,T ], x ∈ Ω, (22)
+dondeN [u] es un operador diferencial enu con respecto a las variables espaciales. Esto
+quiere decir, posiblemente un operador de divergencia, gradiente, laplaciano, entre otros.
+La ecuación está sujeta a las condiciones iniciales y de frontera,
+u(0,x ) =g(x), x ∈ Ω, (23)
+B[u] = 0, t ∈ [0,T ], x ∈∂Ω. (24)
+donde B[u] es un operador de frontera que corresponde a condiciones de frontera de
+Dirichlet, Neumann o Robin.
+La funciónu es la solución de la PDE. En este caso,u es dependiente del tiempo y de
+una variable de posiciónx. Sin embargo,u puede depender de las variables necesarias del
+problema. [6]
+Para aproximar la solución de la función descrita por medio de una PINN, se debe
+construir una red neuronal feedforwardˆuθ(t;x) con parámetrosθ, que son los pesos y sesgos.
+La salida de esta red neuronal representa la solución de la PDE de la Ecuación 22. Para
+poder encontrar la solución por medio de la red neuronal, se necesitan distintos elementos.
+[45]
+El primer y más importante elemento necesario para entrenar la red neuronal, es la
+definición de una función de pérdida personalizada. Esta permitirá integrar información del
+sistema. Esto lo hará por medio de términos en la pérdida que involucran las condiciones
+iniciales, las condiciones de frontera y la PDE.
+El primer término es una función que computa la pérdida para los puntos de condiciones
+iniciales. En esta pérdida se emplean puntos definidos en el subdominio del problema, donde
+se desean establecer valores iniciales, los cuáles se evalúan la red neuronal. Se busca hacer
+que, en el tiempo inicial, la red neuronal cumpla con los valores preestablecidos para estos
+puntos.
+40
+
+PAGINA_PDF 65
+SeusaunafuncióndepérdidaexistentecomoMSE,paracuantificarladiferenciaentrelas
+predicciones de la red neuronal, y los valores reales de la función objetivo en las condiciones
+iniciales, de la siguiente forma,
+LIC (θ) = 1
+NIC
+NICX
+i=1
+∥uθ(0, x(i)
+IC )− g(x(i)
+IC )∥2. (25)
+Acá NIC se refiere a la cantidad de puntos evaluados,x(i)
+IC a cada punto evaluado yg
+es una función que da el valor inicial a cada punto. Estos puntos evaluados en las condi-
+ciones iniciales son muestreados del dominio espacial donde se impone la condición, como
+se mencionó. Comúnmente se usa un muestreo uniforme de los puntos y se busca tener una
+cantidad representativa de estos, para que la red neuronal pueda aprender a satisfacerlos
+adecuadamente.
+Para el segundo término se busca que la red neuronal cumpla con las condiciones de
+frontera. Para esto se evalúan los puntos en los subdominios de frontera en la red neuronal
+y se busca que esta cumpla con los valores preestablecidos.
+Se usa una función de pérdida preexistente como MSE, de nuevo,
+LBC(θ) = 1
+NBC
+NBCX
+i=1
+∥B[uθ](ti
+BC,xi
+BC)∥2. (26)
+Donde NBC es la cantidad de puntos evaluados de frontera,t(i)
+BC los puntos temporales
+en el contorno yx(i)
+BC los puntos espaciales en el contorno. Al igual que con las condicio-
+nes iniciales, se busca tener una muestra representativa de los puntos en el subdominio de
+frontera correspondiente.
+Hasta el momento, se han definido dos términos en la función de pérdida, los cuales
+corresponden a un enfoque de aprendizaje supervisado convencional. En este caso, se tienen
+las características de las observaciones, que son las coordenadas espacio-temporales de los
+puntos evaluados en las condiciones iniciales y de frontera, junto con los valores reales
+(ground truth) asociados a cada uno de estos puntos. Estos valores permiten calcular el
+error entre la salida de la red neuronal y los datos esperados, lo que permite ajustar los
+parámetros de la red para que esta aprenda a satisfacer las condiciones impuestas de manera
+adecuada. Sin embargo, a continuación se definirá un término de la pérdida que corresponde
+a un aprendizaje no supervisado, puesto que no se tienen valores reales contra los cuales se
+puedan comparar los resultados de la red neuronal. Por esto, las PINNs son conocidas como
+un método de aprendizaje semi-supervisado.
+Para el tercer término involucrado, es necesario definir los residuales que son funciones
+que miden el error en la solución aproximada de la PDE, por medio de la red neuronal.
+Estos ayudan a que la red cumpla con la restricción dada por la PDE, asegurando que esté
+modelando adecuadamente la función solución.
+El residual de la PDE de la Ecuación 22 se puede definir de la siguiente forma,
+41
+
+PAGINA_PDF 66
+Rθ(t,x ) = ∂uθ
+∂t (t,x ) +N[uθ](t,x ). (27)
+Se busca que este residual sea 0 en todo el dominio interior de la función, es decir, donde
+no hay condiciones de contorno. Para esto, se hace un muestreo, posiblemente aleatorio, de
+puntos en todo el dominio, exceptuando las condiciones de frontera. Estos puntos se conocen
+como puntos de colocación y sirven para ser evaluados en la red neuronal y sus derivadas. En
+este caso, no hay un valor con el cual comparar los puntos, simplemente se busca reducir a 0
+el residual. El cálculo de estas derivadas se hace por medio de diferenciación automática. En
+esencia, esto lo que significa es integrar la PDE en la red neuronal de una forma explícita.
+De forma que, se puede escribir la forma de la PDE, con sus respectivas derivadas en la
+función de pérdida y como se mencionó, se toma a la red neuronal como la función solución.
+La forma de esta función de pérdida, una vez más usando MSE es,
+LFísica(θ) = 1
+Nr
+NrX
+i=1
+∥Rθ(t(i)
+r , x(i)
+r )∥2 (28)
+Donde Nr es la cantidad de puntos de colocación, t(i)
+r son los puntos de colocación
+temporales y x(i)
+r son los puntos de colocación espaciales. En el presente trabajo se usa
+el término LFísica debido a que esta es la parte donde se integra la mayor cantidad de
+información del funcionamiento del sistema físico que se modela.
+Finalmente, se define una función de pérdida conjunta basada en todos los términos
+anteriores:
+L(θ) =LIC (θ) +LBC(θ) +LFísica(θ) (29)
+Esta función de pérdida es usada para entrenar la red neuronal, buscando cumplir no solo
+con las condiciones de frontera e iniciales, sino que también con la forma de la PDE. Debido
+a que para los puntos de frontera e iniciales existen valores objetivo que se busca cumplir,
+pero para los puntos de colocación no, las PINN se consideran un tipo de aprendizaje semi-
+supervisado. [6]
+En la Figura 14, se puede observar la arquitectura de una PINN. El primer componente
+que tiene es una red neuronal feedforward, que busca aproximar una función definida. A
+partir del resultado de esta red neuronal, se computan las derivadas necesarias expresadas
+en la PDE. Usando estas, se calcula la pérdida del residual, de las condiciones iniciales y
+de las condiciones de frontera y se integra. Usando esta pérdida, se realiza todo el proceso
+de optimización de la red, con los algoritmos mencionados en secciones anteriores. Esto
+se realiza hasta llegar a una solución suficientemente buena. Generalmente, las PINNs usan
+tanh de función de activación, debido a que es posible computar todas sus derivadas durante
+el backpropagation, a diferencia de funciones como ReLU. [44]
+42
+
+PAGINA_PDF 67
+Figura 14: Diagrama de arquitectura de una PINN [44].
+43
+
+PAGINA_PDF 68
+
+
+PAGINA_PDF 69
+CAPÍTULO 5
+PINN para modelar piezoelectricidad
+El presente capítulo describe la metodología utilizada para modelar el efecto piezoeléc-
+trico utilizando PINNs.
+5.1. Exploración del funcionamiento de PINNs
+La primera parte para llevar a cabo el desarrollo del proyecto fue entender el funcio-
+namiento de las PINNs. Para esto se realizaron dos problemas previamente solucionados.
+En el primero se modeló un problema descrito por la ecuación de calor, que se mostrará
+más adelante. El otro consistió en la modelación de un sistema de fluidos descrito por las
+ecuaciones de Navier-Stokes.
+5.1.1. Ecuación de calor
+Inicialmente se modeló la ecuación de calor, como se mencionó, para comprender el
+esquema general empleado para la resolución de PDEs usando redes neuronales. Se utilizó
+un problema relativamente simple, para poder obtener un conocimiento del funcionamiento
+de las PINNs de forma rápida [46].
+5.1.1.1. Definición del problema
+Se modeló la ecuación de calor en una dimensión como problema físico. Para este fin
+se usó una varilla de una dimensión con un largo establecido. La PDE de este sistema está
+dada por la Ecuación 30.
+45
+
+PAGINA_PDF 70
+∂U
+∂t =α∂2U
+∂x2, (30)
+f(x) = 50x(1−x), (31)
+U(x, 0) =f(x), (32)
+U(0,t ) =U(L,t ) = 0. (33)
+Se definió la condición inicial de la PDE por medio de la Ecuación 32. Esta quiere decir
+que la temperatura en cada punto de la varilla está inicialmente en una configuración que
+conforme a la funciónf(x). En este caso, esta función está dada en la Ecuación 31.
+Además también se definieron las condiciones de frontera en la Ecuación 33. Para estas,
+L es el largo de la varilla. Esto quiere decir, que, en los extremos de la varilla, la temperatura
+es cero, por lo que no hay ninguna fuente de calor adicional. Las propiedades del material
+usado se encuentran en la Tabla 1.
+Características del problema Valor
+Largo de varilla (L) 1.0 metro
+Tiempo (T) 100.0 segundos
+Constante de difusión de calor (α ) 0.003 m2/s
+Tabla 1: Propiedades del material utilizado.
+5.1.1.2. Tecnologías utilizadas y entorno de ejecución
+El experimento se llevó a cabo en una computadora Alienware m15 R6 con las siguientes
+especificaciones:
+Procesador: 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz, 2304 MHz, 8 nú-
+cleos, 16 procesadores lógicos.
+Memoria RAM:32 GB.
+Para la implementación de la red neuronal y el análisis de datos, se utilizaron las siguien-
+tes librerías de Python:
+PyTorch: Es una de las bibliotecas más populares para eldeep learning. Ofrece la
+capacidad de crear distintos tipos de arquitecturas de redes neuronales, por medio
+de métodos y clases. Facilita el entrenamiento de las redes neuronales, debido a que
+incluye optimizadores, la capacidad de definir funciones de pérdida flexibles y el ajus-
+te automático de pesos conbackpropagation. Además, provee la posibilidad de hacer
+diferenciación automática. Por lo tanto, en el proyecto fue usada para crear la red
+neuronal feedforward y para el cálculo de derivadas incluidas en las PDEs. [47]
+46
+
+PAGINA_PDF 71
+Numpy: Es una biblioteca orientada a la computación científica con Python. Pro-
+porciona soporte para arrays y matrices grandes y multidimensionales, junto con una
+colección de funciones matemáticas para operar en estos arrays. En el proyecto, fue
+utilizada para la generación de los datos para alimentar a la red neuronal. [48]
+Matplotlib: Es una biblioteca de visualización con Python. Se utiliza para crear
+figuras y gráficos. En el proyecto, Matplotlib se usó para visualizar los resultados del
+modelo. [49]
+DeepXDE:Esunabibliotecaorientadaalafacilitacióndelacreaciónyentrenamiento
+de PINNs. En este proyecto fue utilizada para hacer diferenciación automática para la
+ecuación de calor únicamente. [50]
+PyDOE: Es una biblioteca que permite realizar muestreo de datos, lo cual fue útil
+para el entrenamiento de las PINNs en este proyecto.
+5.1.1.3. Generación de datos
+Para las condiciones iniciales y de frontera se generaron 300 puntos espaciales, muestrea-
+dos uniformemente, en el rango de 0 a 1.0 (perteneciendo a números reales) y lo mismo para
+los puntos temporales, pero en el rango de 0 a 100.0 segundos.
+Luego se creó unameshgrid de estos, que es una estructura de datos que relaciona el
+espacio con el tiempo. Para la condición inicial, se usaron todos aquellos puntos donde
+el tiempo fuera 0 y se calculó el resultado de la funciónf(x) mencionada, siendo este la
+temperatura correspondiente. Para las condiciones de frontera, se usaron todos los puntos
+que tuvieran tiempo 0 y punto espacial 0 oLy se les asignó como resultado, una temperatura
+de 0.
+Finalmente, se generaron 300 puntos espaciales y 300 temporales, muestreados unifor-
+memente en todo el dominio, haciendo igualmente unameshgrid, para un total de 9000
+puntos. Estos fueron los puntos de colocación utilizados en el problema. Además, se genera-
+ron 500 puntos espaciales y 500 puntos temporales como conjunto de prueba, para evaluar
+las predicciones de la PINN.
+5.1.1.4. Arquitectura de PINN
+Para resolver la ecuación diferencial, se utilizó una PINN basada en unaFeed Forward
+Neural Network. Los detalles de la arquitectura de una PINN utilizada para modela la
+ecuación de calor se pueden encontrar en la Tabla 2.
+La arquitectura de forma gráfica se puede observar en la Figura 15. Se usó una capa de
+entrada de 2 unidades, debido a que las variables independientes del problema son posición
+en una dimensión y tiempo. Luego se usaron 2 capas ocultas de 20 nodos cada una y entre
+ellas se como función de activación tanh. Finalmente, en la capa de salida se tuvo un solo
+nodo, debido a que este modela la función de calor U, presentada en la Ecuación 30.
+47
+
+PAGINA_PDF 72
+x
+t
+.
+.
+.
+20 
+neuronas
+.
+.
+.
+U
+tanh
+20 
+neuronas
+Ut
+Uxx
+Diferenciación 
+automática
+Cálculo 
+de 
+pérdida
+Feedforward 
+neural 
+network
+tanh
+Figura 15: Arquitectura de PINN para ecuación de calor.
+48
+
+PAGINA_PDF 73
+Número de capa Nombre de capa Descripción de capa
+1 Input/Dense layer 1 Tamaño de capa de entrada de 2;
+20 nodos en capa oculta.
+2 tanh 1 Función de activación tanh.
+3 Dense layer 2 20 nodos en capa oculta.
+4 tanh 2 Función de activación tanh.
+5 Output/Dense layer 4 20 nodos en capa oculta;
+tamaño de capa de salida de 1.
+Tabla 2: Arquitectura de la red neuronal.
+5.1.1.5. Función de pérdida
+La función de pérdida se divide en dos partes. Por un lado, se tiene la pérdida física, que
+está basada en la PDE de la Ecuación 30 y que tiene la forma,
+Lfísica = 1
+M
+MX
+i=1
+
+∂Uθ(x(i),t (i))
+∂ti
+−α∂2Uθ(x(i),t (i))
+∂x2
+i
+
+2
+, (34)
+dondeM es la cantidad de puntos de colocación usados, yUθ(x(i),t (i)) es el resultado de
+la red neuronal. Entonces, se busca reducir a 0 la PDE, optimizando la red para que modele
+la función que se desea aproximar. El cálculo de las derivadas de la funciónUθ(x(i),t (i)), que
+es la red neuronal, se realiza por medio de autodiferenciación en reversa obackpropagation.
+Luego, se utiliza la pérdida de la condición inicial y de las condiciones de frontera. En
+este caso, se usa una pérdida MSE, comparando los puntos predichos por la red neuronal y
+los resultados verdaderos, definidos en la creación de los datos,
+LIC = 1
+NIC
+NICX
+i=1
+∥Uθ(xi,ti)−yIC,i∥2 (35)
+LBC = 1
+NBC
+NBCX
+i=1
+∥Uθ(xi,ti)−yBC,i∥2 (36)
+En la Ecuación 32,yIC,i se refiere al resultado esperado de la función para la condición
+inicial en los puntos de este subdominio. En la Ecuación 33,yBC,i se refiere al resultado
+esperado de la función para las condiciones de frontera en este subdominio.
+Finalmente, se utiliza una pérdida en conjunto,
+L =Lfísica +LIC +LBC. (37)
+49
+
+PAGINA_PDF 74
+5.1.1.6. Entrenamiento
+Para el entrenamiento de la PINN se usaron 5000 épocas, durante las cuales se alimentó
+el modelo con los puntos de colocación, de condiciones iniciales y de frontera. Se utilizó la
+función de pérdida establecida para hacer el backpropagation en la red, buscando satisfacer
+las condiciones y que el resiudal de la PDE convergiera hacia 0. Se utilizó ADAM como
+optimizador con una tasa de aprendizaje de 0.01, siendo este una opción eficiente para
+manejar la optimización de la PINN [45].
+5.1.1.7. Resultados
+En la Figura 16 se pueden observar los resultados de la modelación de la ecuación de
+calor utilizando PINNs. Se utilizó el método de las diferencias finitas (FDM por sus siglas en
+inglés), para hacer una modelación clásica del problema y poder realizar una comparación
+con lo obtenido de la red neuronal. Los resultados de este método se pueden observar en la
+Figura 17.
+Se puede observar que la forma de la función obtenida de la PINN es bastante similar a
+la de la función obtenida por la FDM. Para sustentar esto, también se realizó el cálculo del
+error relativo medio L2, cuya fórmula se encuentra en la Ecuación 38, entre los resultados
+de la PINN y FDM usado como valor real. Se obtuvo un error relativo medio L2 de 0.609.
+Error Relativo Medio L2=∥uθ−uFDM∥2
+∥uFDM∥2
+(38)
+Figura 16: Resultado de PINN para ecuación de calor.
+50
+
+PAGINA_PDF 75
+Figura 17: Resultado de FDM para ecuación de calor.
+5.1.2. Navier-Stokes
+Para continuar con el entendimiento de PINNs, se procedió a modelar un problema de
+mecánica de fluidos descrito por las ecuaciones de Navier-Stokes. Este escenario es más
+retador que el anterior, debido a que las ecuaciones son más complejas, además de que es
+un sistema de PDEs.
+5.1.2.1. Definición del problema
+El problema consiste en un fluido atravesando un canal que tiene un cilindro circular en
+medio, en dos dimensiones. Esta configuración se puede observar en la Figura 18. El canal
+tiene un alto de 0.41 unidades y un ancho de 2.2 unidades. El cilindro tiene un radio de
+0.05 y su centro está en el punto (0.2, 0.2). El dominio del problema consiste en todas las
+coordenadas espaciales dentro del canal, exceptuando aquellas dentro del cilindro.
+2.2
+0.41
+Ingreso 
+de 
+fluido
+X
+Y
+Figura 18: Configuración de problema de mecánica de fluidos.
+Se modeló el estado estacionario, que está descrito por la Ecuación 39 y la Ecuación 40.
+Acáν representa una viscosidad cinemática, propia del fluido, cuyo valor es 0.001. Por otra
+51
+
+PAGINA_PDF 76
+parte, u es el vector de velocidad del fluido, en este caso en dos dimensiones, yp la presión.
+∇· u = 0, (39)
+−ν∆u + (u·∇ )u +∇p = 0. (40)
+Se definieron distintas condiciones de frontera. En las paredes superior e inferior, así
+como en la circunferencia del cilindro, se usa una condición de frontera de no deslizamiento.
+Esto quiere decir que la velocidadu, tanto enx como eny, debe ser 0 en estos subdominios.
+Además, en el extremo izquierdo se define un flujo del fluido, dado por la Ecuación 41.
+u(0,y ) =
+4Uy (0.41−y)
+0.412 , 0
+
+. (41)
+5.1.2.2. Tecnologías utilizadas y entorno de ejecución
+El experimento se llevó a cabo en la plataformaGoogle Colabcon una suscripciónpro
+para poder utilizar tarjetas gráficas. Se usó una tarjeta gráficaTesla T4 con 15 GB de
+RAM y un CPU con 51 GB de RAM.
+Para la implementación de la red neuronal y el análisis de datos, se utilizaron las siguien-
+tes bibliotecas de Python:
+PyTorch
+Numpy
+Matplotlib
+PyDOE
+5.1.2.3. Generación de datos
+Para las condiciones de frontera se generaron 318 puntos en total, que incluyen todas las
+condiciones de frontera mencionadas. Cada punto se asocia con sus respectivas coordenadas
+x e y, además de incluir los valores objetivo para la velocidad enx, eny y la presión del
+fluido. La generación de estos puntos se realizó mediante un proceso de muestreo conocido
+como Latin Hypercube Sampling (LHS), el cual asegura una cobertura uniforme y eficiente
+del espacio de las fronteras, y es un método comúnmente empleado para la resolución de
+PDEs. En la Figura 19, se pueden observar los puntos obtenidos y los valores de estos para
+la velocidad del fluido enx,y y la presión. Se puede observar claramente los valores del flujo
+de entrada, dados por la Ecuación 41.
+52
+
+PAGINA_PDF 77
+0.0 0.5 1.0 1.5 2.0
+X
+0.0
+0.1
+0.2
+0.3
+0.4Y
+Puntos de velocidad horizontal de fluido acorde a condiciones de frontera
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+u(x)
+(a)
+0.0 0.5 1.0 1.5 2.0
+X
+0.0
+0.1
+0.2
+0.3
+0.4Y
+Puntos de velocidad vertical de fluido acorde a condiciones de frontera
+0.100
+0.075
+0.050
+0.025
+0.000
+0.025
+0.050
+0.075
+0.100
+u(y)
+(b)
+0.0 0.5 1.0 1.5 2.0
+X
+0.0
+0.1
+0.2
+0.3
+0.4Y
+Puntos de presión de fluido acorde a condiciones de frontera
+0.100
+0.075
+0.050
+0.025
+0.000
+0.025
+0.050
+0.075
+0.100
+p
+(c)
+Figura 19: Condiciones de frontera para Navier-Stokes: (a) condiciones de frontera para velocidad
+en eje horizontal, (b) condiciones de frontera para velocidad en eje vertical, (c) condiciones de
+frontera para presión.
+Adicionalmente, se generaron 22,345 puntos de colocación con los cuales se buscó cubrir
+todo el dominio. Estos se generaron usando igualmente LHS. Estos se pueden observar en la
+Figura 20. No se generaron puntos dentro del cilindro, debido a que está fuera del dominio
+del problema. La velocidad y presión deben a ser 0 dentro de este, ya que es un sólido por
+el cual no pasa el fluido.
+53
+
+PAGINA_PDF 78
+Figura 20: Puntos de colocación para Navier-Stokes.
+5.1.2.4. Arquitectura de PINN
+La arquitectura utilizada para la PINN para resolver el problema de mecánica de fluidos
+se encuentra en la Tabla 3. Además, también se puede observar un diagrama de esta en la
+Figura 21. Se usaron 2 datos de entrada, que fueron las coordenadasx e y de los puntos.
+Se utilizaron 4 capas ocultas con 50 neuronas cada una. Se empleó la función de activación
+tanh. En la capa de salida se usaron 3 neuronas, debido a que se buscó modelar la velocidad
+del fluido en el eje horizontal, vertical y la presión. En la Figura 21 se puede apreciar cómo se
+tiene una red neuronal feedforward que tiene como salidas la velocidad y la presión. A partir
+de estas se computan las primeras y segundas derivadas, con diferenciación automática, que
+luego son empleadas para calcular la función de pérdida física.
+Número de capa Nombre de capa Descripción de capa
+1 Input/Dense layer 1 Tamaño de capa de entrada de 2;
+50 nodos en capa oculta.
+2 tanh 1 Función de activación tanh.
+3 Dense layer 2 50 nodos
+en capa oculta.
+4 tanh 2 Función de activación tanh.
+5 Dense layer 3 50 nodos
+en capa oculta.
+6 tanh 3 Función de activación tanh.
+7 Dense layer 4 50 nodos
+en capa oculta.
+8 tanh 4 Función de activación tanh.
+9 Output/Dense layer 5 50 nodos en capa oculta;
+tamaño de capa de salida de 3.
+Tabla 3: Arquitectura de la red neuronal con 4 capas ocultas y 50 neuronas cada una.
+54
+
+PAGINA_PDF 79
+x
+y
+.
+.
+.
+50 
+neuronas
+50 
+neuronas
+.
+.
+.
+tanh
+.
+.
+.
+tanh
+50 
+neuronas
+.
+.
+.
+tanh
+u
+v
+p
+tanh
+50 
+neuronas
+ux
+uy
+vx
+vy
+px
+py
+uxx
+uyy
+vxx
+vyy
+Diferenciación 
+automática
+Navier 
+Stokes 
+x
+Navier 
+Stokes 
+y
+Continuidad
+Cálculo 
+de 
+pérdida
+Feedforward 
+neural 
+network
+Figura 21: Esquema de arquitectura de PINN para Navier-Stokes.
+5.1.2.5. Función de pérdida y entrenamiento
+NSx =−ν
+∂2u
+∂x2 + ∂2u
+∂y2
+
++u∂u
+∂x +v∂u
+∂y + ∂p
+∂x (42)
+NSy =−ν
+∂2v
+∂x2 + ∂2v
+∂y2
+
++u∂v
+∂x +v∂v
+∂y + ∂p
+∂y (43)
+continuity = ∂u
+∂x + ∂v
+∂y (44)
+Lfísica = MSE(NSx, 0) +MSE(NSy, 0) +MSE(continuity, 0) (45)
+La función de pérdida utilizada está dividida en dos partes, al igual que con la ecuación
+de calor. La pérdida física se definió como se observa en la Ecuación 45, donde cada uno de
+los términos está definido en la Ecuación 42, la Ecuación 43 y la Ecuación 44. En este caso,
+se utiliza MSE para buscar reducir los resiudales del sistema de PDEs de Navier-Stokes a 0.
+LBC = MSE(uBC,u∗
+BC) +MSE(vBC,v∗
+BC) +MSE(pBC,p∗
+BC) (46)
+55
+
+PAGINA_PDF 80
+La función de pérdida para las condiciones de frontera se observa en la Ecuación 46,
+donde uBC, vBC y pBC representan los valores de las velocidades y la presión en los puntos
+de la frontera, yu∗
+BC, v∗
+BC y p∗
+BC son los valores esperados en esas fronteras.
+En esta expresión,LBC se calcula como la suma de los errores cuadrados medios entre
+los valores predichos y los valores esperados de las variables en los puntos de la frontera.
+Esto asegura que la red neuronal cumpla con las condiciones de frontera impuestas por el
+problema físico. La función de pérdida usada por la red neuronal se compuso de la suma de
+LBC conLfísica.
+Para el entrenamiento se utilizó una combinación de ADAM y L-BFGS, una técnica
+bastante utilizada en diferentes experimentos [51]. Se usaron 2000 épocas con ADAM y un
+learning ratede 0.001. Con L-BFGS se usaron 1000 épocas y unlearning ratede 0.1.
+5.1.2.6. Resultados
+En la Figura 22 se puede observar la pérdida obtenida durante el entrenamiento de la red
+neuronal. Es posible evidenciar que llegó a valores relativamente cercanos a 0. Esto indica
+que se redujeron los residuales de la PDE y además se ajustó la red neuronal a los valors
+de las condiciones de contorno. La velocidad horizontal, vertical y la presión del fluido se
+pueden apreciar en la Figura 23.
+0 500 1000 1500 2000 2500 3000
+Épocas
+10
+9
+8
+7
+6
+5
+4
+3
+Valor de pérdida logarítmica
+Figura 22: Pérdida de red neuronal para Navier-Stokes en escala logarítmica.
+56
+
+PAGINA_PDF 81
+(a)
+(b)
+(c)
+Figura 23: Resultados de PINN para Navier-Stokes. a) Velocidad horizontal de fluido a partir de
+Navier-Stokes modelada con PINN; b) Velocidad vertical de fluido a partir de Navier-Stokes
+modelada con PINN; c) Presión de fluido a partir de Navier-Stokes modelada con PINN.
+57
+
+PAGINA_PDF 82
+5.2. Aplicación a piezoelectricidad
+Luego de entender los componentes y funcionamiento básico de la PINN, se procedió a
+aplicarla en un nuevo problema, el efecto piezoeléctrico.
+5.2.1. Efecto piezoeléctrico indirecto
+En esta sección se evidencia el método utilizado para modelar el efecto piezoeléctrico
+indirecto. Para esto se introduce la definición del problema modelado y el enfoque utilizado
+para solucionarlo por medio de PINNs.
+5.2.1.1. Definición del problema modelado
+Se modeló una viga en voladizo con dos capas en dos dimensiones. Esto debido a que es
+una de las configuraciones más comunes al momento de evaluar la piezoelectricidad [52]. Las
+PDEs utilizadas para modelar este problema fueron las presentadas en la Ecuación 6 y la
+Ecuación 7, además de las ecuaciones constitutivas de la piezoelectricidad, observadas en la
+Ecuación 3 y la Ecuación 4. Para la configuración de la viga piezoeléctrica, el largo de la viga
+es de 0.1 metros y el alto de 0.001 metros. Para ambas capas de la viga se utilizó el material
+PVDF. Los coeficientes del material para la capa superior de la viga con dimensiones en
+metros se encuentra en la Tabla 4. Los coeficientes del material para la capa inferior de la
+viga con dimensiones en metros se encuentran en la Tabla 5.
+Propiedad de material Valor
+c11 2.1836× 109 N/m2
+c12 0.6332× 109 N/m2
+c22 2.1836× 109 N/m2
+c33 0.775× 109 N/m2
+e11 0 C/m2
+e13 0 C/m2
+e31 −2.904× 10−2 C/m2
+e33 −5.157× 10−2 C/m2
+e14 0 C/m2
+e34 0 C/m2
+ϵ1 −1.062× 10−10 C/N/m2
+ϵ2 −1.041× 10−10 C/N/m2
+Tabla 4: Propiedades de material PVDF para capa superior de viga en voladizo paralela
+piezoeléctrica en metros [29].
+En la Figura 24, se pueden observar las condiciones de frontera utilizadas para el dis-
+positivo seleccionado. Para el potencial eléctrico se utilizaron las condiciones de frontera
+de los bordes superior e inferior de la viga, donde el valor de cada una es de 100 voltios y
+58
+
+PAGINA_PDF 83
+Propiedad de material Valor
+c11 2.1836× 109 N/m2
+c12 0.6332× 109 N/m2
+c22 2.1836× 109 N/m2
+c33 0.775× 109 N/m2
+e11 0 C/m2
+e13 0 C/m2
+e31 2.904× 10−2 C/m2
+e33 5.157× 10−2 C/m2
+e14 0 C/m2
+e34 0 C/m2
+ϵ1 −1.062× 10−10 C/N/m2
+ϵ2 −1.041× 10−10 C/N/m2
+Tabla 5: Propiedades de material PVDF para capa inferior de viga en voladizo paralela
+piezoeléctrica en metros [29].
+0 voltios respectivamente. La viga en voladizo está fija en su lado izquierdo, por lo que el
+desplazamiento enx yy es 0 en este subdominio. Por otra parte, se asume que no hay estrés
+sobre el extremo libre de la viga (extremo derecho), por lo que la derivada normal del estrés
+en este punto es 0. Finalmente se asume que la viga es aislante, por lo que no sale carga
+de ella, así que, en los extremos derecho e izquierdo, la derivada normal del desplazamiento
+eléctrico es 0.
+ 
+Condición 
+de 
+frontera 
+de 
+voltaje 
+0 
+V
+ 
+Condición 
+de 
+frontera 
+de 
+voltaje 
+100 
+V
+ 
+Condición 
+de 
+frontera 
+de 
+desplazamiento 
+0 
+y 
+derivada 
+normal 
+de 
+desplazamiento 
+eléctrico 
+0
+ 
+Condición 
+de 
+frontera 
+de 
+derivada 
+normal 
+de 
+estrés 
+0 
+y 
+derivada 
+normal 
+de 
+desplazamiento 
+eléctrico 
+0
+Figura 24: Condiciones de frontera para viga en voladizo piezoeléctrica paralela.
+59
+
+PAGINA_PDF 84
+5.2.1.2. Tecnologías utilizadas y entorno de ejecución
+El experimento se llevó a cabo en la plataformaGoogle Colabcon una suscripciónpro
+para poder utilizar tarjetas gráficas. Se usó una tarjeta gráficaTesla T4 con 15 GB de
+RAM y un CPU con 51 GB de RAM.
+Se definió el uso de un servidor de MLflow [53] remoto, por medio de una plataforma
+web llamadaDagsHub, para poder hacer seguimiento de los experimentos relacionados con
+el entrenamiento de la PINN, incluyendo el registro de métricas de rendimiento, gráficos de
+pérdidas, y gráficos de resultados del modelo.
+Para la implementación de la red neuronal y el análisis de datos, se utilizaron las siguien-
+tes bibliotecas de Python:
+PyTorch
+Numpy
+Matplotlib
+PyDOE
+5.2.1.3. Generación de datos
+Debido a que para las PINNs se incluyen términos de pérdida de condiciones de contorno,
+sedebengenerardatosparapoderevaluarlas.Enestecaso,lascondicionesdedesplazamiento
+y voltaje, mencionadas, se integraron directamente en la arquitectura de la red, como se verá
+más adelante. Por esto, solo se generaron datos para evaluar las condiciones de frontera de
+estrés y desplazamiento eléctrico, como se observa en la Figura 25. Se generaron 150 puntos
+en las fronteras. Acá se tienen las coordenadasx e y de cada punto. La generación de estos
+puntos se realizó mediante un proceso de muestreo conocido comoLatin Hypercube Sampling
+(LHS), el cual asegura una cobertura uniforme y eficiente del espacio de las fronteras, y es
+un método comúnmente empleado para la resolución de PDEs [54].
+Por otra parte, se generaron 22500 puntos de colocación en el dominio del problema para
+entrenamiento y 160000 puntos de prueba. La generación de estos se realizó igualmente usan-
+do LHS. En general, al usar una cantidad grande de datos en DL, ayuda a la generalización
+de la red neuronal [34]. Este escenario no es la excepción, la cual es una de las razones de
+usar esa cantidad de puntos. Múltiples aproximaciones a distintos problemas físicos usando
+PINNs utilizan cantidades de puntos de colocación similares [6], [55]. El uso de puntos de
+colocación puede aumentar la estabilidad del entrenamiento y capturar con mayor precisión
+variaciones en el dominio y el comportamiento de las PDEs en este [56]. Esta selección de
+puntos se puede ver en la Figura 26a.
+60
+
+PAGINA_PDF 85
+Figura 25: Puntos empleados para satisfacer las condiciones de frontera de estrés y desplazamiento.
+(a) Puntos de colocación para modelación de efecto piezoeléctrico indirecto para configuración
+de viga en voladizo.
+(b) Puntos de prueba para modelación de efecto piezoeléctrico indirecto para configuración de
+viga en voladizo.
+Figura 26: Puntos generados para evaluar en PINN en la configuración de la viga en voladizo bajo
+el efecto piezoeléctrico indirecto.
+61
+
+PAGINA_PDF 86
+Adicionalmente a las coordenadasx e y de los puntos de colocación, se añadieron los
+coeficientes correspondientes de cada punto de la Tabla 4 y la Tabla 5. Esto se realizó debido
+a que se modelan dos capas piezoeléctricas que tienen propiedades ligeramente distintas, por
+lo que es práctico añadir los coeficientes como parte del conjunto de datos. Estos fueron útiles
+al definir la función de pérdida. En la Figura 27, como un ejemplo de lo mencionado, se puede
+observar el valor dee33 para cada punto de colocación.
+Figura 27: Ejemplo de inclusión de coeficientes de material en conjunto de datos para cada punto
+de colocación en configuración de viga.
+5.2.1.4. Arquitecturas de PINN empleadas
+Para modelar el efecto piezoeléctrico indirecto, se emplearon dos arquitecturas diferentes
+dePINN.Elpropósitodeestofueevaluarsurendimientoalmomentodemodelarelproblema
+y determinar cuál lo hizo de forma más eficiente.
+La primera arquitectura empleada, denominada en este trabajo como uniforme, se puede
+resumir en la Tabla 6. Además, en la Figura 28 se puede observar un diagrama de cómo
+se modeló y de cómo se obtuvieron las derivadas de las funciones. Se evidencia que es
+una arquitectura con una cantidad uniforme de neuronas por capa. Es importante destacar
+que, para solventar las PDEs de piezoelectricidad indirecta, se utilizaron más neuronas
+en la red neuronal. También, se modelaron múltiples salidas, que incluyeron el estrés y el
+desplazamiento eléctrico, lo cual permitió que se usaran solo derivadas de primer orden [55].
+62
+
+PAGINA_PDF 87
+x
+y
+.
+.
+.
+300 
+neuronas
+300 
+neuronas
+.
+.
+.
+tanh
+.
+.
+.
+tanh
+300 
+neuronas
+.
+.
+.
+tanh
+u
+v
+300 
+neuronas
+tanh
+Feedforward 
+neural 
+network
+Diferenciación 
+automática
+Cálculo 
+de 
+pérdida
+Figura 28: Esquema de arquitectura uniforme de PINN para efecto piezoeléctrico indirecto.
+63
+
+PAGINA_PDF 88
+Número de capa Nombre de capa Descripción de capa
+1 Input/Dense layer 1 Tamaño de capa de entrada de 2;
+300 nodos en capa oculta.
+2 tanh 1 Función de activación tanh.
+3 Dense layer 2 300 nodos
+en capa oculta.
+4 tanh 2 Función de activación tanh.
+5 Dense layer 3 300 nodos
+en capa oculta.
+6 tanh 3 Función de activación tanh.
+7 Dense layer 4 300 nodos
+en capa oculta.
+8 tanh 4 Función de activación tanh.
+9 Output/Dense layer 5 300 nodos en capa oculta;
+tamaño de capa de salida de 8.
+Tabla 6: Arquitectura de la red neuronal con 4 capas ocultas y 300 neuronas cada una.
+Para la segunda arquitectura evaluada, denominada piramidal en este trabajo, se utilizó
+una distribución de nodos por capa de manera incremental y simétrica. A medida que se
+avanza en las capas, el número de nodos aumenta hasta llegar a un punto máximo, tras el
+cual se comienza a decrementar siguiendo el mismo patrón simétrico. Esto se observa en el
+resumen de la arquitectura en la Tabla 7. Se puede observar un diagrama de la arquitectura
+en la Figura 29
+64
+
+PAGINA_PDF 89
+x
+y
+.
+.
+.
+32 
+neuronas
+64 
+neuronas
+.
+.
+.
+.
+.
+.
+128 
+neuronas
+.
+.
+.
+u
+v
+tanh
+Feedforward 
+neural 
+network
+Diferenciación 
+automática
+Cálculo 
+de 
+pérdida
+tanh
+.
+.
+.
+tanh
+tanh
+256 
+neuronas
+.
+.
+.
+128 
+neuronas
+tanh
+.
+.
+.
+tanh
+64 
+neuronas
+tanh
+32 
+neuronas
+Figura 29: Esquema de arquitectura piramidal de PINN para efecto piezoeléctrico indirecto.
+65
+
+PAGINA_PDF 90
+Número de capa Nombre de capa Descripción de capa
+1 Input/Dense layer 1 Tamaño de capa de entrada de 2;
+32 nodos en capa oculta.
+2 tanh 1 Función de activación tanh.
+3 Dense layer 2 32 nodos
+en capa oculta.
+4 tanh 2 Función de activación tanh.
+5 Dense layer 3 64 nodos
+en capa oculta.
+6 tanh 3 Función de activación tanh.
+7 Dense layer 4 128 nodos
+en capa oculta.
+8 tanh 4 Función de activación tanh.
+9 Dense layer 5 256 nodos
+en capa oculta.
+10 tanh 5 Función de activación tanh.
+11 Dense layer 6 128 nodos
+en capa oculta.
+12 tanh 6 Función de activación tanh.
+13 Dense layer 7 64 nodos
+en capa oculta.
+14 tanh 7 Función de activación tanh.
+15 Dense layer 8 32 nodos
+en capa oculta.
+16 tanh 8 Función de activación tanh.
+17 Output/Dense layer 9 32 nodos en capa oculta;
+tamaño de capa de salida de 8.
+Tabla 7: Arquitectura de la red neuronal piramidal con múltiples capas ocultas.
+5.2.1.5. Función de pérdida y entrenamiento
+Para ambas arquitecturas, la función de pérdida total es la misma y consta de dos
+partes. La primera es la pérdida físicaLfísica, que se calcula como la suma de las pérdidas
+mecánicas, eléctricas y de divergencia, donde cada término de pérdida es un error cuadrático
+medio (MSE) de los residuales correspondientes,
+σ11 =c11ux +c12vy +e11ϕx +e31ϕy,
+σ22 =c12ux +c22vy +e13ϕx +e33ϕy,
+σ12 =c33
+1
+2(uy +vx) +e14ϕx +e34ϕy,
+Dx =e11ux +e13vy +e14(uy +vx)−ϵ1ϕx,
+Dy =e31ux +e33vy +e34(uy +vx)−ϵ2ϕy.
+(47)
+66
+
+PAGINA_PDF 91
+residualσ11 =σ11−σ11,pred,
+residualσ22 =σ22−σ22,pred,
+residualσ12 =σ12−σ12,pred,
+residualDx =Dx−Dx,pred,
+residualDy =Dy−Dy,pred.
+(48)
+divergenciaσ1 = ∂σ11
+∂x + ∂σ12
+∂y ,
+divergenciaσ2 = ∂σ12
+∂x + ∂σ22
+∂y ,
+divergenciaD = ∂Dx
+∂x + ∂Dy
+∂y .
+(49)
+MSEmec = 1
+N
+NX
+i=1
+ 
+residual2
+σ11,i +residual2
+σ22,i +residual2
+σ12,i
+
+,
+MSEeléct = 1
+N
+NX
+i=1
+
+residual2
+Dx,i +residual2
+Dy,i
+
+,
+MSEdiv = 1
+N
+NX
+i=1
+
+divergencia2
+σ1,i +divergencia2
+σ2,i +divergencia2
+Di
+
+.
+Lfísica = MSEmec +MSEeléct +MSEdiv. (50)
+Debido a que se está modelando tanto desplazamiento y potencial, como estrés y des-
+plazamiento eléctrico, estos se deben usar para cumplir con las ecuaciones constitutivas
+piezoeléctricas. Esto se puede realizar, calculando el estrés y el desplazamiento dieléctrico
+por medio de la Ecuación 3 y la Ecuación 4. Este cálculo se realiza por medio de la Ecua-
+ción 47, donde se usa la notación de subíndice para las derivadas. Luego, se realiza una
+comparación de estos valores calculados usando desplazamientos y potencial eléctrico, con
+las predicciones de estrés y divergencia eléctrica dadas por la red neuronal en sus nodos de
+salida, lo que se observa en la Ecuación 48. En esta ecuacion, donde se tiene el subíndice
+"pred", se refiere a las predicciones directas de los nodos de la PINN.
+Por otra parte, se calculan las divergencias de estrés y desplazamiento eléctrico en la
+Ecuación 49, donde se usa notación de Leibniz para las derivadas. Finalmente se calcula
+MSE para los residuales y las divergencias, los cuales conforman la pérdida física en la
+Ecuación 50. En esta última ecuación el subíndicei se refiere a cada punto de colocación
+evaluado en el dominio del problema yN a la cantidad de puntos de colocación empleados.
+Por otra parte, se tiene la función de pérdida de condiciones de fronteraLBC, donde se
+busca cumplir con las dos condiciones de frontera definidas en la Ecuación 51.
+σ(x)· n = 0, ∀x∈ Ωt,
+D· n = 0, ∀x∈ Ωp. (51)
+67
+
+PAGINA_PDF 92
+Para garantizar que estas condiciones se cumplan, se define la pérdida en los subdominios
+Ωt y Ωp como la suma de los errores cuadráticos medios (MSE) en estos subdominios,
+LBC = MSEσ +MSED, (52)
+donde,
+MSEσ = 1
+NΩt
+NΩtX
+i=1
+(σpred(xi)· ni)2, (53)
+MSED = 1
+NΩp
+NΩpX
+i=1
+(Dpred(xi)· ni)2. (54)
+Aquí, NΩt y NΩp son el número de puntos de colocación en los subdominiosΩt y Ωp
+respectivamente, yσpred(xi)· ni y Dpred(xi)· ni son los valores calculados en los puntos
+de frontera. El término de la función de pérdidaLBC minimiza la discrepancia en estas
+condiciones de frontera durante el entrenamiento de la red.
+Finalmente, se unen el término físico de la función de pérdida con el término de condi-
+ciones de contorno, obteniendo la siguiente expresión para la función de pérdida total,
+Ltotal =Lfísica +LBC. (55)
+Para implementar las condiciones de frontera para el desplazamiento y el potencial eléc-
+trico, estos se integraron directamente en la arquitectura de la red como restricciones rígidas.
+De esta forma, se busca que las condiciones de frontera formen parte de la estructura de
+la red, satisfaciéndolas automáticamente, en lugar de usar datos para satisfacerla [45]. La
+forma de imponer estas condiciones se observa en las siguientes ecuaciones [29],
+umodified =x·u, (56)
+vmodified =x·v, (57)
+ϕconstraint = y
+altura·voltaje, (58)
+ϕmodified =y· (y− 1)·ϕ +ϕconstraint. (59)
+En estas ecuaciones:
+umodified y vmodified representan los desplazamientos modificados que incorporan las
+condiciones de frontera, dondeu y v son las predicciones originales de la red para el
+desplazamiento, yx es la coordenada espacial en la dirección correspondiente. Multi-
+plicar u y v por x asegura que estos desplazamientos se anulen enx = 0, cumpliendo
+con la condición de frontera.
+68
+
+PAGINA_PDF 93
+ϕmodified es el potencial eléctrico modificado, donde ϕ es la predicción original del
+potencial, y y es la coordenada espacial en la dirección correspondiente. El término
+ϕconstraint(x,y ) ajusta el potencial para que cumpla con un gradiente esperado en la
+viga, basado en el voltaje máximo y la altura de la viga.
+Estas expresiones aseguran que las condiciones de frontera se integran de manera natural
+en la salida de la red neuronal, eliminando la necesidad de aplicar un término adicional de
+penalización en la función de pérdida para satisfacer estas condiciones.
+Finalmente, el entrenamiento se realizó con 1000 épocas usando ADAM como optimi-
+zador, con unlearning ratede 0.001, seguido de 200 épocas de L-BFGS como optimizador,
+con learning ratede 0.01.
+5.2.1.6. Validación de resultados
+Para validardar la precisión de los resultados obtenidos con la Red Neuronal Informada
+por la Física (PINN), se tomó como referencia un ejercicio previamente resuelto utilizando
+el método de elementos finitos (FEM) [57]. Este enfoque permitió una comparación directa
+entre las predicciones de la PINN y los resultados ya validados por FEM. Se empleó la
+métrica previamente usada, Error Relativo Medio L2, definida en la Ecuación 38.
+5.2.2. Efecto piezoeléctrico directo
+A continuación se modeló el efecto piezoeléctrico directo con una configuración similar
+al efecto piezoeléctrico indirecto previamente modelado.
+5.2.2.1. Definición del problema modelado
+Al igual que en el efecto piezoeléctrico indirecto, se modeló una viga en voladizo con dos
+capas en dos dimensiones. Las PDEs utilizadas para modelar el problema fueron, igualmente,
+las presentadas en la Ecuación 6 y la Ecuación 7. Además, también se usaron las ecuaciones
+constitutivas de la piezoelectricidad presentadas en la Ecuación 3 y la Ecuación 4.
+Las dimensiones de la viga fueron las mismas que para el problema anterior, teniendo
+0.1 metros de largo y 0.001 metros de alto. Los coeficientes del material piezoeléctrico para
+la capa superior de la viga se encuentran en la Tabla 4 y para la inferior en Tabla 5.
+La variación más importante de este problema, es que en lugar de aplicar un voltaje a la
+viga que genere una deformación, se aplica una fuerza que debe generar un voltaje. Por esto,
+las condiciones de frontera para este problema se modifican ligeramente en comparación con
+el efecto piezoeléctrico indirecto. En este caso, como se observa en la Figura 30, ya no se
+tiene una condición de frontera de 100 voltios en la parte superior de la viga. Solo se fuerza
+a que la parte inferior tenga 100 voltios. Además, la fuerza mencionada que se aplica a la
+viga es de 1 N.
+69
+
+PAGINA_PDF 94
+ 
+Condición 
+de 
+frontera 
+de 
+voltaje 
+0 
+V
+ 
+Condición 
+de 
+frontera 
+de 
+desplazamiento 
+0 
+y 
+derivada 
+normal 
+de 
+desplazamiento 
+eléctrico 
+0
+ 
+Condición 
+de 
+frontera 
+de 
+derivada 
+normal 
+de 
+estrés 
+0 
+y 
+derivada 
+normal 
+de 
+desplazamiento 
+eléctrico 
+0
+Fuerza 
+1 
+N
+Figura 30: Configuración de sistema con condiciones de frontera para viga en voladizo paralela
+bajo efecto piezoeléctrico directo.
+5.2.2.2. Tecnologías utilizadas y entorno de ejecución
+Las tecnologías utilizadas y el entorno de ejecución fueron exactamente los mismos em-
+pleados para modelar el efecto piezoeléctrico indirecto, en la Subsubsección 5.2.1.2.
+5.2.2.3. Generación de datos
+Para modelar el efecto piezoeléctrico directo se utilizó el mismo conjunto de datos uti-
+lizado para el efecto piezoeléctrico indirecto, presentado en la Subsubsección 5.2.1.3. Esto
+debido a que solo se generaron puntos de evaluación del dominio, que es el mismo para
+ambos problemas. Por lo tanto, no fue necesario cambiar valores. La cantidad de puntos de
+colocación y de prueba es la misma.
+5.2.2.4. Arquitectura de PINN empleada
+En la modelación del efecto piezoeléctrico directo, se utilizó únicamente una de las ar-
+quitecturas propuestas. Se utilizó la arquitectura piramidal previamente mencionada, cuya
+organización se observa en la Tabla 7 y cuyo diagrama se observa en la Figura 29.
+5.2.2.5. Función de pérdida y entrenamiento
+La función de pérdida para el efecto piezoeléctrico directo sigue la misma estructura que
+la presentada en la Subsubsección 5.2.1.5, en la cual se consideran los términos mecánicos,
+eléctricos y de divergencia. Sin embargo, se realizó la incorporación de una fuerza adicional
+70
+
+PAGINA_PDF 95
+en los términos de divergencia para reflejar el efecto piezoeléctrico directo. Por lo tanto,
+estas ecuaciones se modifican de la siguiente manera,
+divergenciaσ1 = ∂σ11
+∂x + ∂σ12
+∂y +Fx,
+divergenciaσ2 = ∂σ12
+∂x + ∂σ22
+∂y +Fy.
+Acá el valor deFx es de 0 N y el valor deFy es de 1 N.
+Adicionalmente, se realizó una modificación a la imposición de condiciones de frontera
+en la red neuronal. Particularmente, se realizó en la condición para el potencial eléctrico.
+Ahora se define como
+ϕmodified =y·ϕ,
+donde y representa la coordenada espacial en la dirección vertical. De esta manera, se
+busca asegurar que en el inferior de la viga, el voltaje sea 0.
+Se utilizaron 1000 épocas de ADAM como optimizador, con learning rate de 0.001,
+seguidas de 180 épocas de L-BFGS como optimizador, con unlearning ratede 0.01.
+71
+
+PAGINA_PDF 96
+
+
+PAGINA_PDF 97
+CAPÍTULO 6
+Resultados
+A continuación, se presentan los resultados de las PINN para la modelación de la viga
+en voladizo bajo el efecto piezoeléctrico.
+6.1. Gestión y seguimiento de experimentos
+Como se mencionó, para el registro de los experimentos, se configuró un servidor de
+MLflow remoto. En dicha herramienta se almacenaron los resultados de los experimentos
+realizados con las PINNs. Estos experimentos se pueden observar en la Figura 31. Por otra
+parte, en la Figura 32 se observan los detalles correspondientes a un experimento, donde
+se almacenaron parámetros utilizados en el entrenamiento, así como las métricas obtenidas.
+En la Figura 33 se puedem observar de nuevo la las métricas relacionadas al experimento,
+así como la pérdida de la red neuronal en el entrenamiento. Finalmente, en la Figura 34 se
+observa que se pudieron almacenar los gráficos, como el potencial eléctrico, de los resultados
+del experimento dentro de MLflow.
+73
+
+PAGINA_PDF 98
+Figura 31: Vista de herramienta de almacenamiento de experimentos en MLflow
+(a)
+(b)
+Figura 32: Ejemplo de detalles del experimento en MLflow. a) parámetros registrados de
+experimento; b) métricas registradas de experimento.
+74
+
+PAGINA_PDF 99
+Figura 33: Métricas importantes y pérdida almacenada por experimento en MLflow.
+Figura 34: Gráficos almacenados en experimento de MLflow.
+75
+
+PAGINA_PDF 100
+6.2. Efecto piezoeléctrico indirecto
+A continuación se presentan los resultados obtenidos de la modelación del efecto piezo-
+eléctrico indirecto, con las dos arquitecturas propuestas.
+6.2.1. Resultados del entrenamiento de las redes neuronales
+En la Figura 35 se puede observar la pérdida de la red neuronal con arquitectura unifor-
+me, a lo largo de las épocas de entrenamiento en escala logarítmica, para la viga en voladizo,
+con dimensiones en metros. Se hizo una escala logarítmica debido a que el valor de la pérdi-
+da inicial es muy alta en comparación a los valores subsiguientes. En la Figura 36 se puede
+observar la pérdida, igualmente en escala logarítmica, para la red neuronal con arquitectura
+piramidal.
+Figura 35: Pérdida de entrenamiento de PINN para viga en voladizo con dimensiones en metros
+para arquitectura uniforme de red neuronal.
+76
+
+PAGINA_PDF 101
+Figura 36: Pérdida de entrenamiento de PINN para viga en voladizo con dimensiones en metros
+para arquitectura piramidal de red neuronal.
+Además, en la Tabla 8 se puede observar una compracaión entre las arquitecturas uti-
+lizadas, para el valor final de la pérdida luego de las épocas de entrenamiento y el tiempo
+que tomó entrenar la red neuronal.
+Arquitectura Parámetros Épocas Pérdida Final Tiempo (min)
+Uniforme 274,208 1200 2.19e+7 17.73
+Piramidal 87,048 1200 2.24e+7 10.54
+Tabla 8: Resultados de pérdida, tiempo de entrenamiento y cantidad de parámetros para
+arquitecturas de PINN para efecto piezoeléctrico indirecto.
+6.2.2. Resultados de PINN y comparación con FEM para viga en voladizo
+bajo efecto piezoeléctrico indirecto
+A continuación se muestran los resultados obtenidos por las dos arquitecturas de PINN
+comparadas, para el efecto piezoeléctrico indirecto.
+6.2.2.1. Arquitectura uniforme
+En la Figura 37 se puede observar el desplazamiento horizontal de la viga en voladizo
+con sus dimensiones en metros para la arquitectura de PINN presentada en la Tabla 6. Este
+resultado significa que la capa superior tuvo un desplazamiento negativo y la capa inferior
+un desplazamiento positivo. Esto indica una elongación en la parte inferior y una contracción
+en la parte superior. En la misma figura se observa el resultado esperado por parte de FEM
+para el desplazamiento horizontal y el error absoluto obtenido entre PINN y FEM.
+77
+
+PAGINA_PDF 102
+(a)
+(b)
+(c)
+Figura 37: Resultado para el desplazamiento horizontal obtenido con PINN uniforme. (a)
+Desplazamiento horizontal (PINN); (b) Desplazamiento horizontal (FEM); (c) Error absoluto entre
+PINN y FEM.
+78
+
+PAGINA_PDF 103
+Por otra parte, en la Figura 38 se observa el desplazamiento vertical de la viga modelado
+por la PINN. Esto indica que la sección cercana al extremo derecho de la viga fue la que tuvo
+un mayor desplazamiento positivo, mientras que el resto de la viga no se desplazó tanto.
+Igualmente se muestra el desplazamiento vertical esperado, modelado con FEM y el error
+absoluto entre PINN y FEM. Lo mismo sucede en la Figura 39 para el potencial eléctrico
+de la viga.
+(a)
+(b)
+(c)
+Figura 38: Resultado para el desplazamiento vertical obtenido con PINN uniforme. (a)
+Desplazamiento vertical (PINN); (b) Desplazamiento vertical (FEM); (c) Error absoluto entre
+PINN y FEM.
+79
+
+PAGINA_PDF 104
+(a)
+(b)
+(c)
+Figura 39: Resultado para el potencial eléctrico obtenido con PINN uniforme. (a) Potencial
+eléctrico (PINN); (b) Potencial eléctrico (FEM); (c) Error absoluto entre PINN y FEM.
+80
+
+PAGINA_PDF 105
+La Figura 40a muestra cómo se deforma la viga bajo el efecto piezoeléctrico indirecto
+modelado por la PINN uniforme. En contraste, se muestra la deformación de la viga por
+FEM en la Figura 40b.
+(a)
+(b)
+Figura 40: Comparación de la deformación de la viga piezoeléctrica bajo el efecto indirecto
+modelada con PINN y FEM. (a) Deformación de la viga con PINN; (b) Deformación de la viga con
+FEM.
+6.2.2.2. Arquitectura piramidal
+Similar a la arquitectura uniforme, en la Figura 41 se puede observar el resultado del
+desplazamiento horizontal modelado con la PINN y su comparación con FEM. Lo mismo
+sucede en la Figura 42 para el desplazamiento vertical y en la Figura 43 para el potencial
+eléctrico.
+81
+
+PAGINA_PDF 106
+(a)
+(b)
+(c)
+Figura 41: Resultado para el desplazamiento horizontal obtenido con PINN piramidal, y
+comparación con FEM. (a) Desplazamiento horizontal (PINN); (b) Desplazamiento horizontal
+(FEM); (c) Error absoluto entre PINN y FEM.
+82
+
+PAGINA_PDF 107
+(a)
+(b)
+(c)
+Figura 42: Resultado para el desplazamiento vertical obtenido con PINN piramidal, y comparación
+con FEM. (a) Desplazamiento vertical (PINN); (b) Desplazamiento vertical (FEM); (c) Error
+absoluto entre PINN y FEM.
+83
+
+PAGINA_PDF 108
+(a)
+(b)
+(c)
+Figura 43: Resultado para el potencial eléctrico obtenido con PINN piramidal, y comparación con
+FEM. (a) Potencial eléctrico (PINN); (b) Potencial eléctrico (FEM); (c) Error absoluto entre
+PINN y FEM.
+84
+
+PAGINA_PDF 109
+También, la Figura 44a muestra cómo se deforma la viga bajo el efecto piezoeléctrico
+indirecto modelado por la PINN piramidal y se contrasta con la deformación de la viga por
+FEM en la Figura 44b.
+6.2.3. Resultados de error relativo L2 para arquitecturas de PINN usadas
+para efecto piezoeléctrico indirecto
+En la Tabla 9 se puede observar una comparación de los valores del error relativo L2
+entre cada arquitectura de PINN utilizada en relación a los resultados esperados por parte
+de FEM.
+Magnitud Norma L2
+Arquitectura Uniforme
+Norma L2
+Arquitectura Piramidal
+Desplazamiento horizontal (m) 7.92e-7 6.504e-7
+Desplazamiento vertical (m) 8.55e-5 6.389e-5
+Potencial eléctrico (V) 2.731 2.731
+Tabla 9: Comparación de los valores de la norma L2 entre las predicciones de las arquitecturas de
+PINN y los resultados de FEM.
+6.3. Efecto piezoeléctrico directo
+A continuación se presentan los resultados obtenidos para la modelación del efecto pie-
+zoeléctrico directo para una viga en voladizo paralela.
+6.3.1. Resultados del entrenamiento de red neuronal
+En la Tabla 10 se puede observar la pérdida final obtenida durante el entrenamiento,
+así como el tiempo que tomó en realizarse. Además, en la Figura 45 se puede observar la
+pérdida obtenida durante el entrenamiento, para la PINN que modeló el efecto piezoeléctrico
+directo.
+Épocas Pérdida Final Tiempo de Entrenamiento (min)
+1200 1.21e+7 9.097
+Tabla 10: Resultados de pérdida y tiempo de entrenamiento para PINN para efecto piezoeléctrico
+directo.
+6.3.1.1. Resultados de PINN para efecto piezoeléctrico directo
+A continuación se presentan los resultados de la PINN para modelar el efecto piezoeléc-
+trico directo, por medio de una fuerza vertical de 1 N. A diferencia del efecto piezoeléctrico
+indirecto, acá no se tiene una comparación con FEM.
+85
+
+PAGINA_PDF 110
+(a)
+(b)
+Figura 44: Comparación de la deformación de la viga piezoeléctrica bajo el efecto indirecto
+modelada con PINN y FEM. (a) Deformación de la viga con PINN; (b) Deformación de la viga con
+FEM.
+86
+
+PAGINA_PDF 111
+Figura 45: Pérdida de entrenamiento en escala logarítmica de PINN para viga en voladizo con
+dimensiones en metros bajo efecto piezoeléctrico directo para arquitectura uniforme de red
+neuronal.
+En la Figura 46 se puede observar el desplazamiento horizontal obtenido por la PINN.
+En este caso, para el desplazamiento horizontal, se genera una contracción de la capa su-
+perior y una elongación de la capa inferior. Igualmente en la Figura 47 se puede observar
+el desplazamiento vertical modelado y en la Figura 48 el potencial eléctrico. Además, en la
+Figura 49 se observa como se deforma la viga al aplicarle la fuerza mencionada.
+Figura 46: Desplazamiento horizontal de viga en voladizo bajo efecto piezoeléctrico directo
+modelado por PINN.
+87
+
+PAGINA_PDF 112
+Figura 47: Desplazamiento vertical de viga en voladizo bajo efecto piezoeléctrico directo modelado
+por PINN.
+Figura 48: Potencial eléctrico de viga en voladizo bajo efecto piezoeléctrico directo modelado por
+PINN.
+Figura 49: Deformación de viga en voladizo bajo efecto piezoeléctrico directo modelado por PINN.
+88
+
+PAGINA_PDF 113
+CAPÍTULO 7
+Discusión
+La presente investigación tuvo como objetivo principal el desarrollo de una herramienta
+de simulación que permitiera modelar el efecto piezoeléctrico utilizandoDeep Learning. Para
+lograrlo, primero se debieron identificar las bases teóricas que rigen la piezoelectricidad, en
+forma de un conjunto de ecuaciones diferenciales parciales (PDEs por sus siglas en inglés).
+Estas ecuaciones fueron integradas en una Red Neuronal Informada por la Física (PINN por
+sus siglas en inglés). Se implmementaron dos arquitecturas de la PINN con ligeras variacio-
+nes, que lograron capturar adecuadamente el efecto piezoeléctrico indirecto. Posteriormente,
+se usó una de estas arquitecturas para modelar el efecto piezoeléctrico directo. A conti-
+nuación se evaluarán los resultados obtenidos a partir de las PINNs para modelar el efecto
+piezoeléctrico.
+Al modelar el problema del efecto piezoeléctrico por medio de las arquitecturas de red
+neuronal en la Subsubsección 5.2.1.4 e integrar las PDEs correspondientes en la función de
+pérdida en la Subsubsección 5.2.1.5, se logró generar una PINN. En este proceso, se tomó la
+decisión de modelar las tensiones y desplazamientos eléctricos como salidas de la red neu-
+ronal, en lugar de expresarlas en términos de las derivadas de desplazamiento mecánico y
+potencial eléctrico, como permitiría la Ecuación 9. Esto incrementó la complejidad de la red
+neuronal por tener más salidas. Sin embargo, eliminó la necesidad de computar segundas
+derivadas de desplazamiento mecácnico y potencial eléctrico. Esta necesidad hubiera sido
+causada por la Ecuación 6 y la Ecuación 7. Esta decisión permitió computar solo primeras
+derivadas de todas las funciones objetivo. Además, permitió aplicar las condiciones de fron-
+tera de la Ecuación 51 directamente, sin necesidad de computar derivadas al momento de
+reforzarlas. Esto hizo más eficiente el entrenamiento de la red neuronal.
+De la Figura 36 y de la Figura 35 se pueden observar las funciónes de pérdida para las
+PINN definidas en la Subsubsección 5.2.1.4 durante el entrenamiento. Se puede evidenciar
+que el comportamiento de la pérdida de ambas PINN es bastante similar, donde en las
+primeras 200 épocas se tiene una reducción considerable de la pérdida y luego se estanca
+89
+
+PAGINA_PDF 114
+hasta llegar a la época 1000. Acá se da un punto de inflexión causado por el cambio de
+optimizador a L-BFGS. Esto causa un incremento momentáneo en la pérdida y luego una
+reducción posterior significativa. Esto puede deberse a que L-BFGS usa más información
+para el proceso de optimización de la función de pérdida y que usa unlearning ratemayor
+queADAM.Estoúltimopudohaberpermitidoqueescaparadeunmínimolocaldelafunción
+de pérdida que causaba el estancamiento.
+De la Tabla 8 se puede hacer una comparación de las arquitecturas mencionadas en
+términos de eficiencia. Se puede evidenciar que la arquitectura uniforme tiene una mayor
+cantidad de parámetros que la arquitectura piramidal. Esto causa que en la misma cantidad
+de épocas, el tiempo de entrenamiento de la arquitectura uniforme sea considerablemente
+mayor, que el de la piramidal. Esto se debe a que al momento de hacer la autodiferenciación
+para cumplir con las PDEs piezoeléctricas y al momento de hacer elbackpropagation es
+necesario tomar en cuenta una mayor cantidad de información, reduciendo la eficiencia del
+entrenamiento.
+Con respecto a los resultados de las PINN, en la Figura 37 se puede observar el despla-
+zamiento horizontal modelado por la arquitectura uniforme para la viga en voladizo bajo el
+efecto piezoeléctrico indirecto y una comparación con los resultados de FEM. Visualmente
+es posible evidenciar que la forma de la función obtenida, es bastante similar entre ambos
+métodos. También se evidencia que la escala del desplazamiento es la misma, estando en
+10−7. Además, de la Figura 37c se puede observar la diferencia entre ambos métodos por
+medio del error absoluto. La predominancia de tonos azules indica que en general el error
+entre los métodos es bajo. Las mayores diferencias se dan en el desplazamiento de los bordes
+y esquinas de la viga, pero estas no son tan significativas, debido a que estan en el orden
+de 10−8. Esto indica que la red neuronal pudo modelar adecuadamente el desplazamiento
+horizontal.
+En la Figura 38 se puede observar igualmente, la comparación entre el desplazamiento
+vertical modelado por la PINN uniforme y FEM. Se evidencia que la forma de ambas fun-
+ciones es bastante similar, igualmente la magnitud del desplazamiento. De la Figura 38c se
+observa que el error entre la PINN y FEM es bastante bajo, siendo más notoria la diferencia
+en el extremo derecho de la viga. Este error está en el orden de10−6, lo que indica que se
+pudo modelar adecuadamente el desplazamiento vertical con la PINN.
+En cuanto al potencial eléctrico modelado con la PINN uniforme, que se observa en la
+Figura 39, visualmente es bastante similar al potencial indicado por FEM. Sin embargo, al
+momento de comparar el error absoluto entre ambos métodos en la Figura 39c, las diferencias
+son significativas. Se puede observar que la mayor fuente de error se produce en la mitad
+inferior y en la mitad superior de las capas de la viga. Acá es donde predomina el patrón
+de color rojo. Esta error por parte de la PINN se puede deber a una imposición errónea de
+la condición de frontera en la red neuronal con la Ecuación 59. Esta función espera cierto
+tipo de relación lineal entre la coordenada vertical de la viga y el potencial. Sin embargo,
+por el error observado este no es el comportamiento adecuado. La PINN uniforme no logró
+capturar adecuadamente el potencial eléctrico en este caso.
+La PINN piramidal modeló mejor el desplazamiento horizontal que la PINN uniforme con
+respecto a FEM, lo cual se evidencia en la Figura 41c. Acá se observa una mayor área azul,
+indicandounmenorerror.Además,ladiferenciaprincipalsedaenlaesquinainferiorderecha.
+90
+
+PAGINA_PDF 115
+En contraste para la PINN uniforme, las diferencias se dieron en ambas esquinas. La PINN
+piramidal también modeló adecuadamente el desplazamiento vertical, incluso teniendo un
+error absoluto ligeramente más bajo que la PINN uniforme, como se aprecia en la Figura 42c.
+Finalmente, esta arquitectura también tuvo problemas para modelar el potencial eléctrico
+en la viga, muy similar a la arquitectura uniforme, como se observa en la Figura 43c.
+De la Tabla 9, es evidente que la arquitectura piramidal modeló ligeramente mejor el
+efecto piezoeléctrico indirecto para la viga en voladizo, al tener un error relativo L2 menor
+para los desplazamientos. Por otra parte, como se mencionó, de la Tabla 8, el tiempo de
+entrenamiento de la arquitectura piramidal es menor, al igual que la cantidad de parámetros.
+Esta mejora en el rendimiento de la PINN piramidal, respecto a la uniforme, puede deberse
+a distintos factores. Por un lado, es una red más profunda, es decir con más capas, lo que
+le puede permitir capturar una jerarquía de relaciones más compleja al tener una mayor
+capacidad de representación. Además, expandir y estrechar la cantidad de neuronas, puede
+ayudar a que el flujo de información de la red fluya más adecuadamente, pudiendo extraer
+las características clave de las funciones con mayor facilidad. Por otra parte, una menor
+cantidad de parámetros pudo haber permitido una mejor generalización de las funciones
+objetivo al dominio del problema. También es posible que permita mayor estabilidad en los
+gradientes computados, al necesitar menos información.
+También de la Tabla 9 se puede observar que ambas arquitecturas tienen valores de
+error relativo L2 bajos para desplazamiento y potencial eléctrico, con respecto a FEM.
+Esto apoya las observaciones previamente realizadas con respecto a las funciones resultantes
+de las arquitecturas evaluadas. De esta forma es posible decir que, independientemente
+de la distribución de las capas y cantidad de neuronas de la red neuronal, si fue posible
+implementar una PINN para modelar el efecto piezoeléctrico indirecto.
+Un detalle importante por resaltar, es que la pérdida final presentada en la Tabla 8, con
+un valor en el orden de107 y la pérdida en la Figura 36 y la Figura 35 tienen valores muy
+altos. Esto se atribuye a la integración de las PDEs en la red neuronal. Específicamente al
+uso de los coeficientes elásticos del material de la viga, presentados en la Tabla 5 y la Tabla 4.
+Estos coeficientes se encuentran en el orden de109 y son necesarios para reforzar las PDEs
+en la pérdida, como se definió en la Subsubsección 5.2.1.5. Entonces, al momento de usar
+estos valores en conjunto con MSE, el valor de la pérdida se vuelve bastante alto. A pesar de
+esto, como se evidenció, se logró modelar adecuadamente el efecto piezoeléctrico indirecto,
+sin necesidad de llevar la pérdida a 0. Por lo tanto, al solventar un problema utilizando una
+PINN, no siempre es necesario reducir los residuales de las PDEs a 0. Es necesario modelar
+los problemas, bajo una interpretación en el contexto de las propiedades del sistema o del
+dominio.
+Debido a que la arquitectura piramidal generó mejores resultados para el efecto piezo-
+eléctrico indirecto, se utilizó para modelar el efecto piezoeléctrico directo. En la Figura 45 se
+puede observar que el comportamiento de la pérdida para el entrenamiento de este modelo
+fue bastante similar que en el efecto piezoeléctrico indirecto. La Tabla 10 indica que el valor
+de la pérdida final y el tiempo de entrenamiento también son similares.
+En cuanto a los resultados obtenidos para el efecto piezoeléctrico directo, se puede obser-
+var de la figura Figura 46 que el desplazamiento horizontal es similar al efecto piezoeléctrico
+indirecto. En este caso, la contracción en la capa superior y la elongación en la inferior,
+91
+
+PAGINA_PDF 116
+corresponden a la fuerza de 1 N aplicada sobre la viga. Esto también causa que la viga suba
+verticalmente, como se observa en la Figura 49. El resultado más importante de la PINN
+aplicada al efecto piezoeléctrico directo, es el potencial eléctrico de la Figura 48. Acá se
+puede observar claramente, que la deformación de la viga generó una diferencia de potencial
+entre los extremos inferior y superior. Esto corresponde a la generación de electricidad, a
+partir de una deformación, propio del efecto piezoeléctrico directo.
+En conclusión se realizó el análisis de los resultados obtenidos al modelar una viga en vo-
+ladizo bajo el efecto piezoeléctrico directo e indirecto. Se pudo evaluar y validar la efectividad
+de la PINN para encontrar las soluciones al problema del efecto piezoeléctrico indirecto, al
+compararlo con FEM. Se mencionaron las ventajas y desventajas de la arquitectura de PINN
+implementada. Además, se compararon los resultados obtenidos para el efecto piezoeléctri-
+co indirecto, por dos arquitecturas distintas de PINN. Se pudo evidenciar la arquitectura
+que obtuvo mejor rendimiento computacional y más precisión en la solución. También se
+pudo discutir la causa de una pérdida de entrenamiento alta. Finalmente se analizaron los
+resultados de la aplicación de la PINN al efecto piezoeléctrico directo.
+92
+
+PAGINA_PDF 117
+CAPÍTULO 8
+Conclusiones
+1. Se logró desarrollar con éxito una herramienta de simulación que permitió modelar el
+efecto piezoeléctrico utilizandoDeep Learning.
+2. Se identificaron las bases teóricas del fenómeno físico piezoeléctrico, lo cuál resultó en
+la recopilación de un conjunto de ecuaciones diferenciales y constitutivas que permi-
+ten describir el acomplamiento electromecánico de dispositivos piezoeléctricos. Esto
+proporcionó un fundamento matemático necesario para el desarrollo de un modelo
+computacional.
+3. Se logró desarrollar una Red Neuronal Informada por la Física (PINN por sus siglas
+en inglés), mediante la integración de las ecuaciones diferenciales y constitutivas de
+la piezoelectricidad, en la arquitectura de la red neuronal. La PINN fue aplicada con
+éxito al efecto piezoeléctrico directo e indirecto para una viga en voladizo en dos
+dimensiones.
+4. Se optimizó la PINN por medio de una comparación del rendimiento de dos arquitec-
+turas distintas. Se identificó que el uso de una arquitectura con una cantidad variable
+de neuronas por capa y menos parámetros, obtuvo una mejor precisión y menor tiempo
+de entrenamiento, en comparación con una arquitectura que tuvo la misma cantidad
+de neuronas en todas sus capas y una mayor cantidad de parámetros.
+5. Se validó la precisión de la PINN mediante su comparación con los resultados obtenidos
+por el Método de los Elementos Finitos (FEM por sus siglas en inglés). Al comparar el
+error relativo medio L2, se obtuvieron valores bajos en relación a los desplazamientos
+mecánicos y el potencial eléctrico modelado. Esto confirma la capacidad de la PINN de
+modelar adecuadamente el problema piezoeléctrico indirecto para una viga en voladizo
+en dos dimensiones.
+6. Se evidenció que, aunque teóricamente para cumplir con las regulaciones de los proble-
+mas modelados por las PINN, es necesario minimizar los residuales de las ecuaciones
+diferenciales hasta cero, es necesario interpretar los resultados de la pérdida en el con-
+texto del problema. Para la configuración del efecto piezoeléctrico presentada en este
+93
+
+PAGINA_PDF 118
+trabajo, la magnitud de los coeficientes elásticos del material modelado no permiten
+reducir la pérdida a cero. Sin embargo, la validación de los modelos indicó que se pudo
+solucionar satisfactoriamente el problema.
+94
+
+PAGINA_PDF 119
+CAPÍTULO 9
+Recomendaciones
+1. A pesar de que se logró modelar adecuadamente el efecto piezoeléctrico, los coeficientes
+de elasticidad jugaron un papel importante en la estabilidad de la pérdida de las redes
+neuronales, debido a sus valores altos. Se recomienda realizar una adimensionalización
+de las ecuaciones diferenciales del problema. Esto permitirá expresar las relaciones de
+las funciones físicas modeladas, sin la influencia de constantes que pueden reducir la
+eficiencia del aprendizaje de los modelos.
+2. Se recomienda realizar pruebas exhaustivas con otros materiales, configuraciones del
+problema y dispositivos. Esto permitirá validar que la PINN propuesta pueda ser
+aplicada a diferentes escenarios y entender las limitaciones que puede presentar.
+3. Se recomienda tener un conjunto de datos extraído de un método tradicional como
+FEM, para poder validar el funcionamiento de la PINN aplicada al efecto piezoelectrico
+directo.
+4. Se recomienda extender el estudio a distintas formas de las ecuaciones diferenciales
+piezoeléctricas. Esto quiere decir, poder evaluarlas con respecto al tiempo o realizar
+un análisis de frecuencias. Esto permitirá la modelación de distintos dispositivos pie-
+zoeléctricos.
+95
+
+PAGINA_PDF 120
+
+
+PAGINA_PDF 121
+CAPÍTULO 10
+Bibliografía
+[1] P. K. Jakobsen, “An Introduction to Partial Differential Equations,”arXiv (Cornell
+University), ene. de 2019.doi: 10.48550/arxiv.1901.03022. (visitado 07-05-2024).
+[2] B.S.Grewal, Numerical Methods in Engineering and Science : C, C++, and MATLAB.
+Mercury Learning, 2019.
+[3] W. K. Liu, S. Li y H. S. Park, “Eighty Years of the Finite Element Method: Birth,
+Evolution, and Future,”Archives of Computational Methods in Engineering, vol. 29,
+págs. 4431-4453, jun. de 2022.doi: 10.1007/s11831-022-09740-9.
+[4] S. Cuomo, V. S. Di Cola, F. Giampaolo, G. Rozza, M. Raissi y F. Piccialli, “Scientific
+Machine Learning Through Physics–Informed Neural Networks: Where we are and
+What’s Next,” Journal of Scientific Computing, vol. 92, jul. de 2022.doi: 10.1007/
+s10915-022-01939-z.
+[5] Y. LeCun, Y. Bengio y G. Hinton, “Deep Learning,”Nature, vol. 521, págs. 436-444,
+mayo de 2015.doi: 10.1038/nature14539.
+[6] M. Raissi, P. Perdikaris y G. Karniadakis, “Physics-informed neural networks: A deep
+learning framework for solving forward and inverse problems involving nonlinear par-
+tial differential equations,”Journal of Computational Physics, vol. 378, págs. 686-707,
+feb. de 2019.doi: 10.1016/j.jcp.2018.10.045.
+[7] T. Lahmer, “Forward and Inverse Problems in Piezoelectricity,” Tesis doct., mayo de
+2008. dirección: https://d-nb.info/989762831/34.
+[8] T. L. Szabo y P. A. Lewin, “Piezoelectric Materials for Imaging,”Journal of Ultrasound
+in Medicine, vol. 26, págs. 283-288, mar. de 2007.doi: 10.7863/jum.2007.26.3.283.
+[9] L.Walubita,D.SohoulandeDjebou,A.Faruk,S.Lee,S.DessoukyyX.Hu,“Prospecti-
+ve of Societal and Environmental Benefits of Piezoelectric Technology in Road Energy
+Harvesting,” Sustainability, vol. 10, pág. 383, feb. de 2018.doi: 10.3390/su10020383.
+97
+
+PAGINA_PDF 122
+[10] J. Song, G. Sun, X. Zeng, X. Li, Q. Bai y X. Zheng, “Piezoelectric energy harvester
+with double cantilever beam undergoing coupled bending-torsion vibrations by width-
+splitting method,” Scientific Reports, vol. 12, pág. 583, ene. de 2022.doi: 10.1038/
+s41598-021-04476-1. dirección: https://www.nature.com/articles/s41598-021-
+04476-1 (visitado 14-12-2022).
+[11] Y. Pinchover y J. Rubinstein,AN INTRODUCTION TO PARTIAL DIFFERENTIAL
+EQUATIONS. Cambridge University Press, 2005.
+[12] X. Gao, J. Yang, J. Wu et al., “Piezoelectric Actuators and Motors: Materials, Designs,
+and Applications,” Advanced Materials Technologies, vol. 5, pág. 1900716, nov. de
+2019. doi: 10.1002/admt.201900716.
+[13] S. Zhang y F. Yu, “Piezoelectric Materials for High Temperature Sensors,”Journal
+of the American Ceramic Society, vol. 94, D. J. Green, ed., págs. 3153-3170, ago. de
+2011. doi: 10.1111/j.1551-2916.2011.04792.x.
+[14] M. T. Chorsi, E. J. Curry, H. T. Chorsi et al., “Piezoelectric Biomaterials for Sensors
+and Actuators,” Advanced Materials, vol. 31, pág. 1802084, oct. de 2018. doi: 10.
+1002/adma.201802084.
+[15] N. Sezer y M. Koç, “A comprehensive review on the state-of-the-art of piezoelectric
+energy harvesting,” Nano Energy, vol. 80, pág. 105567, feb. de 2021.doi: 10.1016/
+j.nanoen.2020.105567.
+[16] Z. Hao, S. Liu, Y. Zhang et al., Physics-Informed Machine Learning: A Survey on
+Problems, Methods and Applications, arXiv.org, mar. de 2023.doi: 10.48550/arXiv.
+2211.08064. dirección: https://arxiv.org/abs/2211.08064 (visitado 15-12-2023).
+[17] J. Stewart, Multivariable calculus. Brooks/Cole, 2012.
+[18] D. G. Zill, A First Course in Differential Equations with Modeling Applications. Cen-
+gage, 1997.
+[19] H.D.Young,P.W.AdamsyR.J.Chastain, Sears Zemansky’s college physics. Volume
+1. Pearson, 2016.
+[20] W. E. Boyce, R. C. Diprima y A. Firm,Elementary differential equations and boundary
+value problems. Wiley, 2009.
+[21] M. T. Heath, Scientific computing : an introductory survey. Philadelphia Society For
+Industrial y Applied Mathematics, 2018.
+[22] P. Blanchard, R. L. Devaney y G. R. Hall,Differential Equations. Cengage Learning,
+jul. de 2012.
+[23] V. Piefort, “Finite Element Modelling of Piezoelectric Active Structures,” Tesis doct.,
+abr. de 2001.
+[24] W. P. Mason, “Piezoelectricity, its history and applications,”The Journal of the Acous-
+tical Society of America, vol. 70, págs. 1561-1566, dic. de 1981. doi: 10 . 1121 / 1 .
+387221.
+[25] I.PIEZOSYSTEMS, History of Piezoelectricity,PIEZO.COM,2007.dirección: https:
+//piezo.com/pages/history-of-piezoelectricity.
+[26] R. Chang y K. A. Goldsby,Chemistry. Mcgraw-Hill Education, 2014.
+[27] A. Safari y E. K. Akdoğan, Piezoelectric and Acoustic Materials for Transducer Ap-
+plications. New York Springer, 2008.
+98
+
+PAGINA_PDF 123
+[28] J. Tichý, J. Erhart, E. Kittinger y J. Přívratská,Fundamentals of Piezoelectric Sen-
+sorics. Berlin, Heidelberg Springer Berlin Heidelberg, 2010.
+[29] K.-C. Lin, C.-H. Hu y K.-C. Wang, “Innovative deep energy method for piezoelectricity
+problems,” Applied mathematical modelling, vol. 126, págs. 405-419, feb. de 2024.doi:
+10.1016/j.apm.2023.11.006. (visitado 02-08-2024).
+[30] P. Kelly, Solid Mechanics Part II: Engineering Solid Mechanics, 2013.
+[31] S. J. Russell y P. Norvig, Artificial intelligence : a modern approach. Pearson India
+Education Services Pvt. Ltd, 2018.
+[32] M. Tamir, What Is Machine Learning? - I School Online, Berkeley School of Informa-
+tion, jun. de 2020. dirección:https://ischoolonline.berkeley.edu/blog/what-
+is-machine-learning/.
+[33] A. Burkov, THE HUNDRED-PAGE MACHINE LEARNING BOOK. Andriy Burkov,
+2019.
+[34] I. Goodfellow, Y. Bengio y A. Courville,Deep Learning. The Mit Press, 2016.
+[35] G. Delanerolle, X. Yang, S. Shetty et al., “Artificial intelligence: A rapid case for
+advancement in the personalization of Gynaecology/Obstetric and Mental Health ca-
+re,” Women’s Health, vol. 17, pág. 174550652110181, ene. de 2021. doi: 10.1177/
+17455065211018111.
+[36] S. Feuerriegel, J. Hartmann, C. Janiesch y P. Zschech, “Generative AI,” Business
+Information Systems Engineering, vol. 66, págs. 111-126, sep. de 2023.doi: 10.1007/
+s12599-023-00834-7 . dirección: https://link.springer.com/article/10.1007/
+s12599-023-00834-7.
+[37] P.Baheti, 12 Types of Neural Networks Activation Functions: How to Choose?www.v7labs.com,
+mar. de 2022. dirección: https : / / www . v7labs . com / blog / neural - networks -
+activation-functions.
+[38] J. Stewart, Single Variable Calculus. Brooks Cole, jun. de 2015.
+[39] S. Kostadinov, Understanding Backpropagation Algorithm, Medium, ago. de 2019. di-
+rección: https : / / towardsdatascience . com / understanding - backpropagation -
+algorithm-7bb3aa2f95fd.
+[40] S. Doshi, Various Optimization Algorithms For Training Neural Network, Medium,
+ago. de 2020. dirección: https : / / towardsdatascience . com / optimizers - for -
+training-neural-network-59450d71caf6.
+[41] Taorui Wang, L-BFGS algorithm, Medium, abr. de 2022. dirección:https://medium.
+com/@tru11631/l-bfgs-algorithm-ecfb832a4176.
+[42] A. G. Baydin, B. A. Pearlmutter, A. A. Radul y J. M. Siskind,Automatic differen-
+tiation in machine learning: a survey, arXiv.org, feb. de 2018.doi: 10.48550/arXiv.
+1502.05767. dirección: https://arxiv.org/abs/1502.05767 (visitado 14-06-2024).
+[43] A.Holmes, What’s Automatic Differentiation?huggingface.co,mar.de2024.dirección:
+https://huggingface.co/blog/andmholm/what-is-automatic-differentiation
+(visitado 03-08-2024).
+99
+
+PAGINA_PDF 124
+[44] G. E. Karniadakis, I. G. Kevrekidis, L. Lu, P. Perdikaris, S. Wang y L. Yang, “Physics-
+informed machine learning,” Nature Reviews Physics, vol. 3, págs. 422-440, jun. de
+2021. doi: 10.1038/s42254- 021- 00314- 5 . dirección: https://www.nature.com/
+articles/s42254-021-00314-5.
+[45] S.Wang,S.Sankaran,H.WangyP.Perdikaris, An Expert’s Guide to Training Physics-
+informed Neural Networks, arXiv.org, ago. de 2023. doi: 10 . 48550 / arXiv . 2308 .
+08468. dirección: https://arxiv.org/abs/2308.08468 (visitado 10-12-2023).
+[46] Z. Wang y M. Hernández Salinas, PINNs Introductory Code for the Heat Equation,
+Nat.fau.eu, dic. de 2023. dirección:https://dcn.nat.fau.eu/pinns-introductory-
+code-for-the-heat-equation/ (visitado 15-08-2024).
+[47] A. Paszke, S. Gross, F. Massa et al., “PyTorch: An Imperative Style, High-Performance
+Deep Learning Library,” enAdvances in Neural Information Processing Systems 32,
+Curran Associates, Inc., 2019, págs. 8024-8035. dirección:http://papers.neurips.
+cc / paper / 9015 - pytorch - an - imperative - style - high - performance - deep -
+learning-library.pdf.
+[48] C. R. Harris, K. J. Millman, S. J. van der Walt et al., “Array programming with
+NumPy,” Nature, vol. 585, n.o 7825, págs. 357-362, sep. de 2020. doi: 10 . 1038 /
+s41586-020-2649-2. dirección: https://doi.org/10.1038/s41586-020-2649-2.
+[49] J. D. Hunter, “Matplotlib: A 2D graphics environment,” Computing in Science &
+Engineering, vol. 9, n.o 3, págs. 90-95, 2007.doi: 10.1109/MCSE.2007.55.
+[50] L. Lu, X. Meng, Z. Mao y G. E. Karniadakis, “DeepXDE: A deep learning library for
+solving differential equations,”SIAM Review, vol. 63, n.o 1, págs. 208-228, 2021.doi:
+10.1137/19M1274067.
+[51] X. Jin, S. Cai, H. Li y G. E. Karniadakis, “NSFnets (Navier-Stokes flow nets): Physics-
+informed neural networks for the incompressible Navier-Stokes equations,”Journal of
+Computational Physics, pág. 109951, nov. de 2020. doi: 10 . 1016 / j . jcp . 2020 .
+109951.
+[52] E. Samaniego, C. Anitescu, S. Goswami et al., “An energy approach to the solution of
+partial differential equations in computational mechanics via machine learning: Con-
+cepts, implementation and applications,”Computer Methods in Applied Mechanics and
+Engineering, vol. 362, pág. 112790, abr. de 2020.doi: 10.1016/j.cma.2019.112790.
+(visitado 24-11-2020).
+[53] A. Chen, A. Chow, A. Davidson et al., “Developments in MLflow,” Proceedings of
+the Fourth International Workshop on Data Management for End-to-End Machine
+Learning, jun. de 2020.doi: 10.1145/3399579.3399867.
+[54] Q. Fang, X. Mou y S. Li, “A physics-informed neural network based on mixed data
+sampling for solving modified diffusion equations,”Scientific reports, vol. 13, feb. de
+2023. doi: 10.1038/s41598-023-29822-3.
+[55] C. Rao, H. Sun e Y. Liu, “Physics-Informed Deep Learning for Computational Elas-
+todynamicswithoutLabeledData,” Journal of Engineering Mechanics,vol.147,pág.04021043,
+ago. de 2021.doi: 10.1061/(asce)em.1943-7889.0001947. (visitado 15-06-2021).
+100
+
+PAGINA_PDF 125
+[56] A. Sholokhov, Y. Liu, H. Mansour y S. Nabi, “Physics-informed neural ODE (PI-
+NODE): embedding physics into models using collocation points,”Scientific Reports,
+vol. 13, pág. 10166, jun. de 2023. doi: 10.1038/s41598- 023- 36799- 6 . dirección:
+https://www.nature.com/articles/s41598-023-36799-6 (visitado 30-04-2024).
+[57] Mathworks, Deflection of Piezoelectric Actuator,Mathworks.com,2024.dirección: https:
+//es.mathworks.com/help/pde/ug/deflection-of-a-piezoelectric-actuator.
+html (visitado 30-08-2024).
+101
+
+PAGINA_PDF 126
+
+
+PAGINA_PDF 127
+CAPÍTULO 11
+Anexos
+Implementación de PINNs para metodología y piezoelectrici-
+dad
+Se puede acceder al código realizado para solucionar los distintos problemas presentados
+en este proyecto en el siguiente repositorio: https://github.com/Daniel14gonc/piezonet.git.
+103
+
+PAGINA_PDF 128
+104

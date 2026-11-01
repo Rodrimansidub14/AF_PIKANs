@@ -1,0 +1,217 @@
+{
+  "acceptance_gates": {
+    "field_error": "locked_pending_reference",
+    "metrics": {
+      "allen_cahn/normalized_residual_mean": {
+        "direction": "minimize",
+        "required": true,
+        "threshold": null
+      }
+    },
+    "scientific_acceptance": false
+  },
+  "artifacts": {
+    "expected": [
+      "metrics.json",
+      "decision_note.md",
+      "problem_status.json",
+      "versions.json",
+      "config.json",
+      "provenance.json",
+      "hardware.json",
+      "gpu_telemetry.csv",
+      "gpu_telemetry_status.json",
+      "allen_cahn/pools.npz",
+      "allen_cahn/sampling_signals.json",
+      "allen_cahn/history.jsonl",
+      "allen_cahn/diagnostic_signals.json",
+      "allen_cahn/training_summary.json",
+      "allen_cahn/validation.json",
+      "allen_cahn/validation.npz",
+      "allen_cahn/validation.html",
+      "allen_cahn/energy.csv",
+      "allen_cahn/energy.html",
+      "allen_cahn/training-losses-log.html",
+      "allen_cahn/training-signals-log.html",
+      "allen_cahn/signals.json",
+      "heat/pools.npz",
+      "heat/sampling_signals.json",
+      "heat/history.jsonl",
+      "heat/diagnostic_signals.json",
+      "heat/training_summary.json",
+      "heat/validation.json",
+      "heat/validation.npz",
+      "heat/validation.html",
+      "heat/signals.json"
+    ]
+  },
+  "budget": {
+    "approval": "explicit_user_request_in_current_conversation",
+    "approved": true,
+    "hardware": "2xNvidiaTeslaT4",
+    "max_parallel_seeds": 2,
+    "max_seed_count": 2,
+    "max_seed_training_seconds": 1500,
+    "max_total_gpu_seconds": 3000
+  },
+  "focalization": {
+    "bounded_edit_surface": [],
+    "enabled": false
+  },
+  "hypothesis": {
+    "expected_effect": "Produce a per-seed exploratory profile that can inform a later, separately preregistered sampling hypothesis; no improvement over another method is expected or tested.",
+    "falsification_condition": "A technical run is invalid if parameters, predictions, derivatives, residuals, or required traces are non-finite; a smaller residual alone does not establish solution quality or superiority.",
+    "statement": "Measure reproducible training, sampling, autodifferentiation, residual, basis, trace, energy, and runtime signals for the declared 1D Allen–Cahn problem using fixed RBF-PIKAN and scrambled Sobol points."
+  },
+  "iteration": {
+    "domain_level": "canonical_pde",
+    "experiment_id": "EXP-0003",
+    "focalization_id": "none_fixed_sobol",
+    "hypothesis_id": "mixed-heat-allen-cahn-sampling-regression-fixed",
+    "id": "baseline-close-heat-ac-r2-20260927",
+    "model_id": "rbf_fixed",
+    "problem_id": "heat_and_allen_cahn",
+    "protocol_phase": "exploratory"
+  },
+  "model": {
+    "architecture": [
+      2,
+      16,
+      16,
+      1
+    ],
+    "basis_count": 11,
+    "centers": [
+      -1.05,
+      1.05
+    ],
+    "expected_parameters": 3648,
+    "geometry_trainable": false,
+    "id": "rbf_fixed",
+    "implementation": "src/research_pipeline/sciml/campaign.py",
+    "label": "RBF-PIKAN fija",
+    "width": 0.21
+  },
+  "parameter_decisions_file": "experiments/EXP-0003-allen-cahn-rbf-sobol/parameter-decisions.md",
+  "parameter_decisions_markdown": "# Decisiones de parámetros — EXP-0003 Allen–Cahn\n\nEstado: configuración versionada para el piloto exploratorio EXP-0003. El contrato\ndel runner, el presupuesto y el smoke CPU están implementados; queda revisión del\nbundle exacto antes de cualquier despacho remoto. No es preregistro confirmatorio,\nbaseline congelado ni aceptación científica.\n\n| Decisión | Propuesta | Motivo / limitación |\n|---|---|---|\n| PDE | `D=0.001`, reacción `5(u-u³)` | Conserva el caso DeepXDE 1.12.2 ya declarado por el verifier. |\n| Dominio | x∈[-1,1], t∈[0,1] | Caso canónico del proyecto. |\n| Condiciones | Hard transform `x²cos(πx)+t(1−x²)N` | Impone IC y Dirichlet sin penalizaciones blandas. Comparación no equivale a PINN con trazas blandas. |\n| Red inicial | RBF fija [2,16,16,1], 11 bases por arista | Control común con Heat/Burgers; no se afirma óptima para interfaces. |\n| Puntos de entrenamiento | 8.192 interiores Sobol scrambled, pool fijo por semilla | Potencia de dos; cercana a los 8.000 interiores del ejemplo de referencia. Se guarda la matriz exacta y ningún punto held-out entra a la loss. |\n| Residuo held-out | 16.384 puntos Sobol independientes, stream `10*seed+5` | Más puntos que entrenamiento para reducir ruido al describir el campo residual; sin uso para optimización ni selección de checkpoints. Guardar matriz y cuantiles espaciales/temporales. |\n| Trazas duras | 512 tiempos por borde y 1.024 coordenadas iniciales Sobol | Solo medir desviación numérica de `u(±1,t)=-1` y `u(x,0)=x²cos(πx)`; no se añaden condiciones blandas ni puntos de pérdida. |\n| Batch | 1.024 | Continuidad con campaña anterior; confirmar semántica de batching al implementar el runner. |\n| Optimizador | Adam, `lr=0.001` | Primer control comparable dentro del proyecto; sin scheduler ni L-BFGS en el run inicial. |\n| Presupuesto | 20.000 pasos o 1.200 s por semilla | Tope de 20 min y tres semillas: máximo 60 min de entrenamiento. |\n| Streams | `10*seed+1` interior, `+2` diagnóstico, `+3` frontera, `+4` inicial, `+5` held-out | Streams reproducibles independientes; la inspección de cobertura usa coordenadas guardadas, sin remuestrear después de ver métricas. |\n| Validación | Scrambled Sobol de 16.384 puntos distinto del entrenamiento | Diagnóstico físico held-out; no hay etiqueta de campo verificada. |\n| Métricas | Residuo, trazas, energía y señales RBF/AD | La referencia BDF sigue `pending_convergence`; error L2 queda bloqueado. |\n| Energía | `E=∫[D|u_x|²/2 + 5(u²−1)²/4]dx`, 513 nodos simétricos, `t={0,.25,.5,.75,1}` | 512 intervalos trapezoidales en `[-1,1]`, con `x=0` y extremos incluidos. Reportar variación y conteo de incrementos; no convertir monotonía en gate para una aproximación PINN. |\n| Mapa visual | 257×129 en `[-1,1]×[0,1]` | Solo visualización Plotly; la métrica de residuo se estima en los 16.384 puntos held-out. No usar el mapa para escoger duración o checkpoint. |\n| Semillas | 101, 102, 103 | Repeticiones piloto para dispersión; no potencia confirmatoria. |\n| Precisión | Heredar inicialmente float64 del trainer; medir coste | Coherencia numérica con la primera campaña; T4 puede penalizar FP64. Revisar tras obtener tiempo real; cambiar implica nueva versión. |\n\nNo hay umbrales definidos. No ajustar la campaña mirando el score de evaluación.\nLa corrida queda en modo W&B offline; las credenciales se mantienen fuera del\nnotebook y del bundle.\n\n## Puerta de actualización con EXP-0002\n\nRevisar antes de firmar: costo por paso y puntos realmente vistos, criterio de\nparada, inestabilidad/no finitos, saturación y cobertura de bases, sensibilidad\nal dtype, residuo en regiones de entrenamiento y segundo T4 disponible. Estos\ndatos pueden cambiar batch, precisión, presupuesto y plan de diagnóstico.\nNo copiar la densidad local de puntos ni un umbral de residuo de Heat/Burgers a\nAllen–Cahn: su interfaz temporal requiere una hipótesis propia. Si las señales\nmotivan más resolución espacial/temporal, crear una variante con idéntica\nevaluación independiente y control Sobol conservado.\n\n\n## Reproducibility note for r2\n\nThe r1 kernel reached Kaggle with 2xT4 and failed in the notebook's sampling-report cell before training: Allen-Cahn pools use boundary_probe/initial_probe keys, unlike Heat pools' left/right/initial keys. This r2 uses problem-specific pool keys in the reporting cell. Training seeds, PDEs, model, fixed Sobol streams, optimizer and compute cap are unchanged.\n",
+  "problem": {
+    "allen_cahn": {
+      "boundary_values": [
+        -1.0,
+        -1.0
+      ],
+      "definition": "allen_cahn_deepxde_1_12_2_dirichlet",
+      "diagnostic_grid": {
+        "nt": 129,
+        "nx": 257
+      },
+      "diffusion": 0.001,
+      "energy_points": 513,
+      "evaluation_chunk_size": 1024,
+      "evaluation_id": "allen_cahn_1d",
+      "evaluation_times": [
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "field_error_status": "locked_pending_reference",
+      "hard_transform": "x^2*cos(pi*x)+t*(1-x^2)*N(x,t)",
+      "initial_condition": "x^2*cos(pi*x)",
+      "reaction": 5.0,
+      "residual_scale": 6.001,
+      "t": [
+        0.0,
+        1.0
+      ],
+      "x": [
+        -1.0,
+        1.0
+      ]
+    },
+    "sequence": [
+      "heat",
+      "allen_cahn"
+    ],
+    "heat": {
+      "alpha": 0.1,
+      "t": [
+        0,
+        1
+      ],
+      "x": [
+        0,
+        1
+      ]
+    }
+  },
+  "project": {
+    "name": "AF_PIKANs",
+    "ontology": "pikan-research"
+  },
+  "remote": {
+    "enable_internet": true,
+    "machine_shape": "NvidiaTeslaT4",
+    "max_parallel_seeds": 2,
+    "run_timeout_sec": 2100,
+    "runtime_dependencies": [
+      "pina-mathlab==0.3.2.post2609",
+      "wandb==0.30.0",
+      "plotly==7.1.0",
+      "scipy==1.15.3",
+      "pandas==2.2.3"
+    ],
+    "setup_timeout_sec": 900,
+    "allow_gpu_count_fallback": true
+  },
+  "research_status": {
+    "baseline_frozen": false,
+    "execution_authorized": true,
+    "field_error_locked": true,
+    "remote_exact_bundle_approval_required": true,
+    "scientific_accepted": false,
+    "scientific_preregistration_signed": false
+  },
+  "schema_version": 1,
+  "tracking": {
+    "entity": "man22611-uvg",
+    "group": "baseline-close-heat-ac-r2-20260927",
+    "mode": "offline",
+    "project": "AF_PIKANS"
+  },
+  "training": {
+    "accelerator": "gpu",
+    "batch_size": 1024,
+    "boundary_points": 512,
+    "cpu_threads": 2,
+    "diagnostic_every": 250,
+    "diagnostic_points": 256,
+    "heldout_points": 16384,
+    "interior_points": 8192,
+    "learning_rate": 0.001,
+    "metric_log_every": 100,
+    "optimizer": "Adam",
+    "problem_overrides": {
+      "heat": {
+        "interior_points": 4096,
+        "seconds_per_problem": 300,
+        "steps_per_problem": 5000
+      }
+    },
+    "sampling": "scrambled_sobol_fixed",
+    "seconds_per_problem": 1200,
+    "seed_offsets": {
+      "boundary": 3,
+      "diagnostic": 2,
+      "heldout": 5,
+      "initial": 4,
+      "interior": 1
+    },
+    "seeds": [
+      104,
+      105
+    ],
+    "sensitivity_points": 32,
+    "steps_per_problem": 20000
+  }
+}

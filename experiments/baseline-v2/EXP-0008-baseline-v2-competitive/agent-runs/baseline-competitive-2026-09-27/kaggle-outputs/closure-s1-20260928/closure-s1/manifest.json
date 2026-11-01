@@ -1,0 +1,117 @@
+{
+  "actual_session_seconds": 432.335,
+  "artifacts": [
+    {
+      "path": "allen_cahn/checkpoint_rescoring.csv",
+      "sha256": "f8a06922784c8b340b77354b553bb2e0b026c75d684dc64f4e7cac4d9e9825a7",
+      "size_bytes": 2845
+    },
+    {
+      "path": "allen_cahn/checkpoint_rescoring.json",
+      "sha256": "a4cd8a3c14a9eefbdabc2530c755eea9e97e3d439fff484f6a5455b10b073d68",
+      "size_bytes": 5125
+    },
+    {
+      "path": "allen_cahn/etdrk4-N4096_dt2e-5-partial.npz",
+      "sha256": "a5291a592bbb100c216350da77dce4edc51690d1b8c632ecf3828db20dd5cad7",
+      "size_bytes": 4442643
+    },
+    {
+      "path": "allen_cahn/etdrk4-N4096_dt2e-5.npz",
+      "sha256": "87e4a735653febf6baaa059e676f756f34af3711d5958b277863b02ea7e89bc2",
+      "size_bytes": 4411167
+    },
+    {
+      "path": "allen_cahn/etdrk4-N8192_dt1e-5-partial.npz",
+      "sha256": "365cc65fcc4cc4819019fe641615fcd4252d6ab65fa13cf279876d1a236a9aaf",
+      "size_bytes": 10117560
+    },
+    {
+      "path": "allen_cahn/etdrk4-N8192_dt1e-5.npz",
+      "sha256": "9071cf11c6d2c5dfa6001566116b151b0aa0f07aa7333208c721f2ef382aea41",
+      "size_bytes": 10054719
+    },
+    {
+      "path": "allen_cahn/etdrk4-N8192_dt2e-5-partial.npz",
+      "sha256": "8f884f57a01d3de5a6b2d74ee0462c0510a94acc673fede0d093d5a346e9d387",
+      "size_bytes": 10118220
+    },
+    {
+      "path": "allen_cahn/etdrk4-N8192_dt2e-5.npz",
+      "sha256": "ff87db563abe5f527be4c5df7025e4c59c9c6dbf84bd57532f84eecdb89e036c",
+      "size_bytes": 10055404
+    },
+    {
+      "path": "allen_cahn/etdrk4_reference.npz",
+      "sha256": "f004af6ec0d98ff9ae0a4121d3f82ade4db9d01f0943c349871bd47182b4ac94",
+      "size_bytes": 10054526
+    },
+    {
+      "path": "allen_cahn/s1a_summary.json",
+      "sha256": "4da6af7356bf2dd540ef3bb052b85d27d0ceb70bf12936b95d3d089140f59d48",
+      "size_bytes": 7508
+    },
+    {
+      "path": "dfg/checkpoint_field_scores.json",
+      "sha256": "4ce2bcd75a0ba74ee590e0c0d2343299db8073d8767ba979037894350d1e6eb9",
+      "size_bytes": 63
+    },
+    {
+      "path": "dfg-worker-supervisor.log",
+      "sha256": "a83e2dd4d716cd0300f6233841d96a7f865ee394cccf2a40558870e4533e2d9d",
+      "size_bytes": 99
+    },
+    {
+      "path": "s1.json",
+      "sha256": "f6c41758a21f0e9cf74b8d5895f6e35e8a1fdd0e881fbf9bb25875e189efb5e6",
+      "size_bytes": 267
+    },
+    {
+      "path": "s1a.json",
+      "sha256": "21bd0817f55e77ce68d76d056391f0d7471d5440d8568b70336fc9ca5e6b0969",
+      "size_bytes": 8060
+    },
+    {
+      "path": "s1a_progress.json",
+      "sha256": "07cc93dde928bf8f7600fb2a75ddbb52451cba86488454bcd20d564f84ade1fb",
+      "size_bytes": 282
+    },
+    {
+      "path": "s1b_final.json",
+      "sha256": "f85347f800c70d6559f58e2fddd4f0a14e6b737c3f6ecf7b0ca929307d5fc720",
+      "size_bytes": 267
+    }
+  ],
+  "ended_at_utc": "2026-09-28T19:30:51Z",
+  "internal_watchdog_seconds": 1680.0,
+  "kernel_slug": "rodrimandub/af-pikans-competitive-baseline-s1-20260928",
+  "kernel_source_files": [],
+  "kernel_sources": [
+    "rodrimandub/af-pikans-allen-cahn-t4x2-20260927",
+    "rodrimandub/af-pikans-allen-cahn-score-only-20260927",
+    "rodrimandub/allen-cahn-deepxde-reference-20260928",
+    "rodrimandub/af-pikans-dfg-rbf-refinement-20260928",
+    "rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927"
+  ],
+  "machine": {
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "numpy": "2.0.2",
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "visible_gpu_count": 2
+  },
+  "parts": {
+    "s1a": "/kaggle/working/closure-s1/s1a.json",
+    "s1b": "/kaggle/working/closure-s1/s1b.json"
+  },
+  "push_cap_seconds": 1800.0,
+  "reference_accepted": false,
+  "schema_version": 1,
+  "scientific_accepted": false,
+  "session": "S1",
+  "started_at_utc": "2026-09-28T19:23:38Z",
+  "status": "partial"
+}

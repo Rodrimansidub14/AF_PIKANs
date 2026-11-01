@@ -1,0 +1,796 @@
+[{"stream_name":"stderr","time":7.085971809,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.086030834,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.086037654,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.086041642,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.682220405,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.68225042,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.682253717,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.682256174,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":8.805390024,"data":"Bundle verified: 5579e97d850d4262ea7493bd755749b2cc1db0dc061c838bac03f825a051967f source files: 22\n"}
+,{"stream_name":"stdout","time":8.839430384,"data":"Installing pinned dependencies: pina-mathlab==0.3.2.post2609, wandb==0.30.0, plotly==7.1.0, scipy==1.15.3, pandas==2.2.3\n"}
+,{"stream_name":"stdout","time":11.063995382,"data":"Collecting pina-mathlab==0.3.2.post2609\n"}
+,{"stream_name":"stdout","time":11.082207134,"data":"  Downloading pina_mathlab-0.3.2.post2609-py3-none-any.whl.metadata (15 kB)\n"}
+,{"stream_name":"stdout","time":11.266523806,"data":"Collecting pina-mathlab==0.3.2.post2609\n"}
+,{"stream_name":"stdout","time":11.266546795,"data":"  Downloading pina_mathlab-0.3.2.post2609-py3-none-any.whl.metadata (15 kB)\n"}
+,{"stream_name":"stdout","time":11.401651838,"data":"Collecting wandb==0.30.0\n"}
+,{"stream_name":"stdout","time":11.408916099,"data":"  Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl.metadata (11 kB)\n"}
+,{"stream_name":"stdout","time":11.529012997,"data":"Collecting plotly==7.1.0\n"}
+,{"stream_name":"stdout","time":11.533850203,"data":"  Downloading plotly-7.1.0-py3-none-any.whl.metadata (8.8 kB)\n"}
+,{"stream_name":"stdout","time":11.603646223,"data":"Collecting wandb==0.30.0\n"}
+,{"stream_name":"stdout","time":11.60366831,"data":"  Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl.metadata (11 kB)\n"}
+,{"stream_name":"stdout","time":11.60367368,"data":"Collecting plotly==7.1.0\n"}
+,{"stream_name":"stdout","time":11.603678232,"data":"  Downloading plotly-7.1.0-py3-none-any.whl.metadata (8.8 kB)\n"}
+,{"stream_name":"stdout","time":11.86258861,"data":"Collecting scipy==1.15.3\n"}
+,{"stream_name":"stdout","time":11.867424254,"data":"  Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)\n"}
+,{"stream_name":"stdout","time":11.887321825,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 3.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.064605392,"data":"Collecting scipy==1.15.3\n"}
+,{"stream_name":"stdout","time":12.0646304,"data":"  Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)\n"}
+,{"stream_name":"stdout","time":12.064637185,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 3.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.185421412,"data":"Collecting pandas==2.2.3\n"}
+,{"stream_name":"stdout","time":12.189923145,"data":"  Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)\n"}
+,{"stream_name":"stdout","time":12.210858329,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 4.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.250034188,"data":"Requirement already satisfied: torch in /usr/local/lib/python3.12/dist-packages (from pina-mathlab==0.3.2.post2609) (2.10.0+cu128)\n"}
+,{"stream_name":"stdout","time":12.340698898,"data":"Collecting lightning (from pina-mathlab==0.3.2.post2609)\n"}
+,{"stream_name":"stdout","time":12.346032061,"data":"  Downloading lightning-2.6.6-py3-none-any.whl.metadata (45 kB)\n"}
+,{"stream_name":"stdout","time":12.364464387,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.0/45.0 kB 2.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.386978693,"data":"Collecting pandas==2.2.3\n"}
+,{"stream_name":"stdout","time":12.386995517,"data":"  Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)\n"}
+,{"stream_name":"stdout","time":12.38700035,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 4.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.387005128,"data":"Requirement already satisfied: torch in /usr/local/lib/python3.12/dist-packages (from pina-mathlab==0.3.2.post2609) (2.10.0+cu128)\n"}
+,{"stream_name":"stdout","time":12.38700901,"data":"Collecting lightning (from pina-mathlab==0.3.2.post2609)\n"}
+,{"stream_name":"stdout","time":12.38701275,"data":"  Downloading lightning-2.6.6-py3-none-any.whl.metadata (45 kB)\n"}
+,{"stream_name":"stdout","time":12.387016426,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.0/45.0 kB 2.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.468021302,"data":"Collecting torch_geometric (from pina-mathlab==0.3.2.post2609)\n"}
+,{"stream_name":"stdout","time":12.473400027,"data":"  Downloading torch_geometric-2.8.0.post1-py3-none-any.whl.metadata (64 kB)\n"}
+,{"stream_name":"stdout","time":12.49173211,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.4/64.4 kB 3.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.503903929,"data":"Requirement already satisfied: matplotlib in /usr/local/lib/python3.12/dist-packages (from pina-mathlab==0.3.2.post2609) (3.10.0)\n"}
+,{"stream_name":"stdout","time":12.510276542,"data":"Requirement already satisfied: click\u003e=8.2.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (8.3.3)\n"}
+,{"stream_name":"stdout","time":12.560254416,"data":"Collecting opentelemetry-api\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.564437053,"data":"  Downloading opentelemetry_api-1.45.0-py3-none-any.whl.metadata (1.4 kB)\n"}
+,{"stream_name":"stdout","time":12.63303095,"data":"Collecting opentelemetry-exporter-otlp-proto-http\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.637408411,"data":"  Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl.metadata (3.1 kB)\n"}
+,{"stream_name":"stdout","time":12.669959255,"data":"Collecting torch_geometric (from pina-mathlab==0.3.2.post2609)\n"}
+,{"stream_name":"stdout","time":12.66997581,"data":"  Downloading torch_geometric-2.8.0.post1-py3-none-any.whl.metadata (64 kB)\n"}
+,{"stream_name":"stdout","time":12.669980944,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.4/64.4 kB 3.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":12.669998922,"data":"Requirement already satisfied: matplotlib in /usr/local/lib/python3.12/dist-packages (from pina-mathlab==0.3.2.post2609) (3.10.0)\n"}
+,{"stream_name":"stdout","time":12.670003746,"data":"Requirement already satisfied: click\u003e=8.2.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (8.3.3)\n"}
+,{"stream_name":"stdout","time":12.670008001,"data":"Collecting opentelemetry-api\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.670011631,"data":"  Downloading opentelemetry_api-1.45.0-py3-none-any.whl.metadata (1.4 kB)\n"}
+,{"stream_name":"stdout","time":12.670015013,"data":"Collecting opentelemetry-exporter-otlp-proto-http\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.670018532,"data":"  Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl.metadata (3.1 kB)\n"}
+,{"stream_name":"stdout","time":12.709862358,"data":"Collecting opentelemetry-sdk\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.714328462,"data":"  Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl.metadata (1.6 kB)\n"}
+,{"stream_name":"stdout","time":12.727155758,"data":"Requirement already satisfied: packaging in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (26.1)\n"}
+,{"stream_name":"stdout","time":12.728201263,"data":"Requirement already satisfied: platformdirs in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.9.6)\n"}
+,{"stream_name":"stdout","time":12.729208684,"data":"Requirement already satisfied: protobuf!=5.28.0,!=5.29.0,\u003c8,\u003e=5 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (5.29.5)\n"}
+,{"stream_name":"stdout","time":12.731734846,"data":"Requirement already satisfied: pydantic\u003c3,\u003e=2.6 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.12.3)\n"}
+,{"stream_name":"stdout","time":12.732661108,"data":"Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (6.0.3)\n"}
+,{"stream_name":"stdout","time":12.733947141,"data":"Requirement already satisfied: requests\u003c3,\u003e=2.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.32.4)\n"}
+,{"stream_name":"stdout","time":12.735065299,"data":"Requirement already satisfied: typing-extensions\u003c5,\u003e=4.8 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.15.0)\n"}
+,{"stream_name":"stdout","time":12.736630745,"data":"Requirement already satisfied: xxhash\u003e=3.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (3.6.0)\n"}
+,{"stream_name":"stdout","time":12.744311237,"data":"Requirement already satisfied: narwhals\u003e=1.15.1 in /usr/local/lib/python3.12/dist-packages (from plotly==7.1.0) (2.20.0)\n"}
+,{"stream_name":"stdout","time":12.754041863,"data":"Requirement already satisfied: numpy\u003c2.5,\u003e=1.23.5 in /usr/local/lib/python3.12/dist-packages (from scipy==1.15.3) (2.0.2)\n"}
+,{"stream_name":"stdout","time":12.766251677,"data":"Requirement already satisfied: python-dateutil\u003e=2.8.2 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2.9.0.post0)\n"}
+,{"stream_name":"stdout","time":12.767923613,"data":"Requirement already satisfied: pytz\u003e=2020.1 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2025.2)\n"}
+,{"stream_name":"stdout","time":12.768820065,"data":"Requirement already satisfied: tzdata\u003e=2022.7 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2026.1)\n"}
+,{"stream_name":"stdout","time":12.782810361,"data":"Requirement already satisfied: googleapis-common-protos~=1.52 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (1.74.0)\n"}
+,{"stream_name":"stdout","time":12.814072443,"data":"Collecting opentelemetry-exporter-http-transport==0.66b0 (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.818343984,"data":"  Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":12.858199976,"data":"Collecting opentelemetry-exporter-otlp-common==0.66b0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.862486055,"data":"  Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl.metadata (1.9 kB)\n"}
+,{"stream_name":"stdout","time":12.912012486,"data":"Collecting opentelemetry-sdk\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.912028524,"data":"  Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl.metadata (1.6 kB)\n"}
+,{"stream_name":"stdout","time":12.9120332,"data":"Requirement already satisfied: packaging in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (26.1)\n"}
+,{"stream_name":"stdout","time":12.91203699,"data":"Requirement already satisfied: platformdirs in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.9.6)\n"}
+,{"stream_name":"stdout","time":12.91204063,"data":"Requirement already satisfied: protobuf!=5.28.0,!=5.29.0,\u003c8,\u003e=5 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (5.29.5)\n"}
+,{"stream_name":"stdout","time":12.91204444,"data":"Requirement already satisfied: pydantic\u003c3,\u003e=2.6 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.12.3)\n"}
+,{"stream_name":"stdout","time":12.912048156,"data":"Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (6.0.3)\n"}
+,{"stream_name":"stdout","time":12.912051972,"data":"Requirement already satisfied: requests\u003c3,\u003e=2.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.32.4)\n"}
+,{"stream_name":"stdout","time":12.912055976,"data":"Requirement already satisfied: typing-extensions\u003c5,\u003e=4.8 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.15.0)\n"}
+,{"stream_name":"stdout","time":12.912059903,"data":"Requirement already satisfied: xxhash\u003e=3.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (3.6.0)\n"}
+,{"stream_name":"stdout","time":12.912063793,"data":"Requirement already satisfied: narwhals\u003e=1.15.1 in /usr/local/lib/python3.12/dist-packages (from plotly==7.1.0) (2.20.0)\n"}
+,{"stream_name":"stdout","time":12.912067599,"data":"Requirement already satisfied: numpy\u003c2.5,\u003e=1.23.5 in /usr/local/lib/python3.12/dist-packages (from scipy==1.15.3) (2.0.2)\n"}
+,{"stream_name":"stdout","time":12.912071403,"data":"Requirement already satisfied: python-dateutil\u003e=2.8.2 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2.9.0.post0)\n"}
+,{"stream_name":"stdout","time":12.912075143,"data":"Requirement already satisfied: pytz\u003e=2020.1 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2025.2)\n"}
+,{"stream_name":"stdout","time":12.912078765,"data":"Requirement already satisfied: tzdata\u003e=2022.7 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2026.1)\n"}
+,{"stream_name":"stdout","time":12.912082462,"data":"Requirement already satisfied: googleapis-common-protos~=1.52 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (1.74.0)\n"}
+,{"stream_name":"stdout","time":12.912089482,"data":"Collecting opentelemetry-exporter-http-transport==0.66b0 (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.912103939,"data":"  Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":12.912107963,"data":"Collecting opentelemetry-exporter-otlp-common==0.66b0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.912112224,"data":"  Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl.metadata (1.9 kB)\n"}
+,{"stream_name":"stdout","time":12.942153925,"data":"Collecting opentelemetry-exporter-otlp-proto-common==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":12.94721742,"data":"  Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl.metadata (1.8 kB)\n"}
+,{"stream_name":"stdout","time":13.016966326,"data":"Collecting opentelemetry-proto==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":13.021408441,"data":"  Downloading opentelemetry_proto-1.45.0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":13.047168858,"data":"Requirement already satisfied: urllib3\u003e=1.26 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (2.5.0)\n"}
+,{"stream_name":"stdout","time":13.107451612,"data":"Collecting opentelemetry-semantic-conventions==0.66b0 (from opentelemetry-sdk\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":13.111682934,"data":"  Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl.metadata (2.4 kB)\n"}
+,{"stream_name":"stdout","time":13.136479474,"data":"Requirement already satisfied: annotated-types\u003e=0.6.0 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.7.0)\n"}
+,{"stream_name":"stdout","time":13.137756161,"data":"Requirement already satisfied: pydantic-core==2.41.4 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (2.41.4)\n"}
+,{"stream_name":"stdout","time":13.139188297,"data":"Requirement already satisfied: typing-inspection\u003e=0.4.2 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.4.2)\n"}
+,{"stream_name":"stdout","time":13.143756764,"data":"Requirement already satisfied: six\u003e=1.5 in /usr/local/lib/python3.12/dist-packages (from python-dateutil\u003e=2.8.2-\u003epandas==2.2.3) (1.17.0)\n"}
+,{"stream_name":"stdout","time":13.14438677,"data":"Collecting opentelemetry-exporter-otlp-proto-common==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":13.144404232,"data":"  Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl.metadata (1.8 kB)\n"}
+,{"stream_name":"stdout","time":13.144408757,"data":"Collecting opentelemetry-proto==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":13.14441279,"data":"  Downloading opentelemetry_proto-1.45.0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":13.144416277,"data":"Requirement already satisfied: urllib3\u003e=1.26 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (2.5.0)\n"}
+,{"stream_name":"stdout","time":13.144420624,"data":"Collecting opentelemetry-semantic-conventions==0.66b0 (from opentelemetry-sdk\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":13.144442637,"data":"  Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl.metadata (2.4 kB)\n"}
+,{"stream_name":"stdout","time":13.144446667,"data":"Requirement already satisfied: annotated-types\u003e=0.6.0 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.7.0)\n"}
+,{"stream_name":"stdout","time":13.144450365,"data":"Requirement already satisfied: pydantic-core==2.41.4 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (2.41.4)\n"}
+,{"stream_name":"stdout","time":13.144454621,"data":"Requirement already satisfied: typing-inspection\u003e=0.4.2 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.4.2)\n"}
+,{"stream_name":"stdout","time":13.150058843,"data":"Requirement already satisfied: charset_normalizer\u003c4,\u003e=2 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.4.7)\n"}
+,{"stream_name":"stdout","time":13.151267078,"data":"Requirement already satisfied: idna\u003c4,\u003e=2.5 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.13)\n"}
+,{"stream_name":"stdout","time":13.152802231,"data":"Requirement already satisfied: certifi\u003e=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (2026.4.22)\n"}
+,{"stream_name":"stdout","time":13.184821477,"data":"Requirement already satisfied: fsspec\u003c2028.0,\u003e=2022.5.0 in /usr/local/lib/python3.12/dist-packages (from fsspec[http]\u003c2028.0,\u003e=2022.5.0-\u003elightning-\u003epina-mathlab==0.3.2.post2609) (2025.3.0)\n"}
+,{"stream_name":"stdout","time":13.187116652,"data":"Requirement already satisfied: lightning-utilities\u003c2.0,\u003e=0.10.0 in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (0.15.3)\n"}
+,{"stream_name":"stdout","time":13.19053485,"data":"Requirement already satisfied: torchmetrics\u003c3.0,\u003e0.7.0 in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (1.9.0)\n"}
+,{"stream_name":"stdout","time":13.193570144,"data":"Requirement already satisfied: tqdm\u003c6.0,\u003e=4.57.0 in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (4.67.3)\n"}
+,{"stream_name":"stdout","time":13.196063563,"data":"Requirement already satisfied: pytorch-lightning in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (2.6.5)\n"}
+,{"stream_name":"stdout","time":13.20577795,"data":"Requirement already satisfied: filelock in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.29.0)\n"}
+,{"stream_name":"stdout","time":13.208012819,"data":"Requirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (81.0.0)\n"}
+,{"stream_name":"stdout","time":13.209876795,"data":"Requirement already satisfied: sympy\u003e=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (1.14.0)\n"}
+,{"stream_name":"stdout","time":13.211262868,"data":"Requirement already satisfied: networkx\u003e=2.5.1 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.6.1)\n"}
+,{"stream_name":"stdout","time":13.212227785,"data":"Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.1.6)\n"}
+,{"stream_name":"stdout","time":13.214204403,"data":"Requirement already satisfied: cuda-bindings==12.9.4 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.9.4)\n"}
+,{"stream_name":"stdout","time":13.215433523,"data":"Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.93 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.93)\n"}
+,{"stream_name":"stdout","time":13.216765802,"data":"Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.90)\n"}
+,{"stream_name":"stdout","time":13.218015655,"data":"Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.90)\n"}
+,{"stream_name":"stdout","time":13.219269903,"data":"Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (9.10.2.21)\n"}
+,{"stream_name":"stdout","time":13.220487788,"data":"Requirement already satisfied: nvidia-cublas-cu12==12.8.4.1 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.4.1)\n"}
+,{"stream_name":"stdout","time":13.221771019,"data":"Requirement already satisfied: nvidia-cufft-cu12==11.3.3.83 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (11.3.3.83)\n"}
+,{"stream_name":"stdout","time":13.223099089,"data":"Requirement already satisfied: nvidia-curand-cu12==10.3.9.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (10.3.9.90)\n"}
+,{"stream_name":"stdout","time":13.224527365,"data":"Requirement already satisfied: nvidia-cusolver-cu12==11.7.3.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (11.7.3.90)\n"}
+,{"stream_name":"stdout","time":13.225801946,"data":"Requirement already satisfied: nvidia-cusparse-cu12==12.5.8.93 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.5.8.93)\n"}
+,{"stream_name":"stdout","time":13.227076328,"data":"Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (0.7.1)\n"}
+,{"stream_name":"stdout","time":13.228385014,"data":"Requirement already satisfied: nvidia-nccl-cu12==2.27.5 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (2.27.5)\n"}
+,{"stream_name":"stdout","time":13.229643982,"data":"Requirement already satisfied: nvidia-nvshmem-cu12==3.4.5 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.4.5)\n"}
+,{"stream_name":"stdout","time":13.230920203,"data":"Requirement already satisfied: nvidia-nvtx-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.90)\n"}
+,{"stream_name":"stdout","time":13.232163734,"data":"Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.93 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.93)\n"}
+,{"stream_name":"stdout","time":13.233528349,"data":"Requirement already satisfied: nvidia-cufile-cu12==1.13.1.3 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (1.13.1.3)\n"}
+,{"stream_name":"stdout","time":13.234772967,"data":"Requirement already satisfied: triton==3.6.0 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.6.0)\n"}
+,{"stream_name":"stdout","time":13.238677106,"data":"Requirement already satisfied: cuda-pathfinder~=1.1 in /usr/local/lib/python3.12/dist-packages (from cuda-bindings==12.9.4-\u003etorch-\u003epina-mathlab==0.3.2.post2609) (1.5.3)\n"}
+,{"stream_name":"stdout","time":13.268856275,"data":"Requirement already satisfied: contourpy\u003e=1.0.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (1.3.3)\n"}
+,{"stream_name":"stdout","time":13.270086221,"data":"Requirement already satisfied: cycler\u003e=0.10 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (0.12.1)\n"}
+,{"stream_name":"stdout","time":13.274852228,"data":"Requirement already satisfied: fonttools\u003e=4.22.0 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (4.62.1)\n"}
+,{"stream_name":"stdout","time":13.276236634,"data":"Requirement already satisfied: kiwisolver\u003e=1.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (1.5.0)\n"}
+,{"stream_name":"stdout","time":13.280905627,"data":"Requirement already satisfied: pillow\u003e=8 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (11.3.0)\n"}
+,{"stream_name":"stdout","time":13.281986216,"data":"Requirement already satisfied: pyparsing\u003e=2.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (3.3.2)\n"}
+,{"stream_name":"stdout","time":13.291112956,"data":"Requirement already satisfied: aiohttp in /usr/local/lib/python3.12/dist-packages (from torch_geometric-\u003epina-mathlab==0.3.2.post2609) (3.13.5)\n"}
+,{"stream_name":"stdout","time":13.296644946,"data":"Requirement already satisfied: psutil\u003e=5.8.0 in /usr/local/lib/python3.12/dist-packages (from torch_geometric-\u003epina-mathlab==0.3.2.post2609) (5.9.5)\n"}
+,{"stream_name":"stdout","time":13.344070596,"data":"Requirement already satisfied: aiohappyeyeballs\u003e=2.5.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (2.6.1)\n"}
+,{"stream_name":"stdout","time":13.345408143,"data":"Requirement already satisfied: aiosignal\u003e=1.4.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (1.4.0)\n"}
+,{"stream_name":"stdout","time":13.346156811,"data":"Requirement already satisfied: six\u003e=1.5 in /usr/local/lib/python3.12/dist-packages (from python-dateutil\u003e=2.8.2-\u003epandas==2.2.3) (1.17.0)\n"}
+,{"stream_name":"stdout","time":13.346168189,"data":"Requirement already satisfied: charset_normalizer\u003c4,\u003e=2 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.4.7)\n"}
+,{"stream_name":"stdout","time":13.346172808,"data":"Requirement already satisfied: idna\u003c4,\u003e=2.5 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.13)\n"}
+,{"stream_name":"stdout","time":13.346177088,"data":"Requirement already satisfied: certifi\u003e=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (2026.4.22)\n"}
+,{"stream_name":"stdout","time":13.346181377,"data":"Requirement already satisfied: fsspec\u003c2028.0,\u003e=2022.5.0 in /usr/local/lib/python3.12/dist-packages (from fsspec[http]\u003c2028.0,\u003e=2022.5.0-\u003elightning-\u003epina-mathlab==0.3.2.post2609) (2025.3.0)\n"}
+,{"stream_name":"stdout","time":13.346186147,"data":"Requirement already satisfied: lightning-utilities\u003c2.0,\u003e=0.10.0 in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (0.15.3)\n"}
+,{"stream_name":"stdout","time":13.346190513,"data":"Requirement already satisfied: torchmetrics\u003c3.0,\u003e0.7.0 in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (1.9.0)\n"}
+,{"stream_name":"stdout","time":13.346194782,"data":"Requirement already satisfied: tqdm\u003c6.0,\u003e=4.57.0 in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (4.67.3)\n"}
+,{"stream_name":"stdout","time":13.34620881,"data":"Requirement already satisfied: pytorch-lightning in /usr/local/lib/python3.12/dist-packages (from lightning-\u003epina-mathlab==0.3.2.post2609) (2.6.5)\n"}
+,{"stream_name":"stdout","time":13.346213029,"data":"Requirement already satisfied: filelock in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.29.0)\n"}
+,{"stream_name":"stdout","time":13.34621692,"data":"Requirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (81.0.0)\n"}
+,{"stream_name":"stdout","time":13.346220725,"data":"Requirement already satisfied: sympy\u003e=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (1.14.0)\n"}
+,{"stream_name":"stdout","time":13.346224729,"data":"Requirement already satisfied: networkx\u003e=2.5.1 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.6.1)\n"}
+,{"stream_name":"stdout","time":13.346229404,"data":"Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.1.6)\n"}
+,{"stream_name":"stdout","time":13.346233305,"data":"Requirement already satisfied: cuda-bindings==12.9.4 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.9.4)\n"}
+,{"stream_name":"stdout","time":13.346237155,"data":"Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.93 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.93)\n"}
+,{"stream_name":"stdout","time":13.346241227,"data":"Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.90)\n"}
+,{"stream_name":"stdout","time":13.346244945,"data":"Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.90)\n"}
+,{"stream_name":"stdout","time":13.346248673,"data":"Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (9.10.2.21)\n"}
+,{"stream_name":"stdout","time":13.346252445,"data":"Requirement already satisfied: nvidia-cublas-cu12==12.8.4.1 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.4.1)\n"}
+,{"stream_name":"stdout","time":13.346256309,"data":"Requirement already satisfied: nvidia-cufft-cu12==11.3.3.83 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (11.3.3.83)\n"}
+,{"stream_name":"stdout","time":13.346260245,"data":"Requirement already satisfied: nvidia-curand-cu12==10.3.9.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (10.3.9.90)\n"}
+,{"stream_name":"stdout","time":13.346264193,"data":"Requirement already satisfied: nvidia-cusolver-cu12==11.7.3.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (11.7.3.90)\n"}
+,{"stream_name":"stdout","time":13.346268108,"data":"Requirement already satisfied: nvidia-cusparse-cu12==12.5.8.93 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.5.8.93)\n"}
+,{"stream_name":"stdout","time":13.34627191,"data":"Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (0.7.1)\n"}
+,{"stream_name":"stdout","time":13.34627571,"data":"Requirement already satisfied: nvidia-nccl-cu12==2.27.5 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (2.27.5)\n"}
+,{"stream_name":"stdout","time":13.346282806,"data":"Requirement already satisfied: nvidia-nvshmem-cu12==3.4.5 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.4.5)\n"}
+,{"stream_name":"stdout","time":13.346287084,"data":"Requirement already satisfied: nvidia-nvtx-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.90)\n"}
+,{"stream_name":"stdout","time":13.346290837,"data":"Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.93 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (12.8.93)\n"}
+,{"stream_name":"stdout","time":13.346294673,"data":"Requirement already satisfied: nvidia-cufile-cu12==1.13.1.3 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (1.13.1.3)\n"}
+,{"stream_name":"stdout","time":13.346298618,"data":"Requirement already satisfied: triton==3.6.0 in /usr/local/lib/python3.12/dist-packages (from torch-\u003epina-mathlab==0.3.2.post2609) (3.6.0)\n"}
+,{"stream_name":"stdout","time":13.34630198,"data":"Requirement already satisfied: cuda-pathfinder~=1.1 in /usr/local/lib/python3.12/dist-packages (from cuda-bindings==12.9.4-\u003etorch-\u003epina-mathlab==0.3.2.post2609) (1.5.3)\n"}
+,{"stream_name":"stdout","time":13.346305785,"data":"Requirement already satisfied: contourpy\u003e=1.0.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (1.3.3)\n"}
+,{"stream_name":"stdout","time":13.346309669,"data":"Requirement already satisfied: cycler\u003e=0.10 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (0.12.1)\n"}
+,{"stream_name":"stdout","time":13.346313555,"data":"Requirement already satisfied: fonttools\u003e=4.22.0 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (4.62.1)\n"}
+,{"stream_name":"stdout","time":13.346317267,"data":"Requirement already satisfied: kiwisolver\u003e=1.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (1.5.0)\n"}
+,{"stream_name":"stdout","time":13.346321207,"data":"Requirement already satisfied: pillow\u003e=8 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (11.3.0)\n"}
+,{"stream_name":"stdout","time":13.346324802,"data":"Requirement already satisfied: pyparsing\u003e=2.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib-\u003epina-mathlab==0.3.2.post2609) (3.3.2)\n"}
+,{"stream_name":"stdout","time":13.346328661,"data":"Requirement already satisfied: aiohttp in /usr/local/lib/python3.12/dist-packages (from torch_geometric-\u003epina-mathlab==0.3.2.post2609) (3.13.5)\n"}
+,{"stream_name":"stdout","time":13.346332422,"data":"Requirement already satisfied: psutil\u003e=5.8.0 in /usr/local/lib/python3.12/dist-packages (from torch_geometric-\u003epina-mathlab==0.3.2.post2609) (5.9.5)\n"}
+,{"stream_name":"stdout","time":13.346336742,"data":"Requirement already satisfied: aiohappyeyeballs\u003e=2.5.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (2.6.1)\n"}
+,{"stream_name":"stdout","time":13.346789776,"data":"Requirement already satisfied: attrs\u003e=17.3.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (26.1.0)\n"}
+,{"stream_name":"stdout","time":13.348625826,"data":"Requirement already satisfied: frozenlist\u003e=1.1.1 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (1.8.0)\n"}
+,{"stream_name":"stdout","time":13.349829085,"data":"Requirement already satisfied: multidict\u003c7.0,\u003e=4.5 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (6.7.1)\n"}
+,{"stream_name":"stdout","time":13.351381219,"data":"Requirement already satisfied: propcache\u003e=0.2.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (0.4.1)\n"}
+,{"stream_name":"stdout","time":13.355298367,"data":"Requirement already satisfied: yarl\u003c2.0,\u003e=1.17.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (1.23.0)\n"}
+,{"stream_name":"stdout","time":13.383759768000001,"data":"Requirement already satisfied: mpmath\u003c1.4,\u003e=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy\u003e=1.13.3-\u003etorch-\u003epina-mathlab==0.3.2.post2609) (1.3.0)\n"}
+,{"stream_name":"stdout","time":13.418729365,"data":"Requirement already satisfied: MarkupSafe\u003e=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2-\u003etorch-\u003epina-mathlab==0.3.2.post2609) (3.0.3)\n"}
+,{"stream_name":"stdout","time":13.488163287999999,"data":"Downloading pina_mathlab-0.3.2.post2609-py3-none-any.whl (327 kB)\n"}
+,{"stream_name":"stdout","time":13.512787411,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 328.0/328.0 kB 14.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.519814171,"data":"Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl (26.1 MB)\n"}
+,{"stream_name":"stdout","time":13.547407216,"data":"Requirement already satisfied: aiosignal\u003e=1.4.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (1.4.0)\n"}
+,{"stream_name":"stdout","time":13.547426704,"data":"Requirement already satisfied: attrs\u003e=17.3.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (26.1.0)\n"}
+,{"stream_name":"stdout","time":13.547431879,"data":"Requirement already satisfied: frozenlist\u003e=1.1.1 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (1.8.0)\n"}
+,{"stream_name":"stdout","time":13.547435759,"data":"Requirement already satisfied: multidict\u003c7.0,\u003e=4.5 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (6.7.1)\n"}
+,{"stream_name":"stdout","time":13.547452646,"data":"Requirement already satisfied: propcache\u003e=0.2.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (0.4.1)\n"}
+,{"stream_name":"stdout","time":13.547457082,"data":"Requirement already satisfied: yarl\u003c2.0,\u003e=1.17.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003etorch_geometric-\u003epina-mathlab==0.3.2.post2609) (1.23.0)\n"}
+,{"stream_name":"stdout","time":13.547461238,"data":"Requirement already satisfied: mpmath\u003c1.4,\u003e=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy\u003e=1.13.3-\u003etorch-\u003epina-mathlab==0.3.2.post2609) (1.3.0)\n"}
+,{"stream_name":"stdout","time":13.547466108,"data":"Requirement already satisfied: MarkupSafe\u003e=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2-\u003etorch-\u003epina-mathlab==0.3.2.post2609) (3.0.3)\n"}
+,{"stream_name":"stdout","time":13.54747059,"data":"Downloading pina_mathlab-0.3.2.post2609-py3-none-any.whl (327 kB)\n"}
+,{"stream_name":"stdout","time":13.547474554,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 328.0/328.0 kB 14.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.547479193000001,"data":"Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl (26.1 MB)\n"}
+,{"stream_name":"stdout","time":13.735617473,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.1/26.1 MB 74.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.740104109,"data":"Downloading plotly-7.1.0-py3-none-any.whl (9.7 MB)\n"}
+,{"stream_name":"stdout","time":13.824136266,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 119.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.832044607,"data":"Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.3 MB)\n"}
+,{"stream_name":"stdout","time":13.937413983999999,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.1/26.1 MB 74.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.937456749999999,"data":"Downloading plotly-7.1.0-py3-none-any.whl (9.7 MB)\n"}
+,{"stream_name":"stdout","time":13.937461634,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 119.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.9374649,"data":"Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.3 MB)\n"}
+,{"stream_name":"stdout","time":14.137013483,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 57.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.142236525,"data":"Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)\n"}
+,{"stream_name":"stdout","time":14.25243109,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 104.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.257418137,"data":"Downloading opentelemetry_api-1.45.0-py3-none-any.whl (60 kB)\n"}
+,{"stream_name":"stdout","time":14.275964036,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.0/60.0 kB 3.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.281240315,"data":"Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl (22 kB)\n"}
+,{"stream_name":"stdout","time":14.300013245,"data":"Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":14.318513902,"data":"Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":14.338925058,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 57.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.338947125,"data":"Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)\n"}
+,{"stream_name":"stdout","time":14.338952963,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 104.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.338957339,"data":"Downloading opentelemetry_api-1.45.0-py3-none-any.whl (60 kB)\n"}
+,{"stream_name":"stdout","time":14.33896101,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.0/60.0 kB 3.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.338965202,"data":"Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl (22 kB)\n"}
+,{"stream_name":"stdout","time":14.338978607,"data":"Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":14.33898203,"data":"Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":14.339301671,"data":"Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl (15 kB)\n"}
+,{"stream_name":"stdout","time":14.359722575,"data":"Downloading opentelemetry_proto-1.45.0-py3-none-any.whl (72 kB)\n"}
+,{"stream_name":"stdout","time":14.377256964,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 4.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.381716131,"data":"Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl (140 kB)\n"}
+,{"stream_name":"stdout","time":14.399020489,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.1/140.1 kB 8.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.403900424,"data":"Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl (206 kB)\n"}
+,{"stream_name":"stdout","time":14.422384474,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.3/206.3 kB 12.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.426939676,"data":"Downloading lightning-2.6.6-py3-none-any.whl (849 kB)\n"}
+,{"stream_name":"stdout","time":14.454441206,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 849.3/849.3 kB 33.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.460865068,"data":"Downloading torch_geometric-2.8.0.post1-py3-none-any.whl (1.3 MB)\n"}
+,{"stream_name":"stdout","time":14.488109542,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 53.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.541244885,"data":"Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl (15 kB)\n"}
+,{"stream_name":"stdout","time":14.541265795,"data":"Downloading opentelemetry_proto-1.45.0-py3-none-any.whl (72 kB)\n"}
+,{"stream_name":"stdout","time":14.541271161,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 4.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.541276646,"data":"Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl (140 kB)\n"}
+,{"stream_name":"stdout","time":14.541281196,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.1/140.1 kB 8.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.541286653,"data":"Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl (206 kB)\n"}
+,{"stream_name":"stdout","time":14.541291857000001,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.3/206.3 kB 12.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.541296867,"data":"Downloading lightning-2.6.6-py3-none-any.whl (849 kB)\n"}
+,{"stream_name":"stdout","time":14.541301277,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 849.3/849.3 kB 33.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.541306307,"data":"Downloading torch_geometric-2.8.0.post1-py3-none-any.whl (1.3 MB)\n"}
+,{"stream_name":"stdout","time":14.541310778,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 53.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.871641279,"data":"Installing collected packages: scipy, plotly, opentelemetry-proto, opentelemetry-api, pandas, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, opentelemetry-exporter-http-transport, torch_geometric, opentelemetry-sdk, opentelemetry-exporter-otlp-common, opentelemetry-exporter-otlp-proto-http, wandb, lightning, pina-mathlab\n"}
+,{"stream_name":"stdout","time":16.871902848,"data":"  Attempting uninstall: scipy\n"}
+,{"stream_name":"stdout","time":17.067505236,"data":"    Found existing installation: scipy 1.16.3\n"}
+,{"stream_name":"stdout","time":17.073776847,"data":"Installing collected packages: scipy, plotly, opentelemetry-proto, opentelemetry-api, pandas, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, opentelemetry-exporter-http-transport, torch_geometric, opentelemetry-sdk, opentelemetry-exporter-otlp-common, opentelemetry-exporter-otlp-proto-http, wandb, lightning, pina-mathlab\n"}
+,{"stream_name":"stdout","time":17.07379606,"data":"  Attempting uninstall: scipy\n"}
+,{"stream_name":"stdout","time":17.073800623,"data":"    Found existing installation: scipy 1.16.3\n"}
+,{"stream_name":"stdout","time":17.263023259,"data":"    Uninstalling scipy-1.16.3:\n"}
+,{"stream_name":"stdout","time":17.465186309,"data":"    Uninstalling scipy-1.16.3:\n"}
+,{"stream_name":"stdout","time":19.136115794,"data":"      Successfully uninstalled scipy-1.16.3\n"}
+,{"stream_name":"stdout","time":19.338180778,"data":"      Successfully uninstalled scipy-1.16.3\n"}
+,{"stream_name":"stdout","time":23.368746427,"data":"  Attempting uninstall: plotly\n"}
+,{"stream_name":"stdout","time":23.569109037,"data":"  Attempting uninstall: plotly\n"}
+,{"stream_name":"stdout","time":23.583913179,"data":"    Found existing installation: plotly 5.24.1\n"}
+,{"stream_name":"stdout","time":23.786225957,"data":"    Found existing installation: plotly 5.24.1\n"}
+,{"stream_name":"stdout","time":25.554274174,"data":"    Uninstalling plotly-5.24.1:\n"}
+,{"stream_name":"stdout","time":25.756562394,"data":"    Uninstalling plotly-5.24.1:\n"}
+,{"stream_name":"stdout","time":35.968029064,"data":"      Successfully uninstalled plotly-5.24.1\n"}
+,{"stream_name":"stdout","time":36.1703027,"data":"      Successfully uninstalled plotly-5.24.1\n"}
+,{"stream_name":"stdout","time":39.197603129,"data":"  Attempting uninstall: opentelemetry-proto\n"}
+,{"stream_name":"stdout","time":39.404155159,"data":"  Attempting uninstall: opentelemetry-proto\n"}
+,{"stream_name":"stdout","time":39.520386637,"data":"    Found existing installation: opentelemetry-proto 1.38.0\n"}
+,{"stream_name":"stdout","time":39.542008529,"data":"    Uninstalling opentelemetry-proto-1.38.0:\n"}
+,{"stream_name":"stdout","time":39.571962827,"data":"      Successfully uninstalled opentelemetry-proto-1.38.0\n"}
+,{"stream_name":"stdout","time":39.63039583,"data":"  Attempting uninstall: opentelemetry-api\n"}
+,{"stream_name":"stdout","time":39.722540979,"data":"    Found existing installation: opentelemetry-proto 1.38.0\n"}
+,{"stream_name":"stdout","time":39.722562447,"data":"    Uninstalling opentelemetry-proto-1.38.0:\n"}
+,{"stream_name":"stdout","time":39.722568742,"data":"      Successfully uninstalled opentelemetry-proto-1.38.0\n"}
+,{"stream_name":"stdout","time":39.722573898,"data":"  Attempting uninstall: opentelemetry-api\n"}
+,{"stream_name":"stdout","time":39.955382883,"data":"    Found existing installation: opentelemetry-api 1.38.0\n"}
+,{"stream_name":"stdout","time":39.97882706,"data":"    Uninstalling opentelemetry-api-1.38.0:\n"}
+,{"stream_name":"stdout","time":40.065576698,"data":"      Successfully uninstalled opentelemetry-api-1.38.0\n"}
+,{"stream_name":"stdout","time":40.125693424,"data":"  Attempting uninstall: pandas\n"}
+,{"stream_name":"stdout","time":40.157631122,"data":"    Found existing installation: opentelemetry-api 1.38.0\n"}
+,{"stream_name":"stdout","time":40.157650772,"data":"    Uninstalling opentelemetry-api-1.38.0:\n"}
+,{"stream_name":"stdout","time":40.157656055,"data":"      Successfully uninstalled opentelemetry-api-1.38.0\n"}
+,{"stream_name":"stdout","time":40.157660313,"data":"  Attempting uninstall: pandas\n"}
+,{"stream_name":"stdout","time":40.167810669,"data":"    Found existing installation: pandas 2.3.3\n"}
+,{"stream_name":"stdout","time":40.370087114,"data":"    Found existing installation: pandas 2.3.3\n"}
+,{"stream_name":"stdout","time":40.520317364,"data":"    Uninstalling pandas-2.3.3:\n"}
+,{"stream_name":"stdout","time":40.722215917,"data":"    Uninstalling pandas-2.3.3:\n"}
+,{"stream_name":"stdout","time":41.997191205,"data":"      Successfully uninstalled pandas-2.3.3\n"}
+,{"stream_name":"stdout","time":42.199676241,"data":"      Successfully uninstalled pandas-2.3.3\n"}
+,{"stream_name":"stdout","time":46.536269309,"data":"  Attempting uninstall: opentelemetry-semantic-conventions\n"}
+,{"stream_name":"stdout","time":46.738492057,"data":"  Attempting uninstall: opentelemetry-semantic-conventions\n"}
+,{"stream_name":"stdout","time":46.878151113,"data":"    Found existing installation: opentelemetry-semantic-conventions 0.59b0\n"}
+,{"stream_name":"stdout","time":46.889474714,"data":"    Uninstalling opentelemetry-semantic-conventions-0.59b0:\n"}
+,{"stream_name":"stdout","time":46.976728974,"data":"      Successfully uninstalled opentelemetry-semantic-conventions-0.59b0\n"}
+,{"stream_name":"stdout","time":47.080675323,"data":"    Found existing installation: opentelemetry-semantic-conventions 0.59b0\n"}
+,{"stream_name":"stdout","time":47.080697065,"data":"    Uninstalling opentelemetry-semantic-conventions-0.59b0:\n"}
+,{"stream_name":"stdout","time":47.080702568,"data":"      Successfully uninstalled opentelemetry-semantic-conventions-0.59b0\n"}
+,{"stream_name":"stdout","time":47.103021721,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-common\n"}
+,{"stream_name":"stdout","time":47.30530144,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-common\n"}
+,{"stream_name":"stdout","time":47.398488876,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-common 1.38.0\n"}
+,{"stream_name":"stdout","time":47.403838294,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-common-1.38.0:\n"}
+,{"stream_name":"stdout","time":47.416997753,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-common-1.38.0\n"}
+,{"stream_name":"stdout","time":47.600983316,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-common 1.38.0\n"}
+,{"stream_name":"stdout","time":47.601009771,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-common-1.38.0:\n"}
+,{"stream_name":"stdout","time":47.60101577,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-common-1.38.0\n"}
+,{"stream_name":"stdout","time":48.452154686,"data":"  Attempting uninstall: opentelemetry-sdk\n"}
+,{"stream_name":"stdout","time":48.624201841,"data":"    Found existing installation: opentelemetry-sdk 1.38.0\n"}
+,{"stream_name":"stdout","time":48.634196867,"data":"    Uninstalling opentelemetry-sdk-1.38.0:\n"}
+,{"stream_name":"stdout","time":48.65422576,"data":"  Attempting uninstall: opentelemetry-sdk\n"}
+,{"stream_name":"stdout","time":48.654253446,"data":"    Found existing installation: opentelemetry-sdk 1.38.0\n"}
+,{"stream_name":"stdout","time":48.65425837,"data":"    Uninstalling opentelemetry-sdk-1.38.0:\n"}
+,{"stream_name":"stdout","time":48.691701573,"data":"      Successfully uninstalled opentelemetry-sdk-1.38.0\n"}
+,{"stream_name":"stdout","time":48.829445155,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-http\n"}
+,{"stream_name":"stdout","time":48.893792167,"data":"      Successfully uninstalled opentelemetry-sdk-1.38.0\n"}
+,{"stream_name":"stdout","time":48.893810355,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-http\n"}
+,{"stream_name":"stdout","time":49.117811688,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-http 1.38.0\n"}
+,{"stream_name":"stdout","time":49.123138586,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-http-1.38.0:\n"}
+,{"stream_name":"stdout","time":49.134806164,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-http-1.38.0\n"}
+,{"stream_name":"stdout","time":49.165830571,"data":"  Attempting uninstall: wandb\n"}
+,{"stream_name":"stdout","time":49.319723047,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-http 1.38.0\n"}
+,{"stream_name":"stdout","time":49.319742065,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-http-1.38.0:\n"}
+,{"stream_name":"stdout","time":49.31974635,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-http-1.38.0\n"}
+,{"stream_name":"stdout","time":49.319750078,"data":"  Attempting uninstall: wandb\n"}
+,{"stream_name":"stdout","time":49.328398787,"data":"    Found existing installation: wandb 0.26.1\n"}
+,{"stream_name":"stdout","time":49.480589573,"data":"    Uninstalling wandb-0.26.1:\n"}
+,{"stream_name":"stdout","time":49.530330176,"data":"    Found existing installation: wandb 0.26.1\n"}
+,{"stream_name":"stdout","time":49.530348257,"data":"    Uninstalling wandb-0.26.1:\n"}
+,{"stream_name":"stdout","time":65.400555542,"data":"      Successfully uninstalled wandb-0.26.1\n"}
+,{"stream_name":"stdout","time":65.602620959,"data":"      Successfully uninstalled wandb-0.26.1\n"}
+,{"stream_name":"stderr","time":67.608356391,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":67.608402496,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":67.608414982,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":67.608418717,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.608421955,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.2.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.608424972,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.608428084,"data":"google-adk 1.29.0 requires opentelemetry-api\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-api 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.608431515,"data":"google-adk 1.29.0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.608856583,"data":"opentelemetry-exporter-gcp-logging 1.11.0a0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.35.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":67.608868973,"data":"Successfully installed lightning-2.6.6 opentelemetry-api-1.45.0 opentelemetry-exporter-http-transport-0.66b0 opentelemetry-exporter-otlp-common-0.66b0 opentelemetry-exporter-otlp-proto-common-1.45.0 opentelemetry-exporter-otlp-proto-http-1.45.0 opentelemetry-proto-1.45.0 opentelemetry-sdk-1.45.0 opentelemetry-semantic-conventions-0.66b0 pandas-2.2.3 pina-mathlab-0.3.2.post2609 plotly-7.1.0 scipy-1.15.3 torch_geometric-2.8.0.post1 wandb-0.30.0\n"}
+,{"stream_name":"stdout","time":67.79132926,"data":"Successfully installed lightning-2.6.6 opentelemetry-api-1.45.0 opentelemetry-exporter-http-transport-0.66b0 opentelemetry-exporter-otlp-common-0.66b0 opentelemetry-exporter-otlp-proto-common-1.45.0 opentelemetry-exporter-otlp-proto-http-1.45.0 opentelemetry-proto-1.45.0 opentelemetry-sdk-1.45.0 opentelemetry-semantic-conventions-0.66b0 pandas-2.2.3 pina-mathlab-0.3.2.post2609 plotly-7.1.0 scipy-1.15.3 torch_geometric-2.8.0.post1 wandb-0.30.0\n"}
+,{"stream_name":"stderr","time":67.792418093,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":67.792438745,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":67.792443813,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":67.792453133,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.792460284,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.2.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.792462836,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.792465421,"data":"google-adk 1.29.0 requires opentelemetry-api\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-api 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.792467993,"data":"google-adk 1.29.0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.792470599,"data":"opentelemetry-exporter-gcp-logging 1.11.0a0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.35.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.792473093,"data":"\n"}
+,{"stream_name":"stderr","time":67.792475355,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":67.792477879,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":67.792480271,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":67.792482612,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.792485004,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.2.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.792487273,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.792489656,"data":"google-adk 1.29.0 requires opentelemetry-api\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-api 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.792503973,"data":"google-adk 1.29.0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":67.792507388,"data":"opentelemetry-exporter-gcp-logging 1.11.0a0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.35.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":73.066008607,"data":"index, name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":73.066049751,"data":"0, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":73.066054837,"data":"1, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":73.074238995,"data":"index, name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":73.07426567,"data":"0, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":73.074271153,"data":"1, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":77.359105189,"data":"Seed schedule: {104: '0', 105: '1'} ; later seeds use the first free assigned GPU.\n"}
+,{"stream_name":"stdout","time":77.364959971,"data":"[campaign] worker=0 started seed=104 slot=0\n"}
+,{"stream_name":"stdout","time":77.368146467,"data":"[campaign] worker=1 started seed=105 slot=1\n"}
+,{"stream_name":"stdout","time":77.369974574,"data":"[campaign] seed=104 assigned_gpu=0\n"}
+,{"stream_name":"stdout","time":77.375754873,"data":"[campaign] seed=105 assigned_gpu=1\n"}
+,{"stream_name":"stderr","time":99.365444154,"data":"[seed 105 stderr] wandb: Tracking run with wandb version 0.30.0\n"}
+,{"stream_name":"stderr","time":99.365496829,"data":"\n"}
+,{"stream_name":"stderr","time":99.36844763,"data":"[seed 105 stderr] wandb: Tracking run with wandb version 0.30.0\n"}
+,{"stream_name":"stderr","time":99.372558615,"data":"[seed 105 stderr] wandb: W\u0026B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.\n"}
+,{"stream_name":"stderr","time":99.372581666,"data":"[seed 104 stderr] wandb: Tracking run with wandb version 0.30.0\n"}
+,{"stream_name":"stderr","time":99.372599344,"data":"\n"}
+,{"stream_name":"stderr","time":99.372608506,"data":"[seed 105 stderr] wandb: W\u0026B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.\n"}
+,{"stream_name":"stderr","time":99.372614461,"data":"[seed 104 stderr] wandb: Tracking run with wandb version 0.30.0\n"}
+,{"stream_name":"stderr","time":99.374005961,"data":"[seed 104 stderr] wandb: W\u0026B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.\n"}
+,{"stream_name":"stderr","time":99.374023682,"data":"\n"}
+,{"stream_name":"stderr","time":99.374030312,"data":"[seed 104 stderr] wandb: W\u0026B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.\n"}
+,{"stream_name":"stderr","time":99.375319917,"data":"[seed 104 stderr] wandb: Run data is saved locally in /kaggle/working/pikan-5579e97d850d4262/runs/seed-104/wandb/wandb/offline-run-20260927_085736-k0h936ke\n"}
+,{"stream_name":"stderr","time":99.375338122,"data":"\n"}
+,{"stream_name":"stderr","time":99.375343633,"data":"[seed 104 stderr] wandb: Run data is saved locally in /kaggle/working/pikan-5579e97d850d4262/runs/seed-104/wandb/wandb/offline-run-20260927_085736-k0h936ke\n"}
+,{"stream_name":"stderr","time":99.376595433,"data":"[seed 105 stderr] wandb: Run data is saved locally in /kaggle/working/pikan-5579e97d850d4262/runs/seed-105/wandb/wandb/offline-run-20260927_085736-jy1m2syr\n"}
+,{"stream_name":"stderr","time":99.376621308,"data":"[seed 104 stderr] wandb: View this run in the terminal with `wandb leet`\n"}
+,{"stream_name":"stderr","time":99.376625951,"data":"\n"}
+,{"stream_name":"stderr","time":99.37663777,"data":"[seed 105 stderr] wandb: Run data is saved locally in /kaggle/working/pikan-5579e97d850d4262/runs/seed-105/wandb/wandb/offline-run-20260927_085736-jy1m2syr\n"}
+,{"stream_name":"stderr","time":99.376641612,"data":"[seed 104 stderr] wandb: View this run in the terminal with `wandb leet`\n"}
+,{"stream_name":"stderr","time":99.379023774,"data":"[seed 105 stderr] wandb: View this run in the terminal with `wandb leet`\n"}
+,{"stream_name":"stderr","time":99.379039779,"data":"\n"}
+,{"stream_name":"stderr","time":99.379044134,"data":"[seed 105 stderr] wandb: View this run in the terminal with `wandb leet`\n"}
+,{"stream_name":"stderr","time":100.105601747,"data":"[seed 105 stderr] Seed set to 105\n"}
+,{"stream_name":"stderr","time":100.105627024,"data":"\n"}
+,{"stream_name":"stderr","time":100.105631844,"data":"[seed 105 stderr] Seed set to 105\n"}
+,{"stream_name":"stderr","time":100.119486564,"data":"[seed 104 stderr] Seed set to 104\n"}
+,{"stream_name":"stderr","time":100.119505599,"data":"\n"}
+,{"stream_name":"stderr","time":100.119509147,"data":"[seed 104 stderr] Seed set to 104\n"}
+,{"stream_name":"stderr","time":100.352979705,"data":"[seed 104 stderr] GPU available: True (cuda), used: True\n"}
+,{"stream_name":"stderr","time":100.35300319,"data":"\n"}
+,{"stream_name":"stderr","time":100.353007933,"data":"[seed 104 stderr] GPU available: True (cuda), used: True\n"}
+,{"stream_name":"stderr","time":100.35412213,"data":"[seed 104 stderr] TPU available: False, using: 0 TPU cores\n"}
+,{"stream_name":"stderr","time":100.354142316,"data":"\n"}
+,{"stream_name":"stderr","time":100.354147681,"data":"[seed 104 stderr] TPU available: False, using: 0 TPU cores\n"}
+,{"stream_name":"stderr","time":100.355187465,"data":"[seed 105 stderr] GPU available: True (cuda), used: True\n"}
+,{"stream_name":"stderr","time":100.355205813,"data":"\n"}
+,{"stream_name":"stderr","time":100.355211706,"data":"[seed 105 stderr] GPU available: True (cuda), used: True\n"}
+,{"stream_name":"stderr","time":100.356007684,"data":"[seed 105 stderr] TPU available: False, using: 0 TPU cores\n"}
+,{"stream_name":"stderr","time":100.35602803,"data":"\n"}
+,{"stream_name":"stderr","time":100.356032447,"data":"[seed 105 stderr] TPU available: False, using: 0 TPU cores\n"}
+,{"stream_name":"stderr","time":100.356897574,"data":"[seed 105 stderr] 💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.\n"}
+,{"stream_name":"stderr","time":100.356915569,"data":"\n"}
+,{"stream_name":"stderr","time":100.356920646,"data":"[seed 105 stderr] 💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.\n"}
+,{"stream_name":"stderr","time":100.357805362,"data":"[seed 104 stderr] 💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.\n"}
+,{"stream_name":"stderr","time":100.357819342,"data":"\n"}
+,{"stream_name":"stderr","time":100.357823142,"data":"[seed 104 stderr] 💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.\n"}
+,{"stream_name":"stderr","time":100.361025201,"data":"[seed 105 stderr] /usr/local/lib/python3.12/dist-packages/lightning/pytorch/trainer/configuration_validator.py: PossibleUserWarning: You defined a `validation_step` but have no `val_dataloader`. Skipping val loop.\n"}
+,{"stream_name":"stderr","time":100.361042488,"data":"[seed 104 stderr] /usr/local/lib/python3.12/dist-packages/lightning/pytorch/trainer/configuration_validator.py: PossibleUserWarning: You defined a `validation_step` but have no `val_dataloader`. Skipping val loop.\n"}
+,{"stream_name":"stderr","time":100.361048948,"data":"\n"}
+,{"stream_name":"stderr","time":100.361053009,"data":"[seed 105 stderr] /usr/local/lib/python3.12/dist-packages/lightning/pytorch/trainer/configuration_validator.py: PossibleUserWarning: You defined a `validation_step` but have no `val_dataloader`. Skipping val loop.\n"}
+,{"stream_name":"stderr","time":100.361057346,"data":"[seed 104 stderr] /usr/local/lib/python3.12/dist-packages/lightning/pytorch/trainer/configuration_validator.py: PossibleUserWarning: You defined a `validation_step` but have no `val_dataloader`. Skipping val loop.\n"}
+,{"stream_name":"stderr","time":100.707323469,"data":"[seed 105 stderr] LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]\n"}
+,{"stream_name":"stderr","time":100.707351178,"data":"[seed 104 stderr] LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]\n"}
+,{"stream_name":"stderr","time":100.707355451,"data":"\n"}
+,{"stream_name":"stderr","time":100.707378494,"data":"[seed 105 stderr] LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]\n"}
+,{"stream_name":"stderr","time":100.707383311,"data":"[seed 104 stderr] LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]\n"}
+,{"stream_name":"stderr","time":100.735463718,"data":"[seed 104 stderr] /usr/local/lib/python3.12/dist-packages/lightning/pytorch/utilities/_pytree.py: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.\n"}
+,{"stream_name":"stderr","time":100.735489954,"data":"\n"}
+,{"stream_name":"stderr","time":100.735494387,"data":"[seed 104 stderr] /usr/local/lib/python3.12/dist-packages/lightning/pytorch/utilities/_pytree.py: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.\n"}
+,{"stream_name":"stderr","time":100.736003212,"data":"[seed 105 stderr] /usr/local/lib/python3.12/dist-packages/lightning/pytorch/utilities/_pytree.py: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.\n"}
+,{"stream_name":"stderr","time":100.736032684,"data":"\n"}
+,{"stream_name":"stderr","time":100.736037647,"data":"[seed 105 stderr] /usr/local/lib/python3.12/dist-packages/lightning/pytorch/utilities/_pytree.py: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.\n"}
+,{"stream_name":"stderr","time":287.405702124,"data":"[seed 104 stderr] `Trainer.fit` stopped: `max_steps=5000` reached.\n"}
+,{"stream_name":"stderr","time":287.405741291,"data":"\n"}
+,{"stream_name":"stderr","time":287.405747306,"data":"[seed 104 stderr] `Trainer.fit` stopped: `max_steps=5000` reached.\n"}
+,{"stream_name":"stderr","time":287.597096258,"data":"[seed 104 stderr] Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":287.597148951,"data":"\n"}
+,{"stream_name":"stderr","time":287.597156038,"data":"[seed 104 stderr] Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":287.599180704,"data":"[seed 104 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 148, in main\n"}
+,{"stream_name":"stderr","time":287.599212393,"data":"\n"}
+,{"stream_name":"stderr","time":287.599217523,"data":"[seed 104 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 148, in main\n"}
+,{"stream_name":"stderr","time":287.601254774,"data":"[seed 104 stderr]     measured=evaluate_candidate_checkpoint(checkpoint,problem,problem_out,model_config,problem_config)\n"}
+,{"stream_name":"stderr","time":287.601279251,"data":"\n"}
+,{"stream_name":"stderr","time":287.601310419,"data":"[seed 104 stderr]     measured=evaluate_candidate_checkpoint(checkpoint,problem,problem_out,model_config,problem_config)\n"}
+,{"stream_name":"stderr","time":287.603156842,"data":"[seed 104 stderr]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":287.603172783,"data":"\n"}
+,{"stream_name":"stderr","time":287.60333809,"data":"[seed 104 stderr]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":287.604563643,"data":"[seed 104 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 88, in evaluate_candidate_checkpoint\n"}
+,{"stream_name":"stderr","time":287.604580171,"data":"\n"}
+,{"stream_name":"stderr","time":287.605344708,"data":"[seed 104 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 88, in evaluate_candidate_checkpoint\n"}
+,{"stream_name":"stderr","time":287.607395143,"data":"[seed 104 stderr]     from evals.checkpoint_validation import evaluate_model\n"}
+,{"stream_name":"stderr","time":287.607412402,"data":"\n"}
+,{"stream_name":"stderr","time":287.607417305,"data":"[seed 104 stderr]     from evals.checkpoint_validation import evaluate_model\n"}
+,{"stream_name":"stderr","time":287.607421104,"data":"[seed 104 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/evals/checkpoint_validation.py\", line 20, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":287.607425641,"data":"\n"}
+,{"stream_name":"stderr","time":287.607428792,"data":"[seed 104 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/evals/checkpoint_validation.py\", line 20, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":287.607949374,"data":"[seed 104 stderr]     from evals.problems.burgers_pinnacle_1d import reference as burgers_pinnacle_reference\n"}
+,{"stream_name":"stderr","time":287.607959933,"data":"\n"}
+,{"stream_name":"stderr","time":287.607964485,"data":"[seed 104 stderr]     from evals.problems.burgers_pinnacle_1d import reference as burgers_pinnacle_reference\n"}
+,{"stream_name":"stderr","time":287.609101786,"data":"[seed 104 stderr] ModuleNotFoundError: No module named 'evals.problems.burgers_pinnacle_1d'\n"}
+,{"stream_name":"stderr","time":287.609119867,"data":"\n"}
+,{"stream_name":"stderr","time":287.60912465,"data":"[seed 104 stderr] ModuleNotFoundError: No module named 'evals.problems.burgers_pinnacle_1d'\n"}
+,{"stream_name":"stderr","time":287.610131279,"data":"[seed 104 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":287.610148526,"data":"\n"}
+,{"stream_name":"stderr","time":287.610153037,"data":"[seed 104 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":287.611228657,"data":"[seed 104 stderr] wandb: Run history:\n"}
+,{"stream_name":"stderr","time":287.611244927,"data":"\n"}
+,{"stream_name":"stderr","time":287.611249408,"data":"[seed 104 stderr] wandb: Run history:\n"}
+,{"stream_name":"stderr","time":287.61247347,"data":"[seed 104 stderr] wandb:                         activation/layer_0/abs_max ▅▃▂▁▁▁▁▁▁▂▂▃▃▄▅▆▆▇██\n"}
+,{"stream_name":"stderr","time":287.612530417,"data":"\n"}
+,{"stream_name":"stderr","time":287.612536135,"data":"[seed 104 stderr] wandb:                         activation/layer_0/abs_max ▅▃▂▁▁▁▁▁▁▂▂▃▃▄▅▆▆▇██\n"}
+,{"stream_name":"stderr","time":287.613016432,"data":"[seed 104 stderr] wandb:                         activation/layer_0/abs_p95 ▁▁▂▂▃▃▃▄▄▄▄▅▅▆▆▆▇▇██\n"}
+,{"stream_name":"stderr","time":287.613028955,"data":"\n"}
+,{"stream_name":"stderr","time":287.613033942,"data":"[seed 104 stderr] wandb:                         activation/layer_0/abs_p95 ▁▁▂▂▃▃▃▄▄▄▄▅▅▆▆▆▇▇██\n"}
+,{"stream_name":"stderr","time":287.613992027,"data":"[seed 104 stderr] wandb:                            activation/layer_0/mean ▁▄▅▆▆▇▇█████████████\n"}
+,{"stream_name":"stderr","time":287.614010509,"data":"\n"}
+,{"stream_name":"stderr","time":287.614014869,"data":"[seed 104 stderr] wandb:                            activation/layer_0/mean ▁▄▅▆▆▇▇█████████████\n"}
+,{"stream_name":"stderr","time":287.615000369,"data":"[seed 104 stderr] wandb:               activation/layer_0/preactivation_rms ▁▂▂▂▃▃▃▄▄▄▅▅▅▆▆▇▇▇██\n"}
+,{"stream_name":"stderr","time":287.615016331,"data":"\n"}
+,{"stream_name":"stderr","time":287.615020904,"data":"[seed 104 stderr] wandb:               activation/layer_0/preactivation_rms ▁▂▂▂▃▃▃▄▄▄▅▅▅▆▆▇▇▇██\n"}
+,{"stream_name":"stderr","time":287.616036477,"data":"[seed 104 stderr] wandb:                             activation/layer_0/rms ▁▂▂▂▃▃▃▄▄▄▅▅▆▆▆▇▇▇██\n"}
+,{"stream_name":"stderr","time":287.616051891,"data":"\n"}
+,{"stream_name":"stderr","time":287.616055976,"data":"[seed 104 stderr] wandb:                             activation/layer_0/rms ▁▂▂▂▃▃▃▄▄▄▅▅▆▆▆▇▇▇██\n"}
+,{"stream_name":"stderr","time":287.617093772,"data":"[seed 104 stderr] wandb: activation/layer_0/saturation_fraction_abs_gt_0_99 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n"}
+,{"stream_name":"stderr","time":287.617110411,"data":"\n"}
+,{"stream_name":"stderr","time":287.617216224,"data":"[seed 104 stderr] wandb: activation/layer_0/saturation_fraction_abs_gt_0_99 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n"}
+,{"stream_name":"stderr","time":287.618439433,"data":"[seed 104 stderr] wandb:                         activation/layer_1/abs_max ▁▃▂▂▂▂▃▃▃▄▄▄▅▅▆▆▇▇██\n"}
+,{"stream_name":"stderr","time":287.618454709,"data":"\n"}
+,{"stream_name":"stderr","time":287.618652898,"data":"[seed 104 stderr] wandb:                         activation/layer_1/abs_max ▁▃▂▂▂▂▃▃▃▄▄▄▅▅▆▆▇▇██\n"}
+,{"stream_name":"stderr","time":287.619738054,"data":"[seed 104 stderr] wandb:                         activation/layer_1/abs_p95 █▄▂▂▂▂▁▁▁▁▁▁▂▂▂▃▄▅▅▅\n"}
+,{"stream_name":"stderr","time":287.61975402,"data":"\n"}
+,{"stream_name":"stderr","time":287.619758007,"data":"[seed 104 stderr] wandb:                         activation/layer_1/abs_p95 █▄▂▂▂▂▁▁▁▁▁▁▂▂▂▃▄▅▅▅\n"}
+,{"stream_name":"stderr","time":287.620654752,"data":"[seed 104 stderr] wandb:                            activation/layer_1/mean ▅▃▂▁▁▁▂▃▃▄▅▆▆▇▇▇████\n"}
+,{"stream_name":"stderr","time":287.620670838,"data":"\n"}
+,{"stream_name":"stderr","time":287.620686396,"data":"[seed 104 stderr] wandb:                            activation/layer_1/mean ▅▃▂▁▁▁▂▃▃▄▅▆▆▇▇▇████\n"}
+,{"stream_name":"stderr","time":287.621737184,"data":"[seed 104 stderr] wandb:               activation/layer_1/preactivation_rms ▁▂▃▄▄▄▅▅▅▅▅▅▆▆▆▇▇███\n"}
+,{"stream_name":"stderr","time":287.621755689,"data":"\n"}
+,{"stream_name":"stderr","time":287.621760762,"data":"[seed 104 stderr] wandb:               activation/layer_1/preactivation_rms ▁▂▃▄▄▄▅▅▅▅▅▅▆▆▆▇▇███\n"}
+,{"stream_name":"stderr","time":287.622547046,"data":"[seed 104 stderr] wandb:                                                +82 ...\n"}
+,{"stream_name":"stderr","time":287.622601749,"data":"\n"}
+,{"stream_name":"stderr","time":287.622607655,"data":"[seed 104 stderr] wandb:                                                +82 ...\n"}
+,{"stream_name":"stderr","time":287.623667027,"data":"[seed 104 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":287.623686135,"data":"\n"}
+,{"stream_name":"stderr","time":287.623702359,"data":"[seed 104 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":287.624671837,"data":"[seed 104 stderr] wandb: Run summary:\n"}
+,{"stream_name":"stderr","time":287.624699651,"data":"\n"}
+,{"stream_name":"stderr","time":287.624704171,"data":"[seed 104 stderr] wandb: Run summary:\n"}
+,{"stream_name":"stderr","time":287.625641705,"data":"[seed 104 stderr] wandb:                         activation/layer_0/abs_max 0.45718\n"}
+,{"stream_name":"stderr","time":287.625663955,"data":"\n"}
+,{"stream_name":"stderr","time":287.625668298,"data":"[seed 104 stderr] wandb:                         activation/layer_0/abs_max 0.45718\n"}
+,{"stream_name":"stderr","time":287.626549764,"data":"[seed 104 stderr] wandb:                         activation/layer_0/abs_p95 0.29235\n"}
+,{"stream_name":"stderr","time":287.626567083,"data":"\n"}
+,{"stream_name":"stderr","time":287.626572343,"data":"[seed 104 stderr] wandb:                         activation/layer_0/abs_p95 0.29235\n"}
+,{"stream_name":"stderr","time":287.627475181,"data":"[seed 104 stderr] wandb:                            activation/layer_0/mean 0.02551\n"}
+,{"stream_name":"stderr","time":287.627492149,"data":"\n"}
+,{"stream_name":"stderr","time":287.627496676,"data":"[seed 104 stderr] wandb:                            activation/layer_0/mean 0.02551\n"}
+,{"stream_name":"stderr","time":287.628405541,"data":"[seed 104 stderr] wandb:               activation/layer_0/preactivation_rms 0.15857\n"}
+,{"stream_name":"stderr","time":287.628421733,"data":"\n"}
+,{"stream_name":"stderr","time":287.628426359,"data":"[seed 104 stderr] wandb:               activation/layer_0/preactivation_rms 0.15857\n"}
+,{"stream_name":"stderr","time":287.629168431,"data":"[seed 104 stderr] wandb:                             activation/layer_0/rms 0.15523\n"}
+,{"stream_name":"stderr","time":287.629179061,"data":"\n"}
+,{"stream_name":"stderr","time":287.629182975,"data":"[seed 104 stderr] wandb:                             activation/layer_0/rms 0.15523\n"}
+,{"stream_name":"stderr","time":287.630087791,"data":"[seed 104 stderr] wandb: activation/layer_0/saturation_fraction_abs_gt_0_99 0\n"}
+,{"stream_name":"stderr","time":287.630103524,"data":"\n"}
+,{"stream_name":"stderr","time":287.630107917,"data":"[seed 104 stderr] wandb: activation/layer_0/saturation_fraction_abs_gt_0_99 0\n"}
+,{"stream_name":"stderr","time":287.631006894,"data":"[seed 104 stderr] wandb:                         activation/layer_1/abs_max 0.96364\n"}
+,{"stream_name":"stderr","time":287.631022381,"data":"\n"}
+,{"stream_name":"stderr","time":287.631036556,"data":"[seed 104 stderr] wandb:                         activation/layer_1/abs_max 0.96364\n"}
+,{"stream_name":"stderr","time":287.631977889,"data":"[seed 104 stderr] wandb:                         activation/layer_1/abs_p95 0.89677\n"}
+,{"stream_name":"stderr","time":287.631993607,"data":"\n"}
+,{"stream_name":"stderr","time":287.632096182,"data":"[seed 104 stderr] wandb:                         activation/layer_1/abs_p95 0.89677\n"}
+,{"stream_name":"stderr","time":287.633227378,"data":"[seed 104 stderr] wandb:                            activation/layer_1/mean -0.08254\n"}
+,{"stream_name":"stderr","time":287.633243006,"data":"\n"}
+,{"stream_name":"stderr","time":287.633331959,"data":"[seed 104 stderr] wandb:                            activation/layer_1/mean -0.08254\n"}
+,{"stream_name":"stderr","time":287.634473262,"data":"[seed 104 stderr] wandb:               activation/layer_1/preactivation_rms 0.79379\n"}
+,{"stream_name":"stderr","time":287.634489785,"data":"\n"}
+,{"stream_name":"stderr","time":287.634625247,"data":"[seed 104 stderr] wandb:               activation/layer_1/preactivation_rms 0.79379\n"}
+,{"stream_name":"stderr","time":287.635744132,"data":"[seed 104 stderr] wandb:                                                +82 ...\n"}
+,{"stream_name":"stderr","time":287.635757885,"data":"\n"}
+,{"stream_name":"stderr","time":287.635880565,"data":"[seed 104 stderr] wandb:                                                +82 ...\n"}
+,{"stream_name":"stderr","time":287.637004915,"data":"[seed 104 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":287.637019803,"data":"\n"}
+,{"stream_name":"stderr","time":287.637144244,"data":"[seed 104 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":287.638317144,"data":"[seed 104 stderr] wandb: You can sync this run to the cloud by running:\n"}
+,{"stream_name":"stderr","time":287.638332938,"data":"\n"}
+,{"stream_name":"stderr","time":287.638502312,"data":"[seed 104 stderr] wandb: You can sync this run to the cloud by running:\n"}
+,{"stream_name":"stderr","time":287.639685564,"data":"[seed 104 stderr] wandb: wandb sync /kaggle/working/pikan-5579e97d850d4262/runs/seed-104/wandb/wandb/offline-run-20260927_085736-k0h936ke\n"}
+,{"stream_name":"stderr","time":287.639702181,"data":"\n"}
+,{"stream_name":"stderr","time":287.639707052,"data":"[seed 104 stderr] wandb: wandb sync /kaggle/working/pikan-5579e97d850d4262/runs/seed-104/wandb/wandb/offline-run-20260927_085736-k0h936ke\n"}
+,{"stream_name":"stderr","time":287.640810848,"data":"[seed 104 stderr] wandb: Find logs at: /kaggle/working/pikan-5579e97d850d4262/runs/seed-104/wandb/wandb/offline-run-20260927_085736-k0h936ke/logs\n"}
+,{"stream_name":"stderr","time":287.640830097,"data":"\n"}
+,{"stream_name":"stderr","time":287.640853451,"data":"[seed 104 stderr] wandb: Find logs at: /kaggle/working/pikan-5579e97d850d4262/runs/seed-104/wandb/wandb/offline-run-20260927_085736-k0h936ke/logs\n"}
+,{"stream_name":"stderr","time":287.641976856,"data":"[seed 104 stderr] Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":287.641994169,"data":"\n"}
+,{"stream_name":"stderr","time":287.642052838,"data":"[seed 104 stderr] Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":287.643162502,"data":"[seed 104 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 232, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":287.643179739,"data":"\n"}
+,{"stream_name":"stderr","time":287.643245099,"data":"[seed 104 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 232, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":287.644432522,"data":"[seed 104 stderr]     if __name__=='__main__': main()\n"}
+,{"stream_name":"stderr","time":287.644452311,"data":"\n"}
+,{"stream_name":"stderr","time":287.644539985,"data":"[seed 104 stderr]     if __name__=='__main__': main()\n"}
+,{"stream_name":"stderr","time":287.645728133,"data":"[seed 104 stderr]                              ^^^^^^\n"}
+,{"stream_name":"stderr","time":287.645744033,"data":"\n"}
+,{"stream_name":"stderr","time":287.645748486,"data":"[seed 104 stderr]                              ^^^^^^\n"}
+,{"stream_name":"stderr","time":287.646456339,"data":"[seed 104 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 148, in main\n"}
+,{"stream_name":"stderr","time":287.646479732,"data":"\n"}
+,{"stream_name":"stderr","time":287.646482952,"data":"[seed 104 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 148, in main\n"}
+,{"stream_name":"stderr","time":287.64724855,"data":"[seed 104 stderr]     measured=evaluate_candidate_checkpoint(checkpoint,problem,problem_out,model_config,problem_config)\n"}
+,{"stream_name":"stderr","time":287.647259934,"data":"\n"}
+,{"stream_name":"stderr","time":287.647264186,"data":"[seed 104 stderr]     measured=evaluate_candidate_checkpoint(checkpoint,problem,problem_out,model_config,problem_config)\n"}
+,{"stream_name":"stderr","time":287.648001632,"data":"[seed 104 stderr]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":287.648019394,"data":"\n"}
+,{"stream_name":"stderr","time":287.648022511,"data":"[seed 104 stderr]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":287.648856175,"data":"[seed 104 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 88, in evaluate_candidate_checkpoint\n"}
+,{"stream_name":"stderr","time":287.648873225,"data":"\n"}
+,{"stream_name":"stderr","time":287.648877485,"data":"[seed 104 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 88, in evaluate_candidate_checkpoint\n"}
+,{"stream_name":"stderr","time":287.649674182,"data":"[seed 104 stderr]     from evals.checkpoint_validation import evaluate_model\n"}
+,{"stream_name":"stderr","time":287.649690366,"data":"\n"}
+,{"stream_name":"stderr","time":287.64969443,"data":"[seed 104 stderr]     from evals.checkpoint_validation import evaluate_model\n"}
+,{"stream_name":"stderr","time":287.650542525,"data":"[seed 104 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/evals/checkpoint_validation.py\", line 20, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":287.650561051,"data":"\n"}
+,{"stream_name":"stderr","time":287.650565864,"data":"[seed 104 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/evals/checkpoint_validation.py\", line 20, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":287.651258909,"data":"[seed 104 stderr]     from evals.problems.burgers_pinnacle_1d import reference as burgers_pinnacle_reference\n"}
+,{"stream_name":"stderr","time":287.651270053,"data":"\n"}
+,{"stream_name":"stderr","time":287.651274675,"data":"[seed 104 stderr]     from evals.problems.burgers_pinnacle_1d import reference as burgers_pinnacle_reference\n"}
+,{"stream_name":"stderr","time":287.652006021,"data":"[seed 104 stderr] ModuleNotFoundError: No module named 'evals.problems.burgers_pinnacle_1d'\n"}
+,{"stream_name":"stderr","time":287.652023205,"data":"\n"}
+,{"stream_name":"stderr","time":287.652027998,"data":"[seed 104 stderr] ModuleNotFoundError: No module named 'evals.problems.burgers_pinnacle_1d'\n"}
+,{"stream_name":"stderr","time":288.596333883,"data":"[seed 105 stderr] `Trainer.fit` stopped: `max_steps=5000` reached.\n"}
+,{"stream_name":"stderr","time":288.596373437,"data":"\n"}
+,{"stream_name":"stderr","time":288.596379577,"data":"[seed 105 stderr] `Trainer.fit` stopped: `max_steps=5000` reached.\n"}
+,{"stream_name":"stderr","time":288.719586413,"data":"[seed 105 stderr] Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":288.719612578,"data":"\n"}
+,{"stream_name":"stderr","time":288.719617163,"data":"[seed 105 stderr] Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":288.721482855,"data":"[seed 105 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 148, in main\n"}
+,{"stream_name":"stderr","time":288.721512242,"data":"\n"}
+,{"stream_name":"stderr","time":288.72256917,"data":"[seed 105 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 148, in main\n"}
+,{"stream_name":"stderr","time":288.723583163,"data":"[seed 105 stderr]     measured=evaluate_candidate_checkpoint(checkpoint,problem,problem_out,model_config,problem_config)\n"}
+,{"stream_name":"stderr","time":288.72359914,"data":"\n"}
+,{"stream_name":"stderr","time":288.72375387,"data":"[seed 105 stderr]     measured=evaluate_candidate_checkpoint(checkpoint,problem,problem_out,model_config,problem_config)\n"}
+,{"stream_name":"stderr","time":288.724849375,"data":"[seed 105 stderr]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":288.724865001,"data":"\n"}
+,{"stream_name":"stderr","time":288.725646025,"data":"[seed 105 stderr]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":288.727181795,"data":"[seed 105 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 88, in evaluate_candidate_checkpoint\n"}
+,{"stream_name":"stderr","time":288.727197665,"data":"\n"}
+,{"stream_name":"stderr","time":288.728481716,"data":"[seed 105 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 88, in evaluate_candidate_checkpoint\n"}
+,{"stream_name":"stderr","time":288.729565669,"data":"[seed 105 stderr]     from evals.checkpoint_validation import evaluate_model\n"}
+,{"stream_name":"stderr","time":288.729582445,"data":"\n"}
+,{"stream_name":"stderr","time":288.729714291,"data":"[seed 105 stderr]     from evals.checkpoint_validation import evaluate_model\n"}
+,{"stream_name":"stderr","time":288.731339909,"data":"[seed 105 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/evals/checkpoint_validation.py\", line 20, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":288.731354667,"data":"\n"}
+,{"stream_name":"stderr","time":288.731398394,"data":"[seed 105 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/evals/checkpoint_validation.py\", line 20, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":288.732512521,"data":"[seed 105 stderr]     from evals.problems.burgers_pinnacle_1d import reference as burgers_pinnacle_reference\n"}
+,{"stream_name":"stderr","time":288.732528718,"data":"\n"}
+,{"stream_name":"stderr","time":288.73267308,"data":"[seed 105 stderr]     from evals.problems.burgers_pinnacle_1d import reference as burgers_pinnacle_reference\n"}
+,{"stream_name":"stderr","time":288.733868266,"data":"[seed 105 stderr] ModuleNotFoundError: No module named 'evals.problems.burgers_pinnacle_1d'\n"}
+,{"stream_name":"stderr","time":288.733896501,"data":"\n"}
+,{"stream_name":"stderr","time":288.733922429,"data":"[seed 105 stderr] ModuleNotFoundError: No module named 'evals.problems.burgers_pinnacle_1d'\n"}
+,{"stream_name":"stderr","time":288.735265439,"data":"[seed 105 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":288.735281087,"data":"\n"}
+,{"stream_name":"stderr","time":288.735285606,"data":"[seed 105 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":288.736261905,"data":"[seed 105 stderr] wandb: Run history:\n"}
+,{"stream_name":"stderr","time":288.736277897,"data":"\n"}
+,{"stream_name":"stderr","time":288.736289563,"data":"[seed 105 stderr] wandb: Run history:\n"}
+,{"stream_name":"stderr","time":288.737336326,"data":"[seed 105 stderr] wandb:                         activation/layer_0/abs_max ▁▄▇██▇▇▇▇▇▇▇▇▇▇▇████\n"}
+,{"stream_name":"stderr","time":288.737384249,"data":"\n"}
+,{"stream_name":"stderr","time":288.737391407,"data":"[seed 105 stderr] wandb:                         activation/layer_0/abs_max ▁▄▇██▇▇▇▇▇▇▇▇▇▇▇████\n"}
+,{"stream_name":"stderr","time":288.738324749,"data":"[seed 105 stderr] wandb:                         activation/layer_0/abs_p95 ▃▁▁▂▃▄▄▄▄▅▅▅▅▆▆▇▇███\n"}
+,{"stream_name":"stderr","time":288.738335497,"data":"\n"}
+,{"stream_name":"stderr","time":288.738347915,"data":"[seed 105 stderr] wandb:                         activation/layer_0/abs_p95 ▃▁▁▂▃▄▄▄▄▅▅▅▅▆▆▇▇███\n"}
+,{"stream_name":"stderr","time":288.73963299,"data":"[seed 105 stderr] wandb:                            activation/layer_0/mean ▁▄▆▇▇▇▇▇▇███████▇▇▇▇\n"}
+,{"stream_name":"stderr","time":288.739661162,"data":"\n"}
+,{"stream_name":"stderr","time":288.739666027,"data":"[seed 105 stderr] wandb:                            activation/layer_0/mean ▁▄▆▇▇▇▇▇▇███████▇▇▇▇\n"}
+,{"stream_name":"stderr","time":288.740487698,"data":"[seed 105 stderr] wandb:               activation/layer_0/preactivation_rms ▄▁▂▃▄▄▄▄▅▅▅▅▅▅▆▆▇▇██\n"}
+,{"stream_name":"stderr","time":288.740549145,"data":"\n"}
+,{"stream_name":"stderr","time":288.740554095,"data":"[seed 105 stderr] wandb:               activation/layer_0/preactivation_rms ▄▁▂▃▄▄▄▄▅▅▅▅▅▅▆▆▇▇██\n"}
+,{"stream_name":"stderr","time":288.741446055,"data":"[seed 105 stderr] wandb:                             activation/layer_0/rms ▄▁▁▃▄▄▄▄▄▄▅▅▅▅▆▆▇▇██\n"}
+,{"stream_name":"stderr","time":288.741461942,"data":"\n"}
+,{"stream_name":"stderr","time":288.741573605,"data":"[seed 105 stderr] wandb:                             activation/layer_0/rms ▄▁▁▃▄▄▄▄▄▄▅▅▅▅▆▆▇▇██\n"}
+,{"stream_name":"stderr","time":288.742481436,"data":"[seed 105 stderr] wandb: activation/layer_0/saturation_fraction_abs_gt_0_99 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n"}
+,{"stream_name":"stderr","time":288.742525489,"data":"\n"}
+,{"stream_name":"stderr","time":288.742530727,"data":"[seed 105 stderr] wandb: activation/layer_0/saturation_fraction_abs_gt_0_99 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n"}
+,{"stream_name":"stderr","time":288.743501863,"data":"[seed 105 stderr] wandb:                         activation/layer_1/abs_max ▁▄▄▄▄▄▅▅▅▅▅▆▆▆▇▇▇▇██\n"}
+,{"stream_name":"stderr","time":288.743552921,"data":"\n"}
+,{"stream_name":"stderr","time":288.743558493,"data":"[seed 105 stderr] wandb:                         activation/layer_1/abs_max ▁▄▄▄▄▄▅▅▅▅▅▆▆▆▇▇▇▇██\n"}
+,{"stream_name":"stderr","time":288.744519704,"data":"[seed 105 stderr] wandb:                         activation/layer_1/abs_p95 ▂▁▁▃▃▅▅▄▄▄▄▄▄▅▅▆▆▇██\n"}
+,{"stream_name":"stderr","time":288.744536262,"data":"\n"}
+,{"stream_name":"stderr","time":288.744549183,"data":"[seed 105 stderr] wandb:                         activation/layer_1/abs_p95 ▂▁▁▃▃▅▅▄▄▄▄▄▄▅▅▆▆▇██\n"}
+,{"stream_name":"stderr","time":288.745591854,"data":"[seed 105 stderr] wandb:                            activation/layer_1/mean ▁▄▆▆▇▇██████████████\n"}
+,{"stream_name":"stderr","time":288.74560521,"data":"\n"}
+,{"stream_name":"stderr","time":288.745617823,"data":"[seed 105 stderr] wandb:                            activation/layer_1/mean ▁▄▆▆▇▇██████████████\n"}
+,{"stream_name":"stderr","time":288.746750067,"data":"[seed 105 stderr] wandb:               activation/layer_1/preactivation_rms ▁▄▅▅▆▆▆▆▆▆▆▆▆▆▇▇▇▇██\n"}
+,{"stream_name":"stderr","time":288.746765539,"data":"\n"}
+,{"stream_name":"stderr","time":288.746776961,"data":"[seed 105 stderr] wandb:               activation/layer_1/preactivation_rms ▁▄▅▅▆▆▆▆▆▆▆▆▆▆▇▇▇▇██\n"}
+,{"stream_name":"stderr","time":288.747774226,"data":"[seed 105 stderr] wandb:                                                +82 ...\n"}
+,{"stream_name":"stderr","time":288.747787485,"data":"\n"}
+,{"stream_name":"stderr","time":288.747798807,"data":"[seed 105 stderr] wandb:                                                +82 ...\n"}
+,{"stream_name":"stderr","time":288.748871421,"data":"[seed 105 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":288.748885836,"data":"\n"}
+,{"stream_name":"stderr","time":288.748897816,"data":"[seed 105 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":288.750237174,"data":"[seed 105 stderr] wandb: Run summary:\n"}
+,{"stream_name":"stderr","time":288.750251919,"data":"\n"}
+,{"stream_name":"stderr","time":288.750255723,"data":"[seed 105 stderr] wandb: Run summary:\n"}
+,{"stream_name":"stderr","time":288.750998519,"data":"[seed 105 stderr] wandb:                         activation/layer_0/abs_max 0.50126\n"}
+,{"stream_name":"stderr","time":288.751013215,"data":"\n"}
+,{"stream_name":"stderr","time":288.751016809,"data":"[seed 105 stderr] wandb:                         activation/layer_0/abs_max 0.50126\n"}
+,{"stream_name":"stderr","time":288.752020009,"data":"[seed 105 stderr] wandb:                         activation/layer_0/abs_p95 0.29044\n"}
+,{"stream_name":"stderr","time":288.752058997,"data":"\n"}
+,{"stream_name":"stderr","time":288.752063686,"data":"[seed 105 stderr] wandb:                         activation/layer_0/abs_p95 0.29044\n"}
+,{"stream_name":"stderr","time":288.753056148,"data":"[seed 105 stderr] wandb:                            activation/layer_0/mean -0.01952\n"}
+,{"stream_name":"stderr","time":288.753070801,"data":"\n"}
+,{"stream_name":"stderr","time":288.753082202,"data":"[seed 105 stderr] wandb:                            activation/layer_0/mean -0.01952\n"}
+,{"stream_name":"stderr","time":288.754079058,"data":"[seed 105 stderr] wandb:               activation/layer_0/preactivation_rms 0.15017\n"}
+,{"stream_name":"stderr","time":288.754118736,"data":"\n"}
+,{"stream_name":"stderr","time":288.754123622,"data":"[seed 105 stderr] wandb:               activation/layer_0/preactivation_rms 0.15017\n"}
+,{"stream_name":"stderr","time":288.754990473,"data":"[seed 105 stderr] wandb:                             activation/layer_0/rms 0.14667\n"}
+,{"stream_name":"stderr","time":288.755014186,"data":"\n"}
+,{"stream_name":"stderr","time":288.755037983,"data":"[seed 105 stderr] wandb:                             activation/layer_0/rms 0.14667\n"}
+,{"stream_name":"stderr","time":288.755964887,"data":"[seed 105 stderr] wandb: activation/layer_0/saturation_fraction_abs_gt_0_99 0\n"}
+,{"stream_name":"stderr","time":288.755979215,"data":"\n"}
+,{"stream_name":"stderr","time":288.756008793,"data":"[seed 105 stderr] wandb: activation/layer_0/saturation_fraction_abs_gt_0_99 0\n"}
+,{"stream_name":"stderr","time":288.757418095,"data":"[seed 105 stderr] wandb:                         activation/layer_1/abs_max 0.94212\n"}
+,{"stream_name":"stderr","time":288.757432745,"data":"\n"}
+,{"stream_name":"stderr","time":288.757436654,"data":"[seed 105 stderr] wandb:                         activation/layer_1/abs_max 0.94212\n"}
+,{"stream_name":"stderr","time":288.757789097,"data":"[seed 105 stderr] wandb:                         activation/layer_1/abs_p95 0.87723\n"}
+,{"stream_name":"stderr","time":288.757798305,"data":"\n"}
+,{"stream_name":"stderr","time":288.757801485,"data":"[seed 105 stderr] wandb:                         activation/layer_1/abs_p95 0.87723\n"}
+,{"stream_name":"stderr","time":288.758604807,"data":"[seed 105 stderr] wandb:                            activation/layer_1/mean 0.03841\n"}
+,{"stream_name":"stderr","time":288.75861936,"data":"\n"}
+,{"stream_name":"stderr","time":288.758623063,"data":"[seed 105 stderr] wandb:                            activation/layer_1/mean 0.03841\n"}
+,{"stream_name":"stderr","time":288.759464211,"data":"[seed 105 stderr] wandb:               activation/layer_1/preactivation_rms 0.80088\n"}
+,{"stream_name":"stderr","time":288.759478234,"data":"\n"}
+,{"stream_name":"stderr","time":288.759481676,"data":"[seed 105 stderr] wandb:               activation/layer_1/preactivation_rms 0.80088\n"}
+,{"stream_name":"stderr","time":288.760305492,"data":"[seed 105 stderr] wandb:                                                +82 ...\n"}
+,{"stream_name":"stderr","time":288.760315279,"data":"\n"}
+,{"stream_name":"stderr","time":288.760319032,"data":"[seed 105 stderr] wandb:                                                +82 ...\n"}
+,{"stream_name":"stderr","time":288.761245874,"data":"[seed 105 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":288.761259726,"data":"\n"}
+,{"stream_name":"stderr","time":288.76126337,"data":"[seed 105 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":288.762142211,"data":"[seed 105 stderr] wandb: You can sync this run to the cloud by running:\n"}
+,{"stream_name":"stderr","time":288.762156742,"data":"\n"}
+,{"stream_name":"stderr","time":288.762168044,"data":"[seed 105 stderr] wandb: You can sync this run to the cloud by running:\n"}
+,{"stream_name":"stderr","time":288.763135132,"data":"[seed 105 stderr] wandb: wandb sync /kaggle/working/pikan-5579e97d850d4262/runs/seed-105/wandb/wandb/offline-run-20260927_085736-jy1m2syr\n"}
+,{"stream_name":"stderr","time":288.76314949,"data":"\n"}
+,{"stream_name":"stderr","time":288.763152907,"data":"[seed 105 stderr] wandb: wandb sync /kaggle/working/pikan-5579e97d850d4262/runs/seed-105/wandb/wandb/offline-run-20260927_085736-jy1m2syr\n"}
+,{"stream_name":"stderr","time":288.764031054,"data":"[seed 105 stderr] wandb: Find logs at: /kaggle/working/pikan-5579e97d850d4262/runs/seed-105/wandb/wandb/offline-run-20260927_085736-jy1m2syr/logs\n"}
+,{"stream_name":"stderr","time":288.764048711,"data":"\n"}
+,{"stream_name":"stderr","time":288.764052612,"data":"[seed 105 stderr] wandb: Find logs at: /kaggle/working/pikan-5579e97d850d4262/runs/seed-105/wandb/wandb/offline-run-20260927_085736-jy1m2syr/logs\n"}
+,{"stream_name":"stderr","time":288.764966573,"data":"[seed 105 stderr] Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":288.764981259,"data":"\n"}
+,{"stream_name":"stderr","time":288.764985041,"data":"[seed 105 stderr] Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":288.765897768,"data":"[seed 105 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 232, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":288.765912985,"data":"\n"}
+,{"stream_name":"stderr","time":288.76591719,"data":"[seed 105 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 232, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":288.766983597,"data":"[seed 105 stderr]     if __name__=='__main__': main()\n"}
+,{"stream_name":"stderr","time":288.766997423,"data":"\n"}
+,{"stream_name":"stderr","time":288.767001092,"data":"[seed 105 stderr]     if __name__=='__main__': main()\n"}
+,{"stream_name":"stderr","time":288.768010261,"data":"[seed 105 stderr]                              ^^^^^^\n"}
+,{"stream_name":"stderr","time":288.768024202,"data":"\n"}
+,{"stream_name":"stderr","time":288.768028067,"data":"[seed 105 stderr]                              ^^^^^^\n"}
+,{"stream_name":"stderr","time":288.769132252,"data":"[seed 105 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 148, in main\n"}
+,{"stream_name":"stderr","time":288.769146685,"data":"\n"}
+,{"stream_name":"stderr","time":288.769150501,"data":"[seed 105 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 148, in main\n"}
+,{"stream_name":"stderr","time":288.77009206,"data":"[seed 105 stderr]     measured=evaluate_candidate_checkpoint(checkpoint,problem,problem_out,model_config,problem_config)\n"}
+,{"stream_name":"stderr","time":288.770107161,"data":"\n"}
+,{"stream_name":"stderr","time":288.770110716,"data":"[seed 105 stderr]     measured=evaluate_candidate_checkpoint(checkpoint,problem,problem_out,model_config,problem_config)\n"}
+,{"stream_name":"stderr","time":288.771131084,"data":"[seed 105 stderr]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":288.771145088,"data":"\n"}
+,{"stream_name":"stderr","time":288.77114863,"data":"[seed 105 stderr]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":288.77219677,"data":"[seed 105 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 88, in evaluate_candidate_checkpoint\n"}
+,{"stream_name":"stderr","time":288.772211764,"data":"\n"}
+,{"stream_name":"stderr","time":288.772216013,"data":"[seed 105 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/src/research_pipeline/sciml/campaign.py\", line 88, in evaluate_candidate_checkpoint\n"}
+,{"stream_name":"stderr","time":288.773306008,"data":"[seed 105 stderr]     from evals.checkpoint_validation import evaluate_model\n"}
+,{"stream_name":"stderr","time":288.773320515,"data":"\n"}
+,{"stream_name":"stderr","time":288.773324328,"data":"[seed 105 stderr]     from evals.checkpoint_validation import evaluate_model\n"}
+,{"stream_name":"stderr","time":288.77441065,"data":"[seed 105 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/evals/checkpoint_validation.py\", line 20, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":288.774428344,"data":"\n"}
+,{"stream_name":"stderr","time":288.774441407,"data":"[seed 105 stderr]   File \"/kaggle/working/pikan-5579e97d850d4262/bundle/evals/checkpoint_validation.py\", line 20, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":288.775705923,"data":"[seed 105 stderr]     from evals.problems.burgers_pinnacle_1d import reference as burgers_pinnacle_reference\n"}
+,{"stream_name":"stderr","time":288.775720909,"data":"\n"}
+,{"stream_name":"stderr","time":288.775724738,"data":"[seed 105 stderr]     from evals.problems.burgers_pinnacle_1d import reference as burgers_pinnacle_reference\n"}
+,{"stream_name":"stderr","time":288.776654102,"data":"[seed 105 stderr] ModuleNotFoundError: No module named 'evals.problems.burgers_pinnacle_1d'\n"}
+,{"stream_name":"stderr","time":288.776674246,"data":"\n"}
+,{"stream_name":"stderr","time":288.776678042,"data":"[seed 105 stderr] ModuleNotFoundError: No module named 'evals.problems.burgers_pinnacle_1d'\n"}
+,{"stream_name":"stdout","time":290.92710421,"data":"[campaign] worker=1 finished seed=105 status=failed\n"}
+,{"stream_name":"stdout","time":290.960466071,"data":"[campaign] worker=0 finished seed=104 status=failed\n"}
+,{"stream_name":"stderr","time":292.132837993,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":292.132880893,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":292.132887034,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":292.132966058,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":292.132973458,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":292.133142557,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":292.133259124,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":292.133265296,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":292.133268952,"data":"Exception encountered at \"In [6]\":\n"}
+,{"stream_name":"stderr","time":292.133272658,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":292.133276368,"data":"RuntimeError                              Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":292.133280167,"data":"/tmp/ipykernel_23/253989348.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":292.133283835,"data":"     10                       for seed, status in sorted(campaign_state['seeds'].items())]))\n"}
+,{"stream_name":"stderr","time":292.133287936,"data":"     11 if any(status != 'completed' for status in campaign_state['seeds'].values()):\n"}
+,{"stream_name":"stderr","time":292.133291867,"data":"---\u003e 12     raise RuntimeError('Campaign ended with incomplete seeds: ' + repr(campaign_state['seeds']))\n"}
+,{"stream_name":"stderr","time":292.133295806,"data":"\n"}
+,{"stream_name":"stderr","time":292.133299491,"data":"RuntimeError: Campaign ended with incomplete seeds: {'104': 'failed', '105': 'failed'}\n"}
+,{"stream_name":"stderr","time":292.133303078,"data":"\n"}
+,{"stream_name":"stderr","time":294.154456083,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":294.154481119,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":294.309099242,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":294.309161605,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":294.953973027,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":295.282435376,"data":"[NbConvertApp] Writing 261407 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":297.604119267,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":298.473529756,"data":"[NbConvertApp] Writing 571481 bytes to __results__.html\n"}
+]

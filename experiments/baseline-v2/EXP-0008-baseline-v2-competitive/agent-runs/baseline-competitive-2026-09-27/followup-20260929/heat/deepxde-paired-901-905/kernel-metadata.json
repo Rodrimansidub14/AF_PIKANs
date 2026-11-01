@@ -1,0 +1,15 @@
+{
+  "id": "rodrimandub/af-pikans-heat-deepxde-alpha-0-1-seeds-901-905-20260929",
+  "title": "AF PIKANs Heat DeepXDE Alpha 0.1 Seeds 901-905 20260929",
+  "code_file": "heat-deepxde-reference.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

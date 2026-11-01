@@ -1,0 +1,15 @@
+{
+  "bundle_id": "score-only-allen-cahn-20260927:655786aa5cfa882cae8b9d455f4938207ebfb41a4a8fda4331d78e56650f848d:c9bb3a741c82ae62688ae20ca6c300220666845d8b84bf3ed2608406b6259f6f",
+  "approved_by": "researcher (explicit instruction in active conversation, 2026-09-27)",
+  "scope": "remote scoring of existing checkpoints only",
+  "remote_execution": true,
+  "problem": "Allen-Cahn score-only endpoint recovery",
+  "accelerator": "NvidiaTeslaT4 (2x T4)",
+  "max_session_seconds": 2400,
+  "global_campaign_cap_hours": 8,
+  "scientific_acceptance": false,
+  "component_hashes": {
+    "notebook": "655786aa5cfa882cae8b9d455f4938207ebfb41a4a8fda4331d78e56650f848d",
+    "metadata": "c9bb3a741c82ae62688ae20ca6c300220666845d8b84bf3ed2608406b6259f6f"
+  }
+}

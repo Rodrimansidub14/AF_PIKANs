@@ -1,0 +1,10 @@
+{
+  "title": "AF PIKANs Burgers Validation Fields 20260927",
+  "id": "rodrimandub/af-pikans-burgers-validation-fields-20260927",
+  "licenses": [
+    {
+      "name": "other"
+    }
+  ],
+  "description": "Private intermediate fields for the AF PIKANs Burgers score-only diagnostics. Contains ten prediction/reference/residual arrays from seeds 811-815. This private research artifact grants no redistribution rights."
+}

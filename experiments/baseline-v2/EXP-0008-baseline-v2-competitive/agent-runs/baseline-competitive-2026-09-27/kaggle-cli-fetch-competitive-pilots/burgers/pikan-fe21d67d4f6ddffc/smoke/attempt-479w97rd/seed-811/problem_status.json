@@ -1,0 +1,9 @@
+{
+  "arms": {
+    "rbf": "gpu_time_limit",
+    "vanilla": "gpu_time_limit"
+  },
+  "seed": 811,
+  "shared_pool_exact": true,
+  "status": "completed"
+}

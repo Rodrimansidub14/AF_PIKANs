@@ -1,0 +1,14 @@
+{
+  "adapter_sha256": "abd8ede791994595e7676ab4daeacf9f581518e307799e6f6f6d028303d66de4",
+  "bundle_id": "fe21d67d4f6ddffc575383ef1a91ec24773046a1fd07829e99962204b50db1b3",
+  "entrypoint_sha256": "2334e433105e7be552cf2a495a8a0dface7fc37b41d1a26313955c3dfb75d20d",
+  "paired_pool_sha256": {
+    "diagnostic": "a3cdb7b5b5f80874a2d467380729b06e22ed2a126cc277cc099488553422bfe2",
+    "initial": "ba4ce05bd7a765df1e650866a4c801114fd4d63aaf775a7ea2d771596f84083c",
+    "interior": "6839ce03df2c19d81ded7851fedda19bff6b0b95b38ac58cc5d38fccba3f3455",
+    "left": "2839c5b1ed7fc9927885502e49b8d0ec55ad7c41dac6d1f118e242ecc7f22362",
+    "right": "855e0815316f30099e844720b760aa50ae7dc1ee7c0e68f6da04675fefe26949"
+  },
+  "seed": 811,
+  "training_scoring_calls": 0
+}

@@ -1,0 +1,25 @@
+{
+  "baseline_bundle_id": "6c982f12ce32a5e1c24825b57cbe4ed1cdd0917f650b9115049cf1ea67e58e1e",
+  "candidate_bundle_id": "6c982f12ce32a5e1c24825b57cbe4ed1cdd0917f650b9115049cf1ea67e58e1e",
+  "cost_gate_pass": null,
+  "cost_limit": null,
+  "eligible_for_review": false,
+  "limitations": [
+    "Runtime ratio requires matched hardware/load before scientific interpretation.",
+    "Seeds are repeated trials, not independent physical configurations.",
+    "No statistical significance or SOTA claim is inferred."
+  ],
+  "metrics": {
+    "error": {
+      "baseline_mean": 0.0,
+      "candidate_mean": 0.0,
+      "improved_seeds": 0,
+      "mean_paired_improvement": 0.0,
+      "n": 2,
+      "std_paired_improvement": 0.0
+    }
+  },
+  "observed_runtime_ratio": 1.0,
+  "requires_human_review": true,
+  "scientific_accepted": false
+}

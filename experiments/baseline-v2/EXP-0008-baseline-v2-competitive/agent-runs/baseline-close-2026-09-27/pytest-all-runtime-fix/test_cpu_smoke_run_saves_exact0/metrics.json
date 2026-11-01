@@ -1,0 +1,41 @@
+{
+  "cap_overrun_seconds": 0.0,
+  "device": "cpu",
+  "field_reference_status": "not_available_in_this_runner",
+  "field_relative_l2": null,
+  "last_training_losses": {
+    "continuity": 0.00024265924002975225,
+    "cylinder": 0.0016394186532124877,
+    "inlet": 0.2850813865661621,
+    "lower_wall": 0.0007125924457795918,
+    "momentum_x": 5.163643800187856e-05,
+    "momentum_y": 0.00027516752015799284,
+    "outlet": 0.000926395645365119,
+    "upper_wall": 0.002627106150612235
+  },
+  "problem": "dfg_2d_1_steady_re20",
+  "qoi": {
+    "drag_coefficient": -0.001115707826619111,
+    "drag_force": -2.2314156532382224e-06,
+    "lift_coefficient": -0.014363262942841633,
+    "lift_force": -2.8726525885683273e-05,
+    "pressure_difference": -8.61479202285409e-05
+  },
+  "qoi_absolute_error_vs_featflow": {
+    "drag_coefficient": 5.580650941666619,
+    "lift_coefficient": 0.024982211088841633,
+    "pressure_difference": 0.11760631489022855
+  },
+  "qoi_relative_error_vs_featflow": {
+    "drag_coefficient": 1.0001999642944903,
+    "lift_coefficient": 2.3526069385932598,
+    "pressure_difference": 1.0007330479733791
+  },
+  "schema_version": 1,
+  "scientific_accepted": false,
+  "seed": 11,
+  "steps": 1,
+  "stop_reason": "step_limit",
+  "training_seconds": 0.07859379998990335,
+  "training_time_cap_seconds": 120.0
+}

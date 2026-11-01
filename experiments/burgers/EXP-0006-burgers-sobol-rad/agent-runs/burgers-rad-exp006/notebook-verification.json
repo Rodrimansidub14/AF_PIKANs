@@ -1,0 +1,11 @@
+{
+  "bundle_id": "33dfe79bc128759c6670e308fc6eb8b740bc52a92be3cdbcb618ffeccc883f34",
+  "schema_valid": true,
+  "code_cells_compiled": 12,
+  "executed_preparation_cells": 3,
+  "sampling_rows": 10,
+  "unsigned_launch_blocked_before_jobs": true,
+  "bundled_verifier_sources_unchanged": true,
+  "cpu_pair_initial_predictions_and_pools_equal": true,
+  "cpu_pair_wandb_offline_records": 2
+}

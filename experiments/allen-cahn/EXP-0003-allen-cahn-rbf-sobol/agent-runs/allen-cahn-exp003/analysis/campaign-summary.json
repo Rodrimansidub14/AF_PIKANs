@@ -1,0 +1,1515 @@
+{
+  "generated_at_utc": "2026-09-24T05:02:02.280179+00:00",
+  "bundle_id": "7d9fafd823f3e3150907ed029be678103e23c129fcab265aba61da9bff233338",
+  "kernel": "rodrigomansilla/af-pikans-allen-cahn-exp003",
+  "campaign_status": "complete",
+  "seeds": [
+    101,
+    102,
+    103
+  ],
+  "execution_validation": {
+    "execution_valid": true,
+    "thresholds_pass": false,
+    "eligible_for_review": false,
+    "scientific_accepted": false,
+    "failures": [],
+    "required_artifacts_per_seed": 22,
+    "run_summary_artifact_hashes_per_seed": {
+      "101": {
+        "verified": 223,
+        "listed": 223,
+        "missing": [],
+        "mismatched": []
+      },
+      "102": {
+        "verified": 223,
+        "listed": 223,
+        "missing": [],
+        "mismatched": []
+      },
+      "103": {
+        "verified": 223,
+        "listed": 223,
+        "missing": [],
+        "mismatched": []
+      }
+    },
+    "full_results_archive_manifest": {
+      "path": "download/pikan-7d9fafd823f3e315/verified-extract/analysis/artifact-hashes.json",
+      "verified_file_count": 715,
+      "verification": "all listed SHA-256 values match after W&B sync"
+    },
+    "initial_cli_output_missing_secondary_logs_recovered_from_archive": [
+      "runs/seed-101/wandb/wandb/debug-internal.log",
+      "runs/seed-101/wandb/wandb/debug.log",
+      "runs/seed-101/wandb/wandb/offline-run-20260924_040512-g7w2635j/logs/debug-core.log",
+      "runs/seed-102/wandb/wandb/debug-internal.log",
+      "runs/seed-102/wandb/wandb/debug.log",
+      "runs/seed-102/wandb/wandb/offline-run-20260924_040512-hc0vt58r/logs/debug-core.log",
+      "runs/seed-103/wandb/wandb/debug-internal.log",
+      "runs/seed-103/wandb/wandb/debug.log",
+      "runs/seed-103/wandb/wandb/offline-run-20260924_041822-8eerje4z/logs/debug-core.log"
+    ],
+    "transport_warning": "Kaggle CLI returned a non-zero exit after writing output; the matching campaign and required artifacts passed local validation."
+  },
+  "campaign_metrics": {
+    "allen_cahn/boundary_trace_max_abs_error": {
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/energy_change": {
+      "max": -1.7518880668143784,
+      "mean": -1.7561433928807504,
+      "min": -1.7610020769668904,
+      "n": 3,
+      "std": 0.004586864499855742
+    },
+    "allen_cahn/energy_final": {
+      "max": 0.2513791782969348,
+      "mean": 0.2471238522305629,
+      "min": 0.24226516814442287,
+      "n": 3,
+      "std": 0.004586864499855703
+    },
+    "allen_cahn/energy_increase_count": {
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/energy_initial": {
+      "max": 2.003267245111313,
+      "mean": 2.003267245111313,
+      "min": 2.003267245111313,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/energy_interval_count": {
+      "max": 4.0,
+      "mean": 4.0,
+      "min": 4.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/energy_relative_change": {
+      "max": -0.8745154053157962,
+      "mean": -0.876639598219542,
+      "min": -0.8790649781073213,
+      "n": 3,
+      "std": 0.0022896917578267674
+    },
+    "allen_cahn/heldout_normalized_residual_abs_p95": {
+      "max": 0.008644541739738616,
+      "mean": 0.0039843629577677835,
+      "min": 0.0011599203419236626,
+      "n": 3,
+      "std": 0.004065997395581626
+    },
+    "allen_cahn/heldout_normalized_residual_rmse": {
+      "max": 0.003804123564846515,
+      "mean": 0.0018303594448764353,
+      "min": 0.0005996738490064128,
+      "n": 3,
+      "std": 0.001726629307370568
+    },
+    "allen_cahn/heldout_point_count": {
+      "max": 16384.0,
+      "mean": 16384.0,
+      "min": 16384.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/heldout_residual_abs_max": {
+      "max": 0.10884247358570576,
+      "mean": 0.06503695893562673,
+      "min": 0.037821797982559024,
+      "n": 3,
+      "std": 0.03830683969770676
+    },
+    "allen_cahn/heldout_residual_abs_p50": {
+      "max": 0.007525786731992891,
+      "mean": 0.004399951845843755,
+      "min": 0.0022302187778486526,
+      "n": 3,
+      "std": 0.002774231065403157
+    },
+    "allen_cahn/heldout_residual_abs_p95": {
+      "max": 0.05187589498017144,
+      "mean": 0.02391016210956447,
+      "min": 0.0069606819718838996,
+      "n": 3,
+      "std": 0.024400050370885343
+    },
+    "allen_cahn/heldout_residual_rmse_abs": {
+      "max": 0.022828545512643936,
+      "mean": 0.01098398702870349,
+      "min": 0.003598642767887483,
+      "n": 3,
+      "std": 0.010361502473530777
+    },
+    "allen_cahn/initial_trace_max_abs_error": {
+      "max": 1.1102230246251565e-16,
+      "mean": 7.632783294297951e-17,
+      "min": 6.938893903907228e-18,
+      "n": 3,
+      "std": 6.009258394948638e-17
+    },
+    "allen_cahn/normalized_residual_mean": {
+      "max": 0.0025829864654710547,
+      "mean": 0.001273347241377763,
+      "min": 0.0004544611482293471,
+      "n": 3,
+      "std": 0.001145986030972401
+    },
+    "allen_cahn/signals/activation/layer_0/abs_max": {
+      "max": 0.6780702695817861,
+      "mean": 0.6283880390915043,
+      "min": 0.5707206313424841,
+      "n": 3,
+      "std": 0.054118467267813095
+    },
+    "allen_cahn/signals/activation/layer_0/abs_p95": {
+      "max": 0.42178452409544687,
+      "mean": 0.41070626470520033,
+      "min": 0.39752269907999443,
+      "n": 3,
+      "std": 0.012267162427689922
+    },
+    "allen_cahn/signals/activation/layer_0/mean": {
+      "max": 0.029329633133050155,
+      "mean": 0.002445239829514813,
+      "min": -0.03139413198990853,
+      "n": 3,
+      "std": 0.03095355726397874
+    },
+    "allen_cahn/signals/activation/layer_0/preactivation_rms": {
+      "max": 0.2372517653031871,
+      "mean": 0.2323738783925927,
+      "min": 0.2271556384649011,
+      "n": 3,
+      "std": 0.005056661390272734
+    },
+    "allen_cahn/signals/activation/layer_0/rms": {
+      "max": 0.2274384051946467,
+      "mean": 0.22278101095297415,
+      "min": 0.21854683473478775,
+      "n": 3,
+      "std": 0.0044608677891427905
+    },
+    "allen_cahn/signals/activation/layer_0/saturation_fraction_abs_gt_0_99": {
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/activation/layer_1/abs_max": {
+      "max": 0.9779624753754246,
+      "mean": 0.9719499817626455,
+      "min": 0.9637867321673078,
+      "n": 3,
+      "std": 0.007328522180358085
+    },
+    "allen_cahn/signals/activation/layer_1/abs_p95": {
+      "max": 0.9312877508248922,
+      "mean": 0.8886004118182019,
+      "min": 0.8574396775154624,
+      "n": 3,
+      "std": 0.03824959404855937
+    },
+    "allen_cahn/signals/activation/layer_1/mean": {
+      "max": 0.06850739164283243,
+      "mean": -0.029194943639085646,
+      "min": -0.1650856169933933,
+      "n": 3,
+      "std": 0.12138857151511133
+    },
+    "allen_cahn/signals/activation/layer_1/preactivation_rms": {
+      "max": 0.9073893284279644,
+      "mean": 0.7852833305590027,
+      "min": 0.6944330342391479,
+      "n": 3,
+      "std": 0.10986484864666025
+    },
+    "allen_cahn/signals/activation/layer_1/rms": {
+      "max": 0.6246809563165685,
+      "mean": 0.5767372028967943,
+      "min": 0.5348372328763443,
+      "n": 3,
+      "std": 0.04522575758054619
+    },
+    "allen_cahn/signals/activation/layer_1/saturation_fraction_abs_gt_0_99": {
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/activation/layer_2/abs_max": {
+      "max": 8.859398222407659,
+      "mean": 8.50507378149916,
+      "min": 7.882607314575184,
+      "n": 3,
+      "std": 0.5407912989248365
+    },
+    "allen_cahn/signals/activation/layer_2/abs_p95": {
+      "max": 4.57816933538887,
+      "mean": 4.469683889930535,
+      "min": 4.3815353965444634,
+      "n": 3,
+      "std": 0.09988203137230768
+    },
+    "allen_cahn/signals/activation/layer_2/mean": {
+      "max": -0.904181320884736,
+      "mean": -0.9127121935669876,
+      "min": -0.9202183312849235,
+      "n": 3,
+      "std": 0.008067464716641064
+    },
+    "allen_cahn/signals/activation/layer_2/preactivation_rms": {
+      "max": 2.1156943550475202,
+      "mean": 2.099549275533455,
+      "min": 2.0745393501311216,
+      "n": 3,
+      "std": 0.021962985381870345
+    },
+    "allen_cahn/signals/activation/layer_2/rms": {
+      "max": 2.1156943550475202,
+      "mean": 2.099549275533455,
+      "min": 2.0745393501311216,
+      "n": 3,
+      "std": 0.021962985381870345
+    },
+    "allen_cahn/signals/autodiff/u/abs_max": {
+      "max": 1.0047079446438638,
+      "mean": 1.0019495619098682,
+      "min": 1.00027535523323,
+      "n": 3,
+      "std": 0.002406977464233136
+    },
+    "allen_cahn/signals/autodiff/u/abs_p95": {
+      "max": 1.0028966165893058,
+      "mean": 1.0009953021211326,
+      "min": 0.9999874071795217,
+      "n": 3,
+      "std": 0.0016475811619845375
+    },
+    "allen_cahn/signals/autodiff/u/mean": {
+      "max": -0.21652470438378718,
+      "mean": -0.2186838213679332,
+      "min": -0.2207206887474064,
+      "n": 3,
+      "std": 0.002100661781276621
+    },
+    "allen_cahn/signals/autodiff/u/rms": {
+      "max": 0.7071166021937323,
+      "mean": 0.7062342344491659,
+      "min": 0.7052914298052592,
+      "n": 3,
+      "std": 0.0009140858964083082
+    },
+    "allen_cahn/signals/autodiff/ut/abs_max": {
+      "max": 1.9901431094136772,
+      "mean": 1.946420421524513,
+      "min": 1.916057762263299,
+      "n": 3,
+      "std": 0.0388075693557681
+    },
+    "allen_cahn/signals/autodiff/ut/abs_p95": {
+      "max": 1.8737625102831919,
+      "mean": 1.8700864821753889,
+      "min": 1.8635763711830426,
+      "n": 3,
+      "std": 0.005653616257692252
+    },
+    "allen_cahn/signals/autodiff/ut/mean": {
+      "max": 0.14879231457735828,
+      "mean": 0.13609923678388902,
+      "min": 0.1258768656862139,
+      "n": 3,
+      "std": 0.011655802981911807
+    },
+    "allen_cahn/signals/autodiff/ut/rms": {
+      "max": 0.9396225517480146,
+      "mean": 0.934311201328543,
+      "min": 0.9297406550363164,
+      "n": 3,
+      "std": 0.00498242548578252
+    },
+    "allen_cahn/signals/autodiff/ux/abs_max": {
+      "max": 40.184700585173886,
+      "mean": 31.781457862742627,
+      "min": 26.573457616700868,
+      "n": 3,
+      "std": 7.346677116145388
+    },
+    "allen_cahn/signals/autodiff/ux/abs_p95": {
+      "max": 7.293253715756496,
+      "mean": 7.138255195646172,
+      "min": 6.932107020133511,
+      "n": 3,
+      "std": 0.18592726904809725
+    },
+    "allen_cahn/signals/autodiff/ux/mean": {
+      "max": 0.03998245393068213,
+      "mean": -0.015619313299357762,
+      "min": -0.051052503663727475,
+      "n": 3,
+      "std": 0.04875366135629019
+    },
+    "allen_cahn/signals/autodiff/ux/rms": {
+      "max": 5.077535844178827,
+      "mean": 4.480641854975948,
+      "min": 4.082450430285343,
+      "n": 3,
+      "std": 0.5264606130506894
+    },
+    "allen_cahn/signals/autodiff/uxx/abs_max": {
+      "max": 1411.290826598138,
+      "mean": 1171.635569243064,
+      "min": 1027.5792802049164,
+      "n": 3,
+      "std": 208.956956731081
+    },
+    "allen_cahn/signals/autodiff/uxx/abs_p95": {
+      "max": 165.66062695624996,
+      "mean": 135.01040851642887,
+      "min": 112.26943269423623,
+      "n": 3,
+      "std": 27.560333729282092
+    },
+    "allen_cahn/signals/autodiff/uxx/mean": {
+      "max": 2.0822099541930914,
+      "mean": -1.1043955198427966,
+      "min": -5.3309476839252605,
+      "n": 3,
+      "std": 3.81442569471503
+    },
+    "allen_cahn/signals/autodiff/uxx/rms": {
+      "max": 155.83149182099928,
+      "mean": 119.67359316013594,
+      "min": 90.94038088437247,
+      "n": 3,
+      "std": 33.07655583015283
+    },
+    "allen_cahn/signals/diagnostic/elapsed_sec": {
+      "max": 9.256745766000847,
+      "mean": 8.780914906000854,
+      "min": 8.03640060800194,
+      "n": 3,
+      "std": 0.6530342016724959
+    },
+    "allen_cahn/signals/diagnostic/point_count": {
+      "max": 256.0,
+      "mean": 256.0,
+      "min": 256.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/hardware/gpu_logical_index": {
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/hardware/gpu_total_memory_bytes": {
+      "max": 15636037632.0,
+      "mean": 15636037632.0,
+      "min": 15636037632.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/hardware/visible_device_count": {
+      "max": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/rbf/layer_0/base_parameter_l2": {
+      "max": 0.6685453513484793,
+      "mean": 0.6346671688044324,
+      "min": 0.5857135312445046,
+      "n": 3,
+      "std": 0.04342498835217103
+    },
+    "allen_cahn/signals/rbf/layer_0/basis_coefficients_l2": {
+      "max": 2.354943286876212,
+      "mean": 2.3132429862431274,
+      "min": 2.2583236134434475,
+      "n": 3,
+      "std": 0.04964774139145468
+    },
+    "allen_cahn/signals/rbf/layer_0/coefficient_l2": {
+      "max": 2.354943286876212,
+      "mean": 2.3132429862431274,
+      "min": 2.2583236134434475,
+      "n": 3,
+      "std": 0.04964774139145468
+    },
+    "allen_cahn/signals/rbf/layer_0/effective_basis_count": {
+      "max": 21.014323030753626,
+      "mean": 21.013880450744878,
+      "min": 21.01316229291665,
+      "n": 3,
+      "std": 0.0006275232525490778
+    },
+    "allen_cahn/signals/rbf/layer_0/occupancy_below_0_01_count": {
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/rbf/layer_0/occupancy_mean": {
+      "max": 0.1597525327369146,
+      "mean": 0.15974884287380897,
+      "min": 0.15974313985142305,
+      "n": 3,
+      "std": 5.009608984766725e-06
+    },
+    "allen_cahn/signals/rbf/layer_0/occupancy_min": {
+      "max": 0.06850783395373741,
+      "mean": 0.06849057911281757,
+      "min": 0.0684794415018279,
+      "n": 3,
+      "std": 1.5152498403643902e-05
+    },
+    "allen_cahn/signals/rbf/layer_0/occupancy_p95": {
+      "max": 0.18618000294799417,
+      "mean": 0.18616871701471602,
+      "min": 0.1861495545522376,
+      "n": 3,
+      "std": 1.6682505363961494e-05
+    },
+    "allen_cahn/signals/rbf/layer_0/saturation_fraction_abs_gt_0_99": {
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/rbf/layer_1/base_parameter_l2": {
+      "max": 0.9947014304615869,
+      "mean": 0.9855879971770619,
+      "min": 0.9747142810297394,
+      "n": 3,
+      "std": 0.010109178127847163
+    },
+    "allen_cahn/signals/rbf/layer_1/basis_coefficients_l2": {
+      "max": 8.758271965496775,
+      "mean": 8.224952779317574,
+      "min": 7.330103853652386,
+      "n": 3,
+      "std": 0.7797075434558113
+    },
+    "allen_cahn/signals/rbf/layer_1/coefficient_l2": {
+      "max": 8.758271965496775,
+      "mean": 8.224952779317574,
+      "min": 7.330103853652386,
+      "n": 3,
+      "std": 0.7797075434558113
+    },
+    "allen_cahn/signals/rbf/layer_1/effective_basis_count": {
+      "max": 78.9315160482104,
+      "mean": 77.98144297884815,
+      "min": 77.33805656317134,
+      "n": 3,
+      "std": 0.8398337991988766
+    },
+    "allen_cahn/signals/rbf/layer_1/occupancy_below_0_01_count": {
+      "max": 77.0,
+      "mean": 75.33333333333333,
+      "min": 73.0,
+      "n": 3,
+      "std": 2.0816659994661326
+    },
+    "allen_cahn/signals/rbf/layer_1/occupancy_mean": {
+      "max": 0.1611326265351221,
+      "mean": 0.16113219836327825,
+      "min": 0.1611319706838865,
+      "n": 3,
+      "std": 3.710567723550799e-07
+    },
+    "allen_cahn/signals/rbf/layer_1/occupancy_min": {
+      "max": 1.1305894281856655e-08,
+      "mean": 5.835774851286529e-09,
+      "min": 7.044574514236286e-10,
+      "n": 3,
+      "std": 5.308832812344345e-09
+    },
+    "allen_cahn/signals/rbf/layer_1/occupancy_p95": {
+      "max": 0.5914351890078231,
+      "mean": 0.55947257555607,
+      "min": 0.5372001632732522,
+      "n": 3,
+      "std": 0.02838634360265901
+    },
+    "allen_cahn/signals/rbf/layer_1/saturation_fraction_abs_gt_0_99": {
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/rbf/layer_2/base_parameter_l2": {
+      "max": 0.4786811608636952,
+      "mean": 0.4509859018074089,
+      "min": 0.4156855512237846,
+      "n": 3,
+      "std": 0.03217902688600746
+    },
+    "allen_cahn/signals/rbf/layer_2/basis_coefficients_l2": {
+      "max": 6.36188757852571,
+      "mean": 4.958489769799715,
+      "min": 3.8096991665570314,
+      "n": 3,
+      "std": 1.2950038781253967
+    },
+    "allen_cahn/signals/rbf/layer_2/coefficient_l2": {
+      "max": 6.36188757852571,
+      "mean": 4.958489769799715,
+      "min": 3.8096991665570314,
+      "n": 3,
+      "std": 1.2950038781253967
+    },
+    "allen_cahn/signals/rbf/layer_2/effective_basis_count": {
+      "max": 120.43434232425524,
+      "mean": 116.86935926038254,
+      "min": 111.80251501509689,
+      "n": 3,
+      "std": 4.507638065546005
+    },
+    "allen_cahn/signals/rbf/layer_2/occupancy_below_0_01_count": {
+      "max": 34.0,
+      "mean": 30.0,
+      "min": 25.0,
+      "n": 3,
+      "std": 4.58257569495584
+    },
+    "allen_cahn/signals/rbf/layer_2/occupancy_mean": {
+      "max": 0.1607631639693594,
+      "mean": 0.1604285550587203,
+      "min": 0.15988344099370677,
+      "n": 3,
+      "std": 0.0004761433014192704
+    },
+    "allen_cahn/signals/rbf/layer_2/occupancy_min": {
+      "max": 1.9296157327122912e-11,
+      "mean": 6.534220081778505e-12,
+      "min": 1.5079526239165805e-19,
+      "n": 3,
+      "std": 1.1053224310312382e-11
+    },
+    "allen_cahn/signals/rbf/layer_2/occupancy_p95": {
+      "max": 0.4127169405574136,
+      "mean": 0.407391876061481,
+      "min": 0.39833250811734383,
+      "n": 3,
+      "std": 0.00788585701355198
+    },
+    "allen_cahn/signals/residual/abs_max": {
+      "max": 0.06903162905072907,
+      "mean": 0.040204287119798454,
+      "min": 0.02486161554848665,
+      "n": 3,
+      "std": 0.024982489352099322
+    },
+    "allen_cahn/signals/residual/abs_p95": {
+      "max": 0.05233407489187167,
+      "mean": 0.023855605657201805,
+      "min": 0.00692452452316987,
+      "n": 3,
+      "std": 0.024809543428527304
+    },
+    "allen_cahn/signals/residual/mean": {
+      "max": -0.0012407732175934096,
+      "mean": -0.004878820630874944,
+      "min": -0.010919799303994265,
+      "n": 3,
+      "std": 0.00526796407304912
+    },
+    "allen_cahn/signals/residual/normalized_abs_p95": {
+      "max": 0.0087208923332564,
+      "mean": 0.003975271730911815,
+      "min": 0.001153895104677532,
+      "n": 3,
+      "std": 0.004134234865610281
+    },
+    "allen_cahn/signals/residual/normalized_rms": {
+      "max": 0.0037914367346681276,
+      "mean": 0.0018327644903326733,
+      "min": 0.0006514417905907209,
+      "n": 3,
+      "std": 0.0017082436295996284
+    },
+    "allen_cahn/signals/residual/rms": {
+      "max": 0.022752411844743435,
+      "mean": 0.010998419706486373,
+      "min": 0.003909302185334917,
+      "n": 3,
+      "std": 0.010251170021227371
+    },
+    "allen_cahn/signals/resource_seed_campaign/memory_used_mib_max": {
+      "max": 327.0,
+      "mean": 327.0,
+      "min": 327.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/resource_seed_campaign/memory_used_mib_mean": {
+      "max": 318.746835443038,
+      "mean": 318.520721345587,
+      "min": 318.06849315068496,
+      "n": 3,
+      "std": 0.3916411050927253
+    },
+    "allen_cahn/signals/resource_seed_campaign/memory_used_mib_p95": {
+      "max": 327.0,
+      "mean": 327.0,
+      "min": 327.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/resource_seed_campaign/power_draw_w_max": {
+      "max": 42.41,
+      "mean": 40.93666666666667,
+      "min": 38.97,
+      "n": 3,
+      "std": 1.7722678503356457
+    },
+    "allen_cahn/signals/resource_seed_campaign/power_draw_w_mean": {
+      "max": 39.73164383561644,
+      "mean": 37.789704063348935,
+      "min": 36.05848101265823,
+      "n": 3,
+      "std": 1.8456252148132992
+    },
+    "allen_cahn/signals/resource_seed_campaign/power_draw_w_p95": {
+      "max": 41.33,
+      "mean": 40.365,
+      "min": 38.633,
+      "n": 3,
+      "std": 1.5032195448436638
+    },
+    "allen_cahn/signals/resource_seed_campaign/telemetry_sample_count": {
+      "max": 79.0,
+      "mean": 77.0,
+      "min": 73.0,
+      "n": 3,
+      "std": 3.4641016151377544
+    },
+    "allen_cahn/signals/resource_seed_campaign/temperature_c_max": {
+      "max": 78.0,
+      "mean": 76.0,
+      "min": 72.0,
+      "n": 3,
+      "std": 3.4641016151377544
+    },
+    "allen_cahn/signals/resource_seed_campaign/temperature_c_mean": {
+      "max": 75.61643835616438,
+      "mean": 72.09577481070458,
+      "min": 67.83544303797468,
+      "n": 3,
+      "std": 3.9428801465739687
+    },
+    "allen_cahn/signals/resource_seed_campaign/temperature_c_p95": {
+      "max": 78.0,
+      "mean": 76.0,
+      "min": 72.0,
+      "n": 3,
+      "std": 3.4641016151377544
+    },
+    "allen_cahn/signals/resource_seed_campaign/utilization_gpu_pct_max": {
+      "max": 43.0,
+      "mean": 41.333333333333336,
+      "min": 40.0,
+      "n": 3,
+      "std": 1.5275252316519468
+    },
+    "allen_cahn/signals/resource_seed_campaign/utilization_gpu_pct_mean": {
+      "max": 37.47945205479452,
+      "mean": 36.4087624992775,
+      "min": 35.67088607594937,
+      "n": 3,
+      "std": 0.9491054528750046
+    },
+    "allen_cahn/signals/resource_seed_campaign/utilization_gpu_pct_p95": {
+      "max": 40.099999999999994,
+      "mean": 40.03333333333333,
+      "min": 40.0,
+      "n": 3,
+      "std": 0.05773502691895929
+    },
+    "allen_cahn/signals/sampling/boundary_probe_count": {
+      "max": 1024.0,
+      "mean": 1024.0,
+      "min": 1024.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/sampling/coordinate_t_max": {
+      "max": 0.9999419758096337,
+      "mean": 0.9999218011895815,
+      "min": 0.9998955829069018,
+      "n": 3,
+      "std": 2.3779607848730456e-05
+    },
+    "allen_cahn/signals/sampling/coordinate_t_min": {
+      "max": 9.875185787677765e-05,
+      "mean": 6.134621798992157e-05,
+      "min": 4.035234451293945e-05,
+      "n": 3,
+      "std": 3.247514969638292e-05
+    },
+    "allen_cahn/signals/sampling/coordinate_x_max": {
+      "max": 0.9999603126198053,
+      "mean": 0.9998869908352693,
+      "min": 0.9998086057603359,
+      "n": 3,
+      "std": 7.59800663645002e-05
+    },
+    "allen_cahn/signals/sampling/coordinate_x_min": {
+      "max": -0.9997859578579664,
+      "mean": -0.9998283535242081,
+      "min": -0.9998805392533541,
+      "n": 3,
+      "std": 4.8044709252135005e-05
+    },
+    "allen_cahn/signals/sampling/diagnostic_count": {
+      "max": 2048.0,
+      "mean": 2048.0,
+      "min": 2048.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/sampling/heldout_count": {
+      "max": 16384.0,
+      "mean": 16384.0,
+      "min": 16384.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/sampling/heldout_t_max": {
+      "max": 0.9999883407726884,
+      "mean": 0.9999631686757008,
+      "min": 0.9999504890292883,
+      "n": 3,
+      "std": 2.1799876390336298e-05
+    },
+    "allen_cahn/signals/sampling/heldout_t_min": {
+      "max": 5.853921175003052e-05,
+      "mean": 3.081063429514567e-05,
+      "min": 8.649192750453949e-06,
+      "n": 3,
+      "std": 2.54066576043849e-05
+    },
+    "allen_cahn/signals/sampling/heldout_to_training_ratio": {
+      "max": 2.0,
+      "mean": 2.0,
+      "min": 2.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/sampling/heldout_x_max": {
+      "max": 0.9999457448720932,
+      "mean": 0.9999038570870956,
+      "min": 0.9998821709305048,
+      "n": 3,
+      "std": 3.628347909155752e-05
+    },
+    "allen_cahn/signals/sampling/heldout_x_min": {
+      "max": -0.9998785350471735,
+      "mean": -0.9999272239704927,
+      "min": -0.999999662861228,
+      "n": 3,
+      "std": 6.396118001260658e-05
+    },
+    "allen_cahn/signals/sampling/initial_probe_count": {
+      "max": 1024.0,
+      "mean": 1024.0,
+      "min": 1024.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/sampling/interior_count": {
+      "max": 8192.0,
+      "mean": 8192.0,
+      "min": 8192.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/sampling/nearest_neighbor_max": {
+      "max": 0.014792498732525113,
+      "mean": 0.014698440688895269,
+      "min": 0.01464648143073645,
+      "n": 3,
+      "std": 8.160572228105066e-05
+    },
+    "allen_cahn/signals/sampling/nearest_neighbor_median": {
+      "max": 0.008277350171106809,
+      "mean": 0.007640068840821798,
+      "min": 0.0068711265521525875,
+      "n": 3,
+      "std": 0.0007122971097780484
+    },
+    "allen_cahn/signals/sampling/nearest_neighbor_min": {
+      "max": 0.001520397222170606,
+      "mean": 0.001078764581124487,
+      "min": 0.0003220770148885308,
+      "n": 3,
+      "std": 0.0006583597300943605
+    },
+    "allen_cahn/signals/sampling/nearest_neighbor_p95": {
+      "max": 0.011047196074960448,
+      "mean": 0.01026541845477373,
+      "min": 0.009746790360928351,
+      "n": 3,
+      "std": 0.0006889844048903323
+    },
+    "allen_cahn/signals/sampling/sobol_centered_discrepancy": {
+      "max": 1.3865933068402114e-08,
+      "mean": 1.386510025310391e-08,
+      "min": 1.386376791145949e-08,
+      "n": 3,
+      "std": 1.1658134818524347e-12
+    },
+    "allen_cahn/signals/sensitivity/l2_max": {
+      "max": 7.809378721336554,
+      "mean": 6.702609584907359,
+      "min": 5.723347129283072,
+      "n": 3,
+      "std": 1.0488448007206355
+    },
+    "allen_cahn/signals/sensitivity/l2_median": {
+      "max": 2.369737277771705,
+      "mean": 2.2458919258097536,
+      "min": 2.1208640150893574,
+      "n": 3,
+      "std": 0.1244408455992327
+    },
+    "allen_cahn/signals/sensitivity/l2_p95": {
+      "max": 5.957472770283868,
+      "mean": 5.38125522057785,
+      "min": 4.789863816071375,
+      "n": 3,
+      "std": 0.5839523541278232
+    },
+    "allen_cahn/signals/training/diagnostic_sec": {
+      "max": 9.256745766000847,
+      "mean": 8.780914906000854,
+      "min": 8.03640060800194,
+      "n": 3,
+      "std": 0.6530342016724959
+    },
+    "allen_cahn/signals/training/examples_seen/physics": {
+      "max": 20480000.0,
+      "mean": 20480000.0,
+      "min": 20480000.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/training/losses/physics_loss_first_recorded": {
+      "max": 0.0028517191714836705,
+      "mean": 0.002766641226491739,
+      "min": 0.0026128488183700376,
+      "n": 3,
+      "std": 0.0001334391976953072
+    },
+    "allen_cahn/signals/training/losses/physics_loss_last_recorded": {
+      "max": 1.035448633892739e-05,
+      "mean": 4.457799797536815e-06,
+      "min": 2.943581522827311e-07,
+      "n": 3,
+      "std": 5.249252154871015e-06
+    },
+    "allen_cahn/signals/training/losses/physics_loss_relative_change": {
+      "max": -0.9963690371609979,
+      "mean": -0.998407489183059,
+      "min": -0.9998961829891889,
+      "n": 3,
+      "std": 0.0018267087877708557
+    },
+    "allen_cahn/signals/training/losses/train_loss_first_recorded": {
+      "max": 0.0028517191714836705,
+      "mean": 0.002766641226491739,
+      "min": 0.0026128488183700376,
+      "n": 3,
+      "std": 0.0001334391976953072
+    },
+    "allen_cahn/signals/training/losses/train_loss_last_recorded": {
+      "max": 1.035448633892739e-05,
+      "mean": 4.457799797536815e-06,
+      "min": 2.943581522827311e-07,
+      "n": 3,
+      "std": 5.249252154871015e-06
+    },
+    "allen_cahn/signals/training/losses/train_loss_relative_change": {
+      "max": -0.9963690371609979,
+      "mean": -0.998407489183059,
+      "min": -0.9998961829891889,
+      "n": 3,
+      "std": 0.0018267087877708557
+    },
+    "allen_cahn/signals/training/parameters": {
+      "max": 3648.0,
+      "mean": 3648.0,
+      "min": 3648.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/training/peak_gpu_bytes": {
+      "max": 136088576.0,
+      "mean": 136088576.0,
+      "min": 136088576.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/training/steps": {
+      "max": 20000.0,
+      "mean": 20000.0,
+      "min": 20000.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/training/steps_per_sec": {
+      "max": 28.000577458512982,
+      "mean": 26.585482252780945,
+      "min": 25.850596572066156,
+      "n": 3,
+      "std": 1.2258132816480716
+    },
+    "allen_cahn/signals/training/stop_reason_step_limit": {
+      "max": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/training/training_and_diagnostics_sec": {
+      "max": 773.6765356359999,
+      "mean": 753.3303728446666,
+      "min": 714.270983505,
+      "n": 3,
+      "std": 33.83627553209975
+    },
+    "allen_cahn/signals/validation/boundary_trace_max_abs_error": {
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/validation/energy_change": {
+      "max": -1.7518880668143784,
+      "mean": -1.7561433928807504,
+      "min": -1.7610020769668904,
+      "n": 3,
+      "std": 0.004586864499855742
+    },
+    "allen_cahn/signals/validation/energy_final": {
+      "max": 0.2513791782969348,
+      "mean": 0.2471238522305629,
+      "min": 0.24226516814442287,
+      "n": 3,
+      "std": 0.004586864499855703
+    },
+    "allen_cahn/signals/validation/energy_increase_count": {
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/validation/energy_initial": {
+      "max": 2.003267245111313,
+      "mean": 2.003267245111313,
+      "min": 2.003267245111313,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/validation/energy_interval_count": {
+      "max": 4.0,
+      "mean": 4.0,
+      "min": 4.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/validation/energy_relative_change": {
+      "max": -0.8745154053157962,
+      "mean": -0.876639598219542,
+      "min": -0.8790649781073213,
+      "n": 3,
+      "std": 0.0022896917578267674
+    },
+    "allen_cahn/signals/validation/heldout_normalized_residual_abs_p95": {
+      "max": 0.008644541739738616,
+      "mean": 0.0039843629577677835,
+      "min": 0.0011599203419236626,
+      "n": 3,
+      "std": 0.004065997395581626
+    },
+    "allen_cahn/signals/validation/heldout_normalized_residual_rmse": {
+      "max": 0.003804123564846515,
+      "mean": 0.0018303594448764353,
+      "min": 0.0005996738490064128,
+      "n": 3,
+      "std": 0.001726629307370568
+    },
+    "allen_cahn/signals/validation/heldout_point_count": {
+      "max": 16384.0,
+      "mean": 16384.0,
+      "min": 16384.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "allen_cahn/signals/validation/heldout_residual_abs_max": {
+      "max": 0.10884247358570576,
+      "mean": 0.06503695893562673,
+      "min": 0.037821797982559024,
+      "n": 3,
+      "std": 0.03830683969770676
+    },
+    "allen_cahn/signals/validation/heldout_residual_abs_p50": {
+      "max": 0.007525786731992891,
+      "mean": 0.004399951845843755,
+      "min": 0.0022302187778486526,
+      "n": 3,
+      "std": 0.002774231065403157
+    },
+    "allen_cahn/signals/validation/heldout_residual_abs_p95": {
+      "max": 0.05187589498017144,
+      "mean": 0.02391016210956447,
+      "min": 0.0069606819718838996,
+      "n": 3,
+      "std": 0.024400050370885343
+    },
+    "allen_cahn/signals/validation/heldout_residual_rmse_abs": {
+      "max": 0.022828545512643936,
+      "mean": 0.01098398702870349,
+      "min": 0.003598642767887483,
+      "n": 3,
+      "std": 0.010361502473530777
+    },
+    "allen_cahn/signals/validation/initial_trace_max_abs_error": {
+      "max": 1.1102230246251565e-16,
+      "mean": 7.632783294297951e-17,
+      "min": 6.938893903907228e-18,
+      "n": 3,
+      "std": 6.009258394948638e-17
+    },
+    "allen_cahn/signals/validation/normalized_residual_mean": {
+      "max": 0.0025829864654710547,
+      "mean": 0.001273347241377763,
+      "min": 0.0004544611482293471,
+      "n": 3,
+      "std": 0.001145986030972401
+    }
+  },
+  "runs": [
+    {
+      "seed": 101,
+      "run_status": "completed",
+      "run_elapsed_sec": 791.001258383,
+      "steps": 20000,
+      "training_and_diagnostics_sec": 773.6765356359999,
+      "stop_reason": "step_limit",
+      "parameters": 3648,
+      "normalized_residual_mean": 0.0025829864654710547,
+      "heldout_normalized_residual_rmse": 0.003804123564846515,
+      "energy_initial": 2.003267245111313,
+      "energy_final": 0.24772721025033104,
+      "energy_change": -1.7555400348609822,
+      "energy_increase_count": 0.0,
+      "heldout_point_count": 16384.0,
+      "field_error_status": "locked_pending_reference",
+      "field_l2_or_field_error_metrics_present": false,
+      "field_metric_names": [],
+      "final_test_used_validation_json": false,
+      "validation_npz_flags": {
+        "final_test_used": false,
+        "field_reference_used": false,
+        "scientific_accepted": false
+      },
+      "validation_npz_keys": [
+        "heldout",
+        "heldout_u",
+        "heldout_ux",
+        "heldout_ut",
+        "heldout_uxx",
+        "heldout_residual",
+        "x",
+        "t",
+        "prediction",
+        "residual",
+        "energy_x",
+        "energy_times",
+        "energy",
+        "energy_ux",
+        "final_test_used",
+        "field_reference_used",
+        "scientific_accepted"
+      ],
+      "pool_shapes": {
+        "interior": [
+          8192,
+          2
+        ],
+        "diagnostic": [
+          2048,
+          2
+        ],
+        "heldout": [
+          16384,
+          2
+        ],
+        "boundary_probe": [
+          1024,
+          2
+        ],
+        "initial_probe": [
+          1024,
+          2
+        ]
+      },
+      "energy_sample_count": 5,
+      "max_energy_increase": -0.2766419460109242,
+      "hardware": {
+        "accelerator_requested": "gpu",
+        "gpu_slot": "0",
+        "cuda_visible_devices": "0",
+        "torch_cuda_available": true,
+        "visible_device_count": 1,
+        "torch_version": "2.10.0+cu128",
+        "cuda_runtime": "12.8",
+        "gpu_name": "Tesla T4",
+        "gpu_logical_index": 0,
+        "gpu_total_memory_bytes": 15636037632
+      },
+      "training_summary_device_label": "cpu",
+      "gpu_telemetry": {
+        "samples": 79,
+        "interval_sec": 10,
+        "utilization_gpu_pct_mean": 35.67088607594937,
+        "memory_used_mib_median": 327.0
+      },
+      "artifact_hash_entries": 223,
+      "artifact_hashes_verified": 223,
+      "artifact_hash_missing": [],
+      "artifact_hash_mismatched": [],
+      "required_artifact_count": 22,
+      "validation_html": {
+        "present": true,
+        "bytes": 885665,
+        "sha256": "9bcfde6f9d310b14284ca2b86317d06120aeb628dbbc8296d16dedd755d81eac",
+        "residual_label": true,
+        "mentions_field_l2": false,
+        "mentions_test_flag": false
+      },
+      "energy_html": {
+        "present": true,
+        "bytes": 42710,
+        "sha256": "5c2c1b05babf54c6ea87ee7d99cee4cd17b9fa3f30e9aaf3b995c0ca0c5a5379",
+        "energy_label": true,
+        "mentions_field_l2": false,
+        "mentions_test_flag": false
+      }
+    },
+    {
+      "seed": 102,
+      "run_status": "completed",
+      "run_elapsed_sec": 791.0790792729999,
+      "steps": 20000,
+      "training_and_diagnostics_sec": 772.0435993929999,
+      "stop_reason": "step_limit",
+      "parameters": 3648,
+      "normalized_residual_mean": 0.0007825941104328872,
+      "heldout_normalized_residual_rmse": 0.0010872809207763785,
+      "energy_initial": 2.003267245111313,
+      "energy_final": 0.24226516814442287,
+      "energy_change": -1.7610020769668904,
+      "energy_increase_count": 0.0,
+      "heldout_point_count": 16384.0,
+      "field_error_status": "locked_pending_reference",
+      "field_l2_or_field_error_metrics_present": false,
+      "field_metric_names": [],
+      "final_test_used_validation_json": false,
+      "validation_npz_flags": {
+        "final_test_used": false,
+        "field_reference_used": false,
+        "scientific_accepted": false
+      },
+      "validation_npz_keys": [
+        "heldout",
+        "heldout_u",
+        "heldout_ux",
+        "heldout_ut",
+        "heldout_uxx",
+        "heldout_residual",
+        "x",
+        "t",
+        "prediction",
+        "residual",
+        "energy_x",
+        "energy_times",
+        "energy",
+        "energy_ux",
+        "final_test_used",
+        "field_reference_used",
+        "scientific_accepted"
+      ],
+      "pool_shapes": {
+        "interior": [
+          8192,
+          2
+        ],
+        "diagnostic": [
+          2048,
+          2
+        ],
+        "heldout": [
+          16384,
+          2
+        ],
+        "boundary_probe": [
+          1024,
+          2
+        ],
+        "initial_probe": [
+          1024,
+          2
+        ]
+      },
+      "energy_sample_count": 5,
+      "max_energy_increase": -0.2783958885446972,
+      "hardware": {
+        "accelerator_requested": "gpu",
+        "gpu_slot": "1",
+        "cuda_visible_devices": "1",
+        "torch_cuda_available": true,
+        "visible_device_count": 1,
+        "torch_version": "2.10.0+cu128",
+        "cuda_runtime": "12.8",
+        "gpu_name": "Tesla T4",
+        "gpu_logical_index": 0,
+        "gpu_total_memory_bytes": 15636037632
+      },
+      "training_summary_device_label": "cpu",
+      "gpu_telemetry": {
+        "samples": 79,
+        "interval_sec": 10,
+        "utilization_gpu_pct_mean": 36.075949367088604,
+        "memory_used_mib_median": 327.0
+      },
+      "artifact_hash_entries": 223,
+      "artifact_hashes_verified": 223,
+      "artifact_hash_missing": [],
+      "artifact_hash_mismatched": [],
+      "required_artifact_count": 22,
+      "validation_html": {
+        "present": true,
+        "bytes": 856410,
+        "sha256": "8705b7a51a2e51760428cf25ab00d73dd6093929b3d6a1de2b4794e58fa40ad7",
+        "residual_label": true,
+        "mentions_field_l2": false,
+        "mentions_test_flag": false
+      },
+      "energy_html": {
+        "present": true,
+        "bytes": 42915,
+        "sha256": "a2b302663f84297eb7c02ad0177486294f996e30c07bf6d20ade375297f96d57",
+        "energy_label": true,
+        "mentions_field_l2": false,
+        "mentions_test_flag": false
+      }
+    },
+    {
+      "seed": 103,
+      "run_status": "completed",
+      "run_elapsed_sec": 730.026198498,
+      "steps": 20000,
+      "training_and_diagnostics_sec": 714.270983505,
+      "stop_reason": "step_limit",
+      "parameters": 3648,
+      "normalized_residual_mean": 0.0004544611482293471,
+      "heldout_normalized_residual_rmse": 0.0005996738490064128,
+      "energy_initial": 2.003267245111313,
+      "energy_final": 0.2513791782969348,
+      "energy_change": -1.7518880668143784,
+      "energy_increase_count": 0.0,
+      "heldout_point_count": 16384.0,
+      "field_error_status": "locked_pending_reference",
+      "field_l2_or_field_error_metrics_present": false,
+      "field_metric_names": [],
+      "final_test_used_validation_json": false,
+      "validation_npz_flags": {
+        "final_test_used": false,
+        "field_reference_used": false,
+        "scientific_accepted": false
+      },
+      "validation_npz_keys": [
+        "heldout",
+        "heldout_u",
+        "heldout_ux",
+        "heldout_ut",
+        "heldout_uxx",
+        "heldout_residual",
+        "x",
+        "t",
+        "prediction",
+        "residual",
+        "energy_x",
+        "energy_times",
+        "energy",
+        "energy_ux",
+        "final_test_used",
+        "field_reference_used",
+        "scientific_accepted"
+      ],
+      "pool_shapes": {
+        "interior": [
+          8192,
+          2
+        ],
+        "diagnostic": [
+          2048,
+          2
+        ],
+        "heldout": [
+          16384,
+          2
+        ],
+        "boundary_probe": [
+          1024,
+          2
+        ],
+        "initial_probe": [
+          1024,
+          2
+        ]
+      },
+      "energy_sample_count": 5,
+      "max_energy_increase": -0.26938878734851857,
+      "hardware": {
+        "accelerator_requested": "gpu",
+        "gpu_slot": "0",
+        "cuda_visible_devices": "0",
+        "torch_cuda_available": true,
+        "visible_device_count": 1,
+        "torch_version": "2.10.0+cu128",
+        "cuda_runtime": "12.8",
+        "gpu_name": "Tesla T4",
+        "gpu_logical_index": 0,
+        "gpu_total_memory_bytes": 15636037632
+      },
+      "training_summary_device_label": "cpu",
+      "gpu_telemetry": {
+        "samples": 73,
+        "interval_sec": 10,
+        "utilization_gpu_pct_mean": 37.47945205479452,
+        "memory_used_mib_median": 327.0
+      },
+      "artifact_hash_entries": 223,
+      "artifact_hashes_verified": 223,
+      "artifact_hash_missing": [],
+      "artifact_hash_mismatched": [],
+      "required_artifact_count": 22,
+      "validation_html": {
+        "present": true,
+        "bytes": 846300,
+        "sha256": "939a6a7adde770c6c5d8014be96aadf80d486502eecb3b54a8141e87e46c9276",
+        "residual_label": true,
+        "mentions_field_l2": false,
+        "mentions_test_flag": false
+      },
+      "energy_html": {
+        "present": true,
+        "bytes": 43050,
+        "sha256": "208bcb69cebc9a18bf976967eb48ff646dabcd2da8ae319b4114db778fe6311b",
+        "energy_label": true,
+        "mentions_field_l2": false,
+        "mentions_test_flag": false
+      }
+    }
+  ],
+  "sampling_pools": {
+    "interior": [
+      8192,
+      2
+    ],
+    "diagnostic": [
+      2048,
+      2
+    ],
+    "heldout": [
+      16384,
+      2
+    ],
+    "boundary_probe": [
+      1024,
+      2
+    ],
+    "initial_probe": [
+      1024,
+      2
+    ]
+  },
+  "field_error_status": "locked_pending_reference",
+  "field_l2_or_field_error_available": false,
+  "final_test_opened": false,
+  "required_threshold_results": [
+    {
+      "seed": 101,
+      "metric": "allen_cahn/normalized_residual_mean",
+      "value": 0.0025829864654710547,
+      "passed": false,
+      "reason": "threshold_not_defined"
+    },
+    {
+      "seed": 102,
+      "metric": "allen_cahn/normalized_residual_mean",
+      "value": 0.0007825941104328872,
+      "passed": false,
+      "reason": "threshold_not_defined"
+    },
+    {
+      "seed": 103,
+      "metric": "allen_cahn/normalized_residual_mean",
+      "value": 0.0004544611482293471,
+      "passed": false,
+      "reason": "threshold_not_defined"
+    }
+  ],
+  "wandb_sync": {
+    "status": "synced",
+    "run_count": 3,
+    "synced_count": 3,
+    "source": "download/pikan-7d9fafd823f3e315/verified-extract/runs",
+    "runs": [
+      {
+        "run": "offline-run-20260924_040512-g7w2635j",
+        "status": "synced",
+        "exit_code": 0
+      },
+      {
+        "run": "offline-run-20260924_040512-hc0vt58r",
+        "status": "synced",
+        "exit_code": 0
+      },
+      {
+        "run": "offline-run-20260924_041822-8eerje4z",
+        "status": "synced",
+        "exit_code": 0
+      }
+    ],
+    "credential_values_written": false,
+    "original_results_zip_and_initial_download_tree_were_sync_targets": false
+  },
+  "analysis_csv": "quantitative-signals.csv"
+}

@@ -1,0 +1,300 @@
+{
+  "campaign": "allen-cahn-lbfgs-continuation-s3-retry-2026-09-28",
+  "status": "complete",
+  "kernel_slug": "rodrimandub/af-pikans-ac-lbfgs-continuation-s3-retry-20260928",
+  "session_cap_seconds": 2674.641350559,
+  "per_arm_seed_cap_seconds": 240.0,
+  "accelerator": "NvidiaTeslaT4 (GPU T4 x2)",
+  "seeds": [
+    401,
+    402,
+    403,
+    404,
+    405
+  ],
+  "arms": [
+    "AC-RBF-Sobol",
+    "AC-DeepXDE-MLP"
+  ],
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "source_preflight": {
+    "model_source": "47c02c9279e564729feee848f4f9266a746aa19869727dcb47d682ad0a103241",
+    "checkpoints": {
+      "401": {
+        "AC-RBF-Sobol": "083ac1f119d564cff7e3732df9ce7684e577f41ae2d214d00c6a306c812b3239",
+        "AC-DeepXDE-MLP": "ae42552e644eda1aef86c1b517bda3d907961f43e907ab6e75096fa75969b99b"
+      },
+      "402": {
+        "AC-RBF-Sobol": "a90cc8a725659620e365b32898bd850af023e9a64ca213a887e8891aa57e48a4",
+        "AC-DeepXDE-MLP": "bebcbd69edd51bc440b9e1d361c61deb6e6b0c70e71555ee95b335cf74c0ac6e"
+      },
+      "403": {
+        "AC-RBF-Sobol": "75c0f1dfd55e62ac01777eedb11fe15b95990a36b0b475278cd2fbfcdcc85635",
+        "AC-DeepXDE-MLP": "551bddf472e0d796ff835f9e493a3335eb989ca1a543cbb87d33c5434688ef14"
+      },
+      "404": {
+        "AC-RBF-Sobol": "b0a6b989ecfdbb730b4722622095ef9216cf862850939c2f2960ff82f289f293",
+        "AC-DeepXDE-MLP": "0271a09851e804aa4e31034cb6d63f26be2699647fee81f1835d33bfbd46d30d"
+      },
+      "405": {
+        "AC-RBF-Sobol": "97c04caeb60efb5bf3a3fb800c1f7cf113ff75dbf56eee75791a01985d7c12c9",
+        "AC-DeepXDE-MLP": "b5290fb473e15e6f49a08d45e127bab76b80453977013d8a6c1e76fe42b81e1e"
+      }
+    },
+    "pools": {
+      "401": "067392c7b13d6bf5df896b59b0f603e5837b9469479e1655f735ce9f3b902858",
+      "402": "511159afd3330d1ff79fa980e0020c1bfc5f0d50aa5071d71515acf651570d99",
+      "403": "5352b7d911364dd70db740c766d770beda1895cde40ac3f154ae906b98321e4b",
+      "404": "97267f785cd5a3598d8d2f3a75e6a26ed6f65e2431544070a3cccef9d9bf370a",
+      "405": "2fc0d2999ca42e751aab4e010998c0b681ff18a98c758fea28c9e9681fb72197"
+    },
+    "references": {
+      "FD8192": "8ce9fb2090e286a55f144e0d32580b04dc058a661d7af504e0a5ca2890a26903",
+      "ETDRK4": "f004af6ec0d98ff9ae0a4121d3f82ade4db9d01f0943c349871bd47182b4ac94"
+    },
+    "s1a_status": "candidate_complete",
+    "all_hashes_verified": true
+  },
+  "runs": [
+    {
+      "mode": "train",
+      "arm": "AC-RBF-Sobol",
+      "seed": 401,
+      "return_code": 0,
+      "log": "worker-logs/train-seed-401-AC-RBF-Sobol.log",
+      "status": "time_cap_reached",
+      "lbfgs_updates": 1521,
+      "closure_evaluations": 4464,
+      "training_gpu_seconds": 240.09084418400005,
+      "continuation_checkpoint": "runs/AC-RBF-Sobol/seed-401/checkpoint-final.pt"
+    },
+    {
+      "mode": "train",
+      "arm": "AC-DeepXDE-MLP",
+      "seed": 401,
+      "return_code": 0,
+      "log": "worker-logs/train-seed-401-AC-DeepXDE-MLP.log",
+      "status": "time_cap_reached",
+      "lbfgs_updates": 3670,
+      "closure_evaluations": 9707,
+      "training_gpu_seconds": 240.05006954599997,
+      "continuation_checkpoint": "runs/AC-DeepXDE-MLP/seed-401/checkpoint-final.pt"
+    },
+    {
+      "mode": "train",
+      "arm": "AC-RBF-Sobol",
+      "seed": 402,
+      "return_code": 0,
+      "log": "worker-logs/train-seed-402-AC-RBF-Sobol.log",
+      "status": "time_cap_reached",
+      "lbfgs_updates": 1513,
+      "closure_evaluations": 4437,
+      "training_gpu_seconds": 240.13588106400005,
+      "continuation_checkpoint": "runs/AC-RBF-Sobol/seed-402/checkpoint-final.pt"
+    },
+    {
+      "mode": "train",
+      "arm": "AC-DeepXDE-MLP",
+      "seed": 402,
+      "return_code": 0,
+      "log": "worker-logs/train-seed-402-AC-DeepXDE-MLP.log",
+      "status": "time_cap_reached",
+      "lbfgs_updates": 4199,
+      "closure_evaluations": 9483,
+      "training_gpu_seconds": 240.044244392,
+      "continuation_checkpoint": "runs/AC-DeepXDE-MLP/seed-402/checkpoint-final.pt"
+    },
+    {
+      "mode": "train",
+      "arm": "AC-RBF-Sobol",
+      "seed": 403,
+      "return_code": 0,
+      "log": "worker-logs/train-seed-403-AC-RBF-Sobol.log",
+      "status": "time_cap_reached",
+      "lbfgs_updates": 1507,
+      "closure_evaluations": 4421,
+      "training_gpu_seconds": 240.049163625,
+      "continuation_checkpoint": "runs/AC-RBF-Sobol/seed-403/checkpoint-final.pt"
+    },
+    {
+      "mode": "train",
+      "arm": "AC-DeepXDE-MLP",
+      "seed": 403,
+      "return_code": 0,
+      "log": "worker-logs/train-seed-403-AC-DeepXDE-MLP.log",
+      "status": "time_cap_reached",
+      "lbfgs_updates": 4361,
+      "closure_evaluations": 9123,
+      "training_gpu_seconds": 240.05195816900005,
+      "continuation_checkpoint": "runs/AC-DeepXDE-MLP/seed-403/checkpoint-final.pt"
+    },
+    {
+      "mode": "train",
+      "arm": "AC-RBF-Sobol",
+      "seed": 404,
+      "return_code": 0,
+      "log": "worker-logs/train-seed-404-AC-RBF-Sobol.log",
+      "status": "time_cap_reached",
+      "lbfgs_updates": 1997,
+      "closure_evaluations": 4172,
+      "training_gpu_seconds": 240.19319407800003,
+      "continuation_checkpoint": "runs/AC-RBF-Sobol/seed-404/checkpoint-final.pt"
+    },
+    {
+      "mode": "train",
+      "arm": "AC-DeepXDE-MLP",
+      "seed": 404,
+      "return_code": 0,
+      "log": "worker-logs/train-seed-404-AC-DeepXDE-MLP.log",
+      "status": "time_cap_reached",
+      "lbfgs_updates": 4024,
+      "closure_evaluations": 9124,
+      "training_gpu_seconds": 240.086679044,
+      "continuation_checkpoint": "runs/AC-DeepXDE-MLP/seed-404/checkpoint-final.pt"
+    },
+    {
+      "mode": "train",
+      "arm": "AC-RBF-Sobol",
+      "seed": 405,
+      "return_code": 0,
+      "log": "worker-logs/train-seed-405-AC-RBF-Sobol.log",
+      "status": "time_cap_reached",
+      "lbfgs_updates": 1971,
+      "closure_evaluations": 4165,
+      "training_gpu_seconds": 240.10241022299988,
+      "continuation_checkpoint": "runs/AC-RBF-Sobol/seed-405/checkpoint-final.pt"
+    },
+    {
+      "mode": "train",
+      "arm": "AC-DeepXDE-MLP",
+      "seed": 405,
+      "return_code": 0,
+      "log": "worker-logs/train-seed-405-AC-DeepXDE-MLP.log",
+      "status": "time_cap_reached",
+      "lbfgs_updates": 4230,
+      "closure_evaluations": 8857,
+      "training_gpu_seconds": 240.1059311250001,
+      "continuation_checkpoint": "runs/AC-DeepXDE-MLP/seed-405/checkpoint-final.pt"
+    },
+    {
+      "mode": "score",
+      "arm": "AC-RBF-Sobol",
+      "seed": 401,
+      "return_code": 0,
+      "log": "worker-logs/score-seed-401-AC-RBF-Sobol.log",
+      "status": "scored",
+      "scoring_wall_seconds": 1.4128143709999677,
+      "score": "runs/AC-RBF-Sobol/seed-401/score.json"
+    },
+    {
+      "mode": "score",
+      "arm": "AC-DeepXDE-MLP",
+      "seed": 401,
+      "return_code": 0,
+      "log": "worker-logs/score-seed-401-AC-DeepXDE-MLP.log",
+      "status": "scored",
+      "scoring_wall_seconds": 1.1294547909999437,
+      "score": "runs/AC-DeepXDE-MLP/seed-401/score.json"
+    },
+    {
+      "mode": "score",
+      "arm": "AC-RBF-Sobol",
+      "seed": 402,
+      "return_code": 0,
+      "log": "worker-logs/score-seed-402-AC-RBF-Sobol.log",
+      "status": "scored",
+      "scoring_wall_seconds": 1.3123344749999433,
+      "score": "runs/AC-RBF-Sobol/seed-402/score.json"
+    },
+    {
+      "mode": "score",
+      "arm": "AC-DeepXDE-MLP",
+      "seed": 402,
+      "return_code": 0,
+      "log": "worker-logs/score-seed-402-AC-DeepXDE-MLP.log",
+      "status": "scored",
+      "scoring_wall_seconds": 1.0765986589999557,
+      "score": "runs/AC-DeepXDE-MLP/seed-402/score.json"
+    },
+    {
+      "mode": "score",
+      "arm": "AC-RBF-Sobol",
+      "seed": 403,
+      "return_code": 0,
+      "log": "worker-logs/score-seed-403-AC-RBF-Sobol.log",
+      "status": "scored",
+      "scoring_wall_seconds": 1.2859534189999522,
+      "score": "runs/AC-RBF-Sobol/seed-403/score.json"
+    },
+    {
+      "mode": "score",
+      "arm": "AC-DeepXDE-MLP",
+      "seed": 403,
+      "return_code": 0,
+      "log": "worker-logs/score-seed-403-AC-DeepXDE-MLP.log",
+      "status": "scored",
+      "scoring_wall_seconds": 1.0495286119999037,
+      "score": "runs/AC-DeepXDE-MLP/seed-403/score.json"
+    },
+    {
+      "mode": "score",
+      "arm": "AC-RBF-Sobol",
+      "seed": 404,
+      "return_code": 0,
+      "log": "worker-logs/score-seed-404-AC-RBF-Sobol.log",
+      "status": "scored",
+      "scoring_wall_seconds": 1.3434451319999425,
+      "score": "runs/AC-RBF-Sobol/seed-404/score.json"
+    },
+    {
+      "mode": "score",
+      "arm": "AC-DeepXDE-MLP",
+      "seed": 404,
+      "return_code": 0,
+      "log": "worker-logs/score-seed-404-AC-DeepXDE-MLP.log",
+      "status": "scored",
+      "scoring_wall_seconds": 1.0689715559999513,
+      "score": "runs/AC-DeepXDE-MLP/seed-404/score.json"
+    },
+    {
+      "mode": "score",
+      "arm": "AC-RBF-Sobol",
+      "seed": 405,
+      "return_code": 0,
+      "log": "worker-logs/score-seed-405-AC-RBF-Sobol.log",
+      "status": "scored",
+      "scoring_wall_seconds": 1.3211444580001626,
+      "score": "runs/AC-RBF-Sobol/seed-405/score.json"
+    },
+    {
+      "mode": "score",
+      "arm": "AC-DeepXDE-MLP",
+      "seed": 405,
+      "return_code": 0,
+      "log": "worker-logs/score-seed-405-AC-DeepXDE-MLP.log",
+      "status": "scored",
+      "scoring_wall_seconds": 1.0564520369998718,
+      "score": "runs/AC-DeepXDE-MLP/seed-405/score.json"
+    }
+  ],
+  "session_wall_seconds": 1276.233723594,
+  "runtime": {
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "visible_gpu_count": 2
+  },
+  "completion": {
+    "training_runs": 10,
+    "training_reaching_time_cap": 10,
+    "scored_runs": 10,
+    "scientific_accepted": false,
+    "reference_accepted": false
+  },
+  "ended_at_utc": "2026-09-28T22:05:07.771208+00:00"
+}

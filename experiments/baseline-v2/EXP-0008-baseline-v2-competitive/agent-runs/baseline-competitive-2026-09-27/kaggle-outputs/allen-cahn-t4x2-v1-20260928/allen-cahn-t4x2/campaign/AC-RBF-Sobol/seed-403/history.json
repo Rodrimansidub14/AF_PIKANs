@@ -1,0 +1,1730 @@
+[
+  {
+    "step": 100,
+    "loss": 0.0023013469978355803,
+    "elapsed_gpu_wall_seconds": 2.3455025820001083,
+    "optimizer": "adam"
+  },
+  {
+    "step": 200,
+    "loss": 0.0006731516650571139,
+    "elapsed_gpu_wall_seconds": 4.357606136999948,
+    "optimizer": "adam"
+  },
+  {
+    "step": 300,
+    "loss": 0.0004484768753668455,
+    "elapsed_gpu_wall_seconds": 6.381472392999967,
+    "optimizer": "adam"
+  },
+  {
+    "step": 400,
+    "loss": 0.0002776222923391578,
+    "elapsed_gpu_wall_seconds": 8.597693959000026,
+    "optimizer": "adam"
+  },
+  {
+    "step": 500,
+    "loss": 0.00019668219174557403,
+    "elapsed_gpu_wall_seconds": 10.647952664000059,
+    "optimizer": "adam"
+  },
+  {
+    "step": 600,
+    "loss": 0.00021058101267165102,
+    "elapsed_gpu_wall_seconds": 12.651503192000064,
+    "optimizer": "adam"
+  },
+  {
+    "step": 700,
+    "loss": 0.00013900081519498827,
+    "elapsed_gpu_wall_seconds": 14.755256691000113,
+    "optimizer": "adam"
+  },
+  {
+    "step": 800,
+    "loss": 0.00014445167519870126,
+    "elapsed_gpu_wall_seconds": 17.119986856999958,
+    "optimizer": "adam"
+  },
+  {
+    "step": 900,
+    "loss": 0.00010447506379133168,
+    "elapsed_gpu_wall_seconds": 19.48696506600004,
+    "optimizer": "adam"
+  },
+  {
+    "step": 1000,
+    "loss": 0.00011779262536271005,
+    "elapsed_gpu_wall_seconds": 21.524269855000057,
+    "optimizer": "adam"
+  },
+  {
+    "step": 1100,
+    "loss": 7.449193892871564e-05,
+    "elapsed_gpu_wall_seconds": 23.5950645800001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 1200,
+    "loss": 4.4121861915218796e-05,
+    "elapsed_gpu_wall_seconds": 25.860686360000045,
+    "optimizer": "adam"
+  },
+  {
+    "step": 1300,
+    "loss": 4.444257042733875e-05,
+    "elapsed_gpu_wall_seconds": 27.903691765000076,
+    "optimizer": "adam"
+  },
+  {
+    "step": 1400,
+    "loss": 2.8059599584295774e-05,
+    "elapsed_gpu_wall_seconds": 29.95053745600012,
+    "optimizer": "adam"
+  },
+  {
+    "step": 1500,
+    "loss": 1.7097659432578024e-05,
+    "elapsed_gpu_wall_seconds": 31.98001191000003,
+    "optimizer": "adam"
+  },
+  {
+    "step": 1600,
+    "loss": 1.967844721409032e-05,
+    "elapsed_gpu_wall_seconds": 33.99779076799996,
+    "optimizer": "adam"
+  },
+  {
+    "step": 1700,
+    "loss": 2.126148165367586e-05,
+    "elapsed_gpu_wall_seconds": 36.04825506399993,
+    "optimizer": "adam"
+  },
+  {
+    "step": 1800,
+    "loss": 1.15778513838174e-05,
+    "elapsed_gpu_wall_seconds": 38.15207795800006,
+    "optimizer": "adam"
+  },
+  {
+    "step": 1900,
+    "loss": 7.698306048204405e-06,
+    "elapsed_gpu_wall_seconds": 40.130594670999926,
+    "optimizer": "adam"
+  },
+  {
+    "step": 2000,
+    "loss": 1.3183656222402509e-05,
+    "elapsed_gpu_wall_seconds": 42.19394545,
+    "optimizer": "adam"
+  },
+  {
+    "step": 2100,
+    "loss": 6.700223557789114e-06,
+    "elapsed_gpu_wall_seconds": 44.186602623,
+    "optimizer": "adam"
+  },
+  {
+    "step": 2200,
+    "loss": 8.600952087221258e-06,
+    "elapsed_gpu_wall_seconds": 46.179475510999964,
+    "optimizer": "adam"
+  },
+  {
+    "step": 2300,
+    "loss": 4.939388691081194e-06,
+    "elapsed_gpu_wall_seconds": 48.304345568000144,
+    "optimizer": "adam"
+  },
+  {
+    "step": 2400,
+    "loss": 6.994455697825987e-06,
+    "elapsed_gpu_wall_seconds": 50.29104367800005,
+    "optimizer": "adam"
+  },
+  {
+    "step": 2500,
+    "loss": 9.297304993169864e-06,
+    "elapsed_gpu_wall_seconds": 52.28574188400012,
+    "optimizer": "adam"
+  },
+  {
+    "step": 2600,
+    "loss": 5.840729326215496e-06,
+    "elapsed_gpu_wall_seconds": 54.3523650300001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 2700,
+    "loss": 8.484090197354269e-06,
+    "elapsed_gpu_wall_seconds": 56.41668658899994,
+    "optimizer": "adam"
+  },
+  {
+    "step": 2800,
+    "loss": 6.727483678060279e-06,
+    "elapsed_gpu_wall_seconds": 58.775011146,
+    "optimizer": "adam"
+  },
+  {
+    "step": 2900,
+    "loss": 9.700061507037755e-06,
+    "elapsed_gpu_wall_seconds": 60.90318764400013,
+    "optimizer": "adam"
+  },
+  {
+    "step": 3000,
+    "loss": 2.694640849073163e-06,
+    "elapsed_gpu_wall_seconds": 62.90127200500001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 3100,
+    "loss": 4.45450605085145e-06,
+    "elapsed_gpu_wall_seconds": 64.88239454099994,
+    "optimizer": "adam"
+  },
+  {
+    "step": 3200,
+    "loss": 3.3359967370161777e-06,
+    "elapsed_gpu_wall_seconds": 67.02712717200006,
+    "optimizer": "adam"
+  },
+  {
+    "step": 3300,
+    "loss": 3.1177921758115454e-06,
+    "elapsed_gpu_wall_seconds": 69.13450431499996,
+    "optimizer": "adam"
+  },
+  {
+    "step": 3400,
+    "loss": 3.0893834147578855e-06,
+    "elapsed_gpu_wall_seconds": 71.10334784700012,
+    "optimizer": "adam"
+  },
+  {
+    "step": 3500,
+    "loss": 1.6527854714532683e-05,
+    "elapsed_gpu_wall_seconds": 73.154211691,
+    "optimizer": "adam"
+  },
+  {
+    "step": 3600,
+    "loss": 2.7538572340152247e-06,
+    "elapsed_gpu_wall_seconds": 75.11908606199995,
+    "optimizer": "adam"
+  },
+  {
+    "step": 3700,
+    "loss": 2.703617305950972e-06,
+    "elapsed_gpu_wall_seconds": 77.11384864000001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 3800,
+    "loss": 7.915059733450436e-06,
+    "elapsed_gpu_wall_seconds": 79.26953217899995,
+    "optimizer": "adam"
+  },
+  {
+    "step": 3900,
+    "loss": 2.0810960922736053e-06,
+    "elapsed_gpu_wall_seconds": 81.24809126800005,
+    "optimizer": "adam"
+  },
+  {
+    "step": 4000,
+    "loss": 6.155347252313977e-06,
+    "elapsed_gpu_wall_seconds": 83.31700600099998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 4100,
+    "loss": 2.978193702877079e-06,
+    "elapsed_gpu_wall_seconds": 85.41403776600009,
+    "optimizer": "adam"
+  },
+  {
+    "step": 4200,
+    "loss": 3.1401330220276907e-06,
+    "elapsed_gpu_wall_seconds": 87.41342992499995,
+    "optimizer": "adam"
+  },
+  {
+    "step": 4300,
+    "loss": 3.057908545135859e-06,
+    "elapsed_gpu_wall_seconds": 89.54872278500011,
+    "optimizer": "adam"
+  },
+  {
+    "step": 4400,
+    "loss": 2.6997926955251687e-06,
+    "elapsed_gpu_wall_seconds": 91.52333784300004,
+    "optimizer": "adam"
+  },
+  {
+    "step": 4500,
+    "loss": 3.5365741904675596e-06,
+    "elapsed_gpu_wall_seconds": 93.48860791100014,
+    "optimizer": "adam"
+  },
+  {
+    "step": 4600,
+    "loss": 1.7339145561720488e-06,
+    "elapsed_gpu_wall_seconds": 95.91914217399994,
+    "optimizer": "adam"
+  },
+  {
+    "step": 4700,
+    "loss": 3.3178308328084153e-06,
+    "elapsed_gpu_wall_seconds": 98.01720022199993,
+    "optimizer": "adam"
+  },
+  {
+    "step": 4800,
+    "loss": 4.817535822548768e-06,
+    "elapsed_gpu_wall_seconds": 99.97729817699997,
+    "optimizer": "adam"
+  },
+  {
+    "step": 4900,
+    "loss": 1.0681617816448444e-05,
+    "elapsed_gpu_wall_seconds": 101.98168779299999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 5000,
+    "loss": 2.584032437930121e-06,
+    "elapsed_gpu_wall_seconds": 104.09214787500014,
+    "optimizer": "adam"
+  },
+  {
+    "step": 5100,
+    "loss": 4.555633361737632e-06,
+    "elapsed_gpu_wall_seconds": 106.15205575599998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 5200,
+    "loss": 1.4698991599143038e-06,
+    "elapsed_gpu_wall_seconds": 108.19502112999999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 5300,
+    "loss": 1.1870642558719354e-06,
+    "elapsed_gpu_wall_seconds": 110.23886410900013,
+    "optimizer": "adam"
+  },
+  {
+    "step": 5400,
+    "loss": 1.990184417262003e-06,
+    "elapsed_gpu_wall_seconds": 112.4895867350001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 5500,
+    "loss": 2.1720214455431077e-06,
+    "elapsed_gpu_wall_seconds": 114.58359534700003,
+    "optimizer": "adam"
+  },
+  {
+    "step": 5600,
+    "loss": 5.059097007122388e-06,
+    "elapsed_gpu_wall_seconds": 116.58730114600007,
+    "optimizer": "adam"
+  },
+  {
+    "step": 5700,
+    "loss": 3.6406619332661102e-06,
+    "elapsed_gpu_wall_seconds": 118.73913064000021,
+    "optimizer": "adam"
+  },
+  {
+    "step": 5800,
+    "loss": 1.6476186344104835e-06,
+    "elapsed_gpu_wall_seconds": 120.71753672999989,
+    "optimizer": "adam"
+  },
+  {
+    "step": 5900,
+    "loss": 2.112722138126282e-06,
+    "elapsed_gpu_wall_seconds": 122.68730783000024,
+    "optimizer": "adam"
+  },
+  {
+    "step": 6000,
+    "loss": 2.0483347258575074e-06,
+    "elapsed_gpu_wall_seconds": 124.72740819600017,
+    "optimizer": "adam"
+  },
+  {
+    "step": 6100,
+    "loss": 3.536990134737471e-06,
+    "elapsed_gpu_wall_seconds": 126.77079486600019,
+    "optimizer": "adam"
+  },
+  {
+    "step": 6200,
+    "loss": 9.558759341619736e-07,
+    "elapsed_gpu_wall_seconds": 128.87474022899983,
+    "optimizer": "adam"
+  },
+  {
+    "step": 6300,
+    "loss": 2.5424323673737514e-06,
+    "elapsed_gpu_wall_seconds": 130.85797736500012,
+    "optimizer": "adam"
+  },
+  {
+    "step": 6400,
+    "loss": 4.23486501112583e-06,
+    "elapsed_gpu_wall_seconds": 132.83414349100008,
+    "optimizer": "adam"
+  },
+  {
+    "step": 6500,
+    "loss": 4.948948689504417e-06,
+    "elapsed_gpu_wall_seconds": 134.79102402700005,
+    "optimizer": "adam"
+  },
+  {
+    "step": 6600,
+    "loss": 5.586809850488186e-06,
+    "elapsed_gpu_wall_seconds": 136.80660463400022,
+    "optimizer": "adam"
+  },
+  {
+    "step": 6700,
+    "loss": 2.5090241330121585e-05,
+    "elapsed_gpu_wall_seconds": 138.95256290600014,
+    "optimizer": "adam"
+  },
+  {
+    "step": 6800,
+    "loss": 1.4688561856426337e-06,
+    "elapsed_gpu_wall_seconds": 140.94870657000024,
+    "optimizer": "adam"
+  },
+  {
+    "step": 6900,
+    "loss": 1.2990579988685928e-06,
+    "elapsed_gpu_wall_seconds": 143.01914575500018,
+    "optimizer": "adam"
+  },
+  {
+    "step": 7000,
+    "loss": 5.580158471263426e-06,
+    "elapsed_gpu_wall_seconds": 145.02069016000019,
+    "optimizer": "adam"
+  },
+  {
+    "step": 7100,
+    "loss": 2.2069663716757573e-06,
+    "elapsed_gpu_wall_seconds": 147.04265764700017,
+    "optimizer": "adam"
+  },
+  {
+    "step": 7200,
+    "loss": 2.5067876422397816e-06,
+    "elapsed_gpu_wall_seconds": 149.1632422529999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 7300,
+    "loss": 2.305588351356291e-05,
+    "elapsed_gpu_wall_seconds": 151.23688167800015,
+    "optimizer": "adam"
+  },
+  {
+    "step": 7400,
+    "loss": 1.8636384592148297e-06,
+    "elapsed_gpu_wall_seconds": 153.62085725200018,
+    "optimizer": "adam"
+  },
+  {
+    "step": 7500,
+    "loss": 2.1980713555483218e-05,
+    "elapsed_gpu_wall_seconds": 155.91089061200023,
+    "optimizer": "adam"
+  },
+  {
+    "step": 7600,
+    "loss": 5.878551442058887e-06,
+    "elapsed_gpu_wall_seconds": 158.03172593400018,
+    "optimizer": "adam"
+  },
+  {
+    "step": 7700,
+    "loss": 9.217666889964311e-07,
+    "elapsed_gpu_wall_seconds": 160.02233275100002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 7800,
+    "loss": 1.8643649206342323e-06,
+    "elapsed_gpu_wall_seconds": 162.03625145399997,
+    "optimizer": "adam"
+  },
+  {
+    "step": 7900,
+    "loss": 5.737683119102061e-06,
+    "elapsed_gpu_wall_seconds": 164.12218775299993,
+    "optimizer": "adam"
+  },
+  {
+    "step": 8000,
+    "loss": 3.8871240129093795e-06,
+    "elapsed_gpu_wall_seconds": 166.3162090799999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 8100,
+    "loss": 7.360907761905772e-07,
+    "elapsed_gpu_wall_seconds": 168.34706707100008,
+    "optimizer": "adam"
+  },
+  {
+    "step": 8200,
+    "loss": 1.1633827616169792e-06,
+    "elapsed_gpu_wall_seconds": 170.31901739699993,
+    "optimizer": "adam"
+  },
+  {
+    "step": 8300,
+    "loss": 2.1314089616424413e-06,
+    "elapsed_gpu_wall_seconds": 172.36095107699998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 8400,
+    "loss": 1.6057646850822008e-06,
+    "elapsed_gpu_wall_seconds": 174.34456643599992,
+    "optimizer": "adam"
+  },
+  {
+    "step": 8500,
+    "loss": 1.036417100971898e-06,
+    "elapsed_gpu_wall_seconds": 176.4656227779999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 8600,
+    "loss": 5.848070577317366e-06,
+    "elapsed_gpu_wall_seconds": 178.741974195,
+    "optimizer": "adam"
+  },
+  {
+    "step": 8700,
+    "loss": 6.325140950330617e-06,
+    "elapsed_gpu_wall_seconds": 180.90438108700005,
+    "optimizer": "adam"
+  },
+  {
+    "step": 8800,
+    "loss": 1.3594465254878225e-06,
+    "elapsed_gpu_wall_seconds": 182.87481899099998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 8900,
+    "loss": 9.134914294939999e-07,
+    "elapsed_gpu_wall_seconds": 184.9877554000002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 9000,
+    "loss": 1.3399638332478603e-06,
+    "elapsed_gpu_wall_seconds": 187.0047046430002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 9100,
+    "loss": 8.895357735151071e-06,
+    "elapsed_gpu_wall_seconds": 189.11291787599998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 9200,
+    "loss": 8.027010669046369e-07,
+    "elapsed_gpu_wall_seconds": 191.08539488500014,
+    "optimizer": "adam"
+  },
+  {
+    "step": 9300,
+    "loss": 6.79040110380291e-07,
+    "elapsed_gpu_wall_seconds": 193.12858301200026,
+    "optimizer": "adam"
+  },
+  {
+    "step": 9400,
+    "loss": 8.313029450709146e-07,
+    "elapsed_gpu_wall_seconds": 195.16649360899987,
+    "optimizer": "adam"
+  },
+  {
+    "step": 9500,
+    "loss": 1.7164102811816725e-05,
+    "elapsed_gpu_wall_seconds": 197.17336903,
+    "optimizer": "adam"
+  },
+  {
+    "step": 9600,
+    "loss": 9.143629351697018e-07,
+    "elapsed_gpu_wall_seconds": 199.2759970630002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 9700,
+    "loss": 1.092706898714043e-06,
+    "elapsed_gpu_wall_seconds": 201.27439471899993,
+    "optimizer": "adam"
+  },
+  {
+    "step": 9800,
+    "loss": 1.970203029406604e-06,
+    "elapsed_gpu_wall_seconds": 203.29590016899988,
+    "optimizer": "adam"
+  },
+  {
+    "step": 9900,
+    "loss": 1.268562871819624e-06,
+    "elapsed_gpu_wall_seconds": 205.27352120499995,
+    "optimizer": "adam"
+  },
+  {
+    "step": 10000,
+    "loss": 5.1332712219818155e-06,
+    "elapsed_gpu_wall_seconds": 207.3149412350001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 10100,
+    "loss": 1.3257671459033236e-06,
+    "elapsed_gpu_wall_seconds": 209.436723348,
+    "optimizer": "adam"
+  },
+  {
+    "step": 10200,
+    "loss": 1.8688689042949076e-05,
+    "elapsed_gpu_wall_seconds": 211.71325670600004,
+    "optimizer": "adam"
+  },
+  {
+    "step": 10300,
+    "loss": 7.814387255183994e-07,
+    "elapsed_gpu_wall_seconds": 213.8091417170001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 10400,
+    "loss": 8.045824357968431e-07,
+    "elapsed_gpu_wall_seconds": 216.01598543800014,
+    "optimizer": "adam"
+  },
+  {
+    "step": 10500,
+    "loss": 8.631074237336956e-06,
+    "elapsed_gpu_wall_seconds": 218.10002550500008,
+    "optimizer": "adam"
+  },
+  {
+    "step": 10600,
+    "loss": 1.372621041625484e-06,
+    "elapsed_gpu_wall_seconds": 220.09940023800004,
+    "optimizer": "adam"
+  },
+  {
+    "step": 10700,
+    "loss": 3.3799200447213535e-06,
+    "elapsed_gpu_wall_seconds": 222.65543523500014,
+    "optimizer": "adam"
+  },
+  {
+    "step": 10800,
+    "loss": 1.5219393036760686e-06,
+    "elapsed_gpu_wall_seconds": 224.77532573700023,
+    "optimizer": "adam"
+  },
+  {
+    "step": 10900,
+    "loss": 1.0130501434129622e-06,
+    "elapsed_gpu_wall_seconds": 226.94530983900017,
+    "optimizer": "adam"
+  },
+  {
+    "step": 11000,
+    "loss": 1.7490051241647823e-06,
+    "elapsed_gpu_wall_seconds": 229.03400427500014,
+    "optimizer": "adam"
+  },
+  {
+    "step": 11100,
+    "loss": 1.0214715144643662e-06,
+    "elapsed_gpu_wall_seconds": 231.05232667799987,
+    "optimizer": "adam"
+  },
+  {
+    "step": 11200,
+    "loss": 3.2820185332824206e-06,
+    "elapsed_gpu_wall_seconds": 233.0338793520002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 11300,
+    "loss": 9.863186166296871e-06,
+    "elapsed_gpu_wall_seconds": 235.11017491200005,
+    "optimizer": "adam"
+  },
+  {
+    "step": 11400,
+    "loss": 3.0849739453704905e-06,
+    "elapsed_gpu_wall_seconds": 237.153160524,
+    "optimizer": "adam"
+  },
+  {
+    "step": 11500,
+    "loss": 4.78594122882615e-07,
+    "elapsed_gpu_wall_seconds": 239.27773410900022,
+    "optimizer": "adam"
+  },
+  {
+    "step": 11600,
+    "loss": 5.866700732955779e-07,
+    "elapsed_gpu_wall_seconds": 241.27956677399993,
+    "optimizer": "adam"
+  },
+  {
+    "step": 11700,
+    "loss": 1.8553630959679491e-06,
+    "elapsed_gpu_wall_seconds": 243.26059885300015,
+    "optimizer": "adam"
+  },
+  {
+    "step": 11800,
+    "loss": 8.455298322725294e-06,
+    "elapsed_gpu_wall_seconds": 245.24527306699997,
+    "optimizer": "adam"
+  },
+  {
+    "step": 11900,
+    "loss": 7.967765973814117e-07,
+    "elapsed_gpu_wall_seconds": 247.30988864899996,
+    "optimizer": "adam"
+  },
+  {
+    "step": 12000,
+    "loss": 4.6381672075647485e-07,
+    "elapsed_gpu_wall_seconds": 249.49217094400024,
+    "optimizer": "adam"
+  },
+  {
+    "step": 12100,
+    "loss": 4.4314498960350063e-07,
+    "elapsed_gpu_wall_seconds": 251.5242502839999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 12200,
+    "loss": 7.98485714218243e-07,
+    "elapsed_gpu_wall_seconds": 253.56991086099993,
+    "optimizer": "adam"
+  },
+  {
+    "step": 12300,
+    "loss": 3.747680933902704e-06,
+    "elapsed_gpu_wall_seconds": 255.6060653930001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 12400,
+    "loss": 1.741808132179267e-05,
+    "elapsed_gpu_wall_seconds": 257.7280575440002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 12500,
+    "loss": 1.917379335930816e-06,
+    "elapsed_gpu_wall_seconds": 259.85968063999985,
+    "optimizer": "adam"
+  },
+  {
+    "step": 12600,
+    "loss": 4.337170371420968e-07,
+    "elapsed_gpu_wall_seconds": 261.88475059200005,
+    "optimizer": "adam"
+  },
+  {
+    "step": 12700,
+    "loss": 9.953429485284695e-07,
+    "elapsed_gpu_wall_seconds": 263.9071882139999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 12800,
+    "loss": 8.967962305575316e-07,
+    "elapsed_gpu_wall_seconds": 265.87572995799997,
+    "optimizer": "adam"
+  },
+  {
+    "step": 12900,
+    "loss": 5.870853934284201e-07,
+    "elapsed_gpu_wall_seconds": 268.0790922059998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 13000,
+    "loss": 4.031023458864129e-06,
+    "elapsed_gpu_wall_seconds": 270.1001862139999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 13100,
+    "loss": 3.705509551037704e-07,
+    "elapsed_gpu_wall_seconds": 272.1027547860001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 13200,
+    "loss": 3.0001471733866724e-06,
+    "elapsed_gpu_wall_seconds": 274.07880090899994,
+    "optimizer": "adam"
+  },
+  {
+    "step": 13300,
+    "loss": 2.96566914946322e-07,
+    "elapsed_gpu_wall_seconds": 276.07581675000006,
+    "optimizer": "adam"
+  },
+  {
+    "step": 13400,
+    "loss": 4.3368765656935006e-07,
+    "elapsed_gpu_wall_seconds": 278.2448401099998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 13500,
+    "loss": 1.4842198339916568e-06,
+    "elapsed_gpu_wall_seconds": 280.50768450500004,
+    "optimizer": "adam"
+  },
+  {
+    "step": 13600,
+    "loss": 6.12234091400583e-07,
+    "elapsed_gpu_wall_seconds": 282.46837106299995,
+    "optimizer": "adam"
+  },
+  {
+    "step": 13700,
+    "loss": 3.8245255012027454e-06,
+    "elapsed_gpu_wall_seconds": 284.4350906430002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 13800,
+    "loss": 1.064701340745289e-06,
+    "elapsed_gpu_wall_seconds": 286.4697569020002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 13900,
+    "loss": 6.599148788012e-06,
+    "elapsed_gpu_wall_seconds": 288.52494724600024,
+    "optimizer": "adam"
+  },
+  {
+    "step": 14000,
+    "loss": 1.4935523413791783e-06,
+    "elapsed_gpu_wall_seconds": 290.5442601100001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 14100,
+    "loss": 5.474456586605625e-07,
+    "elapsed_gpu_wall_seconds": 292.6133890110002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 14200,
+    "loss": 4.59240650449399e-07,
+    "elapsed_gpu_wall_seconds": 294.6339697300002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 14300,
+    "loss": 4.2233411886731394e-07,
+    "elapsed_gpu_wall_seconds": 296.6816328460002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 14400,
+    "loss": 9.563462842006333e-07,
+    "elapsed_gpu_wall_seconds": 298.7700567730001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 14500,
+    "loss": 1.3681615168821942e-06,
+    "elapsed_gpu_wall_seconds": 300.7572801839999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 14600,
+    "loss": 8.772747943741553e-06,
+    "elapsed_gpu_wall_seconds": 302.78956359000017,
+    "optimizer": "adam"
+  },
+  {
+    "step": 14700,
+    "loss": 2.594049999534099e-06,
+    "elapsed_gpu_wall_seconds": 304.9215336750001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 14800,
+    "loss": 2.3991507967268674e-06,
+    "elapsed_gpu_wall_seconds": 307.0162374509998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 14900,
+    "loss": 3.271678229913333e-07,
+    "elapsed_gpu_wall_seconds": 309.23892684099997,
+    "optimizer": "adam"
+  },
+  {
+    "step": 15000,
+    "loss": 2.1127005008603265e-06,
+    "elapsed_gpu_wall_seconds": 311.4056780829999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 15100,
+    "loss": 6.542455284891566e-07,
+    "elapsed_gpu_wall_seconds": 313.40867836300026,
+    "optimizer": "adam"
+  },
+  {
+    "step": 15200,
+    "loss": 1.5240801189343576e-05,
+    "elapsed_gpu_wall_seconds": 315.4492130360002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 15300,
+    "loss": 6.344771732593642e-07,
+    "elapsed_gpu_wall_seconds": 317.4543388740001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 15400,
+    "loss": 6.158149472805189e-07,
+    "elapsed_gpu_wall_seconds": 319.972668395,
+    "optimizer": "adam"
+  },
+  {
+    "step": 15500,
+    "loss": 1.8030149267334995e-06,
+    "elapsed_gpu_wall_seconds": 321.97571518200016,
+    "optimizer": "adam"
+  },
+  {
+    "step": 15600,
+    "loss": 1.3015005197733729e-06,
+    "elapsed_gpu_wall_seconds": 324.024319546,
+    "optimizer": "adam"
+  },
+  {
+    "step": 15700,
+    "loss": 1.380475282023219e-06,
+    "elapsed_gpu_wall_seconds": 326.10241945500024,
+    "optimizer": "adam"
+  },
+  {
+    "step": 15800,
+    "loss": 5.550029188937771e-07,
+    "elapsed_gpu_wall_seconds": 328.41625048699984,
+    "optimizer": "adam"
+  },
+  {
+    "step": 15900,
+    "loss": 7.644769546269017e-06,
+    "elapsed_gpu_wall_seconds": 330.42726578999986,
+    "optimizer": "adam"
+  },
+  {
+    "step": 16000,
+    "loss": 1.2023307996583684e-06,
+    "elapsed_gpu_wall_seconds": 332.4502431190001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 16100,
+    "loss": 4.641916036623753e-07,
+    "elapsed_gpu_wall_seconds": 334.5171721869999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 16200,
+    "loss": 1.941194475893797e-06,
+    "elapsed_gpu_wall_seconds": 336.61702163899986,
+    "optimizer": "adam"
+  },
+  {
+    "step": 16300,
+    "loss": 8.664810199912836e-06,
+    "elapsed_gpu_wall_seconds": 338.77828454999985,
+    "optimizer": "adam"
+  },
+  {
+    "step": 16400,
+    "loss": 4.418999387239985e-07,
+    "elapsed_gpu_wall_seconds": 341.03432945300005,
+    "optimizer": "adam"
+  },
+  {
+    "step": 16500,
+    "loss": 4.070375101462539e-07,
+    "elapsed_gpu_wall_seconds": 343.04542412000023,
+    "optimizer": "adam"
+  },
+  {
+    "step": 16600,
+    "loss": 1.000383137562362e-06,
+    "elapsed_gpu_wall_seconds": 345.028515535,
+    "optimizer": "adam"
+  },
+  {
+    "step": 16700,
+    "loss": 6.488998757836277e-07,
+    "elapsed_gpu_wall_seconds": 347.06707028100004,
+    "optimizer": "adam"
+  },
+  {
+    "step": 16800,
+    "loss": 3.676022956581947e-06,
+    "elapsed_gpu_wall_seconds": 349.1557048020002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 16900,
+    "loss": 1.6244444902255834e-06,
+    "elapsed_gpu_wall_seconds": 351.1776585690002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 17000,
+    "loss": 1.3284127302200796e-05,
+    "elapsed_gpu_wall_seconds": 353.18034213800024,
+    "optimizer": "adam"
+  },
+  {
+    "step": 17100,
+    "loss": 5.601569961825428e-07,
+    "elapsed_gpu_wall_seconds": 355.18703117500013,
+    "optimizer": "adam"
+  },
+  {
+    "step": 17200,
+    "loss": 5.444889981037109e-06,
+    "elapsed_gpu_wall_seconds": 357.21521039799995,
+    "optimizer": "adam"
+  },
+  {
+    "step": 17300,
+    "loss": 2.9747623075883174e-06,
+    "elapsed_gpu_wall_seconds": 359.27115773799983,
+    "optimizer": "adam"
+  },
+  {
+    "step": 17400,
+    "loss": 9.423166196257187e-06,
+    "elapsed_gpu_wall_seconds": 361.3109044340001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 17500,
+    "loss": 1.2929978759609468e-06,
+    "elapsed_gpu_wall_seconds": 363.3591147479999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 17600,
+    "loss": 2.303830639116105e-07,
+    "elapsed_gpu_wall_seconds": 365.4305353520001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 17700,
+    "loss": 2.3030801932282218e-05,
+    "elapsed_gpu_wall_seconds": 367.74313712000026,
+    "optimizer": "adam"
+  },
+  {
+    "step": 17800,
+    "loss": 4.222086801396554e-07,
+    "elapsed_gpu_wall_seconds": 369.7592735400001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 17900,
+    "loss": 2.1800525441816897e-06,
+    "elapsed_gpu_wall_seconds": 371.7721485620002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 18000,
+    "loss": 3.285674326777263e-06,
+    "elapsed_gpu_wall_seconds": 373.82185225299986,
+    "optimizer": "adam"
+  },
+  {
+    "step": 18100,
+    "loss": 8.271313164386216e-07,
+    "elapsed_gpu_wall_seconds": 376.14966831100014,
+    "optimizer": "adam"
+  },
+  {
+    "step": 18200,
+    "loss": 1.2139080554446201e-06,
+    "elapsed_gpu_wall_seconds": 378.395304504,
+    "optimizer": "adam"
+  },
+  {
+    "step": 18300,
+    "loss": 9.416852659820073e-07,
+    "elapsed_gpu_wall_seconds": 380.4778009570002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 18400,
+    "loss": 2.221692183324188e-07,
+    "elapsed_gpu_wall_seconds": 382.58036247099994,
+    "optimizer": "adam"
+  },
+  {
+    "step": 18500,
+    "loss": 2.951853299327613e-07,
+    "elapsed_gpu_wall_seconds": 384.568129172,
+    "optimizer": "adam"
+  },
+  {
+    "step": 18600,
+    "loss": 5.409047168921569e-07,
+    "elapsed_gpu_wall_seconds": 386.748947757,
+    "optimizer": "adam"
+  },
+  {
+    "step": 18700,
+    "loss": 3.636106021126925e-07,
+    "elapsed_gpu_wall_seconds": 388.8391777919999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 18800,
+    "loss": 1.8781451682835365e-06,
+    "elapsed_gpu_wall_seconds": 390.81181146099993,
+    "optimizer": "adam"
+  },
+  {
+    "step": 18900,
+    "loss": 1.0134582794259342e-06,
+    "elapsed_gpu_wall_seconds": 392.8660064379999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 19000,
+    "loss": 7.980882577061757e-07,
+    "elapsed_gpu_wall_seconds": 394.99295611699995,
+    "optimizer": "adam"
+  },
+  {
+    "step": 19100,
+    "loss": 7.18954954023402e-07,
+    "elapsed_gpu_wall_seconds": 397.00973972199995,
+    "optimizer": "adam"
+  },
+  {
+    "step": 19200,
+    "loss": 3.955407738129017e-06,
+    "elapsed_gpu_wall_seconds": 399.24614597799996,
+    "optimizer": "adam"
+  },
+  {
+    "step": 19300,
+    "loss": 1.1160452273546534e-06,
+    "elapsed_gpu_wall_seconds": 401.3281200650001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 19400,
+    "loss": 2.6358688605119126e-06,
+    "elapsed_gpu_wall_seconds": 403.3103833970001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 19500,
+    "loss": 2.3898653139752628e-06,
+    "elapsed_gpu_wall_seconds": 405.3483693169999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 19600,
+    "loss": 5.168185165301703e-07,
+    "elapsed_gpu_wall_seconds": 407.3398438030001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 19700,
+    "loss": 4.6938170299180667e-07,
+    "elapsed_gpu_wall_seconds": 409.3800133299999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 19800,
+    "loss": 6.001060073716317e-07,
+    "elapsed_gpu_wall_seconds": 411.392719187,
+    "optimizer": "adam"
+  },
+  {
+    "step": 19900,
+    "loss": 1.5327668353472914e-06,
+    "elapsed_gpu_wall_seconds": 413.41859700500004,
+    "optimizer": "adam"
+  },
+  {
+    "step": 20000,
+    "loss": 3.2534189976252033e-06,
+    "elapsed_gpu_wall_seconds": 415.4241946220002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 20100,
+    "loss": 2.2495899930496654e-06,
+    "elapsed_gpu_wall_seconds": 417.46750635600006,
+    "optimizer": "adam"
+  },
+  {
+    "step": 20200,
+    "loss": 1.7539980427994053e-06,
+    "elapsed_gpu_wall_seconds": 419.53637352600003,
+    "optimizer": "adam"
+  },
+  {
+    "step": 20300,
+    "loss": 2.0016582198056254e-07,
+    "elapsed_gpu_wall_seconds": 421.557724347,
+    "optimizer": "adam"
+  },
+  {
+    "step": 20400,
+    "loss": 1.0001513852940567e-06,
+    "elapsed_gpu_wall_seconds": 423.53883950600016,
+    "optimizer": "adam"
+  },
+  {
+    "step": 20500,
+    "loss": 3.7384352328874732e-06,
+    "elapsed_gpu_wall_seconds": 425.56751725900017,
+    "optimizer": "adam"
+  },
+  {
+    "step": 20600,
+    "loss": 8.896630776239573e-06,
+    "elapsed_gpu_wall_seconds": 427.6743906180002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 20700,
+    "loss": 4.413880923339313e-07,
+    "elapsed_gpu_wall_seconds": 429.64485640399994,
+    "optimizer": "adam"
+  },
+  {
+    "step": 20800,
+    "loss": 3.2261754082587415e-07,
+    "elapsed_gpu_wall_seconds": 431.72695284999986,
+    "optimizer": "adam"
+  },
+  {
+    "step": 20900,
+    "loss": 1.5334848479118387e-07,
+    "elapsed_gpu_wall_seconds": 433.71537006799986,
+    "optimizer": "adam"
+  },
+  {
+    "step": 21000,
+    "loss": 9.387423323757288e-07,
+    "elapsed_gpu_wall_seconds": 435.70035157300003,
+    "optimizer": "adam"
+  },
+  {
+    "step": 21100,
+    "loss": 1.2132123572421383e-06,
+    "elapsed_gpu_wall_seconds": 437.7617623210001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 21200,
+    "loss": 4.191932822044481e-07,
+    "elapsed_gpu_wall_seconds": 439.734618488,
+    "optimizer": "adam"
+  },
+  {
+    "step": 21300,
+    "loss": 6.490331116069743e-07,
+    "elapsed_gpu_wall_seconds": 441.741181781,
+    "optimizer": "adam"
+  },
+  {
+    "step": 21400,
+    "loss": 1.3610356709292438e-06,
+    "elapsed_gpu_wall_seconds": 443.6989715349998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 21500,
+    "loss": 3.5787742882384104e-06,
+    "elapsed_gpu_wall_seconds": 445.7598988070001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 21600,
+    "loss": 6.076925552129999e-07,
+    "elapsed_gpu_wall_seconds": 447.9842131339999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 21700,
+    "loss": 5.001792258829334e-07,
+    "elapsed_gpu_wall_seconds": 450.0121807799999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 21800,
+    "loss": 1.8342941444654348e-06,
+    "elapsed_gpu_wall_seconds": 451.9967256020002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 21900,
+    "loss": 3.4714109626656964e-06,
+    "elapsed_gpu_wall_seconds": 454.34773455100026,
+    "optimizer": "adam"
+  },
+  {
+    "step": 22000,
+    "loss": 9.096336260423499e-07,
+    "elapsed_gpu_wall_seconds": 456.4690073620002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 22100,
+    "loss": 4.3140991527217115e-07,
+    "elapsed_gpu_wall_seconds": 458.54950470200015,
+    "optimizer": "adam"
+  },
+  {
+    "step": 22200,
+    "loss": 2.3464523253758836e-06,
+    "elapsed_gpu_wall_seconds": 460.5483118300001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 22300,
+    "loss": 4.899720319268536e-07,
+    "elapsed_gpu_wall_seconds": 462.55121479900004,
+    "optimizer": "adam"
+  },
+  {
+    "step": 22400,
+    "loss": 9.099512046337085e-07,
+    "elapsed_gpu_wall_seconds": 464.631807559,
+    "optimizer": "adam"
+  },
+  {
+    "step": 22500,
+    "loss": 1.0725197621145674e-06,
+    "elapsed_gpu_wall_seconds": 466.8417945560002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 22600,
+    "loss": 5.169103297850948e-06,
+    "elapsed_gpu_wall_seconds": 468.98497254100016,
+    "optimizer": "adam"
+  },
+  {
+    "step": 22700,
+    "loss": 1.681246128400652e-06,
+    "elapsed_gpu_wall_seconds": 471.13657601599994,
+    "optimizer": "adam"
+  },
+  {
+    "step": 22800,
+    "loss": 2.30481457124775e-07,
+    "elapsed_gpu_wall_seconds": 473.1406163869999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 22900,
+    "loss": 2.1459092286644115e-07,
+    "elapsed_gpu_wall_seconds": 475.1093604790001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 23000,
+    "loss": 1.402585907794069e-06,
+    "elapsed_gpu_wall_seconds": 477.11816874600004,
+    "optimizer": "adam"
+  },
+  {
+    "step": 23100,
+    "loss": 8.010961949378333e-07,
+    "elapsed_gpu_wall_seconds": 479.2197962020002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 23200,
+    "loss": 1.329115786819359e-06,
+    "elapsed_gpu_wall_seconds": 481.2290401399998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 23300,
+    "loss": 3.3766290148914103e-06,
+    "elapsed_gpu_wall_seconds": 483.2049692080002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 23400,
+    "loss": 2.371246209309943e-06,
+    "elapsed_gpu_wall_seconds": 485.22019429299985,
+    "optimizer": "adam"
+  },
+  {
+    "step": 23500,
+    "loss": 8.697282203310973e-07,
+    "elapsed_gpu_wall_seconds": 487.4069974790002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 23600,
+    "loss": 1.317504096316478e-06,
+    "elapsed_gpu_wall_seconds": 489.46482144200013,
+    "optimizer": "adam"
+  },
+  {
+    "step": 23700,
+    "loss": 1.8306932382528494e-06,
+    "elapsed_gpu_wall_seconds": 491.64060041900007,
+    "optimizer": "adam"
+  },
+  {
+    "step": 23800,
+    "loss": 8.753530612026906e-07,
+    "elapsed_gpu_wall_seconds": 493.7144809079998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 23900,
+    "loss": 5.343029414788812e-06,
+    "elapsed_gpu_wall_seconds": 495.68997786600016,
+    "optimizer": "adam"
+  },
+  {
+    "step": 24000,
+    "loss": 5.437372470791611e-07,
+    "elapsed_gpu_wall_seconds": 497.76182506400005,
+    "optimizer": "adam"
+  },
+  {
+    "step": 24100,
+    "loss": 2.838258053092784e-06,
+    "elapsed_gpu_wall_seconds": 500.011805033,
+    "optimizer": "adam"
+  },
+  {
+    "step": 24200,
+    "loss": 3.4971429849708683e-06,
+    "elapsed_gpu_wall_seconds": 501.977836839,
+    "optimizer": "adam"
+  },
+  {
+    "step": 24300,
+    "loss": 7.339673568893753e-07,
+    "elapsed_gpu_wall_seconds": 503.9488260820001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 24400,
+    "loss": 7.751086628845011e-06,
+    "elapsed_gpu_wall_seconds": 506.10095508200016,
+    "optimizer": "adam"
+  },
+  {
+    "step": 24500,
+    "loss": 3.542594495990989e-07,
+    "elapsed_gpu_wall_seconds": 508.425974816,
+    "optimizer": "adam"
+  },
+  {
+    "step": 24600,
+    "loss": 1.796253064685096e-07,
+    "elapsed_gpu_wall_seconds": 510.4088221600002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 24700,
+    "loss": 2.7462984436862e-07,
+    "elapsed_gpu_wall_seconds": 512.369619196,
+    "optimizer": "adam"
+  },
+  {
+    "step": 24800,
+    "loss": 2.045318327921456e-06,
+    "elapsed_gpu_wall_seconds": 514.319986062,
+    "optimizer": "adam"
+  },
+  {
+    "step": 24900,
+    "loss": 1.0595131903179464e-05,
+    "elapsed_gpu_wall_seconds": 516.5630664970001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 25000,
+    "loss": 1.2619394398941095e-06,
+    "elapsed_gpu_wall_seconds": 518.6143280849999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 25100,
+    "loss": 4.7559568585702763e-07,
+    "elapsed_gpu_wall_seconds": 520.5632811560001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 25200,
+    "loss": 7.273965552862973e-07,
+    "elapsed_gpu_wall_seconds": 522.6071753869999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 25300,
+    "loss": 3.7156004486002003e-06,
+    "elapsed_gpu_wall_seconds": 524.600531279,
+    "optimizer": "adam"
+  },
+  {
+    "step": 25400,
+    "loss": 7.0872676546711615e-06,
+    "elapsed_gpu_wall_seconds": 526.9320861919998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 25500,
+    "loss": 3.185612621704027e-07,
+    "elapsed_gpu_wall_seconds": 529.0535214919998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 25600,
+    "loss": 7.68497642732577e-07,
+    "elapsed_gpu_wall_seconds": 531.0698612630001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 25700,
+    "loss": 6.015090644194482e-07,
+    "elapsed_gpu_wall_seconds": 533.091808505,
+    "optimizer": "adam"
+  },
+  {
+    "step": 25800,
+    "loss": 2.087024829162343e-06,
+    "elapsed_gpu_wall_seconds": 535.0548463130001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 25900,
+    "loss": 6.786680394043681e-07,
+    "elapsed_gpu_wall_seconds": 537.046830771,
+    "optimizer": "adam"
+  },
+  {
+    "step": 26000,
+    "loss": 1.526804833473608e-05,
+    "elapsed_gpu_wall_seconds": 539.118857526,
+    "optimizer": "adam"
+  },
+  {
+    "step": 26100,
+    "loss": 1.0587296270449e-06,
+    "elapsed_gpu_wall_seconds": 541.2861633310001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 26200,
+    "loss": 3.5713063337689884e-07,
+    "elapsed_gpu_wall_seconds": 543.2595915140002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 26300,
+    "loss": 2.3357016952008413e-07,
+    "elapsed_gpu_wall_seconds": 545.3025489889999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 26400,
+    "loss": 2.422451067709788e-07,
+    "elapsed_gpu_wall_seconds": 547.396803759,
+    "optimizer": "adam"
+  },
+  {
+    "step": 26500,
+    "loss": 3.6476073951815713e-07,
+    "elapsed_gpu_wall_seconds": 549.4332680680002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 26600,
+    "loss": 5.403386936112338e-06,
+    "elapsed_gpu_wall_seconds": 551.3941595469998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 26700,
+    "loss": 8.287269789219731e-06,
+    "elapsed_gpu_wall_seconds": 553.5011472660001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 26800,
+    "loss": 3.562556945060754e-07,
+    "elapsed_gpu_wall_seconds": 555.8787145889999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 26900,
+    "loss": 1.5116091799598854e-07,
+    "elapsed_gpu_wall_seconds": 557.9620472519998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 27000,
+    "loss": 2.3602445948510524e-07,
+    "elapsed_gpu_wall_seconds": 560.5301494940002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 27100,
+    "loss": 1.129729558316553e-06,
+    "elapsed_gpu_wall_seconds": 562.9438487670002,
+    "optimizer": "adam"
+  },
+  {
+    "step": 27200,
+    "loss": 1.0757368917956043e-05,
+    "elapsed_gpu_wall_seconds": 564.898718876,
+    "optimizer": "adam"
+  },
+  {
+    "step": 27300,
+    "loss": 7.187867980124648e-07,
+    "elapsed_gpu_wall_seconds": 567.0503240400001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 27400,
+    "loss": 8.28006941139089e-07,
+    "elapsed_gpu_wall_seconds": 569.1175277049999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 27500,
+    "loss": 2.956121460820825e-07,
+    "elapsed_gpu_wall_seconds": 571.13180158,
+    "optimizer": "adam"
+  },
+  {
+    "step": 27600,
+    "loss": 2.227813955572569e-07,
+    "elapsed_gpu_wall_seconds": 573.1463828389999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 27700,
+    "loss": 5.481441008492519e-07,
+    "elapsed_gpu_wall_seconds": 575.198199098,
+    "optimizer": "adam"
+  },
+  {
+    "step": 27800,
+    "loss": 8.14469160401823e-07,
+    "elapsed_gpu_wall_seconds": 577.1977069490001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 27900,
+    "loss": 8.132438167368732e-07,
+    "elapsed_gpu_wall_seconds": 579.2541300579999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 28000,
+    "loss": 2.1069855258127304e-05,
+    "elapsed_gpu_wall_seconds": 581.32604638,
+    "optimizer": "adam"
+  },
+  {
+    "step": 28100,
+    "loss": 4.041823330211184e-07,
+    "elapsed_gpu_wall_seconds": 583.3086517429999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 28200,
+    "loss": 2.65757584120541e-07,
+    "elapsed_gpu_wall_seconds": 585.324123787,
+    "optimizer": "adam"
+  },
+  {
+    "step": 28300,
+    "loss": 2.510271549021778e-07,
+    "elapsed_gpu_wall_seconds": 587.3257446380001,
+    "optimizer": "adam"
+  },
+  {
+    "step": 28400,
+    "loss": 1.714404409472805e-06,
+    "elapsed_gpu_wall_seconds": 589.4352207499999,
+    "optimizer": "adam"
+  },
+  {
+    "step": 28500,
+    "loss": 5.006099918421124e-07,
+    "elapsed_gpu_wall_seconds": 591.983535134,
+    "optimizer": "adam"
+  },
+  {
+    "step": 28600,
+    "loss": 4.6142595380834615e-07,
+    "elapsed_gpu_wall_seconds": 594.024381249,
+    "optimizer": "adam"
+  },
+  {
+    "step": 28700,
+    "loss": 7.052315669338503e-07,
+    "elapsed_gpu_wall_seconds": 596.0335827699998,
+    "optimizer": "adam"
+  },
+  {
+    "step": 28800,
+    "loss": 1.8091474271595344e-06,
+    "elapsed_gpu_wall_seconds": 598.1318826509998,
+    "optimizer": "adam"
+  }
+]

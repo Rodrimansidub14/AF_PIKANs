@@ -1,0 +1,3 @@
+0fe48b38c83d273a76feba8dea75c941a1f4d6710445ce3e06dba50ad83a1cc3  pikan_campaign.py
+489529d1ab3fbabe301187f69d42195be9cf70c53c14a4792cf420e7ab43f990  notebook.ipynb
+ae4ab3bd9efced19b83ff999c1b7438728f9931f5f6f6d9c2e985ca92716d32c  kernel-metadata.json

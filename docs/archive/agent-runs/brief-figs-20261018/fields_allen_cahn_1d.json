@@ -1,0 +1,12 @@
+{
+ "problem": "allen_cahn_1d",
+ "campaign": "ac-rerun-20260930",
+ "stage": "lbfgs_final",
+ "seed": "601",
+ "l2": {
+  "rbf_u": 0.001813386792435978,
+  "rbf_ckpt": "experiments/allen-cahn/EXP-0008-baseline-v2-competitive/checkpoints/ac-rerun-20260930/ac/rbf16-seed-601/checkpoint-lbfgs-final.pt",
+  "mlp_u": 0.007320318186453685,
+  "mlp_ckpt": "experiments/allen-cahn/EXP-0008-baseline-v2-competitive/checkpoints/ac-rerun-20260930/ac/mlp-seed-601/checkpoint-lbfgs-final.pt"
+ }
+}

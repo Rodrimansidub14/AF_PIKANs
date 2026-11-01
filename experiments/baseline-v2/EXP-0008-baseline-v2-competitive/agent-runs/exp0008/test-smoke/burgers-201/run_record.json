@@ -1,0 +1,36 @@
+{
+ "schema": "af.registry.run/1",
+ "experiment_id": "EXP-0008",
+ "stage": "fast_track_FT",
+ "evidence_kind": "research",
+ "problem_id": "burgers",
+ "model_id": "rbf_fixed",
+ "seed": 201,
+ "recipe_id": "AF-R1+LBFGS(continuation)",
+ "device": "cpu",
+ "platform": "Windows-11-10.0.26200-SP0",
+ "torch": "2.14.0+cpu",
+ "pool_sha256": "38451000d7f238d4ce1c4e18ffde9a5676bad912936b4abcf88164178ea80062",
+ "source_ckpt_sha256": "bf0c69537382553d93a1ac1c310ebf467d6e259cb6e2f240e4f1abefaf2eb67a",
+ "phases": [
+  {
+   "name": "lbfgs",
+   "outer_steps": 1,
+   "seconds": 64.36,
+   "stop": "censored_time",
+   "func_evals": 23
+  }
+ ],
+ "final_loss": 5.423381981782633e-05,
+ "status": "censored_time",
+ "technical_pass": null,
+ "scientific_accepted": false,
+ "scores": {
+  "V": null,
+  "E": null,
+  "external": null,
+  "null_reasons": {
+   "all": "scoring_job_pending"
+  }
+ }
+}

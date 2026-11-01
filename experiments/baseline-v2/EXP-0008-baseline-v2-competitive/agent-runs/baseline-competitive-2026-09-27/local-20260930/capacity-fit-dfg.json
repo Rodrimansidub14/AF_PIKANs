@@ -1,0 +1,72 @@
+[
+  {
+    "name": "current_2-16-16-3_b11",
+    "width": 16,
+    "bases": 11,
+    "geom_feature": false,
+    "params": 4032,
+    "steps": 4000,
+    "heldout_u_relL2": 0.011025477200746536,
+    "heldout_v_relL2": 0.049299199134111404,
+    "heldout_p_relL2_gauge_mean": 0.010484088212251663,
+    "train_u_relL2": 0.011184386909008026,
+    "train_p_relL2_gauge_mean": 0.010409104637801647,
+    "seconds": 748.0447513999998
+  },
+  {
+    "name": "w16_b11_geom",
+    "width": 16,
+    "bases": 11,
+    "geom_feature": true,
+    "params": 4224,
+    "steps": 4000,
+    "heldout_u_relL2": 0.006819266825914383,
+    "heldout_v_relL2": 0.024288419634103775,
+    "heldout_p_relL2_gauge_mean": 0.006029333919286728,
+    "train_u_relL2": 0.006824013311415911,
+    "train_p_relL2_gauge_mean": 0.006035213824361563,
+    "seconds": 727.7555560000001
+  },
+  {
+    "name": "w32_b11",
+    "width": 32,
+    "bases": 11,
+    "geom_feature": false,
+    "params": 14208,
+    "steps": 4000,
+    "heldout_u_relL2": 0.00942162424325943,
+    "heldout_v_relL2": 0.0367138609290123,
+    "heldout_p_relL2_gauge_mean": 0.008497443050146103,
+    "train_u_relL2": 0.009400704875588417,
+    "train_p_relL2_gauge_mean": 0.008214278146624565,
+    "seconds": 399.9467439
+  },
+  {
+    "name": "w32_b21_geom",
+    "width": 32,
+    "bases": 21,
+    "geom_feature": true,
+    "params": 26752,
+    "steps": 4000,
+    "heldout_u_relL2": 0.0023362578358501196,
+    "heldout_v_relL2": 0.007818087935447693,
+    "heldout_p_relL2_gauge_mean": 0.0022787596099078655,
+    "train_u_relL2": 0.0023400525096803904,
+    "train_p_relL2_gauge_mean": 0.0022037590388208628,
+    "seconds": 649.6571246999993
+  },
+  {
+    "name": "w64_b21_geom",
+    "width": 64,
+    "bases": 21,
+    "geom_feature": true,
+    "params": 98560,
+    "steps": 4000,
+    "heldout_u_relL2": 0.001838141935877502,
+    "heldout_v_relL2": 0.006431377958506346,
+    "heldout_p_relL2_gauge_mean": 0.001894016982987523,
+    "train_u_relL2": 0.0018311107996851206,
+    "train_p_relL2_gauge_mean": 0.0018450109055265784,
+    "seconds": 1556.6246029999984
+  }
+]

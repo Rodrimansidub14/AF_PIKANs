@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "status": "prepared_not_pushed",
+  "kernel_slug": "rodrimandub/af-pikans-heat-deepxde-alpha-0-1-seeds-901-905-20260929",
+  "hardware": "private Kaggle T4x2",
+  "session_cap_seconds": 1000,
+  "in_code_watchdog_seconds": 950,
+  "seeds": [901, 902, 903, 904, 905],
+  "contract": {
+    "deepxde": "1.12.2",
+    "alpha": 0.1,
+    "adam_iterations": 20000,
+    "lbfgs": "L-BFGS-B",
+    "dtype": "float32 (DeepXDE reference default)",
+    "confirmation_grid": [512, 256]
+  },
+  "optional": true,
+  "quota_read": false,
+  "source_sha256": "25dfe6efd1cbc3fe72221a13b1a37e22820b8f7ce944ed7c7b46693c7dfeb1d1",
+  "metadata_sha256": "0b62ca57629ac21fc9774caa368fc48d89a12c31907acb09d45c24c8fd5e3feb"
+}

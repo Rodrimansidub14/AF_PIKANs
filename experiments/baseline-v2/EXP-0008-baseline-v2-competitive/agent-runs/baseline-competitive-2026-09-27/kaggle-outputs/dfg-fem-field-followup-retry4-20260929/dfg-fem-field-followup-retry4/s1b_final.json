@@ -1,0 +1,711 @@
+{
+  "checkpoint_field_scores": {
+    "fixed_field_scoring_contract": {
+      "cohorts": {
+        "current_rbf": [
+          301,
+          302,
+          303,
+          304,
+          305
+        ],
+        "refinement_rbf_and_tanh_mlp": [
+          501,
+          502,
+          503,
+          504,
+          505
+        ]
+      },
+      "grid": {
+        "mask": "exclude points with (x-0.2)^2+(y-0.2)^2 <= 0.05^2",
+        "ordering": "numpy.meshgrid(indexing='xy'); row-major flattened",
+        "x": {
+          "count": 221,
+          "endpoint": true,
+          "start": 0.0,
+          "stop": 2.2
+        },
+        "y": {
+          "count": 42,
+          "endpoint": true,
+          "start": 0.0,
+          "stop": 0.41
+        }
+      },
+      "metrics": [
+        "u_relative_l2",
+        "v_relative_l2",
+        "p_relative_l2_gauge_fixed_outlet"
+      ],
+      "pressure_gauge": {
+        "method": "subtract pressure at fixed outlet point from FEM and each checkpoint",
+        "outlet_anchor_xy": [
+          2.2,
+          0.2
+        ]
+      },
+      "reference_level": "DFG-L2 (third of three requested mesh levels)",
+      "retraining": false
+    },
+    "metrics": {
+      "current_301_305": {
+        "rbf": {
+          "p_relative_l2_gauge_fixed_outlet": {
+            "mean": null,
+            "n": 0,
+            "sample_sd": null
+          },
+          "u_relative_l2": {
+            "mean": null,
+            "n": 0,
+            "sample_sd": null
+          },
+          "v_relative_l2": {
+            "mean": null,
+            "n": 0,
+            "sample_sd": null
+          }
+        }
+      },
+      "older_501_505": {
+        "mlp": {
+          "p_relative_l2_gauge_fixed_outlet": {
+            "mean": null,
+            "n": 0,
+            "sample_sd": null
+          },
+          "u_relative_l2": {
+            "mean": null,
+            "n": 0,
+            "sample_sd": null
+          },
+          "v_relative_l2": {
+            "mean": null,
+            "n": 0,
+            "sample_sd": null
+          }
+        },
+        "rbf": {
+          "p_relative_l2_gauge_fixed_outlet": {
+            "mean": null,
+            "n": 0,
+            "sample_sd": null
+          },
+          "u_relative_l2": {
+            "mean": null,
+            "n": 0,
+            "sample_sd": null
+          },
+          "v_relative_l2": {
+            "mean": null,
+            "n": 0,
+            "sample_sd": null
+          }
+        }
+      }
+    },
+    "paired_seed_differences_RBF_minus_MLP_501_505": [],
+    "per_seed": [
+      {
+        "arm": "rbf",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-301/checkpoint-lbfgs.pt",
+        "error": "RuntimeError: current DFG model source is missing",
+        "seed": 301,
+        "status": "scoring_error"
+      },
+      {
+        "arm": "rbf",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-302/checkpoint-lbfgs.pt",
+        "error": "RuntimeError: current DFG model source is missing",
+        "seed": 302,
+        "status": "scoring_error"
+      },
+      {
+        "arm": "rbf",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-303/checkpoint-lbfgs.pt",
+        "error": "RuntimeError: current DFG model source is missing",
+        "seed": 303,
+        "status": "scoring_error"
+      },
+      {
+        "arm": "rbf",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-304/checkpoint-lbfgs.pt",
+        "error": "RuntimeError: current DFG model source is missing",
+        "seed": 304,
+        "status": "scoring_error"
+      },
+      {
+        "arm": "rbf",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-305/checkpoint-lbfgs.pt",
+        "error": "RuntimeError: current DFG model source is missing",
+        "seed": 305,
+        "status": "scoring_error"
+      },
+      {
+        "arm": "rbf",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-501/checkpoint-lbfgs.pt",
+        "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+        "seed": 501,
+        "status": "scoring_error"
+      },
+      {
+        "arm": "mlp",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-501/checkpoint-lbfgs.pt",
+        "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+        "seed": 501,
+        "status": "scoring_error"
+      },
+      {
+        "arm": "rbf",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-502/checkpoint-lbfgs.pt",
+        "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+        "seed": 502,
+        "status": "scoring_error"
+      },
+      {
+        "arm": "mlp",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-502/checkpoint-lbfgs.pt",
+        "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+        "seed": 502,
+        "status": "scoring_error"
+      },
+      {
+        "arm": "rbf",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-503/checkpoint-lbfgs.pt",
+        "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+        "seed": 503,
+        "status": "scoring_error"
+      },
+      {
+        "arm": "mlp",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-503/checkpoint-lbfgs.pt",
+        "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+        "seed": 503,
+        "status": "scoring_error"
+      },
+      {
+        "arm": "rbf",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-504/checkpoint-lbfgs.pt",
+        "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+        "seed": 504,
+        "status": "scoring_error"
+      },
+      {
+        "arm": "mlp",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-504/checkpoint-lbfgs.pt",
+        "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+        "seed": 504,
+        "status": "scoring_error"
+      },
+      {
+        "arm": "rbf",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-505/checkpoint-lbfgs.pt",
+        "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+        "seed": 505,
+        "status": "scoring_error"
+      },
+      {
+        "arm": "mlp",
+        "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-505/checkpoint-lbfgs.pt",
+        "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+        "seed": 505,
+        "status": "scoring_error"
+      }
+    ],
+    "pressure_gauge": {
+      "method": "subtract pressure at fixed outlet point from FEM and each checkpoint",
+      "outlet_anchor_xy": [
+        2.2,
+        0.2
+      ]
+    },
+    "reference_accepted": false,
+    "reference_field_sha256": "5234f5e466de47e3c26b1f2d7fd73bc1ba1908da974a56f9ed92c80ee7d90446",
+    "scientific_accepted": false,
+    "status": "partial"
+  },
+  "fem_summary": {
+    "completed_level_count": 3,
+    "elapsed_seconds": 88.71,
+    "environment_versions": {
+      "dolfinx": "0.11.0",
+      "gmsh_binary": "4.15.2",
+      "gmsh_python": "4.15.2",
+      "petsc": "(3, 25, 5)",
+      "python": "3.12.13",
+      "ufl": "2026.1.0"
+    },
+    "evidence_ready_for_human_gate": false,
+    "levels": [
+      {
+        "Cd": 5.569952710951169,
+        "Cl": 0.008825471097944798,
+        "cell_count": 3206,
+        "delta_p_front_minus_rear": 0.11689570217047024,
+        "dofs_global": 14917,
+        "drag_force": 0.01113990542190234,
+        "featflow_reference": {
+          "Cd": 5.57953523384,
+          "Cl": 0.010618948146,
+          "delta_p": 0.11752016697
+        },
+        "geometry_nodes_local": 6608,
+        "level": "DFG-L0",
+        "lift_force": 1.76509421958896e-05,
+        "pressure_front": 0.13167404189201193,
+        "pressure_probe_policy": "direct point evaluation; boundary one-sided trace not yet independently verified",
+        "pressure_rear": 0.014778339721541696,
+        "reference_accepted": false,
+        "snes_stages": [
+          {
+            "accepted_by_solver": true,
+            "alpha": 0.0,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 9.306009530276745e-17,
+            "snes_iterations": 1,
+            "snes_reason": 2
+          },
+          {
+            "accepted_by_solver": true,
+            "alpha": 0.25,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 1.6353272115681913e-13,
+            "snes_iterations": 3,
+            "snes_reason": 2
+          },
+          {
+            "accepted_by_solver": true,
+            "alpha": 0.5,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 3.6450489800891105e-13,
+            "snes_iterations": 3,
+            "snes_reason": 2
+          },
+          {
+            "accepted_by_solver": true,
+            "alpha": 0.75,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 3.485582328185048e-13,
+            "snes_iterations": 3,
+            "snes_reason": 2
+          },
+          {
+            "accepted_by_solver": true,
+            "alpha": 1.0,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 1.9852070928341964e-13,
+            "snes_iterations": 3,
+            "snes_reason": 2
+          }
+        ],
+        "status": "DRAFT_UNVERIFIED"
+      },
+      {
+        "Cd": 5.57688449208705,
+        "Cl": 0.010636704362683548,
+        "cell_count": 12421,
+        "delta_p_front_minus_rear": 0.11736240125527134,
+        "dofs_global": 56867,
+        "drag_force": 0.011153768984174103,
+        "featflow_reference": {
+          "Cd": 5.57953523384,
+          "Cl": 0.010618948146,
+          "delta_p": 0.11752016697
+        },
+        "geometry_nodes_local": 25231,
+        "level": "DFG-L1",
+        "lift_force": 2.12734087253671e-05,
+        "pressure_front": 0.13211436097504475,
+        "pressure_probe_policy": "direct point evaluation; boundary one-sided trace not yet independently verified",
+        "pressure_rear": 0.014751959719773411,
+        "reference_accepted": false,
+        "snes_stages": [
+          {
+            "accepted_by_solver": true,
+            "alpha": 0.0,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 1.1414029512713875e-16,
+            "snes_iterations": 1,
+            "snes_reason": 2
+          },
+          {
+            "accepted_by_solver": true,
+            "alpha": 0.25,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 8.644597231616762e-14,
+            "snes_iterations": 3,
+            "snes_reason": 2
+          },
+          {
+            "accepted_by_solver": true,
+            "alpha": 0.5,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 1.9296027624157452e-13,
+            "snes_iterations": 3,
+            "snes_reason": 2
+          },
+          {
+            "accepted_by_solver": true,
+            "alpha": 0.75,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 1.8122334621247768e-13,
+            "snes_iterations": 3,
+            "snes_reason": 2
+          },
+          {
+            "accepted_by_solver": true,
+            "alpha": 1.0,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 1.0376705962725734e-13,
+            "snes_iterations": 3,
+            "snes_reason": 2
+          }
+        ],
+        "status": "DRAFT_UNVERIFIED"
+      },
+      {
+        "Cd": 5.578869597951353,
+        "Cl": 0.010689483584359196,
+        "cell_count": 49441,
+        "delta_p_front_minus_rear": 0.11751846310368072,
+        "dofs_global": 224422,
+        "drag_force": 0.011157739195902709,
+        "featflow_reference": {
+          "Cd": 5.57953523384,
+          "Cl": 0.010618948146,
+          "delta_p": 0.11752016697
+        },
+        "geometry_nodes_local": 99657,
+        "level": "DFG-L2",
+        "lift_force": 2.13789671687184e-05,
+        "pressure_front": 0.13227866836102678,
+        "pressure_probe_policy": "direct point evaluation; boundary one-sided trace not yet independently verified",
+        "pressure_rear": 0.014760205257346061,
+        "reference_accepted": false,
+        "snes_stages": [
+          {
+            "accepted_by_solver": true,
+            "alpha": 0.0,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 1.948655516318067e-16,
+            "snes_iterations": 1,
+            "snes_reason": 2
+          },
+          {
+            "accepted_by_solver": true,
+            "alpha": 0.25,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 4.3498659817855506e-14,
+            "snes_iterations": 3,
+            "snes_reason": 2
+          },
+          {
+            "accepted_by_solver": true,
+            "alpha": 0.5,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 9.68447217371865e-14,
+            "snes_iterations": 3,
+            "snes_reason": 2
+          },
+          {
+            "accepted_by_solver": true,
+            "alpha": 0.75,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 9.176265182225488e-14,
+            "snes_iterations": 3,
+            "snes_reason": 2
+          },
+          {
+            "accepted_by_solver": true,
+            "alpha": 1.0,
+            "ksp_final_norm": 0.0,
+            "ksp_reason": 4,
+            "snes_final_norm": 5.240629939588013e-14,
+            "snes_iterations": 3,
+            "snes_reason": 2
+          }
+        ],
+        "status": "DRAFT_UNVERIFIED"
+      }
+    ],
+    "planned_level_count": 3,
+    "reference_accepted": false,
+    "reference_qoi_errors_vs_featflow": {
+      "Cd_relative": 0.00011929952240631535,
+      "Cl_absolute": 7.05354383591962e-05,
+      "delta_p_relative": 1.4498501518644275e-05
+    },
+    "scientific_accepted": false,
+    "session_cap_seconds": 1134.84127208,
+    "status": "candidate_complete",
+    "two_finest_mesh_relative_changes": {
+      "Cd_relative": 0.00035582582267784326,
+      "Cl_absolute": 5.277922167564765e-05,
+      "Cl_relative": 0.004937490315516642,
+      "delta_p_relative": 0.0013279772751256778
+    }
+  },
+  "process_returncode": 0,
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "worker": {
+    "log": "/kaggle/working/dfg-fem-field-followup-retry4/dfg-worker.log",
+    "part": "s1b",
+    "process_returncode": 0,
+    "scientific_accepted": false,
+    "session_elapsed_seconds": 173.278,
+    "solver_summary": {
+      "completed_level_count": 3,
+      "elapsed_seconds": 88.71,
+      "environment_versions": {
+        "dolfinx": "0.11.0",
+        "gmsh_binary": "4.15.2",
+        "gmsh_python": "4.15.2",
+        "petsc": "(3, 25, 5)",
+        "python": "3.12.13",
+        "ufl": "2026.1.0"
+      },
+      "evidence_ready_for_human_gate": false,
+      "levels": [
+        {
+          "Cd": 5.569952710951169,
+          "Cl": 0.008825471097944798,
+          "cell_count": 3206,
+          "delta_p_front_minus_rear": 0.11689570217047024,
+          "dofs_global": 14917,
+          "drag_force": 0.01113990542190234,
+          "featflow_reference": {
+            "Cd": 5.57953523384,
+            "Cl": 0.010618948146,
+            "delta_p": 0.11752016697
+          },
+          "geometry_nodes_local": 6608,
+          "level": "DFG-L0",
+          "lift_force": 1.76509421958896e-05,
+          "pressure_front": 0.13167404189201193,
+          "pressure_probe_policy": "direct point evaluation; boundary one-sided trace not yet independently verified",
+          "pressure_rear": 0.014778339721541696,
+          "reference_accepted": false,
+          "snes_stages": [
+            {
+              "accepted_by_solver": true,
+              "alpha": 0.0,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 9.306009530276745e-17,
+              "snes_iterations": 1,
+              "snes_reason": 2
+            },
+            {
+              "accepted_by_solver": true,
+              "alpha": 0.25,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 1.6353272115681913e-13,
+              "snes_iterations": 3,
+              "snes_reason": 2
+            },
+            {
+              "accepted_by_solver": true,
+              "alpha": 0.5,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 3.6450489800891105e-13,
+              "snes_iterations": 3,
+              "snes_reason": 2
+            },
+            {
+              "accepted_by_solver": true,
+              "alpha": 0.75,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 3.485582328185048e-13,
+              "snes_iterations": 3,
+              "snes_reason": 2
+            },
+            {
+              "accepted_by_solver": true,
+              "alpha": 1.0,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 1.9852070928341964e-13,
+              "snes_iterations": 3,
+              "snes_reason": 2
+            }
+          ],
+          "status": "DRAFT_UNVERIFIED"
+        },
+        {
+          "Cd": 5.57688449208705,
+          "Cl": 0.010636704362683548,
+          "cell_count": 12421,
+          "delta_p_front_minus_rear": 0.11736240125527134,
+          "dofs_global": 56867,
+          "drag_force": 0.011153768984174103,
+          "featflow_reference": {
+            "Cd": 5.57953523384,
+            "Cl": 0.010618948146,
+            "delta_p": 0.11752016697
+          },
+          "geometry_nodes_local": 25231,
+          "level": "DFG-L1",
+          "lift_force": 2.12734087253671e-05,
+          "pressure_front": 0.13211436097504475,
+          "pressure_probe_policy": "direct point evaluation; boundary one-sided trace not yet independently verified",
+          "pressure_rear": 0.014751959719773411,
+          "reference_accepted": false,
+          "snes_stages": [
+            {
+              "accepted_by_solver": true,
+              "alpha": 0.0,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 1.1414029512713875e-16,
+              "snes_iterations": 1,
+              "snes_reason": 2
+            },
+            {
+              "accepted_by_solver": true,
+              "alpha": 0.25,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 8.644597231616762e-14,
+              "snes_iterations": 3,
+              "snes_reason": 2
+            },
+            {
+              "accepted_by_solver": true,
+              "alpha": 0.5,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 1.9296027624157452e-13,
+              "snes_iterations": 3,
+              "snes_reason": 2
+            },
+            {
+              "accepted_by_solver": true,
+              "alpha": 0.75,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 1.8122334621247768e-13,
+              "snes_iterations": 3,
+              "snes_reason": 2
+            },
+            {
+              "accepted_by_solver": true,
+              "alpha": 1.0,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 1.0376705962725734e-13,
+              "snes_iterations": 3,
+              "snes_reason": 2
+            }
+          ],
+          "status": "DRAFT_UNVERIFIED"
+        },
+        {
+          "Cd": 5.578869597951353,
+          "Cl": 0.010689483584359196,
+          "cell_count": 49441,
+          "delta_p_front_minus_rear": 0.11751846310368072,
+          "dofs_global": 224422,
+          "drag_force": 0.011157739195902709,
+          "featflow_reference": {
+            "Cd": 5.57953523384,
+            "Cl": 0.010618948146,
+            "delta_p": 0.11752016697
+          },
+          "geometry_nodes_local": 99657,
+          "level": "DFG-L2",
+          "lift_force": 2.13789671687184e-05,
+          "pressure_front": 0.13227866836102678,
+          "pressure_probe_policy": "direct point evaluation; boundary one-sided trace not yet independently verified",
+          "pressure_rear": 0.014760205257346061,
+          "reference_accepted": false,
+          "snes_stages": [
+            {
+              "accepted_by_solver": true,
+              "alpha": 0.0,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 1.948655516318067e-16,
+              "snes_iterations": 1,
+              "snes_reason": 2
+            },
+            {
+              "accepted_by_solver": true,
+              "alpha": 0.25,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 4.3498659817855506e-14,
+              "snes_iterations": 3,
+              "snes_reason": 2
+            },
+            {
+              "accepted_by_solver": true,
+              "alpha": 0.5,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 9.68447217371865e-14,
+              "snes_iterations": 3,
+              "snes_reason": 2
+            },
+            {
+              "accepted_by_solver": true,
+              "alpha": 0.75,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 9.176265182225488e-14,
+              "snes_iterations": 3,
+              "snes_reason": 2
+            },
+            {
+              "accepted_by_solver": true,
+              "alpha": 1.0,
+              "ksp_final_norm": 0.0,
+              "ksp_reason": 4,
+              "snes_final_norm": 5.240629939588013e-14,
+              "snes_iterations": 3,
+              "snes_reason": 2
+            }
+          ],
+          "status": "DRAFT_UNVERIFIED"
+        }
+      ],
+      "planned_level_count": 3,
+      "reference_accepted": false,
+      "reference_qoi_errors_vs_featflow": {
+        "Cd_relative": 0.00011929952240631535,
+        "Cl_absolute": 7.05354383591962e-05,
+        "delta_p_relative": 1.4498501518644275e-05
+      },
+      "scientific_accepted": false,
+      "session_cap_seconds": 1134.84127208,
+      "status": "candidate_complete",
+      "two_finest_mesh_relative_changes": {
+        "Cd_relative": 0.00035582582267784326,
+        "Cl_absolute": 5.277922167564765e-05,
+        "Cl_relative": 0.004937490315516642,
+        "delta_p_relative": 0.0013279772751256778
+      }
+    },
+    "status": "complete",
+    "updated_at_utc": "2026-09-29T07:27:28Z",
+    "worker_elapsed_seconds": 165.96
+  }
+}

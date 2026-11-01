@@ -1,0 +1,120 @@
+{
+  "arm": "DFG-Tanh-MLP",
+  "checkpoint_selection": "final checkpoint only; no score-based selection",
+  "confirmatory_scoring_only": true,
+  "critical_region_residuals": {
+    "near_cylinder": {
+      "continuity_rms_normalized": 0.10401836215651653,
+      "mask": "fluid 0.05<r_center<0.10",
+      "momentum_x_rms_normalized": 0.11913562662444113,
+      "momentum_y_rms_normalized": 0.07422389406543894,
+      "point_count": 217,
+      "status": "scored"
+    },
+    "wake": {
+      "continuity_rms_normalized": 0.009745598721589411,
+      "mask": "fluid 0.25<=x<=1.0 and abs(y-0.2)<=0.1",
+      "momentum_x_rms_normalized": 0.013105530700384138,
+      "momentum_y_rms_normalized": 0.009763699129573917,
+      "point_count": 1376,
+      "status": "scored"
+    }
+  },
+  "cuda_device_index": 1,
+  "cuda_peak_memory_allocated_bytes": 38156288,
+  "cuda_peak_memory_reserved_bytes": 44040192,
+  "cylinder_velocity_rmse_over_umean": 0.014820282347500324,
+  "device": "Tesla T4",
+  "diagnostics": {
+    "cylinder_velocity_rmse_over_umean": 0.014820282347500324,
+    "heldout_continuity_rms": 0.033001141084026984,
+    "heldout_momentum_x_rms": 0.023423513376373908,
+    "heldout_momentum_y_rms": 0.01625547280344506,
+    "inlet_velocity_rmse_over_umean": 0.011145300231873989,
+    "lower_wall_velocity_rmse_over_umean": 0.010979925282299519,
+    "upper_wall_velocity_rmse_over_umean": 0.00912757869809866
+  },
+  "dtype": "float32",
+  "featflow_reference": {
+    "drag_coefficient": 5.57953523384,
+    "lift_coefficient": 0.010618948146,
+    "pressure_difference": 0.11752016697
+  },
+  "featflow_source": "https://wwwold.mathematik.tu-dortmund.de/~featflow/en/benchmarks/cfdbenchmarking/flow/dfg_benchmark1_re20.html",
+  "field_reference_status": "missing_converged_FEM_field",
+  "field_relative_l2": null,
+  "heldout_test_scored": true,
+  "model_id": "dfg_tanh_mlp_5x64",
+  "phase_wall_seconds": {
+    "critical_region_seconds": 0.10003834500000153,
+    "heldout_and_boundary_seconds": 0.4106049149999933,
+    "qoi1024_seconds": 0.014741978999978755,
+    "qoi512_seconds": 2.951006122999985
+  },
+  "qoi_errors": {
+    "drag_relative_error_vs_featflow": 0.3482000866490469,
+    "lift_absolute_error_vs_featflow": 0.01633388187113873,
+    "pressure_difference_relative_error_vs_featflow": 0.3808286194063494
+  },
+  "qoi_force_convention": "sigma=nu*grad(u)-pI; traction sigma*n with radial-outward cylinder normal",
+  "qois": {
+    "drag_coefficient": 3.6367405819555016,
+    "drag_force": 0.007273481163911005,
+    "lift_coefficient": 0.02695283001713873,
+    "lift_force": 5.390566003427747e-05,
+    "pressure_difference": 0.07276512403041124,
+    "pressure_front": 0.07724573463201523,
+    "pressure_rear": 0.004480610601603985,
+    "qoi_force_convention": "sigma=nu*grad(u)-pI; traction sigma*n with radial-outward cylinder normal",
+    "surface_count": 512
+  },
+  "quadrature_512_to_1024_absolute_change": {
+    "drag_coefficient": 3.266362957887736e-08,
+    "lift_coefficient": 1.0327571537890878e-07,
+    "pressure_difference": 0.0
+  },
+  "reference_accepted": false,
+  "reference_status": "FEATFLOW QoI anchors only; no converged FEM field",
+  "saved_pool_sha256": "34cf429bd05508949b76ae068129347fb9e29817e816ef3f1c2fccfb625fce25",
+  "scientific_accepted": false,
+  "seed": 501,
+  "source_checkpoint_path": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-re20-competitive-pilot-t4x2/dfg-re20-t4x2/campaign/DFG-Tanh-MLP/seed-501/checkpoint-final.pt",
+  "source_checkpoint_sha256": "e8d15a3e708ec3ea77ecf58a8d46bbc7999149acf4d8ee8425b7b8467a611847",
+  "source_pool_path": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-re20-competitive-pilot-t4x2/dfg-re20-t4x2/campaign/pools/seed-501.npz",
+  "source_scoring_runner_sha256": "4c02809600beb9b543d1bceffe2037ed7d05f5ff654d010b22984227b2cb35a9",
+  "source_training_status": "score_budget_exhausted",
+  "source_training_summary": {
+    "arm": "DFG-Tanh-MLP",
+    "cap_overrun_seconds": 0.024701542999991943,
+    "device": "Tesla T4",
+    "dtype": "float32",
+    "elapsed_gpu_wall_seconds": 1200.024701543,
+    "field_reference_status": "missing_converged_FEM_field",
+    "field_relative_l2": null,
+    "model_id": "dfg_tanh_mlp_5x64",
+    "parameters": 17027,
+    "pool_provenance": {
+      "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+      "heldout": {
+        "accepted_before_truncation": 16241,
+        "candidate_count": 16384,
+        "sampling": "scrambled Sobol with rejection of closed cylinder",
+        "seed": 900502
+      },
+      "interior": {
+        "accepted_before_truncation": 32485,
+        "candidate_count": 32768,
+        "sampling": "scrambled Sobol with rejection of closed cylinder",
+        "seed": 501
+      }
+    },
+    "scientific_accepted": false,
+    "seed": 501,
+    "smoke_only": false,
+    "status": "DRAFT_UNVERIFIED",
+    "steps": 30116
+  },
+  "status": "score_only_complete",
+  "total_scoring_wall_seconds": 3.4766160030000037,
+  "training_repeated": false
+}

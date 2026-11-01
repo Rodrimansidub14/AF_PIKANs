@@ -1,0 +1,13 @@
+{
+  "checkpoint_field_scores": {
+    "per_seed": [],
+    "status": "field_reference_incomplete"
+  },
+  "fem_summary": null,
+  "process_returncode": 2,
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "worker": {
+    "status": "no_worker_record"
+  }
+}

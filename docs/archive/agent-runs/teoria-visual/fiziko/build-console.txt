@@ -1,0 +1,9 @@
+This is MetaPost, version 2.02 (MiKTeX 24.1)
+(C:/Program Files/MiKTeX/metapost/base/mpost.mp (C:/Program Files/MiKTeX/metapost/base/plain.mp
+Preloading the plain mem file, version 1.005) ) (./bimorph_fiziko.mp (./upstream/fiziko.mp) [1{psfon
+ts.map}<cmr10.pfb><cmmi10.pfb><cmmi7.pfb>] )
+1 output file written: bimorph_fiziko-1.eps
+Transcript written on bimorph_fiziko.log.
+warning: required font ICXWUR-CMR10 not found in font map
+warning: required font ICXWUR-CMMI10 not found in font map
+warning: required font ICXWUR-CMMI7 not found in font map

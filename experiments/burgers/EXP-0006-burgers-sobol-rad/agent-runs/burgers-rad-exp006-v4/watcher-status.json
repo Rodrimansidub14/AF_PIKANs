@@ -1,0 +1,18 @@
+{
+  "bundle_id": "4393e173686298ee83759eb20d320a1f65d320db0ac6bb2ecdf6aad073563938",
+  "execution_valid": true,
+  "fetch_attempt": 1,
+  "kernel": "rodrimandub/af-pikans-burgers-sobol-rad-exp006-rerun-v4",
+  "poll_interval_sec": 60,
+  "provider_status": "rodrimandub/af-pikans-burgers-sobol-rad-exp006-rerun-v4 has status \"KernelWorkerStatus.COMPLETE\"",
+  "report": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\burgers-rad-exp006-v4\\download-attempts\\attempt-01\\evaluation.json",
+  "runs": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\burgers-rad-exp006-v4\\download-attempts\\attempt-01\\pikan-4393e173686298ee\\runs",
+  "status": "fetched",
+  "transport_warning": "Kaggle CLI returned a non-zero exit after writing output; the matching campaign and required artifacts passed local validation.",
+  "updated_at": "2026-09-27T04:12:35.781447+00:00",
+  "wandb_sync": {
+    "run_count": 10,
+    "status": "synced",
+    "synced_count": 10
+  }
+}

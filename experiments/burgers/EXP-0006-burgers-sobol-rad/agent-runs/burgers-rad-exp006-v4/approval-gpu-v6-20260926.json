@@ -1,0 +1,10 @@
+{
+  "approved_by": "Rodrigo Mansilla",
+  "authorization_basis": "Reejecuci\u00f3n de la misma campa\u00f1a EXP-0006 previamente autorizada tras eliminarse la cuenta Kaggle anterior. Se conserva PDE, modelo RBF-PIKAN, brazos Sobol/RAD, cinco semillas pareadas, presupuesto, m\u00e9tricas y T4x2; solo cambia el propietario/slug del kernel para usar la nueva cuenta. El usuario confirm\u00f3 que la nueva autenticaci\u00f3n est\u00e1 lista.",
+  "authorized_at": "2026-09-26",
+  "bundle_id": "4393e173686298ee83759eb20d320a1f65d320db0ac6bb2ecdf6aad073563938",
+  "code_surface": "approved",
+  "hypothesis": "approved",
+  "remote_execution": true,
+  "scope": "approved"
+}

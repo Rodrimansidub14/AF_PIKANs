@@ -1,0 +1,39 @@
+{
+  "checkpoint": "checkpoint-000008.pt",
+  "final_test_used": false,
+  "grid": {
+    "kind": "fixed_uniform_tensor",
+    "nt": 129,
+    "nx": 1025
+  },
+  "metrics": {
+    "boundary_max_abs_error": 0.09994014982484051,
+    "complement_field_rmse_abs": 0.5619797905198678,
+    "complement_field_rmse_normalized": 0.5619797905198678,
+    "complement_n_points": 130729.0,
+    "complement_residual_max_abs": 1.0099824783152176,
+    "complement_residual_p95_abs": 0.4338387106097951,
+    "complement_residual_rmse_abs": 0.23402989609319055,
+    "field_max_abs": 0.9763979033068912,
+    "field_p95_abs": 0.9106587768998264,
+    "field_relative_l2": 0.9166869905711691,
+    "field_rmse_abs": 0.5630531735673762,
+    "field_rmse_normalized": 0.5630531735673762,
+    "front_field_rmse_abs": 0.6497914699778616,
+    "front_field_rmse_normalized": 0.6497914699778616,
+    "front_n_points": 1496.0,
+    "front_residual_max_abs": 0.7252528490140902,
+    "front_residual_p95_abs": 0.6082978971621837,
+    "front_residual_rmse_abs": 0.2870324058479933,
+    "initial_max_abs_error": 0.9244683184343747,
+    "residual_max_abs": 1.0099824783152176,
+    "residual_mean_abs": 0.18475585990539928,
+    "residual_mean_abs_normalized": 0.09223113953505961,
+    "residual_p95_abs": 0.4356564728255401,
+    "residual_rmse_abs": 0.23469856605009842
+  },
+  "model_id": "rbf_fixed",
+  "problem": "burgers_pinnacle_1d",
+  "scientific_accepted": false,
+  "step": 8
+}

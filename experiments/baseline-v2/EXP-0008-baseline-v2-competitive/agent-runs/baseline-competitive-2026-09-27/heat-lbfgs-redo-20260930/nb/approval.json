@@ -1,0 +1,20 @@
+{
+  "approved_by": "researcher, chat 2026-09-30: 'Adam->L-BFGS ... ok. Repite.'; GPU within the standing 12 h approval, >= 6 h reserve",
+  "session_cap_seconds": 2700,
+  "per_seed_lbfgs_seconds": 700,
+  "scientific_accepted": false,
+  "component_sha256": {
+    "heat_lbfgs_gpu.py": "e452ee1fa2d735151e0800eb1d076c97e56c520a3572f91dcb89e8d9fa3f9d53",
+    "af_sciml_model.py": "934687a265c2b2cae0c375cc30365e2d52e0b1d3edfff7cd977db0b59e4d7767",
+    "seed-901-adam-final.pt": "ef3d5bfb4cf44546c90e3d89f916e82ece957406de40844ea1adeb6033c00f9c",
+    "heat-seed-901.npz": "c0901df4a0aaad05656bfa779297c77774590b393e06156b6cdd300a0d425213",
+    "seed-902-adam-final.pt": "93ef291600e9670776d267024b51411557fb8d30cfc7b4e1cbd0a30d96bb3eff",
+    "heat-seed-902.npz": "357844a4bee6599a327f0c44eef116b30be51070342a9286f29f6c5a63e8a314",
+    "seed-903-adam-final.pt": "4649bd42eaa40437354c58094a49b291201dbbb74cda872b377b37b0dc3f7521",
+    "heat-seed-903.npz": "3eb8aed4319f1c96f91049c3429020bc5f25c820f7440f4a94589a7f5296c5da",
+    "seed-904-adam-final.pt": "df80d4b5e997253b4f210d6722bf3cc5a8f87d855c164caa191729b2211d77bc",
+    "heat-seed-904.npz": "cec4e6613f3154cdb78b495cb0d0f76caccbb2ef74375a23913f5e0a1a21e291",
+    "seed-905-adam-final.pt": "f6811ac53d6d6f09b14aeaf9dc401af0bf9983df6a13b159b67413251c60c670",
+    "heat-seed-905.npz": "6b9e64f1631befd801be0bdc320c6498396d4d6fb9dbaec8b5f4b07a55d66013"
+  }
+}

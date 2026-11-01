@@ -1,0 +1,77 @@
+[
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\baseline-competitive-2026-09-27\\kaggle-outputs\\closure-s3-retry-20260928\\closure-s3-20260928\\runs\\AC-RBF-Sobol\\seed-401\\checkpoint-final.pt",
+  "tag": null,
+  "seed": 401,
+  "FD8192": {
+   "relative_weighted_space_time_l2": 0.006810069523190451,
+   "max_snapshot_relative_l2": 0.01383075660931124,
+   "max_absolute_error": 0.06854377507404258
+  },
+  "ETDRK4": {
+   "relative_weighted_space_time_l2": 0.006810053298594223,
+   "max_snapshot_relative_l2": 0.01383071266927458,
+   "max_absolute_error": 0.0685435777522746
+  }
+ },
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\baseline-competitive-2026-09-27\\kaggle-outputs\\closure-s3-retry-20260928\\closure-s3-20260928\\runs\\AC-RBF-Sobol\\seed-402\\checkpoint-final.pt",
+  "tag": null,
+  "seed": 402,
+  "FD8192": {
+   "relative_weighted_space_time_l2": 0.013216525768118954,
+   "max_snapshot_relative_l2": 0.026350961764655956,
+   "max_absolute_error": 0.13009467269051372
+  },
+  "ETDRK4": {
+   "relative_weighted_space_time_l2": 0.01321651137475179,
+   "max_snapshot_relative_l2": 0.026350921818179284,
+   "max_absolute_error": 0.1300944753687462
+  }
+ },
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\baseline-competitive-2026-09-27\\kaggle-outputs\\closure-s3-retry-20260928\\closure-s3-20260928\\runs\\AC-RBF-Sobol\\seed-403\\checkpoint-final.pt",
+  "tag": null,
+  "seed": 403,
+  "FD8192": {
+   "relative_weighted_space_time_l2": 0.006726110615468213,
+   "max_snapshot_relative_l2": 0.013464739419781144,
+   "max_absolute_error": 0.07245036903979457
+  },
+  "ETDRK4": {
+   "relative_weighted_space_time_l2": 0.006726099961599915,
+   "max_snapshot_relative_l2": 0.013464700260274564,
+   "max_absolute_error": 0.07245017171802659
+  }
+ },
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\baseline-competitive-2026-09-27\\kaggle-outputs\\closure-s3-retry-20260928\\closure-s3-20260928\\runs\\AC-RBF-Sobol\\seed-404\\checkpoint-final.pt",
+  "tag": null,
+  "seed": 404,
+  "FD8192": {
+   "relative_weighted_space_time_l2": 0.009861680109959668,
+   "max_snapshot_relative_l2": 0.019892265017263443,
+   "max_absolute_error": 0.10604640697189943
+  },
+  "ETDRK4": {
+   "relative_weighted_space_time_l2": 0.009861666163091547,
+   "max_snapshot_relative_l2": 0.019892223044597316,
+   "max_absolute_error": 0.10604620965013145
+  }
+ },
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\baseline-competitive-2026-09-27\\kaggle-outputs\\closure-s3-retry-20260928\\closure-s3-20260928\\runs\\AC-RBF-Sobol\\seed-405\\checkpoint-final.pt",
+  "tag": null,
+  "seed": 405,
+  "FD8192": {
+   "relative_weighted_space_time_l2": 0.009204241603846976,
+   "max_snapshot_relative_l2": 0.018522224562813713,
+   "max_absolute_error": 0.0972139793215927
+  },
+  "ETDRK4": {
+   "relative_weighted_space_time_l2": 0.009204225759817051,
+   "max_snapshot_relative_l2": 0.01852218142322285,
+   "max_absolute_error": 0.09721378199982517
+  }
+ }
+]

@@ -1,0 +1,16 @@
+{
+  "status": "DRAFT_UNVERIFIED",
+  "arm": "H-RBF",
+  "model_id": "rbf_fixed",
+  "implementation": "static Torch snapshot of AF model.py, executed by heat_comparison_runner.py",
+  "architecture": [2, 16, 16, 1],
+  "basis_count": 11,
+  "expected_parameters": 3648,
+  "optimizer": {"name": "Adam", "learning_rate": 0.001, "maximum_updates": 20000},
+  "common_contract": "campaign.json",
+  "precision": "float64",
+  "batching": "full 4096-point interior pool",
+  "seeds": [901, 902, 903, 904, 905],
+  "gpu_seconds_per_seed": 600,
+  "smoke": {"seed": 900, "gpu_seconds": 120, "finite_only": true}
+}

@@ -1,0 +1,40 @@
+{
+  "campaign_id": "rbf-signals-p1-p4-pilot-v1",
+  "status": "draft_pending_budget_and_hypothesis_approval",
+  "scope_confirmed_by_user": ["poisson", "burgers", "allen_cahn", "dfg"],
+  "excluded": ["piezoelectricity"],
+  "purpose": "Observe internal signals before designing focalization; no SOTA or confirmatory claims",
+  "hypothesis": "Fixed-geometry RBF-PIKAN exposes spatially heterogeneous activation coverage and parameter sensitivity that can be measured independently of reference solutions; whether they predict validation error remains an exploratory question.",
+  "negative_outcomes": ["signals spatially uniform", "signals unstable across checkpoints or seeds", "signals unrelated to validation error", "diagnostic cost too large", "training fails"],
+  "model": {
+    "family": "project-specific Gaussian RBF-PIKAN inspired by FastKAN and Free-RBF-KAN",
+    "kernel": "exp(-((z-center)/width)^2)",
+    "centers_trainable": false,
+    "widths_trainable": false,
+    "centers": 11,
+    "center_interval": [-1.05, 1.05],
+    "width": 0.21,
+    "branch_widths": [2, 16, 16, 1],
+    "branches": {"poisson": 1, "burgers": 1, "allen_cahn": 1, "dfg": 3},
+    "edge_base": "trainable SiLU coefficient",
+    "node_bias": false,
+    "hidden_activation": "tanh",
+    "input_layernorm": false,
+    "coordinate_scaling": "affine physical coordinates to [-1,1]",
+    "trainable_parameters_per_branch": 3648,
+    "precision": "float64",
+    "focalization": false
+  },
+  "stages": [
+    {"name": "first_pass", "seeds": [101], "problems": ["poisson_k1", "burgers_c0_nu0.02", "allen_cahn_d0.001", "dfg_re20"], "max_optimizer_steps_per_run": 2000, "training_and_diagnostics_seconds_per_run": 900, "outer_timeout_seconds_per_run": 1200},
+    {"name": "replication", "seeds": [102, 103], "status": "requires_review_of_first_pass_and_budget"}
+  ],
+  "sampling": {"training_interior_pool": 8192, "batch": 1024, "boundary_per_segment": 512, "initial_condition": 1024, "diagnostic_pool": 2048, "sensitivity_subset": 256, "validation_pool": 2048, "final_test_used": false, "adaptive_collocation": false},
+  "optimization": {"algorithm": "Adam", "learning_rate": 0.001, "adaptive_loss_weights": false},
+  "diagnostics": ["normalized residual by equation on held-out coordinates", "activation histograms by layer", "Gaussian basis occupancy and effective rank", "hidden tanh saturation", "coefficient norms by edge", "output sensitivity to edge coefficients mapped to physical coordinates", "gradient norms by loss component", "wall time by phase and peak device memory"],
+  "reference_rules": {"poisson": "exact, operator substitution test required", "burgers": "exact traveling wave, operator substitution and trace tests required", "allen_cahn": "field error locked until independent BDF/space refinement reference passes", "dfg": "field error locked until independent curved-geometry P2/P1 FEM reference passes; residual and boundary diagnostics alone are not solution accuracy"},
+  "frameworks": {"training": "PINA with custom PyTorch model", "tracking": "W&B offline first, private online project after scoped service approval and authentication", "compute": "Kaggle private notebook"},
+  "canonical_methodology_modified": false,
+  "remote_submitted": false,
+  "approval": null
+}

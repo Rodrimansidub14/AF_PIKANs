@@ -1,0 +1,87 @@
+[
+  {
+    "seed": 901,
+    "archived_final_cuda": 2.2188066033388002e-06,
+    "checkpoint-final": 2.218806603338643e-06,
+    "checkpoint-final_meta": {
+      "stage": "lbfgs_final"
+    },
+    "checkpoint-adam-final": 0.000244142911478659,
+    "checkpoint-adam-final_meta": {
+      "stage": "adam_complete"
+    },
+    "checkpoint-500s": 2.374306152875166e-05,
+    "checkpoint-500s_meta": {
+      "stage": "adam"
+    },
+    "final_cpu_vs_cuda_rel_diff": 7.081491982186993e-14
+  },
+  {
+    "seed": 902,
+    "archived_final_cuda": 2.0835013707776255e-06,
+    "checkpoint-final": 2.083501370779153e-06,
+    "checkpoint-final_meta": {
+      "stage": "lbfgs_final"
+    },
+    "checkpoint-adam-final": 0.00015603093619750085,
+    "checkpoint-adam-final_meta": {
+      "stage": "adam_complete"
+    },
+    "checkpoint-500s": 0.0006759031995374909,
+    "checkpoint-500s_meta": {
+      "stage": "adam"
+    },
+    "final_cpu_vs_cuda_rel_diff": 7.332003433254164e-13
+  },
+  {
+    "seed": 903,
+    "archived_final_cuda": 1.7043517440537436e-06,
+    "checkpoint-final": 1.7043517440539984e-06,
+    "checkpoint-final_meta": {
+      "stage": "lbfgs_final"
+    },
+    "checkpoint-adam-final": 5.1407230513321685e-05,
+    "checkpoint-adam-final_meta": {
+      "stage": "adam_complete"
+    },
+    "checkpoint-500s": 4.236487655992861e-05,
+    "checkpoint-500s_meta": {
+      "stage": "adam"
+    },
+    "final_cpu_vs_cuda_rel_diff": 1.494674792193001e-13
+  },
+  {
+    "seed": 904,
+    "archived_final_cuda": 1.9989529105996967e-06,
+    "checkpoint-final": 1.998952910598238e-06,
+    "checkpoint-final_meta": {
+      "stage": "lbfgs_final"
+    },
+    "checkpoint-adam-final": 0.00012939420275686082,
+    "checkpoint-adam-final_meta": {
+      "stage": "adam_complete"
+    },
+    "checkpoint-500s": 0.00024252816284438204,
+    "checkpoint-500s_meta": {
+      "stage": "adam"
+    },
+    "final_cpu_vs_cuda_rel_diff": 7.29677386314378e-13
+  },
+  {
+    "seed": 905,
+    "archived_final_cuda": 2.2984034817753364e-06,
+    "checkpoint-final": 2.2984034817752246e-06,
+    "checkpoint-final_meta": {
+      "stage": "lbfgs_final"
+    },
+    "checkpoint-adam-final": 0.0005176522938824825,
+    "checkpoint-adam-final_meta": {
+      "stage": "adam_complete"
+    },
+    "checkpoint-500s": 4.3483334760661076e-05,
+    "checkpoint-500s_meta": {
+      "stage": "adam"
+    },
+    "final_cpu_vs_cuda_rel_diff": 4.864609278750503e-14
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "id": "rodrimandub/af-pikans-burgers-front-diagnostics-20260927",
+  "title": "AF PIKANs Burgers Front Diagnostics 20260927",
+  "code_file": "burgers-front-diagnostics.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "rodrimandub/af-pikans-burgers-validation-fields-20260927"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

@@ -1,0 +1,235 @@
+{
+  "status": "candidate_complete",
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "evidence_ready_for_human_gate": false,
+  "session_cap_seconds": 929.747130711,
+  "elapsed_seconds": 658.185,
+  "planned_level_count": 3,
+  "completed_level_count": 3,
+  "environment_versions": {
+    "python": "3.12.13",
+    "dolfinx": "0.11.0",
+    "gmsh_binary": "4.15.2",
+    "petsc": "(3, 25, 5)",
+    "ufl": "2026.1.0",
+    "gmsh_python": "4.15.2"
+  },
+  "reference_qoi_errors_vs_featflow": {
+    "Cd_relative": 2.8879297959817696e-05,
+    "Cl_absolute": 6.410817688685955e-08,
+    "delta_p_relative": 0.00012094614422510933
+  },
+  "two_finest_mesh_relative_changes": {
+    "Cd_relative": 9.042283579435573e-05,
+    "Cl_relative": 0.006648490207082787,
+    "Cl_absolute": 7.059954653561469e-05,
+    "delta_p_relative": 0.00010646051869512299
+  },
+  "levels": [
+    {
+      "status": "DRAFT_UNVERIFIED",
+      "level": "DFG-L1",
+      "drag_force": 0.011153768984174113,
+      "lift_force": 2.1273408725364207e-05,
+      "Cd": 5.576884492087055,
+      "Cl": 0.010636704362682102,
+      "pressure_front": 0.1321143609750448,
+      "pressure_rear": 0.0147519597197734,
+      "delta_p_front_minus_rear": 0.1173624012552714,
+      "featflow_reference": {
+        "Cd": 5.57953523384,
+        "Cl": 0.010618948146,
+        "delta_p": 0.11752016697
+      },
+      "snes_stages": [
+        {
+          "alpha": 0.0,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 1,
+          "snes_final_norm": 1.1414029512713875e-16,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        },
+        {
+          "alpha": 0.25,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 3,
+          "snes_final_norm": 8.64459836130922e-14,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        },
+        {
+          "alpha": 0.5,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 3,
+          "snes_final_norm": 1.9296046299834015e-13,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        },
+        {
+          "alpha": 0.75,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 3,
+          "snes_final_norm": 1.812234809379875e-13,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        },
+        {
+          "alpha": 1.0,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 3,
+          "snes_final_norm": 1.0376711918143577e-13,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        }
+      ],
+      "cell_count": 12421,
+      "geometry_nodes_local": 25231,
+      "dofs_global": 56867,
+      "pressure_probe_policy": "direct point evaluation; boundary one-sided trace not yet independently verified",
+      "reference_accepted": false
+    },
+    {
+      "status": "DRAFT_UNVERIFIED",
+      "level": "DFG-L2",
+      "drag_force": 0.01115773919590271,
+      "lift_force": 2.137896716871746e-05,
+      "Cd": 5.578869597951354,
+      "Cl": 0.010689483584358728,
+      "pressure_front": 0.13227866836102672,
+      "pressure_rear": 0.014760205257346068,
+      "delta_p_front_minus_rear": 0.11751846310368065,
+      "featflow_reference": {
+        "Cd": 5.57953523384,
+        "Cl": 0.010618948146,
+        "delta_p": 0.11752016697
+      },
+      "snes_stages": [
+        {
+          "alpha": 0.0,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 1,
+          "snes_final_norm": 1.948655516318067e-16,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        },
+        {
+          "alpha": 0.25,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 3,
+          "snes_final_norm": 4.349867709034223e-14,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        },
+        {
+          "alpha": 0.5,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 3,
+          "snes_final_norm": 9.684486871009453e-14,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        },
+        {
+          "alpha": 0.75,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 3,
+          "snes_final_norm": 9.176259483265758e-14,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        },
+        {
+          "alpha": 1.0,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 3,
+          "snes_final_norm": 5.240624225026407e-14,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        }
+      ],
+      "cell_count": 49441,
+      "geometry_nodes_local": 99657,
+      "dofs_global": 224422,
+      "pressure_probe_policy": "direct point evaluation; boundary one-sided trace not yet independently verified",
+      "reference_accepted": false
+    },
+    {
+      "status": "DRAFT_UNVERIFIED",
+      "level": "DFG-L3",
+      "drag_force": 0.011158748201559012,
+      "lift_force": 2.123776807564623e-05,
+      "Cd": 5.579374100779504,
+      "Cl": 0.010618884037823113,
+      "pressure_front": 0.1322660640637848,
+      "pressure_rear": 0.014760110704848502,
+      "delta_p_front_minus_rear": 0.1175059533589363,
+      "featflow_reference": {
+        "Cd": 5.57953523384,
+        "Cl": 0.010618948146,
+        "delta_p": 0.11752016697
+      },
+      "snes_stages": [
+        {
+          "alpha": 0.0,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 1,
+          "snes_final_norm": 2.9469548713761624e-16,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        },
+        {
+          "alpha": 0.25,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 3,
+          "snes_final_norm": 2.198956173404125e-14,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        },
+        {
+          "alpha": 0.5,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 3,
+          "snes_final_norm": 4.8677723269427503e-14,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        },
+        {
+          "alpha": 0.75,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 3,
+          "snes_final_norm": 4.5981313097607685e-14,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        },
+        {
+          "alpha": 1.0,
+          "accepted_by_solver": true,
+          "snes_reason": 2,
+          "snes_iterations": 3,
+          "snes_final_norm": 2.643890538775065e-14,
+          "ksp_reason": 4,
+          "ksp_final_norm": 0.0
+        }
+      ],
+      "cell_count": 196852,
+      "geometry_nodes_local": 395252,
+      "dofs_global": 889704,
+      "pressure_probe_policy": "direct point evaluation; boundary one-sided trace not yet independently verified",
+      "reference_accepted": false
+    }
+  ]
+}

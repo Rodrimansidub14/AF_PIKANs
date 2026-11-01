@@ -1,0 +1,10 @@
+{
+  "actual_session_seconds": 37.558,
+  "error": "ValueError: Out of range float values are not JSON compliant: nan",
+  "part": "score_repair",
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "session_elapsed_seconds": 37.558,
+  "status": "failed_partial",
+  "updated_at_utc": "2026-09-29T09:17:07Z"
+}

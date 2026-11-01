@@ -23,5 +23,5 @@ if __name__ == "__main__":
         malos = [p for p in sys.argv[2:] if tiene_salidas(json.load(open(p, encoding="utf-8")))]
         print("\n".join(malos))
         sys.exit(1 if malos else 0)
-    nb = limpiar(json.load(sys.stdin))
-    sys.stdout.write(json.dumps(nb, indent=1, ensure_ascii=False) + "\n")
+    nb = limpiar(json.loads(sys.stdin.buffer.read().decode("utf-8")))
+    sys.stdout.buffer.write((json.dumps(nb, indent=1, ensure_ascii=False) + "\n").encode("utf-8"))

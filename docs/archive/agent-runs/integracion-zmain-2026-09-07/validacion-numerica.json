@@ -1,0 +1,17 @@
+{
+  "allen_cahn": {
+    "n": [
+      256,
+      512,
+      1024
+    ],
+    "successive_relative_l2_space_time": [
+      0.0003016175140144562,
+      7.460256321225792e-05
+    ],
+    "time_tolerance_change": 1.424113832132617e-09,
+    "observed_order": 2.015423099068047,
+    "illustration_only": true
+  },
+  "mechanism_training_executed": false
+}

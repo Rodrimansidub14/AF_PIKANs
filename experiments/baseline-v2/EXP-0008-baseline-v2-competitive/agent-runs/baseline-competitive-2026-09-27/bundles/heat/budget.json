@@ -1,0 +1,78 @@
+{
+  "status": "DRAFT_UNVERIFIED",
+  "authorization_note": "Approved global maximum is 8 Kaggle quota-hours; Heat package proposes a hard 2-hour session/quota cap. It is not submitted or run.",
+  "quota_accounting": {
+    "unit": "Kaggle session wall-hour on NvidiaTeslaT4 machine shape (GPU T4 x2); reported independently of aggregate device GPU-hours",
+    "heat_campaign_cap_hours": 2.0,
+    "global_quota_cap_hours": 8.0,
+    "cli_hard_timeout_seconds": 7200,
+    "startup_allowance_before_first_notebook_cell_seconds": 300,
+    "notebook_internal_watchdog_seconds_from_first_cell": 6900,
+    "notebook_close_margin_seconds": 60,
+    "accelerator": "NvidiaTeslaT4 (two T4 devices)",
+    "parallel_runs": 2,
+    "quota_wall_time_includes": ["startup", "pool generation", "training", "CUDA development scoring", "CUDA confirmation scoring", "artifact I/O", "shutdown"]
+  },
+  "device_accounting": {
+    "unit": "sum of synchronized training and scoring seconds on each assigned T4",
+    "aggregate_device_cap_seconds": 14400,
+    "aggregate_device_cap_gpu_hours": 4.0,
+    "tier2": {
+      "arms": ["H-RBF", "H-BS", "H-FNN"],
+      "seeds": [901, 902, 903, 904, 905],
+      "runs": 15,
+      "training_cap_device_seconds_each": 500,
+      "training_cap_gpu_hours_each": 0.1388888889,
+      "training_subtotal_device_seconds": 7500,
+      "training_subtotal_gpu_hours": 2.0833333333
+    },
+    "smoke": {
+      "seed": 900,
+      "runs": 3,
+      "training_cap_device_seconds_each": 120,
+      "training_subtotal_device_seconds": 360,
+      "quality_score_computed": false
+    },
+    "scoring": {
+      "development": "CUDA 257x129 after each of 15 Tier2 runs",
+      "confirmation": "CUDA 512x256 for each of the 15 frozen final checkpoints after all training",
+      "included_in_device_cap": true,
+      "development_wall_allowance_per_two_run_wave_seconds": 60,
+      "development_wall_allowance_total_seconds": 480,
+      "smoke_finite_check_wall_allowance_per_wave_seconds": 10,
+      "smoke_finite_check_wall_allowance_total_seconds": 20,
+      "confirmation_wall_allowance_per_two_checkpoint_wave_seconds": 120,
+      "confirmation_wall_allowance_total_seconds": 960,
+      "device_seconds_for_development_smoke_confirmation_allowances": 2730,
+      "held_device_second_reserve_after_allowances": 3810,
+      "expected_score_time": "unbenchmarked; finite wave guards stop the campaign if actual CUDA scoring exceeds its allocation"
+    },
+    "arithmetic_device_seconds": "7500 Tier2 training + 360 smoke training + 900 development score + 30 smoke finite-check + 1800 confirmation score = 10590; held reserve 3810; cap 14400"
+  },
+  "planned_session_wall": {
+    "tier2_waves": 8,
+    "tier2_training_wall_cap_seconds": 4000,
+    "tier2_development_score_allowance_seconds": 480,
+    "tier2_combined_wave_wall_cap_seconds": 4480,
+    "smoke_waves": 2,
+    "smoke_training_wall_cap_seconds": 240,
+    "smoke_finite_check_allowance_seconds": 20,
+    "confirmation_waves": 8,
+    "confirmation_wall_cap_seconds": 960,
+    "per_wave_process_overhead_reserve_seconds": 20,
+    "process_overhead_reserved_waves": 18,
+    "total_process_overhead_reserve_seconds": 360,
+    "post_first_cell_setup_and_pool_allowance_seconds": 300,
+    "artifact_flush_allowance_seconds": 40,
+    "notebook_close_margin_seconds": 60,
+    "internal_notebook_watchdog_seconds": 6900,
+    "startup_allowance_before_first_cell_seconds": 300,
+    "cli_hard_timeout_seconds": 7200,
+    "maximum_total_seconds": 7200,
+    "arithmetic": "300 startup + 300 setup + 4000 Tier2 training + 480 development scores + 240 smoke training + 20 smoke checks + 960 confirmation scores + 360 process-wave overhead reserve + 40 artifact flush + 60 close margin = 6760 seconds planned, leaving 440 seconds under the 7200-second CLI cap",
+    "guard": "The notebook timer starts in its first cell and stops starting work with a 60-second close margin; each process wave has a 20-second overhead reserve. Before every smoke/Tier2 wave the runner reserves all remaining Tier2 waves, all eight 120-second confirmation waves plus their overhead, artifact flush, and the 60-second close margin. Confirmation starts only if all confirmation waves and the 40-second flush fit. Kaggle CLI hard timeout remains 7200 seconds with 300 seconds startup reserved. The campaign records incomplete status if any allowance, checkpoint, or finite-metric requirement fails."
+  },
+  "checkpoints_device_seconds": [120, 300, 500],
+  "network_install": false,
+  "no_execution": "No tests, validators, preflight, local training, Kaggle upload, or remote execution."
+}

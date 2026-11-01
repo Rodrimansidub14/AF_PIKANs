@@ -1,0 +1,87 @@
+{
+  "status": "DRAFT_UNVERIFIED",
+  "campaign_id": "dfg-re20-t4-competitive-2026-09-27",
+  "execution_authorized": false,
+  "problem": {
+    "equations": ["(u dot grad)u - nu*laplacian(u) + grad(p) = 0", "div(u)=0"],
+    "domain": "[0,2.2]x[0,0.41] minus disk center (0.2,0.2), radius 0.05",
+    "parameters": {"rho": 1.0, "nu": 0.001, "Umax": 0.3, "Umean": 0.2, "D": 0.1, "Re": 20},
+    "boundary_conditions": {
+      "inlet": "u_x=4*Umax*y*(H-y)/H^2; u_y=0",
+      "walls_and_cylinder": "no-slip",
+      "outlet": "do-nothing natural traction nu*grad(u)n-p*n=0; no pressure point pin"
+    },
+    "protocol": "../../reference-protocol-ac-dfg.md"
+  },
+  "arms": [
+    {
+      "id": "DFG-RBF-PIKAN",
+      "role": "incumbent control",
+      "model": "fixed Gaussian RBF edge network [2,16,16,3], 11 bases; outputs physical (u,v,p)",
+      "implementation": "run_campaign.py; geometry, loss and QoI formulas adapted from src/research_pipeline/sciml/dfg.py"
+    },
+    {
+      "id": "DFG-Tanh-MLP",
+      "role": "strong same-contract architecture comparator; not a claimed DFG SOTA reproduction",
+      "model": "five hidden tanh layers of width 64, output (u,v,p), same input/output scaling as RBF",
+      "implementation": "run_campaign.py",
+      "literature_status": "No directly matching published PINN score for stationary DFG 2D-1 Re=20 was identified in literature-ac-dfg.md."
+    }
+  ],
+  "training": {
+    "hardware": "Kaggle GPU T4x2; one isolated process per T4, paired arms run concurrently",
+    "strict_cuda_no_fallback": true,
+    "dtype": "float32",
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "seeds": [501, 502, 503, 504, 505],
+    "paired_seeds": true,
+    "interior_pool": "16384 scrambled Sobol candidates with rejection inside the cylinder; same archived pool generator and seed streams for both arms",
+    "boundary_pools": "512 scrambled Sobol points per inlet, lower wall, upper wall, cylinder and outlet",
+    "batches_per_step": {"interior": 1024, "each_boundary": 256},
+    "common_loss": "sum of normalized strong-form momentum-x, momentum-y, continuity, inlet velocity, three no-slip components, and outlet normal traction losses",
+    "same_batch_schedule_across_arms": true,
+    "checkpoint_gpu_seconds": [120, 300, 600, 900, 1200],
+    "per_arm_seed_gpu_seconds_cap": 1200,
+    "parallel_schedule": "for each seed, run RBF and MLP simultaneously on separate T4s; process seed pairs sequentially",
+    "checkpoint_selection": "final state at cap; never select using FEATFLOW QoIs"
+  },
+  "evaluation": {
+    "field_reference": null,
+    "field_reference_status": "missing_converged_FEM_field",
+    "qoi_reference": {
+      "source": "https://wwwold.mathematik.tu-dortmund.de/~featflow/en/benchmarks/cfdbenchmarking/flow/dfg_benchmark1_re20.html",
+      "Cd": 5.57953523384,
+      "Cl": 0.010618948146,
+      "delta_p_front_minus_rear": 0.11752016697
+    },
+    "primary_metrics": [
+      "relative absolute error in Cd",
+      "absolute error in Cl (small cancellation-sensitive reference)",
+      "relative absolute error in delta_p"
+    ],
+    "qoi_definition": "FEATFLOW sigma=nu*grad(u)-pI; circular stress integral at 512 equiangular points; exact p(0.15,0.2)-p(0.25,0.2); 1024-point integral as quadrature-sensitivity diagnostic",
+    "secondary": ["held-out momentum and continuity residuals", "inlet/no-slip errors", "change in QoIs from 512 to 1024 surface points"],
+    "training_or_selection_may_read_qoi_targets": false,
+    "scoring_wall_cap_seconds": 600,
+    "field_score_behavior": "field_relative_l2 is always null until an independently reviewed, converged FEM field exists"
+  },
+  "stop_rule": {
+    "kaggle_session_quota_cap_hours_including_setup": 2.0,
+    "script_wall_cap_seconds_after_external_setup_reserve": 6900,
+    "stop_each_run": "first of 1200 synchronized GPU-seconds, non-finite loss/gradient, or fatal runtime failure",
+    "stop_campaign": "hard script wall deadline; scoring allowance 600s; stop before a new seed pair if its run cap cannot fit",
+    "t4x2_quota_accounting": "one hour of T4x2 Kaggle session runtime charges one quota hour; active device allocation is separately reported",
+    "optional_smoke": "120 seconds per arm; consume from the safety reserve, never add beyond the 2-hour session cap",
+    "no_seed_replacement_after_scientific_failure": true,
+    "no_cpu_training_or_cpu_solver_path": true,
+    "no_budget_extension_or_score_based_checkpoint_choice": true
+  },
+  "provenance": {
+    "scientific_accepted": false,
+    "bundle_ready": false,
+    "approval_file_created": false,
+    "hashes_created": false,
+    "execution_status": "not run; no Kaggle upload, preflight, validation, training, or solver run performed"
+  }
+}

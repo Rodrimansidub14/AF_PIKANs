@@ -1,0 +1,29 @@
+[
+  {
+    "bundle_id": "90d638249cf70f431fc01ca72311320d15d5bdad88bb4d7493c4ec4ba8625dab",
+    "kernel": "rodrigomansilla/af-pikans-arch-screen-rbf-fixed-exp005",
+    "max_parallel_seeds": 2,
+    "model_id": "rbf_fixed",
+    "notebook": "notebooks\\experiments\\heat-burgers-architecture-screen-rbf_fixed.ipynb",
+    "source_files": 20,
+    "timeout_sec_per_seed": 2100
+  },
+  {
+    "bundle_id": "04de940cf9a5e5ac4e458d99237b5a7412775cf2b8b24cb37c76295940f97c62",
+    "kernel": "rodrigomansilla/af-pikans-arch-screen-mlp-tanh-exp005",
+    "max_parallel_seeds": 2,
+    "model_id": "mlp_tanh",
+    "notebook": "notebooks\\experiments\\heat-burgers-architecture-screen-mlp_tanh.ipynb",
+    "source_files": 20,
+    "timeout_sec_per_seed": 2100
+  },
+  {
+    "bundle_id": "d8c14f855def5adaf03fdcf89aba3757bd7e83b25fcfcd2e7760adf2d45c9b77",
+    "kernel": "rodrigomansilla/af-pikans-arch-screen-bspline-cubic-exp005",
+    "max_parallel_seeds": 2,
+    "model_id": "bspline_cubic",
+    "notebook": "notebooks\\experiments\\heat-burgers-architecture-screen-bspline_cubic.ipynb",
+    "source_files": 20,
+    "timeout_sec_per_seed": 2100
+  }
+]
