@@ -1,0 +1,14 @@
+{
+  "id": "rodrimandub/af-pikans-step0-confirm",
+  "title": "AF PIKANs step0 confirm",
+  "code_file": "run_kaggle.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": ["rodrimandub/af-pikans-step0-bundle"],
+  "competition_sources": [],
+  "kernel_sources": []
+}
