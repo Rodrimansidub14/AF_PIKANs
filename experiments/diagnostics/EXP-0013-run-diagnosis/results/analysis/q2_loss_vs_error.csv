@@ -1,0 +1,11 @@
+problem,stage,loss_column,n,spearman_loss_vs_error
+allen_cahn_1d,adam_final,train/adam_loss_end,10,0.8787878787878788
+allen_cahn_1d,lbfgs_final,train/adam_loss_end,10,0.8666666666666665
+burgers_1d,adam_final,train/adam_loss_end,35,0.5147265077138851
+burgers_1d,lbfgs_final,train/adam_loss_end,35,-0.011492644727999783
+dfg_2d,adam_final,train/adam_loss_end,30,0.939043381535039
+dfg_2d,adam_final,train/lbfgs_loss_end,30,0.8202447163515016
+dfg_2d,lbfgs_final,train/adam_loss_end,30,0.8220244716351501
+dfg_2d,lbfgs_final,train/lbfgs_loss_end,30,0.9332591768631814
+heat_1d,adam_final,train/adam_loss_end,25,0.4915384615384616
+ns2d_cg,adam_final,train/adam_loss_end,13,0.24725274725274726

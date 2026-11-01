@@ -21,6 +21,9 @@ dist/
 
 # ── Datos potencialmente grandes o sensibles ──────────────────────────────
 *.csv
+# Las tablas de resultados de los experimentos (por semilla, análisis) sí se versionan.
+!/experiments/**/*.csv
+/experiments/**/agent-runs/**/*.csv
 *.parquet
 *.npz
 !evals/**/*.npz

@@ -1,0 +1,7 @@
+problema,F_mediana,F_k_n,F_max,F_clase,J_mediana,J_k_n,J_max,J_clase,E_mediana,E_k_n,E_max,E_clase,I_mediana,I_k_n,I_max,I_clase,S_mediana,S_k_n,S_max,S_clase,R_mediana,R_k_n,R_max,R_clase,C_mediana,C_k_n,C_max,C_clase,W_mediana,W_k_n,W_max,W_clase
+ac_d1e-3,0.3524,10/10,0.513,sirve,0.9371,6/10,1.33,indiferente,0.1623,10/10,0.601,sirve,0.1438,6/10,11.6,dependiente de semilla,1.392,1/5,1.69,daña,0.7926,5/5,0.893,sirve,0.783,5/5,0.845,sirve,0.9374,4/5,1.01,indiferente
+ac_d2e-4,0.4047,10/10,0.716,sirve,0.8389,8/10,1.17,sirve,0.2431,10/10,0.352,sirve,0.1422,9/10,10.7,dependiente de semilla,1.049,1/5,1.26,indiferente,0.8022,5/5,0.879,sirve,0.6713,5/5,0.82,sirve,0.9493,5/5,0.991,indiferente
+burgers,0.285,10/10,0.801,sirve,2.937,3/10,10.8,daña,0.24,9/10,2.37,dependiente de semilla,47.86,0/9,194,daña,12.89,0/4,29.4,daña,76.99,0/4,158,daña,4.432,0/4,13.9,daña,1.057,2/4,1.55,indiferente
+kpp,1.835,4/10,10.5,dependiente de semilla,2.379,3/10,23.6,daña,0.7675,6/10,21.8,dependiente de semilla,1.39,5/10,13.7,dependiente de semilla,3.188,0/5,38.5,daña,2.561,1/5,33.3,daña,1.324,1/5,2.78,daña,0.987,3/5,1.21,indiferente
+ns,0.8302,10/10,0.93,sirve,0.9741,6/10,1.19,indiferente,0.7915,10/10,0.943,sirve,0.7357,10/10,0.809,sirve,,,,sin datos,,,,sin datos,,,,sin datos,,,,sin datos
+dfg,0.5669,10/10,0.804,sirve,2.068,0/10,2.81,daña,0.815,10/10,0.95,sirve,0.3868,10/10,0.731,sirve,,,,sin datos,,,,sin datos,,,,sin datos,,,,sin datos
