@@ -1,0 +1,16 @@
+# Entorno de referencia (Python 3.12). Versiones con las que se corrieron las pruebas y el análisis local (2026-10-26).
+# Las corridas en GPU usaron torch 2.14.1 (Modal, Python 3.12) y, en la semilla 28 de B y E de piezo, torch 2.11 con Python 3.13 (Kaggle):
+# ver docs/REPRODUCIR.md. Instalar torch CPU:  pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+numpy==2.3.2
+scipy==1.18.0
+pandas==2.3.2
+scikit-learn==1.9.1
+scikit-fem==12.0.2
+sympy==1.14.0
+matplotlib==3.10.5
+altair==5.5.0
+nbformat==5.10.4
+pytest==9.1.1
+wandb==0.31.0
+kaggle==2.2.4
+modal==1.6.2

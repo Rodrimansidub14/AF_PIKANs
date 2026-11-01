@@ -1,0 +1,66 @@
+# ── Salidas regenerables ──────────────────────────────────────────────────
+/var/
+/tmp/
+/artifacts/
+/graphify-out/
+/src/graphify-out/
+
+# ── Dependencias vendored (NUNCA versionar) ───────────────────────────────
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+dist/
+
+# ── Evidencia cruda (se referencia por registry/, no se versiona) ─────────
+/evals/**/eval_grid.npz
+/experiments/**/runs/
+
+# ── Datos potencialmente grandes o sensibles ──────────────────────────────
+*.csv
+*.parquet
+*.npz
+!evals/**/*.npz
+
+# ── OS ────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+debug.log
+
+# Local credentials
+/.env
+
+# ── Checkpoints de experimentos (se versiona solo index.json con hashes) ──
+/experiments/**/checkpoints/**/*.pt
+/experiments/**/checkpoints/**/*.pkl
+/experiments/**/checkpoints/**/*.pickle
+/var/scratch/
+
+# ── Pesos, trazas y artefactos pesados de corridas (2026-10-26) ───────────
+# El resumen por corrida (JSON, MD) sí se versiona; lo pesado vive local o en W&B.
+*.pt
+*.pth
+*.ckpt
+*.wandb
+*.whl
+*.zip
+*.log
+*.dat
+**/wandb/offline-run-*/
+**/wandb/latest-run
+/wandb/
+/experiments/**/wandb_tools/offline/
+/experiments/**/wandb_tools/wandb/
+.untracked_tmp.txt
+
+# ── Locales de agentes / editor ───────────────────────────────────────────
+.pytest_cache/
+.vscode/
+/.codex/
+/.prime/
+/.agents/
+
+# ── Notebooks: se versionan sin salidas (ver .gitattributes y tools/nbstrip.py)

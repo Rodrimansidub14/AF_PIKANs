@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Si usas este repositorio, cítalo con estos metadatos."
+title: "AF_PIKANs: mecanismos de focalización adaptativa y precondicionamiento en PIKAN (RBF-KAN PINN)"
+type: software
+authors:
+  - family-names: Mansilla
+    given-names: Rodrigo
+    affiliation: "Universidad del Valle de Guatemala"
+date-released: "2026-10-26"
+version: "0.1.0-exploratorio"
+repository-code: "PENDIENTE: URL del repositorio al subirlo"
+license: "Apache-2.0"  # documentos y datos derivados: CC-BY-4.0 (LICENSE-docs.md)

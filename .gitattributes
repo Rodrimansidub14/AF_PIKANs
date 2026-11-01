@@ -1,0 +1,6 @@
+# Los notebooks se guardan en git sin salidas; el archivo local las conserva.
+# Activar con:  python tools/setup_git.py
+*.ipynb filter=nbstrip
+* text=auto eol=lf
+*.png binary
+*.pdf binary
