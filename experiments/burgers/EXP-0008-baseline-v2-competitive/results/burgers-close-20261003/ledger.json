@@ -1,0 +1,127 @@
+{
+  "status": "DRAFT_UNVERIFIED",
+  "elapsed": 5067.420636585,
+  "runs": [
+    {
+      "seed": 301,
+      "arm": "mlp",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 286.075347458,
+      "gpu": 0
+    },
+    {
+      "seed": 301,
+      "arm": "rbf",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 550.148491405,
+      "gpu": 1
+    },
+    {
+      "seed": 302,
+      "arm": "mlp",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 296.084800437,
+      "gpu": 1
+    },
+    {
+      "seed": 301,
+      "arm": "rbf",
+      "width": 48,
+      "return_code": 0,
+      "wall_seconds": 990.2798821609999,
+      "gpu": 0
+    },
+    {
+      "seed": 302,
+      "arm": "rbf",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 570.1620672439999,
+      "gpu": 1
+    },
+    {
+      "seed": 303,
+      "arm": "mlp",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 302.08160221399976,
+      "gpu": 1
+    },
+    {
+      "seed": 303,
+      "arm": "rbf",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 512.1432242000001,
+      "gpu": 1
+    },
+    {
+      "seed": 302,
+      "arm": "rbf",
+      "width": 48,
+      "return_code": 0,
+      "wall_seconds": 992.2811322769999,
+      "gpu": 0
+    },
+    {
+      "seed": 304,
+      "arm": "mlp",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 298.0822965960001,
+      "gpu": 0
+    },
+    {
+      "seed": 304,
+      "arm": "rbf",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 520.1431431139999,
+      "gpu": 0
+    },
+    {
+      "seed": 303,
+      "arm": "rbf",
+      "width": 48,
+      "return_code": 0,
+      "wall_seconds": 992.2774107149999,
+      "gpu": 1
+    },
+    {
+      "seed": 305,
+      "arm": "mlp",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 292.08213761700017,
+      "gpu": 1
+    },
+    {
+      "seed": 305,
+      "arm": "rbf",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 546.1607558719998,
+      "gpu": 1
+    },
+    {
+      "seed": 304,
+      "arm": "rbf",
+      "width": 48,
+      "return_code": 0,
+      "wall_seconds": 988.2858052270003,
+      "gpu": 0
+    },
+    {
+      "seed": 305,
+      "arm": "rbf",
+      "width": 48,
+      "return_code": 0,
+      "wall_seconds": 1004.2722484349997,
+      "gpu": 1
+    }
+  ],
+  "complete": true
+}

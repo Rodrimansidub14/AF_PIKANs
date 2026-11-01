@@ -1,0 +1,36 @@
+{
+  "status": "DRAFT_UNVERIFIED",
+  "problem": "burgers",
+  "arm": "rbf",
+  "seed": 301,
+  "width": 16,
+  "bases": 11,
+  "dtype": "float32",
+  "params": 3648,
+  "adam_steps": 20000,
+  "adam_target": 20000,
+  "adam_status": "adam_complete",
+  "adam_seconds": 382.00152962699997,
+  "device": "Tesla T4",
+  "ref_sha256": "7af8967648caaf2156529551b6df9e6ea6e3d09c7bc0070a3ffca370ba77f026",
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "score_adam_final": {
+    "l2re_coleHopf": 0.0052933853555935965,
+    "max_abs": 0.07244037091732025
+  },
+  "final_loss_terms_adam": {
+    "pde": 0.0005124513991177082
+  },
+  "lbfgs_status": "lbfgs_plateau",
+  "lbfgs_iterations": 4559,
+  "lbfgs_seconds": 158.28225255000007,
+  "score_lbfgs_final": {
+    "l2re_coleHopf": 9.670256370267359e-05,
+    "max_abs": 0.0010212152426380544
+  },
+  "checkpoint_sha256": {
+    "checkpoint-adam-final.pt": "ded686fe9522c3a1dde8fba391dca4a09a97a4beaf6ba0fca69b1f5bffe6cfb7",
+    "checkpoint-lbfgs-final.pt": "98f842e52edeec2219115bd3fa831454e44c6033649c2f75c12630e61448a182"
+  }
+}

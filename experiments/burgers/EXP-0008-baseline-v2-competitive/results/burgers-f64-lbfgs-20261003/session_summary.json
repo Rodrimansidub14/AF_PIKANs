@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "return_code": 0,
+  "wall_seconds": 7962.85043774,
+  "cap_seconds": 12000.0,
+  "gpus": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "hashes": {
+    "pikan_campaign.py": "1e1b94264bd9f3be740af632029dd45867045839b189f33808736ce1095c3341",
+    "burgers_coleHopf_1025x129.npz": "7af8967648caaf2156529551b6df9e6ea6e3d09c7bc0070a3ffca370ba77f026"
+  },
+  "scientific_accepted": false,
+  "reference_accepted": false
+}

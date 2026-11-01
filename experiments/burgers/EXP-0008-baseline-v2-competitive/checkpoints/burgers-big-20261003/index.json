@@ -1,0 +1,25 @@
+{
+ "campaign": "burgers-big-20261003",
+ "sha256": {
+  "mlp-seed-301/checkpoint-adam-final.pt": "f699bc633a4df3e811db53171103bfd9a0e241115a0150ebf7a32ca2f5e45d01",
+  "mlp-seed-301/checkpoint-lbfgs-final.pt": "c380ac16d44c2fc83b06ccdb3c75f09f7573dc012212a593620c13876344c470",
+  "mlp-seed-302/checkpoint-adam-final.pt": "910848e44949724c561c291d2e8fe76b0dc0eed40ca53a5735d608ec2b00b2fb",
+  "mlp-seed-302/checkpoint-lbfgs-final.pt": "e16e3e818f9cc0dbaf8743daa171bcee4e00af90ebc05735bddb6a0219d37dfa",
+  "mlp-seed-303/checkpoint-adam-final.pt": "8220378d4c7d9577cae3421c7667735e12748f0829bed9ae50cc538e25c4ce6c",
+  "mlp-seed-303/checkpoint-lbfgs-final.pt": "92c90256c9e88a2af6ec810809c282a27a48db90c941d4cf2bfccef2ed82beb6",
+  "mlp-seed-304/checkpoint-adam-final.pt": "3e085f910685c2a63fbca800a4a220ce4c8c7ab341702edf9970361138093dc9",
+  "mlp-seed-304/checkpoint-lbfgs-final.pt": "7e1a0c9ce7614266c08c4e3e989b5c9907fff9ef7590378dafaefa2fae049bc7",
+  "mlp-seed-305/checkpoint-adam-final.pt": "1144a22202b27372b751ecc97d47bc01b53c6323336852f4c8cb76a7e3e04fa0",
+  "mlp-seed-305/checkpoint-lbfgs-final.pt": "75fbd31b78ff015e0ff5821505200d2e71af75312e4e55ebf4648448b5ae1812",
+  "rbf48-seed-301/checkpoint-adam-final.pt": "c1690ca05754261bf192731dfbdf92925b503bd9b00eefb5fd4b94508fe901c0",
+  "rbf48-seed-301/checkpoint-lbfgs-final.pt": "f78bebdd6da938b6f9841fd747b3f25c3ff483604f86ac4f8bcb3dcae49b51e4",
+  "rbf48-seed-302/checkpoint-adam-final.pt": "e1c2917d827d7a6db838544abd89ce0f76a4b51baa8773cdee2b0d32bf349512",
+  "rbf48-seed-302/checkpoint-lbfgs-final.pt": "f0229c3b5cda44d9d8cd4fbaf9b5856786ea18dd53f097d59418776ae6feafe9",
+  "rbf48-seed-303/checkpoint-adam-final.pt": "3b06e435c989cddf0bd20bb04a945e25ba2c81cc40f4a28d868ff9f9327615d4",
+  "rbf48-seed-303/checkpoint-lbfgs-final.pt": "67fdc4ca9ef3b4fee7b6ca21b0947b05deba59db667a30304916219b3ae34d5b",
+  "rbf48-seed-304/checkpoint-adam-final.pt": "939a71872f7f279ff31a86c5e696bdfeae7e075cfa474d49fae17e7f127f65ab",
+  "rbf48-seed-304/checkpoint-lbfgs-final.pt": "1ba7060714a548c1a261ba3479585ca5ea2dbeda4afc88472ec36cd7f06882d4",
+  "rbf48-seed-305/checkpoint-adam-final.pt": "ab613d2f27b498e5c03c44b3e201caef920aef5805aa0dc836aed8b2fd3b9366",
+  "rbf48-seed-305/checkpoint-lbfgs-final.pt": "e20a95a91c685e08708292f31c7c4e281de74c350289395f5ad4073f4d0bc27c"
+ }
+}
