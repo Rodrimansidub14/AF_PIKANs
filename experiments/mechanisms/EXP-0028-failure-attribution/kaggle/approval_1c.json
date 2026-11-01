@@ -1,0 +1,88 @@
+{
+  "bundle": "exp0028-phase1c",
+  "dataset": "rodrimandub/af-pikans-exp0028-bundle-1c",
+  "launch_status": "prepared_not_uploaded",
+  "uploaded": false,
+  "executed": false,
+  "approved_by": "NINGUNA para este lanzamiento: spec v1.1 (Fase 1c requiere que el mecanismo en residuo vectorial pase sus pruebas) y autorizacion GPU de la Enmienda (presupuesto medido <= 4 h por lanzamiento); la subida/ejecucion queda pendiente de la orden del investigador",
+  "recipe": "NS2d-CG, RBF16 (2-16-16-3, 11 bases), B,F,J,E,I x 4001-4010; Adam 20000 lr 1e-3 lote completo float32 + L-BFGS 500 it. (sweep.lbfgs_stage); recalculo cada 1000 pasos y al arrancar L-BFGS; GN con 2048 puntos por clave; ver budget_1c.md",
+  "caps": "sin trabajo nuevo despues de 3.4 h; kill a 3.9 h",
+  "accelerator": "NvidiaTeslaT4 (T4x2)",
+  "internet": false,
+  "scientific_accepted": false,
+  "kernels": {
+    "kernel_1c_c1": {
+      "slug": "rodrimandub/af-pikans-exp-0028-phase1c",
+      "block": "c1",
+      "session_estimate_minutes": [
+        190,
+        215
+      ]
+    },
+    "kernel_1c_c2": {
+      "slug": "rodrimandub/af-pikans-exp-0028-phase1c-b2",
+      "block": "c2",
+      "session_estimate_minutes": [
+        190,
+        215
+      ]
+    },
+    "kernel_1c_c3": {
+      "slug": "rodrimandub/af-pikans-exp-0028-phase1c-b3",
+      "block": "c3",
+      "session_estimate_minutes": [
+        190,
+        215
+      ]
+    },
+    "kernel_1c_t1": {
+      "slug": "rodrimandub/af-pikans-exp-0028-phase1c-t1",
+      "block": "all_t1",
+      "session_estimate_minutes": [
+        70,
+        90
+      ]
+    },
+    "kernel_1c_c4": {
+      "slug": "rodrimandub/af-pikans-exp-0028-phase1c-b4",
+      "block": "c4",
+      "session_estimate_minutes": [
+        65,
+        80
+      ]
+    },
+    "kernel_1c_t": {
+      "slug": "rodrimandub/af-pikans-exp-0028-phase1c-timing",
+      "block": "t",
+      "session_estimate_minutes": [
+        5,
+        15
+      ]
+    }
+  },
+  "component_sha256": {
+    "dataset_1c/gram_preconditioning.py": "7028374029926c1b460179744b8ced84f271aeb845cfd258fe698a69a9e28843",
+    "dataset_1c/ns_0_obstacle.dat": "13e1d9fa1584faf01a9757af1723b2050c68aefc93d64a5309bb1e222f23d465",
+    "dataset_1c/pikan_campaign.py": "1e1b94264bd9f3be740af632029dd45867045839b189f33808736ce1095c3341",
+    "dataset_1c/pre_trainer.py": "10c24301f337b393b101854c35314ccde3fd34e504c466c108d44addaee57d84",
+    "dataset_1c/regrid.py": "e8f9c5c0061e262233200968cf050b7780349bc2930c2a645d8f6c70f2ef6fa0",
+    "dataset_1c/residual_terms.py": "b2ffb5109d5041963f7fa116b6e8e52e9b0877bd40eca4563fa5d61e4dce4032",
+    "dataset_1c/run_phase1c.py": "fd40c1f656c4d0c19ce716a0c58285d022e4610ef50dafc2d3ff94fd2c8ba115",
+    "dataset_1c/settling_focus.py": "5b686a6ffa2bb1ab522620153d8901d371d04f70bf86fa3a6880d7a554e9cc33",
+    "dataset_1c/stall_handoff.py": "a513ba64cade9e2a923097ef0228fbcbe36e4c0c8a80d5c9cf81b1a3d067c587",
+    "dataset_1c/sweep.py": "933e231957d5cfda4b697d7a3a2345149abd4bd8ba8fb9cdd6d53500ff945337",
+    "dataset_1c/t1_trainer.py": "5bee9dd152fd690ed309f6a8dc63ff76fc8b0c0ebda1dac353602479da8bfca2",
+    "kernel_1c_c1/exp0028_phase1c_c1_gpu.py": "d12b09b3e101034ab0dc051f454feb66b5bdbfcb7af11646e55a232ada5ac91a",
+    "kernel_1c_c1/kernel-metadata.json": "e9b6e527e65913626a11a1e2dae5585f741b92f80e9563807eae00f31ed5959e",
+    "kernel_1c_c2/exp0028_phase1c_c2_gpu.py": "595a9254a7ad6a404e2a6d1316727a5bf46b2a2ef9c63a484b14e419ba1b5077",
+    "kernel_1c_c2/kernel-metadata.json": "83981ad0b98f9abc902b2a2123113dfd2c35fc4ca746fc8b9278e057bf850d58",
+    "kernel_1c_c3/exp0028_phase1c_c3_gpu.py": "047dd426c96959edf5a2e1e385f0cb65a80eac47dcc1236775cf17a44c6d0c45",
+    "kernel_1c_c3/kernel-metadata.json": "815b62f4cc916cc8445b8cdbce89fe157687a2def603d9b8cfe5043ec07cf754",
+    "kernel_1c_t1/exp0028_phase1c_all_t1_gpu.py": "78027fc7a7c838e077c1fd5808069d168a54765f58ccb0219a744f88d7d84676",
+    "kernel_1c_t1/kernel-metadata.json": "2ac18f1c17dda3dc461518fec8ba743b2a0e61a80c549c028a709dc4233d9143",
+    "kernel_1c_c4/exp0028_phase1c_c4_gpu.py": "cfb788ab1b6d5a70aa9a67acd035ad5e7b95ded29875556cabdb8a796f7da322",
+    "kernel_1c_c4/kernel-metadata.json": "ecdd25f4c146f735954c20a3bdea896dcf06051e65a0380ee43c5320300549a7",
+    "kernel_1c_t/exp0028_phase1c_t_gpu.py": "203abf648cfa88904396455bd083ce97631f2ec4521a583fdfea76f0f82d9701",
+    "kernel_1c_t/kernel-metadata.json": "4904f0ec90d76f4dde64697c544c7b2a7e3ddf356dd477420e4ea21fc7dceb8a"
+  }
+}

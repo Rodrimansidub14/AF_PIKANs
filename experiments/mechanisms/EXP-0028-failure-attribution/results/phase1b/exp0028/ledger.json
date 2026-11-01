@@ -1,0 +1,388 @@
+{
+ "info": {
+  "tiny": false,
+  "block": "b",
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "seeds": [
+   4001,
+   4002,
+   4003,
+   4004,
+   4005,
+   4006,
+   4007,
+   4008,
+   4009,
+   4010
+  ],
+  "cutoff_s": 12240.0,
+  "hard_cap_s": 14040.0,
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "ledger": [
+  {
+   "job": [
+    "burgers",
+    4001
+   ],
+   "slot": 0,
+   "start": 2.144000006865099e-06,
+   "end": 600.00667309,
+   "returncode": 1,
+   "status": "failed"
+  },
+  {
+   "job": [
+    "kpp",
+    4001
+   ],
+   "slot": 1,
+   "start": 2.144000006865099e-06,
+   "end": 900.0110139740001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    4002
+   ],
+   "slot": 0,
+   "start": 600.00667309,
+   "end": 1580.0184770679998,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    4002
+   ],
+   "slot": 1,
+   "start": 900.0110139740001,
+   "end": 1760.0224508059998,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    4003
+   ],
+   "slot": 0,
+   "start": 1580.0184770679998,
+   "end": 2560.031756434,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    4003
+   ],
+   "slot": 1,
+   "start": 1760.0224508059998,
+   "end": 2660.03457277,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    4004
+   ],
+   "slot": 0,
+   "start": 2560.031756434,
+   "end": 3540.0436109049997,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    4004
+   ],
+   "slot": 1,
+   "start": 2660.03457277,
+   "end": 3540.0436109049997,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    4005
+   ],
+   "slot": 1,
+   "start": 3540.0436109049997,
+   "end": 4440.053452099,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    4005
+   ],
+   "slot": 0,
+   "start": 3540.0436109049997,
+   "end": 4520.056040791001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    4006
+   ],
+   "slot": 1,
+   "start": 4440.053452099,
+   "end": 5040.061925003,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    4006
+   ],
+   "slot": 0,
+   "start": 4520.056040791001,
+   "end": 5040.061925003,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    4007
+   ],
+   "slot": 1,
+   "start": 5040.061925003,
+   "end": 5580.068939342001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    4007
+   ],
+   "slot": 0,
+   "start": 5040.061925003,
+   "end": 5640.072051496,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    4008
+   ],
+   "slot": 1,
+   "start": 5580.068939342001,
+   "end": 6180.077678888,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    4008
+   ],
+   "slot": 0,
+   "start": 5640.072051496,
+   "end": 6180.077678888,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    4009
+   ],
+   "slot": 1,
+   "start": 6180.077678888,
+   "end": 6720.084657128001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    4009
+   ],
+   "slot": 0,
+   "start": 6180.077678888,
+   "end": 6780.0868785150005,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    4010
+   ],
+   "slot": 0,
+   "start": 6780.0868785150005,
+   "end": 7300.093489382,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    4010
+   ],
+   "slot": 1,
+   "start": 6720.084657128001,
+   "end": 7320.094261638001,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "finished_runs": [
+  "burgers-B-seed4001.json",
+  "burgers-B-seed4002.json",
+  "burgers-B-seed4003.json",
+  "burgers-B-seed4004.json",
+  "burgers-B-seed4005.json",
+  "burgers-B-seed4006.json",
+  "burgers-B-seed4007.json",
+  "burgers-B-seed4008.json",
+  "burgers-B-seed4009.json",
+  "burgers-B-seed4010.json",
+  "burgers-C-seed4002.json",
+  "burgers-C-seed4003.json",
+  "burgers-C-seed4004.json",
+  "burgers-C-seed4005.json",
+  "burgers-E-seed4001.json",
+  "burgers-E-seed4002.json",
+  "burgers-E-seed4003.json",
+  "burgers-E-seed4004.json",
+  "burgers-E-seed4005.json",
+  "burgers-E-seed4006.json",
+  "burgers-E-seed4007.json",
+  "burgers-E-seed4008.json",
+  "burgers-E-seed4009.json",
+  "burgers-E-seed4010.json",
+  "burgers-F-seed4001.json",
+  "burgers-F-seed4002.json",
+  "burgers-F-seed4003.json",
+  "burgers-F-seed4004.json",
+  "burgers-F-seed4005.json",
+  "burgers-F-seed4006.json",
+  "burgers-F-seed4007.json",
+  "burgers-F-seed4008.json",
+  "burgers-F-seed4009.json",
+  "burgers-F-seed4010.json",
+  "burgers-I-seed4002.json",
+  "burgers-I-seed4003.json",
+  "burgers-I-seed4004.json",
+  "burgers-I-seed4005.json",
+  "burgers-I-seed4006.json",
+  "burgers-I-seed4007.json",
+  "burgers-I-seed4008.json",
+  "burgers-I-seed4009.json",
+  "burgers-I-seed4010.json",
+  "burgers-J-seed4001.json",
+  "burgers-J-seed4002.json",
+  "burgers-J-seed4003.json",
+  "burgers-J-seed4004.json",
+  "burgers-J-seed4005.json",
+  "burgers-J-seed4006.json",
+  "burgers-J-seed4007.json",
+  "burgers-J-seed4008.json",
+  "burgers-J-seed4009.json",
+  "burgers-J-seed4010.json",
+  "burgers-R-seed4002.json",
+  "burgers-R-seed4003.json",
+  "burgers-R-seed4004.json",
+  "burgers-R-seed4005.json",
+  "burgers-S-seed4002.json",
+  "burgers-S-seed4003.json",
+  "burgers-S-seed4004.json",
+  "burgers-S-seed4005.json",
+  "burgers-W-seed4002.json",
+  "burgers-W-seed4003.json",
+  "burgers-W-seed4004.json",
+  "burgers-W-seed4005.json",
+  "kpp-B-seed4001.json",
+  "kpp-B-seed4002.json",
+  "kpp-B-seed4003.json",
+  "kpp-B-seed4004.json",
+  "kpp-B-seed4005.json",
+  "kpp-B-seed4006.json",
+  "kpp-B-seed4007.json",
+  "kpp-B-seed4008.json",
+  "kpp-B-seed4009.json",
+  "kpp-B-seed4010.json",
+  "kpp-C-seed4001.json",
+  "kpp-C-seed4002.json",
+  "kpp-C-seed4003.json",
+  "kpp-C-seed4004.json",
+  "kpp-C-seed4005.json",
+  "kpp-E-seed4001.json",
+  "kpp-E-seed4002.json",
+  "kpp-E-seed4003.json",
+  "kpp-E-seed4004.json",
+  "kpp-E-seed4005.json",
+  "kpp-E-seed4006.json",
+  "kpp-E-seed4007.json",
+  "kpp-E-seed4008.json",
+  "kpp-E-seed4009.json",
+  "kpp-E-seed4010.json",
+  "kpp-F-seed4001.json",
+  "kpp-F-seed4002.json",
+  "kpp-F-seed4003.json",
+  "kpp-F-seed4004.json",
+  "kpp-F-seed4005.json",
+  "kpp-F-seed4006.json",
+  "kpp-F-seed4007.json",
+  "kpp-F-seed4008.json",
+  "kpp-F-seed4009.json",
+  "kpp-F-seed4010.json",
+  "kpp-I-seed4001.json",
+  "kpp-I-seed4002.json",
+  "kpp-I-seed4003.json",
+  "kpp-I-seed4004.json",
+  "kpp-I-seed4005.json",
+  "kpp-I-seed4006.json",
+  "kpp-I-seed4007.json",
+  "kpp-I-seed4008.json",
+  "kpp-I-seed4009.json",
+  "kpp-I-seed4010.json",
+  "kpp-J-seed4001.json",
+  "kpp-J-seed4002.json",
+  "kpp-J-seed4003.json",
+  "kpp-J-seed4004.json",
+  "kpp-J-seed4005.json",
+  "kpp-J-seed4006.json",
+  "kpp-J-seed4007.json",
+  "kpp-J-seed4008.json",
+  "kpp-J-seed4009.json",
+  "kpp-J-seed4010.json",
+  "kpp-R-seed4001.json",
+  "kpp-R-seed4002.json",
+  "kpp-R-seed4003.json",
+  "kpp-R-seed4004.json",
+  "kpp-R-seed4005.json",
+  "kpp-S-seed4001.json",
+  "kpp-S-seed4002.json",
+  "kpp-S-seed4003.json",
+  "kpp-S-seed4004.json",
+  "kpp-S-seed4005.json",
+  "kpp-W-seed4001.json",
+  "kpp-W-seed4002.json",
+  "kpp-W-seed4003.json",
+  "kpp-W-seed4004.json",
+  "kpp-W-seed4005.json"
+ ],
+ "wall_seconds": 7320.096948862076,
+ "complete": false
+}

@@ -1,0 +1,39 @@
+{
+  "bundle": "exp0028-phase1c-dfg",
+  "dataset": "rodrimandub/af-pikans-exp0028-bundle-dfg",
+  "launch_status": "prepared_not_uploaded",
+  "uploaded": false,
+  "executed": false,
+  "approved_by": "NINGUNA para este lanzamiento: la subida/ejecucion queda pendiente de la orden del investigador (receta DFG decidida por el investigador 2026-10-24)",
+  "recipe": "DFG 2D-1 Re20, DFGRBFPIKAN (2-16-16-3, 11 bases), B,F,J,E,I x 4001-4010; Adam 2000 pasos fijos lr 1e-3 minibatch 1024+256/frontera con reemplazo float32 + L-BFGS 500 it. (sweep.lbfgs_stage, pool completo); recalculo antes del paso 1, cada 1000 pasos y al arrancar L-BFGS; GN con 2048 puntos por clave (4608); puntuacion l2re_flat/QoI contra dfg_L3_fields.npz (referencia de trabajo)",
+  "caps": "sin trabajo nuevo despues de CUTOFF_S; kill a HARD_CAP_S (ver kaggle_block_1c_dfg.py)",
+  "accelerator": "NvidiaTeslaT4 (T4x2)",
+  "internet": false,
+  "scientific_accepted": false,
+  "kernels": {
+    "kernel_1c_dfg": {
+      "slug": "rodrimandub/af-pikans-exp-0028-phase1c-dfg",
+      "block": "all",
+      "session_estimate_minutes": [
+        40,
+        100
+      ]
+    }
+  },
+  "component_sha256": {
+    "dataset_1c_dfg/dfg.py": "9d4958e63e0086867eb7d4d26d5b874a7766ed1cbabcd02f25e22ea8506de1fd",
+    "dataset_1c_dfg/dfg_L3_fields.npz": "936fc178e6bc63b1c72388b76c269e2eb56ff78a93c14903df512a7d7202bb7a",
+    "dataset_1c_dfg/gram_preconditioning.py": "7028374029926c1b460179744b8ced84f271aeb845cfd258fe698a69a9e28843",
+    "dataset_1c_dfg/pikan_campaign.py": "1e1b94264bd9f3be740af632029dd45867045839b189f33808736ce1095c3341",
+    "dataset_1c_dfg/pre_trainer.py": "10c24301f337b393b101854c35314ccde3fd34e504c466c108d44addaee57d84",
+    "dataset_1c_dfg/regrid.py": "e8f9c5c0061e262233200968cf050b7780349bc2930c2a645d8f6c70f2ef6fa0",
+    "dataset_1c_dfg/residual_terms.py": "b2ffb5109d5041963f7fa116b6e8e52e9b0877bd40eca4563fa5d61e4dce4032",
+    "dataset_1c_dfg/run_phase1c_dfg.py": "31270ab4ea73a12110d228b8b5d0a70b195edd9f683c923f34485e9f8338e0e4",
+    "dataset_1c_dfg/settling_focus.py": "5b686a6ffa2bb1ab522620153d8901d371d04f70bf86fa3a6880d7a554e9cc33",
+    "dataset_1c_dfg/stall_handoff.py": "a513ba64cade9e2a923097ef0228fbcbe36e4c0c8a80d5c9cf81b1a3d067c587",
+    "dataset_1c_dfg/sweep.py": "933e231957d5cfda4b697d7a3a2345149abd4bd8ba8fb9cdd6d53500ff945337",
+    "dataset_1c_dfg/t1_trainer.py": "5bee9dd152fd690ed309f6a8dc63ff76fc8b0c0ebda1dac353602479da8bfca2",
+    "kernel_1c_dfg/exp0028_phase1c_dfg_all_gpu.py": "671853a8d6189b54bbfd6225baf03519e03e0ed958a57b7531a9c893d94071c5",
+    "kernel_1c_dfg/kernel-metadata.json": "ed0deaa8dc59a7a7658301942283e72312ee1dda76de4d8624de4db105a7a994"
+  }
+}

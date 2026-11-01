@@ -1,0 +1,1679 @@
+{
+ "l2re_flat": {
+  "label": "NS2d-CG (RBF16, Adam 20000 + L-BFGS 500 it.)",
+  "n_corridas": 50,
+  "brazos": {
+   "F": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.6762631008944511,
+     "geomean": 0.6583360243407167,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.7835842228817235,
+     "razon_min": 0.5787406842271582
+    },
+    "final": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.8301822478555635,
+     "geomean": 0.8461719074019979,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.9297814410126702,
+     "razon_min": 0.7475094135397687
+    },
+    "fase": "Adam y L-BFGS (se mantiene)",
+    "etiqueta": null
+   },
+   "J": {
+    "adam": {
+     "n": 10,
+     "clase": "indiferente",
+     "mediana": 1.002082978028047,
+     "geomean": 0.9966930136713172,
+     "mejora_k": 5,
+     "empeora_k": 5,
+     "razon_max": 1.1814783635844175,
+     "razon_min": 0.861475951547165
+    },
+    "final": {
+     "n": 10,
+     "clase": "indiferente",
+     "mediana": 0.9741267195981949,
+     "geomean": 0.9905515127084908,
+     "mejora_k": 6,
+     "empeora_k": 4,
+     "razon_max": 1.189774341659677,
+     "razon_min": 0.8547947670372626
+    },
+    "fase": "ninguna",
+    "etiqueta": null
+   },
+   "E": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.6407460506498692,
+     "geomean": 0.6511730216594439,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.8160042632116702,
+     "razon_min": 0.5599684620106163
+    },
+    "final": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.7915002712061268,
+     "geomean": 0.8012239775162878,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.9433547800658146,
+     "razon_min": 0.7255791651853389
+    },
+    "fase": "Adam y L-BFGS (se mantiene)",
+    "etiqueta": null
+   },
+   "I": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.5614832469800047,
+     "geomean": 0.5533415098526435,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.6780303306539383,
+     "razon_min": 0.46218193508520394
+    },
+    "final": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.7357167233870211,
+     "geomean": 0.7363877067103731,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.8087052432174755,
+     "razon_min": 0.638801017668807
+    },
+    "fase": "Adam y L-BFGS (se mantiene)",
+    "etiqueta": null
+   }
+  },
+  "contrastes": {
+   "E_vs_F": {
+    "nombre": "D5: E frente a F (¿residuo o solo la base?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.9392899839206474,
+     "geomean": 0.9468808530600907,
+     "a_mejor_k": 8,
+     "a_peor_k": 2,
+     "razon_max": 1.0315919289161404,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.9601,
+      "4002": 0.9099,
+      "4003": 0.9707,
+      "4004": 0.9363,
+      "4005": 1.0316,
+      "4006": 1.0005,
+      "4007": 0.9422,
+      "4008": 0.9118,
+      "4009": 0.8895,
+      "4010": 0.9252
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.9974760657435677,
+     "geomean": 0.9891195340731261,
+     "a_mejor_k": 5,
+     "a_peor_k": 5,
+     "razon_max": 1.0413740340645428,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 1.0414,
+      "4002": 0.9682,
+      "4003": 1.0121,
+      "4004": 0.927,
+      "4005": 0.9616,
+      "4006": 1.0328,
+      "4007": 1.0032,
+      "4008": 0.9917,
+      "4009": 0.9288,
+      "4010": 1.0325
+     }
+    }
+   },
+   "J_vs_B": {
+    "nombre": "J frente a B (¿basta reescalar?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.9741267195981949,
+     "geomean": 0.9905515127084908,
+     "a_mejor_k": 6,
+     "a_peor_k": 4,
+     "razon_max": 1.189774341659677,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 1.0087,
+      "4002": 0.8548,
+      "4003": 0.888,
+      "4004": 1.0699,
+      "4005": 1.1898,
+      "4006": 0.9654,
+      "4007": 0.9807,
+      "4008": 0.9665,
+      "4009": 0.9675,
+      "4010": 1.0539
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 1.002082978028047,
+     "geomean": 0.9966930136713172,
+     "a_mejor_k": 5,
+     "a_peor_k": 5,
+     "razon_max": 1.1814783635844175,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 1.0216,
+      "4002": 0.9297,
+      "4003": 0.9533,
+      "4004": 1.1815,
+      "4005": 1.0383,
+      "4006": 1.0168,
+      "4007": 0.9723,
+      "4008": 0.8615,
+      "4009": 0.9874,
+      "4010": 1.0359
+     }
+    }
+   },
+   "E_vs_J": {
+    "nombre": "E frente a J (¿importan los terminos fuera de la diagonal?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.8045758681306197,
+     "geomean": 0.8088665427661406,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.8903048233843207,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.8701,
+      "4002": 0.8903,
+      "4003": 0.8171,
+      "4004": 0.7539,
+      "4005": 0.7929,
+      "4006": 0.8467,
+      "4007": 0.7917,
+      "4008": 0.7676,
+      "4009": 0.7544,
+      "4010": 0.8163
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.6536390905790798,
+     "geomean": 0.6533335868993895,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.7987736679519416,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.7988,
+      "4002": 0.7002,
+      "4003": 0.6362,
+      "4004": 0.5337,
+      "4005": 0.641,
+      "4006": 0.7025,
+      "4007": 0.6388,
+      "4008": 0.6662,
+      "4009": 0.5671,
+      "4010": 0.6865
+     }
+    }
+   },
+   "I_vs_E": {
+    "nombre": "I frente a E (¿importa acoplar aristas?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.9226797482355216,
+     "geomean": 0.9190784691605205,
+     "a_mejor_k": 9,
+     "a_peor_k": 1,
+     "razon_max": 1.0070564031631652,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.9214,
+      "4002": 0.8394,
+      "4003": 0.955,
+      "4004": 0.9654,
+      "4005": 0.8418,
+      "4006": 0.9008,
+      "4007": 0.9168,
+      "4008": 0.9323,
+      "4009": 1.0071,
+      "4010": 0.9239
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.8438863376516909,
+     "geomean": 0.8497611102537888,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.9403981388891276,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.8309,
+      "4002": 0.71,
+      "4003": 0.8994,
+      "4004": 0.9273,
+      "4005": 0.8301,
+      "4006": 0.8026,
+      "4007": 0.9264,
+      "4008": 0.8569,
+      "4009": 0.9404,
+      "4010": 0.8022
+     }
+    }
+   }
+  },
+  "timing": {
+   "B": {
+    "n": 10,
+    "mediana_s": 144.71963270900005
+   },
+   "F": {
+    "n": 10,
+    "mediana_s": 149.87522558249987
+   },
+   "J": {
+    "n": 10,
+    "mediana_s": 166.90608442899992
+   },
+   "E": {
+    "n": 10,
+    "mediana_s": 167.21433733750007
+   },
+   "I": {
+    "n": 10,
+    "mediana_s": 169.62396735100003
+   }
+  },
+  "atribucion": {
+   "E": "sirve",
+   "H-ATTR-A": {
+    "aplica": true,
+    "F_logB": -0.1861379029977619,
+    "E_logB": -0.23400738630499918,
+    "respaldada": true,
+    "lectura": "la ventaja es de correccion de la base"
+   },
+   "H-ATTR-B": {
+    "aplica": false,
+    "motivo": "E no empeora (mediana <= 1.10)"
+   }
+  }
+ },
+ "l2re_mean_components": {
+  "label": "NS2d-CG (RBF16, Adam 20000 + L-BFGS 500 it.)",
+  "n_corridas": 50,
+  "brazos": {
+   "F": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.7376852955463153,
+     "geomean": 0.7259136142838707,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.8637538068956695,
+     "razon_min": 0.6475745572292235
+    },
+    "final": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.8870531903315536,
+     "geomean": 0.8924828277557512,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.9656720307634109,
+     "razon_min": 0.8168842379517026
+    },
+    "fase": "Adam y L-BFGS (se mantiene)",
+    "etiqueta": null
+   },
+   "J": {
+    "adam": {
+     "n": 10,
+     "clase": "indiferente",
+     "mediana": 0.9857308470813162,
+     "geomean": 0.989968438757085,
+     "mejora_k": 6,
+     "empeora_k": 4,
+     "razon_max": 1.1180726033860544,
+     "razon_min": 0.8965647941715316
+    },
+    "final": {
+     "n": 10,
+     "clase": "indiferente",
+     "mediana": 0.9858489673408579,
+     "geomean": 0.9864566697648735,
+     "mejora_k": 6,
+     "empeora_k": 4,
+     "razon_max": 1.108220394233593,
+     "razon_min": 0.8827101626324124
+    },
+    "fase": "ninguna",
+    "etiqueta": null
+   },
+   "E": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.6962317960191046,
+     "geomean": 0.7209299677255662,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.8828133164515473,
+     "razon_min": 0.6314650478241355
+    },
+    "final": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.8397799294020427,
+     "geomean": 0.8531683598027615,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.9732158294338232,
+     "razon_min": 0.7886114065909821
+    },
+    "fase": "Adam y L-BFGS (se mantiene)",
+    "etiqueta": null
+   },
+   "I": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.6546431877105462,
+     "geomean": 0.6454533770065377,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.7816733808249813,
+     "razon_min": 0.5525963316011268
+    },
+    "final": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.8042260170386462,
+     "geomean": 0.7975821509371596,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.8506880175444547,
+     "razon_min": 0.7156920627957074
+    },
+    "fase": "Adam y L-BFGS (se mantiene)",
+    "etiqueta": null
+   }
+  },
+  "contrastes": {
+   "E_vs_F": {
+    "nombre": "D5: E frente a F (¿residuo o solo la base?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.9433676276529193,
+     "geomean": 0.955949328401253,
+     "a_mejor_k": 8,
+     "a_peor_k": 2,
+     "razon_max": 1.0439642867799863,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.9636,
+      "4002": 0.9272,
+      "4003": 0.9679,
+      "4004": 0.9476,
+      "4005": 1.044,
+      "4006": 1.0031,
+      "4007": 0.9391,
+      "4008": 0.9349,
+      "4009": 0.9017,
+      "4010": 0.9381
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 1.0049685025209476,
+     "geomean": 0.9931346561626054,
+     "a_mejor_k": 4,
+     "a_peor_k": 6,
+     "razon_max": 1.0345455847116998,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 1.0221,
+      "4002": 0.9436,
+      "4003": 0.9986,
+      "4004": 0.944,
+      "4005": 1.0043,
+      "4006": 1.0293,
+      "4007": 1.0057,
+      "4008": 1.0109,
+      "4009": 0.9444,
+      "4010": 1.0345
+     }
+    }
+   },
+   "J_vs_B": {
+    "nombre": "J frente a B (¿basta reescalar?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.9858489673408579,
+     "geomean": 0.9864566697648735,
+     "a_mejor_k": 6,
+     "a_peor_k": 4,
+     "razon_max": 1.108220394233593,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 1.0014,
+      "4002": 0.8827,
+      "4003": 0.8998,
+      "4004": 1.0278,
+      "4005": 1.1082,
+      "4006": 0.9743,
+      "4007": 0.9922,
+      "4008": 0.9637,
+      "4009": 0.9795,
+      "4010": 1.0555
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.9857308470813162,
+     "geomean": 0.989968438757085,
+     "a_mejor_k": 6,
+     "a_peor_k": 4,
+     "razon_max": 1.1180726033860544,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 1.0604,
+      "4002": 0.9167,
+      "4003": 0.9614,
+      "4004": 1.1181,
+      "4005": 1.0282,
+      "4006": 1.0102,
+      "4007": 0.9563,
+      "4008": 0.8966,
+      "4009": 0.9795,
+      "4010": 0.9919
+     }
+    }
+   },
+   "E_vs_J": {
+    "nombre": "E frente a J (¿importan los terminos fuera de la diagonal?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.8682196884360527,
+     "geomean": 0.8648817388057382,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.934915741784963,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.9023,
+      "4002": 0.9349,
+      "4003": 0.8788,
+      "4004": 0.8264,
+      "4005": 0.8782,
+      "4006": 0.901,
+      "4007": 0.8368,
+      "4008": 0.8356,
+      "4009": 0.8051,
+      "4010": 0.8583
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.7278138993731373,
+     "geomean": 0.7282353047847674,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.8325135461734572,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.8325,
+      "4002": 0.7575,
+      "4003": 0.7124,
+      "4004": 0.6244,
+      "4005": 0.7255,
+      "4006": 0.7732,
+      "4007": 0.7249,
+      "4008": 0.7302,
+      "4009": 0.6447,
+      "4010": 0.7813
+     }
+    }
+   },
+   "I_vs_E": {
+    "nombre": "I frente a E (¿importa acoplar aristas?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.9388976279948312,
+     "geomean": 0.9348473156242543,
+     "a_mejor_k": 9,
+     "a_peor_k": 1,
+     "razon_max": 1.0127276561518652,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.9414,
+      "4002": 0.8672,
+      "4003": 0.9654,
+      "4004": 0.9689,
+      "4005": 0.8641,
+      "4006": 0.9225,
+      "4007": 0.9364,
+      "4008": 0.9454,
+      "4009": 1.0127,
+      "4010": 0.9342
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.8934937762591897,
+     "geomean": 0.8953066260275646,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.9817704335752262,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.8854,
+      "4002": 0.7958,
+      "4003": 0.9366,
+      "4004": 0.9455,
+      "4005": 0.8748,
+      "4006": 0.8508,
+      "4007": 0.9473,
+      "4008": 0.9016,
+      "4009": 0.9818,
+      "4010": 0.8497
+     }
+    }
+   }
+  },
+  "timing": {
+   "B": {
+    "n": 10,
+    "mediana_s": 144.71963270900005
+   },
+   "F": {
+    "n": 10,
+    "mediana_s": 149.87522558249987
+   },
+   "J": {
+    "n": 10,
+    "mediana_s": 166.90608442899992
+   },
+   "E": {
+    "n": 10,
+    "mediana_s": 167.21433733750007
+   },
+   "I": {
+    "n": 10,
+    "mediana_s": 169.62396735100003
+   }
+  },
+  "atribucion": {
+   "E": "sirve",
+   "H-ATTR-A": {
+    "aplica": true,
+    "F_logB": -0.11985609328872632,
+    "E_logB": -0.17468046850507932,
+    "respaldada": false,
+    "lectura": "la ventaja no se explica solo por la base"
+   },
+   "H-ATTR-B": {
+    "aplica": false,
+    "motivo": "E no empeora (mediana <= 1.10)"
+   }
+  }
+ },
+ "l2re_u": {
+  "label": "NS2d-CG (RBF16, Adam 20000 + L-BFGS 500 it.)",
+  "n_corridas": 50,
+  "brazos": {
+   "F": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.6181806799797807,
+     "geomean": 0.5968143150947254,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.7219402300366644,
+     "razon_min": 0.51863436709972
+    },
+    "final": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.7491439357042031,
+     "geomean": 0.7693738330716297,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.8860810568495789,
+     "razon_min": 0.6525708412695782
+    },
+    "fase": "Adam y L-BFGS (se mantiene)",
+    "etiqueta": null
+   },
+   "J": {
+    "adam": {
+     "n": 10,
+     "clase": "indiferente",
+     "mediana": 0.9951088647143314,
+     "geomean": 1.0006466169631927,
+     "mejora_k": 6,
+     "empeora_k": 4,
+     "razon_max": 1.2266562291252288,
+     "razon_min": 0.8382035774745366
+    },
+    "final": {
+     "n": 10,
+     "clase": "indiferente",
+     "mediana": 0.9697102326347882,
+     "geomean": 0.9963383105391445,
+     "mejora_k": 6,
+     "empeora_k": 4,
+     "razon_max": 1.3018671728889404,
+     "razon_min": 0.8219970884629432
+    },
+    "fase": "ninguna",
+    "etiqueta": null
+   },
+   "E": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.5795738764812073,
+     "geomean": 0.5882966875070167,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.7634221475774907,
+     "razon_min": 0.49318308809297107
+    },
+    "final": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.6893150657506824,
+     "geomean": 0.7055723824615767,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.883178249579836,
+     "razon_min": 0.6120678313084634
+    },
+    "fase": "Adam y L-BFGS (se mantiene)",
+    "etiqueta": null
+   },
+   "I": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.4656744393517736,
+     "geomean": 0.46062693233095275,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.558403524843761,
+     "razon_min": 0.3730793099445474
+    },
+    "final": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.5783770087506602,
+     "geomean": 0.5936007803173928,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.6815879885679307,
+     "razon_min": 0.4935342034109498
+    },
+    "fase": "Adam y L-BFGS (se mantiene)",
+    "etiqueta": null
+   }
+  },
+  "contrastes": {
+   "E_vs_F": {
+    "nombre": "D5: E frente a F (¿residuo o solo la base?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.9225556713632592,
+     "geomean": 0.9170735371187066,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.9967239935361403,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.9447,
+      "4002": 0.8757,
+      "4003": 0.9553,
+      "4004": 0.8811,
+      "4005": 0.9967,
+      "4006": 0.9857,
+      "4007": 0.9449,
+      "4008": 0.8595,
+      "4009": 0.8411,
+      "4010": 0.9004
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 1.0013844949707527,
+     "geomean": 0.9857281781413761,
+     "a_mejor_k": 5,
+     "a_peor_k": 5,
+     "razon_max": 1.057458936093255,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 1.0575,
+      "4002": 0.9983,
+      "4003": 1.0277,
+      "4004": 0.8988,
+      "4005": 0.9388,
+      "4006": 1.0318,
+      "4007": 1.0045,
+      "4008": 0.9648,
+      "4009": 0.9154,
+      "4010": 1.0336
+     }
+    }
+   },
+   "J_vs_B": {
+    "nombre": "J frente a B (¿basta reescalar?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.9697102326347882,
+     "geomean": 0.9963383105391445,
+     "a_mejor_k": 6,
+     "a_peor_k": 4,
+     "razon_max": 1.3018671728889404,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 1.0151,
+      "4002": 0.822,
+      "4003": 0.8871,
+      "4004": 1.126,
+      "4005": 1.3019,
+      "4006": 0.9491,
+      "4007": 0.9645,
+      "4008": 0.9749,
+      "4009": 0.9408,
+      "4010": 1.0582
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.9951088647143314,
+     "geomean": 1.0006466169631927,
+     "a_mejor_k": 6,
+     "a_peor_k": 4,
+     "razon_max": 1.2266562291252288,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.996,
+      "4002": 0.9345,
+      "4003": 0.9587,
+      "4004": 1.2267,
+      "4005": 1.0407,
+      "4006": 1.0203,
+      "4007": 0.9863,
+      "4008": 0.8382,
+      "4009": 0.9942,
+      "4010": 1.0536
+     }
+    }
+   },
+   "E_vs_J": {
+    "nombre": "E frente a J (¿importan los terminos fuera de la diagonal?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.7102632843328911,
+     "geomean": 0.7081654644794029,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.809585987522613,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.8096,
+      "4002": 0.805,
+      "4003": 0.7027,
+      "4004": 0.6095,
+      "4005": 0.6784,
+      "4006": 0.7502,
+      "4007": 0.7178,
+      "4008": 0.6548,
+      "4009": 0.6506,
+      "4010": 0.7303
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.5865073105186351,
+     "geomean": 0.5879165307053212,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.7665011087189582,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.7665,
+      "4002": 0.656,
+      "4003": 0.57,
+      "4004": 0.4562,
+      "4005": 0.5761,
+      "4006": 0.6415,
+      "4007": 0.5648,
+      "4008": 0.5969,
+      "4009": 0.496,
+      "4010": 0.6106
+     }
+    }
+   },
+   "I_vs_E": {
+    "nombre": "I frente a E (¿importa acoplar aristas?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.8410659273662315,
+     "geomean": 0.8413038762181404,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.9378405969901241,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.8294,
+      "4002": 0.7459,
+      "4003": 0.8922,
+      "4004": 0.9275,
+      "4005": 0.7423,
+      "4006": 0.8185,
+      "4007": 0.8269,
+      "4008": 0.8635,
+      "4009": 0.9378,
+      "4010": 0.8528
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.7774656147579109,
+     "geomean": 0.7829840658850534,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.8959547617633513,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.7314,
+      "4002": 0.6086,
+      "4003": 0.8472,
+      "4004": 0.8839,
+      "4005": 0.7596,
+      "4006": 0.7467,
+      "4007": 0.896,
+      "4008": 0.7953,
+      "4009": 0.8827,
+      "4010": 0.7282
+     }
+    }
+   }
+  },
+  "timing": {
+   "B": {
+    "n": 10,
+    "mediana_s": 144.71963270900005
+   },
+   "F": {
+    "n": 10,
+    "mediana_s": 149.87522558249987
+   },
+   "J": {
+    "n": 10,
+    "mediana_s": 166.90608442899992
+   },
+   "E": {
+    "n": 10,
+    "mediana_s": 167.21433733750007
+   },
+   "I": {
+    "n": 10,
+    "mediana_s": 169.62396735100003
+   }
+  },
+  "atribucion": {
+   "E": "sirve",
+   "H-ATTR-A": {
+    "aplica": true,
+    "F_logB": -0.28886131603096266,
+    "E_logB": -0.372066347090195,
+    "respaldada": true,
+    "lectura": "la ventaja es de correccion de la base"
+   },
+   "H-ATTR-B": {
+    "aplica": false,
+    "motivo": "E no empeora (mediana <= 1.10)"
+   }
+  }
+ },
+ "l2re_v": {
+  "label": "NS2d-CG (RBF16, Adam 20000 + L-BFGS 500 it.)",
+  "n_corridas": 50,
+  "brazos": {
+   "F": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.7209327786469101,
+     "geomean": 0.7235216894798714,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.8807893307574357,
+     "razon_min": 0.6450780147854431
+    },
+    "final": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.8708450225380568,
+     "geomean": 0.8800935548087842,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.949617029063348,
+     "razon_min": 0.8197870178492491
+    },
+    "fase": "Adam y L-BFGS (se mantiene)",
+    "etiqueta": null
+   },
+   "J": {
+    "adam": {
+     "n": 10,
+     "clase": "indiferente",
+     "mediana": 0.9853741687803255,
+     "geomean": 0.9876456248371555,
+     "mejora_k": 6,
+     "empeora_k": 4,
+     "razon_max": 1.1026889364130283,
+     "razon_min": 0.9047782981877768
+    },
+    "final": {
+     "n": 10,
+     "clase": "indiferente",
+     "mediana": 0.9803817000278967,
+     "geomean": 0.9871181864775385,
+     "mejora_k": 7,
+     "empeora_k": 3,
+     "razon_max": 1.1105611075925386,
+     "razon_min": 0.8839366170684342
+    },
+    "fase": "ninguna",
+    "etiqueta": null
+   },
+   "E": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.700752072576065,
+     "geomean": 0.721128470930565,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.8923834351009868,
+     "razon_min": 0.6295776681866324
+    },
+    "final": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.8141959230627314,
+     "geomean": 0.8319795180667643,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.9600225762866305,
+     "razon_min": 0.7511704452586415
+    },
+    "fase": "Adam y L-BFGS (se mantiene)",
+    "etiqueta": null
+   },
+   "I": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.6430091411063874,
+     "geomean": 0.6405678882346486,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.7504751320636749,
+     "razon_min": 0.549341974291066
+    },
+    "final": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.7490396644555918,
+     "geomean": 0.7507829046190884,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.8016552028714465,
+     "razon_min": 0.6799490586179502
+    },
+    "fase": "Adam y L-BFGS (se mantiene)",
+    "etiqueta": null
+   }
+  },
+  "contrastes": {
+   "E_vs_F": {
+    "nombre": "D5: E frente a F (¿residuo o solo la base?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.9375328882962717,
+     "geomean": 0.9453307702583126,
+     "a_mejor_k": 9,
+     "a_peor_k": 1,
+     "razon_max": 1.0308073211483417,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.9547,
+      "4002": 0.9239,
+      "4003": 0.9502,
+      "4004": 0.9238,
+      "4005": 1.0308,
+      "4006": 0.9943,
+      "4007": 0.936,
+      "4008": 0.9267,
+      "4009": 0.8818,
+      "4010": 0.9391
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 1.0096155060029637,
+     "geomean": 0.9966922642622824,
+     "a_mejor_k": 4,
+     "a_peor_k": 6,
+     "razon_max": 1.045212361368827,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 1.0132,
+      "4002": 0.9482,
+      "4003": 0.9953,
+      "4004": 0.9366,
+      "4005": 1.0452,
+      "4006": 1.0216,
+      "4007": 1.0118,
+      "4008": 1.0074,
+      "4009": 0.9546,
+      "4010": 1.0397
+     }
+    }
+   },
+   "J_vs_B": {
+    "nombre": "J frente a B (¿basta reescalar?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.9803817000278967,
+     "geomean": 0.9871181864775385,
+     "a_mejor_k": 7,
+     "a_peor_k": 3,
+     "razon_max": 1.1105611075925386,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.9964,
+      "4002": 0.8839,
+      "4003": 0.9197,
+      "4004": 1.026,
+      "4005": 1.1106,
+      "4006": 0.9664,
+      "4007": 0.9901,
+      "4008": 0.9707,
+      "4009": 0.9634,
+      "4010": 1.0636
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.9853741687803255,
+     "geomean": 0.9876456248371555,
+     "a_mejor_k": 6,
+     "a_peor_k": 4,
+     "razon_max": 1.1026889364130283,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 1.0737,
+      "4002": 0.9048,
+      "4003": 0.9894,
+      "4004": 1.1027,
+      "4005": 1.016,
+      "4006": 1.0058,
+      "4007": 0.961,
+      "4008": 0.9056,
+      "4009": 0.9814,
+      "4010": 0.9548
+     }
+    }
+   },
+   "E_vs_J": {
+    "nombre": "E frente a J (¿importan los terminos fuera de la diagonal?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.8426982565758694,
+     "geomean": 0.8428367843526665,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.9137230136328783,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.8898,
+      "4002": 0.9137,
+      "4003": 0.847,
+      "4004": 0.781,
+      "4005": 0.8644,
+      "4006": 0.8801,
+      "4007": 0.8289,
+      "4008": 0.8158,
+      "4009": 0.7797,
+      "4010": 0.8384
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.7292776468653213,
+     "geomean": 0.7301490056714076,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.8311191653701717,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.8311,
+      "4002": 0.7614,
+      "4003": 0.7158,
+      "4004": 0.628,
+      "4005": 0.7371,
+      "4006": 0.7829,
+      "4007": 0.7215,
+      "4008": 0.7176,
+      "4009": 0.6415,
+      "4010": 0.7899
+     }
+    }
+   },
+   "I_vs_E": {
+    "nombre": "I frente a E (¿importa acoplar aristas?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.89914666886911,
+     "geomean": 0.9024055139766554,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.9745919158907725,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.8993,
+      "4002": 0.8419,
+      "4003": 0.9359,
+      "4004": 0.9498,
+      "4005": 0.8234,
+      "4006": 0.8953,
+      "4007": 0.898,
+      "4008": 0.9175,
+      "4009": 0.9746,
+      "4010": 0.899
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.8855164478308457,
+     "geomean": 0.8882853944291526,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.9860620864738242,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.841,
+      "4002": 0.7974,
+      "4003": 0.9344,
+      "4004": 0.9278,
+      "4005": 0.8594,
+      "4006": 0.8632,
+      "4007": 0.9436,
+      "4008": 0.9078,
+      "4009": 0.9861,
+      "4010": 0.8395
+     }
+    }
+   }
+  },
+  "timing": {
+   "B": {
+    "n": 10,
+    "mediana_s": 144.71963270900005
+   },
+   "F": {
+    "n": 10,
+    "mediana_s": 149.87522558249987
+   },
+   "J": {
+    "n": 10,
+    "mediana_s": 166.90608442899992
+   },
+   "E": {
+    "n": 10,
+    "mediana_s": 167.21433733750007
+   },
+   "I": {
+    "n": 10,
+    "mediana_s": 169.62396735100003
+   }
+  },
+  "atribucion": {
+   "E": "sirve",
+   "H-ATTR-A": {
+    "aplica": true,
+    "F_logB": -0.13829876861527557,
+    "E_logB": -0.2055863409800807,
+    "respaldada": false,
+    "lectura": "la ventaja no se explica solo por la base"
+   },
+   "H-ATTR-B": {
+    "aplica": false,
+    "motivo": "E no empeora (mediana <= 1.10)"
+   }
+  }
+ },
+ "l2re_p": {
+  "label": "NS2d-CG (RBF16, Adam 20000 + L-BFGS 500 it.)",
+  "n_corridas": 50,
+  "brazos": {
+   "F": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.766214185616912,
+     "geomean": 0.7558227671642539,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.8727057529519971,
+     "razon_min": 0.678226422145869
+    },
+    "final": {
+     "n": 10,
+     "clase": "indiferente",
+     "mediana": 0.9290691052129075,
+     "geomean": 0.9267025645283548,
+     "mejora_k": 9,
+     "empeora_k": 1,
+     "razon_max": 1.000194498475844,
+     "razon_min": 0.8406592684975979
+    },
+    "fase": "Adam (sirve); se pierde o cambia en L-BFGS (indiferente)",
+    "etiqueta": null
+   },
+   "J": {
+    "adam": {
+     "n": 10,
+     "clase": "indiferente",
+     "mediana": 0.9937896249150149,
+     "geomean": 0.9906860537398119,
+     "mejora_k": 5,
+     "empeora_k": 5,
+     "razon_max": 1.1153652724298635,
+     "razon_min": 0.8981303452487093
+    },
+    "final": {
+     "n": 10,
+     "clase": "indiferente",
+     "mediana": 1.002191437687915,
+     "geomean": 0.9841146315471688,
+     "mejora_k": 5,
+     "empeora_k": 5,
+     "razon_max": 1.07662865050027,
+     "razon_min": 0.8788240077972858
+    },
+    "fase": "ninguna",
+    "etiqueta": null
+   },
+   "E": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.727118247612252,
+     "geomean": 0.7483409159042846,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.8961072849160951,
+     "razon_min": 0.6626216326557834
+    },
+    "final": {
+     "n": 10,
+     "clase": "indiferente",
+     "mediana": 0.9018481940757597,
+     "geomean": 0.9014743178355722,
+     "mejora_k": 9,
+     "empeora_k": 1,
+     "razon_max": 1.0019956821050062,
+     "razon_min": 0.8318564245933352
+    },
+    "fase": "Adam (sirve); se pierde o cambia en L-BFGS (indiferente)",
+    "etiqueta": null
+   },
+   "I": {
+    "adam": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.6873220345017252,
+     "geomean": 0.6898713354931674,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.8657687414641668,
+     "razon_min": 0.595170980666538
+    },
+    "final": {
+     "n": 10,
+     "clase": "indiferente",
+     "mediana": 0.9112251185887366,
+     "geomean": 0.8851529970650374,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.9395089594915293,
+     "razon_min": 0.7961772986784041
+    },
+    "fase": "Adam (sirve); se pierde o cambia en L-BFGS (indiferente)",
+    "etiqueta": null
+   }
+  },
+  "contrastes": {
+   "E_vs_F": {
+    "nombre": "D5: E frente a F (¿residuo o solo la base?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.9653426509523793,
+     "geomean": 0.972776327962767,
+     "a_mejor_k": 8,
+     "a_peor_k": 2,
+     "razon_max": 1.0657732283854684,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.9764,
+      "4002": 0.938,
+      "4003": 0.9895,
+      "4004": 0.9812,
+      "4005": 1.0658,
+      "4006": 1.0153,
+      "4007": 0.9418,
+      "4008": 0.9543,
+      "4009": 0.9316,
+      "4010": 0.9419
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.9982579080896588,
+     "geomean": 0.9901010506893829,
+     "a_mejor_k": 6,
+     "a_peor_k": 4,
+     "razon_max": 1.0380302568809776,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 1.0268,
+      "4002": 0.9289,
+      "4003": 0.9979,
+      "4004": 0.9601,
+      "4005": 0.9693,
+      "4006": 1.038,
+      "4007": 0.9986,
+      "4008": 1.0225,
+      "4009": 0.9374,
+      "4010": 1.0287
+     }
+    }
+   },
+   "J_vs_B": {
+    "nombre": "J frente a B (¿basta reescalar?)",
+    "final": {
+     "n": 10,
+     "mediana": 1.002191437687915,
+     "geomean": 0.9841146315471688,
+     "a_mejor_k": 5,
+     "a_peor_k": 5,
+     "razon_max": 1.07662865050027,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 1.0053,
+      "4002": 0.8916,
+      "4003": 0.8788,
+      "4004": 1.0149,
+      "4005": 1.0766,
+      "4006": 0.9881,
+      "4007": 0.9991,
+      "4008": 0.9537,
+      "4009": 1.0054,
+      "4010": 1.0457
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.9937896249150149,
+     "geomean": 0.9906860537398119,
+     "a_mejor_k": 5,
+     "a_peor_k": 5,
+     "razon_max": 1.1153652724298635,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 1.0578,
+      "4002": 0.9278,
+      "4003": 0.9299,
+      "4004": 1.1154,
+      "4005": 1.0409,
+      "4006": 1.0134,
+      "4007": 0.9442,
+      "4008": 0.8981,
+      "4009": 0.9742,
+      "4010": 1.0267
+     }
+    }
+   },
+   "E_vs_J": {
+    "nombre": "E frente a J (¿importan los terminos fuera de la diagonal?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.9232770212634831,
+     "geomean": 0.9160257239731572,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.9803867637684774,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.9312,
+      "4002": 0.9804,
+      "4003": 0.9466,
+      "4004": 0.9159,
+      "4005": 0.9307,
+      "4006": 0.9503,
+      "4007": 0.8645,
+      "4008": 0.8891,
+      "4009": 0.8583,
+      "4010": 0.9009
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.7683410440135476,
+     "geomean": 0.7553764515805171,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.8471533673625897,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.8472,
+      "4002": 0.7746,
+      "4003": 0.7381,
+      "4004": 0.6566,
+      "4005": 0.7438,
+      "4006": 0.7883,
+      "4007": 0.7646,
+      "4008": 0.7721,
+      "4009": 0.6802,
+      "4010": 0.8078
+     }
+    }
+   },
+   "I_vs_E": {
+    "nombre": "I frente a E (¿importa acoplar aristas?)",
+    "final": {
+     "n": 10,
+     "mediana": 0.9891772736405657,
+     "geomean": 0.9818948577373541,
+     "a_mejor_k": 7,
+     "a_peor_k": 3,
+     "razon_max": 1.0614114313380159,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 1.0036,
+      "4002": 0.9108,
+      "4003": 1.0065,
+      "4004": 0.9925,
+      "4005": 0.9255,
+      "4006": 0.9655,
+      "4007": 0.9933,
+      "4008": 0.9859,
+      "4009": 1.0614,
+      "4010": 0.9823
+     }
+    },
+    "adam": {
+     "n": 10,
+     "mediana": 0.933341423921234,
+     "geomean": 0.9218677220923255,
+     "a_mejor_k": 10,
+     "a_peor_k": 0,
+     "razon_max": 0.9921297735155108,
+     "respaldado": false,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.9661,
+      "4002": 0.8281,
+      "4003": 0.9536,
+      "4004": 0.9753,
+      "4005": 0.9131,
+      "4006": 0.8532,
+      "4007": 0.9601,
+      "4008": 0.9108,
+      "4009": 0.9921,
+      "4010": 0.8814
+     }
+    }
+   }
+  },
+  "timing": {
+   "B": {
+    "n": 10,
+    "mediana_s": 144.71963270900005
+   },
+   "F": {
+    "n": 10,
+    "mediana_s": 149.87522558249987
+   },
+   "J": {
+    "n": 10,
+    "mediana_s": 166.90608442899992
+   },
+   "E": {
+    "n": 10,
+    "mediana_s": 167.21433733750007
+   },
+   "I": {
+    "n": 10,
+    "mediana_s": 169.62396735100003
+   }
+  },
+  "atribucion": {
+   "E": "indiferente",
+   "H-ATTR-A": {
+    "aplica": false,
+    "motivo": "E no mejora a B en este problema (mediana <= 0.90 y >= 7/10)"
+   },
+   "H-ATTR-B": {
+    "aplica": false,
+    "motivo": "E no empeora (mediana <= 1.10)"
+   }
+  }
+ }
+}

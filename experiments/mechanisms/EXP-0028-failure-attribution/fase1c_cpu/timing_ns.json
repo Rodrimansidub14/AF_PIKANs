@@ -1,0 +1,39 @@
+{
+ "device": "cpu",
+ "torch": "2.14.1+cpu",
+ "dtype": "float32",
+ "smoke_pool": 0,
+ "n_per_key": 2048,
+ "pool_sizes": {
+  "domain": 8192,
+  "inlet": 170,
+  "outlet": 342,
+  "other": 1536
+ },
+ "rows": [
+  {
+   "arm": "J",
+   "chunk": 16,
+   "n_points": 4096,
+   "seconds": 119.97555200000352,
+   "peak_mb": null
+  },
+  {
+   "arm": "E",
+   "chunk": 16,
+   "n_points": 4096,
+   "seconds": 102.34588169999188,
+   "peak_mb": null
+  },
+  {
+   "arm": "I",
+   "chunk": 16,
+   "n_points": 4096,
+   "seconds": 81.3246647999913,
+   "peak_mb": null
+  }
+ ],
+ "adam_seconds_per_step": 2.397926933330988,
+ "lbfgs_seconds_per_iter": 3.5873676000046544,
+ "lbfgs_iterations_measured": 3
+}

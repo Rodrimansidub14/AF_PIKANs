@@ -1,0 +1,25 @@
+## A. Traza del bloque GN de la capa de salida por canal (E; mediana entre semillas; refresco 0 y 19). Canales: 0 u, 1 v, 2 phi, 3 sigma_xx, 4 sigma_yy, 5 tau_xy, 6 D_x, 7 D_y
+converse refresco 00: u=3.7%  v=10.6%  phi=0.0%  sxx=0.0%  syy=85.6%  txy=0.0%  Dx=0.0%  Dy=0.0%
+converse refresco 19: u=2.6%  v=14.9%  phi=0.0%  sxx=0.0%  syy=82.4%  txy=0.1%  Dx=0.0%  Dy=0.0%
+direct refresco 00: u=0.1%  v=0.2%  phi=0.0%  sxx=0.0%  syy=99.4%  txy=0.0%  Dx=0.0%  Dy=0.3%
+direct refresco 19: u=0.1%  v=0.6%  phi=0.0%  sxx=0.0%  syy=98.8%  txy=0.0%  Dx=0.0%  Dy=0.4%
+
+## B. Salida de la solución nula: primer paso con l2re_u < 0.5 (hist cada 500 pasos) y error final
+converse B: escape/final por semilla: 7000/0.367  6000/0.048  8000/0.180
+converse E: escape/final por semilla: 3500/0.050  5500/0.077  7000/0.033
+converse J: escape/final por semilla: 8000/0.107  9000/0.038  6500/0.121
+converse F: escape/final por semilla: 6500/0.234  6000/0.232  7000/0.241
+direct B: escape/final por semilla: 1000/0.180  1500/0.240  1500/0.204
+direct E: escape/final por semilla: 1500/0.129  1500/0.198  1500/0.253
+direct J: escape/final por semilla: 1500/0.170  1500/0.180  1500/0.193
+direct F: escape/final por semilla: 3000/0.973  1000/0.634  1500/0.801
+
+## C. Consistencia constitutiva (discrepancia relativa entre tensiones predichas y reconstruidas desde du, dv, dphi; 5 componentes sxx, syy, txy, Dx, Dy; mediana entre semillas) al paso 20 000
+converse B: 0.83  1.00  1.00  1.74  0.17
+converse F: 0.99  1.00  1.00  1.23  0.16
+converse E: 1.01  1.00  1.00  1.04  0.20
+converse J: 0.97  1.00  1.00  2.10  0.17
+direct B: 1.05  1.00  1.00  2.69  0.78
+direct F: 1.75  1.00  1.00  1.53  0.99
+direct E: 0.79  1.00  1.00  2.24  0.84
+direct J: 1.06  1.00  1.00  2.24  0.89

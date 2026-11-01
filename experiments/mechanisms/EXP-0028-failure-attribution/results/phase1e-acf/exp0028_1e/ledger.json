@@ -1,0 +1,313 @@
+{
+ "info": {
+  "tiny": false,
+  "block": "acf",
+  "plan": [
+   [
+    "ac",
+    [
+     "J",
+     "I"
+    ],
+    [
+     4101,
+     4102,
+     4103,
+     4104,
+     4105
+    ]
+   ],
+   [
+    "kpp",
+    [
+     "J",
+     "I"
+    ],
+    [
+     4101,
+     4102,
+     4103,
+     4104,
+     4105
+    ]
+   ]
+  ],
+  "with_b": false,
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "cutoff_s": 12240.0,
+  "hard_cap_s": 14040.0,
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "check_B_ID": {},
+ "ledger": [
+  {
+   "job": [
+    "ac",
+    "I",
+    4101
+   ],
+   "slot": 1,
+   "start": 1.6440000081274775e-06,
+   "end": 900.0098363040001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "J",
+    4101
+   ],
+   "slot": 0,
+   "start": 1.6440000081274775e-06,
+   "end": 1000.0123882500002,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "J",
+    4102
+   ],
+   "slot": 1,
+   "start": 900.0098363040001,
+   "end": 1860.02063786,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "I",
+    4102
+   ],
+   "slot": 0,
+   "start": 1000.0123882500002,
+   "end": 1900.0233038669999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "J",
+    4103
+   ],
+   "slot": 1,
+   "start": 1860.02063786,
+   "end": 2760.031843909,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "I",
+    4103
+   ],
+   "slot": 0,
+   "start": 1900.0233038669999,
+   "end": 2760.031843909,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "I",
+    4104
+   ],
+   "slot": 1,
+   "start": 2760.031843909,
+   "end": 3640.04105496,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "J",
+    4104
+   ],
+   "slot": 0,
+   "start": 2760.031843909,
+   "end": 3760.0437349129998,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "J",
+    4105
+   ],
+   "slot": 1,
+   "start": 3640.04105496,
+   "end": 4520.051078998,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "I",
+    4105
+   ],
+   "slot": 0,
+   "start": 3760.0437349129998,
+   "end": 4660.053986115,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "J",
+    4101
+   ],
+   "slot": 1,
+   "start": 4520.051078998,
+   "end": 5400.061387051,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "I",
+    4101
+   ],
+   "slot": 0,
+   "start": 4660.053986115,
+   "end": 5540.064598312,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "J",
+    4102
+   ],
+   "slot": 1,
+   "start": 5400.061387051,
+   "end": 6280.072717999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "I",
+    4102
+   ],
+   "slot": 0,
+   "start": 5540.064598312,
+   "end": 6400.075748771,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "J",
+    4103
+   ],
+   "slot": 1,
+   "start": 6280.072717999,
+   "end": 7140.082920487,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "I",
+    4103
+   ],
+   "slot": 0,
+   "start": 6400.075748771,
+   "end": 7260.085606789,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "J",
+    4104
+   ],
+   "slot": 1,
+   "start": 7140.082920487,
+   "end": 7980.092577179,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "I",
+    4104
+   ],
+   "slot": 0,
+   "start": 7260.085606789,
+   "end": 8120.095690915,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "J",
+    4105
+   ],
+   "slot": 1,
+   "start": 7980.092577179,
+   "end": 8840.102390073,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "I",
+    4105
+   ],
+   "slot": 0,
+   "start": 8120.095690915,
+   "end": 8960.103832036999,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "finished_runs": [
+  "ac-I-seed4101.json",
+  "ac-I-seed4102.json",
+  "ac-I-seed4103.json",
+  "ac-I-seed4104.json",
+  "ac-I-seed4105.json",
+  "ac-J-seed4101.json",
+  "ac-J-seed4102.json",
+  "ac-J-seed4103.json",
+  "ac-J-seed4104.json",
+  "ac-J-seed4105.json",
+  "kpp-I-seed4101.json",
+  "kpp-I-seed4102.json",
+  "kpp-I-seed4103.json",
+  "kpp-I-seed4104.json",
+  "kpp-I-seed4105.json",
+  "kpp-J-seed4101.json",
+  "kpp-J-seed4102.json",
+  "kpp-J-seed4103.json",
+  "kpp-J-seed4104.json",
+  "kpp-J-seed4105.json"
+ ],
+ "wall_seconds": 8960.105766296387,
+ "complete": true
+}

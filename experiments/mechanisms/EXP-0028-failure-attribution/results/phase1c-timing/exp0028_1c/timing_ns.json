@@ -1,0 +1,60 @@
+{
+ "device": "Tesla T4",
+ "torch": "2.11.0+cu128",
+ "dtype": "float32",
+ "smoke_pool": 0,
+ "n_per_key": 2048,
+ "pool_sizes": {
+  "domain": 8192,
+  "inlet": 170,
+  "outlet": 342,
+  "other": 1536
+ },
+ "rows": [
+  {
+   "arm": "J",
+   "chunk": 8,
+   "n_points": 4096,
+   "seconds": 10.341954928999996,
+   "peak_mb": 328.86474609375
+  },
+  {
+   "arm": "J",
+   "chunk": 16,
+   "n_points": 4096,
+   "seconds": 5.167253331000012,
+   "peak_mb": 1079.44482421875
+  },
+  {
+   "arm": "E",
+   "chunk": 8,
+   "n_points": 4096,
+   "seconds": 10.254786074999998,
+   "peak_mb": 331.400390625
+  },
+  {
+   "arm": "E",
+   "chunk": 16,
+   "n_points": 4096,
+   "seconds": 5.1330817199999785,
+   "peak_mb": 1081.98046875
+  },
+  {
+   "arm": "I",
+   "chunk": 8,
+   "n_points": 4096,
+   "seconds": 10.671668556000014,
+   "peak_mb": 1335.3271484375
+  },
+  {
+   "arm": "I",
+   "chunk": 16,
+   "n_points": 4096,
+   "seconds": 5.358749569999986,
+   "peak_mb": 2947.30908203125
+  }
+ ],
+ "adam_seconds_per_step": 0.05184555409999945,
+ "lbfgs_seconds_per_iter": 0.07423383335000011,
+ "lbfgs_iterations_measured": 20
+}

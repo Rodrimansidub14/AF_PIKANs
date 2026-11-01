@@ -1,0 +1,634 @@
+{
+ "info": {
+  "tiny": false,
+  "block": "all",
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "seeds": [
+   4001,
+   4002,
+   4003,
+   4004,
+   4005,
+   4006,
+   4007,
+   4008,
+   4009,
+   4010
+  ],
+  "cutoff_s": 12240.0,
+  "hard_cap_s": 14040.0,
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "check_B_ID": true,
+ "ledger": [
+  {
+   "job": [
+    4001,
+    "B"
+   ],
+   "slot": 0,
+   "start": 4.728999954295432e-06,
+   "end": 240.004120241,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4001,
+    "F"
+   ],
+   "slot": 1,
+   "start": 4.728999954295432e-06,
+   "end": 260.00626324899997,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4001,
+    "J"
+   ],
+   "slot": 0,
+   "start": 240.004120241,
+   "end": 500.00955251799996,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4001,
+    "E"
+   ],
+   "slot": 1,
+   "start": 260.00626324899997,
+   "end": 520.011435102,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4002,
+    "B"
+   ],
+   "slot": 1,
+   "start": 520.011435102,
+   "end": 760.015105028,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4001,
+    "I"
+   ],
+   "slot": 0,
+   "start": 500.00955251799996,
+   "end": 780.017121384,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4002,
+    "F"
+   ],
+   "slot": 1,
+   "start": 760.015105028,
+   "end": 1020.0206293959999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4002,
+    "J"
+   ],
+   "slot": 0,
+   "start": 780.017121384,
+   "end": 1060.0226159979998,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4002,
+    "E"
+   ],
+   "slot": 1,
+   "start": 1020.0206293959999,
+   "end": 1280.026004576,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4002,
+    "I"
+   ],
+   "slot": 0,
+   "start": 1060.0226159979998,
+   "end": 1340.0284850140001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4003,
+    "B"
+   ],
+   "slot": 1,
+   "start": 1280.026004576,
+   "end": 1520.0317134299999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4003,
+    "F"
+   ],
+   "slot": 0,
+   "start": 1340.0284850140001,
+   "end": 1580.033941143,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4003,
+    "J"
+   ],
+   "slot": 1,
+   "start": 1520.0317134299999,
+   "end": 1800.037442363,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4003,
+    "E"
+   ],
+   "slot": 0,
+   "start": 1580.033941143,
+   "end": 1860.040623208,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4003,
+    "I"
+   ],
+   "slot": 1,
+   "start": 1800.037442363,
+   "end": 2080.0444263110003,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4004,
+    "B"
+   ],
+   "slot": 0,
+   "start": 1860.040623208,
+   "end": 2100.0463770260003,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4004,
+    "F"
+   ],
+   "slot": 1,
+   "start": 2080.0444263110003,
+   "end": 2320.0495657,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4004,
+    "J"
+   ],
+   "slot": 0,
+   "start": 2100.0463770260003,
+   "end": 2380.051756071,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4004,
+    "E"
+   ],
+   "slot": 1,
+   "start": 2320.0495657,
+   "end": 2580.054982724,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4004,
+    "I"
+   ],
+   "slot": 0,
+   "start": 2380.051756071,
+   "end": 2660.057872027,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4005,
+    "B"
+   ],
+   "slot": 1,
+   "start": 2580.054982724,
+   "end": 2820.060844619,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4005,
+    "F"
+   ],
+   "slot": 0,
+   "start": 2660.057872027,
+   "end": 2900.063350428,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4005,
+    "J"
+   ],
+   "slot": 1,
+   "start": 2820.060844619,
+   "end": 3080.066579845,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4005,
+    "E"
+   ],
+   "slot": 0,
+   "start": 2900.063350428,
+   "end": 3160.069254324,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4005,
+    "I"
+   ],
+   "slot": 1,
+   "start": 3080.066579845,
+   "end": 3360.072458406,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4006,
+    "B"
+   ],
+   "slot": 0,
+   "start": 3160.069254324,
+   "end": 3400.074730238,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4006,
+    "F"
+   ],
+   "slot": 1,
+   "start": 3360.072458406,
+   "end": 3600.077724847,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4006,
+    "J"
+   ],
+   "slot": 0,
+   "start": 3400.074730238,
+   "end": 3660.079808193,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4006,
+    "E"
+   ],
+   "slot": 1,
+   "start": 3600.077724847,
+   "end": 3880.083290315,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4006,
+    "I"
+   ],
+   "slot": 0,
+   "start": 3660.079808193,
+   "end": 3940.0859211370002,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4007,
+    "B"
+   ],
+   "slot": 1,
+   "start": 3880.083290315,
+   "end": 4120.089366999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4007,
+    "F"
+   ],
+   "slot": 0,
+   "start": 3940.0859211370002,
+   "end": 4180.091626404999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4007,
+    "J"
+   ],
+   "slot": 1,
+   "start": 4120.089366999,
+   "end": 4400.094966869,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4007,
+    "E"
+   ],
+   "slot": 0,
+   "start": 4180.091626404999,
+   "end": 4460.097206089999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4007,
+    "I"
+   ],
+   "slot": 1,
+   "start": 4400.094966869,
+   "end": 4680.100399377,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4008,
+    "B"
+   ],
+   "slot": 0,
+   "start": 4460.097206089999,
+   "end": 4700.102373174999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4008,
+    "F"
+   ],
+   "slot": 1,
+   "start": 4680.100399377,
+   "end": 4940.105839035,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4008,
+    "J"
+   ],
+   "slot": 0,
+   "start": 4700.102373174999,
+   "end": 4980.107978954,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4008,
+    "E"
+   ],
+   "slot": 1,
+   "start": 4940.105839035,
+   "end": 5200.111623645,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4008,
+    "I"
+   ],
+   "slot": 0,
+   "start": 4980.107978954,
+   "end": 5260.114290963,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4009,
+    "B"
+   ],
+   "slot": 1,
+   "start": 5200.111623645,
+   "end": 5440.11760049,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4009,
+    "F"
+   ],
+   "slot": 0,
+   "start": 5260.114290963,
+   "end": 5500.1198440729995,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4009,
+    "J"
+   ],
+   "slot": 1,
+   "start": 5440.11760049,
+   "end": 5700.123425868999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4009,
+    "E"
+   ],
+   "slot": 0,
+   "start": 5500.1198440729995,
+   "end": 5760.125756541,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4009,
+    "I"
+   ],
+   "slot": 1,
+   "start": 5700.123425868999,
+   "end": 5980.129282149,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4010,
+    "B"
+   ],
+   "slot": 0,
+   "start": 5760.125756541,
+   "end": 6000.131339623999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4010,
+    "F"
+   ],
+   "slot": 1,
+   "start": 5980.129282149,
+   "end": 6240.134724504,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4010,
+    "J"
+   ],
+   "slot": 0,
+   "start": 6000.131339623999,
+   "end": 6280.136912391,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4010,
+    "E"
+   ],
+   "slot": 1,
+   "start": 6240.134724504,
+   "end": 6520.140449717,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    4010,
+    "I"
+   ],
+   "slot": 0,
+   "start": 6280.136912391,
+   "end": 6560.14143508,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "finished_runs": [
+  "dfg-B-seed4001.json",
+  "dfg-B-seed4002.json",
+  "dfg-B-seed4003.json",
+  "dfg-B-seed4004.json",
+  "dfg-B-seed4005.json",
+  "dfg-B-seed4006.json",
+  "dfg-B-seed4007.json",
+  "dfg-B-seed4008.json",
+  "dfg-B-seed4009.json",
+  "dfg-B-seed4010.json",
+  "dfg-E-seed4001.json",
+  "dfg-E-seed4002.json",
+  "dfg-E-seed4003.json",
+  "dfg-E-seed4004.json",
+  "dfg-E-seed4005.json",
+  "dfg-E-seed4006.json",
+  "dfg-E-seed4007.json",
+  "dfg-E-seed4008.json",
+  "dfg-E-seed4009.json",
+  "dfg-E-seed4010.json",
+  "dfg-F-seed4001.json",
+  "dfg-F-seed4002.json",
+  "dfg-F-seed4003.json",
+  "dfg-F-seed4004.json",
+  "dfg-F-seed4005.json",
+  "dfg-F-seed4006.json",
+  "dfg-F-seed4007.json",
+  "dfg-F-seed4008.json",
+  "dfg-F-seed4009.json",
+  "dfg-F-seed4010.json",
+  "dfg-I-seed4001.json",
+  "dfg-I-seed4002.json",
+  "dfg-I-seed4003.json",
+  "dfg-I-seed4004.json",
+  "dfg-I-seed4005.json",
+  "dfg-I-seed4006.json",
+  "dfg-I-seed4007.json",
+  "dfg-I-seed4008.json",
+  "dfg-I-seed4009.json",
+  "dfg-I-seed4010.json",
+  "dfg-J-seed4001.json",
+  "dfg-J-seed4002.json",
+  "dfg-J-seed4003.json",
+  "dfg-J-seed4004.json",
+  "dfg-J-seed4005.json",
+  "dfg-J-seed4006.json",
+  "dfg-J-seed4007.json",
+  "dfg-J-seed4008.json",
+  "dfg-J-seed4009.json",
+  "dfg-J-seed4010.json"
+ ],
+ "wall_seconds": 6685.97345662117,
+ "complete": true
+}

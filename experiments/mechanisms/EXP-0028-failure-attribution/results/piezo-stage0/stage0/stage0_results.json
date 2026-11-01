@@ -1,0 +1,429 @@
+{
+ "torch": "2.11.0+cu128",
+ "smoke": false,
+ "steps": 150,
+ "n_gpu": 2,
+ "gpus": [
+  "Tesla T4",
+  "Tesla T4"
+ ],
+ "t_start": 1792912885.8280678,
+ "single": [
+  {
+   "tag": "single-converse-B",
+   "n_workers": 1,
+   "wall_s": 80.92955019199997,
+   "rows": [
+    {
+     "problem": "converse",
+     "arm": "B",
+     "steps": 150,
+     "total_s": 65.34145475499997,
+     "recompute_s": 0.0,
+     "s_per_step": 0.43560969836666646,
+     "peak_mb": 2436.0888671875,
+     "status": "adam_complete"
+    }
+   ],
+   "steps_per_s_steady": 2.295633003005981,
+   "steps_per_s_wall": 1.8534639034090143,
+   "gpu": {
+    "0": {
+     "util_mean": 70.28666666666666,
+     "util_max": 100,
+     "mem_max_mb": 2693,
+     "n": 150
+    },
+    "1": {
+     "util_mean": 0.0,
+     "util_max": 0,
+     "mem_max_mb": 3,
+     "n": 150
+    }
+   }
+  },
+  {
+   "tag": "single-converse-E",
+   "n_workers": 1,
+   "wall_s": 87.69415059599999,
+   "rows": [
+    {
+     "problem": "converse",
+     "arm": "E",
+     "steps": 150,
+     "total_s": 81.11529042400002,
+     "recompute_s": 14.398466293999945,
+     "s_per_step": 0.44477882753333386,
+     "peak_mb": 7852.4326171875,
+     "status": "adam_complete"
+    }
+   ],
+   "steps_per_s_steady": 2.248308458264136,
+   "steps_per_s_wall": 1.7104903688620936,
+   "gpu": {
+    "0": {
+     "util_mean": 81.03703703703704,
+     "util_max": 100,
+     "mem_max_mb": 9265,
+     "n": 162
+    },
+    "1": {
+     "util_mean": 0.0,
+     "util_max": 0,
+     "mem_max_mb": 3,
+     "n": 162
+    }
+   }
+  },
+  {
+   "tag": "single-converse-J",
+   "n_workers": 1,
+   "wall_s": 87.72707561000004,
+   "rows": [
+    {
+     "problem": "converse",
+     "arm": "J",
+     "steps": 150,
+     "total_s": 81.34176121099995,
+     "recompute_s": 14.085148623999999,
+     "s_per_step": 0.44837741724666635,
+     "peak_mb": 7846.4169921875,
+     "status": "adam_complete"
+    }
+   ],
+   "steps_per_s_steady": 2.230263973017778,
+   "steps_per_s_wall": 1.7098484014996784,
+   "gpu": {
+    "0": {
+     "util_mean": 80.94478527607362,
+     "util_max": 100,
+     "mem_max_mb": 9265,
+     "n": 163
+    },
+    "1": {
+     "util_mean": 0.0,
+     "util_max": 0,
+     "mem_max_mb": 3,
+     "n": 163
+    }
+   }
+  },
+  {
+   "tag": "single-direct-B",
+   "n_workers": 1,
+   "wall_s": 54.58727494899995,
+   "rows": [
+    {
+     "problem": "direct",
+     "arm": "B",
+     "steps": 150,
+     "total_s": 48.485527950999995,
+     "recompute_s": 0.0,
+     "s_per_step": 0.32323685300666666,
+     "peak_mb": 1699.03173828125,
+     "status": "adam_complete"
+    }
+   ],
+   "steps_per_s_steady": 3.09370664482795,
+   "steps_per_s_wall": 2.7478931699767517,
+   "gpu": {
+    "0": {
+     "util_mean": 77.17821782178218,
+     "util_max": 100,
+     "mem_max_mb": 1929,
+     "n": 101
+    },
+    "1": {
+     "util_mean": 0.0,
+     "util_max": 0,
+     "mem_max_mb": 3,
+     "n": 101
+    }
+   }
+  },
+  {
+   "tag": "single-direct-E",
+   "n_workers": 1,
+   "wall_s": 72.69001881099996,
+   "rows": [
+    {
+     "problem": "direct",
+     "arm": "E",
+     "steps": 150,
+     "total_s": 66.74878643099998,
+     "recompute_s": 15.501909819000048,
+     "s_per_step": 0.3416458440799996,
+     "peak_mb": 9425.16162109375,
+     "status": "adam_complete"
+    }
+   ],
+   "steps_per_s_steady": 2.927007652303947,
+   "steps_per_s_wall": 2.0635570392410045,
+   "gpu": {
+    "0": {
+     "util_mean": 77.03703703703704,
+     "util_max": 100,
+     "mem_max_mb": 11405,
+     "n": 135
+    },
+    "1": {
+     "util_mean": 0.0,
+     "util_max": 0,
+     "mem_max_mb": 3,
+     "n": 135
+    }
+   }
+  },
+  {
+   "tag": "single-direct-J",
+   "n_workers": 1,
+   "wall_s": 71.72885694299998,
+   "rows": [
+    {
+     "problem": "direct",
+     "arm": "J",
+     "steps": 150,
+     "total_s": 65.79858102200001,
+     "recompute_s": 15.13941722200002,
+     "s_per_step": 0.3377277586666666,
+     "peak_mb": 9418.39404296875,
+     "status": "adam_complete"
+    }
+   ],
+   "steps_per_s_steady": 2.9609647840259066,
+   "steps_per_s_wall": 2.091208565043758,
+   "gpu": {
+    "0": {
+     "util_mean": 77.15037593984962,
+     "util_max": 100,
+     "mem_max_mb": 11405,
+     "n": 133
+    },
+    "1": {
+     "util_mean": 0.0,
+     "util_max": 0,
+     "mem_max_mb": 3,
+     "n": 133
+    }
+   }
+  }
+ ],
+ "concurrency": [
+  {
+   "tag": "conc-1",
+   "n_workers": 1,
+   "wall_s": 71.99796480000009,
+   "rows": [
+    {
+     "problem": "converse",
+     "arm": "B",
+     "steps": 150,
+     "total_s": 65.47702385399998,
+     "recompute_s": 0.0,
+     "s_per_step": 0.43651349235999987,
+     "peak_mb": 2436.0888671875,
+     "status": "adam_complete"
+    }
+   ],
+   "steps_per_s_steady": 2.2908799326992706,
+   "steps_per_s_wall": 2.083392223886859,
+   "gpu": {
+    "0": {
+     "util_mean": 79.44776119402985,
+     "util_max": 100,
+     "mem_max_mb": 2693,
+     "n": 134
+    },
+    "1": {
+     "util_mean": 0.0,
+     "util_max": 0,
+     "mem_max_mb": 3,
+     "n": 134
+    }
+   }
+  },
+  {
+   "tag": "conc-2",
+   "n_workers": 2,
+   "wall_s": 130.83782018099987,
+   "rows": [
+    {
+     "problem": "converse",
+     "arm": "B",
+     "steps": 150,
+     "total_s": 122.01098515999979,
+     "recompute_s": 0.0,
+     "s_per_step": 0.813406567733332,
+     "peak_mb": 2436.0888671875,
+     "status": "adam_complete"
+    },
+    {
+     "problem": "converse",
+     "arm": "B",
+     "steps": 150,
+     "total_s": 122.04387087600003,
+     "recompute_s": 0.0,
+     "s_per_step": 0.8136258058400002,
+     "peak_mb": 2436.0888671875,
+     "status": "adam_complete"
+    }
+   ],
+   "steps_per_s_steady": 2.458463726718823,
+   "steps_per_s_wall": 2.292914996481772,
+   "gpu": {
+    "0": {
+     "util_mean": 96.15833333333333,
+     "util_max": 100,
+     "mem_max_mb": 5383,
+     "n": 240
+    },
+    "1": {
+     "util_mean": 0.0,
+     "util_max": 0,
+     "mem_max_mb": 3,
+     "n": 240
+    }
+   }
+  },
+  {
+   "tag": "conc-3",
+   "n_workers": 3,
+   "wall_s": 194.03660474899993,
+   "rows": [
+    {
+     "problem": "converse",
+     "arm": "B",
+     "steps": 150,
+     "total_s": 181.860065717,
+     "recompute_s": 0.0,
+     "s_per_step": 1.2124004381133333,
+     "peak_mb": 2436.0888671875,
+     "status": "adam_complete"
+    },
+    {
+     "problem": "converse",
+     "arm": "B",
+     "steps": 150,
+     "total_s": 181.90119251700003,
+     "recompute_s": 0.0,
+     "s_per_step": 1.2126746167800002,
+     "peak_mb": 2436.0888671875,
+     "status": "adam_complete"
+    },
+    {
+     "problem": "converse",
+     "arm": "B",
+     "steps": 150,
+     "total_s": 182.51038221700014,
+     "recompute_s": 0.0,
+     "s_per_step": 1.2167358814466676,
+     "peak_mb": 2436.0888671875,
+     "status": "adam_complete"
+    }
+   ],
+   "steps_per_s_steady": 2.471304559334057,
+   "steps_per_s_wall": 2.319150041725925,
+   "gpu": {
+    "0": {
+     "util_mean": 97.13031161473087,
+     "util_max": 100,
+     "mem_max_mb": 8073,
+     "n": 353
+    },
+    "1": {
+     "util_mean": 0.0,
+     "util_max": 0,
+     "mem_max_mb": 3,
+     "n": 353
+    }
+   }
+  },
+  {
+   "tag": "conc-2x2",
+   "n_workers": 4,
+   "wall_s": 134.00426147999997,
+   "rows": [
+    {
+     "problem": "converse",
+     "arm": "B",
+     "steps": 150,
+     "total_s": 122.51003971599994,
+     "recompute_s": 0.0,
+     "s_per_step": 0.8167335981066662,
+     "peak_mb": 2436.0888671875,
+     "status": "adam_complete"
+    },
+    {
+     "problem": "converse",
+     "arm": "B",
+     "steps": 150,
+     "total_s": 122.20563795699991,
+     "recompute_s": 0.0,
+     "s_per_step": 0.814704253046666,
+     "peak_mb": 2436.0888671875,
+     "status": "adam_complete"
+    },
+    {
+     "problem": "converse",
+     "arm": "B",
+     "steps": 150,
+     "total_s": 121.33501496000008,
+     "recompute_s": 0.0,
+     "s_per_step": 0.8089000997333339,
+     "peak_mb": 2436.0888671875,
+     "status": "adam_complete"
+    },
+    {
+     "problem": "converse",
+     "arm": "B",
+     "steps": 150,
+     "total_s": 121.39037926799983,
+     "recompute_s": 0.0,
+     "s_per_step": 0.8092691951199988,
+     "peak_mb": 2436.0888671875,
+     "status": "adam_complete"
+    }
+   ],
+   "steps_per_s_steady": 4.923758098183885,
+   "steps_per_s_wall": 4.477469547410994,
+   "gpu": {
+    "0": {
+     "util_mean": 94.78297872340426,
+     "util_max": 100,
+     "mem_max_mb": 5383,
+     "n": 235
+    },
+    "1": {
+     "util_mean": 93.68510638297872,
+     "util_max": 100,
+     "mem_max_mb": 5383,
+     "n": 235
+    }
+   }
+  }
+ ],
+ "cuda_graphs": [
+  {
+   "problem": "converse",
+   "n": 100,
+   "eager_s_per_step": 0.40456216050999955,
+   "eager_final_loss": 1.4548917868766715,
+   "graph_s_per_step": 0.3737039702799984,
+   "graph_final_loss": 1.4548917868766718,
+   "speedup": 1.0825738891852836,
+   "rel_diff_final_loss": 1.526193266935073e-16
+  },
+  {
+   "problem": "direct",
+   "n": 100,
+   "eager_s_per_step": 0.2986491760900003,
+   "eager_final_loss": 0.7409094207976198,
+   "graph_s_per_step": 0.26755355733999975,
+   "graph_final_loss": 0.7409094207976198,
+   "speedup": 1.1162220344186458,
+   "rel_diff_final_loss": 0.0
+  }
+ ],
+ "t_end": 1792914013.9333415,
+ "total_s": 1128.1052737236023
+}

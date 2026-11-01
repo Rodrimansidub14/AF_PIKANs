@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ejecución del mecanismo</title>
+<style>
+:root{--bg:#fafaf7;--fg:#1d1d1b;--mut:#6b6b66;--card:#fff;--line:#c9c8c0;--body:#2f6f8f;--p2:#b5532a;--p3:#2d7a4f;--p4:#8a4fb0;--p5:#b08a1c;--p6:#4a6fa5;--dorm:#9a9a94;--ext:#a03a5a;--ok:#2d7a4f;--warn:#b5532a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161715;--fg:#e9e8e2;--mut:#9a9992;--card:#1f201d;--line:#3a3b36;--body:#6bb0d1;--p2:#e08a60;--p3:#6cc294;--p4:#c493e6;--p5:#e0bd55;--p6:#8fb0e0;--dorm:#77776f;--ext:#e07b9b;--ok:#6cc294;--warn:#e08a60}}
+:root[data-theme="dark"]{--bg:#161715;--fg:#e9e8e2;--mut:#9a9992;--card:#1f201d;--line:#3a3b36;--body:#6bb0d1;--p2:#e08a60;--p3:#6cc294;--p4:#c493e6;--p5:#e0bd55;--p6:#8fb0e0;--dorm:#77776f;--ext:#e07b9b;--ok:#6cc294;--warn:#e08a60}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1040px;margin:0 auto;padding:28px 16px 64px}
+h1{font-size:24px;margin:0 0 4px}h2{font-size:18px;margin:36px 0 8px;border-bottom:1px solid var(--line);padding-bottom:6px}
+p.lead{color:var(--mut);margin:0 0 16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+svg{width:100%;height:auto;display:block;background:var(--card);border:1px solid var(--line);border-radius:10px}
+svg text{fill:var(--fg);font-family:system-ui,sans-serif}
+.box{fill:var(--card);stroke:var(--body);stroke-width:1.5}
+.tag{fill:var(--card);stroke-width:1.6}
+.sm{font-size:11px}.xs{font-size:10px;fill:var(--mut)}.hd{font-size:12px;font-weight:600}
+.arr{stroke:var(--mut);stroke-width:1.4;fill:none;marker-end:url(#a)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--card)}
+.wrap{overflow-x:auto}
+code{font:12.5px ui-monospace,Consolas,monospace;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+label{font-size:13px;margin-right:14px}
+input[type=range]{vertical-align:middle;width:150px}
+.bar{height:22px;border:1px solid var(--line);border-radius:5px;overflow:hidden;display:flex;margin-top:8px}
+.bar div{display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;white-space:nowrap}
+.pill{display:inline-block;border-radius:12px;padding:1px 9px;font-size:12px;border:1px solid var(--line)}
+.ok{color:var(--ok)}.warn{color:var(--warn)}
+@media (max-width:640px){body{font-size:14px}}
+</style>
+</head>
+<body>
+<main>
+<h1>Cómo se ejecuta el mecanismo, de los puntos a la solución</h1>
+<p class="lead">EXP-0028 → diseño para EXP-0029. Estado: <b>propuesta, nada firmado ni lanzado.</b> Las rutas y funciones salen de <code>run_piezo.py</code> y <code>gram_preconditioning.py</code>; los umbrales son valores de partida.</p>
+
+<h2>1. El camino completo</h2>
+<p>Dos relojes. El de arriba corre en <b>cada una de las 20 000 épocas</b>. El de abajo corre <b>20 veces</b> (épocas 0, 1 000, …, 19 000), <i>antes</i> del paso de Adam, y reescribe el precondicionador P. Las patas son los círculos de color: cada una se engancha en un punto distinto.</p>
+
+<svg viewBox="0 0 980 600" role="img" aria-label="Pipeline del mecanismo con las patas">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--mut)"/></marker></defs>
+
+<text x="20" y="28" class="hd">RELOJ 1 · cada época (20 000)</text>
+<g>
+<rect class="box" x="20" y="45" width="150" height="90" rx="8"/><text x="95" y="66" text-anchor="middle" class="hd">1 · Puntos</text>
+<text x="95" y="84" text-anchor="middle" class="sm">2048 interiores/capa</text><text x="95" y="98" text-anchor="middle" class="sm">256 por frontera/interfaz</text><text x="95" y="112" text-anchor="middle" class="xs">remuestreo cada 200 épocas</text>
+<rect class="box" x="175" y="45" width="150" height="90" rx="8"/><text x="250" y="66" text-anchor="middle" class="hd">2 · RBF-KAN</text>
+<text x="250" y="84" text-anchor="middle" class="sm">11 gaussianas por arista</text><text x="250" y="98" text-anchor="middle" class="sm">c = P · c′ (P es un buffer)</text><text x="250" y="112" text-anchor="middle" class="xs">Adam solo ve c′</text>
+<rect class="box" x="330" y="45" width="150" height="90" rx="8"/><text x="405" y="66" text-anchor="middle" class="hd">3 · Campos</text>
+<text x="405" y="84" text-anchor="middle" class="sm">u, v, φ, σ₁₁, σ₂₂, σ₁₂, D₁, D₂</text><text x="405" y="98" text-anchor="middle" class="sm">condiciones duras</text><text x="405" y="112" text-anchor="middle" class="xs">+ V̂_f flotante (directo)</text>
+<rect class="box" x="485" y="45" width="150" height="90" rx="8"/><text x="560" y="66" text-anchor="middle" class="hd">4 · Autodiff 1</text>
+<text x="560" y="84" text-anchor="middle" class="sm">gradientes de los campos</text><text x="560" y="98" text-anchor="middle" class="sm">→ residuos: equilibrio,</text><text x="560" y="112" text-anchor="middle" class="sm">constitutivos, Gauss</text>
+<rect class="box" x="640" y="45" width="150" height="90" rx="8"/><text x="715" y="66" text-anchor="middle" class="hd">5 · Pérdida</text>
+<text x="715" y="84" text-anchor="middle" class="sm">pesos fijos (paper)</text><text x="715" y="98" text-anchor="middle" class="sm">converso 1 · directo λ_BC=10</text><text x="715" y="112" text-anchor="middle" class="xs">+ carga neta (256 pts)</text>
+<rect class="box" x="795" y="45" width="165" height="90" rx="8"/><text x="877" y="66" text-anchor="middle" class="hd">6 · Autodiff 2 + Adam</text>
+<text x="877" y="84" text-anchor="middle" class="sm">backward sobre c′</text><text x="877" y="98" text-anchor="middle" class="sm">Adam lr 1e-3, float64</text><text x="877" y="112" text-anchor="middle" class="xs">solución = campos tras 20 000</text>
+</g>
+<g class="arr"><path d="M170 90H175"/><path d="M325 90H330"/><path d="M480 90H485"/><path d="M635 90H640"/><path d="M790 90H795"/></g>
+
+<!-- tags row 1 -->
+<g>
+<rect class="tag" x="485" y="158" width="150" height="76" rx="8" stroke="var(--ext)" stroke-dasharray="5 3"/>
+<text x="495" y="175" class="hd" style="fill:var(--ext)">X1 · X2 (pista B)</text>
+<text x="495" y="190" class="xs">cambian la pérdida:</text><text x="495" y="203" class="xs">consistencia constitutiva</text><text x="495" y="216" class="xs">y pesos FOSLS</text>
+<rect class="tag" x="640" y="158" width="150" height="76" rx="8" stroke="var(--p4)"/>
+<circle cx="654" cy="172" r="6" fill="var(--p4)"/><text x="666" y="176" class="hd">P4 · guarda</text>
+<text x="650" y="192" class="xs">trigger: pérdida de cada paso</text><text x="650" y="205" class="xs">&gt; 5× el mínimo de la ventana</text><text x="650" y="218" class="xs">efecto: baja a_cuerpo (→ I)</text>
+<rect class="tag" x="795" y="158" width="165" height="76" rx="8" stroke="var(--ext)" stroke-dasharray="5 3"/>
+<text x="805" y="175" class="hd" style="fill:var(--ext)">X3 (pista B)</text>
+<text x="805" y="190" class="xs">decaimiento de paso y</text><text x="805" y="203" class="xs">recorte de gradiente</text><text x="805" y="216" class="xs">fuera de la receta (Adam fijo)</text>
+</g>
+<path d="M715 135V158" class="arr" style="marker-end:none"/><path d="M877 135V158" class="arr" style="marker-end:none"/><path d="M560 135V158" class="arr" style="marker-end:none"/>
+
+<!-- install loop line -->
+<path d="M890 292V252H250V135" class="arr" stroke-dasharray="6 4"/>
+<text x="258" y="247" class="xs">instala P y c′ en las aristas (siguiente época ya usa el nuevo P)</text>
+
+<text x="20" y="278" class="hd">RELOJ 2 · recálculo, antes del paso de Adam (épocas 0, 1 000, …, 19 000)</text>
+<g>
+<rect class="box" x="20" y="292" width="140" height="78" rx="8"/><text x="90" y="312" text-anchor="middle" class="hd">R1 · ¿toca?</text><text x="90" y="328" text-anchor="middle" class="sm">pre.due(epoch)</text><text x="90" y="342" text-anchor="middle" class="sm">epoch % 1000 == 0</text>
+<rect class="box" x="180" y="292" width="140" height="78" rx="8"/><text x="250" y="312" text-anchor="middle" class="hd">R2 · Submuestra</text><text x="250" y="328" text-anchor="middle" class="sm">hasta 2048 puntos por clave</text><text x="250" y="342" text-anchor="middle" class="sm">de la piscina actual</text>
+<rect class="box" x="340" y="292" width="140" height="78" rx="8"/><text x="410" y="312" text-anchor="middle" class="hd">R3 · Autodiff 3</text><text x="410" y="328" text-anchor="middle" class="sm">jacrev de cada residuo</text><text x="410" y="342" text-anchor="middle" class="sm">respecto a c → J</text>
+<rect class="box" x="500" y="292" width="140" height="78" rx="8"/><text x="570" y="312" text-anchor="middle" class="hd">R4 · Bloques</text><text x="570" y="328" text-anchor="middle" class="sm">B = JᵀJ por arista</text><text x="570" y="342" text-anchor="middle" class="sm">(11×11) y normalizar</text>
+<rect class="box" x="660" y="292" width="140" height="78" rx="8"/><text x="730" y="312" text-anchor="middle" class="hd">R5 · P</text><text x="730" y="328" text-anchor="middle" class="sm">(B/m + 1e-3·I)^(-1/2)</text><text x="730" y="342" text-anchor="middle" class="sm">por arista</text>
+<rect class="box" x="820" y="292" width="140" height="78" rx="8"/><text x="890" y="310" text-anchor="middle" class="hd">R6 · Instalar</text><text x="890" y="326" text-anchor="middle" class="sm">P_ef = (1−a)·I + a·P</text><text x="890" y="340" text-anchor="middle" class="sm">c′ = P_ef⁻¹ c · reinicia Adam</text>
+</g>
+<g class="arr"><path d="M160 331H180"/><path d="M320 331H340"/><path d="M480 331H500"/><path d="M640 331H660"/><path d="M800 331H820"/></g>
+
+<!-- tags row 2 -->
+<g>
+<rect class="tag" x="20" y="392" width="140" height="82" rx="8" stroke="var(--p5)"/>
+<circle cx="34" cy="406" r="6" fill="var(--p5)"/><text x="46" y="410" class="hd">P5 · arranque</text>
+<text x="30" y="426" class="xs">cambia el reloj: épocas</text><text x="30" y="439" class="xs">0, 250, 500, 1 000, 2 000</text><text x="30" y="452" class="xs">trigger: pérdida en llano</text><text x="30" y="465" class="xs">(|Δlog L| &lt; umbral)</text>
+<rect class="tag" x="180" y="392" width="140" height="82" rx="8" stroke="var(--dorm)" stroke-dasharray="5 3"/>
+<circle cx="194" cy="406" r="6" fill="var(--dorm)"/><text x="206" y="410" class="hd">P1 · escalares</text>
+<text x="190" y="426" class="xs">resuelve V̂_f exacto antes</text><text x="190" y="439" class="xs">de R3. REFUTADA en piezo:</text><text x="190" y="452" class="xs">a = 0 (el aprendido ya es</text><text x="190" y="465" class="xs">el mínimo exacto)</text>
+<rect class="tag" x="340" y="392" width="140" height="82" rx="8" stroke="var(--p2)"/>
+<circle cx="354" cy="406" r="6" fill="var(--p2)"/><text x="366" y="410" class="hd">P2 · balance</text>
+<text x="350" y="426" class="xs">J por grupo físico (σ, D, φ,</text><text x="350" y="439" class="xs">equilibrio) dentro de R3</text><text x="350" y="452" class="xs">trigger: cuota de traza en</text><text x="350" y="465" class="xs">un canal &gt; umbral</text>
+<rect class="tag" x="500" y="392" width="140" height="82" rx="8" stroke="var(--p6)"/>
+<circle cx="514" cy="406" r="6" fill="var(--p6)"/><text x="526" y="410" class="hd">P6 · diagonal (J)</text>
+<text x="510" y="426" class="xs">B → diag(B) en R4</text><text x="510" y="439" class="xs">trigger: presupuesto de</text><text x="510" y="452" class="xs">recálculo o bloque mal</text><text x="510" y="465" class="xs">estimado (cond alto)</text>
+<rect class="tag" x="660" y="392" width="140" height="82" rx="8" stroke="var(--body)"/>
+<circle cx="674" cy="406" r="6" fill="var(--body)"/><text x="686" y="410" class="hd">Cuerpo · E</text>
+<text x="670" y="426" class="xs">siempre: R1→R6 completo</text><text x="670" y="439" class="xs">a_cuerpo = 1 salvo que</text><text x="670" y="452" class="xs">P4 lo baje</text>
+<rect class="tag" x="820" y="392" width="140" height="82" rx="8" stroke="var(--p3)"/>
+<circle cx="834" cy="406" r="6" fill="var(--p3)"/><text x="846" y="410" class="hd">P3 · Gram empírico</text>
+<text x="830" y="426" class="xs">sustituye R3 (sin autodiff):</text><text x="830" y="439" class="xs">B desde cómo caen las</text><text x="830" y="452" class="xs">entradas en las 11 bases</text><text x="830" y="465" class="xs">trigger: R3 demasiado caro</text>
+</g>
+<path d="M410 370V392M570 370V392M90 370V392M250 370V392M730 370V392" class="arr" style="marker-end:none"/>
+<path d="M890 370V392" class="arr" style="marker-end:none"/>
+<path d="M715 234V262H960" fill="none" stroke="var(--p4)" stroke-width="1.4" stroke-dasharray="3 3"/>
+<text x="722" y="258" class="xs" style="fill:var(--p4)">P4 amortigua el a_cuerpo que lee R6</text>
+
+<rect x="20" y="500" width="940" height="82" rx="8" fill="none" stroke="var(--line)"/>
+<text x="32" y="520" class="hd">Evaluador de señales (dentro de R4–R6, sin costo extra de autodiff)</text>
+<text x="32" y="539" class="sm">s_i se mide con lo que R3/R4 ya calcularon: traza por arista, dispersión log10 p95/p5, cuota de traza por canal de salida, cond(B regularizado).</text>
+<text x="32" y="555" class="sm">a_i = clamp((s_i − lo_i) / (hi_i − lo_i), 0, 1) · entra a R6 como mezcla P_ef = (1−a)·I + a·P · es continua, no un interruptor.</text>
+<text x="32" y="571" class="sm">P4 es la única que mira cada paso: usa el historial de pérdida (hoy se guarda cada 100 pasos; hay que registrarlo por paso).</text>
+</svg>
+
+<h2>2. Qué recibe cada pata, cuándo y cómo</h2>
+<div class="card wrap"><table>
+<tr><th>Pata</th><th>Dónde se engancha</th><th>Cuándo se evalúa</th><th>Qué señal recibe</th><th>Cómo actúa</th><th>Costo</th></tr>
+<tr><td><span class="dot" style="background:var(--body)"></span>Cuerpo E</td><td>R3→R6</td><td>20 recálculos</td><td>ninguna (siempre)</td><td>P por arista completo</td><td>≈ 4-5 % del tiempo (H100)</td></tr>
+<tr><td><span class="dot" style="background:var(--p2)"></span>P2 balance</td><td>R3: J agrupado por término</td><td>en cada recálculo</td><td>cuota de traza del canal dominante (σ_yy: 82-99 %)</td><td>B_bal = Σ_g B_g / tr(B_g), mezclado con B según a</td><td>un Jacobiano por grupo: ≈ 2-5× un recálculo</td></tr>
+<tr><td><span class="dot" style="background:var(--p3)"></span>P3 Gram empírico</td><td>sustituye R3</td><td>en cada recálculo</td><td>desajuste entre el Gram uniforme y el empírico</td><td>B desde la ocupación de las 11 bases</td><td>bajo, solo hacia adelante</td></tr>
+<tr><td><span class="dot" style="background:var(--p4)"></span>P4 guarda</td><td>entre las épocas (pérdida) y R6</td><td><b>cada paso</b></td><td>pérdida &gt; 5× el mínimo de la ventana</td><td>baja a_cuerpo; opcional: vuelve al último punto estable</td><td>despreciable</td></tr>
+<tr><td><span class="dot" style="background:var(--p5)"></span>P5 arranque</td><td>R1 (el calendario)</td><td>desde la época 0</td><td>llano: |Δ log L| pequeño</td><td>añade recálculos en 250, 500, 2 000</td><td>+3 recálculos</td></tr>
+<tr><td><span class="dot" style="background:var(--p6)"></span>P6 diagonal</td><td>R4</td><td>en cada recálculo</td><td>presupuesto / cond del bloque</td><td>diag(B) en lugar de B completo</td><td>menor que E</td></tr>
+<tr><td><span class="dot" style="background:var(--dorm)"></span>P1 escalares</td><td>antes de R3</td><td>en cada recálculo</td><td>estructural</td><td>V̂_f en forma cerrada</td><td>2 evaluaciones de pérdida; a = 0 en piezo</td></tr>
+</table></div>
+
+<div class="card">
+<b>Mezcla graduada, en vivo.</b> Mueve la señal y los umbrales; abajo se ve cuánto P y cuánta identidad entran al instalar.
+<div style="margin-top:8px">
+<label>señal s <input id="s" type="range" min="0" max="1" step="0.01" value="0.55"> <span id="sv"></span></label>
+<label>lo <input id="lo" type="range" min="0" max="1" step="0.01" value="0.3"> <span id="lov"></span></label>
+<label>hi <input id="hi" type="range" min="0" max="1" step="0.01" value="0.8"> <span id="hiv"></span></label>
+</div>
+<div class="bar"><div id="bI" style="background:var(--dorm)">I</div><div id="bP" style="background:var(--body)">P</div></div>
+<div class="sm" style="font-size:13px;margin-top:6px" id="out"></div>
+</div>
+
+<h2>3. Hipótesis para correr (borrador, tú firmas)</h2>
+<div class="card">
+<p><b>H-ARA-1 (P2).</b> El error de φ del converso con E (×1.18 sobre B) y la brecha del directo vienen de que el Gauss-Newton casi no ve los canales de φ y D (σ_yy lleva 82-99 % de la curvatura). Si P se construye con los grupos físicos balanceados, φ mejora <i>sin</i> que u empeore.</p>
+<p><b>Predicción (cifras mías, para que las cambies):</b> mediana de l2re_φ(S)/l2re_φ(E) ≤ 0.90 en el converso (0.052 → ≤ 0.047); l2re_u(S)/l2re_u(E) ≤ 1.10; en el directo, l2re_u(S)/l2re_u(E) ≤ 1.00 (no se promete cerrar la brecha con el paper).<br>
+<b>Se falsa si:</b> el cociente de φ es ≥ 1.0 en 2 de 3 semillas, o u del converso supera 1.25× E.</p>
+<p><b>H-ARA-2 (P4+P5), opcional.</b> Una guarda de estabilidad y un arranque denso reducen los saltos de pérdida del directo (E: 26-36) y la cola mala del converso sin costo en el error. Predicción: saltos ≤ 15 y error no peor que E. Apoyo: débil (E ya tiene los mismos saltos con error igual al de B).</p>
+
+<p class="warn"><b>Puerta antes de Modal (sin entrenar, CPU, estados guardados):</b></p>
+<ol>
+<li><b>P2:</b> Jacobiano por término sobre los estados guardados. Pasa si φ+D aportan &lt; 5 % de la traza en ≥ 70 % de las aristas <i>y</i> el P balanceado cambia la dirección del bloque (no es solo escala). Si no pasa, H-ARA-1 se retira y no se gasta Modal.</li>
+<li><b>Carga neta:</b> comparar el término de 256 puntos con la integral exacta sobre la malla guardada: ¿sesga V̂_f? Responde la duda que dejó H2.</li>
+<li><b>P3:</b> ocupación por arista frente al Gram uniforme (decide si P3 es candidata).</li>
+</ol>
+</div>
+
+<h2>4. ¿Cabe en Modal?</h2>
+<div class="card wrap"><table>
+<tr><th>Opción</th><th>Corridas</th><th>Costo estimado</th><th>Sobra de ≈ 19-20 USD</th></tr>
+<tr><td>Solo H-ARA-1 (brazo S: 3 semillas × converso y directo)</td><td>6</td><td>≈ 7 USD</td><td>≈ 12-13 <span class="pill ok">cabe</span></td></tr>
+<tr><td>H-ARA-1 + H-ARA-2 (dos brazos)</td><td>12</td><td>≈ 13 USD</td><td>≈ 6-7 <span class="pill ok">cabe, ajustado</span></td></tr>
+<tr><td>Más las semillas 31-32 del brazo S</td><td>+4</td><td>≈ +4.5 USD</td><td>no recomendado</td></tr>
+</table>
+<p class="sm" style="font-size:13px;margin:8px 0 0">Base: el bloque de piezo costó ≈ 22 USD por 20 corridas (≈ 1.1 USD por corrida, con sondas incluidas, así que es cota alta). El brazo S añade del 10 al 25 % de tiempo por el Jacobiano por grupo. Falta verificar la tarifa real de H100 en la cuenta. Orden previsto: puerta (CPU) → implementar S con pruebas → humo en CPU → especificación y firma → Modal con <code>modal run --detach piezo/modal_piezo.py --mode run</code> (4 procesos por H100). Se añade registro de pérdida por paso en la misma corrida.</p>
+</div>
+
+<h2>5. Límites de este diseño</h2>
+<div class="card">
+<ul style="margin:0;padding-left:18px">
+<li>Las seis patas se miden por separado; con 3 semillas por problema no se puede probar su interacción. La mezcla es una promesa de diseño, no un resultado.</li>
+<li>Los umbrales lo/hi son valores de partida calibrados con siete problemas; hay que registrar las señales para recalibrarlos.</li>
+<li>El diagrama muestra dónde se engancha cada pata; qué patas existen al final depende de lo que pasen las comprobaciones.</li>
+</ul>
+</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+function upd(){
+  const s=+$('s').value,lo=+$('lo').value,hi=Math.max(+$('hi').value,lo+0.01);
+  $('sv').textContent=s.toFixed(2);$('lov').textContent=lo.toFixed(2);$('hiv').textContent=(+$('hi').value).toFixed(2);
+  const a=Math.min(1,Math.max(0,(s-lo)/(hi-lo)));
+  $('bI').style.width=((1-a)*100)+'%';$('bP').style.width=(a*100)+'%';
+  $('bI').textContent=a<0.9?'I '+Math.round((1-a)*100)+'%':'';$('bP').textContent=a>0.1?'P '+Math.round(a*100)+'%':'';
+  $('out').textContent='a = '+a.toFixed(2)+'  →  P_ef = '+(1-a).toFixed(2)+'·I + '+a.toFixed(2)+'·P';
+}
+['s','lo','hi'].forEach(i=>$(i).addEventListener('input',upd));upd();
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+ "converse": {
+  "params_equal": true,
+  "trace_equal": true,
+  "score_equal": true,
+  "first_losses": [
+   139.65798562679103,
+   74.53856646905487,
+   49.743543498138784
+  ],
+  "pass": true
+ },
+ "direct": {
+  "params_equal": true,
+  "trace_equal": true,
+  "score_equal": true,
+  "first_losses": [
+   116.2268674101859,
+   21.596413869207858,
+   14.761829443858169
+  ],
+  "pass": true
+ },
+ "seed": 4001,
+ "steps": 12,
+ "smoke_pool": 32,
+ "device": "cuda:0",
+ "warmup_steps": 50,
+ "passed": true,
+ "pass": true
+}

@@ -1,0 +1,1 @@
+{"problem": "converse", "arm": "E", "steps": 150, "total_s": 46.097119874, "recompute_s": 10.555515620000001, "s_per_step": 0.23694402836, "peak_mb": 7899.9326171875, "status": "adam_complete"}

@@ -1,0 +1,21 @@
+{
+ "B_vs_ID": {
+  "hist_equal": true,
+  "loss_adam_end_equal": true,
+  "score_adam_equal": true,
+  "score_final_equal": true,
+  "loss_final_equal": true,
+  "terms_final_equal": true,
+  "lbfgs_iterations": [
+   50,
+   50
+  ]
+ },
+ "params_B_equals_ID": true,
+ "params_B_equals_sweep_adam_stage": true,
+ "seed": 4001,
+ "adam_steps": 20,
+ "smoke_pool": 512,
+ "device": "cpu",
+ "pass": true
+}

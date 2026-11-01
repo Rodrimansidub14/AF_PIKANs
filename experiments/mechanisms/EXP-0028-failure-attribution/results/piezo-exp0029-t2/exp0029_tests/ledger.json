@@ -1,0 +1,59 @@
+{
+ "ledger": [
+  {
+   "problem": "direct",
+   "seed": 20260728,
+   "arm": "S",
+   "start": 7.82012939453125e-05,
+   "end": 405.0063302516937,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "converse",
+   "seed": 20260728,
+   "arm": "S",
+   "start": 7.82012939453125e-05,
+   "end": 510.0087399482727,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "direct",
+   "seed": 20260729,
+   "arm": "S",
+   "start": 405.0063302516937,
+   "end": 780.0129492282867,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "converse",
+   "seed": 20260729,
+   "arm": "S",
+   "start": 510.0087399482727,
+   "end": 1005.0168373584747,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "direct",
+   "seed": 20260730,
+   "arm": "S",
+   "start": 780.0129492282867,
+   "end": 1155.0196504592896,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "converse",
+   "seed": 20260730,
+   "arm": "S",
+   "start": 1005.0168373584747,
+   "end": 1500.024292230606,
+   "rc": 0,
+   "status": "ok"
+  }
+ ],
+ "wall_seconds": 1500.0244936943054
+}

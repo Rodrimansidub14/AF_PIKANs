@@ -1,0 +1,297 @@
+{
+ "info": {
+  "tiny": false,
+  "block": "ac",
+  "plan": [
+   "ac",
+   [
+    "B",
+    "E",
+    "F",
+    "C"
+   ],
+   [
+    4101,
+    4102,
+    4103,
+    4104,
+    4105
+   ]
+  ],
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "cutoff_s": 12240.0,
+  "hard_cap_s": 14040.0,
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "ledger": [
+  {
+   "job": [
+    "ac",
+    "E",
+    4101
+   ],
+   "slot": 1,
+   "start": 1.1519999816300697e-06,
+   "end": 900.0090804890001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "B",
+    4101
+   ],
+   "slot": 0,
+   "start": 1.1519999816300697e-06,
+   "end": 940.0112749280001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "F",
+    4101
+   ],
+   "slot": 1,
+   "start": 900.0090804890001,
+   "end": 1820.0195248950001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "C",
+    4101
+   ],
+   "slot": 0,
+   "start": 940.0112749280001,
+   "end": 1840.022093459,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "B",
+    4102
+   ],
+   "slot": 1,
+   "start": 1820.0195248950001,
+   "end": 2740.0310464699996,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "E",
+    4102
+   ],
+   "slot": 0,
+   "start": 1840.022093459,
+   "end": 2740.0310464699996,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "F",
+    4102
+   ],
+   "slot": 0,
+   "start": 2740.0310464699996,
+   "end": 3600.0403394219998,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "C",
+    4102
+   ],
+   "slot": 1,
+   "start": 2740.0310464699996,
+   "end": 3660.0426905739996,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "B",
+    4103
+   ],
+   "slot": 0,
+   "start": 3600.0403394219998,
+   "end": 4540.051024722,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "E",
+    4103
+   ],
+   "slot": 1,
+   "start": 3660.0426905739996,
+   "end": 4600.053349768,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "F",
+    4103
+   ],
+   "slot": 0,
+   "start": 4540.051024722,
+   "end": 5420.061041049,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "C",
+    4103
+   ],
+   "slot": 1,
+   "start": 4600.053349768,
+   "end": 5500.0641326859995,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "B",
+    4104
+   ],
+   "slot": 0,
+   "start": 5420.061041049,
+   "end": 6320.072215332,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "E",
+    4104
+   ],
+   "slot": 1,
+   "start": 5500.0641326859995,
+   "end": 6440.075254408,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "F",
+    4104
+   ],
+   "slot": 0,
+   "start": 6320.072215332,
+   "end": 7160.082293119,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "C",
+    4104
+   ],
+   "slot": 1,
+   "start": 6440.075254408,
+   "end": 7340.085499918,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "B",
+    4105
+   ],
+   "slot": 0,
+   "start": 7160.082293119,
+   "end": 8080.092740792999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "E",
+    4105
+   ],
+   "slot": 1,
+   "start": 7340.085499918,
+   "end": 8240.095856218,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "F",
+    4105
+   ],
+   "slot": 0,
+   "start": 8080.092740792999,
+   "end": 8980.10295726,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    "C",
+    4105
+   ],
+   "slot": 1,
+   "start": 8240.095856218,
+   "end": 9160.105228422,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "finished_runs": [
+  "ac-B-seed4101.json",
+  "ac-B-seed4102.json",
+  "ac-B-seed4103.json",
+  "ac-B-seed4104.json",
+  "ac-B-seed4105.json",
+  "ac-C-seed4101.json",
+  "ac-C-seed4102.json",
+  "ac-C-seed4103.json",
+  "ac-C-seed4104.json",
+  "ac-C-seed4105.json",
+  "ac-E-seed4101.json",
+  "ac-E-seed4102.json",
+  "ac-E-seed4103.json",
+  "ac-E-seed4104.json",
+  "ac-E-seed4105.json",
+  "ac-F-seed4101.json",
+  "ac-F-seed4102.json",
+  "ac-F-seed4103.json",
+  "ac-F-seed4104.json",
+  "ac-F-seed4105.json"
+ ],
+ "wall_seconds": 9160.107258558273,
+ "complete": true
+}

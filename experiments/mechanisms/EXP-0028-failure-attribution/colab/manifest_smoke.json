@@ -1,0 +1,150 @@
+{
+ "manifest": "smoke",
+ "version": 1,
+ "notes": [
+  "Humo en CPU: pasos y puntos diminutos; NO es ciencia."
+ ],
+ "probe": {
+  "targets": [
+   {
+    "recipe": "piezo",
+    "problem": "converse",
+    "arm": "B",
+    "seed": 4001,
+    "probe_extra": [
+     "--smoke-pool",
+     "16",
+     "--pre-n",
+     "64"
+    ]
+   },
+   {
+    "recipe": "piezo",
+    "problem": "converse",
+    "arm": "E",
+    "seed": 4001,
+    "probe_extra": [
+     "--smoke-pool",
+     "16",
+     "--pre-n",
+     "64"
+    ]
+   }
+  ],
+  "t4_ref": {}
+ },
+ "jobs": [
+  {
+   "id": "smoke-piezo-converse-B-seed4001",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "B",
+   "seed": 4001,
+   "block": "humo",
+   "priority": 1,
+   "extra_args": [
+    "--adam",
+    "10",
+    "--eval-every",
+    "5",
+    "--pre-every",
+    "5",
+    "--pre-n",
+    "64",
+    "--smoke-pool",
+    "16"
+   ],
+   "steps": 10,
+   "n_recomputes": 0,
+   "fixed_s": 0.0,
+   "probe_as": [
+    "B"
+   ]
+  },
+  {
+   "id": "smoke-piezo-converse-E-seed4001",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "E",
+   "seed": 4001,
+   "block": "humo",
+   "priority": 1,
+   "extra_args": [
+    "--adam",
+    "10",
+    "--eval-every",
+    "5",
+    "--pre-every",
+    "5",
+    "--pre-n",
+    "64",
+    "--smoke-pool",
+    "16"
+   ],
+   "steps": 10,
+   "n_recomputes": 0,
+   "fixed_s": 0.0,
+   "probe_as": [
+    "E"
+   ]
+  },
+  {
+   "id": "smoke-piezo-direct-B-seed4001",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "B",
+   "seed": 4001,
+   "block": "humo",
+   "priority": 2,
+   "extra_args": [
+    "--adam",
+    "10",
+    "--eval-every",
+    "5",
+    "--pre-every",
+    "5",
+    "--pre-n",
+    "64",
+    "--smoke-pool",
+    "16"
+   ],
+   "steps": 10,
+   "n_recomputes": 0,
+   "fixed_s": 0.0,
+   "probe_as": [
+    "B"
+   ]
+  },
+  {
+   "id": "smoke-piezo-direct-J-seed4001",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "J",
+   "seed": 4001,
+   "block": "humo",
+   "priority": 2,
+   "extra_args": [
+    "--adam",
+    "10",
+    "--eval-every",
+    "5",
+    "--pre-every",
+    "5",
+    "--pre-n",
+    "64",
+    "--smoke-pool",
+    "16"
+   ],
+   "steps": 10,
+   "n_recomputes": 0,
+   "fixed_s": 0.0,
+   "probe_as": [
+    "J"
+   ]
+  }
+ ]
+}

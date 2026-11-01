@@ -1,0 +1,231 @@
+{
+ "info": {
+  "tiny": false,
+  "block": "kpp",
+  "plan": [
+   "kpp",
+   [
+    "B",
+    "E",
+    "F"
+   ],
+   [
+    4101,
+    4102,
+    4103,
+    4104,
+    4105
+   ]
+  ],
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "cutoff_s": 12240.0,
+  "hard_cap_s": 14040.0,
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "ledger": [
+  {
+   "job": [
+    "kpp",
+    "B",
+    4101
+   ],
+   "slot": 0,
+   "start": 1.2170000047717622e-06,
+   "end": 880.0086870309999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "E",
+    4101
+   ],
+   "slot": 1,
+   "start": 1.2170000047717622e-06,
+   "end": 880.0086870309999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "F",
+    4101
+   ],
+   "slot": 0,
+   "start": 880.0086870309999,
+   "end": 1680.017444895,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "B",
+    4102
+   ],
+   "slot": 1,
+   "start": 880.0086870309999,
+   "end": 1720.019665797,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "E",
+    4102
+   ],
+   "slot": 0,
+   "start": 1680.017444895,
+   "end": 2560.027821799,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "F",
+    4102
+   ],
+   "slot": 1,
+   "start": 1720.019665797,
+   "end": 2560.027821799,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "B",
+    4103
+   ],
+   "slot": 0,
+   "start": 2560.027821799,
+   "end": 3360.0375530170004,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "E",
+    4103
+   ],
+   "slot": 1,
+   "start": 2560.027821799,
+   "end": 3420.04023168,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "F",
+    4103
+   ],
+   "slot": 0,
+   "start": 3360.0375530170004,
+   "end": 4180.047545852,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "B",
+    4104
+   ],
+   "slot": 1,
+   "start": 3420.04023168,
+   "end": 4200.04948416,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "F",
+    4104
+   ],
+   "slot": 1,
+   "start": 4200.04948416,
+   "end": 5000.057183238,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "E",
+    4104
+   ],
+   "slot": 0,
+   "start": 4180.047545852,
+   "end": 5040.059304364,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "B",
+    4105
+   ],
+   "slot": 1,
+   "start": 5000.057183238,
+   "end": 5800.066805929,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "E",
+    4105
+   ],
+   "slot": 0,
+   "start": 5040.059304364,
+   "end": 5880.069896193,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    "F",
+    4105
+   ],
+   "slot": 1,
+   "start": 5800.066805929,
+   "end": 6560.075320652,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "finished_runs": [
+  "kpp-B-seed4101.json",
+  "kpp-B-seed4102.json",
+  "kpp-B-seed4103.json",
+  "kpp-B-seed4104.json",
+  "kpp-B-seed4105.json",
+  "kpp-E-seed4101.json",
+  "kpp-E-seed4102.json",
+  "kpp-E-seed4103.json",
+  "kpp-E-seed4104.json",
+  "kpp-E-seed4105.json",
+  "kpp-F-seed4101.json",
+  "kpp-F-seed4102.json",
+  "kpp-F-seed4103.json",
+  "kpp-F-seed4104.json",
+  "kpp-F-seed4105.json"
+ ],
+ "wall_seconds": 6560.076947450638,
+ "complete": true
+}

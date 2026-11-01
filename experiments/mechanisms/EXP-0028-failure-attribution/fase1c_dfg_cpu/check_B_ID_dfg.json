@@ -1,0 +1,36 @@
+{
+ "B_vs_ID": {
+  "hist_equal": true,
+  "loss_adam_end_equal": true,
+  "score_adam_equal": true,
+  "score_final_equal": true,
+  "loss_final_equal": true,
+  "terms_final_equal": true,
+  "lbfgs_iterations": [
+   50,
+   50
+  ]
+ },
+ "params_B_equals_ID": true,
+ "trace_B_equals_ID": true,
+ "B_vs_train_dfg": {
+  "steps": 10,
+  "seed": 4001,
+  "device": "cpu",
+  "n_rows": 10,
+  "loss_per_step_equal": true,
+  "terms_per_step_equal": true,
+  "final_state_equal": true,
+  "first_losses": [
+   0.641009509563446,
+   0.4940984845161438,
+   0.4440115690231323
+  ],
+  "pass_": true
+ },
+ "seed": 4001,
+ "adam_steps": 20,
+ "smoke_pool": 512,
+ "device": "cpu",
+ "pass": true
+}

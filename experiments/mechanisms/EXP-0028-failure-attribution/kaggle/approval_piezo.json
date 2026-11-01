@@ -1,0 +1,34 @@
+{
+  "bundle": "exp0028-piezo",
+  "dataset": "rodrimandub/af-pikans-exp0028-bundle-piezo",
+  "launch_status": "prepared_not_uploaded",
+  "uploaded": false,
+  "executed": false,
+  "approved_by": "NINGUNA: piezo NO se corre antes de que el investigador firme predictions.md; la subida/ejecucion queda pendiente de su orden",
+  "recipe": "Bimorfo PVDF del paper (converso 100 V y directo 0.1 N), RBF-PIKAN 4-16-16-8 (11 bases) con las entradas/salidas del paper; B,F,J,E,I x semillas 20260728-20260732 (cohorte del paper) x 2 problemas = 50 corridas + 2 de referencia MLP-paper (MLP 3x50 SiLU, semilla 20260728, baja prioridad, bloque k26); Adam 20 000 pasos lr 1e-3 float64 sin L-BFGS, remuestreo cada 200 (2x2048 interiores + 256 por frontera), pesos fijos del paper; recalculo del bloque antes del paso 1 y cada 1000 pasos (20 por corrida); GN con 2048 puntos por clave del pool actual; error de u,v,phi cada 500 pasos contra el FEM de scikit-fem (P2 200x8, rejilla 201x21)",
+  "block": "t",
+  "caps": "sin trabajo nuevo despues de CUTOFF_S (3.4 h); kill a HARD_CAP_S (3.9 h)",
+  "accelerator": "NvidiaTeslaT4 (T4x2)",
+  "internet": false,
+  "scientific_accepted": false,
+  "kernels": {
+    "kernel_piezo": {
+      "slug": "rodrimandub/af-pikans-exp-0028-piezo",
+      "block": "t"
+    }
+  },
+  "component_sha256": {
+    "dataset_piezo/artifacts.py": "5286d1d6ef7a493a780651d73fdca7f90428a8d251f72b0f0730626a125d2fd2",
+    "dataset_piezo/fem_converse.npz": "a5bd2f476b027d6841d3d6279e176935293c62ae124cbbabe87380817c921279",
+    "dataset_piezo/fem_direct.npz": "2770b6ee04fd585ddeeab6a8f16915f30ca28d1beb4ce8b343c1f42e8c5cda8b",
+    "dataset_piezo/fem_flux_converse.npz": "9cde42604b7d3db572fed8570c313857798c9386761e88bbbdbaae821c137912",
+    "dataset_piezo/fem_flux_direct.npz": "2b2476c7fbcb56c9473b7c86699f46ee94ee3c0fa8415025ea881fdb35470a48",
+    "dataset_piezo/gram_preconditioning.py": "7028374029926c1b460179744b8ced84f271aeb845cfd258fe698a69a9e28843",
+    "dataset_piezo/piezo_problem.py": "e5e4dae7a185c5a8c08134deaaeaa0aa851c978c16cf3bf29e564528c300003a",
+    "dataset_piezo/residual_terms.py": "352d9e54b76a01f5ed13e058779d0708f2677d674b3fa62462f3808c43af3276",
+    "dataset_piezo/run_piezo.py": "b988178c379f9c16b81699c3bfe8e2578791bd1cd8755d4e6b702e4da9f8bb9f",
+    "dataset_piezo/stage0.py": "b3b814988b94832ebc3fc6476699e2aa1ac1a5ba81177d292dd29edeb9312773",
+    "kernel_piezo/exp0028_piezo_t_gpu.py": "c9c9593c48dd8e7aa8220b22e0406246d97866dd1a9e04c771bca91eabc136b0",
+    "kernel_piezo/kernel-metadata.json": "fcfc53ea1ab8ec524a6cf9f3c197f323a90681a14a65a751d6fade174c8174de"
+  }
+}

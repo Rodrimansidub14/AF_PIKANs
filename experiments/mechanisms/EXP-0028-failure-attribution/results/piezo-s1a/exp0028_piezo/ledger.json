@@ -1,0 +1,49 @@
+{
+ "info": {
+  "tiny": false,
+  "block": "s1a",
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "n_jobs": 2,
+  "cutoff_s": 12240.0,
+  "hard_cap_s": 14040.0,
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "check_B_ID": true,
+ "ledger": [
+  {
+   "job": [
+    "converse",
+    20260728,
+    "B"
+   ],
+   "slot": 0,
+   "start": 3.3320000056846766e-06,
+   "end": 8680.064981754998,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "converse",
+    20260728,
+    "E"
+   ],
+   "slot": 1,
+   "start": 3.3320000056846766e-06,
+   "end": 9140.069486433,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "finished_runs": [
+  "piezo-converse-B-seed20260728.json",
+  "piezo-converse-E-seed20260728.json"
+ ],
+ "wall_seconds": 9214.973862886429,
+ "complete": true
+}

@@ -1,0 +1,267 @@
+{
+ "ac": {
+  "label": "Allen-Cahn d=1e-3",
+  "receta": "Adam 40 000 f32 + L-BFGS f32 (tope 300 s / 15 000 it.)",
+  "n_corridas": 0,
+  "brazos": {},
+  "contrastes": {},
+  "B": {
+   "n": 0,
+   "mediana_adam": null,
+   "mediana_final": null,
+   "congelado": [
+    0.02838,
+    0.002686
+   ]
+  },
+  "atribucion": {
+   "E": "sin datos"
+  },
+  "atribucion_fase1": {
+   "E": "sirve",
+   "H-ATTR-A": {
+    "aplica": true,
+    "F_logB": -1.045539380285441,
+    "E_logB": -1.8192900623470853,
+    "respaldada": false,
+    "lectura": "la ventaja no se explica solo por la base"
+   },
+   "H-ATTR-B": {
+    "aplica": false,
+    "motivo": "E no empeora (mediana <= 1.10)"
+   }
+  }
+ },
+ "burgers": {
+  "label": "Burgers RBF48",
+  "receta": "16 384 pts, Adam 24 000 f32 + L-BFGS f64 (tope 1 800 s)",
+  "n_corridas": 6,
+  "brazos": {
+   "E": {
+    "planeado": true,
+    "fase1_final": {
+     "n": 10,
+     "clase": "dependiente de semilla",
+     "mediana": 0.23996027287702312,
+     "geomean": 0.2756030227320465,
+     "mejora_k": 9,
+     "empeora_k": 1,
+     "razon_max": 2.3747465402496046,
+     "razon_min": 0.06003646308417468
+    },
+    "fase1_adam": {
+     "n": 10,
+     "clase": "dependiente de semilla",
+     "mediana": 1.1436697885883402,
+     "geomean": 1.1690154642918555,
+     "mejora_k": 4,
+     "empeora_k": 6,
+     "razon_max": 5.224982036402403,
+     "razon_min": 0.13328988157868715
+    },
+    "completa_final": {
+     "n": 2,
+     "clase": "dependiente de semilla",
+     "mediana": 1.3690401424200416,
+     "geomean": 1.1194063911716876,
+     "mejora_k": 1,
+     "empeora_k": 1,
+     "razon_max": 2.1572027163611454,
+     "razon_min": 0.5808775684789377
+    },
+    "completa_adam": {
+     "n": 2,
+     "clase": "sirve",
+     "mediana": 0.4346166700244433,
+     "geomean": 0.4330710005142742,
+     "mejora_k": 2,
+     "empeora_k": 0,
+     "razon_max": 0.47123849926195316,
+     "razon_min": 0.3979948407869335
+    },
+    "veredicto_final": "sin veredicto",
+    "detalle_final": "n = 2 < 4",
+    "veredicto_adam": "sin veredicto",
+    "detalle_adam": "n = 2 < 4",
+    "lbfgs": {
+     "lbfgs_time_cap": 2
+    },
+    "fase_efecto_1d": "Adam (sirve); se pierde o cambia en L-BFGS (dependiente de semilla)"
+   },
+   "F": {
+    "planeado": true,
+    "fase1_final": {
+     "n": 10,
+     "clase": "sirve",
+     "mediana": 0.28502164819986026,
+     "geomean": 0.26773920660430145,
+     "mejora_k": 10,
+     "empeora_k": 0,
+     "razon_max": 0.8014813335789511,
+     "razon_min": 0.09118415870236174
+    },
+    "fase1_adam": {
+     "n": 10,
+     "clase": "dependiente de semilla",
+     "mediana": 0.6252538841185433,
+     "geomean": 0.71735647559941,
+     "mejora_k": 8,
+     "empeora_k": 2,
+     "razon_max": 2.81857318751504,
+     "razon_min": 0.22109837630827867
+    },
+    "completa_final": {
+     "n": 2,
+     "clase": "daña",
+     "mediana": 2.0452126152895898,
+     "geomean": 2.0011135410376113,
+     "mejora_k": 0,
+     "empeora_k": 2,
+     "razon_max": 2.4676333032484026,
+     "razon_min": 1.6227919273307772
+    },
+    "completa_adam": {
+     "n": 2,
+     "clase": "sirve",
+     "mediana": 0.25834935226086747,
+     "geomean": 0.2510334071512669,
+     "mejora_k": 2,
+     "empeora_k": 0,
+     "razon_max": 0.319395370211558,
+     "razon_min": 0.1973033343101769
+    },
+    "veredicto_final": "sin veredicto",
+    "detalle_final": "n = 2 < 4",
+    "veredicto_adam": "sin veredicto",
+    "detalle_adam": "n = 2 < 4",
+    "lbfgs": {
+     "lbfgs_time_cap": 2
+    },
+    "fase_efecto_1d": "Adam (sirve); L-BFGS invierte (daña)"
+   }
+  },
+  "contrastes": {
+   "E_vs_F": {
+    "nombre": "D5: E frente a F (¿residuo o solo la base?)",
+    "final": {
+     "n": 2,
+     "mediana": 0.6160742833762094,
+     "geomean": 0.5593917427550146,
+     "a_mejor_k": 2,
+     "a_peor_k": 0,
+     "razon_max": 0.8741990609064139,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": false,
+     "por_semilla": {
+      "4101": 0.3579,
+      "4102": 0.8742
+     }
+    },
+    "adam": {
+     "n": 2,
+     "mediana": 1.746290224292334,
+     "geomean": 1.7251528608434004,
+     "a_mejor_k": 0,
+     "a_peor_k": 2,
+     "razon_max": 2.0171724019689052,
+     "respaldado": false,
+     "contrario": true,
+     "completo_10": false,
+     "por_semilla": {
+      "4101": 2.0172,
+      "4102": 1.4754
+     }
+    },
+    "fase1": {
+     "n": 10,
+     "mediana": 0.7148257556502138,
+     "geomean": 1.0293711788702173,
+     "a_mejor_k": 7,
+     "a_peor_k": 3,
+     "razon_max": 6.236145493981417,
+     "respaldado": true,
+     "contrario": false,
+     "completo_10": true,
+     "por_semilla": {
+      "4001": 0.5812,
+      "4002": 5.4295,
+      "4003": 0.6882,
+      "4004": 1.5101,
+      "4005": 6.2361,
+      "4006": 0.8644,
+      "4007": 0.7415,
+      "4008": 0.5209,
+      "4009": 0.29,
+      "4010": 0.6746
+     }
+    }
+   }
+  },
+  "B": {
+   "n": 2,
+   "mediana_adam": 0.00560108420579308,
+   "mediana_final": 0.0001103241983816973,
+   "congelado": [
+    0.005415,
+    7.165e-05
+   ],
+   "razon_final_vs_congelado": 1.5397655042804927,
+   "razon_adam_vs_congelado": 1.0343645809405504
+  },
+  "atribucion": {
+   "E": "dependiente de semilla",
+   "H-ATTR-A": {
+    "aplica": false,
+    "motivo": "E no mejora a B en este problema (mediana <= 0.90 y >= 7/10)"
+   },
+   "H-ATTR-B": {
+    "aplica": true,
+    "J_empeora": false,
+    "F_empeora": true,
+    "lectura": "el dano esta en la reparametrizacion misma"
+   }
+  },
+  "atribucion_fase1": {
+   "E": "dependiente de semilla",
+   "H-ATTR-A": {
+    "aplica": true,
+    "F_logB": -1.257058606910546,
+    "E_logB": -1.4644113168417525,
+    "respaldada": true,
+    "lectura": "la ventaja es de correccion de la base"
+   },
+   "H-ATTR-B": {
+    "aplica": false,
+    "motivo": "E no empeora (mediana <= 1.10)"
+   }
+  }
+ },
+ "kpp": {
+  "label": "Fisher-KPP",
+  "receta": "receta de Allen-Cahn (heredada; sin linea base propia)",
+  "n_corridas": 0,
+  "brazos": {},
+  "contrastes": {},
+  "B": {
+   "n": 0,
+   "mediana_adam": null,
+   "mediana_final": null,
+   "congelado": null
+  },
+  "atribucion": {
+   "E": "sin datos"
+  },
+  "atribucion_fase1": {
+   "E": "dependiente de semilla",
+   "H-ATTR-A": {
+    "aplica": false,
+    "motivo": "E no mejora a B en este problema (mediana <= 0.90 y >= 7/10)"
+   },
+   "H-ATTR-B": {
+    "aplica": false,
+    "motivo": "E no empeora (mediana <= 1.10)"
+   }
+  }
+ }
+}

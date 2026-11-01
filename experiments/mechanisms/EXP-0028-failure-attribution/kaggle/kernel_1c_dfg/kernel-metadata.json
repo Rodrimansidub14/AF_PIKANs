@@ -1,0 +1,17 @@
+{
+  "id": "rodrimandub/af-pikans-exp-0028-phase1c-dfg",
+  "title": "AF PIKANs EXP-0028 phase1c dfg",
+  "code_file": "exp0028_phase1c_dfg_all_gpu.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "false",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "rodrimandub/af-pikans-exp0028-bundle-dfg"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

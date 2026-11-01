@@ -1,0 +1,19 @@
+{
+ "info": {
+  "tiny": false,
+  "block": "t",
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "seeds": [],
+  "cutoff_s": 12240.0,
+  "hard_cap_s": 14040.0,
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "ledger": [],
+ "aborted": "B != ID",
+ "complete": false
+}

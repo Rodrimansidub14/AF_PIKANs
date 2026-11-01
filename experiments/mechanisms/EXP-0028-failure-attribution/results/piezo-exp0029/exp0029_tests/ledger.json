@@ -1,0 +1,113 @@
+{
+ "ledger": [
+  {
+   "problem": "direct",
+   "seed": 20260728,
+   "arm": "E",
+   "start": 30.18320631980896,
+   "end": 405.193026304245,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "converse",
+   "seed": 20260728,
+   "arm": "E",
+   "start": 30.18320631980896,
+   "end": 525.1977097988129,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "direct",
+   "seed": 20260728,
+   "arm": "S",
+   "start": 405.193026304245,
+   "end": 780.2035572528839,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "converse",
+   "seed": 20260728,
+   "arm": "S",
+   "start": 525.1977097988129,
+   "end": 1020.2109415531158,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "direct",
+   "seed": 20260729,
+   "arm": "E",
+   "start": 780.2035572528839,
+   "end": 1155.2148487567902,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "converse",
+   "seed": 20260729,
+   "arm": "E",
+   "start": 1020.2109415531158,
+   "end": 1515.2213473320007,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "direct",
+   "seed": 20260729,
+   "arm": "S",
+   "start": 1155.2148487567902,
+   "end": 1530.222844839096,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "direct",
+   "seed": 20260730,
+   "arm": "E",
+   "start": 1530.222844839096,
+   "end": 1920.2290647029877,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "converse",
+   "seed": 20260729,
+   "arm": "S",
+   "start": 1515.2213473320007,
+   "end": 2010.2316851615906,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "direct",
+   "seed": 20260730,
+   "arm": "S",
+   "start": 1920.2290647029877,
+   "end": 2295.2356898784637,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "converse",
+   "seed": 20260730,
+   "arm": "E",
+   "start": 2010.2316851615906,
+   "end": 2505.2377223968506,
+   "rc": 0,
+   "status": "ok"
+  },
+  {
+   "problem": "converse",
+   "seed": 20260730,
+   "arm": "S",
+   "start": 2505.2377223968506,
+   "end": 3000.2440028190613,
+   "rc": 0,
+   "status": "ok"
+  }
+ ],
+ "wall_seconds": 3000.2442564964294
+}

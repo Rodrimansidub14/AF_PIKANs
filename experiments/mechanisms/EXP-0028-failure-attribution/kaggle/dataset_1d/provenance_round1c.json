@@ -1,0 +1,118 @@
+{
+  "python": "3.12.10",
+  "numpy": "2.3.2",
+  "scipy": "1.18.0",
+  "V1_AC_base_vs_mat": {
+    "mat_sha256": "f9175685675685ab8d2a850f0d212d16c709f55ed89b8fe078493ddcd3724aa0",
+    "sha_matches_registered": true,
+    "N=400_relL2": 0.00015685762566599147,
+    "N=600_relL2": 0.00015685663751981437,
+    "N=800_relL2": 0.0001568566376645891
+  },
+  "V3_AC_dose_convergence": {
+    "d": 0.0002,
+    "relL2_N600_vs_N900": 1.6948320795737711e-07,
+    "range_u": [
+      -1.0,
+      0.992607209284375
+    ]
+  },
+  "V2_KPP_solver_vs_exact": {
+    "relL2_N600": 1.693272466224713e-12,
+    "relL2_N900": 3.1246161823980218e-12,
+    "max_abs_N600": 1.505090496678463e-11,
+    "bc_mismatch_left": 0.0,
+    "bc_mismatch_right": 2.8054649629126567e-43,
+    "ic_mismatch_left": 1.2878587085651816e-14,
+    "front_center_t0_t1": [
+      -0.2,
+      0.0041241452319314975
+    ],
+    "k": 40.824829046386306,
+    "c": 0.2041241452319315
+  },
+  "V3_KPP_convergence": {
+    "relL2_N600_vs_N900": 3.665740905818914e-12
+  },
+  "V4_residual_kpp_exact": {
+    "max_abs": 8.881784197001252e-16,
+    "mean_abs": 7.107663087809327e-17
+  },
+  "V4_hard_transform_kpp_bc_err": [
+    -1.2878587085651816e-14,
+    2.8054649629126567e-43,
+    -1.2878587085651816e-14,
+    2.8054649629126567e-43
+  ],
+  "files_sha256": {
+    "fisher_kpp_ref.npz": "de11c14d165fd4212c508ae1c13c81d0290ae9378cab3517c7ef34adae62092e",
+    "allen_cahn_d2e-4_ref.npz": "ca71cbbae9a16ac6aafb7e19a2df32fd1f2366e1d8dfdb0be1861f2022f87274"
+  },
+  "specs": {
+    "fisher_kpp": {
+      "name": "fisher_kpp_1d",
+      "equation": "u_t - D u_xx - r u (1 - u) = 0",
+      "params": {
+        "D": 0.001,
+        "r": 10.0,
+        "x0": -0.2,
+        "k": 40.824829046386306,
+        "c": 0.2041241452319315,
+        "frente_ancho~1/k": 0.02449489742783178
+      },
+      "domain": {
+        "x": [
+          -1,
+          1
+        ],
+        "t": [
+          0,
+          1
+        ]
+      },
+      "initial_condition": "u(x,0) = [1+exp(k (x-x0))]^-2",
+      "boundary_condition": "u(-1,t)=1, u(1,t)=0 (la onda exacta difiere en <1e-12; ver provenance)",
+      "hard_transform": "u0(x) + t (1-x^2) NN(x,t)",
+      "reference": "analitica (Ablowitz-Zeppetella), verificada contra Chebyshev+Radau",
+      "reference_file": "fisher_kpp_ref.npz",
+      "n_domain": 8000,
+      "n_boundary": 400,
+      "n_initial": 800,
+      "adam_steps": 4000,
+      "adam_lr": 0.001,
+      "lbfgs_iters": 500,
+      "model": "RBF-PIKAN ancho 16, precision simple"
+    },
+    "allen_cahn_dose": {
+      "name": "allen_cahn_d2e-4",
+      "equation": "u_t - d u_xx - 5 (u - u^3) = 0",
+      "params": {
+        "d": 0.0002,
+        "a": 5.0,
+        "d_base": 0.001
+      },
+      "domain": {
+        "x": [
+          -1,
+          1
+        ],
+        "t": [
+          0,
+          1
+        ]
+      },
+      "initial_condition": "u(x,0) = x^2 cos(pi x)",
+      "boundary_condition": "u(-1,t) = u(1,t) = -1",
+      "hard_transform": "x^2 cos(pi x) + t (1-x^2) NN(x,t)",
+      "reference": "numerica: Chebyshev (N=600) + Radau; solver validado reproduciendo Allen_Cahn.mat en d=1e-3",
+      "reference_file": "allen_cahn_d2e-4_ref.npz",
+      "n_domain": 8000,
+      "n_boundary": 400,
+      "n_initial": 800,
+      "adam_steps": 4000,
+      "adam_lr": 0.001,
+      "lbfgs_iters": 500,
+      "model": "RBF-PIKAN ancho 16, precision simple"
+    }
+  }
+}

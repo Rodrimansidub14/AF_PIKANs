@@ -1,0 +1,13 @@
+# EXP-0028 Fase 1c (NS2d-CG) — brazos que NO se corren (sin reescribir código existente)
+
+Misma regla de la Enmienda v1.1 que en `missing_arms.md`: un brazo×problema solo se corre si el código existente lo soporta tal cual. En NS2d-CG corren **B, F, J, E, I** (`run_phase1c.py`). El resto de las palancas no corre; quedan en el mapa como «sin datos» (verificado leyendo el código, 2026-10-23):
+
+| Brazo | Motivo concreto (qué hay que reescribir) |
+|---|---|
+| **S** (muestreador autogobernado, 0014) | `run_phase1.adam_with_sampler` remuestrea `P["residual"]` con candidatos Sobol de forma `(n, 2)` y usa `prob.transform(xt, model(xt))`, `ob.residual_at` (residuo **escalar** de Burgers/AC/`pde_residual`) y `_structure` (gradiente de un `u` escalar). NS tiene el pool en diccionario (`domain`, `inlet`, `outlet`, `other`), 3 salidas, sin `transform` ni residuo escalar. Habría que definir qué señal de «residuo» y de «estructura» gobierna el gate (norma de los 3 residuos de PDE; ‖∇u‖ de qué campo), qué se remuestrea (solo `domain`) y el dominio con escalón (se rechaza x<2, y>1). Es una decisión de diseño, no una adaptación. |
+| **R / RAD** (0025) | `observer_v0.residual_at` (mismo motivo: `prob.transform`, residuo escalar) y `RadLever.apply` (`P["residual"]`, caja `[lo, hi]` sin el escalón). Con `residual_terms` ya existe el residuo vectorial por término, pero RAD necesita elegir cómo agregar `momentum_x/y/continuity` en un `|r|` por punto y muestrear solo `domain` dentro del dominio en L; ninguna de las dos cosas está en el código. |
+| **W** (foco por responsabilidad, oráculo de 0018) | `run_ceiling.eval_grid(prob, name)` usa `prob.x`, `prob.t`, `prob.u` (malla espacio-tiempo de la referencia escalar) y `region_errors`/`critical_mask` están escritos para Burgers/AC. La referencia de NS es una tabla de 12 910 nodos COMSOL (x, y, u, v, p) y `oracle_responsibility` toma el error de **una** salida. Además W es techo oráculo (usa la referencia), no mecanismo. |
+| **C** (regrid de centros, 0024-A) | No pedido. `t1.adam_with_hook` llama `rg.regrid_kan(model, P["residual"], ...)`: con `P["domain"]` en lugar de `P["residual"]` probablemente funcionaría, pero no está probado ni la regla de reubicación fue validada con 3 salidas. Fuera salvo orden. |
+| **H** (traspaso Adam→L-BFGS, 0016) | Con Adam 20 000 el disparador sí podría evaluarse (`k_max ≥ 4000`), pero el traspaso real exigiría un presupuesto de control distinto (Adam completo + L-BFGS por reloj). Sin datos. |
+
+Lo que sí queda registrado en cada corrida: historia de pérdida cada 100 pasos y pérdida por término al final de Adam y de L-BFGS (`terms_adam_end`, `terms_final`), útil para decir qué término domina cuando F/J/E/I mejoran o dañan.

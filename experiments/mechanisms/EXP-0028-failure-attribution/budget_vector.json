@@ -1,0 +1,70 @@
+{
+ "problem": "ns2d_cg",
+ "model": "RBF16 2-16-16-3, 11 bases",
+ "dtype": "float32",
+ "device": "cpu",
+ "threads": 2,
+ "torch": "2.14.1+cpu",
+ "machine": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+ "logical_cpus": 8,
+ "jacobian_columns_per_layer": [
+  352,
+  2816,
+  528
+ ],
+ "notes": [],
+ "rows": [
+  {
+   "arm": "E",
+   "n_points_per_key": 128,
+   "points_total": 512,
+   "chunk": 4,
+   "seconds": 26.11265579999599,
+   "peak_mb_so_far": 974.1640625
+  },
+  {
+   "arm": "E",
+   "n_points_per_key": 128,
+   "points_total": 512,
+   "chunk": 8,
+   "seconds": 24.440170499990927,
+   "peak_mb_so_far": 974.1640625
+  },
+  {
+   "arm": "E",
+   "n_points_per_key": 128,
+   "points_total": 512,
+   "chunk": 16,
+   "seconds": 25.898814600004698,
+   "peak_mb_so_far": 1454.984375
+  },
+  {
+   "arm": "J",
+   "n_points_per_key": 128,
+   "points_total": 512,
+   "chunk": 8,
+   "seconds": 19.042580900000758,
+   "peak_mb_so_far": 1454.984375
+  },
+  {
+   "arm": "I",
+   "n_points_per_key": 128,
+   "points_total": 512,
+   "chunk": 8,
+   "seconds": 31.241638300009072,
+   "peak_mb_so_far": 1671.80078125
+  },
+  {
+   "arm": "E",
+   "n_points_per_key": 2048,
+   "points_total": 4096,
+   "chunk": 8,
+   "seconds": 171.51086509999004,
+   "peak_mb_so_far": 1671.80078125
+  }
+ ],
+ "adam_seconds_per_step_full_batch": 6.983481759999995,
+ "warmup_seconds": 3.2078035000013188,
+ "refresh_E_default_seconds": 171.51086509999004,
+ "peak_working_set_mb": 1671.80078125
+}

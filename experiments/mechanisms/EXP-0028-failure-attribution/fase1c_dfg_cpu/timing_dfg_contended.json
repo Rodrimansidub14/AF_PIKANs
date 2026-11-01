@@ -1,0 +1,69 @@
+{
+ "device": "cpu",
+ "torch": "2.14.1+cpu",
+ "dtype": "float32",
+ "smoke_pool": 0,
+ "n_per_key": 2048,
+ "pool_sizes": {
+  "interior": 16384,
+  "inlet": 512,
+  "lower_wall": 512,
+  "upper_wall": 512,
+  "cylinder": 512,
+  "outlet": 512
+ },
+ "rows": [
+  {
+   "arm": "J",
+   "chunk": 8,
+   "n_points": 4608,
+   "seconds": 62.48487310000928,
+   "peak_mb": null
+  },
+  {
+   "arm": "J",
+   "chunk": 16,
+   "n_points": 4608,
+   "seconds": 144.9539633000095,
+   "peak_mb": null
+  },
+  {
+   "arm": "E",
+   "chunk": 8,
+   "n_points": 4608,
+   "seconds": 93.0139010999992,
+   "peak_mb": null
+  },
+  {
+   "arm": "E",
+   "chunk": 16,
+   "n_points": 4608,
+   "seconds": 136.12343949999195,
+   "peak_mb": null
+  },
+  {
+   "arm": "I",
+   "chunk": 8,
+   "n_points": 4608,
+   "seconds": 184.94032080000034,
+   "peak_mb": null
+  },
+  {
+   "arm": "I",
+   "chunk": 16,
+   "n_points": 4608,
+   "seconds": 330.95532720000483,
+   "peak_mb": null
+  }
+ ],
+ "adam_seconds_per_step": 0.23041518500103847,
+ "adam_peak_mb": null,
+ "lbfgs_seconds_per_iter": 3.612419124999724,
+ "lbfgs_iterations_measured": 20,
+ "lbfgs_peak_mb": null,
+ "rss_mb_before_after_lbfgs": [
+  427.06640625,
+  1443.0625
+ ],
+ "score_seconds": 0.35285100000328384
+}

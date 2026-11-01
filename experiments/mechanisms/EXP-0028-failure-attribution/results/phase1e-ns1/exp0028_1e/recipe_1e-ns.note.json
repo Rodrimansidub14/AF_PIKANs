@@ -1,0 +1,31 @@
+{
+ "problem": "ns",
+ "delegate": "run_phase1c.py",
+ "argv": [
+  "--recipe",
+  "full",
+  "--lbfgs-iters",
+  "500",
+  "--arms",
+  "I",
+  "--seeds",
+  "4103",
+  "--out",
+  "/kaggle/working/exp0028_1e",
+  "--device",
+  "cuda:0",
+  "--threads",
+  "2",
+  "--warmup-steps",
+  "50"
+ ],
+ "source": "run_phase1c.py --recipe full: Adam 20 000 float32 lote completo + L-BFGS 500 it. (strong-Wolfe, chunk 50); GN 2048 por clave; 21 recalculos J/E/I",
+ "arms": [
+  "I"
+ ],
+ "seeds": [
+  4103
+ ],
+ "smoke": false,
+ "written_at": "2026-10-24T23:43:22"
+}

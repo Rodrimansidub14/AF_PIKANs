@@ -1,0 +1,1 @@
+{"problem": "direct", "arm": "J", "steps": 150, "total_s": 65.79858102200001, "recompute_s": 15.13941722200002, "s_per_step": 0.3377277586666666, "peak_mb": 9418.39404296875, "status": "adam_complete"}

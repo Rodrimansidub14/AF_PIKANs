@@ -1,0 +1,1206 @@
+{
+ "manifest": "blocks",
+ "version": 1,
+ "notes": [
+  "Prioridades: 1 = NS 1e (4104-4105) + DFG 1e (4101-4103); 2 = DFG 1e (4104-4105); 3 = rebanada con artefactos (ns, dfg, ac, kpp, burgers; B,F,J,E,I; 4201-4202); 4 = Burgers 1d (B,F,E; 4103-4105, de los que depende el pareo de Burgers 1e); 5 = Burgers 1e (J,I; 4101-4105).",
+  "AC/KPP 1e (kernel acf) NO esta aqui: va con la cuota de Kaggle. Lo ya corrido se detecta por archivos en --out, no por este manifiesto: si trae resultados previos a la carpeta de salida, se saltan.",
+  "est_s_t4 = segundos medidos/estimados en T4 (budget_1e_calc.py, budget_slice_calc.py); la proyeccion los multiplica por (s/paso medido en A100) / (s/paso T4) por problema."
+ ],
+ "probe": {
+  "targets": [
+   {
+    "recipe": "phase1e",
+    "problem": "dfg",
+    "arm": "B",
+    "seed": 4101
+   },
+   {
+    "recipe": "phase1e",
+    "problem": "dfg",
+    "arm": "J",
+    "seed": 4101
+   },
+   {
+    "recipe": "phase1e",
+    "problem": "ns",
+    "arm": "J",
+    "seed": 4101
+   },
+   {
+    "recipe": "phase1e",
+    "problem": "burgers",
+    "arm": "J",
+    "seed": 4101
+   },
+   {
+    "recipe": "phase1e",
+    "problem": "ac",
+    "arm": "J",
+    "seed": 4101
+   }
+  ],
+  "t4_ref": {
+   "dfg:B": {
+    "step_s": 0.07715000000000001
+   },
+   "ns:J": {
+    "step_s": 0.0561
+   },
+   "dfg:J": {
+    "step_s": 0.08230666666666667
+   },
+   "burgers:J": {
+    "step_s": 0.0782
+   },
+   "ac:J": {
+    "step_s": 0.0212
+   }
+  }
+ },
+ "jobs": [
+  {
+   "id": "p1e-ns-B-seed4104",
+   "recipe": "phase1e",
+   "group": "p1e-ns",
+   "problem": "ns",
+   "arm": "B",
+   "seed": 4104,
+   "block": "1e-ns2 (ns1 = 4101-4103 ya corrio en Kaggle)",
+   "priority": 1,
+   "est_s_t4": 1148.8
+  },
+  {
+   "id": "p1e-ns-F-seed4104",
+   "recipe": "phase1e",
+   "group": "p1e-ns",
+   "problem": "ns",
+   "arm": "F",
+   "seed": 4104,
+   "block": "1e-ns2 (ns1 = 4101-4103 ya corrio en Kaggle)",
+   "priority": 1,
+   "est_s_t4": 1188.8
+  },
+  {
+   "id": "p1e-ns-J-seed4104",
+   "recipe": "phase1e",
+   "group": "p1e-ns",
+   "problem": "ns",
+   "arm": "J",
+   "seed": 4104,
+   "block": "1e-ns2 (ns1 = 4101-4103 ya corrio en Kaggle)",
+   "priority": 1,
+   "est_s_t4": 1314.2
+  },
+  {
+   "id": "p1e-ns-E-seed4104",
+   "recipe": "phase1e",
+   "group": "p1e-ns",
+   "problem": "ns",
+   "arm": "E",
+   "seed": 4104,
+   "block": "1e-ns2 (ns1 = 4101-4103 ya corrio en Kaggle)",
+   "priority": 1,
+   "est_s_t4": 1314.2
+  },
+  {
+   "id": "p1e-ns-I-seed4104",
+   "recipe": "phase1e",
+   "group": "p1e-ns",
+   "problem": "ns",
+   "arm": "I",
+   "seed": 4104,
+   "block": "1e-ns2 (ns1 = 4101-4103 ya corrio en Kaggle)",
+   "priority": 1,
+   "est_s_t4": 1314.2
+  },
+  {
+   "id": "p1e-ns-B-seed4105",
+   "recipe": "phase1e",
+   "group": "p1e-ns",
+   "problem": "ns",
+   "arm": "B",
+   "seed": 4105,
+   "block": "1e-ns2 (ns1 = 4101-4103 ya corrio en Kaggle)",
+   "priority": 1,
+   "est_s_t4": 1148.8
+  },
+  {
+   "id": "p1e-ns-F-seed4105",
+   "recipe": "phase1e",
+   "group": "p1e-ns",
+   "problem": "ns",
+   "arm": "F",
+   "seed": 4105,
+   "block": "1e-ns2 (ns1 = 4101-4103 ya corrio en Kaggle)",
+   "priority": 1,
+   "est_s_t4": 1188.8
+  },
+  {
+   "id": "p1e-ns-J-seed4105",
+   "recipe": "phase1e",
+   "group": "p1e-ns",
+   "problem": "ns",
+   "arm": "J",
+   "seed": 4105,
+   "block": "1e-ns2 (ns1 = 4101-4103 ya corrio en Kaggle)",
+   "priority": 1,
+   "est_s_t4": 1314.2
+  },
+  {
+   "id": "p1e-ns-E-seed4105",
+   "recipe": "phase1e",
+   "group": "p1e-ns",
+   "problem": "ns",
+   "arm": "E",
+   "seed": 4105,
+   "block": "1e-ns2 (ns1 = 4101-4103 ya corrio en Kaggle)",
+   "priority": 1,
+   "est_s_t4": 1314.2
+  },
+  {
+   "id": "p1e-ns-I-seed4105",
+   "recipe": "phase1e",
+   "group": "p1e-ns",
+   "problem": "ns",
+   "arm": "I",
+   "seed": 4105,
+   "block": "1e-ns2 (ns1 = 4101-4103 ya corrio en Kaggle)",
+   "priority": 1,
+   "est_s_t4": 1314.2
+  },
+  {
+   "id": "p1e-dfg-B-seed4101",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "B",
+   "seed": 4101,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2075.0
+  },
+  {
+   "id": "p1e-dfg-F-seed4101",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "F",
+   "seed": 4101,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2133.0
+  },
+  {
+   "id": "p1e-dfg-J-seed4101",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "J",
+   "seed": 4101,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2311.3
+  },
+  {
+   "id": "p1e-dfg-E-seed4101",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "E",
+   "seed": 4101,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2266.2
+  },
+  {
+   "id": "p1e-dfg-I-seed4101",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "I",
+   "seed": 4101,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2330.9
+  },
+  {
+   "id": "p1e-dfg-B-seed4102",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "B",
+   "seed": 4102,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2075.0
+  },
+  {
+   "id": "p1e-dfg-F-seed4102",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "F",
+   "seed": 4102,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2133.0
+  },
+  {
+   "id": "p1e-dfg-J-seed4102",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "J",
+   "seed": 4102,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2311.3
+  },
+  {
+   "id": "p1e-dfg-E-seed4102",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "E",
+   "seed": 4102,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2266.2
+  },
+  {
+   "id": "p1e-dfg-I-seed4102",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "I",
+   "seed": 4102,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2330.9
+  },
+  {
+   "id": "p1e-dfg-B-seed4103",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "B",
+   "seed": 4103,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2075.0
+  },
+  {
+   "id": "p1e-dfg-F-seed4103",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "F",
+   "seed": 4103,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2133.0
+  },
+  {
+   "id": "p1e-dfg-J-seed4103",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "J",
+   "seed": 4103,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2311.3
+  },
+  {
+   "id": "p1e-dfg-E-seed4103",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "E",
+   "seed": 4103,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2266.2
+  },
+  {
+   "id": "p1e-dfg-I-seed4103",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "I",
+   "seed": 4103,
+   "block": "1e-dfg1/2 (4101-4103)",
+   "priority": 1,
+   "est_s_t4": 2330.9
+  },
+  {
+   "id": "p1e-dfg-B-seed4104",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "B",
+   "seed": 4104,
+   "block": "1e-dfg2/3 (4104-4105)",
+   "priority": 2,
+   "est_s_t4": 2075.0
+  },
+  {
+   "id": "p1e-dfg-F-seed4104",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "F",
+   "seed": 4104,
+   "block": "1e-dfg2/3 (4104-4105)",
+   "priority": 2,
+   "est_s_t4": 2133.0
+  },
+  {
+   "id": "p1e-dfg-J-seed4104",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "J",
+   "seed": 4104,
+   "block": "1e-dfg2/3 (4104-4105)",
+   "priority": 2,
+   "est_s_t4": 2311.3
+  },
+  {
+   "id": "p1e-dfg-E-seed4104",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "E",
+   "seed": 4104,
+   "block": "1e-dfg2/3 (4104-4105)",
+   "priority": 2,
+   "est_s_t4": 2266.2
+  },
+  {
+   "id": "p1e-dfg-I-seed4104",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "I",
+   "seed": 4104,
+   "block": "1e-dfg2/3 (4104-4105)",
+   "priority": 2,
+   "est_s_t4": 2330.9
+  },
+  {
+   "id": "p1e-dfg-B-seed4105",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "B",
+   "seed": 4105,
+   "block": "1e-dfg2/3 (4104-4105)",
+   "priority": 2,
+   "est_s_t4": 2075.0
+  },
+  {
+   "id": "p1e-dfg-F-seed4105",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "F",
+   "seed": 4105,
+   "block": "1e-dfg2/3 (4104-4105)",
+   "priority": 2,
+   "est_s_t4": 2133.0
+  },
+  {
+   "id": "p1e-dfg-J-seed4105",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "J",
+   "seed": 4105,
+   "block": "1e-dfg2/3 (4104-4105)",
+   "priority": 2,
+   "est_s_t4": 2311.3
+  },
+  {
+   "id": "p1e-dfg-E-seed4105",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "E",
+   "seed": 4105,
+   "block": "1e-dfg2/3 (4104-4105)",
+   "priority": 2,
+   "est_s_t4": 2266.2
+  },
+  {
+   "id": "p1e-dfg-I-seed4105",
+   "recipe": "phase1e",
+   "group": "p1e-dfg",
+   "problem": "dfg",
+   "arm": "I",
+   "seed": 4105,
+   "block": "1e-dfg2/3 (4104-4105)",
+   "priority": 2,
+   "est_s_t4": 2330.9
+  },
+  {
+   "id": "slice-ns-B-seed4201",
+   "recipe": "slice",
+   "group": "slice-ns",
+   "problem": "ns",
+   "arm": "B",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 653.8
+  },
+  {
+   "id": "slice-ns-F-seed4201",
+   "recipe": "slice",
+   "group": "slice-ns",
+   "problem": "ns",
+   "arm": "F",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 673.8
+  },
+  {
+   "id": "slice-ns-J-seed4201",
+   "recipe": "slice",
+   "group": "slice-ns",
+   "problem": "ns",
+   "arm": "J",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 739.2
+  },
+  {
+   "id": "slice-ns-E-seed4201",
+   "recipe": "slice",
+   "group": "slice-ns",
+   "problem": "ns",
+   "arm": "E",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 739.2
+  },
+  {
+   "id": "slice-ns-I-seed4201",
+   "recipe": "slice",
+   "group": "slice-ns",
+   "problem": "ns",
+   "arm": "I",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 739.2
+  },
+  {
+   "id": "slice-ns-B-seed4202",
+   "recipe": "slice",
+   "group": "slice-ns",
+   "problem": "ns",
+   "arm": "B",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 653.8
+  },
+  {
+   "id": "slice-ns-F-seed4202",
+   "recipe": "slice",
+   "group": "slice-ns",
+   "problem": "ns",
+   "arm": "F",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 673.8
+  },
+  {
+   "id": "slice-ns-J-seed4202",
+   "recipe": "slice",
+   "group": "slice-ns",
+   "problem": "ns",
+   "arm": "J",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 739.2
+  },
+  {
+   "id": "slice-ns-E-seed4202",
+   "recipe": "slice",
+   "group": "slice-ns",
+   "problem": "ns",
+   "arm": "E",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 739.2
+  },
+  {
+   "id": "slice-ns-I-seed4202",
+   "recipe": "slice",
+   "group": "slice-ns",
+   "problem": "ns",
+   "arm": "I",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 739.2
+  },
+  {
+   "id": "slice-dfg-B-seed4201",
+   "recipe": "slice",
+   "group": "slice-dfg",
+   "problem": "dfg",
+   "arm": "B",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 644.4
+  },
+  {
+   "id": "slice-dfg-F-seed4201",
+   "recipe": "slice",
+   "group": "slice-dfg",
+   "problem": "dfg",
+   "arm": "F",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 661.8
+  },
+  {
+   "id": "slice-dfg-J-seed4201",
+   "recipe": "slice",
+   "group": "slice-dfg",
+   "problem": "dfg",
+   "arm": "J",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 719.7
+  },
+  {
+   "id": "slice-dfg-E-seed4201",
+   "recipe": "slice",
+   "group": "slice-dfg",
+   "problem": "dfg",
+   "arm": "E",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 706.1
+  },
+  {
+   "id": "slice-dfg-I-seed4201",
+   "recipe": "slice",
+   "group": "slice-dfg",
+   "problem": "dfg",
+   "arm": "I",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 726.0
+  },
+  {
+   "id": "slice-dfg-B-seed4202",
+   "recipe": "slice",
+   "group": "slice-dfg",
+   "problem": "dfg",
+   "arm": "B",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 644.4
+  },
+  {
+   "id": "slice-dfg-F-seed4202",
+   "recipe": "slice",
+   "group": "slice-dfg",
+   "problem": "dfg",
+   "arm": "F",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 661.8
+  },
+  {
+   "id": "slice-dfg-J-seed4202",
+   "recipe": "slice",
+   "group": "slice-dfg",
+   "problem": "dfg",
+   "arm": "J",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 719.7
+  },
+  {
+   "id": "slice-dfg-E-seed4202",
+   "recipe": "slice",
+   "group": "slice-dfg",
+   "problem": "dfg",
+   "arm": "E",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 706.1
+  },
+  {
+   "id": "slice-dfg-I-seed4202",
+   "recipe": "slice",
+   "group": "slice-dfg",
+   "problem": "dfg",
+   "arm": "I",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 726.0
+  },
+  {
+   "id": "slice-ac-B-seed4201",
+   "recipe": "slice",
+   "group": "slice-ac",
+   "problem": "ac",
+   "arm": "B",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 261.0
+  },
+  {
+   "id": "slice-ac-F-seed4201",
+   "recipe": "slice",
+   "group": "slice-ac",
+   "problem": "ac",
+   "arm": "F",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 268.0
+  },
+  {
+   "id": "slice-ac-J-seed4201",
+   "recipe": "slice",
+   "group": "slice-ac",
+   "problem": "ac",
+   "arm": "J",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 277.0
+  },
+  {
+   "id": "slice-ac-E-seed4201",
+   "recipe": "slice",
+   "group": "slice-ac",
+   "problem": "ac",
+   "arm": "E",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 278.0
+  },
+  {
+   "id": "slice-ac-I-seed4201",
+   "recipe": "slice",
+   "group": "slice-ac",
+   "problem": "ac",
+   "arm": "I",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 278.0
+  },
+  {
+   "id": "slice-ac-B-seed4202",
+   "recipe": "slice",
+   "group": "slice-ac",
+   "problem": "ac",
+   "arm": "B",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 261.0
+  },
+  {
+   "id": "slice-ac-F-seed4202",
+   "recipe": "slice",
+   "group": "slice-ac",
+   "problem": "ac",
+   "arm": "F",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 268.0
+  },
+  {
+   "id": "slice-ac-J-seed4202",
+   "recipe": "slice",
+   "group": "slice-ac",
+   "problem": "ac",
+   "arm": "J",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 277.0
+  },
+  {
+   "id": "slice-ac-E-seed4202",
+   "recipe": "slice",
+   "group": "slice-ac",
+   "problem": "ac",
+   "arm": "E",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 278.0
+  },
+  {
+   "id": "slice-ac-I-seed4202",
+   "recipe": "slice",
+   "group": "slice-ac",
+   "problem": "ac",
+   "arm": "I",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 278.0
+  },
+  {
+   "id": "slice-kpp-B-seed4201",
+   "recipe": "slice",
+   "group": "slice-kpp",
+   "problem": "kpp",
+   "arm": "B",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 228.2
+  },
+  {
+   "id": "slice-kpp-F-seed4201",
+   "recipe": "slice",
+   "group": "slice-kpp",
+   "problem": "kpp",
+   "arm": "F",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 234.6
+  },
+  {
+   "id": "slice-kpp-J-seed4201",
+   "recipe": "slice",
+   "group": "slice-kpp",
+   "problem": "kpp",
+   "arm": "J",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 241.8
+  },
+  {
+   "id": "slice-kpp-E-seed4201",
+   "recipe": "slice",
+   "group": "slice-kpp",
+   "problem": "kpp",
+   "arm": "E",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 243.4
+  },
+  {
+   "id": "slice-kpp-I-seed4201",
+   "recipe": "slice",
+   "group": "slice-kpp",
+   "problem": "kpp",
+   "arm": "I",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 245.0
+  },
+  {
+   "id": "slice-kpp-B-seed4202",
+   "recipe": "slice",
+   "group": "slice-kpp",
+   "problem": "kpp",
+   "arm": "B",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 228.2
+  },
+  {
+   "id": "slice-kpp-F-seed4202",
+   "recipe": "slice",
+   "group": "slice-kpp",
+   "problem": "kpp",
+   "arm": "F",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 234.6
+  },
+  {
+   "id": "slice-kpp-J-seed4202",
+   "recipe": "slice",
+   "group": "slice-kpp",
+   "problem": "kpp",
+   "arm": "J",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 241.8
+  },
+  {
+   "id": "slice-kpp-E-seed4202",
+   "recipe": "slice",
+   "group": "slice-kpp",
+   "problem": "kpp",
+   "arm": "E",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 243.4
+  },
+  {
+   "id": "slice-kpp-I-seed4202",
+   "recipe": "slice",
+   "group": "slice-kpp",
+   "problem": "kpp",
+   "arm": "I",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 245.0
+  },
+  {
+   "id": "slice-burgers-B-seed4201",
+   "recipe": "slice",
+   "group": "slice-burgers",
+   "problem": "burgers",
+   "arm": "B",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 907.0
+  },
+  {
+   "id": "slice-burgers-F-seed4201",
+   "recipe": "slice",
+   "group": "slice-burgers",
+   "problem": "burgers",
+   "arm": "F",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 930.5
+  },
+  {
+   "id": "slice-burgers-J-seed4201",
+   "recipe": "slice",
+   "group": "slice-burgers",
+   "problem": "burgers",
+   "arm": "J",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 942.9
+  },
+  {
+   "id": "slice-burgers-E-seed4201",
+   "recipe": "slice",
+   "group": "slice-burgers",
+   "problem": "burgers",
+   "arm": "E",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 945.5
+  },
+  {
+   "id": "slice-burgers-I-seed4201",
+   "recipe": "slice",
+   "group": "slice-burgers",
+   "problem": "burgers",
+   "arm": "I",
+   "seed": 4201,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 960.9
+  },
+  {
+   "id": "slice-burgers-B-seed4202",
+   "recipe": "slice",
+   "group": "slice-burgers",
+   "problem": "burgers",
+   "arm": "B",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 907.0
+  },
+  {
+   "id": "slice-burgers-F-seed4202",
+   "recipe": "slice",
+   "group": "slice-burgers",
+   "problem": "burgers",
+   "arm": "F",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 930.5
+  },
+  {
+   "id": "slice-burgers-J-seed4202",
+   "recipe": "slice",
+   "group": "slice-burgers",
+   "problem": "burgers",
+   "arm": "J",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 942.9
+  },
+  {
+   "id": "slice-burgers-E-seed4202",
+   "recipe": "slice",
+   "group": "slice-burgers",
+   "problem": "burgers",
+   "arm": "E",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 945.5
+  },
+  {
+   "id": "slice-burgers-I-seed4202",
+   "recipe": "slice",
+   "group": "slice-burgers",
+   "problem": "burgers",
+   "arm": "I",
+   "seed": 4202,
+   "block": "rebanada con artefactos (Enmienda v1.6)",
+   "priority": 3,
+   "est_s_t4": 960.9
+  },
+  {
+   "id": "p1d-burgers-B-seed4103",
+   "recipe": "phase1d",
+   "group": "p1d-burgers",
+   "problem": "burgers",
+   "arm": "B",
+   "seed": 4103,
+   "block": "1d bu2/bu3 (bu1 = 4101-4102 ya corrio)",
+   "priority": 4,
+   "est_s_t4": 3701.8
+  },
+  {
+   "id": "p1d-burgers-F-seed4103",
+   "recipe": "phase1d",
+   "group": "p1d-burgers",
+   "problem": "burgers",
+   "arm": "F",
+   "seed": 4103,
+   "block": "1d bu2/bu3 (bu1 = 4101-4102 ya corrio)",
+   "priority": 4,
+   "est_s_t4": 3758.1
+  },
+  {
+   "id": "p1d-burgers-E-seed4103",
+   "recipe": "phase1d",
+   "group": "p1d-burgers",
+   "problem": "burgers",
+   "arm": "E",
+   "seed": 4103,
+   "block": "1d bu2/bu3 (bu1 = 4101-4102 ya corrio)",
+   "priority": 4,
+   "est_s_t4": 3789.3
+  },
+  {
+   "id": "p1d-burgers-B-seed4104",
+   "recipe": "phase1d",
+   "group": "p1d-burgers",
+   "problem": "burgers",
+   "arm": "B",
+   "seed": 4104,
+   "block": "1d bu2/bu3 (bu1 = 4101-4102 ya corrio)",
+   "priority": 4,
+   "est_s_t4": 3701.8
+  },
+  {
+   "id": "p1d-burgers-F-seed4104",
+   "recipe": "phase1d",
+   "group": "p1d-burgers",
+   "problem": "burgers",
+   "arm": "F",
+   "seed": 4104,
+   "block": "1d bu2/bu3 (bu1 = 4101-4102 ya corrio)",
+   "priority": 4,
+   "est_s_t4": 3758.1
+  },
+  {
+   "id": "p1d-burgers-E-seed4104",
+   "recipe": "phase1d",
+   "group": "p1d-burgers",
+   "problem": "burgers",
+   "arm": "E",
+   "seed": 4104,
+   "block": "1d bu2/bu3 (bu1 = 4101-4102 ya corrio)",
+   "priority": 4,
+   "est_s_t4": 3789.3
+  },
+  {
+   "id": "p1d-burgers-B-seed4105",
+   "recipe": "phase1d",
+   "group": "p1d-burgers",
+   "problem": "burgers",
+   "arm": "B",
+   "seed": 4105,
+   "block": "1d bu2/bu3 (bu1 = 4101-4102 ya corrio)",
+   "priority": 4,
+   "est_s_t4": 3701.8
+  },
+  {
+   "id": "p1d-burgers-F-seed4105",
+   "recipe": "phase1d",
+   "group": "p1d-burgers",
+   "problem": "burgers",
+   "arm": "F",
+   "seed": 4105,
+   "block": "1d bu2/bu3 (bu1 = 4101-4102 ya corrio)",
+   "priority": 4,
+   "est_s_t4": 3758.1
+  },
+  {
+   "id": "p1d-burgers-E-seed4105",
+   "recipe": "phase1d",
+   "group": "p1d-burgers",
+   "problem": "burgers",
+   "arm": "E",
+   "seed": 4105,
+   "block": "1d bu2/bu3 (bu1 = 4101-4102 ya corrio)",
+   "priority": 4,
+   "est_s_t4": 3789.3
+  },
+  {
+   "id": "p1e-burgers-J-seed4101",
+   "recipe": "phase1e",
+   "group": "p1e-burgers",
+   "problem": "burgers",
+   "arm": "J",
+   "seed": 4101,
+   "block": "1e bu1-bu3 (pareo con el B de 1d)",
+   "priority": 5,
+   "est_s_t4": 3815.0
+  },
+  {
+   "id": "p1e-burgers-I-seed4101",
+   "recipe": "phase1e",
+   "group": "p1e-burgers",
+   "problem": "burgers",
+   "arm": "I",
+   "seed": 4101,
+   "block": "1e bu1-bu3 (pareo con el B de 1d)",
+   "priority": 5,
+   "est_s_t4": 3854.4
+  },
+  {
+   "id": "p1e-burgers-J-seed4102",
+   "recipe": "phase1e",
+   "group": "p1e-burgers",
+   "problem": "burgers",
+   "arm": "J",
+   "seed": 4102,
+   "block": "1e bu1-bu3 (pareo con el B de 1d)",
+   "priority": 5,
+   "est_s_t4": 3815.0
+  },
+  {
+   "id": "p1e-burgers-I-seed4102",
+   "recipe": "phase1e",
+   "group": "p1e-burgers",
+   "problem": "burgers",
+   "arm": "I",
+   "seed": 4102,
+   "block": "1e bu1-bu3 (pareo con el B de 1d)",
+   "priority": 5,
+   "est_s_t4": 3854.4
+  },
+  {
+   "id": "p1e-burgers-J-seed4103",
+   "recipe": "phase1e",
+   "group": "p1e-burgers",
+   "problem": "burgers",
+   "arm": "J",
+   "seed": 4103,
+   "block": "1e bu1-bu3 (pareo con el B de 1d)",
+   "priority": 5,
+   "est_s_t4": 3815.0
+  },
+  {
+   "id": "p1e-burgers-I-seed4103",
+   "recipe": "phase1e",
+   "group": "p1e-burgers",
+   "problem": "burgers",
+   "arm": "I",
+   "seed": 4103,
+   "block": "1e bu1-bu3 (pareo con el B de 1d)",
+   "priority": 5,
+   "est_s_t4": 3854.4
+  },
+  {
+   "id": "p1e-burgers-J-seed4104",
+   "recipe": "phase1e",
+   "group": "p1e-burgers",
+   "problem": "burgers",
+   "arm": "J",
+   "seed": 4104,
+   "block": "1e bu1-bu3 (pareo con el B de 1d)",
+   "priority": 5,
+   "est_s_t4": 3815.0
+  },
+  {
+   "id": "p1e-burgers-I-seed4104",
+   "recipe": "phase1e",
+   "group": "p1e-burgers",
+   "problem": "burgers",
+   "arm": "I",
+   "seed": 4104,
+   "block": "1e bu1-bu3 (pareo con el B de 1d)",
+   "priority": 5,
+   "est_s_t4": 3854.4
+  },
+  {
+   "id": "p1e-burgers-J-seed4105",
+   "recipe": "phase1e",
+   "group": "p1e-burgers",
+   "problem": "burgers",
+   "arm": "J",
+   "seed": 4105,
+   "block": "1e bu1-bu3 (pareo con el B de 1d)",
+   "priority": 5,
+   "est_s_t4": 3815.0
+  },
+  {
+   "id": "p1e-burgers-I-seed4105",
+   "recipe": "phase1e",
+   "group": "p1e-burgers",
+   "problem": "burgers",
+   "arm": "I",
+   "seed": 4105,
+   "block": "1e bu1-bu3 (pareo con el B de 1d)",
+   "priority": 5,
+   "est_s_t4": 3854.4
+  }
+ ]
+}

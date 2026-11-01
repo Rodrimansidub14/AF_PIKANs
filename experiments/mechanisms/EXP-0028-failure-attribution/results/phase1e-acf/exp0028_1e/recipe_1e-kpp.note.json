@@ -1,0 +1,29 @@
+{
+ "problem": "kpp",
+ "delegate": "run_phase1d.py",
+ "argv": [
+  "--problems",
+  "kpp",
+  "--arms",
+  "I",
+  "--seeds",
+  "4105",
+  "--out",
+  "/kaggle/working/exp0028_1e",
+  "--device",
+  "cuda:0",
+  "--threads",
+  "2",
+  "--warmup-steps",
+  "50"
+ ],
+ "source": "run_phase1d.py RECIPES['kpp'] (heredada de AC)",
+ "arms": [
+  "I"
+ ],
+ "seeds": [
+  4105
+ ],
+ "smoke": false,
+ "written_at": "2026-10-25T04:12:52"
+}

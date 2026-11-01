@@ -1,0 +1,14 @@
+{
+ "converse": {
+  "tip_v_um": -32.89706520728271,
+  "phi_top_mean": 100.0,
+  "phi_top_spread": 2.842170943040401e-14,
+  "n_points": 4221
+ },
+ "direct": {
+  "tip_v_um": -198.48520058064216,
+  "phi_top_mean": -3.1032828378423147,
+  "phi_top_spread": 4.440892098500626e-16,
+  "n_points": 4221
+ }
+}

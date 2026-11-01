@@ -1,0 +1,29 @@
+{
+ "problem": "ac",
+ "delegate": "run_phase1d.py",
+ "argv": [
+  "--problems",
+  "ac",
+  "--arms",
+  "I",
+  "--seeds",
+  "4105",
+  "--out",
+  "/kaggle/working/exp0028_1e",
+  "--device",
+  "cuda:0",
+  "--threads",
+  "2",
+  "--warmup-steps",
+  "50"
+ ],
+ "source": "run_phase1d.py RECIPES['ac'] (Adam 40 000 f32 + L-BFGS f32 tope 300 s / 15 000 it.)",
+ "arms": [
+  "I"
+ ],
+ "seeds": [
+  4105
+ ],
+ "smoke": false,
+ "written_at": "2026-10-25T03:00:12"
+}

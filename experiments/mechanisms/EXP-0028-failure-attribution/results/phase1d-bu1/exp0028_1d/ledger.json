@@ -1,0 +1,111 @@
+{
+ "info": {
+  "tiny": false,
+  "block": "bu1",
+  "plan": [
+   "burgers",
+   [
+    "B",
+    "F",
+    "E"
+   ],
+   [
+    4101,
+    4102
+   ]
+  ],
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "cutoff_s": 12240.0,
+  "hard_cap_s": 14040.0,
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "ledger": [
+  {
+   "job": [
+    "burgers",
+    "B",
+    4101
+   ],
+   "slot": 0,
+   "start": 1.1349999908816244e-06,
+   "end": 3720.028915629,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    "F",
+    4101
+   ],
+   "slot": 1,
+   "start": 1.1349999908816244e-06,
+   "end": 3720.028915629,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    "B",
+    4102
+   ],
+   "slot": 1,
+   "start": 3720.028915629,
+   "end": 7440.05888315,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    "E",
+    4101
+   ],
+   "slot": 0,
+   "start": 3720.028915629,
+   "end": 7540.0621068400005,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    "F",
+    4102
+   ],
+   "slot": 1,
+   "start": 7440.05888315,
+   "end": 11160.089960068,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    "E",
+    4102
+   ],
+   "slot": 0,
+   "start": 7540.0621068400005,
+   "end": 11340.092328257,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "finished_runs": [
+  "burgers-B-seed4101.json",
+  "burgers-B-seed4102.json",
+  "burgers-E-seed4101.json",
+  "burgers-E-seed4102.json",
+  "burgers-F-seed4101.json",
+  "burgers-F-seed4102.json"
+ ],
+ "wall_seconds": 11340.093825817108,
+ "complete": true
+}

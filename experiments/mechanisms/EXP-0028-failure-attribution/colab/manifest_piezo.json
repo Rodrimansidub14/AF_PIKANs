@@ -1,0 +1,926 @@
+{
+ "manifest": "piezo",
+ "version": 1,
+ "device_note": "una A100; 1 proceso por GPU (--jobs-per-gpu 2 solo si la prueba de concurrencia lo justifica)",
+ "notes": [
+  "Orden: semilla completa (ambos problemas, B,F,J,E,I) antes de la siguiente; la prioridad 1 son 30 trabajos (3 semillas), la 2 son 20.",
+  "steps/n_recomputes/fixed_s/probe_as: la proyeccion usa s/paso y s/recalculo medidos en la A100 (B para B y F x1.05; E para E y J; I para I, con E de respaldo).",
+  "Receta: Adam 20 000 pasos lr 1e-3 float64 sin L-BFGS; recalculo antes del paso 1 y cada 1000 (20 por corrida de J/E/I); ver piezo/budget_piezo.md."
+ ],
+ "probe": {
+  "targets": [
+   {
+    "recipe": "piezo",
+    "problem": "converse",
+    "arm": "B",
+    "seed": 4001
+   },
+   {
+    "recipe": "piezo",
+    "problem": "converse",
+    "arm": "E",
+    "seed": 4001
+   },
+   {
+    "recipe": "piezo",
+    "problem": "converse",
+    "arm": "I",
+    "seed": 4001
+   },
+   {
+    "recipe": "piezo",
+    "problem": "direct",
+    "arm": "B",
+    "seed": 4001
+   },
+   {
+    "recipe": "piezo",
+    "problem": "direct",
+    "arm": "E",
+    "seed": 4001
+   },
+   {
+    "recipe": "piezo",
+    "problem": "direct",
+    "arm": "I",
+    "seed": 4001
+   }
+  ],
+  "t4_ref": {
+   "converse:B": {
+    "step_s": 0.47
+   },
+   "direct:B": {
+    "step_s": 0.31
+   },
+   "converse:E": {
+    "step_s": 0.47
+   },
+   "direct:E": {
+    "step_s": 0.31
+   }
+  }
+ },
+ "jobs": [
+  {
+   "id": "piezo-converse-B-seed4001",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "B",
+   "seed": 4001,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-F-seed4001",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "F",
+   "seed": 4001,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.05
+  },
+  {
+   "id": "piezo-converse-J-seed4001",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "J",
+   "seed": 4001,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-E-seed4001",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "E",
+   "seed": 4001,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-I-seed4001",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "I",
+   "seed": 4001,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "I",
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-B-seed4001",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "B",
+   "seed": 4001,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-F-seed4001",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "F",
+   "seed": 4001,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.05
+  },
+  {
+   "id": "piezo-direct-J-seed4001",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "J",
+   "seed": 4001,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-E-seed4001",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "E",
+   "seed": 4001,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-I-seed4001",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "I",
+   "seed": 4001,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "I",
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-B-seed4002",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "B",
+   "seed": 4002,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-F-seed4002",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "F",
+   "seed": 4002,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.05
+  },
+  {
+   "id": "piezo-converse-J-seed4002",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "J",
+   "seed": 4002,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-E-seed4002",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "E",
+   "seed": 4002,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-I-seed4002",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "I",
+   "seed": 4002,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "I",
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-B-seed4002",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "B",
+   "seed": 4002,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-F-seed4002",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "F",
+   "seed": 4002,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.05
+  },
+  {
+   "id": "piezo-direct-J-seed4002",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "J",
+   "seed": 4002,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-E-seed4002",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "E",
+   "seed": 4002,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-I-seed4002",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "I",
+   "seed": 4002,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "I",
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-B-seed4003",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "B",
+   "seed": 4003,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-F-seed4003",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "F",
+   "seed": 4003,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.05
+  },
+  {
+   "id": "piezo-converse-J-seed4003",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "J",
+   "seed": 4003,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-E-seed4003",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "E",
+   "seed": 4003,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-I-seed4003",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "I",
+   "seed": 4003,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "I",
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-B-seed4003",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "B",
+   "seed": 4003,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-F-seed4003",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "F",
+   "seed": 4003,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.05
+  },
+  {
+   "id": "piezo-direct-J-seed4003",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "J",
+   "seed": 4003,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-E-seed4003",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "E",
+   "seed": 4003,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-I-seed4003",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "I",
+   "seed": 4003,
+   "block": "semillas-4001-4003",
+   "priority": 1,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "I",
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-B-seed4004",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "B",
+   "seed": 4004,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-F-seed4004",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "F",
+   "seed": 4004,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.05
+  },
+  {
+   "id": "piezo-converse-J-seed4004",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "J",
+   "seed": 4004,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-E-seed4004",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "E",
+   "seed": 4004,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-I-seed4004",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "I",
+   "seed": 4004,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "I",
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-B-seed4004",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "B",
+   "seed": 4004,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-F-seed4004",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "F",
+   "seed": 4004,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.05
+  },
+  {
+   "id": "piezo-direct-J-seed4004",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "J",
+   "seed": 4004,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-E-seed4004",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "E",
+   "seed": 4004,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-I-seed4004",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "I",
+   "seed": 4004,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "I",
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-B-seed4005",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "B",
+   "seed": 4005,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-F-seed4005",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "F",
+   "seed": 4005,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.05
+  },
+  {
+   "id": "piezo-converse-J-seed4005",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "J",
+   "seed": 4005,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-E-seed4005",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "E",
+   "seed": 4005,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-converse-I-seed4005",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "converse",
+   "arm": "I",
+   "seed": 4005,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "I",
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-B-seed4005",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "B",
+   "seed": 4005,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-F-seed4005",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "F",
+   "seed": 4005,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 0,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "B"
+   ],
+   "step_factor": 1.05
+  },
+  {
+   "id": "piezo-direct-J-seed4005",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "J",
+   "seed": 4005,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-E-seed4005",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "E",
+   "seed": 4005,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "E"
+   ],
+   "step_factor": 1.0
+  },
+  {
+   "id": "piezo-direct-I-seed4005",
+   "recipe": "piezo",
+   "group": "piezo",
+   "problem": "direct",
+   "arm": "I",
+   "seed": 4005,
+   "block": "semillas-4004-4005",
+   "priority": 2,
+   "steps": 20000,
+   "n_recomputes": 20,
+   "fixed_s": 60.0,
+   "probe_as": [
+    "I",
+    "E"
+   ],
+   "step_factor": 1.0
+  }
+ ]
+}

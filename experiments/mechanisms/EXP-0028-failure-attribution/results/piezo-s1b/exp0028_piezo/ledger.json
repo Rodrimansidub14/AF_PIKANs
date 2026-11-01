@@ -1,0 +1,49 @@
+{
+ "info": {
+  "tiny": false,
+  "block": "s1b",
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "n_jobs": 2,
+  "cutoff_s": 12240.0,
+  "hard_cap_s": 14040.0,
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "check_B_ID": true,
+ "ledger": [
+  {
+   "job": [
+    "direct",
+    20260728,
+    "B"
+   ],
+   "slot": 0,
+   "start": 1.9959999804086692e-06,
+   "end": 6540.051560431,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "direct",
+    20260728,
+    "E"
+   ],
+   "slot": 1,
+   "start": 1.9959999804086692e-06,
+   "end": 7020.056079905,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "finished_runs": [
+  "piezo-direct-B-seed20260728.json",
+  "piezo-direct-E-seed20260728.json"
+ ],
+ "wall_seconds": 7101.066262960434,
+ "complete": true
+}

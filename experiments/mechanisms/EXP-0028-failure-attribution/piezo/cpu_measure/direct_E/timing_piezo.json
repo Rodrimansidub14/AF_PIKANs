@@ -1,0 +1,25 @@
+{
+ "device": "cpu",
+ "torch": "2.14.1+cpu",
+ "dtype": "float64",
+ "smoke_pool": 0,
+ "n_per_key": 2048,
+ "problems": {
+  "direct": {
+   "rows": [
+    {
+     "arm": "E",
+     "chunk": 16,
+     "n_points": 3328,
+     "seconds": 328.81721700000344,
+     "peak_mb": null
+    }
+   ],
+   "adam_seconds_per_step_B": 2.6337028149995603,
+   "adam_peak_mb_B": null,
+   "adam_seconds_per_step_MLP": 1.0148666349996347,
+   "adam_peak_mb_MLP": null,
+   "score_seconds": 0.05350639999960549
+  }
+ }
+}

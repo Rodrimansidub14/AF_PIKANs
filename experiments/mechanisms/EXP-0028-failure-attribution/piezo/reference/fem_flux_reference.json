@@ -1,0 +1,18 @@
+{
+ "converse": {
+  "n_dofs": 293619,
+  "seconds": 39.18420958518982,
+  "sigma_xx_max_kPa": 4.431101533612144,
+  "D_y_max_uC_m2": 10.608098866060343,
+  "graded": true,
+  "a": 0.6
+ },
+ "direct": {
+  "n_dofs": 293619,
+  "seconds": 62.770426511764526,
+  "sigma_xx_max_kPa": 59.46733034496443,
+  "D_y_max_uC_m2": 0.3303659277028275,
+  "graded": true,
+  "a": 0.6
+ }
+}

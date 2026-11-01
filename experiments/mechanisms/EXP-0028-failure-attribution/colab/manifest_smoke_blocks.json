@@ -1,0 +1,78 @@
+{
+ "manifest": "smoke_blocks",
+ "version": 1,
+ "notes": [
+  "Humo en CPU de las recetas phase1d / phase1e / slice con el bundle de bloques. NO es ciencia."
+ ],
+ "probe": {
+  "targets": [],
+  "t4_ref": {}
+ },
+ "jobs": [
+  {
+   "id": "smoke-p1d-ac-B",
+   "recipe": "phase1d",
+   "group": "smoke-p1d",
+   "problem": "ac",
+   "arm": "B",
+   "seed": 4101,
+   "priority": 1,
+   "extra_args": [
+    "--adam",
+    "10",
+    "--lbfgs-iters",
+    "5",
+    "--lbfgs-seconds",
+    "30",
+    "--pre-every",
+    "5",
+    "--pre-n",
+    "64",
+    "--n-col",
+    "512"
+   ]
+  },
+  {
+   "id": "smoke-p1e-ns-J",
+   "recipe": "phase1e",
+   "group": "smoke-p1e",
+   "problem": "ns",
+   "arm": "J",
+   "seed": 4101,
+   "priority": 1,
+   "extra_args": [
+    "--adam",
+    "10",
+    "--lbfgs-iters",
+    "5",
+    "--pre-every",
+    "5",
+    "--pre-n",
+    "64",
+    "--smoke-pool",
+    "128"
+   ]
+  },
+  {
+   "id": "smoke-slice-ac-J",
+   "recipe": "slice",
+   "group": "smoke-slice",
+   "problem": "ac",
+   "arm": "J",
+   "seed": 4201,
+   "priority": 2,
+   "extra_args": [
+    "--adam",
+    "10",
+    "--lbfgs-iters",
+    "5",
+    "--pre-every",
+    "5",
+    "--pre-n",
+    "64",
+    "--light-every",
+    "5"
+   ]
+  }
+ ]
+}

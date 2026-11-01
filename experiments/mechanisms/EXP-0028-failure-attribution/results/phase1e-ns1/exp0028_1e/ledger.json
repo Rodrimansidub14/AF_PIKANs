@@ -1,0 +1,237 @@
+{
+ "info": {
+  "tiny": false,
+  "block": "ns1",
+  "plan": [
+   [
+    "ns",
+    [
+     "B",
+     "F",
+     "J",
+     "E",
+     "I"
+    ],
+    [
+     4101,
+     4102,
+     4103
+    ]
+   ]
+  ],
+  "with_b": false,
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "cutoff_s": 12240.0,
+  "hard_cap_s": 14040.0,
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "check_B_ID": {
+  "ns": true
+ },
+ "ledger": [
+  {
+   "job": [
+    "ns",
+    "B",
+    4101
+   ],
+   "slot": 0,
+   "start": 4.816000000573695e-06,
+   "end": 1120.011434747,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ns",
+    "F",
+    4101
+   ],
+   "slot": 1,
+   "start": 4.816000000573695e-06,
+   "end": 1220.014443396,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ns",
+    "J",
+    4101
+   ],
+   "slot": 0,
+   "start": 1120.011434747,
+   "end": 2440.025750983,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ns",
+    "E",
+    4101
+   ],
+   "slot": 1,
+   "start": 1220.014443396,
+   "end": 2520.028653198,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ns",
+    "B",
+    4102
+   ],
+   "slot": 1,
+   "start": 2520.028653198,
+   "end": 3640.0388411719996,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ns",
+    "I",
+    4101
+   ],
+   "slot": 0,
+   "start": 2440.025750983,
+   "end": 3760.041964871,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ns",
+    "F",
+    4102
+   ],
+   "slot": 1,
+   "start": 3640.0388411719996,
+   "end": 4840.051993744,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ns",
+    "J",
+    4102
+   ],
+   "slot": 0,
+   "start": 3760.041964871,
+   "end": 5080.056636385,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ns",
+    "E",
+    4102
+   ],
+   "slot": 1,
+   "start": 4840.051993744,
+   "end": 6160.066913927,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ns",
+    "I",
+    4102
+   ],
+   "slot": 0,
+   "start": 5080.056636385,
+   "end": 6440.07133941,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ns",
+    "B",
+    4103
+   ],
+   "slot": 1,
+   "start": 6160.066913927,
+   "end": 7280.079367192,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ns",
+    "F",
+    4103
+   ],
+   "slot": 0,
+   "start": 6440.07133941,
+   "end": 7600.083427485,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ns",
+    "J",
+    4103
+   ],
+   "slot": 1,
+   "start": 7280.079367192,
+   "end": 8580.093408408999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ns",
+    "E",
+    4103
+   ],
+   "slot": 0,
+   "start": 7600.083427485,
+   "end": 8880.097439117,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ns",
+    "I",
+    4103
+   ],
+   "slot": 1,
+   "start": 8580.093408408999,
+   "end": 9880.106351549999,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "finished_runs": [
+  "ns-B-seed4101.json",
+  "ns-B-seed4102.json",
+  "ns-B-seed4103.json",
+  "ns-E-seed4101.json",
+  "ns-E-seed4102.json",
+  "ns-E-seed4103.json",
+  "ns-F-seed4101.json",
+  "ns-F-seed4102.json",
+  "ns-F-seed4103.json",
+  "ns-I-seed4101.json",
+  "ns-I-seed4102.json",
+  "ns-I-seed4103.json",
+  "ns-J-seed4101.json",
+  "ns-J-seed4102.json",
+  "ns-J-seed4103.json"
+ ],
+ "wall_seconds": 9929.500315904617,
+ "complete": true
+}

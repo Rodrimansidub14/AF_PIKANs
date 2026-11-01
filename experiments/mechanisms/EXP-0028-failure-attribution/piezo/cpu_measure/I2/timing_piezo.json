@@ -1,0 +1,41 @@
+{
+ "device": "cpu",
+ "torch": "2.14.1+cpu",
+ "dtype": "float64",
+ "smoke_pool": 0,
+ "n_per_key": 2048,
+ "problems": {
+  "converse": {
+   "rows": [
+    {
+     "arm": "I",
+     "chunk": 2,
+     "n_points": 3328,
+     "seconds": 357.2011338000011,
+     "peak_mb": null
+    }
+   ],
+   "adam_seconds_per_step_B": 4.00887253999972,
+   "adam_peak_mb_B": null,
+   "adam_seconds_per_step_MLP": 1.6245804899997893,
+   "adam_peak_mb_MLP": null,
+   "score_seconds": 0.035692500008735806
+  },
+  "direct": {
+   "rows": [
+    {
+     "arm": "I",
+     "chunk": 2,
+     "n_points": 3328,
+     "seconds": 2331.544300700014,
+     "peak_mb": null
+    }
+   ],
+   "adam_seconds_per_step_B": 2.5649887050007236,
+   "adam_peak_mb_B": null,
+   "adam_seconds_per_step_MLP": 1.062389264999365,
+   "adam_peak_mb_MLP": null,
+   "score_seconds": 0.049762000009650365
+  }
+ }
+}
