@@ -1,0 +1,207 @@
+{
+  "experiment_id": "EXP-0008",
+  "version": "baseline-v2-competitive-draft-1",
+  "status": "DRAFT_PENDING_HUMAN_SIGNATURE",
+  "protocol_phase": "preregistration_draft",
+  "suite": "tier2_candidate",
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "human_signature": null,
+  "recipe": {
+    "id": "AF-R2",
+    "dtype": {"heat": "float64", "burgers": "float64", "allen_cahn": "float64", "dfg": "float32"},
+    "phase_1_adam": {
+      "steps": 20000,
+      "betas": [0.9, 0.999],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "grad_clip": null,
+      "lr_schedule": {
+        "kind": "linear_warmup_cosine",
+        "warmup_steps": 500,
+        "warmup_start_fraction": 0.01,
+        "lr_min_fraction": 0.01,
+        "applied_per": "optimizer_step"
+      },
+      "lr_max_dev_options": [0.001, 0.003],
+      "batch_dev_options": ["1024_per_condition", "full_pool"],
+      "loss_weights": "all_one"
+    },
+    "phase_2_lbfgs": {
+      "optimizer": "torch.optim.LBFGS",
+      "lr": 1.0,
+      "max_iter_per_outer_step": 20,
+      "max_eval_per_outer_step": 25,
+      "history_size": 100,
+      "line_search_fn": "strong_wolfe",
+      "tolerance_grad": 1e-08,
+      "tolerance_change": 0.0,
+      "max_outer_steps": 15000,
+      "batch": "full_pool_fixed",
+      "state_persist_every_outer_steps": 50
+    },
+    "checkpoint_policy": ["c0", "c_adam", "c_lbfgs_25", "c_lbfgs_50", "c_lbfgs_75", "c_lbfgs_100"],
+    "checkpoint_selection_by_error": false,
+    "diagnostic_cadence": {"metrics_every": 100, "full_every": 1000, "at_phase_boundaries": true},
+    "time_caps_seconds": {
+      "dev": {"adam_safety": 2700, "lbfgs": 600},
+      "final": {"adam_safety": 2700, "lbfgs": 1200},
+      "dfg_final_lbfgs": 900
+    },
+    "censoring_rule": "time_cap_marks_run_censored_and_excludes_from_step_parity_claims"
+  },
+  "stage_A1": {
+    "problem": "burgers_pinnacle_1d",
+    "dev_seeds": [611, 612, 613],
+    "configs": {
+      "C1": {"adam_steps": 20000, "schedule": "constant", "lr_max": 0.001, "batch": "1024_per_condition"},
+      "C2": {"adam_steps": 20000, "schedule": "warmup_cosine", "lr_max": 0.001, "batch": "1024_per_condition"},
+      "C3": {"adam_steps": 20000, "schedule": "warmup_cosine", "lr_max": 0.003, "batch": "1024_per_condition"},
+      "C4": {"adam_steps": 5000, "schedule": "constant", "lr_max": 0.001, "batch": "full_pool"}
+    },
+    "model": {"id": "rbf_fixed", "rung": "R0"},
+    "scoring": ["V"],
+    "opens_E": false,
+    "selection_rule": "geometric_mean_L2_V_after_lbfgs; ties within 10% -> lower median cost; eligibility: all seeds finite and no seed worse than 2x C1"
+  },
+  "stage_A2": {
+    "dev_seeds": {"burgers_pinnacle_1d": [611, 612], "allen_cahn_1d": [621, 622]},
+    "recipe": "frozen_from_A1",
+    "rungs": {
+      "R0": {"hidden": 16, "bases": 11, "width_scale": 1.0, "params": 3648},
+      "R1": {"hidden": 16, "bases": 21, "width_scale": 1.0, "params": 6688},
+      "R2": {"hidden": 32, "bases": 11, "width_scale": 1.0, "params": 13440},
+      "R3": {"hidden": 32, "bases": 21, "width_scale": 1.0, "params": 24640},
+      "R4": {"hidden": 64, "bases": 11, "width_scale": 1.0, "params": 51456},
+      "R5": {"hidden": 32, "bases": 21, "width_scale": 2.0, "params": 24640}
+    },
+    "rung_min_improvement_to_select": 0.67,
+    "exclusion_order_if_budget_exceeded": ["allen_cahn:R4", "allen_cahn:R5", "allen_cahn:R2", "burgers_pinnacle_1d:R4"],
+    "drop_rung_if_projected_adam_seconds_exceeds": 1800,
+    "scoring": ["V"],
+    "opens_E": false
+  },
+  "controls": {
+    "mlp_tanh_58": {"params": 3655},
+    "mlp_tanh_154": {"params": 24487, "condition": "only if selected rung is R2, R3 or R5 (Allen-Cahn)"},
+    "mlp_tanh_5x100": {"params": 40801, "note": "PINNacle shape, trained with AF-R2 (not the PINNacle recipe)"},
+    "bspline_cubic": {"params": 3648, "problems": ["heat_1d"]}
+  },
+  "stage_C": {
+    "confirmation_seeds": {
+      "burgers_pinnacle_1d": [201, 202, 203, 204, 205],
+      "allen_cahn_1d": [401, 402, 403, 404, 405],
+      "heat_1d": [901, 902, 903, 904, 905],
+      "dfg_2d": [301, 302, 303, 304, 305]
+    },
+    "pairing": "same pools and initialization as v1; pool hashes verified before training",
+    "arms": {
+      "burgers_pinnacle_1d": ["rbf_R0", "rbf_Rstar", "mlp_tanh_58", "mlp_tanh_5x100"],
+      "allen_cahn_1d": ["rbf_R0", "rbf_Rstar", "mlp_tanh_58"],
+      "heat_1d": ["rbf_R0"],
+      "dfg_2d": ["rbf_R0", "mlp_tanh"]
+    },
+    "optional_arms": {
+      "heat_1d": ["bspline_cubic", "fnn_deepxde_3x20"],
+      "allen_cahn_1d": ["mlp_tanh_154_if_applicable"]
+    },
+    "scoring": ["E", "external"],
+    "scoring_job": "separate_from_training"
+  },
+  "evaluators": {
+    "V": {"module": "evals.checkpoint_validation", "grid": "129x65"},
+    "E": {
+      "heat_1d": "heat-confirmatory-512x256-v1",
+      "burgers_pinnacle_1d": "cole_hopf_gauss_hermite_128_1025x129",
+      "allen_cahn_1d": ["etdrk4_candidate_512x256", "fd_rk4_8192_candidate_512x256"],
+      "dfg_2d": "grid_440x82_plus_512_points_per_segment"
+    },
+    "external": {
+      "heat_1d": "deepxde_tutorial_grid_256x201",
+      "burgers_pinnacle_1d": {
+        "name": "pinnacle_fem_101x11",
+        "url": "https://raw.githubusercontent.com/i207M/PINNacle/6f8d69c9c84c41d19644e4ceebdc64c4a11d3adf/ref/burgers1d.dat",
+        "sha256": "3b6d31d895022b397330091ace59220167f0918c2ed616ed2ae5b1458eede5eb",
+        "note": "behaves as a floor near 1.3e-2 relative to Cole-Hopf; CH is the binding metric"
+      },
+      "allen_cahn_1d": "deepxde_mat_201x101_interpolated_floor_1.6e-4",
+      "dfg_2d": ["featflow_qoi", "taylor_hood_fem_field_when_available"]
+    },
+    "scorers_live_in": "evals/ (human-incorporated); agent drafts under var/agent_runs/exp0008/scorers/"
+  },
+  "frozen_baselines_to_register": {
+    "burgers_pinnacle_1d@rbf_fixed.v1-adam20k": {"metric": "L2_rel_CH_1025x129", "mean": 0.03954980, "sd": 0.02565, "n": 5, "seeds": [201, 202, 203, 204, 205]},
+    "burgers_pinnacle_1d@pinnacle_adam_lbfgs.repro": {"metric": "L2_rel_CH_1025x129", "mean": 0.0005659437, "sd": 0.000167988, "n": 5, "fem_101x11": {"mean": 0.013264218, "sd": 0.0000288253}},
+    "heat_1d@rbf_fixed.s2-adam-lbfgs": {"metric": "L2_rel_512x256", "mean": 2.0608032e-06, "sd": 2.3066e-07, "n": 5, "seeds": [901, 902, 903, 904, 905]},
+    "heat_1d@deepxde_1.12.2_a0.1": {"metric": "L2_rel_512x256", "mean": 0.0005806721, "sd": 0.0004039879, "n": 5, "paired": false},
+    "allen_cahn_1d@rbf_fixed.s3-lbfgs240": {"metric": "rel_weighted_space_time_L2_ETDRK4", "mean": 0.0091637113, "sd": 0.0026643773, "n": 5, "seeds": [401, 402, 403, 404, 405]},
+    "allen_cahn_1d@deepxde_official": {"metric": "L2_rel_mat_201x101", "mean": 0.0200454542, "sd": 0.006121848, "n": 5},
+    "dfg_2d@rbf_fixed.v1-301-305.sigma-n": {"metric": "qoi_vs_featflow", "cd_mean": 5.124, "cd_sd": 0.053, "cd_rel_error": 0.0816, "cl_mean": 0.0386, "cl_sd": 0.0987, "dp_mean": 0.1059, "dp_rel_error": 0.0990, "n": 5, "scorer": "dfg.py sigma-n, 512-point contour", "source": "var/agent_runs/exp0008/wp-e3/dfg_rescore_sigma_n.json", "supersedes": "archived Cd 1.46293614 (tangential scorer artifact)"}
+  },
+  "gates": {
+    "burgers_pinnacle_1d": {
+      "G1": {"kind": "paired_geometric_ratio_v2_over_v1", "max": 0.25, "ci95_upper_max_log": -0.6931471805599453},
+      "G2": {"fem_101x11_mean_max": 0.0199, "fem_101x11_worst_seed_max": 0.03, "cole_hopf_mean_max": 0.00113, "binding_metric": "cole_hopf"},
+      "G3_report_only": {"fem_101x11_mean": 0.0133, "cole_hopf_mean": 0.00057},
+      "guards": {"front_rmse_normalized_lt": 0.2161, "ic_bc_max_abs_error_max": 0.02, "run_seconds_max": 3100, "seeds_finite": "5/5"}
+    },
+    "heat_1d": {
+      "G1_regression": {"mean_max": 1e-05, "seeds_finite": "5/5"},
+      "G2": {"mean_max": 0.00058, "step_budget": "20000 Adam + L-BFGS <= 15000 outer steps"},
+      "completeness_guard": "arm without 20000 Adam steps is marked incomplete and excluded from rankings"
+    },
+    "allen_cahn_1d": {
+      "G1": {"mean_max": 0.0046},
+      "G2": {"mean_max": 0.002, "references": ["etdrk4", "mat_201x101"]},
+      "G3_report_only": {"mean": 0.001},
+      "guards": {"ic_bc_trace_max": 1e-12, "evenness_err_le_field_err": true},
+      "claim_precondition": "human accepts reference before any claim is stated"
+    },
+    "dfg_2d": {
+      "G0": "rescoring with single sigma-n scorer (WP-E3) before any decision",
+      "G1": {"cd_rel_error_max": 0.10, "dp_rel_error_max": 0.10, "cl_abs_error_max": 0.03},
+      "G2": {"cd_rel_error_max": 0.05, "dp_rel_error_max": 0.05, "cl_abs_error_max": 0.02},
+      "field_error": "report_only_until_reference_accepted"
+    },
+    "note": "numeric values are proposals; they bind only after human signature and eval_integrity freeze"
+  },
+  "signal_gate_SS1": {
+    "P0": {"spearman_residual_error_min": 0.5, "auc_top_decile_M0_min": 0.75, "problems_required": 2},
+    "P1": {"delta_auc_M2_minus_M1_min": 0.05, "ci95_lower_gt": 0, "problems_required": 2},
+    "P2": {"delta_auc_M3_minus_M2_min": 0.05, "ci95_lower_gt": 0, "problems_required": 2},
+    "P3": {"signal_cost_max_fraction_of_step": 0.10},
+    "unit_of_analysis": "seed",
+    "cv": "leave_one_seed_out",
+    "rad_v2_runs_only_if": ["P0", "P3"]
+  },
+  "budget": {
+    "platform": "Kaggle private T4x2",
+    "per_tranche_approval": true,
+    "tranches": {
+      "B0": {"est_hours": 0.25, "cap_hours": 0.30},
+      "T1": {"runs": 12, "est_hours": 2.3, "cap_hours": 3.0},
+      "T2": {"runs": 22, "est_hours": 4.5, "cap_hours": 6.5},
+      "T3a": {"runs": 20, "est_hours": 3.9, "cap_hours": 5.0},
+      "T3b": {"runs": 15, "est_hours": 3.0, "cap_hours": 4.0, "optional_extra_runs": 5},
+      "T3c": {"runs": 5, "est_hours": 0.5, "cap_hours": 1.0},
+      "T4": {"runs": 10, "est_hours": 3.0, "cap_hours": 4.0, "condition": "WP-E3 result"}
+    },
+    "core_est_hours": 17.5,
+    "core_cap_hours": 23.8,
+    "proposed_min_reserve_hours_after_each_tranche": 5,
+    "quota_last_verified_hours_available": 15.75,
+    "quota_last_verified_at": "2026-09-28 before S2",
+    "quota_refresh": "2026-10-03T00:00:00Z",
+    "estimates_are_extrapolations_recalibrated_in": "B0"
+  },
+  "preflight_required": ["D0_static_imports", "D1_config_schema", "D2_unit", "D3_smoke_all_artifacts", "D4_kernel_title_slug_smoke", "D5_version_parity"],
+  "registry": {
+    "runs": "registry/runs.jsonl (role experiment_runner)",
+    "failures": "registry/failures.jsonl (role evaluator)",
+    "proposals": "registry/proposals.jsonl (role pending human decision)",
+    "claims": "registry/claims.jsonl (human only)",
+    "backfill": "historical_backfill lines, technical_pass null, scientific_accepted false"
+  },
+  "approvals_requested": ["hypothesis", "code_surface", "eval_integrity", "tier2_budget_per_tranche", "registry_proposals_role", "local_cpu_compute", "external_read_pinnacle_fem_file"],
+  "out_of_scope": ["vRBA_reproduction", "AEH-PINN_reproduction", "RAD_RAR-D_run", "learnable_bases", "loss_balancing", "causal_training", "operator_learning", "poisson_2d"]
+}
