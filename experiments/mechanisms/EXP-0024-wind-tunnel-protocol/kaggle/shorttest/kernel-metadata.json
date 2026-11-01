@@ -1,0 +1,17 @@
+{
+  "id": "rodrimandub/af-pikans-exp-0024-t1-shorttest",
+  "title": "AF PIKANs EXP-0024 T1 shorttest",
+  "code_file": "t1_shorttest_gpu.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "false",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "rodrimandub/af-pikans-exp0024-bundle"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

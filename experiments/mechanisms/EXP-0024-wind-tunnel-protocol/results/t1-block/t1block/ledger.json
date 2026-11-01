@@ -1,0 +1,171 @@
+{
+ "info": {
+  "tiny": false,
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "cutoff_s": 14400.0,
+  "hard_cap_s": 18000.0,
+  "designs": "CTRL,D1,D2,D3",
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "ledger": [
+  {
+   "job": [
+    "burgers",
+    1
+   ],
+   "slot": 0,
+   "start": 1.2849999961872527e-06,
+   "end": 480.00599557600003,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    2
+   ],
+   "slot": 1,
+   "start": 1.2849999961872527e-06,
+   "end": 480.00599557600003,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    3
+   ],
+   "slot": 0,
+   "start": 480.00599557600003,
+   "end": 920.011901444,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    4
+   ],
+   "slot": 1,
+   "start": 480.00599557600003,
+   "end": 920.011901444,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    1
+   ],
+   "slot": 1,
+   "start": 920.011901444,
+   "end": 1320.017710645,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    5
+   ],
+   "slot": 0,
+   "start": 920.011901444,
+   "end": 1360.0195878539998,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    2
+   ],
+   "slot": 1,
+   "start": 1320.017710645,
+   "end": 1720.0244486360002,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    3
+   ],
+   "slot": 0,
+   "start": 1360.0195878539998,
+   "end": 1760.026613688,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    4
+   ],
+   "slot": 1,
+   "start": 1720.0244486360002,
+   "end": 2120.031267267,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    5
+   ],
+   "slot": 0,
+   "start": 1760.026613688,
+   "end": 2160.0321496250003,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "finished_runs": [
+  "ac-CTRL-seed1-a4000-l500.json",
+  "ac-CTRL-seed2-a4000-l500.json",
+  "ac-CTRL-seed3-a4000-l500.json",
+  "ac-CTRL-seed4-a4000-l500.json",
+  "ac-CTRL-seed5-a4000-l500.json",
+  "ac-D1-seed1-a4000-l500.json",
+  "ac-D1-seed2-a4000-l500.json",
+  "ac-D1-seed3-a4000-l500.json",
+  "ac-D1-seed4-a4000-l500.json",
+  "ac-D1-seed5-a4000-l500.json",
+  "ac-D2-seed1-a4000-l500.json",
+  "ac-D2-seed2-a4000-l500.json",
+  "ac-D2-seed3-a4000-l500.json",
+  "ac-D2-seed4-a4000-l500.json",
+  "ac-D2-seed5-a4000-l500.json",
+  "ac-D3-seed1-a4000-l500.json",
+  "ac-D3-seed2-a4000-l500.json",
+  "ac-D3-seed3-a4000-l500.json",
+  "ac-D3-seed4-a4000-l500.json",
+  "ac-D3-seed5-a4000-l500.json",
+  "burgers-CTRL-seed1-a2000-l500.json",
+  "burgers-CTRL-seed2-a2000-l500.json",
+  "burgers-CTRL-seed3-a2000-l500.json",
+  "burgers-CTRL-seed4-a2000-l500.json",
+  "burgers-CTRL-seed5-a2000-l500.json",
+  "burgers-D1-seed1-a2000-l500.json",
+  "burgers-D1-seed2-a2000-l500.json",
+  "burgers-D1-seed3-a2000-l500.json",
+  "burgers-D1-seed4-a2000-l500.json",
+  "burgers-D1-seed5-a2000-l500.json",
+  "burgers-D2-seed1-a2000-l500.json",
+  "burgers-D2-seed2-a2000-l500.json",
+  "burgers-D2-seed3-a2000-l500.json",
+  "burgers-D2-seed4-a2000-l500.json",
+  "burgers-D2-seed5-a2000-l500.json",
+  "burgers-D3-seed1-a2000-l500.json",
+  "burgers-D3-seed2-a2000-l500.json",
+  "burgers-D3-seed3-a2000-l500.json",
+  "burgers-D3-seed4-a2000-l500.json",
+  "burgers-D3-seed5-a2000-l500.json"
+ ],
+ "wall_seconds": 2160.033695936203,
+ "complete": true
+}

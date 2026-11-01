@@ -1,0 +1,40 @@
+{
+  "bundle": "exp0024-diag",
+  "slug": "rodrimandub/af-pikans-exp-0024-t1-d1diag",
+  "dataset": "rodrimandub/af-pikans-exp0024-bundle",
+  "purpose": "diagnostico de la falla de la prueba corta (Burgers D1 20.11 % frente a la CPU): variacion de la GPU consigo misma y D1 en float64",
+  "recipe": "Burgers D1, semilla 1, Adam 200 / L-BFGS 50; float32 dos veces (un proceso cada una, con calentamiento) y float64 en la GPU",
+  "session_estimate_minutes": [
+    5,
+    12
+  ],
+  "accelerator": "NvidiaTeslaT4 (T4x2)",
+  "internet": false,
+  "approved_by": "researcher, chat 2026-10-20: \u00absi firmo\u00bb autorizando el bloque T1 de 40 corridas en Kaggle T4 condicionado a que la prueba corta pase (T1-plan.md, \u00abAutorizaci\u00f3n de lanzamiento\u00bb); orden: armar el bundle con el builder del 0018, hacer la prueba corta en la T4 y, si pasa y la estimaci\u00f3n es de 4 h o menos, lanzar el bloque",
+  "scope": "t1_d1_diagnostic_only",
+  "big_block_authorized": false,
+  "launch_status": "complete_2026-10-20",
+  "hypothesis": "ninguna: verificacion previa",
+  "code_surface": "experiments/mechanisms/EXP-0024-wind-tunnel-protocol",
+  "remote_execution": true,
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "component_sha256": {
+    "diag/t1_d1_diag_gpu.py": "e19a22f53ee18f6c83cc0d9ecdcccdd31101919d09bd2808474a3811b80448ab",
+    "diag/kernel-metadata.json": "b7a5505eb931f565288dae575ef87d7c49ec2c7c204bffc19ee5fbb7b48ff3c0",
+    "dataset/Allen_Cahn.mat": "f9175685675685ab8d2a850f0d212d16c709f55ed89b8fe078493ddcd3724aa0",
+    "dataset/burgers_coleHopf_1025x129.npz": "7af8967648caaf2156529551b6df9e6ea6e3d09c7bc0070a3ffca370ba77f026",
+    "dataset/cpu_reference.json": "bf1bb5ed80fe84117acc63a8fc89df5601e360c64f31b3eca6a192f770d37e8d",
+    "dataset/d1_state_f64.pt": "2f9482ddc83e726cef2af4ce09713155e21041f2698400c66559f931ea1928a0",
+    "dataset/pikan_campaign.py": "1e1b94264bd9f3be740af632029dd45867045839b189f33808736ce1095c3341",
+    "dataset/regrid.py": "e8f9c5c0061e262233200968cf050b7780349bc2930c2a645d8f6c70f2ef6fa0",
+    "dataset/seeds.py": "04dba44a4100e1aa2a20a71ebe0e839ed149690e555a5f7c274560c25daed087",
+    "dataset/settling_focus.py": "5b686a6ffa2bb1ab522620153d8901d371d04f70bf86fa3a6880d7a554e9cc33",
+    "dataset/stall_handoff.py": "a513ba64cade9e2a923097ef0228fbcbe36e4c0c8a80d5c9cf81b1a3d067c587",
+    "dataset/sweep.py": "933e231957d5cfda4b697d7a3a2345149abd4bd8ba8fb9cdd6d53500ff945337",
+    "dataset/t1_trainer.py": "5bee9dd152fd690ed309f6a8dc63ff76fc8b0c0ebda1dac353602479da8bfca2"
+  },
+  "launch_authorized_by": "researcher, chat 2026-10-20: \u00abopcion 2\u00bb \u2014 repetir Burgers D1 dos veces en la T4 en float32 y correr Burgers D1 en float64 en CPU y GPU con el mismo presupuesto reducido",
+  "results": "experiments/mechanisms/EXP-0024-wind-tunnel-protocol/results/t1-d1-diag-gpu",
+  "launched_at": "2026-10-20T19:11:13-0600"
+}

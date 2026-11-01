@@ -1,0 +1,22 @@
+{
+ "ac-CTRL": {
+  "primary_adam": 0.6884587960209257,
+  "primary_final": 0.5825635054556182,
+  "total_seconds": 247.84604629996466
+ },
+ "ac-D1": {
+  "primary_adam": 0.6094340525333153,
+  "primary_final": 0.5177790433972341,
+  "total_seconds": 222.6359290999826
+ },
+ "burgers-CTRL": {
+  "primary_adam": 0.27817398122649223,
+  "primary_final": 0.14589979949277335,
+  "total_seconds": 472.62863140000263
+ },
+ "burgers-D1": {
+  "primary_adam": 0.20635604807182084,
+  "primary_final": 0.15575072022889064,
+  "total_seconds": 267.31749769998714
+ }
+}

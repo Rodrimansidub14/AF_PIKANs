@@ -1,0 +1,70 @@
+{
+ "verdict": {
+  "threshold": 1e-09,
+  "float64_max_rel_diff": 4.2352377117116596e-11,
+  "innocent": true,
+  "float32_max_rel_diff": 1.5904001302913813e-06,
+  "device_b": "cuda:0",
+  "tiny": false
+ },
+ "results": {
+  "float64": {
+   "centros_capa1": 2.074798969679601e-16,
+   "anchos_capa1": 2.916154392083982e-16,
+   "coeficientes_capa1": 2.307026717981824e-11,
+   "centros_capa2": 6.689046208784035e-14,
+   "anchos_capa2": 2.2610683765206512e-13,
+   "coeficientes_capa2": 4.2352377117116596e-11,
+   "salida_del_modelo": 9.091032825144736e-14,
+   "max_abs_coef_capa1": 9.890591817773853e-12,
+   "diag_fit_error_cpu_gpu": [
+    [
+     0.0010672945286875541,
+     0.00106729452868754
+    ],
+    [
+     0.0020423657555583945,
+     0.00204236575555849
+    ]
+   ],
+   "diag_cond_capa1_antes_cpu_gpu": [
+    1742630335402936.2,
+    1503954407422336.0
+   ],
+   "diag_cond_capa1_despues_cpu_gpu": [
+    41676.816685392754,
+    41676.8166852836
+   ],
+   "max_rel_diff": 4.2352377117116596e-11
+  },
+  "float32": {
+   "centros_capa1": 8.272588571358643e-08,
+   "anchos_capa1": 2.015917376873571e-07,
+   "coeficientes_capa1": 2.311731778070879e-07,
+   "centros_capa2": 1.9838559351930565e-07,
+   "anchos_capa2": 5.924683435592764e-07,
+   "coeficientes_capa2": 1.5904001302913813e-06,
+   "salida_del_modelo": 1.3349980199248634e-07,
+   "max_abs_coef_capa1": 5.8673322200775146e-08,
+   "diag_fit_error_cpu_gpu": [
+    [
+     0.0010672945813761665,
+     0.0010672945680285843
+    ],
+    [
+     0.0020423637907969003,
+     0.0020423642630510064
+    ]
+   ],
+   "diag_cond_capa1_antes_cpu_gpu": [
+    1708388526073466.5,
+    1887444863373275.0
+   ],
+   "diag_cond_capa1_despues_cpu_gpu": [
+    41676.75179045425,
+    41676.75386063032
+   ],
+   "max_rel_diff": 1.5904001302913813e-06
+  }
+ }
+}
