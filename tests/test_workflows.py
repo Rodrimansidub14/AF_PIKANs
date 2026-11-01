@@ -24,7 +24,16 @@ class WorkflowRegistryTests(unittest.TestCase):
         self.assertEqual(projection["ambiguity_policy"], "conservative")
         self.assertEqual(
             {item["id"] for item in projection["items"]},
-            {"literature", "hypothesis", "notebook", "run", "evaluation", "synthesis"},
+            {
+                "literature",
+                "hypothesis",
+                "notebook",
+                "run",
+                "evaluation",
+                "synthesis",
+                "mechanism",
+                "baseline",
+            },
         )
         self.assertEqual(
             {item["role"] for item in projection["items"]},

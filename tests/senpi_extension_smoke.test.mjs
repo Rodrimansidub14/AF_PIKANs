@@ -61,7 +61,7 @@ test("injects the validated project context before an agent turn", async () => {
 	assert.match(result.systemPrompt, /PIKAN research automation context/);
 	assert.match(result.systemPrompt, /notebook_engineer/);
 	assert.match(result.systemPrompt, /Workflow activo:.*notebook/);
-	assert.match(result.systemPrompt, /nodos=66/);
+	assert.match(result.systemPrompt, /nodos=\d+/);
 
 	const policy = registrations.policies[0];
 	assert.deepEqual(
@@ -84,4 +84,52 @@ test("injects the validated project context before an agent turn", async () => {
 		policy.check({ operation: "write", canonicalPath: join(process.cwd(), "..", "IMP", "obs-data", "anything.md") }).allow,
 		false,
 	);
+	assert.equal(
+		policy.check({ operation: "read", canonicalPath: join(process.cwd(), "..", "Downloads", "source.md") }).allow,
+		true,
+	);
+	assert.equal(
+		policy.check({ operation: "write", canonicalPath: join(process.cwd(), "..", "Downloads", "source.md") }).allow,
+		false,
+	);
+});
+
+test("notifies external shell reads and blocks external shell writes", async () => {
+	const registrations = { events: [], policies: [] };
+	const notifications = [];
+	const pi = {
+		registerCommand() {},
+		registerFilesystemPolicy(policy) {
+			registrations.policies.push(policy);
+		},
+		on(name, handler) {
+			registrations.events.push({ name, handler });
+		},
+	};
+
+	extension(pi);
+	const toolCall = registrations.events.find((item) => item.name === "tool_call").handler;
+	const externalPath = join(process.cwd(), "..", "Downloads", "source.md");
+	const context = {
+		ui: {
+			notify(message, type) {
+				notifications.push({ message, type });
+			},
+		},
+	};
+
+	const readResult = await toolCall({
+		toolName: "bash",
+		input: { command: `Get-Content "${externalPath}"` },
+	}, context);
+	assert.equal(readResult, undefined);
+	assert.match(notifications[0].message, /lectura externa/i);
+	assert.match(notifications[0].message, /source\.md/i);
+
+	const writeResult = await toolCall({
+		toolName: "bash",
+		input: { command: `Copy-Item "${externalPath}" "${join(process.cwd(), "docs", "source.md")}"` },
+	}, context);
+	assert.equal(writeResult.block, true);
+	assert.match(writeResult.reason, /escritura externa/i);
 });

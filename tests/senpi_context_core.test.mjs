@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { join } from "node:path";
+import * as contextCore from "../.senpi/extensions/pikan-research-context-core.mjs";
 
 import {
 	filesystemDecision,
@@ -25,7 +26,7 @@ const PACK = {
 			id: "literature_scout",
 			purpose: "Leer literatura y proponer evidencia.",
 			read_paths: ["PIKAN-Vault/PIKAN-Vault", "context", "docs"],
-			write_paths: ["var/agent_runs"],
+			write_paths: ["var/agent_runs", "PIKAN-Vault/PIKAN-Vault"],
 			approval_required: ["modify_vault_note", "modify_ontology"],
 		},
 		{
@@ -163,6 +164,49 @@ test("allows declared notebook reads and writes for notebook_engineer", () => {
 	);
 });
 
+test("allows literature_scout to write a canonical vault note", () => {
+	const result = filesystemDecision({
+		root: ROOT,
+		role: PACK.roles[0],
+		operation: "write",
+		canonicalPath: join(ROOT, "PIKAN-Vault", "PIKAN-Vault", "concepts", "Adaptive_Focus.md"),
+	});
+
+	assert.deepEqual(result, { allow: true });
+});
+
+test("keeps research-control paths protected for literature_scout", () => {
+	for (const relativePath of [
+		"context/agent-policy.toml",
+		"workflow/index.toml",
+		".senpi/extensions/pikan-research-context-core.mjs",
+		"var/context/senpi-context.json",
+	]) {
+		const result = filesystemDecision({
+			root: ROOT,
+			role: PACK.roles[0],
+			operation: "write",
+			canonicalPath: join(ROOT, ...relativePath.split("/")),
+		});
+
+		assert.equal(result.allow, false, relativePath);
+	}
+});
+
+test("limits shell mutations to the canonical vault and literature_scout", () => {
+	const command = "Move-Item .\\var\\agent_runs\\draft.md .\\PIKAN-Vault\\PIKAN-Vault\\draft.md";
+
+	assert.equal(contextCore.canMutateCanonicalVault?.({ role: PACK.roles[0], command }), true);
+	assert.equal(contextCore.canMutateCanonicalVault?.({ role: PACK.roles[1], command }), false);
+	assert.equal(
+		contextCore.canMutateCanonicalVault?.({
+			role: PACK.roles[0],
+			command: "Move-Item .\\var\\agent_runs\\draft.md .\\PIKAN-Vault\\draft.md",
+		}),
+		false,
+	);
+});
+
 test("denies outside-root and protected writes", () => {
 	const role = PACK.roles[1];
 	const cases = [
@@ -176,6 +220,45 @@ test("denies outside-root and protected writes", () => {
 		const result = filesystemDecision({ root: ROOT, role, operation: "write", canonicalPath });
 		assert.equal(result.allow, false, canonicalPath);
 	}
+});
+
+test("allows external reads with a notice but denies external writes", () => {
+	const externalPath = join(ROOT, "..", "Downloads", "source.md");
+	const readResult = filesystemDecision({
+		root: ROOT,
+		role: PACK.roles[0],
+		operation: "read",
+		canonicalPath: externalPath,
+	});
+
+	assert.equal(readResult.allow, true);
+	assert.match(readResult.notice, /lectura externa/i);
+	assert.match(readResult.notice, /source\.md/i);
+
+	const writeResult = filesystemDecision({
+		root: ROOT,
+		role: PACK.roles[0],
+		operation: "write",
+		canonicalPath: externalPath,
+	});
+	assert.equal(writeResult.allow, false);
+});
+
+test("classifies external shell reads and mutations", () => {
+	const externalPath = join(ROOT, "..", "Downloads", "source.md");
+	const readCommand = `Get-Content "${externalPath}"`;
+	const mutationCommand = `Copy-Item "${externalPath}" "${join(ROOT, "docs", "source.md")}"`;
+
+	assert.equal(typeof contextCore.externalReadNotice, "function");
+	assert.match(
+		contextCore.externalReadNotice({ root: ROOT, command: readCommand }),
+		/lectura externa/i,
+	);
+	assert.equal(typeof contextCore.externalMutationReason, "function");
+	assert.match(
+		contextCore.externalMutationReason({ root: ROOT, command: mutationCommand }),
+		/escritura externa/i,
+	);
 });
 
 test("denies a role from writing outside its declared surface", () => {
@@ -314,4 +397,108 @@ test("renders an actionable system context and fail-closed notice", () => {
 	});
 	assert.match(blocked, /Context unavailable/);
 	assert.match(blocked, /contrato inválido/);
+});
+
+test("protects the verifier from every role", () => {
+	const proposer = {
+		id: "mechanism_proposer",
+		read_paths: ["src", "evals/problems", "evals/suites"],
+		write_paths: ["var/agent_runs", "src/mechanisms"],
+	};
+
+	for (const target of [
+		join(ROOT, "evals", "graders", "core.py"),
+		join(ROOT, "evals", "baselines", "heat_1d@model.pikan.baseline.json"),
+		join(ROOT, "evals", "suites", "tier1_regression.yaml"),
+		join(ROOT, "evals", "problems", "heat_1d", "problem.yaml"),
+	]) {
+		const result = filesystemDecision({
+			root: ROOT,
+			role: proposer,
+			operation: "write",
+			canonicalPath: target,
+		});
+		assert.equal(result.allow, false, `deberia bloquear escritura en ${target}`);
+	}
+});
+
+test("keeps graders and baselines unreadable for the mechanism proposer", () => {
+	const proposer = {
+		id: "mechanism_proposer",
+		read_paths: ["src", "evals/problems", "evals/suites"],
+		write_paths: ["var/agent_runs", "src/mechanisms"],
+	};
+
+	assert.equal(
+		filesystemDecision({
+			root: ROOT,
+			role: proposer,
+			operation: "read",
+			canonicalPath: join(ROOT, "evals", "graders", "core.py"),
+		}).allow,
+		false,
+	);
+	assert.equal(
+		filesystemDecision({
+			root: ROOT,
+			role: proposer,
+			operation: "read",
+			canonicalPath: join(ROOT, "evals", "problems", "heat_1d", "problem.yaml"),
+		}).allow,
+		true,
+	);
+});
+
+test("lets the proposer write its declared mechanism surface", () => {
+	const proposer = {
+		id: "mechanism_proposer",
+		read_paths: ["src"],
+		write_paths: ["var/agent_runs", "src/mechanisms"],
+	};
+
+	assert.deepEqual(
+		filesystemDecision({
+			root: ROOT,
+			role: proposer,
+			operation: "write",
+			canonicalPath: join(ROOT, "src", "mechanisms", "residual_guided.py"),
+		}),
+		{ allow: true },
+	);
+	assert.equal(
+		filesystemDecision({
+			root: ROOT,
+			role: proposer,
+			operation: "write",
+			canonicalPath: join(ROOT, "src", "research_pipeline", "pipeline.py"),
+		}).allow,
+		false,
+	);
+});
+
+test("reserves accepted claims for the human researcher", () => {
+	const runner = {
+		id: "experiment_runner",
+		read_paths: ["registry"],
+		write_paths: ["var", "artifacts", "registry/runs.jsonl"],
+	};
+
+	assert.deepEqual(
+		filesystemDecision({
+			root: ROOT,
+			role: runner,
+			operation: "write",
+			canonicalPath: join(ROOT, "registry", "runs.jsonl"),
+		}),
+		{ allow: true },
+	);
+	assert.equal(
+		filesystemDecision({
+			root: ROOT,
+			role: runner,
+			operation: "write",
+			canonicalPath: join(ROOT, "registry", "claims.jsonl"),
+		}).allow,
+		false,
+	);
 });

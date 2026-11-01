@@ -166,6 +166,7 @@ tags: #found #pinn #sciml
             {
                 "literature_scout",
                 "hypothesis_planner",
+                "mechanism_proposer",
                 "notebook_engineer",
                 "experiment_runner",
                 "evaluator",
@@ -174,13 +175,13 @@ tags: #found #pinn #sciml
         )
         self.assertEqual(
             {gate["id"] for gate in pack["gates"]},
-            {"scope", "hypothesis", "code_surface", "scientific_claim"},
+            {"scope", "hypothesis", "code_surface", "eval_integrity", "scientific_claim"},
         )
         self.assertEqual(pack["graph"]["nodes"], len(graph["nodes"]))
         self.assertEqual(pack["graph"]["edges"], len(graph["edges"]))
         self.assertEqual(pack["notebooks"]["count"], graph["notebook_audit"]["count"])
         self.assertEqual(pack["workflow"]["default"], "literature")
-        self.assertEqual(len(pack["workflow"]["items"]), 6)
+        self.assertEqual(len(pack["workflow"]["items"]), 8)
         self.assertNotIn(str(PROJECT_ROOT), serialized)
 
 
