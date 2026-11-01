@@ -1,0 +1,21 @@
+{
+  "approved_by": "researcher: EXP-0012 signed 2026-10-04 (chat: firmo EXP-0012); quota 30 h renewed",
+  "preregistration": "experiments/heat/EXP-0012-heat-rad-uniform-lbfgs/spec.md",
+  "session_cap_seconds": 2400,
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "component_sha256": {
+    "heat_lbfgs_uniform_runner.py": "226e882ea4aa0ee11100c5845239902aaa43002484fa69fa4ca23000654f6734",
+    "af_sciml_model.py": "934687a265c2b2cae0c375cc30365e2d52e0b1d3edfff7cd977db0b59e4d7767",
+    "seed-901-adam-final.pt": "276f333d6c53fbef174a5eb612ae64cb72a728c9ac6dfc237bb697efa58535f3",
+    "heat-seed-901.npz": "c0901df4a0aaad05656bfa779297c77774590b393e06156b6cdd300a0d425213",
+    "seed-902-adam-final.pt": "093cf763e976ea930a09acef314cc3396f1b8e3fcb671812bf601d8e4a6a465a",
+    "heat-seed-902.npz": "357844a4bee6599a327f0c44eef116b30be51070342a9286f29f6c5a63e8a314",
+    "seed-903-adam-final.pt": "9c00d1c392672ae2e2b466dadbf98e7e01ad12f05f56be4128f5ff8582a263d7",
+    "heat-seed-903.npz": "3eb8aed4319f1c96f91049c3429020bc5f25c820f7440f4a94589a7f5296c5da",
+    "seed-904-adam-final.pt": "9453b9c0f7a0d54a03c79df4b73d16836829c2d304656c058f8eb26fae98bace",
+    "heat-seed-904.npz": "cec4e6613f3154cdb78b495cb0d0f76caccbb2ef74375a23913f5e0a1a21e291",
+    "seed-905-adam-final.pt": "dc5a51635d145a4924eca42a69cd28800593a678622469c43d059a82a7d3549c",
+    "heat-seed-905.npz": "6b9e64f1631befd801be0bdc320c6498396d4d6fb9dbaec8b5f4b07a55d66013"
+  }
+}
