@@ -1,0 +1,37 @@
+{
+  "bundle": "exp0016-stage_a",
+  "slug": "rodrimandub/af-pikans-exp-0016-stage-a",
+  "dataset": "rodrimandub/af-pikans-exp0016-bundle",
+  "purpose": "etapa A del EXP-0016 (techo del traspaso Adam -> L-BFGS, oraculo oracle_ceiling): barrido de traspaso por semilla; la referencia solo puntua despues de entrenar",
+  "recipe": "Burgers RBF48 semillas 301-305 (20000 Adam f32, L-BFGS tope 600 s, parada por meseta) y despues Allen-Cahn RBF16 semillas 601-603 (40000 Adam, tope 300 s); malla 0.25/0.40/0.60/0.80/1.00; calentamiento por proceso; un proceso por semilla, dos ranuras (una por GPU). HEAT NO.",
+  "session_estimate_minutes": [
+    150,
+    300
+  ],
+  "accelerator": "NvidiaTeslaT4 (un T4 usado)",
+  "internet": false,
+  "approved_by": "researcher, chat 2026-10-19: firmo EXP-0016 v2 (etapas A y B), aprobo el uso de la referencia (oraculo y etiquetas de B1) y ordeno: 'lanza la etapa A en Burgers (301-305) y despues Allen-Cahn (601-603) en el mismo kernel, con calentamiento. Heat no.'",
+  "scope": "stage_A_burgers_allen_cahn",
+  "big_block_authorized": true,
+  "launch_status": "complete_2026-10-19",
+  "caps": "no se despacha trabajo nuevo despues de 3.5 h; se matan los trabajos en curso a las 5.0 h (tope duro del spec)",
+  "hypothesis": "ninguna: no puntua hipotesis; fija el presupuesto y la reproducibilidad de la etapa A",
+  "code_surface": "experiments/mechanisms/EXP-0016-stall-handoff y src/mechanisms",
+  "remote_execution": true,
+  "campaign_script_note": "pikan_campaign.py (sha 1e1b94...) = el de la campana burgers-close (sha 4dab23..., recuperado del cuaderno) mas las opciones --n-col y --lbfgs-dtype; con sus valores por defecto (0 y same) la receta es identica. Diff verificado el 2026-10-19",
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "component_sha256": {
+    "dataset/sweep.py": "933e231957d5cfda4b697d7a3a2345149abd4bd8ba8fb9cdd6d53500ff945337",
+    "dataset/stall_handoff.py": "a513ba64cade9e2a923097ef0228fbcbe36e4c0c8a80d5c9cf81b1a3d067c587",
+    "dataset/settling_focus.py": "5b686a6ffa2bb1ab522620153d8901d371d04f70bf86fa3a6880d7a554e9cc33",
+    "dataset/pikan_campaign.py": "1e1b94264bd9f3be740af632029dd45867045839b189f33808736ce1095c3341",
+    "dataset/burgers_coleHopf_1025x129.npz": "7af8967648caaf2156529551b6df9e6ea6e3d09c7bc0070a3ffca370ba77f026",
+    "dataset/Allen_Cahn.mat": "f9175685675685ab8d2a850f0d212d16c709f55ed89b8fe078493ddcd3724aa0",
+    "stage_a/stage_a_gpu.py": "34aecffb61bf01c6d16deab4612bdd19dfbc20b0e51c3c23a1b7703c51581535",
+    "stage_a/kernel-metadata.json": "892d242f27916c520463ecd0f1737c7fd1cb71f34e15d28f56d679b420057da0"
+  },
+  "launched_at": "2026-10-19T17:33:05-0600",
+  "launch_authorized_by": "researcher, chat 2026-10-19: 'Si: lanza la etapa A en Burgers (301-305) y despues Allen-Cahn (601-603) en el mismo kernel, con calentamiento. Heat no. Prepara el approval.json y avisame al terminar.'",
+  "results": "experiments/mechanisms/EXP-0016-stall-handoff/results/stage-a"
+}

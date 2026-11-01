@@ -1,0 +1,30 @@
+{
+ "burgers": {
+  "adam_steps": 200,
+  "adam_seconds": 194.18758420000086,
+  "sec_per_adam_step": 0.9709379210000043,
+  "loss_after_adam": 0.22734421491622925,
+  "lbfgs_seconds": 26.272633599990513,
+  "lbfgs_iterations": 25,
+  "lbfgs_evals": 27,
+  "sec_per_lbfgs_iteration": 1.0509053439996205,
+  "evals_per_iteration": 1.08,
+  "loss_after_lbfgs": 0.2109164595603943,
+  "finite": true,
+  "threads": 4
+ },
+ "ac": {
+  "adam_steps": 200,
+  "adam_seconds": 70.36370490002446,
+  "sec_per_adam_step": 0.3518185245001223,
+  "loss_after_adam": 0.020204350352287292,
+  "lbfgs_seconds": 21.27343080000719,
+  "lbfgs_iterations": 50,
+  "lbfgs_evals": 55,
+  "sec_per_lbfgs_iteration": 0.4254686160001438,
+  "evals_per_iteration": 1.1,
+  "loss_after_lbfgs": 0.009936170652508736,
+  "finite": true,
+  "threads": 4
+ }
+}

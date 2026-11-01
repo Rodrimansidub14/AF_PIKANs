@@ -1,0 +1,35 @@
+{
+  "bundle": "exp0016-precheck",
+  "slug": "rodrimandub/af-pikans-exp-0016-precheck-gpu",
+  "dataset": "rodrimandub/af-pikans-exp0016-bundle",
+  "purpose": "prueba previa (ii-GPU): ruido de GPU con tres controles y k = 1.00 del barrido corto; tiempos de L-BFGS desde cada punto de la malla",
+  "recipe": "Burgers RBF48 (semilla 301) y Allen-Cahn RBF16 (semilla 601), f32, 4000 pasos de Adam, L-BFGS limitado a 400 iteraciones; 3 controles + 1 barrido por problema",
+  "session_estimate_minutes": [
+    20,
+    25
+  ],
+  "accelerator": "NvidiaTeslaT4 (un T4 usado)",
+  "internet": false,
+  "approved_by": "researcher, chat 2026-10-19: firmo EXP-0016 (etapas A y B); aprobo el uso de la referencia (oraculo y etiquetas de B1); pidio preparar el bundle con la prueba previa de GPU y NO lanzar el bloque grande",
+  "scope": "precheck_only",
+  "big_block_authorized": false,
+  "launch_status": "complete_2026-10-19",
+  "hypothesis": "ninguna: no puntua hipotesis; fija el presupuesto y la reproducibilidad de la etapa A",
+  "code_surface": "experiments/mechanisms/EXP-0016-stall-handoff y src/mechanisms",
+  "remote_execution": true,
+  "campaign_script_note": "pikan_campaign.py (sha 1e1b94...) = el de la campana burgers-close (sha 4dab23..., recuperado del cuaderno) mas las opciones --n-col y --lbfgs-dtype; con sus valores por defecto (0 y same) la receta es identica. Diff verificado el 2026-10-19",
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "component_sha256": {
+    "dataset/sweep.py": "933e231957d5cfda4b697d7a3a2345149abd4bd8ba8fb9cdd6d53500ff945337",
+    "dataset/stall_handoff.py": "a513ba64cade9e2a923097ef0228fbcbe36e4c0c8a80d5c9cf81b1a3d067c587",
+    "dataset/settling_focus.py": "5b686a6ffa2bb1ab522620153d8901d371d04f70bf86fa3a6880d7a554e9cc33",
+    "dataset/pikan_campaign.py": "1e1b94264bd9f3be740af632029dd45867045839b189f33808736ce1095c3341",
+    "dataset/burgers_coleHopf_1025x129.npz": "7af8967648caaf2156529551b6df9e6ea6e3d09c7bc0070a3ffca370ba77f026",
+    "dataset/Allen_Cahn.mat": "f9175685675685ab8d2a850f0d212d16c709f55ed89b8fe078493ddcd3724aa0",
+    "precheck/precheck_gpu.py": "70c58daacd9d9289dfb1af51124e4d6d297c7011d2406430b94df66808236a08",
+    "precheck/kernel-metadata.json": "0aee1f5fd64a381a1688234789ef6a85f5d410b4377bd92a96f737a12a9ca198"
+  },
+  "launch_authorized_by": "researcher, chat 2026-10-19: 'Si: sube el dataset af-pikans-exp0016-bundle y lanza solo el kernel af-pikans-exp0016-precheck en Kaggle (T4). No lances el bloque grande.'",
+  "results": "experiments/mechanisms/EXP-0016-stall-handoff/results/precheck-gpu"
+}

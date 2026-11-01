@@ -1,0 +1,419 @@
+{
+ "info": {
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "device": "cuda:0",
+  "tiny": false,
+  "gpu": "Tesla T4",
+  "cudnn_deterministic": false,
+  "deterministic_algorithms": false
+ },
+ "recipe": {
+  "adam_steps": 4000,
+  "lbfgs_max_iter": 400,
+  "lbfgs_seconds_cap": 300.0
+ },
+ "problems": {
+  "burgers": {
+   "comparison": {
+    "adam_state": {
+     "noise": 0.34770791608507906,
+     "deviation": 0.35466817941508333,
+     "within_noise": true,
+     "pair": [
+      0.34770791608507906,
+      0.34770791608507906,
+      0.0
+     ],
+     "dev": [
+      0.35466817941508333,
+      0.0,
+      0.0
+     ],
+     "max_abs_noise": 0.8417175635695457
+    },
+    "lbfgs_state": {
+     "noise": 0.34750484163569784,
+     "deviation": 0.35445326033384883,
+     "within_noise": true,
+     "pair": [
+      0.34750484163569784,
+      0.34750484163569784,
+      0.0
+     ],
+     "dev": [
+      0.35445326033384883,
+      0.0,
+      0.0
+     ],
+     "max_abs_noise": 0.8414123356342316
+    },
+    "adam_error": {
+     "noise": 0.3895252117701179,
+     "deviation": 0.2803297187201816,
+     "within_noise": true
+    },
+    "lbfgs_error": {
+     "noise": 0.5456584345980338,
+     "deviation": 1.2009872662988197,
+     "within_noise": false
+    }
+   },
+   "timing": {
+    "sec_per_adam_step_controls": [
+     0.03949052760325,
+     0.03933136829149998,
+     0.03932399569100002
+    ],
+    "sec_per_adam_step_sweep": 0.03932298568700003,
+    "record_seconds": 0.12899659899983362,
+    "record_overhead_fraction": 0.0008201093886067712,
+    "control_lbfgs_seconds": [
+     21.072995589000016,
+     21.144430681000017,
+     20.999754144000008
+    ],
+    "control_lbfgs_iterations": [
+     400,
+     400,
+     400
+    ],
+    "control_lbfgs_status": [
+     "lbfgs_iter_cap",
+     "lbfgs_iter_cap",
+     "lbfgs_iter_cap"
+    ],
+    "sweep_lbfgs": {
+     "0.25": {
+      "k": 1000,
+      "seconds": 21.022029673000134,
+      "iterations": 400,
+      "status": "lbfgs_iter_cap",
+      "cap": 417.9723822940001,
+      "final_error": 0.02407182277662392,
+      "error_at_handoff": 0.09956972005783758
+     },
+     "0.4": {
+      "k": 1600,
+      "seconds": 20.91189743899986,
+      "iterations": 400,
+      "status": "lbfgs_iter_cap",
+      "cap": 394.377638973,
+      "final_error": 0.010909487563434964,
+      "error_at_handoff": 0.0784737022197373
+     },
+     "0.6": {
+      "k": 2400,
+      "seconds": 21.374586873,
+      "iterations": 400,
+      "status": "lbfgs_iter_cap",
+      "cap": 362.9164838679999,
+      "final_error": 0.004916128132594076,
+      "error_at_handoff": 0.04933893804624086
+     },
+     "0.8": {
+      "k": 3200,
+      "seconds": 21.403182619000063,
+      "iterations": 400,
+      "status": "lbfgs_iter_cap",
+      "cap": 331.45901380099986,
+      "final_error": 0.005491452999431641,
+      "error_at_handoff": 0.014967917151180512
+     },
+     "1.0": {
+      "k": 4000,
+      "seconds": 21.040336627999977,
+      "iterations": 400,
+      "status": "lbfgs_iter_cap",
+      "cap": 300.0,
+      "final_error": 0.003775608215219512,
+      "error_at_handoff": 0.010523215870693619
+     }
+    }
+   },
+   "trigger_loss": {
+    "0.05": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "no_stall",
+     "r_ref": 0.0005677118901067084
+    },
+    "0.1": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "no_stall",
+     "r_ref": 0.0005677118901067084
+    },
+    "0.2": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "no_stall",
+     "r_ref": 0.0005677118901067084
+    }
+   },
+   "trigger_settling": {
+    "q0.8_rho0.10": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "not_settled"
+    },
+    "q0.6_rho0.10": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "not_settled"
+    },
+    "q0.9_rho0.10": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "not_settled"
+    },
+    "q0.8_rho0.05": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "not_settled"
+    },
+    "q0.8_rho0.20": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "not_settled"
+    }
+   },
+   "wall_seconds": 809.405623174,
+   "trace_shapes": {
+    "steps": [
+     9
+    ],
+    "coeffs": [
+     9,
+     48,
+     2,
+     11
+    ],
+    "base": [
+     9,
+     48,
+     2
+    ],
+    "resid2": [
+     9,
+     8192
+    ],
+    "points": [
+     8192,
+     2
+    ],
+    "centers": [
+     11
+    ],
+    "width": [],
+    "lo": [
+     2
+    ],
+    "hi": [
+     2
+    ]
+   }
+  },
+  "ac": {
+   "comparison": {
+    "adam_state": {
+     "noise": 0.0,
+     "deviation": 0.0,
+     "within_noise": true,
+     "pair": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "dev": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "max_abs_noise": 0.0
+    },
+    "lbfgs_state": {
+     "noise": 0.0,
+     "deviation": 0.0,
+     "within_noise": true,
+     "pair": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "dev": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "max_abs_noise": 0.0
+    },
+    "adam_error": {
+     "noise": 0.0,
+     "deviation": 0.0,
+     "within_noise": true
+    },
+    "lbfgs_error": {
+     "noise": 0.0,
+     "deviation": 0.0,
+     "within_noise": true
+    }
+   },
+   "timing": {
+    "sec_per_adam_step_controls": [
+     0.01852551193024999,
+     0.01845433737175,
+     0.018511235020750007
+    ],
+    "sec_per_adam_step_sweep": 0.018555291116000093,
+    "record_seconds": 0.07656324499953371,
+    "record_overhead_fraction": 0.0010315554269789088,
+    "control_lbfgs_seconds": [
+     12.699826823000194,
+     12.605812354999898,
+     12.633779616000083
+    ],
+    "control_lbfgs_iterations": [
+     400,
+     400,
+     400
+    ],
+    "control_lbfgs_status": [
+     "lbfgs_iter_cap",
+     "lbfgs_iter_cap",
+     "lbfgs_iter_cap"
+    ],
+    "sweep_lbfgs": {
+     "0.25": {
+      "k": 1000,
+      "seconds": 12.690571268999975,
+      "iterations": 400,
+      "status": "lbfgs_iter_cap",
+      "cap": 355.6957337590004,
+      "final_error": 0.08500088519354675,
+      "error_at_handoff": 0.46214160346157346
+     },
+     "0.4": {
+      "k": 1600,
+      "seconds": 12.702289159999964,
+      "iterations": 400,
+      "status": "lbfgs_iter_cap",
+      "cap": 344.56449170400015,
+      "final_error": 0.07889333988006163,
+      "error_at_handoff": 0.25813859387162424
+     },
+     "0.6": {
+      "k": 2400,
+      "seconds": 12.529861553999808,
+      "iterations": 400,
+      "status": "lbfgs_iter_cap",
+      "cap": 329.8079033180004,
+      "final_error": 0.06086739607104811,
+      "error_at_handoff": 0.1368271459096222
+     },
+     "0.8": {
+      "k": 3200,
+      "seconds": 12.724987594999902,
+      "iterations": 400,
+      "status": "lbfgs_iter_cap",
+      "cap": 314.8281498450003,
+      "final_error": 0.050852238437288005,
+      "error_at_handoff": 0.10319313382097699
+     },
+     "1.0": {
+      "k": 4000,
+      "seconds": 12.633665775000054,
+      "iterations": 400,
+      "status": "lbfgs_iter_cap",
+      "cap": 300.0,
+      "final_error": 0.04892851097335458,
+      "error_at_handoff": 0.07773350896419226
+     }
+    }
+   },
+   "trigger_loss": {
+    "0.05": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "no_stall",
+     "r_ref": 0.001434936432821826
+    },
+    "0.1": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "no_stall",
+     "r_ref": 0.001434936432821826
+    },
+    "0.2": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "no_stall",
+     "r_ref": 0.001434936432821826
+    }
+   },
+   "trigger_settling": {
+    "q0.8_rho0.10": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "not_settled"
+    },
+    "q0.6_rho0.10": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "not_settled"
+    },
+    "q0.9_rho0.10": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "not_settled"
+    },
+    "q0.8_rho0.05": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "not_settled"
+    },
+    "q0.8_rho0.20": {
+     "k_t": 4000,
+     "fired": false,
+     "reason": "not_settled"
+    }
+   },
+   "wall_seconds": 398.8413746409999,
+   "trace_shapes": {
+    "steps": [
+     9
+    ],
+    "coeffs": [
+     9,
+     16,
+     2,
+     11
+    ],
+    "base": [
+     9,
+     16,
+     2
+    ],
+    "resid2": [
+     9,
+     9200
+    ],
+    "points": [
+     9200,
+     2
+    ],
+    "centers": [
+     11
+    ],
+    "width": [],
+    "lo": [
+     2
+    ],
+    "hi": [
+     2
+    ]
+   }
+  }
+ },
+ "all_within_noise": false
+}

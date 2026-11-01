@@ -1,0 +1,17 @@
+{
+  "id": "rodrimandub/af-pikans-exp-0016-warmup-check",
+  "title": "AF PIKANs EXP-0016 warmup check",
+  "code_file": "verify_warmup_gpu.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "false",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "rodrimandub/af-pikans-exp0016-bundle"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
