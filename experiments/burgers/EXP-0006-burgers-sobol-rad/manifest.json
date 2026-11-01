@@ -1,0 +1,218 @@
+{
+  "acceptance_gates": {
+    "metrics": {
+      "burgers/field_relative_l2": {
+        "direction": "minimize",
+        "required": true
+      },
+      "burgers/front_field_rmse_normalized": {
+        "direction": "minimize",
+        "required": true
+      },
+      "burgers/residual_rmse_abs": {
+        "direction": "minimize",
+        "required": true
+      },
+      "burgers/boundary_max_abs_error": {
+        "direction": "minimize",
+        "required": true
+      },
+      "burgers/initial_max_abs_error": {
+        "direction": "minimize",
+        "required": true
+      }
+    }
+  },
+  "artifacts": {
+    "expected": [
+      "metrics.json",
+      "decision_note.md",
+      "problem_status.json",
+      "versions.json",
+      "config.json",
+      "evidence_hashes.json",
+      "hardware.json",
+      "gpu_telemetry.csv",
+      "gpu_telemetry_status.json",
+      "burgers/pools.npz",
+      "burgers/sampling_signals.json",
+      "burgers/history.jsonl",
+      "burgers/diagnostic_signals.json",
+      "burgers/training_summary.json",
+      "burgers/validation.json",
+      "burgers/validation.npz",
+      "burgers/validation.html",
+      "burgers/training-losses-log.html",
+      "burgers/training-signals-log.html",
+      "burgers/signals.json",
+      "effective-manifest.json"
+    ]
+  },
+  "focalization": {
+    "enabled": true,
+    "bounded_edit_surface": [
+      "src/mechanisms/rad.py",
+      "src/mechanisms/rad_callback.py"
+    ]
+  },
+  "hypothesis": {
+    "statement": "Fixed RBF-PIKAN: compare fixed Sobol versus RAD, five paired seeds.",
+    "expected_effect": "Lower independent field L2 and front error; quantify cost and physical guards.",
+    "falsification_condition": "Nonnegative paired mean log error ratio refutes an observed benefit; nonfinite/missing runs invalidate confirmatory interpretation."
+  },
+  "iteration": {
+    "domain_level": "canonical_pde",
+    "experiment_id": "EXP-0006",
+    "focalization_id": "paired_sobol_rad",
+    "hypothesis_id": "residual_localization",
+    "id": "burgers-sobol-rad-exp006",
+    "model_id": "rbf_fixed",
+    "problem_id": "burgers_pinnacle_1d",
+    "protocol_phase": "exploratory"
+  },
+  "model": {
+    "architecture": [
+      2,
+      16,
+      16,
+      1
+    ],
+    "basis_count": 11,
+    "centers": [
+      -1.05,
+      1.05
+    ],
+    "edge_base": "SiLU",
+    "expected_parameters": 3648,
+    "geometry_trainable": false,
+    "hidden_activation": "tanh",
+    "id": "rbf_fixed",
+    "implementation": "src/research_pipeline/sciml/rad_campaign.py",
+    "initialization": "Normal(0, 0.1/sqrt(input_width)) for edge coefficients and base weights",
+    "label": "RBF-PIKAN fija",
+    "width": 0.21
+  },
+  "parameter_decisions_markdown": "# EXP-0006: decisiones de par\u00e1metros \u2014 propuesta previa a corrida\n\n| Decisi\u00f3n | Valor | Fundamento |\n|---|---|---|\n| Problema | Burgers can\u00f3nico, nu=0.01/pi, x en [-1,1], t en [0,1], IC=-sin(pi*x), BC=0 | Contrato y verificador intactos de EXP-0005. |\n| Modelo | RBF-PIKAN [2,16,16,1], 3648 par\u00e1metros, centros/anchos fijos | Aislar pol\u00edtica de muestreo; no modificar capacidad. |\n| Entrenamiento | PINA/PyTorch float64, Adam 0.001, batch 1024 | Igual que el baseline. Estado Adam se conserva al adaptar. |\n| Interior | 8192 puntos iniciales Sobol, mismo pool por pareja | Conteo fijo; diagn\u00f3stico, IC, BC y validaci\u00f3n independientes. |\n| Frontera e IC | 512 por lado; 1024 en IC | Igual que EXP-0005, no se adaptan. |\n| Semillas reales | 201,202,203,204,205 | Nuevas; cinco pares, diez runs, no diez r\u00e9plicas por brazo. |\n| RAD | p_i=0.5/M+0.5*abs(r_i)^2/sum(abs(r)^2) | RAD k=2,c=1 sobre pool finito; 50% masa uniforme limita p\u00e9rdida de cobertura. Si residual cero, distribuci\u00f3n uniforme. |\n| Candidatos | 32768 Sobol independientes, stream=10*seed+7 | Cuatro veces el pool activo, soporte reproducible y costo acotado. Propuesta operativa, no hiperpar\u00e1metro \u00f3ptimo publicado. |\n| Refresco | desde paso 2000; cada 1000; hasta antes del paso 20000 | Warmup 10% del presupuesto; como m\u00e1ximo 18 refrescos. Medir costo, no asumir ganancia. |\n| Selecci\u00f3n | con reemplazo, RNG=10*seed+8 | Variante discreta expl\u00edcita de RAD; duplicados codifican probabilidad. Registrar puntos \u00fanicos/ESS; no atribuir reproducci\u00f3n exacta de la implementaci\u00f3n original. |\n| Correcci\u00f3n de importancia | ninguna | RAD cambia el objetivo espacial; no se presenta como estimador insesgado de la integral uniforme. |\n| AD de candidatos | chunks de 512, float64, gradientes solo para evaluar residual | No backprop a pesos ni uso de referencia; no cambia el RNG de entrenamiento. |\n| Presupuesto | 20000 pasos o 1200 s por brazo, verificado entre operaciones | Igual l\u00edmite operativo, costo adaptativo incluido; una operaci\u00f3n en curso puede sobrepasarlo. Timeout exterior2100s. Si alg\u00fan brazo no completa pasos, contraste de pasos iguales inconcluso; reportar tiempo y pasos reales. |\n| GPU | dos T4, m\u00e1ximo dos tareas concurrentes | Una tarea por GPU; cinco parejas. IDs 201\u2013205 control y 1201\u20131205 RAD solo para scheduler. Orden intercalado y alternado; slot real registrado. |\n| Timeout exterior | 2100 s por tarea; setup <=900 s | L\u00edmite nominal de cinco olas=10500 s m\u00e1s setup (~3.17 h), sin cola del proveedor. No promesa de tiempo exacto. |\n| Diagn\u00f3sticos | cada250 pasos, 256 puntos y 32 sensibilidades; m\u00e9tricas cada100 | Conserva instrumentaci\u00f3n baseline; RAD a\u00f1ade snapshots, probabilidades, puntos, ESS y costo cada refresh. |\n| W&B | offline en Kaggle, sync local posterior | No embebe secretos; un run y artefacto por brazo/problema/semilla. |\n| M\u00e9trica primaria | log(L2_RAD/L2_Sobol) por semilla; media y CI t95% | Unidad independiente: pareja. n=5 no garantiza potencia ni normalidad; publicar valores individuales. |\n| Secundarias | frente, IC/BC, residual, costo total, ejemplos vistos, cobertura | Un error global menor no basta para afirmar mejora f\u00edsica local. |\n| Delta pr\u00e1ctico propuesto | reducci\u00f3n20%: raz\u00f3n geom\u00e9trica RAD/Sobol <=0.8; referencia absoluta=0.8*media piloto | Decisi\u00f3n pr\u00e1ctica propuesta, no \u00f3ptimo publicado ni c\u00e1lculo de potencia. Requiere firma; valores en baseline-freeze-proposal.json. |\n| Umbrales | propuesta separada derivada del snapshot EXP-0005; pendientes de congelaci\u00f3n humana | No modifica evals ni convierte un screening en baseline aceptado. |\n| Cierre | hashes, notebook con tablas/Plotly log, archivo de resultados, reporte de fallos | El test final no se abre; no genera claim accepted. |\n\nFuentes: [Wu et al., RAD/RAR-D](https://arxiv.org/abs/2207.10289); [vRBA, 2026](https://www.nature.com/articles/s44387-026-00084-4). Los par\u00e1metros operativos anteriores son decisiones del proyecto, no una afirmaci\u00f3n de \u00f3ptimo SOTA.\n",
+  "problem": {
+    "sequence": [
+      "burgers"
+    ],
+    "burgers": {
+      "boundary_values": [
+        0.0,
+        0.0
+      ],
+      "definition": "raissi_pinnacle_1d",
+      "evaluation_id": "burgers_pinnacle_1d",
+      "field_scale": 1.0,
+      "front_region": "abs(x)<=5*nu and t>=1/pi",
+      "initial_condition": "-sin(pi*x)",
+      "nu": 0.003183098861837907,
+      "reference": "Cole-Hopf Gaussian convolution; Gauss-Hermite order 128",
+      "residual_scale": 2.0031830988618378,
+      "t": [
+        0.0,
+        1.0
+      ],
+      "validation_grid": {
+        "nt": 129,
+        "nx": 1025
+      },
+      "x": [
+        -1.0,
+        1.0
+      ]
+    }
+  },
+  "project": {
+    "name": "AF_PIKANs",
+    "ontology": "pikan-research"
+  },
+  "remote": {
+    "enable_internet": true,
+    "machine_shape": "NvidiaTeslaT4",
+    "max_parallel_seeds": 2,
+    "run_timeout_sec": 2100,
+    "runtime_dependencies": [
+      "pina-mathlab==0.3.2.post2609",
+      "wandb==0.30.0",
+      "plotly==7.1.0",
+      "scipy==1.15.3",
+      "pandas==2.2.3"
+    ],
+    "setup_timeout_sec": 900
+  },
+  "tracking": {
+    "entity": "man22611-uvg",
+    "group": "burgers-sobol-rad-EXP-0006",
+    "mode": "offline",
+    "project": "AF_PIKANS"
+  },
+  "training": {
+    "accelerator": "gpu",
+    "batch_size": 1024,
+    "boundary_points": 512,
+    "cpu_threads": 2,
+    "diagnostic_every": 250,
+    "diagnostic_points": 256,
+    "interior_points": 8192,
+    "learning_rate": 0.001,
+    "metric_log_every": 100,
+    "optimizer": "Adam",
+    "problem_overrides": {},
+    "sampling": "paired_sobol_rad",
+    "seconds_per_problem": 1200,
+    "seed_offsets": {
+      "boundary": 3,
+      "diagnostic": 2,
+      "initial": 4,
+      "interior": 1
+    },
+    "seeds": [
+      201,
+      1201,
+      1202,
+      202,
+      203,
+      1203,
+      1204,
+      204,
+      205,
+      1205
+    ],
+    "sensitivity_points": 32,
+    "steps_per_problem": 20000,
+    "rad": {
+      "candidate_points": 32768,
+      "chunk_size": 512,
+      "power": 2,
+      "uniform_fraction": 0.5,
+      "warmup_steps": 2000,
+      "refresh_every": 1000
+    }
+  },
+  "comparison_design": {
+    "paired_seeds": [
+      201,
+      202,
+      203,
+      204,
+      205
+    ],
+    "arms": [
+      "sobol",
+      "rad"
+    ],
+    "job_ids_are_not_random_seeds": true,
+    "primary": "paired_log_field_relative_l2_ratio",
+    "preregistration_status": "human_authorized_for_gpu_execution_2026-09-24",
+    "launch_ready": true
+  },
+  "research_status": {
+    "execution_authorized": true,
+    "scientific_preregistration_signed": true,
+    "baseline_frozen": true,
+    "scientific_accepted": false,
+    "submission_allowed": true
+  }
+}
