@@ -1,0 +1,43 @@
+{
+ "id": "ac-rerun-20260930__rbfw16__s603__lbfgs_final__2790fa1e",
+ "row": {
+  "problem": "allen_cahn_1d",
+  "campaign": "ac-rerun-20260930",
+  "arm": "rbf",
+  "width": "16",
+  "seed": "603",
+  "stage": "lbfgs_final",
+  "path": "experiments/allen-cahn/EXP-0008-baseline-v2-competitive/checkpoints/ac-rerun-20260930/ac/rbf16-seed-603/checkpoint-lbfgs-final.pt",
+  "bytes": "20389",
+  "sha256": "544c78cad41f78955de959d59c81bf27ecdce49dc4d8bbd6636cf8a41d945bdf",
+  "load": "ok",
+  "note": "pikan_campaign.RBFKAN(width=16, bases=11)"
+ },
+ "computed_at": "2026-10-05T07:19:53+00:00",
+ "labels": {
+  "err/u_rel_l2": 0.001670899515621986,
+  "err/flat_rel_l2": 0.0016708995156219859,
+  "err/all_rms_normalized": 0.0016708995156219859,
+  "err/gini": 0.7888424269442255,
+  "err/top1_mass": 0.7977562810827528,
+  "err/top5_mass": 0.9698914014546457,
+  "err/entropy_norm": 0.6026133656690792,
+  "region/steep5/point_fraction": 0.05004679572434855,
+  "region/steep5/err_mass": 0.003943006417584559,
+  "region/steep5/err_concentration": 0.07878639102695288,
+  "region/steep5/res_mass": 0.06746248828114712,
+  "region/steep5/res_concentration": 1.3479881639720155,
+  "region/interface/point_fraction": 0.6146002659967489,
+  "region/interface/err_mass": 0.9992265820154166,
+  "region/interface/err_concentration": 1.6258154076697102,
+  "region/interface/res_mass": 0.6356033503907947,
+  "region/interface/res_concentration": 1.034173568669033,
+  "audit/spearman_res_err": 0.11876070349676575,
+  "audit/top5_overlap": 0.13596059113300493,
+  "audit/err_mass_in_top5res": 0.3198366732849989,
+  "audit/res_mass_in_top5err": 0.14981986176376139,
+  "audit/spearman_res_err_in_steep5": -0.027270031130149006
+ },
+ "status": "ok",
+ "seconds": 1.4089613999822177
+}

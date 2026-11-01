@@ -1,0 +1,55 @@
+# Ficha de diagnóstico — EXP-0012__rbfpradadamuniformlbfgs__s901__lbfgs_final__8a9cabbb
+
+**Problema:** heat_1d · **Campaña:** EXP-0012 · **Brazo:** rbf+rad(adam)->uniform-lbfgs · **Semilla:** 901 · **Etapa:** lbfgs_final
+**Checkpoint:** `experiments/heat/EXP-0012-heat-rad-uniform-lbfgs/results/run-20261004/results/seed-901/checkpoint-lbfgs-uniform.pt` · **Familia de modelo:** af_sciml_model (rbf) · **Parámetros:** 3648 · **Precisión nativa:** float64 (señales en float64)
+
+> Exploratorio. `scientific_accepted=false`. Las señales no usan la referencia; las etiquetas sí y solo describen el resultado.
+
+## 1. Qué hizo el modelo (resultado, etiquetas)
+
+- Error relativo L2 por componente: flat = 3.728e-06, u = 3.728e-06
+- Error normalizado (RMS, todas las componentes): 3.728e-06; plano: 3.728e-06 (la medida plana mezcla unidades en piezo)
+- Concentración del error: Gini 0.4301; masa en el 5 % superior 0.3021; entropía normalizada 0.9249
+
+## 2. Dónde falla (regiones, definidas con la referencia)
+
+| Región | fracción de puntos | masa de error | concentración de error | masa de residuo | concentración de residuo |
+|---|---|---|---|---|---|
+| steep5 | 0.05001 | 0.03054 | 0.6107 | 0.09311 | 1.862 |
+| t_q1 | 0.2481 | 0.2136 | 0.8612 | 0.2702 | 1.089 |
+| t_q2 | 0.2481 | 0.3085 | 1.244 | 0.1611 | 0.6495 |
+| t_q3 | 0.2481 | 0.2856 | 1.151 | 0.1684 | 0.6788 |
+| t_q4 | 0.2558 | 0.1923 | 0.7515 | 0.4003 | 1.565 |
+
+## 3. Qué ve el residuo (señales sin referencia)
+
+- Residuo RMS 0.0002084; p95 0.0003499; máx 0.004088
+- Concentración: Gini 0.4672; masa en el 1 % / 5 % superior 0.349 / 0.5546; entropía normalizada 0.8398
+- Alineación del residuo con la estructura del modelo: Spearman(|r|,|∇u|) 0.08544; con |Δu| -0.1206
+
+## 4. Alineación residuo–error (auditoría con etiquetas)
+
+- Spearman(|r|, error) -0.04876; solape del 5 % superior 0.06337; masa de error en el 5 % superior del residuo 0.0435; masa de residuo en el 5 % superior del error 0.0401
+- Lectura: si el residuo no se alinea con el error, un muestreo guiado por residuo no puede dirigirse a donde está el error en este punto del entrenamiento.
+
+## 5. Capacidad y optimización
+
+- Rango efectivo del jacobiano 7.326 (por parámetro 0.002008); número de condición 8.835e+300
+- Bases (capa 0): efectivas 10.54; muertas 0; aristas pequeñas 0
+- ratio_struct_to_spacing_t = 19.32 (< 1 significa que la estructura del modelo es más fina que el espaciado de las bases de la capa 0)
+- ratio_struct_to_spacing_x = 6.063 (< 1 significa que la estructura del modelo es más fina que el espaciado de las bases de la capa 0)
+
+## 6. Señales de entrenamiento registradas
+
+- lbfgs_iterations: 1.088e+04
+- lbfgs_seconds: 700.8
+- meta_stop_reason: time_cap
+
+## 7. Modo(s) de falla asignado(s) (reglas fijas, no causales)
+
+- residual_misaligned
+
+## 8. Límites y datos ausentes
+
+- `gradterm/*`: un solo término residual (IC/BC por transformación dura): no hay conflicto entre términos para medir
+- `train/history`: sin archivo de historia de pérdida junto al checkpoint
