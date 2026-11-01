@@ -1,0 +1,17 @@
+{
+  "id": "rodrimandub/af-pikans-exp-0018-precheck",
+  "title": "AF PIKANs EXP-0018 precheck",
+  "code_file": "precheck_ceiling_gpu.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "false",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "rodrimandub/af-pikans-exp0018-bundle"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

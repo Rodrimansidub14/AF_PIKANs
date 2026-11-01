@@ -1,0 +1,147 @@
+{
+ "info": {
+  "tiny": false,
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "cutoff_s": 9000.0,
+  "hard_cap_s": 10800.0,
+  "arms": [
+   "B",
+   "P",
+   "H",
+   "N",
+   "O"
+  ],
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "ledger": [
+  {
+   "job": [
+    "burgers",
+    302
+   ],
+   "slot": 1,
+   "start": 1.9550000160961645e-06,
+   "end": 940.0096741389999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    301
+   ],
+   "slot": 0,
+   "start": 1.9550000160961645e-06,
+   "end": 1040.0127492319998,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    304
+   ],
+   "slot": 0,
+   "start": 1040.0127492319998,
+   "end": 1980.0224248239997,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    303
+   ],
+   "slot": 1,
+   "start": 940.0096741389999,
+   "end": 2040.025461142,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    601
+   ],
+   "slot": 1,
+   "start": 2040.025461142,
+   "end": 2660.032103901,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    305
+   ],
+   "slot": 0,
+   "start": 1980.0224248239997,
+   "end": 2740.034793003,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    603
+   ],
+   "slot": 0,
+   "start": 2740.034793003,
+   "end": 3300.041172594,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    602
+   ],
+   "slot": 1,
+   "start": 2660.032103901,
+   "end": 3440.044269571,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    604
+   ],
+   "slot": 0,
+   "start": 3300.041172594,
+   "end": 4920.057471104001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac",
+    605
+   ],
+   "slot": 1,
+   "start": 3440.044269571,
+   "end": 5100.059644449,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "finished_seeds": [
+  "ac-seed601.json",
+  "ac-seed602.json",
+  "ac-seed603.json",
+  "ac-seed604.json",
+  "ac-seed605.json",
+  "burgers-seed301.json",
+  "burgers-seed302.json",
+  "burgers-seed303.json",
+  "burgers-seed304.json",
+  "burgers-seed305.json"
+ ],
+ "wall_seconds": 5100.06148314476,
+ "complete": true
+}

@@ -1,0 +1,29 @@
+{
+ "passed": true,
+ "wall_seconds": 200.44216179847717,
+ "tiny": false,
+ "verdict": {
+  "burgers-301": {
+   "returncode": 0,
+   "b_state_sha256": "08ee57ce9944ac9c187e086a5aee9a199c43678cd69159a1d715e824324222c9",
+   "b_global_l2": 0.0004904473711512746,
+   "b_seconds": 169.713763583,
+   "b_iterations": 2972,
+   "stageA_state_sha256": "08ee57ce9944ac9c187e086a5aee9a199c43678cd69159a1d715e824324222c9",
+   "stageA_global_l2": 0.0004904473711512746,
+   "bit_identical": true,
+   "error_identical": true
+  },
+  "ac-601": {
+   "returncode": 0,
+   "b_state_sha256": "d8c5a738d46080f73fdac6822824c97874038a12dc5ecd8409682ec13388b8ab",
+   "b_global_l2": 0.0015907565128304667,
+   "b_seconds": 114.51729409800004,
+   "b_iterations": 2940,
+   "stageA_state_sha256": "d8c5a738d46080f73fdac6822824c97874038a12dc5ecd8409682ec13388b8ab",
+   "stageA_global_l2": 0.001590756512830467,
+   "bit_identical": true,
+   "error_identical": false
+  }
+ }
+}

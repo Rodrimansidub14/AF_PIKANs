@@ -1,0 +1,50 @@
+{
+ "burgers-301": {
+  "state_sha256": "08ee57ce9944ac9c187e086a5aee9a199c43678cd69159a1d715e824324222c9",
+  "global_l2": 0.0004904473711512746,
+  "lbfgs_iterations": 2972,
+  "lbfgs_seconds": 171.25927507100005
+ },
+ "burgers-302": {
+  "state_sha256": "063cdd1178e27e4bd0778a62556b2f511272859c1f2e358f929dde9ce1ac23d9",
+  "global_l2": 0.00023123217760949268,
+  "lbfgs_iterations": 2784,
+  "lbfgs_seconds": 161.27993614700017
+ },
+ "burgers-303": {
+  "state_sha256": "f1fff843718ef417533977cbede6d9b44c062446ff49dd25e85acd0397283480",
+  "global_l2": 0.0006101786177590869,
+  "lbfgs_iterations": 3558,
+  "lbfgs_seconds": 207.89348306600004
+ },
+ "burgers-304": {
+  "state_sha256": "f3078fc0288d17814863da5aaede5bac450602019709735f8444f949252a202e",
+  "global_l2": 0.0004927648610476911,
+  "lbfgs_iterations": 3014,
+  "lbfgs_seconds": 175.94666241000004
+ },
+ "burgers-305": {
+  "state_sha256": "70e46d8f33c22b994a6b5951fe848bafe60f3482eac3f7c9e74dfd083193a346",
+  "global_l2": 0.00046779226349221527,
+  "lbfgs_iterations": 2280,
+  "lbfgs_seconds": 130.50586532200032
+ },
+ "ac-601": {
+  "state_sha256": "d8c5a738d46080f73fdac6822824c97874038a12dc5ecd8409682ec13388b8ab",
+  "global_l2": 0.001590756512830467,
+  "lbfgs_iterations": 2940,
+  "lbfgs_seconds": 112.49141271200006
+ },
+ "ac-602": {
+  "state_sha256": "fa51d621fcb648dbfd5304aa83adeb81bf908d1206171fc3ad487255dd179415",
+  "global_l2": 0.002922068490861639,
+  "lbfgs_iterations": 3406,
+  "lbfgs_seconds": 126.74085342200033
+ },
+ "ac-603": {
+  "state_sha256": "61b3d2ac2953c9fe7b1173bee2083bebec34bb1d13ec563edadda71c97cca2e3",
+  "global_l2": 0.0014613532535770225,
+  "lbfgs_iterations": 2596,
+  "lbfgs_seconds": 97.50271443700058
+ }
+}
