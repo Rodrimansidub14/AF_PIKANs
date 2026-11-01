@@ -8,7 +8,7 @@
 
 **Tech Stack:** LaTeX/MiKTeX, `pdflatex`, `biber`, `biblatex`, PowerShell, Python, Graphify y Poppler (`pdftotext`/`pdftoppm`).
 
-**Spec:** `docs/superpowers/specs/2026-08-20-uvg-latex-migration-design.md`
+**Spec:** `specs/tooling/2026-08-20-uvg-latex-migration-design.md`
 
 ## Global Constraints
 
@@ -31,7 +31,7 @@
 - Modify: `.vscode/settings.json`
 
 **Interfaces:**
-- Consumes: la estructura de límites aprobada en `docs/superpowers/specs/2026-08-20-uvg-latex-migration-design.md`.
+- Consumes: la estructura de límites aprobada en `specs/tooling/2026-08-20-uvg-latex-migration-design.md`.
 - Produces: reglas de ubicación documentadas y una carpeta de salida LaTeX estable en `artifacts/latex/`.
 
 - [ ] **Step 1: Crear el mapa raíz** con las responsabilidades de `z-main.tex`, `src/`, `notebooks/`, `presentaciones/`, `PIKAN-Vault/`, `recursos/`, `reports/` y `artifacts/`.

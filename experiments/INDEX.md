@@ -1,7 +1,7 @@
 # Índice de experimentos (por problema)
 
 Estructura: `experiments/<problema>/<EXP-NNNN-slug>/{spec.md, manifest.json, decision.md, notebooks/, results/, figures/, checkpoints/}`.
-Los notebooks ejecutables viven en `notebooks/<problema>/<EXP>/` (la ontología fija `notebooks/` como raíz auditada). Rutas viejas → nuevas: `MOVED.md` en la raíz.
+Los notebooks ejecutables viven en `notebooks/<problema>/<EXP>/` (la ontología fija `notebooks/` como raíz auditada). Rutas viejas → nuevas: `docs/MOVED.md` en la raíz.
 
 | Problema | Experimentos | Resultados recientes (EXP-0008, 2026-09/10) |
 |---|---|---|

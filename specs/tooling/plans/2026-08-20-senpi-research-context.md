@@ -8,7 +8,7 @@
 
 **Tech Stack:** Python 3.12 standard library (`tomllib`, `unittest`), Node.js ESM, Senpi extension API, TOML/YAML/JSON contracts.
 
-**Spec:** `docs/superpowers/specs/2026-08-20-senpi-research-context-design.md`
+**Spec:** `specs/tooling/2026-08-20-senpi-research-context-design.md`
 
 ## Global Constraints
 

@@ -8,7 +8,7 @@
 
 **Tech Stack:** Obsidian Markdown, protected LaTeX metadata comments, LaTeX math blocks, existing `src.thesis_workspace` Markdown-to-LaTeX bridge, Python `unittest` verification.
 
-**Spec:** `docs/superpowers/specs/2026-08-28-obsidian-thesis-workspace-and-chapter-6-design.md`
+**Spec:** `specs/tooling/2026-08-28-obsidian-thesis-workspace-and-chapter-6-design.md`
 
 ## Global Constraints
 

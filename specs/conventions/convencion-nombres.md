@@ -48,4 +48,4 @@ Reglas duras: todo en minúsculas, guiones, sin espacios, paréntesis ni acentos
 
 ## Heredado (permitido, no ejemplar)
 
-`notebooks/heat/EXP-0002…`, `EXP-0003…`, `EXP-0005…` y `baseline-v2/EXP-0008…` conservan los nombres con que se citaron (`heat-burgers-architecture-screen-…`); no se renombran para no romper referencias. Las rutas viejas ya movidas están en `MOVED.md`.
+`notebooks/heat/EXP-0002…`, `EXP-0003…`, `EXP-0005…` y `baseline-v2/EXP-0008…` conservan los nombres con que se citaron (`heat-burgers-architecture-screen-…`); no se renombran para no romper referencias. Las rutas viejas ya movidas están en `docs/MOVED.md`.
