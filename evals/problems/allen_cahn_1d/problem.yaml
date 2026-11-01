@@ -1,0 +1,30 @@
+schema_version: 1
+problem:
+  id: problem.allen_cahn_1d
+  name: allen_cahn_deepxde_1_12_2_dirichlet
+  dimensionality: 1
+pde:
+  form: u_t - d*u_xx - 5*(u-u^3) = 0
+  parameters: {d: 0.001}
+domain: {x: [-1.0, 1.0], t: [0.0, 1.0]}
+initial_condition: {expression: x^2*cos(pi*x)}
+boundary_conditions: {type: dirichlet, left: -1.0, right: -1.0}
+hard_transform: x^2*cos(pi*x) + t*(1-x^2)*N(x,t)
+normalization: {field: 1.0, residual: 6.001}
+reference_solution:
+  kind: numerical_pending
+  method: centered_second_order_space_and_implicit_BDF_time
+  status: pending_convergence
+  minimum_resolutions: 3
+  independent_refinements: [space, temporal_tolerances]
+  required_field_change_below: 0.005
+  required_qoi_change_below: 0.001
+  subsequent_change_below_fraction_of_effect: 0.1
+eval_grid: {kind: uniform_tensor, nx: 512, nt: 256, include_boundary: true, seed: null}
+evaluation_times: [0.25, 0.5, 0.75, 1.0]
+critical_regions:
+  - {id: interfaces, predicate: abs(u_ref)<0.8, status: locked_pending_reference, available_to_controller: false}
+status: operators_verified
+field_error_status: locked_pending_reference
+source: https://deepxde.readthedocs.io/en/v1.12.2/demos/pinn_forward/allen.cahn.html
+tiers: [2]

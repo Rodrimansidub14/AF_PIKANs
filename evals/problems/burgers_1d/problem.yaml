@@ -1,0 +1,30 @@
+schema_version: 1
+problem:
+  id: problem.burgers_1d
+  name: viscous_burgers_traveling_wave
+  dimensionality: 1
+pde:
+  form: u_t + u*u_x - nu*u_xx = 0
+  parameters: {nu: 0.02, c: 0.0, A: 0.5, x0: -0.25}
+  declared_variants:
+    - {nu: 0.02, c: 0.0}
+    - {nu: 0.02, c: 0.5}
+    - {nu: 0.005, c: 0.0}
+    - {nu: 0.005, c: 0.5}
+domain: {x: [-1.0, 1.0], t: [0.0, 1.0]}
+reference_solution:
+  kind: analytical
+  module: evals.problems.burgers_1d.reference
+  callable: exact
+  expression: c - A*tanh(A*(x-c*t-x0)/(2*nu))
+initial_condition: {kind: exact_trace_at_t0}
+boundary_conditions: {type: dirichlet, left: exact_trace_at_x_minus1, right: exact_trace_at_x_plus1}
+normalization: {field: A+abs(c), residual: U+U^2+nu*U}
+eval_grid: {kind: uniform_tensor, nx: 512, nt: 256, include_boundary: true, seed: null}
+critical_regions:
+  - {id: front, predicate: abs(x-c*t-x0)<=3*(2*nu/A)}
+  - {id: complement, predicate: abs(x-c*t-x0)>3*(2*nu/A)}
+status: operators_verified
+field_error_status: analytical_reference_available
+final_error_claim_requires: quadrature_refinement_check
+tiers: [2]

@@ -1,0 +1,110 @@
+{
+  "baseline_id": "baseline_v2_exploratory",
+  "supersedes": "baseline_v1_exploratory (only Burgers and piezo rows; v1 stays frozen as history)",
+  "frozen_at": "2026-10-04",
+  "frozen_by": "Rodrigo Mansilla (chat: firmo v2)",
+  "commit": "5c59174a65e74da8248ca06aa965cd49344486e8",
+  "working_tree_dirty": true,
+  "status": "exploratory; scientific_accepted=false; no thresholds derived; no claims",
+  "reading_rule": "two stages per problem (end of Adam / after L-BFGS), never mixed; n=5 seeds unless noted; mean +- sample sd",
+  "document": "evals/baselines/baseline_v2_exploratory.md",
+  "document_sha256": "0fa0b8869bbc7e0be4a58d7b5b7e05573ead452da7fb32bb13a3b600bf8ce984",
+  "controls": {
+    "heat_1d": {
+      "arm": "RBF-PIKAN rbf_fixed",
+      "seeds": "901-905",
+      "reference": "analytic 512x256",
+      "end_of_adam_l2": [
+        0.0002197,
+        0.00018
+      ],
+      "after_lbfgs_l2": [
+        1.857e-06,
+        1.8e-07
+      ]
+    },
+    "burgers_pinnacle_1d": {
+      "arm": "RBF-PIKAN width 48 (29,376 params) vs MLP 5x100",
+      "seeds": "301-305",
+      "recipe": "16384 Sobol points, 24000 Adam f32 + L-BFGS float64 1800 s",
+      "reference": "Cole-Hopf GH128 1025x129",
+      "end_of_adam_l2": [
+        0.005415,
+        0.00197
+      ],
+      "after_lbfgs_l2": [
+        7.16e-05,
+        4.8e-05
+      ],
+      "mlp_after_lbfgs_l2": [
+        0.000105,
+        2.2e-05
+      ],
+      "note": "RBF48 - MLP paired -3.3e-5 +- 6.4e-5, RBF wins 4/5: no demonstrated advantage; all L-BFGS runs ended on time cap; vs PINNacle FEM reference both models sit at the 1.33e-2 floor"
+    },
+    "allen_cahn_1d": {
+      "arm": "RBF-PIKAN width 16 vs MLP 3x20",
+      "seeds": "601-605",
+      "reference": "Allen_Cahn.mat (DeepXDE, accepted 2026-10-01)",
+      "end_of_adam_l2": [
+        0.0284,
+        0.0074
+      ],
+      "after_lbfgs_l2": [
+        0.002686,
+        0.00095
+      ]
+    },
+    "ns2d_cg": {
+      "arm": "RBF width 56 (40,992 params)",
+      "seeds": "701-705",
+      "reference": "COMSOL ns_0_obstacle.dat",
+      "end_of_adam_flat_l2re": [
+        0.0655,
+        0.0058
+      ],
+      "after_lbfgs": null
+    },
+    "dfg_2d_re20": {
+      "arm": "RBF-PIKAN cohorts 301-305 / 501-505",
+      "reference": "FEATFLOW QoI; field: FEM L3 working reference",
+      "after_lbfgs_cd_relerr": 0.0816,
+      "note": "long-recipe 801-805 run is informative only (not converged)"
+    },
+    "piezo_bimorph_indirect_2d": {
+      "arm": "RBF-PIKAN 16 (5,376 params) vs MLP 3x50 SiLU (5,758)",
+      "seeds": "20260728-20260732",
+      "recipe": "Daniel Gonzalez paper recipe (upstream e7856f1): layered formulation with interface, per-field scales, resampling every 200, 20000 Adam float64, no L-BFGS",
+      "reference": "FEM P2 by Daniel Gonzalez, poling_sign=-1, 201x21 (same group, no third-party check)",
+      "u_v_phi_rbf": [
+        [
+          0.092,
+          0.021
+        ],
+        [
+          0.104,
+          0.048
+        ],
+        [
+          0.048,
+          0.003
+        ]
+      ],
+      "u_v_phi_mlp": [
+        [
+          0.136,
+          0.007
+        ],
+        [
+          0.186,
+          0.011
+        ],
+        [
+          0.046,
+          0.0
+        ]
+      ],
+      "note": "RBF below MLP in 5/5 paired seeds (u -0.044 +- 0.026; v -0.082 +- 0.053), 2.3x cost, higher dispersion, not converged at 20000 epochs; sign convention follows physics (opposite e31/e33), licence unconfirmed"
+    }
+  }
+}

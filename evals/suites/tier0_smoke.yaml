@@ -1,0 +1,32 @@
+# Tier 0 — smoke. Segundos, CPU. El agente lo corre libremente y sin permiso.
+# No produce evidencia científica: responde "¿el aparato de medición funciona?"
+schema_version: 1
+id: tier0_smoke
+tier: 0
+authority: agent_unrestricted
+
+budget:
+  backend: local_cpu
+  max_wall_time_sec: 60
+
+checks:
+  - id: meta_evals
+    kind: pytest
+    target: evals/meta
+    description: Los graders miden lo que dicen medir (MMS incluido).
+    blocking: true
+  - id: contracts_valid
+    kind: command
+    command: py -3.12 -m src.graph_engineering validate --root .
+    blocking: true
+  - id: manifest_valid
+    kind: command
+    command: py -3.12 src/research_pipeline/pipeline.py validate --manifest {manifest}
+    blocking: true
+  - id: artifacts_present
+    kind: artifact_presence
+    required: [metrics.json, run_summary.json]
+    blocking: true
+
+# Tier 0 nunca emite un veredicto científico.
+emits_scientific_evidence: false

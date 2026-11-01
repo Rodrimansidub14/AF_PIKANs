@@ -1,0 +1,69 @@
+{
+  "baseline_id": "baseline_v1_exploratory",
+  "frozen_at": "2026-10-03",
+  "frozen_by": "Rodrigo Mansilla (chat: firmo v1)",
+  "commit": "5c59174a65e74da8248ca06aa965cd49344486e8",
+  "working_tree_dirty": true,
+  "status": "exploratory; scientific_accepted=false; no thresholds derived; no claims",
+  "reading_rule": "two stages per problem (end of Adam / after L-BFGS), never mixed; n=5 seeds unless noted; mean +- sample sd",
+  "document": "evals/baselines/baseline_v1_exploratory.md",
+  "document_sha256": "53b1f314853deae4b77aabd9bfee96a4b1f4336130d9c81ea538cb8939bb6c72",
+  "controls": {
+    "heat_1d": {
+      "arm": "RBF-PIKAN rbf_fixed",
+      "seeds": "901-905",
+      "reference": "analytic 512x256",
+      "end_of_adam_l2": [
+        0.0002197,
+        0.00018
+      ],
+      "after_lbfgs_l2": [
+        1.857e-06,
+        1.8e-07
+      ]
+    },
+    "burgers_pinnacle_1d": {
+      "arm": "RBF-PIKAN width 48 (29,376 params)",
+      "seeds": "301-305",
+      "reference": "Cole-Hopf GH128 1025x129",
+      "end_of_adam_l2": [
+        0.01435,
+        0.0094
+      ],
+      "after_lbfgs_l2": [
+        0.000387,
+        0.00022
+      ],
+      "note": "tie with MLP 5x100 (5.66e-4 +- 5.7e-4) within noise; MLP reproduces PINNacle vanilla 1.45e-2 at end of Adam"
+    },
+    "allen_cahn_1d": {
+      "arm": "RBF-PIKAN width 16 vs MLP 3x20",
+      "seeds": "601-605",
+      "reference": "Allen_Cahn.mat (DeepXDE, accepted 2026-10-01)",
+      "end_of_adam_l2": [
+        0.0284,
+        0.0074
+      ],
+      "after_lbfgs_l2": [
+        0.002686,
+        0.00095
+      ]
+    },
+    "ns2d_cg": {
+      "arm": "RBF width 56 (40,992 params)",
+      "seeds": "701-705",
+      "reference": "COMSOL ns_0_obstacle.dat",
+      "end_of_adam_flat_l2re": [
+        0.0655,
+        0.0058
+      ],
+      "after_lbfgs": null
+    },
+    "dfg_2d_re20": {
+      "arm": "RBF-PIKAN cohorts 301-305 / 501-505",
+      "reference": "FEATFLOW QoI; field: FEM L3 working reference",
+      "after_lbfgs_cd_relerr": 0.0816,
+      "note": "long-recipe 801-805 run is informative only (not converged)"
+    }
+  }
+}

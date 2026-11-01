@@ -1,0 +1,40 @@
+schema_version: 1
+problem:
+  id: problem.dfg_2d
+  name: dfg_2d_1_steady_re20
+  dimensionality: 2
+fields: [u, v, p]
+pde:
+  form: steady_incompressible_navier_stokes_laplacian
+  parameters: {rho: 1.0, nu: 0.001}
+  equations: [u*u_x+v*u_y+p_x-nu*(u_xx+u_yy), u*v_x+v*v_y+p_y-nu*(v_xx+v_yy), u_x+v_y]
+domain:
+  x: [0.0, 2.2]
+  y: [0.0, 0.41]
+  excluded_closed_disk: {center: [0.2, 0.2], radius: 0.05}
+boundary_conditions:
+  inlet: {u: 4*0.3*y*(0.41-y)/0.41^2, v: 0.0}
+  walls_and_cylinder: no_slip
+  outlet: nu*grad(velocity)*n-p*n=0
+  additional_pressure_condition: none
+normalization: {velocity: 0.2, length: 0.1, pressure: 0.04, momentum: 0.4, continuity: 2.0}
+eval_grid: {kind: uniform_tensor_interior_excluding_solid, nx: 440, ny: 82, include_boundary: false, seed: null}
+boundary_grid: {points_per_segment: 512, cylinder: equiangular_without_duplicate_endpoint}
+reference_solution:
+  kind: numerical_pending
+  method: curved_geometry_Taylor_Hood_P2_P1
+  status: pending_fem_convergence
+  minimum_resolutions: 3
+  independent_refinements: [mesh, quadrature, algebraic_tolerance]
+  required_field_change_below: 0.005
+  required_qoi_change_below: 0.001
+  subsequent_change_below_fraction_of_effect: 0.1
+quantities_of_interest:
+  status: pending_implementation_and_reference
+  requested: [drag_coefficient, lift_coefficient, pressure_difference]
+critical_regions:
+  - {id: near_cylinder, predicate: 0<distance_to_cylinder_surface<0.05}
+  - {id: wake, predicate: 0.25<=x<=1.0 and abs(y-0.2)<=0.1}
+status: operators_verified
+field_error_status: locked_pending_reference
+tiers: [3]

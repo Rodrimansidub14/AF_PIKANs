@@ -1,0 +1,42 @@
+# Tier 2 — candidato. Horas, GPU. Requiere presupuesto aprobado.
+# Mapea a `run_expensive_backend` en context/agent-policy.toml.
+schema_version: 1
+id: tier2_candidate
+tier: 2
+authority: agent_with_approved_budget
+gate_required: hypothesis
+
+budget:
+  backend: [kaggle_gpu, colab_gpu]
+  max_gpu_hours: 4
+  max_runs: 20
+
+problems: [heat_1d, burgers_1d, allen_cahn_1d]
+seeds: [11, 17, 23, 29, 31]
+min_independent_configurations: 2
+
+metrics:
+  - relative_l2_error
+  - max_abs_error
+  - physics_residual_mean
+  - critical_region_residual_mean
+  - boundary_error_max
+  - stability_score
+  - wall_time_sec
+
+thresholds:
+  source: baseline
+  policy:
+    relative_l2_error: {mode: improve_on_baseline, min_rel_improvement: 0.10}
+    critical_region_residual_mean: {mode: improve_on_baseline, min_rel_improvement: 0.20}
+    stability_score: {mode: at_least, value: 0.95}
+    wall_time_sec: {mode: max_cost_multiplier, value: 1.5}
+
+# Emite un scorecard técnico. NO acepta claims: eso es humano.
+emits_scientific_evidence: candidate_only
+
+status: declared_not_implemented
+blocked_on:
+  - evals/problems/burgers_1d
+  - evals/problems/allen_cahn_1d
+  - baseline congelado en Tier 1

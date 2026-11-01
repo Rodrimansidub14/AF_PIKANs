@@ -1,0 +1,50 @@
+# Environment canónico: ecuación del calor 1D con solución analítica.
+# Contrato protegido: ningún mecanismo puede leer ni alterar la malla de evaluación.
+
+schema_version: 1
+ontology: pikan-research
+
+problem:
+  id: problem.heat_1d
+  name: heat_equation_1d
+  stage: canonical_pde
+  dimensionality: 1
+
+pde:
+  form: "u_t - alpha * u_xx = 0"
+  parameters:
+    alpha: 0.1
+
+domain:
+  x: [0.0, 1.0]
+  t: [0.0, 1.0]
+
+initial_condition:
+  expression: "sin(pi * x)"
+
+boundary_conditions:
+  type: dirichlet
+  left: 0.0
+  right: 0.0
+
+reference_solution:
+  kind: analytical
+  module: evals.problems.heat_1d.reference
+  callable: exact
+
+# Malla de evaluación: densa, fija, HELD-OUT.
+# No se deriva del mecanismo ni de la política de muestreo bajo estudio.
+eval_grid:
+  kind: uniform_tensor
+  nx: 512
+  nt: 256
+  include_boundary: true
+  seed: null            # determinista: sin aleatoriedad
+
+critical_regions:
+  - id: boundary_neighborhood
+    predicate: "x < 0.05 or x > 0.95"
+  - id: early_transient
+    predicate: "t < 0.05"
+
+tiers: [0, 1]

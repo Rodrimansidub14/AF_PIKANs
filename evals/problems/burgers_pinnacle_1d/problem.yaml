@@ -1,0 +1,53 @@
+schema_version: 1
+ontology: pikan-research
+
+problem:
+  id: problem.burgers_pinnacle_1d
+  name: viscous_burgers_raissi_pinnacle
+  stage: canonical_pde
+  dimensionality: 1
+  provenance:
+    - "Raissi et al., Journal of Computational Physics (2019), DOI 10.1016/j.jcp.2018.10.045"
+    - "Hao et al., NeurIPS 2024 Datasets and Benchmarks Track, PINNacle, Burgers1d"
+
+pde:
+  form: "u_t + u * u_x - nu * u_xx = 0"
+  parameters:
+    nu: 0.003183098861837907
+  initial_condition:
+    expression: "-sin(pi * x)"
+  boundary_conditions:
+    type: dirichlet
+    left: 0.0
+    right: 0.0
+
+domain:
+  x: [-1.0, 1.0]
+  t: [0.0, 1.0]
+
+reference_solution:
+  kind: cole_hopf_gauss_hermite
+  module: evals.problems.burgers_pinnacle_1d.reference
+  callable: exact
+  expression: "u = -2 * nu * d_x(log(phi)); phi_t = nu * phi_xx"
+  quadrature_order: 128
+  verification_grid: {nx: 1025, nt: 129}
+
+normalization:
+  field_scale: 1.0
+  residual_scale: 2.003183098861838
+
+eval_grid:
+  kind: uniform_tensor
+  nx: 1025
+  nt: 129
+  include_boundary: true
+  seed: null
+
+critical_regions:
+  - id: post_shock_front
+    predicate: "abs(x) <= 5 * nu and t >= 1/pi"
+    rationale: "Centered viscous layer after the inviscid steepening time; width is five nu in unit characteristic scales."
+
+status: proposal_for_architecture_screen
+scientific_acceptance: false

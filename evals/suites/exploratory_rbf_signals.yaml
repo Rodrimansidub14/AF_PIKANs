@@ -1,0 +1,26 @@
+schema_version: 1
+id: exploratory_rbf_signals
+purpose: baseline_signal_observation_before_focalization
+authorization: researcher_approved_verifier_extension_in_conversation
+problems: [burgers_1d, allen_cahn_1d, dfg_2d]
+deferred_problems:
+  - {id: poisson_2d, reason: researcher_requested_pending_not_discarded}
+status: verifier_primitives_ready_runner_pending
+emits_scientific_evidence: false
+scientific_accepted: false
+thresholds: null
+baseline_freeze: human_review_required
+budget: {approval: per_campaign_explicit, approved: false}
+operator_modules:
+  burgers_1d: evals.problems.burgers_1d.reference
+  allen_cahn_1d: evals.problems.allen_cahn_1d.reference
+  dfg_2d: evals.problems.dfg_2d.reference
+graders:
+  normalized_residual: evals.graders.exploratory.residual_score
+  relative_l2: evals.graders.exploratory.field_error
+blocked_on:
+  - trusted_evaluator_recomputing_derivatives_on_verifier_points
+  - rbf_pikan_trainer_and_instrumentation
+  - campaign_preregistration_and_budget
+  - remote_authentication_validation
+field_error_locks: [allen_cahn_1d, dfg_2d]

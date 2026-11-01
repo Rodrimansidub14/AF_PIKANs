@@ -1,0 +1,40 @@
+# Tier 1 — regresión. Minutos, CPU. El agente lo corre libremente.
+# Es el gate que impide que un mecanismo nuevo rompa lo que ya funcionaba.
+schema_version: 1
+id: tier1_regression
+tier: 1
+authority: agent_unrestricted
+
+budget:
+  backend: local_cpu
+  max_wall_time_sec: 900
+  max_wall_time_sec_per_run: 300
+
+problems: [heat_1d]
+seeds: [11, 17]
+
+metrics:
+  - relative_l2_error
+  - physics_residual_mean
+  - critical_region_residual_mean
+  - boundary_error_max
+  - stability_score
+  - wall_time_sec
+
+critical_regions: [boundary_neighborhood]
+
+# Los umbrales NO se escriben a mano: se derivan de evals/baselines/.
+# Mientras no exista un baseline congelado, este suite es no concluyente
+# por diseño, y `technical_pass` permanece indefinido en vez de falso-positivo.
+thresholds:
+  source: baseline
+  baseline_id: heat_1d@model.pikan.baseline
+  policy:
+    relative_l2_error: {mode: no_worse_than_baseline, tolerance_rel: 0.05}
+    physics_residual_mean: {mode: no_worse_than_baseline, tolerance_rel: 0.05}
+    critical_region_residual_mean: {mode: no_worse_than_baseline, tolerance_rel: 0.05}
+    boundary_error_max: {mode: no_worse_than_baseline, tolerance_rel: 0.10}
+    stability_score: {mode: at_least, value: 0.95}
+    wall_time_sec: {mode: max_cost_multiplier, value: 1.5}
+
+emits_scientific_evidence: false

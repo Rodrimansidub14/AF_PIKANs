@@ -1,0 +1,21 @@
+# Tier 3 — evidencia de tesis. Caro. Solo con gate humano explícito.
+schema_version: 1
+id: tier3_thesis
+tier: 3
+authority: human_gate_required
+gate_required: scientific_claim
+
+budget:
+  backend: [kaggle_gpu, colab_gpu]
+  approval: per_campaign_explicit
+
+problems: [ns_cavity_2d]
+seeds: [11, 17, 23, 29, 31]
+min_independent_configurations: 3
+
+emits_scientific_evidence: true
+
+status: declared_not_implemented
+blocked_on:
+  - evals/problems/ns_cavity_2d con solución de referencia verificada
+  - Tier 2 superado con baseline congelado
