@@ -1,0 +1,22 @@
+{
+ "wall": 1658.426770214,
+ "cap": 2700.0,
+ "ledger": [
+  {
+   "job": "mlp-float64-vs0.0001-seed-1001",
+   "rc": 0,
+   "wall": 1588.1218168
+  },
+  {
+   "job": "rbf-float64-vs0.0001-seed-1001",
+   "rc": 0,
+   "wall": 1656.12640124
+  }
+ ],
+ "gpus": [
+  "Tesla T4",
+  "Tesla T4"
+ ],
+ "scientific_accepted": false,
+ "reference_accepted": false
+}

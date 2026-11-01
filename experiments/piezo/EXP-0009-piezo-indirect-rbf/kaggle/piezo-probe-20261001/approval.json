@@ -1,0 +1,40 @@
+{
+  "approved_by": "researcher, chat 2026-10-01: 'podes gastarlo, se reinicia manana'",
+  "session_cap_seconds": 2400.0,
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "component_sha256": {
+    "piezo_pinn.py": "5cf91024cb5b237d894a6164a4bdd33aafa719b0729fa902d2c5e7cf3fe19b97",
+    "fem.npz": "39bc04a5ec51f71d229c96ffb011c5d32d96e1411a9733bbbc99178bda1e36e6"
+  },
+  "jobs": [
+    {
+      "arm": "mlp",
+      "dtype": "float32",
+      "seed": 1001,
+      "adam": 3000,
+      "lbfgs_s": 120
+    },
+    {
+      "arm": "rbf",
+      "dtype": "float32",
+      "seed": 1001,
+      "adam": 3000,
+      "lbfgs_s": 120
+    },
+    {
+      "arm": "mlp",
+      "dtype": "float64",
+      "seed": 1001,
+      "adam": 3000,
+      "lbfgs_s": 120
+    },
+    {
+      "arm": "rbf",
+      "dtype": "float64",
+      "seed": 1001,
+      "adam": 3000,
+      "lbfgs_s": 120
+    }
+  ]
+}

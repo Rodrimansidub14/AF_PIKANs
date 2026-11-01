@@ -1,0 +1,32 @@
+{
+ "wall": 2572.501277143,
+ "cap": 3300.0,
+ "ledger": [
+  {
+   "job": "mlp-bal",
+   "rc": 0,
+   "wall": 982.073407455
+  },
+  {
+   "job": "mlp-bal-vs1e-3",
+   "rc": 0,
+   "wall": 1600.115158365
+  },
+  {
+   "job": "mlp-w100",
+   "rc": 0,
+   "wall": 960.06557554
+  },
+  {
+   "job": "mlp-bal-w100",
+   "rc": 0,
+   "wall": 970.071286697
+  }
+ ],
+ "gpus": [
+  "Tesla T4",
+  "Tesla T4"
+ ],
+ "scientific_accepted": false,
+ "reference_accepted": false
+}

@@ -1,0 +1,41 @@
+{
+  "status": "DRAFT_UNVERIFIED",
+  "arm": "rbf",
+  "seed": 1001,
+  "params": 16128,
+  "adam_steps": 10000,
+  "adam_seconds": 2350.8428206400004,
+  "dtype": "torch.float64",
+  "vsplit": 0.001,
+  "balance": 100,
+  "lbfgs_weights": "unit",
+  "weights_final": {
+    "mech_const": 1.0146893309653022,
+    "elec_const": 8161608204824137.0,
+    "equil": 4.156719813711294e+31,
+    "bc": 205444.2577507401
+  },
+  "term_w": {
+    "tau": 1.0,
+    "sz": 1.0
+  },
+  "score_adam_final": {
+    "u_relL2": 0.9999999999999999,
+    "v_relL2": 1.0000000000365001,
+    "phi_relL2": 0.0010450703587299467,
+    "tip_v": 9.628408070838646e-16,
+    "tip_v_fem": -3.289699856367528e-05
+  },
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "lbfgs_status": "lbfgs_plateau",
+  "lbfgs_iterations": 5,
+  "lbfgs_seconds": 3.8428286540001864,
+  "score_lbfgs_final": {
+    "u_relL2": 0.9999999999999999,
+    "v_relL2": 1.0000000000365001,
+    "phi_relL2": 0.0010450703587299467,
+    "tip_v": 9.628408070838646e-16,
+    "tip_v_fem": -3.289699856367528e-05
+  }
+}

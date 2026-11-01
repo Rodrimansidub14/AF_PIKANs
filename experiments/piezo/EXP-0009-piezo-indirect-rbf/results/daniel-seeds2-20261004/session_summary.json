@@ -1,0 +1,32 @@
+{
+ "wall": 13300.008884614,
+ "cap": 15000.0,
+ "ledger": [
+  {
+   "job": "rbf16-seed-20260731",
+   "rc": 0,
+   "wall": 9219.476085154001
+  },
+  {
+   "job": "rbf16-seed-20260732",
+   "rc": 0,
+   "wall": 9300.480270479999
+  },
+  {
+   "job": "mlp-seed-20260731",
+   "rc": 0,
+   "wall": 3924.2065392759996
+  },
+  {
+   "job": "mlp-seed-20260732",
+   "rc": 0,
+   "wall": 3996.209288446
+  }
+ ],
+ "gpus": [
+  "Tesla T4",
+  "Tesla T4"
+ ],
+ "scientific_accepted": false,
+ "reference_accepted": false
+}

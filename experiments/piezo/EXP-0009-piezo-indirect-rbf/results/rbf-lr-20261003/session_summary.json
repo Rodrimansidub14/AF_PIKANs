@@ -1,0 +1,32 @@
+{
+ "wall": 3944.62638565,
+ "cap": 6000.0,
+ "ledger": [
+  {
+   "job": "rbf16-lr1e-2",
+   "rc": 0,
+   "wall": 1382.1106172690002
+  },
+  {
+   "job": "rbf16-lr3e-3",
+   "rc": 0,
+   "wall": 1582.1316541559997
+  },
+  {
+   "job": "rbf32-lr3e-3",
+   "rc": 0,
+   "wall": 2508.2052548039997
+  },
+  {
+   "job": "rbf32-lr1e-2",
+   "rc": 0,
+   "wall": 2360.1894071209995
+  }
+ ],
+ "gpus": [
+  "Tesla T4",
+  "Tesla T4"
+ ],
+ "scientific_accepted": false,
+ "reference_accepted": false
+}

@@ -1,0 +1,56 @@
+{
+  "approved_by": "researcher, chat 2026-10-01: 'podes gastarlo, se reinicia manana'",
+  "session_cap_seconds": 5000.0,
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "component_sha256": {
+    "piezo_pinn.py": "071272703344bd848aa74b632b4d54db2240398c4a8e2baa873a475fd9b0672b",
+    "fem.npz": "39bc04a5ec51f71d229c96ffb011c5d32d96e1411a9733bbbc99178bda1e36e6"
+  },
+  "jobs": [
+    {
+      "tag": "mlp-bal-vs1e-3-a30k-lbunit",
+      "arm": "mlp",
+      "dtype": "float64",
+      "seed": 1001,
+      "adam": 30000,
+      "lbfgs_s": 400,
+      "balance": 100,
+      "vsplit": 0.001,
+      "lbfgs_weights": "unit"
+    },
+    {
+      "tag": "rbf-bal-vs1e-3-a30k-lbunit",
+      "arm": "rbf",
+      "dtype": "float64",
+      "seed": 1001,
+      "adam": 30000,
+      "lbfgs_s": 400,
+      "balance": 100,
+      "vsplit": 0.001,
+      "lbfgs_weights": "unit"
+    },
+    {
+      "tag": "mlp-bal-vs1e-3-a10k-lbunit",
+      "arm": "mlp",
+      "dtype": "float64",
+      "seed": 1001,
+      "adam": 10000,
+      "lbfgs_s": 400,
+      "balance": 100,
+      "vsplit": 0.001,
+      "lbfgs_weights": "unit"
+    },
+    {
+      "tag": "rbf-bal-vs1e-3-a10k-lbunit",
+      "arm": "rbf",
+      "dtype": "float64",
+      "seed": 1001,
+      "adam": 10000,
+      "lbfgs_s": 400,
+      "balance": 100,
+      "vsplit": 0.001,
+      "lbfgs_weights": "unit"
+    }
+  ]
+}

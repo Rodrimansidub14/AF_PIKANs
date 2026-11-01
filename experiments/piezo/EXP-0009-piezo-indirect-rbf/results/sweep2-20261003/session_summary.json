@@ -1,0 +1,22 @@
+{
+ "wall": 4456.645541090999,
+ "cap": 5000.0,
+ "ledger": [
+  {
+   "job": "mlp-bal-vs1e-3-a30k-lbunit",
+   "rc": 0,
+   "wall": 4280.3256466269995
+  },
+  {
+   "job": "rbf-bal-vs1e-3-a30k-lbunit",
+   "rc": 0,
+   "wall": 4454.338003019
+  }
+ ],
+ "gpus": [
+  "Tesla T4",
+  "Tesla T4"
+ ],
+ "scientific_accepted": false,
+ "reference_accepted": false
+}

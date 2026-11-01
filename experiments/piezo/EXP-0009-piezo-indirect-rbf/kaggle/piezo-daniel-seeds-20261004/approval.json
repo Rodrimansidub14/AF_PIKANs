@@ -1,0 +1,40 @@
+{
+  "approved_by": "researcher, chat 2026-10-03: usar la PINN de Daniel como base con RBF; cuota 30 h",
+  "session_cap_seconds": 14500.0,
+  "upstream": "Daniel14gonc/PINNs_piezoelectricity e7856f1 (read-only reuse; licence file absent, MIT declared)",
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "component_sha256": {
+    "upstream.zip": "4a7bf5ae9097e5009091ee459ef6c07f18ded9070da0c0c38df51f3a6ee51d32",
+    "daniel_arm.py": "937aa693bd0dc30763a43683148358d9756d71f276c155eb4ded294ab4ac14cc",
+    "fem.npz": "39bc04a5ec51f71d229c96ffb011c5d32d96e1411a9733bbbc99178bda1e36e6"
+  },
+  "jobs": [
+    {
+      "tag": "rbf16-seed-20260729",
+      "arm": "rbf",
+      "seed": 20260729,
+      "epochs": 20000,
+      "width": 16
+    },
+    {
+      "tag": "rbf16-seed-20260730",
+      "arm": "rbf",
+      "seed": 20260730,
+      "epochs": 20000,
+      "width": 16
+    },
+    {
+      "tag": "mlp-seed-20260729",
+      "arm": "mlp",
+      "seed": 20260729,
+      "epochs": 20000
+    },
+    {
+      "tag": "mlp-seed-20260730",
+      "arm": "mlp",
+      "seed": 20260730,
+      "epochs": 20000
+    }
+  ]
+}

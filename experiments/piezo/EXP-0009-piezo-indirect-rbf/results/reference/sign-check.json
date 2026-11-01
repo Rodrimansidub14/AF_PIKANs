@@ -1,0 +1,66 @@
+{
+ "indirect-polingminus|eps_stress|s31=+1,s33=+1": {
+  "mech": 0.023886580696895185,
+  "elec": 0.01863740707686498
+ },
+ "indirect-polingminus|eps_stress|s31=+1,s33=-1": {
+  "mech": 1.1475661134036092e-05,
+  "elec": 0.0005560278211804968
+ },
+ "indirect-polingminus|eps_stress|s31=-1,s33=+1": {
+  "mech": 0.019263312339131665,
+  "elec": 0.05540407139439769
+ },
+ "indirect-polingminus|eps_stress|s31=-1,s33=-1": {
+  "mech": 4.6603215272239605e-06,
+  "elec": 0.036191140811799
+ },
+ "indirect-polingminus|eps_strain|s31=+1,s33=+1": {
+  "mech": 0.023886580696895185,
+  "elec": 0.01844943804024965
+ },
+ "indirect-polingminus|eps_strain|s31=+1,s33=-1": {
+  "mech": 1.1475661134036092e-05,
+  "elec": 2.629514962015113e-08
+ },
+ "indirect-polingminus|eps_strain|s31=-1,s33=+1": {
+  "mech": 0.019263312339131665,
+  "elec": 0.0560010694251566
+ },
+ "indirect-polingminus|eps_strain|s31=-1,s33=-1": {
+  "mech": 4.6603215272239605e-06,
+  "elec": 0.03637202411743862
+ },
+ "indirect|eps_stress|s31=+1,s33=+1": {
+  "mech": 4.6603215272239605e-06,
+  "elec": 0.036191140811799
+ },
+ "indirect|eps_stress|s31=+1,s33=-1": {
+  "mech": 0.019263312339131665,
+  "elec": 0.05540407139439769
+ },
+ "indirect|eps_stress|s31=-1,s33=+1": {
+  "mech": 1.1475661134036092e-05,
+  "elec": 0.0005560278211804968
+ },
+ "indirect|eps_stress|s31=-1,s33=-1": {
+  "mech": 0.023886580696895185,
+  "elec": 0.01863740707686498
+ },
+ "indirect|eps_strain|s31=+1,s33=+1": {
+  "mech": 4.6603215272239605e-06,
+  "elec": 0.03637202411743862
+ },
+ "indirect|eps_strain|s31=+1,s33=-1": {
+  "mech": 0.019263312339131665,
+  "elec": 0.0560010694251566
+ },
+ "indirect|eps_strain|s31=-1,s33=+1": {
+  "mech": 1.1475661134036092e-05,
+  "elec": 2.629514962015113e-08
+ },
+ "indirect|eps_strain|s31=-1,s33=-1": {
+  "mech": 0.023886580696895185,
+  "elec": 0.01844943804024965
+ }
+}

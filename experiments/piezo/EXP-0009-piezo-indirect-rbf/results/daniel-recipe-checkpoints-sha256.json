@@ -1,0 +1,12 @@
+{
+ "results/daniel-recipe-20261003/results/mlp-seed-20260728/checkpoint-mlp-seed-20260728.pt": "64882ad272448691c199ee1e6283c79c73f9b7a80e568bce7189955861538dcc",
+ "results/daniel-recipe-20261003/results/rbf16-seed-20260728/checkpoint-rbf-seed-20260728.pt": "1c9f69663a1d367bc3dfe947238a6e290dd54b43ba43e096ad5bb6dfb461ec16",
+ "results/daniel-seeds-20261004/results/mlp-seed-20260729/checkpoint-mlp-seed-20260729.pt": "34f867143023bd221a7e181787f9af6521d76b534f42e0be88446ad831555703",
+ "results/daniel-seeds-20261004/results/mlp-seed-20260730/checkpoint-mlp-seed-20260730.pt": "ce81b25869cdf3dc4dcae2ba77168940a6fa6a08fdfcd08349c26eee2f4556d6",
+ "results/daniel-seeds-20261004/results/rbf16-seed-20260729/checkpoint-rbf-seed-20260729.pt": "fd656aca5a2e952df49eb30a3ba38c89d9c4e1fe882c9d12b67d7b98a36a3908",
+ "results/daniel-seeds-20261004/results/rbf16-seed-20260730/checkpoint-rbf-seed-20260730.pt": "71862f44b98c21b5fa2d237f2a1db48f4790825c27ca8997a3e4bd212e997a5f",
+ "results/daniel-seeds2-20261004/results/mlp-seed-20260731/checkpoint-mlp-seed-20260731.pt": "b9eed23b2701a6257263e8260665a1271c8aae1acd09fbd7b98417d2bccc3fe0",
+ "results/daniel-seeds2-20261004/results/mlp-seed-20260732/checkpoint-mlp-seed-20260732.pt": "4748d369eb871fd4f76ca15ab10524d1fdb83fedee3fafca80ed64261070691e",
+ "results/daniel-seeds2-20261004/results/rbf16-seed-20260731/checkpoint-rbf-seed-20260731.pt": "cb4bf66ae51ff3e34555da0ce010b4b71dce2ece99d9a100aa5e951d5043894f",
+ "results/daniel-seeds2-20261004/results/rbf16-seed-20260732/checkpoint-rbf-seed-20260732.pt": "b80c86c843f13a6308868e703b293ce440cb066cf2a59847d8b3ec7ab118ecfc"
+}

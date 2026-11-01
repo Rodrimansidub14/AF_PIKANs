@@ -1,0 +1,27 @@
+{
+  "status": "DRAFT_UNVERIFIED",
+  "arm": "rbf",
+  "seed": 1001,
+  "params": 4992,
+  "adam_steps": 1500,
+  "adam_seconds": 1788.865506800008,
+  "score_adam_final": {
+    "u_relL2": 1.0668632914466087,
+    "v_relL2": 1.1236617136367741,
+    "phi_relL2": 0.010605996166978195,
+    "tip_v": 3.2347688130368783e-06,
+    "tip_v_fem": -3.289699856367528e-05
+  },
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "lbfgs_status": "lbfgs_time_cap",
+  "lbfgs_iterations": 100,
+  "lbfgs_seconds": 172.87000690000423,
+  "score_lbfgs_final": {
+    "u_relL2": 1.0269202370024957,
+    "v_relL2": 1.0477681390234943,
+    "phi_relL2": 0.010941860812607767,
+    "tip_v": 1.2593325323262447e-06,
+    "tip_v_fem": -3.289699856367528e-05
+  }
+}
