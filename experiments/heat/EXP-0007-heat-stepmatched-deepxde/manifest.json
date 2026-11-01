@@ -1,0 +1,47 @@
+{
+  "experiment_id": "EXP-0007",
+  "version": "heat-stepmatched-v5",
+  "status": "PENDING_HUMAN_SIGNATURE",
+  "protocol_phase": "exploratory",
+  "problem": "heat_1d_alpha_0.1",
+  "arms": [
+    "rbf_fixed",
+    "bspline_cubic"
+  ],
+  "seeds": [
+    901,
+    902,
+    903,
+    904,
+    905
+  ],
+  "training": {
+    "adam_updates": 20000,
+    "learning_rate": 0.001,
+    "lbfgs_backend": "PyTorch L-BFGS using DeepXDE 1.12.2 defaults",
+    "maxiter": 15000,
+    "maxfun": 18750,
+    "history_size": 100,
+    "tolerance_grad": 1e-08,
+    "tolerance_change": 0.0,
+    "line_search_fn": "strong_wolfe",
+    "chunk_iter": 25,
+    "chunk_max_eval": 32
+  },
+  "pools": {
+    "901": "318cdd951dc76a19ce0be65dd170beaffdf40741d4e11301abda5a8b2fe18f51",
+    "902": "c89cd6ae60703dcb8cdf04448e2d50f8cdc02324446c1807dcfb3a2145b926d6",
+    "903": "0e3557a470006da65b348dd066ba73ccad768c6682e3c337c5392c1e8bc6d4e7",
+    "904": "f3067f1997a1b17947fc3910fd4f70db0e5fded96cb87ef3f87a12f43ea05825",
+    "905": "dc567fc082828a68ac5483975659f155644d9040cf01916147758e1b5e6736b0"
+  },
+  "evaluation": "heat-confirmatory-512x256-v1",
+  "resource_cap": {
+    "platform": "Kaggle private T4x2",
+    "session_hours": 1.25,
+    "session_seconds": 4500
+  },
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "human_signature": null
+}
