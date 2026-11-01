@@ -1,0 +1,70 @@
+{
+ "burgers/E": {
+  "n": 5,
+  "missing": [],
+  "median_ratio_final": 5.701327978163785,
+  "improved_final": 1,
+  "ratios_final": [
+   0.156,
+   4.378,
+   5.701,
+   11.085,
+   6.628
+  ],
+  "median_ratio_end_of_adam": 0.3976610276824618,
+  "median_clock_ratio": 1.1020783987623555,
+  "all_finite": true
+ },
+ "burgers/F": {
+  "n": 5,
+  "missing": [],
+  "median_ratio_final": 0.4902601379325099,
+  "improved_final": 3,
+  "ratios_final": [
+   0.112,
+   0.441,
+   1.989,
+   0.49,
+   2.2
+  ],
+  "median_ratio_end_of_adam": 0.20383371309249151,
+  "median_clock_ratio": 1.0013422940056815,
+  "all_finite": true
+ },
+ "ac/E": {
+  "n": 5,
+  "missing": [],
+  "median_ratio_final": 0.13997702060218511,
+  "improved_final": 5,
+  "ratios_final": [
+   0.128,
+   0.14,
+   0.132,
+   0.142,
+   0.217
+  ],
+  "median_ratio_end_of_adam": 0.2399402725985965,
+  "median_clock_ratio": 1.0758503461133364,
+  "all_finite": true
+ },
+ "ac/F": {
+  "n": 5,
+  "missing": [],
+  "median_ratio_final": 0.38967042152446596,
+  "improved_final": 5,
+  "ratios_final": [
+   0.587,
+   0.39,
+   0.334,
+   0.557,
+   0.269
+  ],
+  "median_ratio_end_of_adam": 0.3377319696298612,
+  "median_clock_ratio": 1.0403360352141933,
+  "all_finite": true
+ },
+ "passes_V_median_le_0.90_and_4of5": {
+  "E": false,
+  "F": false
+ }
+}

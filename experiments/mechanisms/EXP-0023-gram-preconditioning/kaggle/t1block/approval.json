@@ -1,0 +1,41 @@
+{
+  "bundle": "exp0023-t1block",
+  "slug": "rodrimandub/af-pikans-exp-0023-t1-block",
+  "dataset": "rodrimandub/af-pikans-exp0023-bundle",
+  "purpose": "bloque T1 de la ronda 1-B: \u00bfalgun precondicionador (J, E, I, F) baja el error respecto de B (mediana de la razon <= 0.90 en Burgers y en Allen-Cahn)?",
+  "recipe": "B,J,E,I,F x semillas 1-5 x Burgers y Allen-Cahn (50 corridas); Adam 10 % del control (2 000 / 4 000), L-BFGS tope de 500 iteraciones; recalculo cada 1000 pasos (0, 1000) y al arrancar L-BFGS, N = 2048, P normalizado (Enmienda 1); un proceso por (problema, semilla) con calentamiento",
+  "session_estimate_minutes": [
+    40,
+    240
+  ],
+  "accelerator": "NvidiaTeslaT4 (T4x2)",
+  "internet": false,
+  "approved_by": "researcher, chat 2026-10-21: \u00abAutorizo armar y lanzar el bloque T1 del EXP-0023/ronda 1-B en Kaggle T4: brazos B,J,E,I,F x semillas 1-5 x Burgers y Allen-Cahn (50 corridas), convencion T1, criterio mediana <=0.90 en ambos problemas, topes 4 h / 5 h como en el 0024, sin variantes nuevas\u00bb",
+  "scope": "exp0023_t1_block",
+  "big_block_authorized": true,
+  "launch_status": "complete_2026-10-21",
+  "caps": "no se despacha trabajo nuevo despues de 4 h; se matan los trabajos en curso a las 5 h; lo que no termine es ausencia de medicion",
+  "hypothesis": "ninguna firmada por corrida: criterio T1 de la regla de salida (mediana <= 0.90 en ambos problemas), comparador B de la misma sesion",
+  "code_surface": "src/mechanisms/gram_preconditioning.py; experiments/mechanisms/EXP-0023-gram-preconditioning",
+  "remote_execution": true,
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "component_sha256": {
+    "t1block/exp0023_t1_block_gpu.py": "4375707cad4b4f1d1624cecbaebbc6244a8301d3157b7fe51d8aff2faeeee638",
+    "t1block/kernel-metadata.json": "929e6f15ed2f206d39965c8f090eb6a4951fff7f0dd3ab13dfe37ffbb1db4b64",
+    "dataset/Allen_Cahn.mat": "f9175685675685ab8d2a850f0d212d16c709f55ed89b8fe078493ddcd3724aa0",
+    "dataset/burgers_coleHopf_1025x129.npz": "7af8967648caaf2156529551b6df9e6ea6e3d09c7bc0070a3ffca370ba77f026",
+    "dataset/gram_preconditioning.py": "dd64f8a9ca8683e1428a5f708ed79cb3e49d8cb8a5bdc88f37a3b76e61edc1d8",
+    "dataset/measure_budget.py": "8398145f7889f5b957966b8dd0498354765daa4eca6ddacb44e0ca15134640fa",
+    "dataset/pikan_campaign.py": "1e1b94264bd9f3be740af632029dd45867045839b189f33808736ce1095c3341",
+    "dataset/pre_trainer.py": "10c24301f337b393b101854c35314ccde3fd34e504c466c108d44addaee57d84",
+    "dataset/regrid.py": "e8f9c5c0061e262233200968cf050b7780349bc2930c2a645d8f6c70f2ef6fa0",
+    "dataset/settling_focus.py": "5b686a6ffa2bb1ab522620153d8901d371d04f70bf86fa3a6880d7a554e9cc33",
+    "dataset/stall_handoff.py": "a513ba64cade9e2a923097ef0228fbcbe36e4c0c8a80d5c9cf81b1a3d067c587",
+    "dataset/sweep.py": "933e231957d5cfda4b697d7a3a2345149abd4bd8ba8fb9cdd6d53500ff945337",
+    "dataset/t1_trainer.py": "5bee9dd152fd690ed309f6a8dc63ff76fc8b0c0ebda1dac353602479da8bfca2"
+  },
+  "launch_authorized_by": "researcher, chat 2026-10-21: \u00abAutorizo armar y lanzar el bloque T1 del EXP-0023/ronda 1-B en Kaggle T4: brazos B,J,E,I,F x semillas 1-5 x Burgers y Allen-Cahn (50 corridas), convencion T1, criterio mediana <=0.90 en ambos problemas, topes 4 h / 5 h como en el 0024, sin variantes nuevas\u00bb",
+  "results": "experiments/mechanisms/EXP-0023-gram-preconditioning/results/t1-block",
+  "launched_at": "2026-10-21T01:32:38-06:00"
+}

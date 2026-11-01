@@ -1,0 +1,29 @@
+{
+ "run_id": "ac_d2e-4-B-seed107-a4000-l500",
+ "note": {
+  "problem": "ac_d2e-4",
+  "arm": "B",
+  "seed": 107,
+  "draft": "round1C borrador sin firma; exploratorio",
+  "cond_init": [
+   77.41078960024169,
+   99.04924890295624,
+   103.09105088958903
+  ],
+  "cond_final": [
+   65.24244880035353,
+   97.6107872540849,
+   80.56554259838916
+  ]
+ },
+ "metrics": {
+  "primary_adam": 0.138999345477624,
+  "primary_final": 0.07746454581140652,
+  "l2re_top_final": 0.23553570462367526,
+  "l2re_rest_final": 0.06924668945124632,
+  "cond_init_layer1": 99.04924890295624,
+  "cond_final_layer1": 97.6107872540849,
+  "total_seconds": 95.60550793199997
+ },
+ "wandb": "wandb_offline_logged"
+}

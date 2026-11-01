@@ -1,0 +1,51 @@
+# Ronda 1-C — propuesta (FIRMADA v1 el 2026-10-22; NO LANZADA)
+
+**Firma (2026-10-22, por delegación en el chat).** El investigador delegó la firma de esta ronda al agente con tres criterios: (1) mueve hacia un mecanismo, (2) es buena contribución y avance, (3) vale la pena explorar. Esos criterios justifican firmar; **no cambian ninguna hipótesis ni umbral**: mediana ≤ 0.90 y mejora en ≥ 4 de 5 semillas en V; desempate E/F de (d); contraste único de (e) con dirección negativa, una cola, Burgers, semillas 11–20; predicción de dosis (f) descriptiva. Justificación: (1) la ronda fija la variante de `aG` de EXP-0025 y contrasta el único predictor candidato (cond(P) inicial) para un mecanismo condicional; (2) es una réplica con dosis y un control fuera de familia, con refutación declarada; (3) cuesta ~50–70 corridas T4 de ~1 min y el resultado cambia lo que se hace después en cualquiera de sus salidas. Límites declarados: la réplica es el mismo problema con otro coeficiente; el contraste de (e) tiene n = 10 y su origen es post-hoc (ρ = −0.72, p = 0.019 sin corregir), así que un resultado positivo es una pista y no una prueba. **Decisión abierta 4 (umbral de cond(P) del mecanismo condicional) NO se cierra aquí**: solo aplica si (e) resulta. Decisión 5: la firma queda dada; **el lanzamiento sigue sin ocurrir**: falta el kernel de T1/V de 1-C (solo está preparado el bloque P), la política de campañas aprobadas de `context/agent-policy.toml` y acceso a Kaggle (la CLI no está instalada y no hay credenciales en este equipo). El agente no introduce credenciales.
+
+Texto anterior (borrador, sin cambios de contenido abajo; actualizado 2026-10-21):
+
+Nada de esto está firmado ni lanzado. Las decisiones abiertas están al final y son del investigador. Los umbrales de paso (mediana de la razón ≤ 0.90; mejora en ≥ 4 de 5 semillas en V) **no cambian**. Revisión 2026-10-21 (decidida por el investigador): Fisher–KPP pasa de réplica a **control fuera de la familia**; la réplica es Allen–Cahn d = 2e-4; (a) se reformula como alcance de **familia Allen–Cahn**, sin clase general ni descriptor de pertenencia (Burgers tiene max|u_x| = 147.5 y quedaba dentro de «tipo AC», lo que contradecía la hipótesis); el contraste de cond(P) pasa a Burgers con semillas nuevas. Se reescriben (a), (b), (c), (d), (e) y (f).
+
+## (a) Hipótesis de alcance
+«La ganancia del precondicionamiento por Gram (brazos E y F) aparece en la **familia Allen–Cahn** —u_t = d·u_xx + 5(u − u³), mismo dominio, IC y BC, variando el coeficiente d— y no en Burgers.» No se afirma una clase general de problemas «tipo AC»: no hay descriptor que la defina. max|u_x| de la referencia se reporta como descriptor de dificultad, no de pertenencia; no sirve de frontera porque Burgers (ν = 0.01/π, max|u_x| = 147.5 en el arnés) es más empinado que cualquier AC probado (39.2 a 61.7) y E empeora ahí en 1-B.
+Es una hipótesis de **alcance**, no de mecanismo: 1-B no demostró ningún mecanismo y no hay explicación medida de por qué E empeora en Burgers (`diagnostic-burgers.md`).
+Refutación: en el problema de réplica (**Allen–Cahn d = 2e-4**; la ganancia ya vista en d = 1e-3 en 1-B debe sostenerse con un frente más fino), ni E ni F pasan T1 (mediana ≤ 0.90) o no pasan V (≥ 4/5 de mejora).
+Alcance real: la réplica es el **mismo problema con otro coeficiente**, no otra clase de problemas. Un fallo es informativo; un pase confirma poco más de lo ya medido en 1-B. Lo que sostiene la evidencia es un alcance estrecho a la familia AC.
+
+## (b) Problemas (integrados al arnés en `round1C/arnes_round1c.py`, con humo en CPU)
+- **Fisher–KPP 1D** (`kpp`): **control suave fuera de la familia AC** (no entra en refutación, desempate ni contraste). u_t = D u_xx + r u(1−u), D = 1e-3, r = 10; referencia analítica (Ablowitz–Zeppetella), max|u_x| = 11.9.
+- **Allen–Cahn d = 2e-4** (`ac_d2e-4`): **problema de réplica** y control de dosis. Referencia numérica Chebyshev N = 600; max|u_x| = 61.7 (base d = 1e-3: 39.2).
+- **Burgers 1D** (terreno del predictor, sin criterio de paso): se corre con el arnés y la receta de 1-B (RBF48, Adam 2 000, L-BFGS 500 it., ν = 0.01/π, referencia Cole–Hopf 1025×129), no con el arnés de 1-C. Solo brazos B y E, para el contraste de (e).
+Referencias verificadas por sha256 contra `provenance_round1c.json`; rejilla (101, 201); transformación dura cumple IC/BC.
+
+## (c) Semillas
+Usadas: 1–5 y 101–105 (EXP-0023); 301–305, 501–505, 601–605 (EXP-0016 a 0022); 801–815 reservadas para C. **Ronda 1-C (AC d = 2e-4, KPP): T1 = 6–10, V = 106–110. Bloque P (Burgers, solo para el contraste de (e)): semillas nuevas 11–20, que no se han usado en ningún bloque.**
+
+## (d) Desempate E frente a F (declarado antes)
+Se elige **E** solo si, en el problema de réplica (Allen–Cahn d = 2e-4), la mediana de la razón pareada error(E)/error(F) es ≤ 0.90 y E es mejor que F en ≥ 4 de 5 semillas; si no, el finalista es **F** (reloj ×1.00 frente a ×1.10, no necesita Jacobiano ni acceso al residuo, más portable a NS/DFG/piezo). Un solo finalista a C.
+
+## (e) Predictor preregistrado (único contraste)
+- **Cantidad:** mediana, sobre los grupos-arista de la capa de índice 1 (oculta→oculta), de cond(P_g) = σ_max/σ_min de P_g = (B_g/m + 10⁻³·I)^(−1/2) (Enmienda 1), con B_g el bloque Gauss–Newton 11×11 (N = 2048 puntos equiespaciados del pool) y m = traza(B_g)/11. Se mide con una sonda sobre el modelo **inicial** (antes de entrenar) en **cualquier brazo**: es una propiedad de la semilla (el modelo inicial es idéntico en B, E y F). También se mide al final (descriptivo).
+- **Contraste único:** brazo E frente a B en **Burgers** (bloque P, semillas 11–20, 10 semillas, 20 corridas), Spearman entre cond(P) inicial de la capa 1 y log(razón final E/B). Se movió desde `kpp` y luego desde `ac_d2e-4` el 2026-10-21, antes de entrenar: en AC E ya mejoró 5 de 5 en 1-B, la razón tiene poca varianza y un nulo allí no diría nada; Burgers es donde nació la pista y donde E sí empeora, así que es el único terreno donde el contraste puede fallar. Se usa el cond(P) de la capa 1 en el paso 0 de la corrida E de la misma semilla (el modelo inicial es idéntico en B, E y F). KPP, AC y los demás análisis quedan descriptivos.
+- **Dirección esperada:** negativa (a mayor condicionamiento inicial, menor razón, es decir mejor), prueba de una cola. Todo lo demás (F, otros problemas, otras capas, cond final) es descriptivo y sin corrección.
+- **Origen y límite:** la única pista nominal del diagnóstico de Burgers fue ρ = −0.72, p = 0.019 sin corrección entre ≈15 pruebas (post-hoc, n = 10); con el mismo script en F: ρ = −0.58, p = 0.08. No es evidencia; es el motivo de preregistrar un solo contraste.
+
+## (f) Predicción de dosis
+La ganancia crece al bajar d: razón mediana de E (10 semillas) en `ac_d2e-4` **menor** que la de Allen–Cahn base (d = 1e-3), ≈ 0.14 (1-B, T1+V pooled, 10 semillas). Se compara mediana contra mediana, descriptivo (sin prueba); la predicción compara solo d ∈ {1e-3 (1-B), 2e-4}; no se corre d = 5e-4. Limitación: el techo ya es bajo (E ≈ 0.14), la respuesta puede saturar.
+
+## Instrumentación preregistrada (brazos B, E, F; J e I no entran)
+Checkpoints al final de Adam y tras L-BFGS; error L2 relativo por región (interfaz = 5 % de puntos de la rejilla de referencia con mayor |u_x|, y complemento) además del global; cond(P) capa 1 al inicio y al final; una nota por `run_id` (Weights & Biases en modo **offline** si `wandb` está instalado —`wandb==0.30.0` en el Python 3.13 de trabajo; para Kaggle hay 26 ruedas en `round1C/kaggle/dataset/wheels/`, instalación en Kaggle **sin probar**—, sin subir nada hasta un `wandb sync` autorizado; siempre un `.note.json`). Detalle y definiciones en `round1C/arnes_round1c.py`.
+
+## Análisis preregistrado
+`round1C/analyze_round1c.py`: razones pareadas por semilla, mediana, media geométrica, conteo de mejoras, razón máxima, razones por región y el Spearman de (e). Probado con datos de 1-B (reproduce el diagnóstico de Burgers); **no** probado con datos de 1-C (no existen).
+
+## Receta de entrenamiento (borrador)
+Igual a la de 1-B T1/V para Allen–Cahn (RBF-PIKAN ancho 16, 8000 + 400 + 800 puntos Sobol, convención T1: Adam 4 000, L-BFGS 500 it., P normalizado, recálculo cada 1000 pasos y al arrancar L-BFGS). Adam y L-BFGS están en los JSON registrados de T1 y V; puntos y ancho se verificaron por el sha256 del código que corrió en Kaggle (`approval.json` de T1 y V coincide con el código actual: `pikan_campaign.py`, `t1_trainer.py`, etc.), no por un conteo registrado en los logs. No firmada.
+
+## Decisiones abiertas (del investigador; sin resolver aquí)
+1. **Dosis:** RESUELTA — d = 2e-4 (gradiente máximo +57 %), elegida por el investigador el 2026-10-21.
+2. **Descriptor de «tipo Allen–Cahn»:** RETIRADO como definición de clase — Burgers (147.5) quedaba dentro y contradecía la hipótesis. (a) se formula para la familia AC y max|u_x| solo describe dificultad. **Predicción preregistrada para KPP:** la ganancia de E/F frente a B es menor o nula respecto de `ac_d2e-4` (mediana de razones pareadas, mediana contra mediana, descriptivo). Si E/F ganan también en KPP, es un hallazgo; si no, es coherente con el alcance. Ninguna salida refuta.
+3. **Receta de Fisher–KPP:** RESUELTA — usa la misma receta que AC (Adam 4000, L-BFGS 500 it., ancho 16, 8000+400+800 puntos), para que el control sea comparable. No se ajusta por problema.
+4. **Umbral de decisión del predictor cond(P)** (solo para el mecanismo condicional, ver `conditional-mechanism-draft.md`).
+5. Presupuesto de GPU y firma de 1-C. El bloque P añade 20 corridas de Burgers (~1 min cada una en T4 según 1-B); kernel preparado, no lanzado (ver 6).
+6. Burgers no pasa por el arnés de 1-C: se usa el de 1-B. **Kernel del bloque P preparado, no subido ni lanzado:** `kaggle/pblock/` (script, metadata, `approval.json` con `approved_by: null` y `launch_status: prepared_not_uploaded_NOT_AUTHORIZED`; hashes en `SHA256SUMS.txt`). Semillas 11–20, brazos B y E, Adam 2 000, L-BFGS 500, topes 1 h / 2 h. Prueba mínima en CPU: 4 de 10 trabajos completos (rc=0, JSON de B y E por semilla) antes de cortarla a los 15 min; `analyze_round1c.py` leyó esa salida y calculó el Spearman. No se probó en GPU ni los 10 trabajos.

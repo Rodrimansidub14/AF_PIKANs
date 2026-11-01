@@ -1,0 +1,29 @@
+{
+ "run_id": "kpp-B-seed6-a4000-l500",
+ "note": {
+  "problem": "kpp",
+  "arm": "B",
+  "seed": 6,
+  "draft": "round1C borrador sin firma; exploratorio",
+  "cond_init": [
+   77.11518767020782,
+   101.06359347062117,
+   104.23485109907473
+  ],
+  "cond_final": [
+   80.4520837656801,
+   97.31990554428891,
+   84.42149038779708
+  ]
+ },
+ "metrics": {
+  "primary_adam": 0.06062325916589426,
+  "primary_final": 0.02558193671801735,
+  "l2re_top_final": 0.12987929470955914,
+  "l2re_rest_final": 0.004737375241429664,
+  "cond_init_layer1": 101.06359347062117,
+  "cond_final_layer1": 97.31990554428891,
+  "total_seconds": 96.97164946999999
+ },
+ "wandb": "wandb_offline_logged"
+}

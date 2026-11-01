@@ -1,0 +1,17 @@
+{
+  "id": "rodrimandub/af-pikans-exp-0023-v-block",
+  "title": "AF PIKANs EXP-0023 V block",
+  "code_file": "exp0023_v_block_gpu.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "false",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "rodrimandub/af-pikans-exp0023-bundle"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

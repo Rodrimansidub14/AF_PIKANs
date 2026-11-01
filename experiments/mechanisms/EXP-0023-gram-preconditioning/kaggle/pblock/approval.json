@@ -1,0 +1,39 @@
+{
+  "bundle": "exp0023-pblock",
+  "slug": "rodrimandub/af-pikans-exp-0023-p-block",
+  "dataset": "rodrimandub/af-pikans-exp0023-bundle",
+  "purpose": "bloque P de la ronda 1-C: terreno preregistrado del contraste de cond(P): Spearman entre cond(P) inicial de la capa 1 y log(razon final E/B) en Burgers, semillas nuevas",
+  "recipe": "B,E x semillas 11-20 x Burgers (20 corridas); receta de 1-B (RBF48, Adam 2 000, L-BFGS tope 500 it., nu = 0.01/pi, P normalizado, Enmienda 1); un proceso por semilla con calentamiento; mismo dataset (hashes identicos a T1 y V)",
+  "session_estimate_minutes": [
+    10,
+    40
+  ],
+  "accelerator": "NvidiaTeslaT4 (T4x2)",
+  "internet": false,
+  "approved_by": "Rodrigo Mansilla (chat 2026-10-22: apruebo la aprobacion de campana que pide context/agent-policy.toml; chat 2026-10-22: lanzalo, bloque P)",
+  "scope": "exp0023_p_block",
+  "big_block_authorized": false,
+  "launch_status": "launched_2026-10-22",
+  "caps": "no se despacha trabajo nuevo despues de 1 h; se matan los trabajos en curso a las 2 h (mas cortos que los 4 h / 5 h de T1 y V porque son 10 trabajos de 2 brazos); lo que no termine es ausencia de medicion",
+  "hypothesis": "contraste unico preregistrado en round1C-proposal.md (e): brazo E, Burgers, 10 semillas, Spearman(cond_init capa 1, log razon E/B), direccion negativa, una cola; sujeto a la firma de 1-C",
+  "code_surface": "experiments/mechanisms/EXP-0023-gram-preconditioning (arnes de 1-B, sin cambios)",
+  "remote_execution": true,
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "component_sha256": {
+    "pblock/exp0023_p_block_gpu.py": "329b03adb0a0a1b4e10e076ee3d7cac14aff99fb4c970dee6cc3931e20919c8e",
+    "pblock/kernel-metadata.json": "7cabb2693aeddaf40f33fbbba2b7c522e23ede04c2511313a4502deb0214f591",
+    "dataset/Allen_Cahn.mat": "f9175685675685ab8d2a850f0d212d16c709f55ed89b8fe078493ddcd3724aa0",
+    "dataset/burgers_coleHopf_1025x129.npz": "7af8967648caaf2156529551b6df9e6ea6e3d09c7bc0070a3ffca370ba77f026",
+    "dataset/gram_preconditioning.py": "dd64f8a9ca8683e1428a5f708ed79cb3e49d8cb8a5bdc88f37a3b76e61edc1d8",
+    "dataset/measure_budget.py": "8398145f7889f5b957966b8dd0498354765daa4eca6ddacb44e0ca15134640fa",
+    "dataset/pikan_campaign.py": "1e1b94264bd9f3be740af632029dd45867045839b189f33808736ce1095c3341",
+    "dataset/pre_trainer.py": "10c24301f337b393b101854c35314ccde3fd34e504c466c108d44addaee57d84",
+    "dataset/regrid.py": "e8f9c5c0061e262233200968cf050b7780349bc2930c2a645d8f6c70f2ef6fa0",
+    "dataset/settling_focus.py": "5b686a6ffa2bb1ab522620153d8901d371d04f70bf86fa3a6880d7a554e9cc33",
+    "dataset/stall_handoff.py": "a513ba64cade9e2a923097ef0228fbcbe36e4c0c8a80d5c9cf81b1a3d067c587",
+    "dataset/sweep.py": "933e231957d5cfda4b697d7a3a2345149abd4bd8ba8fb9cdd6d53500ff945337",
+    "dataset/t1_trainer.py": "5bee9dd152fd690ed309f6a8dc63ff76fc8b0c0ebda1dac353602479da8bfca2"
+  },
+  "approval_scope_note": "Cubre solo los bloques de 1-C (c1block T1/V y pblock) con los topes de este archivo y sin gastar la cuota mas alla de ellos; no cubre EXP-0025 ni 'big_block_authorized'. Pendiente: `kaggle auth login` (lo hace el investigador) y dataset plano de 1-C."
+}

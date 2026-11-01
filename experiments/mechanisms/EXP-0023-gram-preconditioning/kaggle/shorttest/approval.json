@@ -1,0 +1,39 @@
+{
+  "bundle": "exp0023-shorttest",
+  "slug": "rodrimandub/af-pikans-exp-0023-shorttest",
+  "dataset": "rodrimandub/af-pikans-exp0023-bundle",
+  "purpose": "7b repetida tras la Enmienda 1 (P normalizado) y 7a de nuevo, EXP-0023; no lanza el bloque",
+  "recipe": "semilla 1; 7a estado compartido float64 (N=512); 7b: B/J/E/I/F con Adam 100, recalculo cada 50, N=512, criterio de la Enmienda 1 (perdida finita y <= 2x B en el paso 100)",
+  "session_estimate_minutes": [
+    15,
+    40
+  ],
+  "accelerator": "NvidiaTeslaT4 (T4x2)",
+  "internet": false,
+  "approved_by": "researcher, chat 2026-10-21: \u00abAcepto el minimo de P (0.05-0.6)... Repeti la 7b en la T4 con el criterio de la enmienda (5 brazos, 2 problemas, CPU y GPU, 100 pasos), sin lanzar el bloque\u00bb",
+  "scope": "exp0023_shorttest_only",
+  "big_block_authorized": false,
+  "launch_status": "complete_2026-10-21_7b_amendment1",
+  "hypothesis": "ninguna: verificacion previa",
+  "code_surface": "src/mechanisms/gram_preconditioning.py; experiments/mechanisms/EXP-0023-gram-preconditioning",
+  "remote_execution": true,
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "component_sha256": {
+    "shorttest/exp0023_shorttest_gpu.py": "941ea82a6e16c303ee48d81e54dff0deac2e05901c2317c8e74acd4209eac2f8",
+    "shorttest/kernel-metadata.json": "2c0504221d5850ee8091230959d802574bd90c5b4e72bace430dd9a798789920",
+    "dataset/Allen_Cahn.mat": "f9175685675685ab8d2a850f0d212d16c709f55ed89b8fe078493ddcd3724aa0",
+    "dataset/burgers_coleHopf_1025x129.npz": "7af8967648caaf2156529551b6df9e6ea6e3d09c7bc0070a3ffca370ba77f026",
+    "dataset/gram_preconditioning.py": "dd64f8a9ca8683e1428a5f708ed79cb3e49d8cb8a5bdc88f37a3b76e61edc1d8",
+    "dataset/measure_budget.py": "8398145f7889f5b957966b8dd0498354765daa4eca6ddacb44e0ca15134640fa",
+    "dataset/pikan_campaign.py": "1e1b94264bd9f3be740af632029dd45867045839b189f33808736ce1095c3341",
+    "dataset/pre_trainer.py": "10c24301f337b393b101854c35314ccde3fd34e504c466c108d44addaee57d84",
+    "dataset/regrid.py": "e8f9c5c0061e262233200968cf050b7780349bc2930c2a645d8f6c70f2ef6fa0",
+    "dataset/settling_focus.py": "5b686a6ffa2bb1ab522620153d8901d371d04f70bf86fa3a6880d7a554e9cc33",
+    "dataset/stall_handoff.py": "a513ba64cade9e2a923097ef0228fbcbe36e4c0c8a80d5c9cf81b1a3d067c587",
+    "dataset/sweep.py": "933e231957d5cfda4b697d7a3a2345149abd4bd8ba8fb9cdd6d53500ff945337",
+    "dataset/t1_trainer.py": "5bee9dd152fd690ed309f6a8dc63ff76fc8b0c0ebda1dac353602479da8bfca2"
+  },
+  "launch_authorized_by": "researcher, chat 2026-10-20: \u00abAcepto el minimo de P (0.05-0.6)... Repeti la 7b en la T4 con el criterio de la enmienda (5 brazos, 2 problemas, CPU y GPU, 100 pasos), sin lanzar el bloque\u00bb (2026-10-21)",
+  "results": "experiments/mechanisms/EXP-0023-gram-preconditioning/results/shorttest-gpu-amend1"
+}

@@ -1,0 +1,191 @@
+{
+ "info": {
+  "tiny": false,
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "cutoff_s": 5400.0,
+  "hard_cap_s": 10800.0,
+  "designs": "B,E,F",
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "ledger": [
+  {
+   "job": [
+    "ac_d2e-4",
+    6
+   ],
+   "slot": 0,
+   "start": 2.437000006239032e-06,
+   "end": 340.00469907700005,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac_d2e-4",
+    7
+   ],
+   "slot": 1,
+   "start": 2.437000006239032e-06,
+   "end": 340.00469907700005,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac_d2e-4",
+    8
+   ],
+   "slot": 0,
+   "start": 340.00469907700005,
+   "end": 660.009827464,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac_d2e-4",
+    9
+   ],
+   "slot": 1,
+   "start": 340.00469907700005,
+   "end": 680.011618449,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "ac_d2e-4",
+    10
+   ],
+   "slot": 0,
+   "start": 660.009827464,
+   "end": 980.015666429,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    6
+   ],
+   "slot": 1,
+   "start": 680.011618449,
+   "end": 1000.017532629,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    7
+   ],
+   "slot": 0,
+   "start": 980.015666429,
+   "end": 1300.021184448,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    8
+   ],
+   "slot": 1,
+   "start": 1000.017532629,
+   "end": 1340.023007505,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    9
+   ],
+   "slot": 0,
+   "start": 1300.021184448,
+   "end": 1600.026634498,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "kpp",
+    10
+   ],
+   "slot": 1,
+   "start": 1340.023007505,
+   "end": 1660.027644846,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "finished_runs": [
+  "ac_d2e-4-B-seed10-a4000-l500.json",
+  "ac_d2e-4-B-seed10-a4000-l500.note.json",
+  "ac_d2e-4-B-seed6-a4000-l500.json",
+  "ac_d2e-4-B-seed6-a4000-l500.note.json",
+  "ac_d2e-4-B-seed7-a4000-l500.json",
+  "ac_d2e-4-B-seed7-a4000-l500.note.json",
+  "ac_d2e-4-B-seed8-a4000-l500.json",
+  "ac_d2e-4-B-seed8-a4000-l500.note.json",
+  "ac_d2e-4-B-seed9-a4000-l500.json",
+  "ac_d2e-4-B-seed9-a4000-l500.note.json",
+  "ac_d2e-4-E-seed10-a4000-l500.json",
+  "ac_d2e-4-E-seed10-a4000-l500.note.json",
+  "ac_d2e-4-E-seed6-a4000-l500.json",
+  "ac_d2e-4-E-seed6-a4000-l500.note.json",
+  "ac_d2e-4-E-seed7-a4000-l500.json",
+  "ac_d2e-4-E-seed7-a4000-l500.note.json",
+  "ac_d2e-4-E-seed8-a4000-l500.json",
+  "ac_d2e-4-E-seed8-a4000-l500.note.json",
+  "ac_d2e-4-E-seed9-a4000-l500.json",
+  "ac_d2e-4-E-seed9-a4000-l500.note.json",
+  "ac_d2e-4-F-seed10-a4000-l500.json",
+  "ac_d2e-4-F-seed10-a4000-l500.note.json",
+  "ac_d2e-4-F-seed6-a4000-l500.json",
+  "ac_d2e-4-F-seed6-a4000-l500.note.json",
+  "ac_d2e-4-F-seed7-a4000-l500.json",
+  "ac_d2e-4-F-seed7-a4000-l500.note.json",
+  "ac_d2e-4-F-seed8-a4000-l500.json",
+  "ac_d2e-4-F-seed8-a4000-l500.note.json",
+  "ac_d2e-4-F-seed9-a4000-l500.json",
+  "ac_d2e-4-F-seed9-a4000-l500.note.json",
+  "kpp-B-seed10-a4000-l500.json",
+  "kpp-B-seed10-a4000-l500.note.json",
+  "kpp-B-seed6-a4000-l500.json",
+  "kpp-B-seed6-a4000-l500.note.json",
+  "kpp-B-seed7-a4000-l500.json",
+  "kpp-B-seed7-a4000-l500.note.json",
+  "kpp-B-seed8-a4000-l500.json",
+  "kpp-B-seed8-a4000-l500.note.json",
+  "kpp-B-seed9-a4000-l500.json",
+  "kpp-B-seed9-a4000-l500.note.json",
+  "kpp-E-seed10-a4000-l500.json",
+  "kpp-E-seed10-a4000-l500.note.json",
+  "kpp-E-seed6-a4000-l500.json",
+  "kpp-E-seed6-a4000-l500.note.json",
+  "kpp-E-seed7-a4000-l500.json",
+  "kpp-E-seed7-a4000-l500.note.json",
+  "kpp-E-seed8-a4000-l500.json",
+  "kpp-E-seed8-a4000-l500.note.json",
+  "kpp-E-seed9-a4000-l500.json",
+  "kpp-E-seed9-a4000-l500.note.json",
+  "kpp-F-seed10-a4000-l500.json",
+  "kpp-F-seed10-a4000-l500.note.json",
+  "kpp-F-seed6-a4000-l500.json",
+  "kpp-F-seed6-a4000-l500.note.json",
+  "kpp-F-seed7-a4000-l500.json",
+  "kpp-F-seed7-a4000-l500.note.json",
+  "kpp-F-seed8-a4000-l500.json",
+  "kpp-F-seed8-a4000-l500.note.json",
+  "kpp-F-seed9-a4000-l500.json",
+  "kpp-F-seed9-a4000-l500.note.json"
+ ],
+ "wall_seconds": 1660.0299985408783,
+ "complete": true
+}

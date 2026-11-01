@@ -1,0 +1,157 @@
+{
+ "burgers": {
+  "budget_gpu": {
+   "B": {
+    "adam_s_per_step": 0.054254778479999856
+   },
+   "J": {
+    "adam_s_per_step": 0.05528908967000007,
+    "refresh_seconds": [
+     3.2831866200000377,
+     3.304682644999957,
+     3.3103410159999953
+    ],
+    "refresh_min": 3.2831866200000377
+   },
+   "E": {
+    "adam_s_per_step": 0.05926061244500005,
+    "refresh_seconds": [
+     3.661497994000001,
+     3.6622039399999835,
+     3.9203316080000263
+    ],
+    "refresh_min": 3.661497994000001
+   },
+   "I": {
+    "adam_s_per_step": 0.05623256464999997,
+    "refresh_seconds": [
+     5.219728065000027,
+     5.19000342999999,
+     5.127048839999986
+    ],
+    "refresh_min": 5.127048839999986
+   },
+   "F": {
+    "adam_s_per_step": 0.050906446815000096
+   }
+  },
+  "test7a_shared_state_float64": {
+   "E": {
+    "max_rel_diff": 1.5444016827569146e-12,
+    "within_tolerance": true
+   },
+   "I": {
+    "max_rel_diff": 5.112299793554321e-11,
+    "within_tolerance": true
+   },
+   "J": {
+    "max_rel_diff": 2.8031112510390053e-16,
+    "within_tolerance": true
+   }
+  },
+  "test7b_short_runs_float32": {
+   "B": {
+    "gpu_adam": 0.3259385433694146,
+    "cpu_adam": 0.3259386984284118,
+    "gpu_final": 0.2785156723516742,
+    "cpu_final": 0.27821862579422857,
+    "rel_diff_adam": 4.757305528473653e-07,
+    "rel_diff_final": 0.0010676731530739043,
+    "gpu_seconds": 10.357762676999982,
+    "gpu_pre_seconds": 0.0,
+    "gpu_recomputes": 0,
+    "finite": true,
+    "within_tolerance": true
+   },
+   "E": {
+    "error": "sin resultado"
+   },
+   "I": {
+    "error": "sin resultado"
+   }
+  }
+ },
+ "ac": {
+  "budget_gpu": {
+   "B": {
+    "adam_s_per_step": 0.05961740409000015
+   },
+   "J": {
+    "adam_s_per_step": 0.058032902065000086,
+    "refresh_seconds": [
+     1.7650189860000296,
+     2.684783637999999,
+     2.2575967900000364
+    ],
+    "refresh_min": 1.7650189860000296
+   },
+   "E": {
+    "adam_s_per_step": 0.057631685240000084,
+    "refresh_seconds": [
+     2.758225326999991,
+     2.8265321860000086,
+     2.2390853489999927
+    ],
+    "refresh_min": 2.2390853489999927
+   },
+   "I": {
+    "adam_s_per_step": 0.05250017578000012,
+    "refresh_seconds": [
+     3.463166670000021,
+     3.1001800770000045,
+     2.291612243999964
+    ],
+    "refresh_min": 2.291612243999964
+   },
+   "F": {
+    "adam_s_per_step": 0.049878278380000154
+   }
+  },
+  "test7a_shared_state_float64": {
+   "E": {
+    "max_rel_diff": 1.5534005490657865e-12,
+    "within_tolerance": true
+   },
+   "I": {
+    "max_rel_diff": 2.3228876989070028e-11,
+    "within_tolerance": true
+   },
+   "J": {
+    "max_rel_diff": 2.053249366212649e-16,
+    "within_tolerance": true
+   }
+  },
+  "test7b_short_runs_float32": {
+   "B": {
+    "gpu_adam": 0.9041029718771946,
+    "cpu_adam": 0.9041032208119708,
+    "gpu_final": 0.5859680240472654,
+    "cpu_final": 0.5859020906569061,
+    "rel_diff_adam": 2.753388888641713e-07,
+    "rel_diff_final": 0.00011253312014195879,
+    "gpu_seconds": 8.881427696000003,
+    "gpu_pre_seconds": 0.0,
+    "gpu_recomputes": 0,
+    "finite": true,
+    "within_tolerance": true
+   },
+   "E": {
+    "gpu_adam": 0.6652209106570015,
+    "cpu_adam": 0.7066748230554678,
+    "gpu_final": 0.6652212677836694,
+    "cpu_final": 0.7671953595453685,
+    "rel_diff_adam": 0.058660519727066214,
+    "rel_diff_final": 0.13291802471554032,
+    "gpu_seconds": 23.254032117999998,
+    "gpu_pre_seconds": 1.8065500159999601,
+    "gpu_recomputes": 3,
+    "finite": true,
+    "within_tolerance": true
+   },
+   "I": {
+    "error": "sin resultado"
+   }
+  }
+ },
+ "all_within_tolerance": false
+}

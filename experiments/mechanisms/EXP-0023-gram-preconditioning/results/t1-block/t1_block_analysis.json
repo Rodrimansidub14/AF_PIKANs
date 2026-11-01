@@ -1,0 +1,136 @@
+{
+ "burgers/J": {
+  "n": 5,
+  "missing": [],
+  "median_ratio_final": 5.535102155079622,
+  "improved_final": 1,
+  "ratios_final": [
+   12.113,
+   1.418,
+   0.882,
+   9.953,
+   5.535
+  ],
+  "median_ratio_end_of_adam": 1.1684291029600673,
+  "median_clock_ratio": 1.0924550356775562,
+  "all_finite": true
+ },
+ "burgers/E": {
+  "n": 5,
+  "missing": [],
+  "median_ratio_final": 0.43204839088950225,
+  "improved_final": 4,
+  "ratios_final": [
+   4.168,
+   0.037,
+   0.502,
+   0.432,
+   0.382
+  ],
+  "median_ratio_end_of_adam": 0.5753336222706829,
+  "median_clock_ratio": 1.1019704026638777,
+  "all_finite": true
+ },
+ "burgers/I": {
+  "n": 5,
+  "missing": [],
+  "median_ratio_final": 181.9450605263429,
+  "improved_final": 0,
+  "ratios_final": [
+   181.945,
+   38.585,
+   21.627,
+   296.708,
+   202.198
+  ],
+  "median_ratio_end_of_adam": 10.595111245681602,
+  "median_clock_ratio": 1.151111716919541,
+  "all_finite": true
+ },
+ "burgers/F": {
+  "n": 5,
+  "missing": [],
+  "median_ratio_final": 0.4888800667659549,
+  "improved_final": 4,
+  "ratios_final": [
+   0.389,
+   0.145,
+   1.529,
+   0.623,
+   0.489
+  ],
+  "median_ratio_end_of_adam": 1.0102069293879472,
+  "median_clock_ratio": 1.0023691225240163,
+  "all_finite": true
+ },
+ "ac/J": {
+  "n": 5,
+  "missing": [],
+  "median_ratio_final": 0.884134846126251,
+  "improved_final": 3,
+  "ratios_final": [
+   0.792,
+   0.884,
+   1.116,
+   0.828,
+   1.099
+  ],
+  "median_ratio_end_of_adam": 1.0616174889945726,
+  "median_clock_ratio": 1.0837220855622316,
+  "all_finite": true
+ },
+ "ac/E": {
+  "n": 5,
+  "missing": [],
+  "median_ratio_final": 0.1359864121980031,
+  "improved_final": 5,
+  "ratios_final": [
+   0.136,
+   0.198,
+   0.118,
+   0.209,
+   0.113
+  ],
+  "median_ratio_end_of_adam": 0.36296022720741467,
+  "median_clock_ratio": 1.08910690067875,
+  "all_finite": true
+ },
+ "ac/I": {
+  "n": 5,
+  "missing": [],
+  "median_ratio_final": 1.4496303731056042,
+  "improved_final": 2,
+  "ratios_final": [
+   9.871,
+   0.017,
+   1.45,
+   0.014,
+   9.882
+  ],
+  "median_ratio_end_of_adam": 2.5102089803263485,
+  "median_clock_ratio": 1.095340515603865,
+  "all_finite": true
+ },
+ "ac/F": {
+  "n": 5,
+  "missing": [],
+  "median_ratio_final": 0.4389258775273217,
+  "improved_final": 5,
+  "ratios_final": [
+   0.21,
+   0.563,
+   0.518,
+   0.228,
+   0.439
+  ],
+  "median_ratio_end_of_adam": 0.338774755600254,
+  "median_clock_ratio": 1.0289355856424895,
+  "all_finite": true
+ },
+ "passes_T1_median_le_0.90_both_problems": {
+  "J": false,
+  "E": true,
+  "I": false,
+  "F": true
+ }
+}

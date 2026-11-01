@@ -1,0 +1,151 @@
+{
+ "info": {
+  "tiny": false,
+  "n_gpu": 2,
+  "n_workers": 2,
+  "torch": "2.11.0+cu128",
+  "cutoff_s": 3600.0,
+  "hard_cap_s": 7200.0,
+  "designs": "B,E",
+  "gpus": [
+   "Tesla T4",
+   "Tesla T4"
+  ]
+ },
+ "ledger": [
+  {
+   "job": [
+    "burgers",
+    11
+   ],
+   "slot": 0,
+   "start": 2.1879999394514016e-06,
+   "end": 260.0042712589999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    12
+   ],
+   "slot": 1,
+   "start": 2.1879999394514016e-06,
+   "end": 260.0042712589999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    13
+   ],
+   "slot": 0,
+   "start": 260.0042712589999,
+   "end": 500.0089031729999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    14
+   ],
+   "slot": 1,
+   "start": 260.0042712589999,
+   "end": 500.0089031729999,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    15
+   ],
+   "slot": 0,
+   "start": 500.0089031729999,
+   "end": 740.01343782,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    16
+   ],
+   "slot": 1,
+   "start": 500.0089031729999,
+   "end": 740.01343782,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    17
+   ],
+   "slot": 0,
+   "start": 740.01343782,
+   "end": 980.0180129620001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    18
+   ],
+   "slot": 1,
+   "start": 740.01343782,
+   "end": 980.0180129620001,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    19
+   ],
+   "slot": 0,
+   "start": 980.0180129620001,
+   "end": 1220.022616585,
+   "returncode": 0,
+   "status": "ok"
+  },
+  {
+   "job": [
+    "burgers",
+    20
+   ],
+   "slot": 1,
+   "start": 980.0180129620001,
+   "end": 1220.022616585,
+   "returncode": 0,
+   "status": "ok"
+  }
+ ],
+ "finished_runs": [
+  "burgers-B-seed11-a2000-l500.json",
+  "burgers-B-seed12-a2000-l500.json",
+  "burgers-B-seed13-a2000-l500.json",
+  "burgers-B-seed14-a2000-l500.json",
+  "burgers-B-seed15-a2000-l500.json",
+  "burgers-B-seed16-a2000-l500.json",
+  "burgers-B-seed17-a2000-l500.json",
+  "burgers-B-seed18-a2000-l500.json",
+  "burgers-B-seed19-a2000-l500.json",
+  "burgers-B-seed20-a2000-l500.json",
+  "burgers-E-seed11-a2000-l500.json",
+  "burgers-E-seed12-a2000-l500.json",
+  "burgers-E-seed13-a2000-l500.json",
+  "burgers-E-seed14-a2000-l500.json",
+  "burgers-E-seed15-a2000-l500.json",
+  "burgers-E-seed16-a2000-l500.json",
+  "burgers-E-seed17-a2000-l500.json",
+  "burgers-E-seed18-a2000-l500.json",
+  "burgers-E-seed19-a2000-l500.json",
+  "burgers-E-seed20-a2000-l500.json"
+ ],
+ "wall_seconds": 1220.0239853858948,
+ "complete": true
+}
