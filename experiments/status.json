@@ -1,0 +1,308 @@
+[
+ {
+  "id": "EXP-0001",
+  "problema": "heat",
+  "pregunta": "Baseline reproducible de PIKAN sobre Heat 1D",
+  "estado": "decided",
+  "decision": "superseded",
+  "bloques": [],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0002",
+  "problema": "heat",
+  "pregunta": "",
+  "estado": "—",
+  "decision": "closed_exploratory_record",
+  "bloques": [],
+  "notebooks": 2
+ },
+ {
+  "id": "EXP-0003",
+  "problema": "allen-cahn",
+  "pregunta": "Allen–Cahn con RBF-PIKAN",
+  "estado": "—",
+  "decision": "closed_exploratory_record",
+  "bloques": [],
+  "notebooks": 2
+ },
+ {
+  "id": "EXP-0004",
+  "problema": "navier-stokes",
+  "pregunta": "DFG 2D-1 Re=20 con RBF-PIKAN",
+  "estado": "—",
+  "decision": "—",
+  "bloques": [],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0006",
+  "problema": "burgers",
+  "pregunta": "Burgers: Sobol frente a RAD",
+  "estado": "—",
+  "decision": "rejected",
+  "bloques": [],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0007",
+  "problema": "heat",
+  "pregunta": "Heat step-matched comparison (v5)",
+  "estado": "—",
+  "decision": "closed_exploratory_record",
+  "bloques": [],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0008",
+  "problema": "baseline-v2",
+  "pregunta": "Baseline competitivo v2 (receta de optimización + capacidad + evaluadores)",
+  "estado": "decided",
+  "decision": "closed_superseded_by_baselines",
+  "bloques": [
+   "heat-lbfgs-redo-20260930",
+   "ac-rerun-20260930",
+   "ns2d-cg-20260930",
+   "dfg-daniel-cfg-20260930",
+   "dfg-long-20261001",
+   "burgers-close-20261003",
+   "burgers-f64-lbfgs-20261003",
+   "burgers-big-20261003"
+  ],
+  "notebooks": 1
+ },
+ {
+  "id": "EXP-0009",
+  "problema": "piezo",
+  "pregunta": "Piezo (bimorfo PVDF, formulación indirecta): problema, referencia y baseline",
+  "estado": "decided",
+  "decision": "closed_baseline_recorded",
+  "bloques": [
+   "piezo-probe-20261001",
+   "piezo-long1-20261001",
+   "piezo-vsplit-20261001",
+   "piezo-sweep-20261003",
+   "piezo-sweep2-20261003",
+   "piezo-layered-20261003",
+   "piezo-rbf-lr-20261003",
+   "piezo-daniel-recipe-20261003",
+   "piezo-daniel-seeds-20261004",
+   "piezo-daniel-seeds2-20261004"
+  ],
+  "notebooks": 10
+ },
+ {
+  "id": "EXP-0011",
+  "problema": "heat",
+  "pregunta": "RAD sobre el control RBF-PIKAN de Heat (primer experimento de mecanismo)",
+  "estado": "decided",
+  "decision": "rejected",
+  "bloques": [
+   "heat-rad-exp0011-20261004"
+  ],
+  "notebooks": 1
+ },
+ {
+  "id": "EXP-0012",
+  "problema": "heat",
+  "pregunta": "¿El déficit de RAD tras L-BFGS venía de los puntos de L-BFGS? (seguimiento de EXP-0011)",
+  "estado": "decided",
+  "decision": "rejected",
+  "bloques": [
+   "heat-rad-exp0012-20261004"
+  ],
+  "notebooks": 1
+ },
+ {
+  "id": "EXP-0013",
+  "problema": "diagnostics",
+  "pregunta": "Diagnóstico de qué hace cada corrida, para definir un mecanismo de *awareness*",
+  "estado": "decided",
+  "decision": "accepted",
+  "bloques": [
+   "exp0013-step0-inventory-20261005",
+   "exp0013-signals-20261005",
+   "exp0013-analysis-20261005"
+  ],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0014",
+  "problema": "mechanisms",
+  "pregunta": "Muestreador autogobernado: primera iteración de un mecanismo de *awareness*",
+  "estado": "draft",
+  "decision": "—",
+  "bloques": [],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0015",
+  "problema": "mechanisms",
+  "pregunta": "¿Cantidad o ubicación? Prueba de techo sobre las bases de la capa 0",
+  "estado": "preregistered",
+  "decision": "—",
+  "bloques": [
+   "exp0015-step0-seed1-20261018",
+   "exp0015-step0-seeds23-20261018"
+  ],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0016",
+  "problema": "mechanisms",
+  "pregunta": "Focalización guiada por el asentamiento de la representación interna",
+  "estado": "decided",
+  "decision": "—",
+  "bloques": [
+   "exp0016-tier01-20261019",
+   "exp0016-executor-20261019",
+   "exp0016-v2-tier01-20261019",
+   "exp0016-precheck-bundle-20261019",
+   "exp0016-precheck-gpu-20261019",
+   "exp0016-warmup-check-gpu-20261019",
+   "exp0016-stageA-20261019",
+   "exp0016-stageB-20261019"
+  ],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0017",
+  "problema": "mechanisms",
+  "pregunta": "¿Qué parte de la representación puede guiar la focalización? Batería en lazo abierto",
+  "estado": "scored",
+  "decision": "—",
+  "bloques": [
+   "exp0017-battery-20261020"
+  ],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0018",
+  "problema": "mechanisms",
+  "pregunta": "Techo causal del foco por responsabilidad (A* oráculo)",
+  "estado": "scored",
+  "decision": "—",
+  "bloques": [
+   "exp0018-tier01-20261020",
+   "exp0018-test7-t4-20261020",
+   "exp0018-ceiling-20261020"
+  ],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0022",
+  "problema": "mechanisms",
+  "pregunta": "¿Qué estructura del problema de optimización frena a la PIKAN-PDE? Diagnóstico de condicio",
+  "estado": "preregistered",
+  "decision": "—",
+  "bloques": [],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0023",
+  "problema": "mechanisms",
+  "pregunta": "Precondicionamiento por la estructura de la representación",
+  "estado": "preregistered",
+  "decision": "—",
+  "bloques": [
+   "exp0023-t1-block-20261021",
+   "exp0023-v-block-20261021",
+   "exp0023-c1-T1-20261022",
+   "exp0023-c1-V-20261022",
+   "exp0023-c1-P-20261022"
+  ],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0024",
+  "problema": "mechanisms",
+  "pregunta": "Túnel de viento: separar descubrir de confirmar",
+  "estado": "preregistered",
+  "decision": "—",
+  "bloques": [
+   "exp0024-t1-shorttest-gpu-20261020",
+   "exp0024-t1-d1-diagnostic-20261020",
+   "exp0024-regrid-cpu-vs-gpu-20261020",
+   "exp0024-t1-block-20261020"
+  ],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0025",
+  "problema": "mechanisms",
+  "pregunta": "Observador con sondeo: un controlador que elige palanca durante el entrenamiento",
+  "estado": "preregistered",
+  "decision": "—",
+  "bloques": [
+   "exp0025-block-T1-20261022"
+  ],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0026",
+  "problema": "mechanisms",
+  "pregunta": "¿Por qué E ayuda en Burgers en un bloque y daña en otro? Cadencia × recálculo al arrancar ",
+  "estado": "preregistered",
+  "decision": "—",
+  "bloques": [
+   "exp0026-diag-20261022"
+  ],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0027",
+  "problema": "mechanisms",
+  "pregunta": "¿Predice el estado en la primera intervención qué semillas dañan a E en Burgers?",
+  "estado": "—",
+  "decision": "—",
+  "bloques": [],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0028",
+  "problema": "mechanisms",
+  "pregunta": "¿Qué componente del mecanismo, qué propiedad del problema y qué parte del entrenamiento ha",
+  "estado": "preregistered",
+  "decision": "accepted_exploratory",
+  "bloques": [
+   "exp0028-phase1a",
+   "exp0028-phase1b",
+   "exp0028-phase1c-t1",
+   "exp0028-phase1c-dfg",
+   "exp0028-phase1d-ac",
+   "exp0028-phase1d-kpp",
+   "exp0028-phase1d-bu1",
+   "exp0028-phase1e-ns1",
+   "exp0028-phase1e-ns2",
+   "exp0028-phase1e-acf",
+   "exp0028-piezo-stage0",
+   "exp0028-piezo-s1ab",
+   "exp0028-piezo-modal-run",
+   "exp0028-piezo-modal-smoke"
+  ],
+  "notebooks": 2
+ },
+ {
+  "id": "EXP-0029",
+  "problema": "mechanisms",
+  "pregunta": "Mecanismo final M en piezo (spec y firma en EXP-0029_spec.md)",
+  "estado": "scored (spec dentro de EXP-0028)",
+  "decision": "not_supported",
+  "bloques": [
+   "exp0029-piezo-S-t1t2-20261025",
+   "exp0029-piezo-final-20261026"
+  ],
+  "notebooks": 0
+ },
+ {
+  "id": "EXP-0030",
+  "problema": "mechanisms",
+  "pregunta": "Caracterización de los resultados del mecanismo M en piezo",
+  "estado": "preregistered",
+  "decision": "inconclusive",
+  "bloques": [
+   "exp0030-caracterizacion-M-20261026"
+  ],
+  "notebooks": 0
+ }
+]
