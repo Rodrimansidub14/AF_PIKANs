@@ -1,0 +1,47 @@
+{
+  "status": "DRAFT_UNVERIFIED",
+  "variant": "literal",
+  "arm": "rbf",
+  "seed": 803,
+  "width": 16,
+  "params": 4032,
+  "bc_counts": {
+    "inlet": 25,
+    "top": 137,
+    "bottom": 137,
+    "cyl": 19
+  },
+  "n_collocation": 22345,
+  "adam_steps": 2000,
+  "adam_seconds": 237.832296347,
+  "device": "Tesla T4",
+  "dtype": "float32",
+  "fem_reference_sha256": "936fc178e6bc63b1c72388b76c269e2eb56ff78a93c14903df512a7d7202bb7a",
+  "score_adam_final": {
+    "u_relL2": 0.558185975499986,
+    "v_relL2": 0.7429807832451846,
+    "p_relL2_gauge": 0.8658390182045842,
+    "Cd": 0.366786990483721,
+    "Cl": -0.019860857899338853,
+    "dp": 0.00423452609906802,
+    "Cd_relerr": 0.9342620890250589,
+    "Cl_abserr": 0.030479806045338852,
+    "dp_relerr": 0.9639676643741582
+  },
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "lbfgs_status": "lbfgs_complete",
+  "lbfgs_seconds": 131.59627117799982,
+  "lbfgs_steps": 1000,
+  "score_lbfgs_final": {
+    "u_relL2": 0.546622433356842,
+    "v_relL2": 0.6534495674638724,
+    "p_relL2_gauge": 0.8457278446063052,
+    "Cd": 0.7427134889002872,
+    "Cl": 0.005051746784623582,
+    "dp": 0.012223728698392661,
+    "Cd_relerr": 0.866886136967876,
+    "Cl_abserr": 0.005567201361376418,
+    "dp_relerr": 0.8959861186930318
+  }
+}

@@ -1,0 +1,25 @@
+{
+ "campaign": "dfg-long-20261001",
+ "sha256": {
+  "corrected-mlp-seed-801/checkpoint-adam-final.pt": "426ca67432d520eb7b998d86a52541389daefaa608badf891eb5a65d15994d9a",
+  "corrected-mlp-seed-801/checkpoint-lbfgs-final.pt": "34670b4d790421a59b36a1bd82d2142c87cdc0c3188adbea8f187a36302c575c",
+  "corrected-mlp-seed-802/checkpoint-adam-final.pt": "bad04a57c91f3d64b307b93594a0c8d484a667bee2afc89f02bc50398d881084",
+  "corrected-mlp-seed-802/checkpoint-lbfgs-final.pt": "f28c7e16aa6533df6e85d02376dc36e7d928b1f38371450c760a1f613c9c5c0f",
+  "corrected-mlp-seed-803/checkpoint-adam-final.pt": "4ed6b8be09c378fe1732ba7f5596d90dcb48d593a0ccd000a5a521ee41514ce7",
+  "corrected-mlp-seed-803/checkpoint-lbfgs-final.pt": "d87c15697ef113feda4229dc1e0da31ffddf907c042f43d6a97960a4552143d5",
+  "corrected-mlp-seed-804/checkpoint-adam-final.pt": "0448cf8adedb03aa5386f0834b45dfa661f444663c4e71bfc69faacae9022352",
+  "corrected-mlp-seed-804/checkpoint-lbfgs-final.pt": "2d0e81149fc027a0f889190b4cca8e5b70767a2074acc3ea16adcc626b57777c",
+  "corrected-mlp-seed-805/checkpoint-adam-final.pt": "49b9c118c575ce6150b634e89f8234ea87ae9cd72189cfb12a7108aa0592d214",
+  "corrected-mlp-seed-805/checkpoint-lbfgs-final.pt": "615a9eed7385f08c4ec8c2525417690bddc23f10300528336d2b3306ce043732",
+  "corrected-rbf-seed-801/checkpoint-adam-final.pt": "19c9237e92a491355da4076ad5b0467a5bb7a34fbfca9aca241812d2b32ffcbe",
+  "corrected-rbf-seed-801/checkpoint-lbfgs-final.pt": "523251cad59b3044cafde928ae4f2022bd8deb110fa8e4ef1197488202e93684",
+  "corrected-rbf-seed-802/checkpoint-adam-final.pt": "2cb4d833ebf45d18e61990b2400d9a3f83ef64d14388990d95ba1252e5c0809e",
+  "corrected-rbf-seed-802/checkpoint-lbfgs-final.pt": "8671237357e9007555c68fbf125ee133062e6070fc95b40ea727e6f02afcc95f",
+  "corrected-rbf-seed-803/checkpoint-adam-final.pt": "48b3c05a2c12e588f70cb75681c4f0bed7c991badadbf94552453b240f289176",
+  "corrected-rbf-seed-803/checkpoint-lbfgs-final.pt": "99b1c3a347954e813017683a979427c54e67f1f3dc8902a1613b747e7b9222e9",
+  "corrected-rbf-seed-804/checkpoint-adam-final.pt": "4eea6d6d7e1949449e24e17693f817d15f3273f5b2c63c958967c5bb09d0e200",
+  "corrected-rbf-seed-804/checkpoint-lbfgs-final.pt": "9625da20e251d2e483a28895653d73a0b197142f655248c7e558306963dc15a9",
+  "corrected-rbf-seed-805/checkpoint-adam-final.pt": "a359163e051a1fde0c57b65b3f4e130d1f56a5961b49b602306919c1b9f6c315",
+  "corrected-rbf-seed-805/checkpoint-lbfgs-final.pt": "51ede1fefb45d80338ea50efa65553518ca341c431b191bfc8f8c929c20c34bb"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "campaign": "ns2d-cg-20260930",
+ "sha256": {
+  "ns/mlp-seed-701/checkpoint-adam-final.pt": "a27c497754c8977296d358afd31d19977ea840d60ee0dae5ea5cafb037f27be6",
+  "ns/mlp-seed-702/checkpoint-adam-final.pt": "4528e1eac91578d109c6992053de17e8f67dd951e613c0685510f99e36707c48",
+  "ns/mlp-seed-703/checkpoint-adam-final.pt": "89017f18730e0249d98bd48f6900d9f0e27ca1e57903fd3f8f5b29503427239e",
+  "ns/mlp-seed-704/checkpoint-adam-final.pt": "63c0425f75d66a72d32d340503fe79057770eb4362f92c9a8e541d669cd4c345",
+  "ns/mlp-seed-705/checkpoint-adam-final.pt": "3d689f35a651612939ebd9ecd6ce57a0b858a8d18ea9f85881bcb765654cc9e2",
+  "ns/rbf16-seed-701/checkpoint-adam-final.pt": "c26e58ad3653179335ce2d1fb2c642cca0bd040329ceafe389df5d0922d9fef4",
+  "ns/rbf16-seed-702/checkpoint-adam-final.pt": "20021514ce1a39f0cc2d3d47b0ad8ca18f986e34259044f90fdf0a91579cffd8",
+  "ns/rbf16-seed-703/checkpoint-adam-final.pt": "ede23ca9ca79148767437fd154087a86cc139c5971888213aa27556012e11c0b",
+  "ns/rbf56-seed-701/checkpoint-adam-final.pt": "1df86ead08d3f3f3ca4b25e2b851e209306d9925e4969050823251e7dec018ab",
+  "ns/rbf56-seed-702/checkpoint-adam-final.pt": "763258345e079b24b4bf33b4350277cc73d5a71d6dba2104e2f8ebab53d0cb64",
+  "ns/rbf56-seed-703/checkpoint-adam-final.pt": "c6af37c22c4e417d28193b4df8e524720350fc8dc101c89bb8f8e754def57c3f",
+  "ns/rbf56-seed-704/checkpoint-adam-final.pt": "f7703a57a8ff1f6445900163a0f4f6d7360a3258b3437aa246a457088a6924ee",
+  "ns/rbf56-seed-705/checkpoint-adam-final.pt": "00d0698ff819bbe8d210eaf3c88cd6d05c228b770b0898a31429eab8afe1bf6b"
+ }
+}

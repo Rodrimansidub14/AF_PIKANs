@@ -1,0 +1,111 @@
+{
+  "status": "DRAFT_UNVERIFIED",
+  "elapsed": 11378.108851243,
+  "runs": [
+    {
+      "seed": 701,
+      "arm": "mlp",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 706.218512058,
+      "gpu": 1
+    },
+    {
+      "seed": 701,
+      "arm": "rbf",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 1160.3706554809999,
+      "gpu": 1
+    },
+    {
+      "seed": 701,
+      "arm": "rbf",
+      "width": 56,
+      "return_code": 0,
+      "wall_seconds": 2922.944534756,
+      "gpu": 0
+    },
+    {
+      "seed": 702,
+      "arm": "mlp",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 692.2397791720005,
+      "gpu": 0
+    },
+    {
+      "seed": 702,
+      "arm": "rbf",
+      "width": 56,
+      "return_code": 0,
+      "wall_seconds": 2935.0286446909995,
+      "gpu": 1
+    },
+    {
+      "seed": 702,
+      "arm": "rbf",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 1258.4621541940005,
+      "gpu": 0
+    },
+    {
+      "seed": 703,
+      "arm": "mlp",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 692.2447382609998,
+      "gpu": 0
+    },
+    {
+      "seed": 703,
+      "arm": "rbf",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 1148.4276004740004,
+      "gpu": 0
+    },
+    {
+      "seed": 703,
+      "arm": "rbf",
+      "width": 56,
+      "return_code": 0,
+      "wall_seconds": 2935.0966706160007,
+      "gpu": 1
+    },
+    {
+      "seed": 704,
+      "arm": "mlp",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 704.2682616020011,
+      "gpu": 1
+    },
+    {
+      "seed": 704,
+      "arm": "rbf",
+      "width": 56,
+      "return_code": 0,
+      "wall_seconds": 2917.1439417,
+      "gpu": 0
+    },
+    {
+      "seed": 705,
+      "arm": "mlp",
+      "width": 16,
+      "return_code": 0,
+      "wall_seconds": 692.2802325270004,
+      "gpu": 0
+    },
+    {
+      "seed": 705,
+      "arm": "rbf",
+      "width": 56,
+      "return_code": 0,
+      "wall_seconds": 2935.1196779889997,
+      "gpu": 1
+    }
+  ],
+  "complete": true
+}
