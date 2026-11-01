@@ -1,0 +1,18 @@
+{
+  "approved_by": "researcher: EXP-0011 signed 2026-10-03 (chat: 'firmo EXP-0011'); GPU quota 30 h renewed",
+  "preregistration": "experiments/heat/EXP-0011-heat-rad-adam/spec.md",
+  "session_cap_seconds": 5400,
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "component_sha256": {
+    "heat_rad_runner.py": "73f0e2781c7c7832dff70fd4dd9b8f251f0c4fc18334616eeabfbd3be58c77bd",
+    "af_sciml_model.py": "934687a265c2b2cae0c375cc30365e2d52e0b1d3edfff7cd977db0b59e4d7767",
+    "rad.py": "418d7dca9ce3cd9c7a37eba3d7b497c608ded6e0ca226cd06d6549a505afa241",
+    "heat-seed-901.npz": "c0901df4a0aaad05656bfa779297c77774590b393e06156b6cdd300a0d425213",
+    "heat-seed-902.npz": "357844a4bee6599a327f0c44eef116b30be51070342a9286f29f6c5a63e8a314",
+    "heat-seed-903.npz": "3eb8aed4319f1c96f91049c3429020bc5f25c820f7440f4a94589a7f5296c5da",
+    "heat-seed-904.npz": "cec4e6613f3154cdb78b495cb0d0f76caccbb2ef74375a23913f5e0a1a21e291",
+    "heat-seed-905.npz": "6b9e64f1631befd801be0bdc320c6498396d4d6fb9dbaec8b5f4b07a55d66013"
+  },
+  "note": "5 control replicates (refresh 0, no L-BFGS) added after the 5 pre-registered RAD runs as a runner-parity check; they do not change the pre-registered criterion"
+}
