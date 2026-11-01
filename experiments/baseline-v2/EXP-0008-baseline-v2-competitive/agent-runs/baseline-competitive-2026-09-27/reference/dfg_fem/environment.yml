@@ -1,0 +1,12 @@
+name: dfg-fem-draft
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - fenics-dolfinx=0.11.*
+  - gmsh=4.15.*
+  - mpi4py
+  - petsc4py
+  - petsc
+  - mumps
+  - numpy

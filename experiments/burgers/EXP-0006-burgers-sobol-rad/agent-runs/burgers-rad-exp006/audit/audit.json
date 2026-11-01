@@ -1,0 +1,31 @@
+{
+  "independent_unit": "seed/run; spatial points and time scopes are not replicates",
+  "seeds_per_arm": 3,
+  "scope": "post-hoc descriptive pilot, not confirmatory",
+  "residual_spearman_min": 0.11790815165048917,
+  "residual_spearman_max": 0.2958541840446927,
+  "enrichment_min": 2.5953164517410925,
+  "enrichment_max": 4.842392966798945,
+  "next_action": "controlled RAD trial warranted; no superiority or acceptance inferred",
+  "scientific_accepted": false,
+  "source_sha256": {
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-101\\heat\\validation.npz": "7a084cb3220daa9da5635dc9e9069b9da216fe08cb32cb0e46f21f6c4240055f",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-102\\heat\\validation.npz": "11733fd9260894da3ded2435624b6cceded2ec909a81df5382fe34e3136ea482",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-103\\heat\\validation.npz": "fb2d83ca88a8090d31a3d4a9910d88c30ba64e4a870c968e99e709e75d010fb3",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-101\\burgers\\validation.npz": "1d7993fe9f85baf50e03e2bbbb76c453f72bc0da2431fab858e8e29543b284af",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-102\\burgers\\validation.npz": "da092a788db069bfdb2f8d99bca498b30239025221cc1140552dd4ee9b4f7d68",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-103\\burgers\\validation.npz": "24d9ac2c48d793668559c1e7c6040b2e3d1baaa49140aa5b31d8d5c87b5c2984",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\mlp_tanh\\download-extracted-bundle-logscale-v1\\runs\\seed-101\\heat\\validation.npz": "e24b51100ecfaa2281dafc1707f1bfb04545906d723a154815811b90f22f9a01",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\mlp_tanh\\download-extracted-bundle-logscale-v1\\runs\\seed-102\\heat\\validation.npz": "6093dc54ed68cf95c0f64019db021e8133f98156284356d183753cfa0242ac6e",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\mlp_tanh\\download-extracted-bundle-logscale-v1\\runs\\seed-103\\heat\\validation.npz": "ab0becbd5af7a09a6e297de6ac324e101f94616e8a6e9adaa0ff3915e499085f",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\mlp_tanh\\download-extracted-bundle-logscale-v1\\runs\\seed-101\\burgers\\validation.npz": "dc332d876f69ad5aec0500521b689265e04867df9a647787c52cded21b223334",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\mlp_tanh\\download-extracted-bundle-logscale-v1\\runs\\seed-102\\burgers\\validation.npz": "96950c722a90536b93eccdcefd4189dc8eb5af7e21407e2914463bf0966a111c",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\mlp_tanh\\download-extracted-bundle-logscale-v1\\runs\\seed-103\\burgers\\validation.npz": "fdad87ad7be47d7f9a79d972841710a48412f1dadae20056dd9b5e8fd386bffa",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\bspline_cubic\\download-extracted-bundle-logscale-v1\\runs\\seed-101\\heat\\validation.npz": "4d8dacf8d29220554dc69274219535192d405a3861479e24272c87b3157b33d9",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\bspline_cubic\\download-extracted-bundle-logscale-v1\\runs\\seed-102\\heat\\validation.npz": "ec7169e30231ef5c2a3f2f3d4eaa9c0acc695e1203f53f870b6810f57e69a8c6",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\bspline_cubic\\download-extracted-bundle-logscale-v1\\runs\\seed-103\\heat\\validation.npz": "6c152de7f17d1a9f881d1f35d97cbf92600ff0f501c36f88364910b561599bb7",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\bspline_cubic\\download-extracted-bundle-logscale-v1\\runs\\seed-101\\burgers\\validation.npz": "beb300a845b656a82b45436cd3674823e62fd61c50bf6176a5f4796192dc8d45",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\bspline_cubic\\download-extracted-bundle-logscale-v1\\runs\\seed-102\\burgers\\validation.npz": "a19c52ae3c7c75264866e19abad77af9297368d06f0f1c63aee2feb085a57b71",
+    "var\\agent_runs\\heat-burgers-architecture-screen\\models\\bspline_cubic\\download-extracted-bundle-logscale-v1\\runs\\seed-103\\burgers\\validation.npz": "9cc3f86d4fcf01b37d3f45ba816a07bd9dc070c4949e7fc7f18ddefaf5055835"
+  }
+}

@@ -1,0 +1,12 @@
+{
+ "status": "complete",
+ "rc": 0,
+ "wall": 12009.851724728,
+ "cap": 14400.0,
+ "gpus": [
+  "Tesla T4",
+  "Tesla T4"
+ ],
+ "scientific_accepted": false,
+ "reference_accepted": false
+}

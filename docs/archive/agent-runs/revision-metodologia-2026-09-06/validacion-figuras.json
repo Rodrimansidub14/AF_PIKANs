@@ -1,0 +1,34 @@
+{
+  "spline_partition_error": 2.220446049250313e-16,
+  "fem_poisson": [
+    {
+      "n": 8,
+      "nodes": 81,
+      "triangles": 128,
+      "relative_l2": 0.04226734266765843,
+      "h1_seminorm_error": 0.4317981173036431,
+      "linear_relative_residual": 1.598794560171179e-15
+    },
+    {
+      "n": 16,
+      "nodes": 289,
+      "triangles": 512,
+      "relative_l2": 0.01075498013278202,
+      "h1_seminorm_error": 0.21753633105008793,
+      "linear_relative_residual": 6.7615786316781785e-15,
+      "l2_order": 1.9745385537771727,
+      "h1_order": 0.9891005854130355
+    },
+    {
+      "n": 32,
+      "nodes": 1089,
+      "triangles": 2048,
+      "relative_l2": 0.002700879343326773,
+      "h1_seminorm_error": 0.10897542335225487,
+      "linear_relative_residual": 3.259242198919021e-14,
+      "l2_order": 1.9935037630057464,
+      "h1_order": 0.9972535592772587
+    }
+  ],
+  "scope": "Illustrative mathematics and Poisson FEM only; no mechanism training"
+}

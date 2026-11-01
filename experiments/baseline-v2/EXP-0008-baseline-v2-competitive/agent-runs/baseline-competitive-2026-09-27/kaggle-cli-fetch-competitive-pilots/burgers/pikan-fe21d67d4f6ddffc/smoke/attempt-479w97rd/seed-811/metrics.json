@@ -1,0 +1,7 @@
+{
+  "paired/shared_pool_exact": 1,
+  "rbf/allocated_gpu_seconds": 60.01846374499999,
+  "rbf/completed_updates": 1671,
+  "vanilla/allocated_gpu_seconds": 60.02215239899999,
+  "vanilla/completed_updates": 2491
+}

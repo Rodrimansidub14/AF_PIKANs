@@ -1,0 +1,32 @@
+{
+  "status": "archival_correction_only",
+  "source_manifest": "var/agent_runs/baseline-close-2026-09-27/dfg-re20-gpu-r4/manifest.json",
+  "source_approval": "var/agent_runs/baseline-close-2026-09-27/dfg-re20-gpu-r4/approval.json",
+  "observed_discrepancies": [
+    {
+      "field": "budget.max_seed_count",
+      "archived_value": 2,
+      "actual_continuation_seed_count": 3,
+      "seeds": [303, 304, 305]
+    },
+    {
+      "field": "budget.max_total_gpu_seconds",
+      "archived_value": 3000,
+      "training_continuation_nominal_gpu_seconds": 3600,
+      "complete_dfg_campaign_nominal_gpu_seconds": 6000,
+      "complete_dfg_campaign_observed_gpu_seconds": 6000.158
+    },
+    {
+      "field": "parameter_decisions_file",
+      "archived_value": "experiments/EXP-0003-allen-cahn-rbf-sobol/parameter-decisions.md",
+      "note": "Points to Allen-Cahn even though manifest iteration is DFG; the DFG continuation decision is embedded in parameter_decisions_markdown."
+    },
+    {
+      "field": "research_status.scientific_preregistration_signed",
+      "archived_value": false,
+      "note": "Do not infer confirmation or baseline freeze from the remote approval record."
+    }
+  ],
+  "preservation": "Original manifest, approval and run artifacts are unchanged. This note does not retroactively validate the r3 harness closing or Kaggle r4 visualization cell.",
+  "scientific_accepted": false
+}

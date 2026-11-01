@@ -1,0 +1,53 @@
+{
+  "status": "draft_for_scientific_review",
+  "files": [
+    {
+      "source": "C:\\Users\\rodri\\Documents\\ProyectoGrad\\d-introduccion.tex",
+      "source_sha256": "86972f2b9a12573edd695a8eb287ad380adce367589a2c7d1fcf381aa1627510",
+      "revision": "d-introduccion.tex",
+      "revision_sha256": "e9ad2bd0e44e4082bb9761fc0a8da7dd1f45a6f5c86aba884f8041eb5b13d888"
+    },
+    {
+      "source": "C:\\Users\\rodri\\Documents\\ProyectoGrad\\e-antecedentes.tex",
+      "source_sha256": "d130ac96b97de0b60805eed5c26024bb3fa3d9fdd3d1c5335d40119de2b9925c",
+      "revision": "e-antecedentes.tex",
+      "revision_sha256": "185bbe0c16e8f9c210b99dc76086d89c5a0dab714daaf40b2af65c8755faec4c"
+    },
+    {
+      "source": "C:\\Users\\rodri\\Documents\\ProyectoGrad\\f-justificacion.tex",
+      "source_sha256": "9cfce2f23c74e820fc9c9b2481388c2dd460f56f3fda60b80a822b4443dd2857",
+      "revision": "f-justificacion.tex",
+      "revision_sha256": "20e25aace7eb5f91e8b232a42ba297d3c4ec1e5caeab15be43cb26487b10b56b"
+    },
+    {
+      "source": "C:\\Users\\rodri\\Documents\\ProyectoGrad\\g-objetivos.tex",
+      "source_sha256": "edbd866bd4a156494772eeff242057bcd6d4c95f04e9a3afaea59135713fa273",
+      "revision": "g-objetivos.tex",
+      "revision_sha256": "b4666f395415e1a425fc5e3598567d833827700bfd1f3167ad07da5527e1181a"
+    },
+    {
+      "source": "C:\\Users\\rodri\\Documents\\ProyectoGrad\\h-alcance.tex",
+      "source_sha256": "38e2a4326c2f2f2c4026a23bc1934d667e5e11e03eb7453341eeb49b50945507",
+      "revision": "h-alcance.tex",
+      "revision_sha256": "a95e19166da4221321dd9822490d8f945cb261146d70e5be6b2b1897c03191ea"
+    },
+    {
+      "source": "C:\\Users\\rodri\\Documents\\ProyectoGrad\\i-marco_teorico.tex",
+      "source_sha256": "90a5a05ffdfebafc307f1c6bffee4b3c9d726e4f4022a5cc01b1d018bdaf17e3",
+      "revision": "i-marco_teorico.tex",
+      "revision_sha256": "6c348147a24069443f34a625e3c4a8fda9f1378ee9010326035cb19f9315578b"
+    },
+    {
+      "source": "C:\\Users\\rodri\\Documents\\ProyectoGrad\\j-capitulos.tex",
+      "source_sha256": "bc99b068882895d71a6f49a9da29bcb04ee4e6458baf27cede6791990aab163e",
+      "revision": "j-capitulos.tex",
+      "revision_sha256": "fd9346dc8df667e905a882f0e329bea55cac98c1f7657e62fba9e30c2f390219"
+    },
+    {
+      "source": "C:\\Users\\rodri\\Documents\\ProyectoGrad\\m-bibliografia.bib",
+      "source_sha256": "ad0dd61ea587d4c889cf5d309d259a48d4490dadd108e475546cbc6dcfd48f02",
+      "revision": "m-bibliografia.bib",
+      "revision_sha256": "b11b300f66be07a22286f714572f3a45157800e42efb51732d0a8895a7894de5"
+    }
+  ]
+}

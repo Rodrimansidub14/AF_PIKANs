@@ -1,0 +1,20 @@
+{
+  "id": "rodrimandub/af-pikans-dfg-field-score-repair-retry-7-20260929",
+  "title": "AF PIKANs DFG Field Score Repair Retry 7 20260929",
+  "code_file": "score_repair.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [
+    "rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-5-20260929",
+    "rodrimandub/af-pikans-dfg-rbf-refinement-20260928",
+    "rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927"
+  ],
+  "model_sources": []
+}

@@ -1,0 +1,44 @@
+{
+    "schema_version":  1,
+    "session":  "DFG-field-score-repair-retry-7-2026-09-29",
+    "kernel_slug":  "rodrimandub/af-pikans-dfg-field-score-repair-retry-7-20260929",
+    "private":  true,
+    "accelerator":  "NvidiaTeslaT4 x2 required and checked by entrypoint",
+    "session_cap_seconds":  351.814,
+    "source_fem_kernel":  "rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-5-20260929",
+    "checkpoint_sources":  [
+                               "rodrimandub/af-pikans-dfg-rbf-refinement-20260928",
+                               "rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927"
+                           ],
+    "fixed_field_scoring_contract_declared_before_scoring":  {
+                                                                 "reference_level":  "DFG-L3",
+                                                                 "grid":  "saved DFG-L3 fixed 221x42 grid; cylinder interior excluded",
+                                                                 "pressure_gauge":  "fixed outlet point [2.2,0.2]",
+                                                                 "metrics":  [
+                                                                                 "u_relative_l2",
+                                                                                 "v_relative_l2",
+                                                                                 "p_relative_l2_gauge_fixed_outlet"
+                                                                             ],
+                                                                 "checkpoints":  {
+                                                                                     "current_rbf":  [
+                                                                                                         301,
+                                                                                                         302,
+                                                                                                         303,
+                                                                                                         304,
+                                                                                                         305
+                                                                                                     ],
+                                                                                     "refinement_rbf_and_tanh_mlp":  [
+                                                                                                                         501,
+                                                                                                                         502,
+                                                                                                                         503,
+                                                                                                                         504,
+                                                                                                                         505
+                                                                                                                     ]
+                                                                                 },
+                                                                 "retraining":  false
+                                                             },
+    "method":  "Reconstruct both vector components from saved Taylor-Hood P2 coefficients and L3 Gmsh triangle6 mesh; score existing checkpoints without solving or retraining.",
+    "reference_accepted":  false,
+    "scientific_accepted":  false,
+    "entrypoint_sha256":  "1cf9ffb1de5716f8e0b335e6e5863403586f7c59a22cef0f36e223f92bdeedca"
+}

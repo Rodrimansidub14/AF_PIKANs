@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "runner_return_code": 0,
+  "runner_sha256": "4c02809600beb9b543d1bceffe2037ed7d05f5ff654d010b22984227b2cb35a9",
+  "visible_gpus": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "notebook_cell_wall_seconds": 6055.347175893,
+  "session_quota_cap_seconds": 7200.0,
+  "execution_cap_seconds": 6900.0,
+  "output_directory": "/kaggle/working/dfg-re20-t4x2/campaign",
+  "runner_log": "/kaggle/working/dfg-re20-t4x2/runner.log",
+  "featflow_qois": {
+    "Cd": 5.57953523384,
+    "Cl": 0.010618948146,
+    "delta_p": 0.11752016697
+  },
+  "field_relative_l2": null,
+  "field_reference_status": "missing_converged_FEM_field",
+  "claim_limit": "No directly matching published DFG Re=20 PINN SOTA was identified; QoI comparison only."
+}

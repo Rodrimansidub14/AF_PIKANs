@@ -1,0 +1,37 @@
+{
+  "heat": {
+    "status": "completed",
+    "wandb_url": null,
+    "training": {
+      "steps": 3,
+      "training_and_diagnostics_sec": 0.47162759999991977,
+      "diagnostic_sec": 0.23515899999983958,
+      "parameters": 3648,
+      "examples_seen": {
+        "physics": 96
+      },
+      "device": "cpu",
+      "peak_gpu_bytes": null,
+      "stop_reason": "step_limit"
+    }
+  },
+  "burgers": {
+    "status": "completed",
+    "wandb_url": null,
+    "training": {
+      "steps": 3,
+      "training_and_diagnostics_sec": 0.44549110000025394,
+      "diagnostic_sec": 0.11406860000079178,
+      "parameters": 3648,
+      "examples_seen": {
+        "physics": 96,
+        "left": 96,
+        "right": 96,
+        "initial": 96
+      },
+      "device": "cpu",
+      "peak_gpu_bytes": null,
+      "stop_reason": "step_limit"
+    }
+  }
+}

@@ -8,7 +8,7 @@ import yaml
 
 from src.research_pipeline.pipeline import validate_manifest
 from src.research_pipeline.remote.notebook import render_notebook
-from src.research_pipeline.sciml.campaign import assert_exploratory_launch_ready
+from src.sciml.campaign import assert_exploratory_launch_ready
 
 
 MANIFEST_PATH = Path("experiments/allen-cahn/EXP-0003-allen-cahn-rbf-sobol/manifest.json")
@@ -45,7 +45,7 @@ def test_allen_cahn_launch_gate_requires_explicit_run_authorization_and_budget()
 
 def test_remote_campaign_entrypoint_imports_when_executed_as_a_file():
     result = subprocess.run(
-        [sys.executable, "src/research_pipeline/sciml/campaign.py", "--help"],
+        [sys.executable, "src/sciml/campaign.py", "--help"],
         capture_output=True, text=True, check=False,
     )
     assert result.returncode == 0, result.stderr

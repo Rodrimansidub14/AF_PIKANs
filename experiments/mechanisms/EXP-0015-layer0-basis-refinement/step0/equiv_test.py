@@ -7,7 +7,7 @@ REPO = HERE.parents[3]
 sys.path.insert(0, str(HERE))
 torch.set_default_dtype(torch.float64)
 from fit_step0 import RBFLayer as New
-spec = importlib.util.spec_from_file_location("m", REPO / "src/research_pipeline/sciml/model.py")
+spec = importlib.util.spec_from_file_location("m", REPO / "src/sciml/model.py")
 m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
 for lo, hi, sig in [(-1.05, 1.05, 0.21), (-1.0, 1.0, 0.35)]:
     old = m.RBFLayer(2, 16, 11).double(); old.centers = torch.linspace(lo, hi, 11); old.width = torch.tensor(sig)

@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "benchmark": "heat-1d-deepxde-v1.12.2-demo",
+  "status": "complete",
+  "stage": "complete",
+  "stop_reason": null,
+  "started_at_utc": "2026-09-28T07:11:03.234348+00:00",
+  "ended_at_utc": "2026-09-28T07:25:36.794899+00:00",
+  "elapsed_seconds": 873.561,
+  "configuration": {
+    "deepxde": "1.12.2",
+    "backend": "pytorch",
+    "alpha": 0.4,
+    "domain": [
+      0,
+      1
+    ],
+    "time": [
+      0,
+      1
+    ],
+    "initial": "sin(pi*x)",
+    "boundary": "homogeneous Dirichlet",
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "architecture": [
+      2,
+      20,
+      20,
+      20,
+      1
+    ],
+    "activation": "tanh",
+    "initializer": "Glorot normal",
+    "num_domain": 2540,
+    "num_boundary": 80,
+    "num_initial": 160,
+    "sampling": "Hammersley",
+    "adam_lr": 0.001,
+    "adam_iterations": 20000,
+    "lbfgs": "L-BFGS-B",
+    "main_grid_space_time": [
+      512,
+      256
+    ],
+    "official_demo_grid_space_time": [
+      256,
+      201
+    ],
+    "official_demo_alpha": 0.4,
+    "demo_note": "Exact DeepXDE v1.12.2 demo physics and method at alpha=0.4."
+  },
+  "budget": {
+    "hard_limit_seconds": 7200,
+    "watchdog_seconds": 6900,
+    "cli_timeout_seconds": 7200,
+    "timer_starts_before_install_and_training": true
+  },
+  "provenance": {
+    "python": "3.12.13",
+    "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+    "deepxde": "1.12.2",
+    "torch": "2.10.0+cu128",
+    "installation": "installed_exact_pin",
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "gpu_count": 2,
+    "two_t4s_validated": true,
+    "model_device": "cuda:0",
+    "second_t4": "unused by each single-device DeepXDE/PyTorch run",
+    "reference_protocol": "official DeepXDE 1.12.2 Heat demo",
+    "local_alpha_0_1_pilot": "separate arm; not included or directly compared"
+  },
+  "resource_estimate": {
+    "gpu_wall_hours": 0.242656,
+    "two_device_hours_if_both_counted": 0.485312,
+    "note": "Elapsed estimate; Kaggle quota accounting is external."
+  },
+  "runs": [
+    {
+      "seed": 11,
+      "status": "complete",
+      "phase": "complete",
+      "elapsed_s": 185.482,
+      "adam_s": 167.85,
+      "lbfgsb_s": 11.528,
+      "eval_s": 0.388,
+      "adam_steps": 20000,
+      "lbfgsb_steps": 352,
+      "main_rel_l2": 0.0016371026868000627,
+      "main_mae": 0.0003174763696733862,
+      "main_rmse": 0.00041387215605936944,
+      "main_abs_residual": 0.00103823933750391,
+      "demo_rel_l2": 0.0016429935349151492,
+      "demo_mae": 0.00031829444924369454,
+      "demo_rmse": 0.00041561145917512476,
+      "demo_abs_residual": 0.0010419475147500634,
+      "error": ""
+    },
+    {
+      "seed": 22,
+      "status": "complete",
+      "phase": "complete",
+      "elapsed_s": 166.326,
+      "adam_s": 165.724,
+      "lbfgsb_s": 0.182,
+      "eval_s": 0.36,
+      "adam_steps": 20000,
+      "lbfgsb_steps": 7,
+      "main_rel_l2": 0.0014844824327155948,
+      "main_mae": 0.00026234271354041994,
+      "main_rmse": 0.00037528868415392935,
+      "main_abs_residual": 0.0014444227563217282,
+      "demo_rel_l2": 0.0014877778012305498,
+      "demo_mae": 0.00026295703719370067,
+      "demo_rmse": 0.0003763481217902154,
+      "demo_abs_residual": 0.0014495732029899955,
+      "error": ""
+    },
+    {
+      "seed": 33,
+      "status": "complete",
+      "phase": "complete",
+      "elapsed_s": 166.864,
+      "adam_s": 166.14,
+      "lbfgsb_s": 0.324,
+      "eval_s": 0.344,
+      "adam_steps": 20000,
+      "lbfgsb_steps": 13,
+      "main_rel_l2": 0.0013253276702016592,
+      "main_mae": 0.00026861208607442677,
+      "main_rmse": 0.0003350531042087823,
+      "main_abs_residual": 0.0014266319340094924,
+      "demo_rel_l2": 0.001327627687714994,
+      "demo_mae": 0.0002690669789444655,
+      "demo_rmse": 0.00033583655022084713,
+      "demo_abs_residual": 0.0014345701783895493,
+      "error": ""
+    },
+    {
+      "seed": 44,
+      "status": "complete",
+      "phase": "complete",
+      "elapsed_s": 173.613,
+      "adam_s": 166.439,
+      "lbfgsb_s": 6.766,
+      "eval_s": 0.351,
+      "adam_steps": 20000,
+      "lbfgsb_steps": 219,
+      "main_rel_l2": 0.0012245596153661609,
+      "main_mae": 0.00016146083362400532,
+      "main_rmse": 0.00030957814306020737,
+      "main_abs_residual": 0.0007461862987838686,
+      "demo_rel_l2": 0.0012338460655882955,
+      "demo_mae": 0.00016225931176450104,
+      "demo_rmse": 0.0003121136105619371,
+      "demo_abs_residual": 0.0007487240363843739,
+      "error": ""
+    },
+    {
+      "seed": 55,
+      "status": "complete",
+      "phase": "complete",
+      "elapsed_s": 166.477,
+      "adam_s": 165.844,
+      "lbfgsb_s": 0.214,
+      "eval_s": 0.359,
+      "adam_steps": 20000,
+      "lbfgsb_steps": 4,
+      "main_rel_l2": 0.0018697677878662944,
+      "main_mae": 0.00037338872789405286,
+      "main_rmse": 0.0004726917832158506,
+      "main_abs_residual": 0.0011928339954465628,
+      "demo_rel_l2": 0.0018759110243991017,
+      "demo_mae": 0.0003743701090570539,
+      "demo_rmse": 0.00047453027218580246,
+      "demo_abs_residual": 0.0011970604537054896,
+      "error": ""
+    }
+  ]
+}\n

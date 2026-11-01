@@ -1,0 +1,54 @@
+{
+  "metric": "relative_l2_trapezoidal",
+  "n": 3,
+  "mean": 0.01687680330512439,
+  "sample_sd": 0.0029826221693389104,
+  "max_abs_error_mean": 0.1690995949292747,
+  "reference_status": "published_grid_provisional; generating solver and tolerances not documented in source",
+  "field_metric_unlocked_in_eval_harness": false,
+  "scientific_accepted": false,
+  "runs": [
+    {
+      "problem": "allen_cahn_1d",
+      "seed": 101,
+      "reference": "DeepXDE published Allen_Cahn.mat; provisional, provenance unspecified",
+      "reference_grid_nx": 201,
+      "reference_grid_nt": 101,
+      "prediction_grid_nx": 257,
+      "prediction_grid_nt": 129,
+      "relative_l2_trapezoidal": 0.017091508229898147,
+      "max_abs_error": 0.17435899588135667,
+      "rmse": 0.012054569185777408,
+      "final_test_used_in_training": false,
+      "scientific_accepted": false
+    },
+    {
+      "problem": "allen_cahn_1d",
+      "seed": 102,
+      "reference": "DeepXDE published Allen_Cahn.mat; provisional, provenance unspecified",
+      "reference_grid_nx": 201,
+      "reference_grid_nt": 101,
+      "prediction_grid_nx": 257,
+      "prediction_grid_nt": 129,
+      "relative_l2_trapezoidal": 0.019746271521161117,
+      "max_abs_error": 0.1971304355184647,
+      "rmse": 0.013926962618582273,
+      "final_test_used_in_training": false,
+      "scientific_accepted": false
+    },
+    {
+      "problem": "allen_cahn_1d",
+      "seed": 103,
+      "reference": "DeepXDE published Allen_Cahn.mat; provisional, provenance unspecified",
+      "reference_grid_nx": 201,
+      "reference_grid_nt": 101,
+      "prediction_grid_nx": 257,
+      "prediction_grid_nt": 129,
+      "relative_l2_trapezoidal": 0.013792630164313908,
+      "max_abs_error": 0.13580935338800276,
+      "rmse": 0.009727884299801974,
+      "final_test_used_in_training": false,
+      "scientific_accepted": false
+    }
+  ]
+}

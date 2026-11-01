@@ -1,0 +1,19 @@
+{
+  "poisson_fd_errors": [
+    0.41375566340610703,
+    0.10388935830889068
+  ],
+  "poisson_refinement_ratio": 3.982656839364639,
+  "burgers_max_residual_all_contract_parameters": 1.7763568394002505e-15,
+  "allen_cahn_ideal_kink_max_residual": 6.661338147750939e-16,
+  "allen_cahn_kink_scope": "Stationary infinite-line mechanism, not the finite-domain initial boundary value solution.",
+  "dfg_inlet_mean": 0.199999998,
+  "dfg_reynolds": 20.000000000000004,
+  "pvdf_upper_free_strain_illustrative": [
+    7.042923243379175e-07,
+    2.157465698950921e-06
+  ],
+  "pvdf_scope": "Locally stress-free tendency under assumed uniform potential gradient; not bonded cantilever solution.",
+  "dielectric_interface_flux": -1.3333333333333333,
+  "status": "PASS"
+}

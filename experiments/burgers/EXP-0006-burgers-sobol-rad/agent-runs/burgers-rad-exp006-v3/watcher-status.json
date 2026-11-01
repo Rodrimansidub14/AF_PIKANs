@@ -1,0 +1,5 @@
+{
+  "error": "TimeoutExpired: Command '['C:\\\\Users\\\\rodri\\\\Documents\\\\AF_PIKANs\\\\var\\\\agent_runs\\\\remote-env\\\\Scripts\\\\python.exe', '-m', 'kaggle', 'kernels', 'output', 'rodrigomansilla/af-pikans-burgers-sobol-rad-exp006-v3', '-p', 'C:\\\\Users\\\\rodri\\\\Documents\\\\AF_PIKANs\\\\var\\\\agent_runs\\\\burgers-rad-exp006-v3\\\\download-gpu-20260924']' timed out after 1200 seconds",
+  "provider_status": "rodrigomansilla/af-pikans-burgers-sobol-rad-exp006-v3 has status \"KernelWorkerStatus.CANCEL_ACKNOWLEDGED\"",
+  "status": "fetch_error"
+}

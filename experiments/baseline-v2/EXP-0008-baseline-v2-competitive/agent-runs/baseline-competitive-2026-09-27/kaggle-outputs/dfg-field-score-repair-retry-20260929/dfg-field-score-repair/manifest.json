@@ -1,0 +1,84 @@
+{
+  "actual_session_seconds": 13.648,
+  "artifacts": [
+    {
+      "path": "checkpoint_field_scores.partial.json",
+      "sha256": "4d9ee0912bd2342f90c850ca9b05690b86d6fe272ee7edf73bf60b51e82b29a7",
+      "size_bytes": 2190
+    },
+    {
+      "path": "score_repair.json",
+      "sha256": "472ca9276f9b67ad9e252802e5df0d39c7630eda6e71ec4ebe0e0850e6bef509",
+      "size_bytes": 490
+    },
+    {
+      "path": "setup.log",
+      "sha256": "996c219c579e242e610b02dabdc5f18ebe938886bab34caf77b4bb3532ae293d",
+      "size_bytes": 963
+    }
+  ],
+  "ended_at_utc": "2026-09-29T08:52:45Z",
+  "error": "ValueError: FEM DOF coordinates are not Gmsh nodes within tolerance: {'count': 25231, 'unique_mesh_nodes': 25231, 'max_nearest_distance': 0.0014978431279271806, 'p99_nearest_distance': 0.0013242431058332158, 'distance_tolerance': 1e-06}",
+  "fixed_field_scoring_contract": {
+    "cohorts": {
+      "current_rbf": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "refinement_rbf_and_tanh_mlp": [
+        501,
+        502,
+        503,
+        504,
+        505
+      ]
+    },
+    "grid": {
+      "mask": "exclude points with (x-0.2)^2+(y-0.2)^2 <= 0.05^2",
+      "ordering": "numpy.meshgrid(indexing='xy'); row-major flattened",
+      "source": "saved FEM DFG-L3 fields_on_common_grid.npz; declared before checkpoint scoring",
+      "x": {
+        "count": 221,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 2.2
+      },
+      "y": {
+        "count": 42,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 0.41
+      }
+    },
+    "metrics": [
+      "u_relative_l2",
+      "v_relative_l2",
+      "p_relative_l2_gauge_fixed_outlet"
+    ],
+    "pressure_gauge": {
+      "method": "subtract pressure at fixed outlet grid point",
+      "outlet_anchor_xy": [
+        2.2,
+        0.2
+      ]
+    },
+    "reference_level": "DFG-L3 (third of three requested mesh levels)",
+    "retraining": false
+  },
+  "kernel_slug": "rodrimandub/af-pikans-dfg-field-score-repair-retry-20260929",
+  "method": "reconstruct both P2 velocity components from saved DOLFINx coefficients and the saved L3 Gmsh mesh; score frozen checkpoints only",
+  "push_cap_seconds": 510.358,
+  "reference_accepted": false,
+  "retraining": false,
+  "schema_version": 1,
+  "scientific_accepted": false,
+  "session": "DFG-field-score-repair-2026-09-29",
+  "source_code_sha256": "9468da1e4cd71c508a6c306c967338851e592265dd47eb6c3d54d0f7bc7e13d4",
+  "source_session": "rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-5-20260929",
+  "started_at_utc": "2026-09-29T08:52:31Z",
+  "status": "failed_partial",
+  "traceback": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 303, in main\n    velocity_node_map, velocity_mapping_diagnostics = coordinate_map(mesh_xy, velocity_dof_xyz, np, cKDTree)\n                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/kaggle/src/script.py\", line 91, in coordinate_map\n    raise ValueError(f\"FEM DOF coordinates are not Gmsh nodes within tolerance: {diagnostics}\")\nValueError: FEM DOF coordinates are not Gmsh nodes within tolerance: {'count': 25231, 'unique_mesh_nodes': 25231, 'max_nearest_distance': 0.0014978431279271806, 'p99_nearest_distance': 0.0013242431058332158, 'distance_tolerance': 1e-06}\n"
+}

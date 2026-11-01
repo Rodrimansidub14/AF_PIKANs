@@ -20,12 +20,12 @@ from src.research_pipeline.remote.bundle import prepare, verify_transport  # noq
 EXPERIMENT = Path(__file__).resolve().parent
 DEFAULT_WORK = ROOT / "var/agent_runs/allen-cahn-exp003"
 FILES = [
-    "src/research_pipeline/sciml/__init__.py",
-    "src/research_pipeline/sciml/allen_cahn_evaluation.py",
-    "src/research_pipeline/sciml/campaign.py",
-    "src/research_pipeline/sciml/model.py",
-    "src/research_pipeline/sciml/sampling.py",
-    "src/research_pipeline/sciml/train.py",
+    "src/sciml/__init__.py",
+    "src/sciml/allen_cahn_evaluation.py",
+    "src/sciml/campaign.py",
+    "src/sciml/model.py",
+    "src/sciml/sampling.py",
+    "src/sciml/train.py",
     "src/research_pipeline/remote/__init__.py",
     "src/research_pipeline/remote/reporting.py",
     "evals/__init__.py",

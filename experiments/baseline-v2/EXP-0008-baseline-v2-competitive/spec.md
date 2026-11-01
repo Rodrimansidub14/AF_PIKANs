@@ -239,7 +239,7 @@ refresco anunciado 2026-10-03. Se recomienda no lanzar T1+ antes del refresco.
 Agente (tras firma y aprobaciones de §11):
 
 - `experiments/baseline-v2/EXP-0008-*` (este paquete), `var/agent_runs/exp0008/`.
-- Código nuevo en `src/research_pipeline/sciml/` (módulos `recipe.py`,
+- Código nuevo en `src/sciml/` (módulos `recipe.py`,
   `lbfgs.py`, `preflight.py`, `external_scorers` **en borrador** bajo `var/`),
   con SDD y pruebas en `tests/`. Requiere aprobación `code_surface`
   (§11, punto 2) porque toca `model.py` (hidden/width) y `train.py`.

@@ -1,0 +1,50 @@
+[
+  {
+    "model_id": "rbf_fixed",
+    "problem": "heat",
+    "steps": 4,
+    "parameters": 3648,
+    "validation_metric_count": 12,
+    "validation_metrics_finite": true
+  },
+  {
+    "model_id": "rbf_fixed",
+    "problem": "burgers",
+    "steps": 4,
+    "parameters": 3648,
+    "validation_metric_count": 24,
+    "validation_metrics_finite": true
+  },
+  {
+    "model_id": "mlp_tanh",
+    "problem": "heat",
+    "steps": 4,
+    "parameters": 3655,
+    "validation_metric_count": 12,
+    "validation_metrics_finite": true
+  },
+  {
+    "model_id": "mlp_tanh",
+    "problem": "burgers",
+    "steps": 4,
+    "parameters": 3655,
+    "validation_metric_count": 24,
+    "validation_metrics_finite": true
+  },
+  {
+    "model_id": "bspline_cubic",
+    "problem": "heat",
+    "steps": 4,
+    "parameters": 3648,
+    "validation_metric_count": 12,
+    "validation_metrics_finite": true
+  },
+  {
+    "model_id": "bspline_cubic",
+    "problem": "burgers",
+    "steps": 4,
+    "parameters": 3648,
+    "validation_metric_count": 24,
+    "validation_metrics_finite": true
+  }
+]

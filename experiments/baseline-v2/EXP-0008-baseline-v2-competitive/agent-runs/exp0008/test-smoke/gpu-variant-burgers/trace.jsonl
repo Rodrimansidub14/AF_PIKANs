@@ -1,0 +1,1 @@
+{"outer": 1, "sec": 47.52, "loss": 7.826871306675497e-06, "gnorm2": 0.0006356147154532524, "update_ratio": 7.669232707334762e-05, "step_len": 1.0, "n_iter": 20, "func_evals": 23, "curv_pairs": 19}

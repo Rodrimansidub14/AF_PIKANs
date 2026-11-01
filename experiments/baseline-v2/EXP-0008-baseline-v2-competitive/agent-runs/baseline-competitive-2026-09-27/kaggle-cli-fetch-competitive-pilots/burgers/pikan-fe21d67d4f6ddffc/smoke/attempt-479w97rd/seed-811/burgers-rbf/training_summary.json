@@ -1,0 +1,8 @@
+{
+  "model_family": "rbf",
+  "model_id": "rbf_fixed",
+  "parameters": 3648,
+  "steps": 1671,
+  "stop_reason": "gpu_time_limit",
+  "training_and_diagnostics_sec": 60.01846374499999
+}

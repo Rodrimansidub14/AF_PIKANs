@@ -1,0 +1,33 @@
+{
+  "checks": {
+    "canonical_sources_unchanged": true,
+    "all_physical_and_architecture_figures": true,
+    "all_solution_figures": true,
+    "all_numerical_evidence_present": true,
+    "numerical_percentages_escaped": true,
+    "atlas-figuras_navier_stokes_named": true,
+    "atlas-figuras_no_undefined_references": true,
+    "marco-teorico-ilustrado_navier_stokes_named": true,
+    "marco-teorico-ilustrado_no_undefined_references": true,
+    "tesis-revision_navier_stokes_named": true,
+    "tesis-revision_no_undefined_references": true,
+    "latex_no_unresolved_citations": true,
+    "latex_no_overfull_boxes": true
+  },
+  "pdfs": {
+    "atlas-figuras": {
+      "pages": 7,
+      "sha256": "d4d91aecf104cf862e89344ec3ea1f2ac5cca9aef51291c916d7539c57e2a7a2"
+    },
+    "marco-teorico-ilustrado": {
+      "pages": 40,
+      "sha256": "0e52781198ffba599b7f5554ae50b850a6e89364f12b81ac910423ad78582d0b"
+    },
+    "tesis-revision": {
+      "pages": 77,
+      "sha256": "bd846556ad12b9ceb1fa065d82531f1d569be0cce45edd55cd4c35386486188b"
+    }
+  },
+  "all_passed": true,
+  "scope": "Artifact integrity and build checks; numerical diagnostics remain in each evidence.json."
+}

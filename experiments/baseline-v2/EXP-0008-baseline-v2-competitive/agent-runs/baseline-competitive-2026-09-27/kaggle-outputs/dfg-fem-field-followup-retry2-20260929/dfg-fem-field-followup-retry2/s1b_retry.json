@@ -1,0 +1,9 @@
+{
+  "actual_session_seconds": 89.981,
+  "part": "s1b_retry",
+  "s1b_status": "partial_or_failed",
+  "scientific_accepted": false,
+  "session_elapsed_seconds": 89.981,
+  "status": "partial",
+  "updated_at_utc": "2026-09-29T06:54:44Z"
+}

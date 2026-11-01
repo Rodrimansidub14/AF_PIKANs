@@ -1,0 +1,1 @@
+Exploratory Heat+Burgers campaign. Validation only; final test unopened. No scientific claim accepted. Each seed is one independent initialization; aggregate across seeds before interpreting reproducibility.

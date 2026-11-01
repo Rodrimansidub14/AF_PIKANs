@@ -1,0 +1,83 @@
+\chapter{Metodología}
+\label{sec:metodologia}
+
+\section{Enfoque metodológico}
+\label{subsec:enfoque-metodologico}
+
+La Metodología de Investigación en Ciencia del Diseño (DSRM, por sus siglas en inglés) sirve como marco general porque el estudio busca construir, evaluar y refinar un artefacto computacional dentro de un contexto técnico definido \cite{peffers2007dsrm}. El artefacto es un mecanismo de focalización adaptativa acoplado al entrenamiento de redes de Kolmogorov-Arnold informadas por física (PIKANs, por sus siglas en inglés), cuyo propósito es mejorar la representación de las regiones con mayor complejidad física.
+
+El proyecto adopta una lógica de verificación progresiva inspirada en el modelo V, en la que cada decisión de diseño tiene su evaluación correspondiente: la implementación base se verifica contra soluciones analíticas o referencias numéricas, el mecanismo de focalización se evalúa por su efecto sobre las regiones críticas, y los casos más complejos se incorporan solo cuando los experimentos previos dan evidencia suficiente para avanzar. El esquema mantiene la trazabilidad experimental sin cerrar la posibilidad de refinamiento, en línea con el ciclo de construcción, evaluación y mejora propio de DSRM \cite{peffers2007dsrm}.
+
+\section{Unidad de análisis y alcance del artefacto}
+\label{subsec:unidad-analisis}
+
+La unidad de análisis es el comportamiento espacial de la representación aprendida. Por ello, la evaluación no se limita al error global del modelo, sino que considera la distribución local del error, el residual físico, la estabilidad del entrenamiento y el costo computacional asociado. El criterio detrás de esta elección es distinguir entre una mejora numérica agregada y una mejora físicamente relevante en las zonas donde la solución exige mayor capacidad representacional \cite{grossmann2024,krishnapriyan2021,shukla2024fair}.
+
+\section{Diseño experimental progresivo}
+\label{subsec:diseno-experimental}
+
+El diseño experimental sigue una progresión de complejidad creciente. En una primera etapa se utilizan problemas canónicos de ecuaciones diferenciales parciales (PDEs, por sus siglas en inglés) con solución analítica conocida, con el fin de verificar la implementación base y establecer un punto de referencia controlado \cite{lagaris1998,raissi2019,grossmann2024}. Esta etapa permite comprobar que las pérdidas físicas, las condiciones iniciales, las condiciones de frontera y el proceso de diferenciación automática se encuentran correctamente implementados.
+
+En una segunda etapa se evalúan problemas con comportamiento oscilatorio, multiescala o de alta frecuencia. Estos dominios permiten analizar si el mecanismo propuesto responde a condiciones donde las arquitecturas basadas en perceptrones multicapa (MLP, por sus siglas en inglés) tienden a mostrar limitaciones de representación \cite{rahaman2019,tancik2020,wang2021eigenvector}. En esta etapa, el objetivo no es únicamente reducir el error global, sino observar si el mecanismo modifica la distribución espacial del aprendizaje hacia las regiones donde la solución presenta mayor variación.
+
+En una tercera etapa se consideran sistemas físicos acoplados, con énfasis en problemas piezoeléctricos. Estos sistemas son relevantes porque combinan acoplamiento entre campos, condiciones de frontera físicamente significativas y regiones de alta variación local \cite{mehtaj2025scimlwaves,tandis2025piezoelectric,mouratidou2026shunted}. En estos casos, el análisis incorpora la consistencia entre el campo mecánico y el campo eléctrico, dado que una falla localizada en un campo puede afectar la interpretación física del sistema completo.
+
+\section{Arquitectura base y mecanismo propuesto}
+\label{subsec:arquitectura-base-mecanismo}
+
+El trabajo parte de una implementación PIKAN seleccionada por su estabilidad, reproducibilidad y alineación con el estado del arte reciente en modelos informados por física basados en redes de Kolmogorov-Arnold \cite{toscano2025pikans,shukla2024fair,wang2025kinn}. La arquitectura base no se utiliza como parte de un estudio comparativo amplio entre modelos, sino como sustrato experimental para analizar el efecto del mecanismo de focalización adaptativa. Esta decisión permite concentrar el alcance del proyecto en la caracterización del mecanismo propuesto y no en la construcción de un \textit{benchmark} entre arquitecturas.
+
+El uso de una PIKAN permite establecer una condición de control dentro del mismo marco arquitectónico. A partir de ella, se incorpora el mecanismo de focalización adaptativa y se analiza si modifica la distribución espacial del aprendizaje en regiones de mayor complejidad física. De este modo, la comparación relevante no es entre familias de modelos distintas, sino entre configuraciones de una misma arquitectura con y sin focalización. Esta distinción permite observar el comportamiento del mecanismo sin atribuir sus efectos a cambios externos de arquitectura, implementación o capacidad global del modelo.
+
+Como referencia metodológica, se consideran estrategias adaptativas existentes, como el refinamiento adaptativo basado en residuales (RAR, por sus siglas en inglés), el muestreo adaptativo y las redes neuronales variacionales informadas por física con refinamiento hp (hp-VPINN, por sus siglas en inglés) \cite{lu2021deepxde,wu2023sampling,kharazmi2021hpvpinns}. Estas referencias no se incorporan necesariamente como \textit{benchmarks} completos, sino como antecedentes técnicos que permiten situar el mecanismo propuesto dentro de la literatura sobre focalización, refinamiento y distribución del entrenamiento en modelos informados por física.
+
+\section{Hipótesis experimentales y criterios de avance}
+\label{subsec:hipotesis-avance}
+
+Cada etapa del diseño experimental se organiza mediante hipótesis falsables asociadas al comportamiento esperado del mecanismo de focalización. Una hipótesis se considera respaldada experimentalmente cuando la mejora aparece de forma reproducible bajo configuraciones independientes y sin deterioro desproporcionado en estabilidad o costo computacional. Una hipótesis se considera no respaldada cuando la mejora no aparece, resulta inestable, depende de una configuración aislada o mejora el error global a costa de empeorar el comportamiento local en regiones críticas.
+
+El avance hacia un dominio de mayor complejidad se realiza cuando los resultados permiten identificar un comportamiento diferenciado en la dimensión evaluada. En la primera etapa, el criterio principal es la correcta reproducción de soluciones conocidas. En la segunda etapa, el criterio se centra en la respuesta ante componentes de alta frecuencia o multiescala. En la tercera etapa, el criterio se desplaza hacia la consistencia física local y la interacción entre campos acoplados. Si una etapa no satisface estos criterios, el mecanismo se refina antes de avanzar. Esta decisión evita que el proyecto dependa de una única comparación final y permite que cada fase produzca evidencia útil para el diseño del artefacto \cite{peffers2007dsrm,shukla2024fair}.
+
+\section{Métricas de evaluación}
+\label{subsec:metricas}
+
+El desempeño se evalúa contra soluciones analíticas o referencias numéricas reproducibles obtenidas mediante métodos clásicos, cuando estén disponibles. Las métricas principales incluyen el error relativo respecto a la solución de referencia, el residual físico, la estabilidad del entrenamiento, el costo computacional por configuración y la distribución espacial del error o del residual \cite{grossmann2024,shukla2024fair,wang2025kinn}. Estas métricas permiten interpretar no solo el desempeño global del modelo, sino también su comportamiento en regiones donde la solución exige mayor capacidad representacional.
+
+En problemas multiescala o de alta frecuencia, el análisis se enfoca en la capacidad del mecanismo para reducir errores localizados sin depender únicamente de una mejora agregada. En sistemas acoplados, el análisis incorpora la coherencia entre variables físicas, especialmente cuando el error en una variable puede afectar la estimación de otra \cite{tandis2025piezoelectric,mouratidou2026shunted}. En problemas piezoeléctricos, esta evaluación resulta especialmente importante porque la respuesta mecánica y eléctrica se encuentra acoplada, y las regiones de alto gradiente pueden tener relevancia directa en la validez física de la solución \cite{wang2004intensity,mouratidou2026shunted}.
+
+\section{Implementación computacional}
+\label{subsec:implementacion}
+
+La implementación se realiza en Python mediante cuadernos interactivos de Jupyter, lo que facilita la exploración reproducible de experimentos, configuraciones y resultados \cite{vanrossum2009python,kluyver2016jupyter}. Se utilizan bibliotecas de aprendizaje profundo compatibles con diferenciación automática, principalmente PyTorch \cite{paszke2019pytorch}. También se consideran herramientas especializadas como DeepXDE y pykan cuando sean útiles para establecer líneas base reproducibles, implementar problemas informados por física o acelerar la construcción de modelos basados en KAN \cite{lu2021deepxde,liu2024kan}.
+
+Los experimentos se ejecutan inicialmente en entorno local. Cuando el costo computacional lo requiera, se utilizan recursos de cómputo en la nube, como Google Colab u otros servicios con una unidad de procesamiento gráfico (GPU, por sus siglas en inglés) disponible \cite{bisong2019colab}. La selección del entorno depende de la disponibilidad de recursos, memoria requerida, costo y tiempo estimado de entrenamiento. Cuando el problema lo requiera, también se pueden utilizar simulaciones basadas en el método de elementos finitos (FEM, por sus siglas en inglés) como fuente de referencia numérica, incluyendo simulaciones en COMSOL \cite{comsol2024manual}.
+
+\section{Registro y reproducibilidad}
+\label{subsec:reproducibilidad}
+
+MLflow se utiliza para registrar hiperparámetros, configuración del modelo, número de puntos de colocación, métricas de entrenamiento, métricas de validación, tiempo de ejecución, distribución espacial del residual y artefactos generados \cite{zaharia2018mlflow}. Este registro permite comparar configuraciones de forma reproducible y detectar fallas asociadas a inestabilidad, sobrecosto computacional o bajo desempeño en regiones específicas del dominio.
+
+El registro experimental no se utiliza solo para determinar cuánto falla el modelo en términos globales. También permite identificar dónde falla la representación y si el mecanismo de focalización logra dirigir el aprendizaje hacia esas regiones \cite{lu2021deepxde,shukla2024fair,zaharia2018mlflow}. Para fortalecer la trazabilidad, cada experimento se asocia con su hipótesis, dominio, configuración, línea base, métrica objetivo y artefactos generados. Esta organización permite reconstruir la relación entre decisión de diseño, resultado observado y refinamiento posterior.
+
+\section{Análisis de resultados y refinamiento}
+\label{subsec:analisis-refinamiento}
+
+El análisis de resultados se orienta a identificar patrones de comportamiento del mecanismo propuesto. Se examina si la focalización mejora regiones físicamente relevantes, si reduce el residual local, si mantiene estabilidad durante el entrenamiento y si el costo computacional adicional es proporcional a la mejora observada. Los resultados se interpretan como evidencia sobre las condiciones bajo las cuales el mecanismo resulta útil, limitado o inestable.
+
+A partir de este análisis, el proyecto formula recomendaciones sobre condiciones de uso, limitaciones observadas y oportunidades de diseño para variantes PIKAN más robustas y adaptativas. Cuando los resultados indiquen fallas sistemáticas, el mecanismo se refina y se vuelve a evaluar dentro del dominio correspondiente. De esta manera, la metodología conserva una lógica iterativa de construcción, evaluación y refinamiento, sin reducir el proyecto a una comparación final de desempeño \cite{peffers2007dsrm}.
+
+\chapter{Plan de trabajo}
+\label{sec:plan-trabajo}
+
+El plan de trabajo se organiza en fases parcialmente solapadas, debido a que el proyecto sigue un proceso iterativo de construcción, evaluación y refinamiento del artefacto computacional. La implementación, el registro experimental y la redacción no se ejecutan como actividades aisladas, sino como procesos concurrentes que se actualizan conforme se obtienen resultados. Por ello, el avance entre fases no depende únicamente del cumplimiento cronológico de semanas, sino de la evidencia experimental generada en cada nivel de complejidad. En particular, el paso hacia dominios más exigentes se realiza cuando los resultados permiten verificar la implementación, observar el comportamiento del mecanismo de focalización y justificar su evaluación en problemas de mayor complejidad física. El cronograma de referencia, con sus siete fases e hitos verificables asociados, se presenta en la Figura~\ref{fig:cronograma-gantt}.
+
+\clearpage
+\begin{landscape}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=1.15\linewidth,height=0.86\textheight,keepaspectratio]{cronograma_gantt.png}
+    \caption{Cronograma de actividades del trabajo de graduación.}
+    \label{fig:cronograma-gantt}
+  \end{figure}
+\end{landscape}
+\clearpage

@@ -1,0 +1,47 @@
+\gdef\mpxshipout{\shipout\hbox\bgroup
+  \setbox0=\hbox\bgroup}
+\gdef\stopmpxshipout{\egroup  \dimen0=\ht0 \advance\dimen0\dp0
+  \dimen1=\ht0 \dimen2=\dp0
+  \setbox0=\hbox\bgroup
+    \box0
+    \ifnum\dimen0>0 \vrule width1sp height\dimen1 depth\dimen2 
+    \else \vrule width1sp height1sp depth0sp\relax
+    \fi\egroup
+  \ht0=0pt \dp0=0pt \box0 \egroup}
+\mpxshipout% line 70 ./bimorph_fiziko.mp
+fixed end%
+\stopmpxshipout
+\mpxshipout% line 77 ./bimorph_fiziko.mp
+$\phi=100\,\rm V$%
+\stopmpxshipout
+\mpxshipout% line 78 ./bimorph_fiziko.mp
+$\phi=0\,\rm V$%
+\stopmpxshipout
+\mpxshipout% line 85 ./bimorph_fiziko.mp
+$E_y<0\;\;(\simeq-10^5\,\mathrm{V\,m^{-1}})$%
+\stopmpxshipout
+\mpxshipout% line 93 ./bimorph_fiziko.mp
+$L=0.1\,\rm m$%
+\stopmpxshipout
+\mpxshipout% line 94 ./bimorph_fiziko.mp
+$h_{\rm total}=1\,\rm mm$%
+\stopmpxshipout
+\mpxshipout% line 96 ./bimorph_fiziko.mp
+drawn with height exaggerated $\times40$%
+\stopmpxshipout
+\mpxshipout% line 99 ./bimorph_fiziko.mp
+top: $\epsilon^*_{xx}<0$ (contraction)%
+\stopmpxshipout
+\mpxshipout% line 101 ./bimorph_fiziko.mp
+bottom: $\epsilon^*_{xx}>0$ (expansion)%
+\stopmpxshipout
+\mpxshipout% line 111 ./bimorph_fiziko.mp
+orange: upper layer%
+\stopmpxshipout
+\mpxshipout% line 114 ./bimorph_fiziko.mp
+teal: lower layer%
+\stopmpxshipout
+\mpxshipout% line 116 ./bimorph_fiziko.mp
+schematic piezoelectric bimorph%
+\stopmpxshipout
+\end{document}

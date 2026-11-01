@@ -1,0 +1,373 @@
+[{"stream_name":"stderr","time":7.903956338,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.9040063,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.904010394,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.904012916,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.527522236,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.5275521,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.527557363,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.527561154,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":9.678417411,"data":"Bundle verified: c310ca9ba9708b4c324ac64bee454057d78cdd3d474ab60198e8369a6723d303 source files: 6\n"}
+,{"stream_name":"stdout","time":9.714693193,"data":"Installing pinned dependencies: wandb==0.30.0, plotly==7.1.0, scipy==1.15.3, pandas==2.2.3, pyvista==0.49.0\n"}
+,{"stream_name":"stdout","time":12.412203117,"data":"Collecting wandb==0.30.0\n"}
+,{"stream_name":"stdout","time":12.46566929,"data":"  Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl.metadata (11 kB)\n"}
+,{"stream_name":"stdout","time":12.592285423,"data":"Collecting plotly==7.1.0\n"}
+,{"stream_name":"stdout","time":12.605477004,"data":"  Downloading plotly-7.1.0-py3-none-any.whl.metadata (8.8 kB)\n"}
+,{"stream_name":"stdout","time":12.614226196,"data":"Collecting wandb==0.30.0\n"}
+,{"stream_name":"stdout","time":12.614262577,"data":"  Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl.metadata (11 kB)\n"}
+,{"stream_name":"stdout","time":12.614284621,"data":"Collecting plotly==7.1.0\n"}
+,{"stream_name":"stdout","time":12.614288847,"data":"  Downloading plotly-7.1.0-py3-none-any.whl.metadata (8.8 kB)\n"}
+,{"stream_name":"stdout","time":12.964919389,"data":"Collecting scipy==1.15.3\n"}
+,{"stream_name":"stdout","time":12.979469178,"data":"  Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)\n"}
+,{"stream_name":"stdout","time":13.015304786,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 1.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.166957835,"data":"Collecting scipy==1.15.3\n"}
+,{"stream_name":"stdout","time":13.166984282,"data":"  Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)\n"}
+,{"stream_name":"stdout","time":13.166990019,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 1.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.332807331,"data":"Collecting pandas==2.2.3\n"}
+,{"stream_name":"stdout","time":13.346799074,"data":"  Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)\n"}
+,{"stream_name":"stdout","time":13.369978352,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 3.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.483717288,"data":"Collecting pyvista==0.49.0\n"}
+,{"stream_name":"stdout","time":13.498284708,"data":"  Downloading pyvista-0.49.0-py3-none-any.whl.metadata (14 kB)\n"}
+,{"stream_name":"stdout","time":13.520741471000001,"data":"Requirement already satisfied: click\u003e=8.2.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (8.3.3)\n"}
+,{"stream_name":"stdout","time":13.535005249,"data":"Collecting pandas==2.2.3\n"}
+,{"stream_name":"stdout","time":13.535021652,"data":"  Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)\n"}
+,{"stream_name":"stdout","time":13.535025991,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 3.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.535030384,"data":"Collecting pyvista==0.49.0\n"}
+,{"stream_name":"stdout","time":13.53503355,"data":"  Downloading pyvista-0.49.0-py3-none-any.whl.metadata (14 kB)\n"}
+,{"stream_name":"stdout","time":13.535036932,"data":"Requirement already satisfied: click\u003e=8.2.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (8.3.3)\n"}
+,{"stream_name":"stdout","time":13.583964233,"data":"Collecting opentelemetry-api\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":13.597225091,"data":"  Downloading opentelemetry_api-1.45.0-py3-none-any.whl.metadata (1.4 kB)\n"}
+,{"stream_name":"stdout","time":13.666085177,"data":"Collecting opentelemetry-exporter-otlp-proto-http\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":13.679395629,"data":"  Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl.metadata (3.1 kB)\n"}
+,{"stream_name":"stdout","time":13.763867021,"data":"Collecting opentelemetry-sdk\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":13.776724716,"data":"  Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl.metadata (1.6 kB)\n"}
+,{"stream_name":"stdout","time":13.785898588,"data":"Collecting opentelemetry-api\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":13.785926937,"data":"  Downloading opentelemetry_api-1.45.0-py3-none-any.whl.metadata (1.4 kB)\n"}
+,{"stream_name":"stdout","time":13.785931874,"data":"Collecting opentelemetry-exporter-otlp-proto-http\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":13.785936143,"data":"  Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl.metadata (3.1 kB)\n"}
+,{"stream_name":"stdout","time":13.785940916,"data":"Collecting opentelemetry-sdk\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":13.78594502,"data":"  Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl.metadata (1.6 kB)\n"}
+,{"stream_name":"stdout","time":13.796317793,"data":"Requirement already satisfied: packaging in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (26.1)\n"}
+,{"stream_name":"stdout","time":13.79745339,"data":"Requirement already satisfied: platformdirs in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.9.6)\n"}
+,{"stream_name":"stdout","time":13.798522212,"data":"Requirement already satisfied: protobuf!=5.28.0,!=5.29.0,\u003c8,\u003e=5 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (5.29.5)\n"}
+,{"stream_name":"stdout","time":13.80101039,"data":"Requirement already satisfied: pydantic\u003c3,\u003e=2.6 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.12.3)\n"}
+,{"stream_name":"stdout","time":13.802106579,"data":"Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (6.0.3)\n"}
+,{"stream_name":"stdout","time":13.8034252,"data":"Requirement already satisfied: requests\u003c3,\u003e=2.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.32.4)\n"}
+,{"stream_name":"stdout","time":13.804521668,"data":"Requirement already satisfied: typing-extensions\u003c5,\u003e=4.8 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.15.0)\n"}
+,{"stream_name":"stdout","time":13.806160571,"data":"Requirement already satisfied: xxhash\u003e=3.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (3.6.0)\n"}
+,{"stream_name":"stdout","time":13.814433922,"data":"Requirement already satisfied: narwhals\u003e=1.15.1 in /usr/local/lib/python3.12/dist-packages (from plotly==7.1.0) (2.20.0)\n"}
+,{"stream_name":"stdout","time":13.824368414,"data":"Requirement already satisfied: numpy\u003c2.5,\u003e=1.23.5 in /usr/local/lib/python3.12/dist-packages (from scipy==1.15.3) (2.0.2)\n"}
+,{"stream_name":"stdout","time":13.836631756,"data":"Requirement already satisfied: python-dateutil\u003e=2.8.2 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2.9.0.post0)\n"}
+,{"stream_name":"stdout","time":13.838326843,"data":"Requirement already satisfied: pytz\u003e=2020.1 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2025.2)\n"}
+,{"stream_name":"stdout","time":13.83953414,"data":"Requirement already satisfied: tzdata\u003e=2022.7 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2026.1)\n"}
+,{"stream_name":"stdout","time":13.946898036,"data":"Collecting cyclopts\u003e=4.0.0 (from pyvista==0.49.0)\n"}
+,{"stream_name":"stdout","time":13.96014175,"data":"  Downloading cyclopts-5.0.0-py3-none-any.whl.metadata (12 kB)\n"}
+,{"stream_name":"stdout","time":13.984336493,"data":"Requirement already satisfied: matplotlib\u003e=3.0.1 in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (3.10.0)\n"}
+,{"stream_name":"stdout","time":13.98857351,"data":"Requirement already satisfied: pillow in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (11.3.0)\n"}
+,{"stream_name":"stdout","time":13.989931412,"data":"Requirement already satisfied: pooch in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (1.9.0)\n"}
+,{"stream_name":"stdout","time":13.99804525,"data":"Requirement already satisfied: packaging in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (26.1)\n"}
+,{"stream_name":"stdout","time":13.998064936,"data":"Requirement already satisfied: platformdirs in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.9.6)\n"}
+,{"stream_name":"stdout","time":13.998068664,"data":"Requirement already satisfied: protobuf!=5.28.0,!=5.29.0,\u003c8,\u003e=5 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (5.29.5)\n"}
+,{"stream_name":"stdout","time":13.99807166,"data":"Requirement already satisfied: pydantic\u003c3,\u003e=2.6 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.12.3)\n"}
+,{"stream_name":"stdout","time":13.998074364,"data":"Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (6.0.3)\n"}
+,{"stream_name":"stdout","time":13.998076871,"data":"Requirement already satisfied: requests\u003c3,\u003e=2.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.32.4)\n"}
+,{"stream_name":"stdout","time":13.998079501,"data":"Requirement already satisfied: typing-extensions\u003c5,\u003e=4.8 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.15.0)\n"}
+,{"stream_name":"stdout","time":13.998082305,"data":"Requirement already satisfied: xxhash\u003e=3.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (3.6.0)\n"}
+,{"stream_name":"stdout","time":13.998084758,"data":"Requirement already satisfied: narwhals\u003e=1.15.1 in /usr/local/lib/python3.12/dist-packages (from plotly==7.1.0) (2.20.0)\n"}
+,{"stream_name":"stdout","time":13.998087233,"data":"Requirement already satisfied: numpy\u003c2.5,\u003e=1.23.5 in /usr/local/lib/python3.12/dist-packages (from scipy==1.15.3) (2.0.2)\n"}
+,{"stream_name":"stdout","time":13.9980981,"data":"Requirement already satisfied: python-dateutil\u003e=2.8.2 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2.9.0.post0)\n"}
+,{"stream_name":"stdout","time":13.998100852,"data":"Requirement already satisfied: pytz\u003e=2020.1 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2025.2)\n"}
+,{"stream_name":"stdout","time":13.998103275,"data":"Requirement already satisfied: tzdata\u003e=2022.7 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2026.1)\n"}
+,{"stream_name":"stdout","time":13.998105884,"data":"Collecting cyclopts\u003e=4.0.0 (from pyvista==0.49.0)\n"}
+,{"stream_name":"stdout","time":13.998121788,"data":"  Downloading cyclopts-5.0.0-py3-none-any.whl.metadata (12 kB)\n"}
+,{"stream_name":"stdout","time":13.998125994,"data":"Requirement already satisfied: matplotlib\u003e=3.0.1 in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (3.10.0)\n"}
+,{"stream_name":"stdout","time":13.998130307,"data":"Requirement already satisfied: pillow in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (11.3.0)\n"}
+,{"stream_name":"stdout","time":13.998134331,"data":"Requirement already satisfied: pooch in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (1.9.0)\n"}
+,{"stream_name":"stdout","time":14.036836671,"data":"Collecting pyvista-validation==0.2.2 (from pyvista==0.49.0)\n"}
+,{"stream_name":"stdout","time":14.052018428,"data":"  Downloading pyvista_validation-0.2.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.7 kB)\n"}
+,{"stream_name":"stdout","time":14.067544211,"data":"Requirement already satisfied: scooby\u003e=0.5.1 in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (0.11.2)\n"}
+,{"stream_name":"stdout","time":14.069115661,"data":"Requirement already satisfied: vtk!=9.4.0 in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (9.3.1)\n"}
+,{"stream_name":"stdout","time":14.080475392,"data":"Requirement already satisfied: attrs\u003e=23.1.0 in /usr/local/lib/python3.12/dist-packages (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (26.1.0)\n"}
+,{"stream_name":"stdout","time":14.081621796,"data":"Requirement already satisfied: docstring-parser\u003c4.0,\u003e=0.15 in /usr/local/lib/python3.12/dist-packages (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (0.18.0)\n"}
+,{"stream_name":"stdout","time":14.129849054,"data":"Collecting rich-rst\u003c3,\u003e=2.0.1 (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0)\n"}
+,{"stream_name":"stdout","time":14.143070582,"data":"  Downloading rich_rst-2.1.0-py3-none-any.whl.metadata (4.7 kB)\n"}
+,{"stream_name":"stdout","time":14.158747279,"data":"Requirement already satisfied: rich\u003e=13.6.0 in /usr/local/lib/python3.12/dist-packages (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (13.9.4)\n"}
+,{"stream_name":"stdout","time":14.162540709,"data":"Requirement already satisfied: contourpy\u003e=1.0.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (1.3.3)\n"}
+,{"stream_name":"stdout","time":14.163816054,"data":"Requirement already satisfied: cycler\u003e=0.10 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (0.12.1)\n"}
+,{"stream_name":"stdout","time":14.169645597,"data":"Requirement already satisfied: fonttools\u003e=4.22.0 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (4.62.1)\n"}
+,{"stream_name":"stdout","time":14.170015511,"data":"Requirement already satisfied: kiwisolver\u003e=1.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (1.5.0)\n"}
+,{"stream_name":"stdout","time":14.175250695,"data":"Requirement already satisfied: pyparsing\u003e=2.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (3.3.2)\n"}
+,{"stream_name":"stdout","time":14.189722409,"data":"Requirement already satisfied: googleapis-common-protos~=1.52 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (1.74.0)\n"}
+,{"stream_name":"stdout","time":14.231799275,"data":"Collecting opentelemetry-exporter-http-transport==0.66b0 (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":14.238751704,"data":"Collecting pyvista-validation==0.2.2 (from pyvista==0.49.0)\n"}
+,{"stream_name":"stdout","time":14.238767539,"data":"  Downloading pyvista_validation-0.2.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.7 kB)\n"}
+,{"stream_name":"stdout","time":14.238773241,"data":"Requirement already satisfied: scooby\u003e=0.5.1 in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (0.11.2)\n"}
+,{"stream_name":"stdout","time":14.238777961,"data":"Requirement already satisfied: vtk!=9.4.0 in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (9.3.1)\n"}
+,{"stream_name":"stdout","time":14.238781996,"data":"Requirement already satisfied: attrs\u003e=23.1.0 in /usr/local/lib/python3.12/dist-packages (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (26.1.0)\n"}
+,{"stream_name":"stdout","time":14.238786001,"data":"Requirement already satisfied: docstring-parser\u003c4.0,\u003e=0.15 in /usr/local/lib/python3.12/dist-packages (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (0.18.0)\n"}
+,{"stream_name":"stdout","time":14.238791168,"data":"Collecting rich-rst\u003c3,\u003e=2.0.1 (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0)\n"}
+,{"stream_name":"stdout","time":14.238795386,"data":"  Downloading rich_rst-2.1.0-py3-none-any.whl.metadata (4.7 kB)\n"}
+,{"stream_name":"stdout","time":14.238798936,"data":"Requirement already satisfied: rich\u003e=13.6.0 in /usr/local/lib/python3.12/dist-packages (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (13.9.4)\n"}
+,{"stream_name":"stdout","time":14.23880282,"data":"Requirement already satisfied: contourpy\u003e=1.0.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (1.3.3)\n"}
+,{"stream_name":"stdout","time":14.238806694,"data":"Requirement already satisfied: cycler\u003e=0.10 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (0.12.1)\n"}
+,{"stream_name":"stdout","time":14.238810431,"data":"Requirement already satisfied: fonttools\u003e=4.22.0 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (4.62.1)\n"}
+,{"stream_name":"stdout","time":14.238814179,"data":"Requirement already satisfied: kiwisolver\u003e=1.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (1.5.0)\n"}
+,{"stream_name":"stdout","time":14.238820159,"data":"Requirement already satisfied: pyparsing\u003e=2.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (3.3.2)\n"}
+,{"stream_name":"stdout","time":14.238826887,"data":"Requirement already satisfied: googleapis-common-protos~=1.52 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (1.74.0)\n"}
+,{"stream_name":"stdout","time":14.238830131,"data":"Collecting opentelemetry-exporter-http-transport==0.66b0 (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":14.245258696,"data":"  Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":14.295919115,"data":"Collecting opentelemetry-exporter-otlp-common==0.66b0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":14.309206980999999,"data":"  Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl.metadata (1.9 kB)\n"}
+,{"stream_name":"stdout","time":14.371436826,"data":"Collecting opentelemetry-exporter-otlp-proto-common==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":14.384887684,"data":"  Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl.metadata (1.8 kB)\n"}
+,{"stream_name":"stdout","time":14.447069164,"data":"  Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":14.447086872,"data":"Collecting opentelemetry-exporter-otlp-common==0.66b0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":14.44709268,"data":"  Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl.metadata (1.9 kB)\n"}
+,{"stream_name":"stdout","time":14.447096914,"data":"Collecting opentelemetry-exporter-otlp-proto-common==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":14.447101395,"data":"  Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl.metadata (1.8 kB)\n"}
+,{"stream_name":"stdout","time":14.485854374,"data":"Collecting opentelemetry-proto==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":14.499617614,"data":"  Downloading opentelemetry_proto-1.45.0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":14.533257993,"data":"Requirement already satisfied: urllib3\u003e=1.26 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (2.5.0)\n"}
+,{"stream_name":"stdout","time":14.599749267,"data":"Collecting opentelemetry-semantic-conventions==0.66b0 (from opentelemetry-sdk\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":14.61315177,"data":"  Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl.metadata (2.4 kB)\n"}
+,{"stream_name":"stdout","time":14.638114433,"data":"Requirement already satisfied: annotated-types\u003e=0.6.0 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.7.0)\n"}
+,{"stream_name":"stdout","time":14.639351353,"data":"Requirement already satisfied: pydantic-core==2.41.4 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (2.41.4)\n"}
+,{"stream_name":"stdout","time":14.640846888,"data":"Requirement already satisfied: typing-inspection\u003e=0.4.2 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.4.2)\n"}
+,{"stream_name":"stdout","time":14.645623483,"data":"Requirement already satisfied: six\u003e=1.5 in /usr/local/lib/python3.12/dist-packages (from python-dateutil\u003e=2.8.2-\u003epandas==2.2.3) (1.17.0)\n"}
+,{"stream_name":"stdout","time":14.652032467,"data":"Requirement already satisfied: charset_normalizer\u003c4,\u003e=2 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.4.7)\n"}
+,{"stream_name":"stdout","time":14.653265176,"data":"Requirement already satisfied: idna\u003c4,\u003e=2.5 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.13)\n"}
+,{"stream_name":"stdout","time":14.654845987,"data":"Requirement already satisfied: certifi\u003e=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (2026.4.22)\n"}
+,{"stream_name":"stdout","time":14.687920172,"data":"Collecting opentelemetry-proto==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":14.687938148,"data":"  Downloading opentelemetry_proto-1.45.0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":14.687943287,"data":"Requirement already satisfied: urllib3\u003e=1.26 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (2.5.0)\n"}
+,{"stream_name":"stdout","time":14.687948174,"data":"Collecting opentelemetry-semantic-conventions==0.66b0 (from opentelemetry-sdk\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":14.687951951,"data":"  Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl.metadata (2.4 kB)\n"}
+,{"stream_name":"stdout","time":14.68795573,"data":"Requirement already satisfied: annotated-types\u003e=0.6.0 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.7.0)\n"}
+,{"stream_name":"stdout","time":14.687960242,"data":"Requirement already satisfied: pydantic-core==2.41.4 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (2.41.4)\n"}
+,{"stream_name":"stdout","time":14.687964504,"data":"Requirement already satisfied: typing-inspection\u003e=0.4.2 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.4.2)\n"}
+,{"stream_name":"stdout","time":14.687968274,"data":"Requirement already satisfied: six\u003e=1.5 in /usr/local/lib/python3.12/dist-packages (from python-dateutil\u003e=2.8.2-\u003epandas==2.2.3) (1.17.0)\n"}
+,{"stream_name":"stdout","time":14.687972406,"data":"Requirement already satisfied: charset_normalizer\u003c4,\u003e=2 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.4.7)\n"}
+,{"stream_name":"stdout","time":14.68797719,"data":"Requirement already satisfied: idna\u003c4,\u003e=2.5 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.13)\n"}
+,{"stream_name":"stdout","time":14.687981906,"data":"Requirement already satisfied: certifi\u003e=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (2026.4.22)\n"}
+,{"stream_name":"stdout","time":14.705111304,"data":"Requirement already satisfied: markdown-it-py\u003e=2.2.0 in /usr/local/lib/python3.12/dist-packages (from rich\u003e=13.6.0-\u003ecyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (4.0.0)\n"}
+,{"stream_name":"stdout","time":14.706488769,"data":"Requirement already satisfied: pygments\u003c3.0.0,\u003e=2.13.0 in /usr/local/lib/python3.12/dist-packages (from rich\u003e=13.6.0-\u003ecyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (2.20.0)\n"}
+,{"stream_name":"stdout","time":14.719818664,"data":"Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.12/dist-packages (from markdown-it-py\u003e=2.2.0-\u003erich\u003e=13.6.0-\u003ecyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (0.1.2)\n"}
+,{"stream_name":"stdout","time":14.750122264,"data":"Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl (26.1 MB)\n"}
+,{"stream_name":"stdout","time":14.907458523,"data":"Requirement already satisfied: markdown-it-py\u003e=2.2.0 in /usr/local/lib/python3.12/dist-packages (from rich\u003e=13.6.0-\u003ecyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (4.0.0)\n"}
+,{"stream_name":"stdout","time":14.907513495,"data":"Requirement already satisfied: pygments\u003c3.0.0,\u003e=2.13.0 in /usr/local/lib/python3.12/dist-packages (from rich\u003e=13.6.0-\u003ecyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (2.20.0)\n"}
+,{"stream_name":"stdout","time":14.907519048,"data":"Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.12/dist-packages (from markdown-it-py\u003e=2.2.0-\u003erich\u003e=13.6.0-\u003ecyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (0.1.2)\n"}
+,{"stream_name":"stdout","time":14.90752234,"data":"Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl (26.1 MB)\n"}
+,{"stream_name":"stdout","time":15.001746386,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.1/26.1 MB 66.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.016124442,"data":"Downloading plotly-7.1.0-py3-none-any.whl (9.7 MB)\n"}
+,{"stream_name":"stdout","time":15.106841467,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 109.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.122413921,"data":"Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.3 MB)\n"}
+,{"stream_name":"stdout","time":15.204094514,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.1/26.1 MB 66.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.204120124,"data":"Downloading plotly-7.1.0-py3-none-any.whl (9.7 MB)\n"}
+,{"stream_name":"stdout","time":15.204124733,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 109.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.204128904,"data":"Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.3 MB)\n"}
+,{"stream_name":"stdout","time":15.443249907,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 51.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.457808548,"data":"Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)\n"}
+,{"stream_name":"stdout","time":15.582036095,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 94.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.596190501,"data":"Downloading pyvista-0.49.0-py3-none-any.whl (2.7 MB)\n"}
+,{"stream_name":"stdout","time":15.635763788,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 73.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.645087752,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 51.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.645109276,"data":"Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)\n"}
+,{"stream_name":"stdout","time":15.645114443,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 94.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.645118731,"data":"Downloading pyvista-0.49.0-py3-none-any.whl (2.7 MB)\n"}
+,{"stream_name":"stdout","time":15.645122752,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 73.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.650225387999999,"data":"Downloading pyvista_validation-0.2.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (261 kB)\n"}
+,{"stream_name":"stdout","time":15.669292663,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 261.4/261.4 kB 14.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.682877826,"data":"Downloading cyclopts-5.0.0-py3-none-any.whl (278 kB)\n"}
+,{"stream_name":"stdout","time":15.703649953,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 278.1/278.1 kB 14.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.717081794,"data":"Downloading opentelemetry_api-1.45.0-py3-none-any.whl (60 kB)\n"}
+,{"stream_name":"stdout","time":15.736078201,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.0/60.0 kB 3.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.749222963,"data":"Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl (22 kB)\n"}
+,{"stream_name":"stdout","time":15.774240264,"data":"Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":15.80481762,"data":"Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":15.836417035,"data":"Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl (15 kB)\n"}
+,{"stream_name":"stdout","time":15.852199604,"data":"Downloading pyvista_validation-0.2.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (261 kB)\n"}
+,{"stream_name":"stdout","time":15.85221603,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 261.4/261.4 kB 14.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.852221289,"data":"Downloading cyclopts-5.0.0-py3-none-any.whl (278 kB)\n"}
+,{"stream_name":"stdout","time":15.852226538,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 278.1/278.1 kB 14.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.852233822,"data":"Downloading opentelemetry_api-1.45.0-py3-none-any.whl (60 kB)\n"}
+,{"stream_name":"stdout","time":15.852236324,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.0/60.0 kB 3.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.852238954,"data":"Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl (22 kB)\n"}
+,{"stream_name":"stdout","time":15.852241246,"data":"Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":15.852243695,"data":"Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":15.852245983,"data":"Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl (15 kB)\n"}
+,{"stream_name":"stdout","time":15.864217326,"data":"Downloading opentelemetry_proto-1.45.0-py3-none-any.whl (72 kB)\n"}
+,{"stream_name":"stdout","time":15.882667115,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 3.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.895595357,"data":"Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl (140 kB)\n"}
+,{"stream_name":"stdout","time":15.918491336,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.1/140.1 kB 6.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.931541184,"data":"Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl (206 kB)\n"}
+,{"stream_name":"stdout","time":15.95428727,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.3/206.3 kB 9.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.967471838,"data":"Downloading rich_rst-2.1.0-py3-none-any.whl (272 kB)\n"}
+,{"stream_name":"stdout","time":15.986759223,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 273.0/273.0 kB 15.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.066070231,"data":"Downloading opentelemetry_proto-1.45.0-py3-none-any.whl (72 kB)\n"}
+,{"stream_name":"stdout","time":16.066086932,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 3.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.066092122,"data":"Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl (140 kB)\n"}
+,{"stream_name":"stdout","time":16.066095662,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.1/140.1 kB 6.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.066099746,"data":"Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl (206 kB)\n"}
+,{"stream_name":"stdout","time":16.066103257,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.3/206.3 kB 9.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.066107039,"data":"Downloading rich_rst-2.1.0-py3-none-any.whl (272 kB)\n"}
+,{"stream_name":"stdout","time":16.066111064,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 273.0/273.0 kB 15.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":18.329025391,"data":"Installing collected packages: scipy, pyvista-validation, plotly, opentelemetry-proto, opentelemetry-api, pandas, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, opentelemetry-exporter-http-transport, rich-rst, opentelemetry-sdk, opentelemetry-exporter-otlp-common, cyclopts, pyvista, opentelemetry-exporter-otlp-proto-http, wandb\n"}
+,{"stream_name":"stdout","time":18.329261714,"data":"  Attempting uninstall: scipy\n"}
+,{"stream_name":"stdout","time":18.525198866,"data":"    Found existing installation: scipy 1.16.3\n"}
+,{"stream_name":"stdout","time":18.531312701,"data":"Installing collected packages: scipy, pyvista-validation, plotly, opentelemetry-proto, opentelemetry-api, pandas, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, opentelemetry-exporter-http-transport, rich-rst, opentelemetry-sdk, opentelemetry-exporter-otlp-common, cyclopts, pyvista, opentelemetry-exporter-otlp-proto-http, wandb\n"}
+,{"stream_name":"stdout","time":18.531335996,"data":"  Attempting uninstall: scipy\n"}
+,{"stream_name":"stdout","time":18.531343278,"data":"    Found existing installation: scipy 1.16.3\n"}
+,{"stream_name":"stdout","time":18.756205512,"data":"    Uninstalling scipy-1.16.3:\n"}
+,{"stream_name":"stdout","time":18.95831567,"data":"    Uninstalling scipy-1.16.3:\n"}
+,{"stream_name":"stdout","time":20.936347418,"data":"      Successfully uninstalled scipy-1.16.3\n"}
+,{"stream_name":"stdout","time":21.138894338,"data":"      Successfully uninstalled scipy-1.16.3\n"}
+,{"stream_name":"stdout","time":25.210329601,"data":"  Attempting uninstall: plotly\n"}
+,{"stream_name":"stdout","time":25.412502386,"data":"  Attempting uninstall: plotly\n"}
+,{"stream_name":"stdout","time":25.434423684,"data":"    Found existing installation: plotly 5.24.1\n"}
+,{"stream_name":"stdout","time":25.636484958,"data":"    Found existing installation: plotly 5.24.1\n"}
+,{"stream_name":"stdout","time":28.643325104,"data":"    Uninstalling plotly-5.24.1:\n"}
+,{"stream_name":"stdout","time":28.845671132,"data":"    Uninstalling plotly-5.24.1:\n"}
+,{"stream_name":"stdout","time":40.273015196,"data":"      Successfully uninstalled plotly-5.24.1\n"}
+,{"stream_name":"stdout","time":40.479265063,"data":"      Successfully uninstalled plotly-5.24.1\n"}
+,{"stream_name":"stdout","time":42.726482565,"data":"  Attempting uninstall: opentelemetry-proto\n"}
+,{"stream_name":"stdout","time":42.928542135,"data":"  Attempting uninstall: opentelemetry-proto\n"}
+,{"stream_name":"stdout","time":43.053476671,"data":"    Found existing installation: opentelemetry-proto 1.38.0\n"}
+,{"stream_name":"stdout","time":43.076736195,"data":"    Uninstalling opentelemetry-proto-1.38.0:\n"}
+,{"stream_name":"stdout","time":43.106961329,"data":"      Successfully uninstalled opentelemetry-proto-1.38.0\n"}
+,{"stream_name":"stdout","time":43.173655558,"data":"  Attempting uninstall: opentelemetry-api\n"}
+,{"stream_name":"stdout","time":43.256090536,"data":"    Found existing installation: opentelemetry-proto 1.38.0\n"}
+,{"stream_name":"stdout","time":43.256114616,"data":"    Uninstalling opentelemetry-proto-1.38.0:\n"}
+,{"stream_name":"stdout","time":43.256120475,"data":"      Successfully uninstalled opentelemetry-proto-1.38.0\n"}
+,{"stream_name":"stdout","time":43.256125797,"data":"  Attempting uninstall: opentelemetry-api\n"}
+,{"stream_name":"stdout","time":43.500935412,"data":"    Found existing installation: opentelemetry-api 1.38.0\n"}
+,{"stream_name":"stdout","time":43.525412983,"data":"    Uninstalling opentelemetry-api-1.38.0:\n"}
+,{"stream_name":"stdout","time":43.617642326,"data":"      Successfully uninstalled opentelemetry-api-1.38.0\n"}
+,{"stream_name":"stdout","time":43.677079034,"data":"  Attempting uninstall: pandas\n"}
+,{"stream_name":"stdout","time":43.702946912,"data":"    Found existing installation: opentelemetry-api 1.38.0\n"}
+,{"stream_name":"stdout","time":43.70296711,"data":"    Uninstalling opentelemetry-api-1.38.0:\n"}
+,{"stream_name":"stdout","time":43.702972776,"data":"      Successfully uninstalled opentelemetry-api-1.38.0\n"}
+,{"stream_name":"stdout","time":43.702977334,"data":"  Attempting uninstall: pandas\n"}
+,{"stream_name":"stdout","time":43.719739154,"data":"    Found existing installation: pandas 2.3.3\n"}
+,{"stream_name":"stdout","time":43.921977776,"data":"    Found existing installation: pandas 2.3.3\n"}
+,{"stream_name":"stdout","time":44.112355549,"data":"    Uninstalling pandas-2.3.3:\n"}
+,{"stream_name":"stdout","time":44.314318009,"data":"    Uninstalling pandas-2.3.3:\n"}
+,{"stream_name":"stdout","time":45.739132409,"data":"      Successfully uninstalled pandas-2.3.3\n"}
+,{"stream_name":"stdout","time":45.941319181,"data":"      Successfully uninstalled pandas-2.3.3\n"}
+,{"stream_name":"stdout","time":50.593109291,"data":"  Attempting uninstall: opentelemetry-semantic-conventions\n"}
+,{"stream_name":"stdout","time":50.795582355,"data":"  Attempting uninstall: opentelemetry-semantic-conventions\n"}
+,{"stream_name":"stdout","time":50.949235701,"data":"    Found existing installation: opentelemetry-semantic-conventions 0.59b0\n"}
+,{"stream_name":"stdout","time":50.961070952,"data":"    Uninstalling opentelemetry-semantic-conventions-0.59b0:\n"}
+,{"stream_name":"stdout","time":51.062973489,"data":"      Successfully uninstalled opentelemetry-semantic-conventions-0.59b0\n"}
+,{"stream_name":"stdout","time":51.151681261,"data":"    Found existing installation: opentelemetry-semantic-conventions 0.59b0\n"}
+,{"stream_name":"stdout","time":51.151703498,"data":"    Uninstalling opentelemetry-semantic-conventions-0.59b0:\n"}
+,{"stream_name":"stdout","time":51.151710136,"data":"      Successfully uninstalled opentelemetry-semantic-conventions-0.59b0\n"}
+,{"stream_name":"stdout","time":51.217648962,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-common\n"}
+,{"stream_name":"stdout","time":51.420379819,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-common\n"}
+,{"stream_name":"stdout","time":51.526995109,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-common 1.38.0\n"}
+,{"stream_name":"stdout","time":51.532780745,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-common-1.38.0:\n"}
+,{"stream_name":"stdout","time":51.547638162,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-common-1.38.0\n"}
+,{"stream_name":"stdout","time":51.729430046,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-common 1.38.0\n"}
+,{"stream_name":"stdout","time":51.729479217,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-common-1.38.0:\n"}
+,{"stream_name":"stdout","time":51.729485118,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-common-1.38.0\n"}
+,{"stream_name":"stdout","time":51.804526042,"data":"  Attempting uninstall: opentelemetry-sdk\n"}
+,{"stream_name":"stdout","time":51.974495216,"data":"    Found existing installation: opentelemetry-sdk 1.38.0\n"}
+,{"stream_name":"stdout","time":51.98527591,"data":"    Uninstalling opentelemetry-sdk-1.38.0:\n"}
+,{"stream_name":"stdout","time":52.006849226,"data":"  Attempting uninstall: opentelemetry-sdk\n"}
+,{"stream_name":"stdout","time":52.006869801,"data":"    Found existing installation: opentelemetry-sdk 1.38.0\n"}
+,{"stream_name":"stdout","time":52.006881197,"data":"    Uninstalling opentelemetry-sdk-1.38.0:\n"}
+,{"stream_name":"stdout","time":52.047913663,"data":"      Successfully uninstalled opentelemetry-sdk-1.38.0\n"}
+,{"stream_name":"stdout","time":52.250504332,"data":"      Successfully uninstalled opentelemetry-sdk-1.38.0\n"}
+,{"stream_name":"stdout","time":53.163001086,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-http\n"}
+,{"stream_name":"stdout","time":53.36545786,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-http\n"}
+,{"stream_name":"stdout","time":53.460588686,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-http 1.38.0\n"}
+,{"stream_name":"stdout","time":53.466008724,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-http-1.38.0:\n"}
+,{"stream_name":"stdout","time":53.477978175,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-http-1.38.0\n"}
+,{"stream_name":"stdout","time":53.506096215,"data":"  Attempting uninstall: wandb\n"}
+,{"stream_name":"stdout","time":53.662707643,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-http 1.38.0\n"}
+,{"stream_name":"stdout","time":53.662739261,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-http-1.38.0:\n"}
+,{"stream_name":"stdout","time":53.662744789,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-http-1.38.0\n"}
+,{"stream_name":"stdout","time":53.662749727,"data":"  Attempting uninstall: wandb\n"}
+,{"stream_name":"stdout","time":53.668072982,"data":"    Found existing installation: wandb 0.26.1\n"}
+,{"stream_name":"stdout","time":53.826958086,"data":"    Uninstalling wandb-0.26.1:\n"}
+,{"stream_name":"stdout","time":53.870183139,"data":"    Found existing installation: wandb 0.26.1\n"}
+,{"stream_name":"stdout","time":53.870212443,"data":"    Uninstalling wandb-0.26.1:\n"}
+,{"stream_name":"stdout","time":71.966387939,"data":"      Successfully uninstalled wandb-0.26.1\n"}
+,{"stream_name":"stdout","time":72.173092335,"data":"      Successfully uninstalled wandb-0.26.1\n"}
+,{"stream_name":"stdout","time":73.589311612,"data":"Successfully installed cyclopts-5.0.0 opentelemetry-api-1.45.0 opentelemetry-exporter-http-transport-0.66b0 opentelemetry-exporter-otlp-common-0.66b0 opentelemetry-exporter-otlp-proto-common-1.45.0 opentelemetry-exporter-otlp-proto-http-1.45.0 opentelemetry-proto-1.45.0 opentelemetry-sdk-1.45.0 opentelemetry-semantic-conventions-0.66b0 pandas-2.2.3 plotly-7.1.0 pyvista-0.49.0 pyvista-validation-0.2.2 rich-rst-2.1.0 scipy-1.15.3 wandb-0.30.0\n"}
+,{"stream_name":"stderr","time":73.589337054,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":73.589358943,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":73.5893658,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":73.589371886,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.589377792,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.2.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.589383791,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.589389136,"data":"google-adk 1.29.0 requires opentelemetry-api\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-api 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.589394555,"data":"google-adk 1.29.0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.589399947,"data":"opentelemetry-exporter-gcp-logging 1.11.0a0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.35.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":73.779870419,"data":"Successfully installed cyclopts-5.0.0 opentelemetry-api-1.45.0 opentelemetry-exporter-http-transport-0.66b0 opentelemetry-exporter-otlp-common-0.66b0 opentelemetry-exporter-otlp-proto-common-1.45.0 opentelemetry-exporter-otlp-proto-http-1.45.0 opentelemetry-proto-1.45.0 opentelemetry-sdk-1.45.0 opentelemetry-semantic-conventions-0.66b0 pandas-2.2.3 plotly-7.1.0 pyvista-0.49.0 pyvista-validation-0.2.2 rich-rst-2.1.0 scipy-1.15.3 wandb-0.30.0\n"}
+,{"stream_name":"stderr","time":73.781177328,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":73.781203135,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":73.781211216,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":73.781216566,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.78124069,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.2.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.781245454,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.781250165,"data":"google-adk 1.29.0 requires opentelemetry-api\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-api 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.781254368,"data":"google-adk 1.29.0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.781260826,"data":"opentelemetry-exporter-gcp-logging 1.11.0a0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.35.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.781264984,"data":"\n"}
+,{"stream_name":"stderr","time":73.781268507,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":73.781272508,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":73.781276636,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":73.781280301,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.781284918,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.2.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.781289188,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.781293142,"data":"google-adk 1.29.0 requires opentelemetry-api\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-api 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.78129756,"data":"google-adk 1.29.0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":73.781302536,"data":"opentelemetry-exporter-gcp-logging 1.11.0a0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.35.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":79.845434473,"data":"index, name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":79.845765544,"data":"0, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":79.845780788,"data":"1, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":79.853418296,"data":"index, name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":79.853452481,"data":"0, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":79.853459503,"data":"1, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stderr","time":84.152212395,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":84.152261395,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":84.15226885,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":84.152399241,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":84.152409047,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":84.152680447,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":84.152861478,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":84.152870081,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":84.152875698,"data":"Exception encountered at \"In [5]\":\n"}
+,{"stream_name":"stderr","time":84.152879668,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":84.152883567,"data":"FileNotFoundError                         Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":84.152887533,"data":"/tmp/ipykernel_23/2698078176.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":84.152892437,"data":"      6 for seed in manifest['training']['seeds']:\n"}
+,{"stream_name":"stderr","time":84.152896465,"data":"      7     run = RUNS_DIR / f'seed-{seed}'\n"}
+,{"stream_name":"stderr","time":84.152900072,"data":"----\u003e 8     signal = json.loads((run / 'sampling_signals.json').read_text(encoding='utf-8'))\n"}
+,{"stream_name":"stderr","time":84.152903714,"data":"      9     rows.append({key: value for key, value in signal.items()\n"}
+,{"stream_name":"stderr","time":84.15290709,"data":"     10                  if type(value) in (int, float, str)})\n"}
+,{"stream_name":"stderr","time":84.152910488,"data":"\n"}
+,{"stream_name":"stderr","time":84.152913752,"data":"/usr/lib/python3.12/pathlib.py in read_text(self, encoding, errors)\n"}
+,{"stream_name":"stderr","time":84.152917257,"data":"   1025         \"\"\"\n"}
+,{"stream_name":"stderr","time":84.152920718,"data":"   1026         encoding = io.text_encoding(encoding)\n"}
+,{"stream_name":"stderr","time":84.15292418,"data":"-\u003e 1027         with self.open(mode='r', encoding=encoding, errors=errors) as f:\n"}
+,{"stream_name":"stderr","time":84.152927729,"data":"   1028             return f.read()\n"}
+,{"stream_name":"stderr","time":84.152931195,"data":"   1029 \n"}
+,{"stream_name":"stderr","time":84.152934413,"data":"\n"}
+,{"stream_name":"stderr","time":84.15293759,"data":"/usr/lib/python3.12/pathlib.py in open(self, mode, buffering, encoding, errors, newline)\n"}
+,{"stream_name":"stderr","time":84.152941119,"data":"   1011         if \"b\" not in mode:\n"}
+,{"stream_name":"stderr","time":84.152944585,"data":"   1012             encoding = io.text_encoding(encoding)\n"}
+,{"stream_name":"stderr","time":84.152947917,"data":"-\u003e 1013         return io.open(self, mode, buffering, encoding, errors, newline)\n"}
+,{"stream_name":"stderr","time":84.152951565,"data":"   1014 \n"}
+,{"stream_name":"stderr","time":84.152959988,"data":"   1015     def read_bytes(self):\n"}
+,{"stream_name":"stderr","time":84.152963205,"data":"\n"}
+,{"stream_name":"stderr","time":84.152965615,"data":"FileNotFoundError: [Errno 2] No such file or directory: '/kaggle/working/pikan-c310ca9ba9708b4c/runs/seed-301/sampling_signals.json'\n"}
+,{"stream_name":"stderr","time":84.15296817,"data":"\n"}
+,{"stream_name":"stderr","time":86.284211491,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":86.28424284,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":86.431254832,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":86.431280529,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":87.065162227,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":87.376909137,"data":"[NbConvertApp] Writing 100916 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":89.74304168,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":90.584158317,"data":"[NbConvertApp] Writing 415698 bytes to __results__.html\n"}
+]

@@ -1,0 +1,14 @@
+{
+  "arm": "AC-DeepXDE-MLP",
+  "cap_overrun_seconds": 0.010853271000087261,
+  "checkpoint_selection": "final state; no reference-based selection",
+  "device": "Tesla T4",
+  "dtype": "float64",
+  "elapsed_gpu_wall_seconds": 600.0108532710001,
+  "optimizer": "adam",
+  "parameters": 1341,
+  "seed": 404,
+  "smoke_only": false,
+  "status": "DRAFT_UNVERIFIED",
+  "steps": 53557
+}

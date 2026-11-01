@@ -61,7 +61,7 @@ def main():
         shutil.copyfile(s, ds / n)
     assert (ds / "gram_preconditioning.py").read_bytes() == (ROOT / "src/mechanisms/gram_preconditioning.py").read_bytes()
     assert (ds / "residual_terms.py").read_bytes() == (HERE / "dataset_1c_dfg" / "residual_terms.py").read_bytes()
-    assert (ds / "dfg.py").read_bytes() == (ROOT / "src/research_pipeline/sciml/dfg.py").read_bytes()
+    assert (ds / "dfg.py").read_bytes() == (ROOT / "src/sciml/dfg.py").read_bytes()
     shared = {}
     for prev in ("dataset_1d", "dataset_1c", "dataset_1c_dfg"):
         pd = HERE / prev

@@ -50,7 +50,7 @@
     }
   },
   "model": {
-    "implementation": "src/research_pipeline/sciml/campaign.py",
+    "implementation": "src/sciml/campaign.py",
     "widths": [
       2,
       16,

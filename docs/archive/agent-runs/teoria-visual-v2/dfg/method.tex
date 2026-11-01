@@ -1,0 +1,75 @@
+% Fragmento listo para integrar en la discusión de P4.
+% La figura asociada se encuentra en p4-solution.pdf y muestra únicamente
+% campos interpolados desde los grados de libertad FEM resueltos.
+\subsubsection{P4: solución FEM del benchmark Navier--Stokes DFG 2D-1}
+
+Se resolvió el problema estacionario de Navier--Stokes incompresible en
+\(\Omega=([0,2.2]\times[0,0.41])\setminus\overline{B_{0.05}(0.2,0.2)}\), con
+densidad \(\rho=1\) y viscosidad cinemática \(\nu=10^{-3}\). La entrada se
+impuso como
+\[
+ \mathbf u_{\mathrm{in}}(y)=\left(\frac{4(0.3)y(0.41-y)}{0.41^2},0\right),
+ \qquad U_{\max}=0.3,\quad \overline U=0.2,
+\]
+las paredes y el cilindro tuvieron no deslizamiento, y en la salida se dejó la
+condición natural exacta \(\nu\,\partial_n\mathbf u-p\mathbf n=0\), sin fijar
+presión adicional. Así, el número de Reynolds de referencia es
+\(\mathrm{Re}=\overline U(0.1)/\nu=20\). El sistema resuelto fue
+\[
+ -\nu\Delta\mathbf u+(\mathbf u\cdot\nabla)\mathbf u+\nabla p=\mathbf0,
+ \qquad \nabla\cdot\mathbf u=0.
+\]
+
+La discretización empleó elementos triangulares Taylor--Hood \(P_2/P_1\) para
+velocidad y presión. Cada nivel se generó con Delaunay y una frontera
+poligonal explícita para el cilindro; el número de segmentos de esa frontera
+creció junto con la resolución de fondo. La convección se continuó mediante
+Picard y se remató con correcciones de Newton. La tabla resume la corrida
+completa que produjo los campos de la figura.
+
+\begin{center}
+\small
+\begin{tabular}{lrrrrrr}
+\hline
+nivel & $n_x\times n_y$ & segmentos & elementos & $N_u$ & $N_p$ & Picard+Newton\\
+\hline
+grueso & $34\times8$ & 32 & 734 & 3168 & 425 & 18+1\\
+medio  & $52\times12$ & 48 & 1526 & 6456 & 851 & 18+1\\
+fino   & $76\times18$ & 64 & 3100 & 12904 & 1676 & 18+1\\
+\hline
+\end{tabular}
+\end{center}
+
+En el nivel fino, el residuo débil libre fue
+\(2.11\times10^{-18}\), el residuo de continuidad débil
+\(1.95\times10^{-18}\), el error de traza de entrada
+\(4.14\times10^{-17}\) y el máximo de no deslizamiento
+\(7.22\times10^{-16}\). El cierre integral de flujo fue
+\(2.54\times10^{-15}\) relativo, con flujos de entrada y salida
+\(-0.0820\) y \(0.0820\), respectivamente; la traza de salida evaluada con
+la condición natural tuvo norma \(7.18\times10^{-7}\). La norma \(L^2\) de
+la divergencia evaluada dentro de los elementos bajó de
+\(1.40\times10^{-1}\) a \(6.21\times10^{-2}\); la restricción débil de
+continuidad se reporta por separado porque es la que impone el espacio mixto.
+
+Los funcionales obtenidos en las tres mallas fueron
+\[
+\begin{array}{c|rrr}
+ & C_D & C_L & \Delta p\\\hline
+\text{gruesa} & 5.51699 & 0.00544 & 0.11364\\
+\text{media}  & 5.52807 & 0.01015 & 0.12186\\
+\text{fina}   & 5.52153 & -0.00651 & 0.11555
+\end{array}
+\]
+con \(\Delta p=p(0.15,0.2)-p(0.25,0.2)\) y
+\(\boldsymbol\sigma=\nu\nabla\mathbf u-pI\) integrada con la normal
+exterior al cilindro. Como control externo, el benchmark publica
+\(C_D=5.57953523384\), \(C_L=0.010618948146\) y
+\(\Delta p=0.11752016697\)~\cite{dfgRe20}. La comparación entre niveles da
+ cambios relativos medio--fino de \(0.24\%\) en velocidad y \(0.99\%\) en
+ presión de media cero, pero \(5.18\%\) en \(\Delta p\); además, el signo de
+ \(C_L\) no se estabiliza. Por ello estos resultados documentan una solución
+ FEM reproducible y sus balances, pero no se presentan como certificación de
+ convergencia de todas las cantidades integrales. Las imágenes de velocidad,
+ presión y líneas de corriente se obtuvieron exclusivamente interpolando el
+ campo resuelto y enmascarando el mismo polígono sólido de la malla.

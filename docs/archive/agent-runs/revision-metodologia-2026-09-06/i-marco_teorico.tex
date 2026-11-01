@@ -1,0 +1,234 @@
+\label{sec:marco-teorico}
+\section{Ecuaciones diferenciales como problemas de aproximación}
+El objeto de estudio es cómo distribuir recursos de representación para aproximar soluciones de ecuaciones diferenciales parciales (PDEs, por sus siglas en inglés). Una PDE relaciona magnitudes físicas y derivadas; la solución depende conjuntamente del operador, dominio, parámetros y condiciones auxiliares. No se presupone que toda PDE carezca de solución cerrada ni que un aproximador neuronal sea preferible a un solucionador clásico \cite{evans1998pde,raissi2019,grossmann2024}.
+
+Sea $\Omega\subset\mathbb R^d$ el dominio espacial, $\partial\Omega$ su frontera, $t\in[0,T]$ el tiempo y $\mathbf u:Q\to\mathbb R^m$ el conjunto de campos. Para problemas estacionarios $Q=\Omega$; para los evolutivos $Q=\Omega\times(0,T]$. Escribiremos $z=x$ o $z=(x,t)$, respectivamente:
+\begin{equation}
+\mathcal N_a[\mathbf u;\mu](z)=f_a(z),\qquad \mathcal B_b[\mathbf u](z)=g_b(z),\qquad \mathbf u(x,0)=\mathbf u_0(x).
+\label{eq:pde-general}
+\end{equation}
+$a$ identifica ecuaciones, $b$ condiciones y $\mu$ parámetros físicos. $\mathcal B_b$ impone valores (Dirichlet), flujos (Neumann) o combinaciones (Robin). La condición inicial se omite en problemas estacionarios. Una ecuación puede involucrar varios campos: índice de ecuación e índice de campo no son intercambiables.
+
+La aproximación $\mathbf u_\theta$ pertenece a una familia determinada por arquitectura y parámetros $\theta$. Se distinguen error $e=\mathbf u_\theta-\mathbf u$ y residual
+\begin{equation}
+r_a(z;\theta)=\mathcal N_a[\mathbf u_\theta;\mu](z)-f_a(z).
+\label{eq:residual}
+\end{equation}
+El forzamiento se mantiene explícito. Un residual pequeño en puntos finitos no certifica una solución precisa: intervienen estabilidad, frontera, cobertura y optimización. Usaremos $\|v\|_{L^2(Q)}^2=\int_Q|v|^2dz$ y $|v|_{H^1(\Omega)}^2=\int_\Omega\|\nabla v\|^2dx$; la segunda detecta discrepancias de gradiente.
+
+Las soluciones analíticas permiten verificar operadores sin incertidumbre de discretización. FDM, FVM y FEM proporcionan referencias cuando no hay solución cerrada. El aprendizaje automático científico (SciML) integra física y aprendizaje; su utilidad depende de la tarea y del costo total, incluido el entrenamiento \cite{karniadakis2021,grossmann2024}. La referencia independiente fija qué significa resolver correctamente el problema.
+
+\section{Aproximación clásica y resolución adaptativa}
+Una discretización convierte funciones en incógnitas finitas. La malla describe puntos, elementos y relaciones geométricas; tamaño y orden de aproximación controlan las escalas representables. Es el precedente de la adaptación neuronal, sin transferir automáticamente sus garantías.
+
+\subsection{Diferencias y volúmenes finitos}
+En diferencias finitas (FDM), Taylor da $u(x_i\pm h)=u_i\pm hu_i'+h^2u_i''/2\pm h^3u_i'''/6+O(h^4)$. Sumando y despejando,
+\begin{equation}u''(x_i)=\frac{u_{i-1}-2u_i+u_{i+1}}{h^2}+O(h^2).\end{equation}
+La precisión requiere suavidad y resolución: iterar más no resuelve una capa que la discretización no representa. En volúmenes finitos (FVM), integrar $u_t+\nabla\cdot F(u)=s$ sobre una celda $K$ y aplicar divergencia produce
+\begin{equation}\frac d{dt}\int_Ku\,dx+\sum_{e\subset\partial K}\int_e\widehat F\cdot n_K\,ds=\int_Ks\,dx.\end{equation}
+El flujo numérico $\widehat F$ compartido entre celdas permite balances discretos conservativos. FDM aproxima derivadas; FVM aproxima balances. Ambos admiten adaptación.
+
+\subsection{Construcción de elementos finitos}
+El método de elementos finitos (FEM, por sus siglas en inglés) aproxima con funciones asociadas a elementos. Considérese $-\nabla\cdot(\kappa\nabla u)=f$, $\kappa>0$, $u=0$ en $\Gamma_D$, $\kappa\nabla u\cdot n=g_N$ en $\Gamma_N$. Multiplicar por una prueba $v$ nula en $\Gamma_D$, integrar y aplicar integración por partes da
+\begin{equation}
+\underbrace{\int_\Omega\kappa\nabla u\cdot\nabla v\,dx}_{a(u,v)}=\underbrace{\int_\Omega fv\,dx+\int_{\Gamma_N}g_Nv\,ds}_{\ell(v)}.
+\label{eq:weak}
+\end{equation}
+Se busca $u\in V=\{v\in H^1(\Omega):v|_{\Gamma_D}=0\}$. Con Dirichlet no homogéneo se usa un levantamiento y un espacio afín. Una malla $\mathcal T_h$ define $V_h\subset V$. Sustituir $u_h=\sum_jU_j\phi_j$ y probar con cada $\phi_i$ produce
+\begin{equation}KU=F,\quad K_{ij}=\int_\Omega\kappa\nabla\phi_j\cdot\nabla\phi_i\,dx,\quad F_i=\ell(\phi_i).\end{equation}
+En un triángulo lineal, $\phi_j$ es afín, vale uno en su nodo y cero en los restantes. Su soporte físico comprende los elementos que comparten el nodo. Esta construcción explica la asignación local de grados de libertad \cite{fenics2016}.
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figuras/fem_poisson.png}
+\caption{Cálculo ilustrativo propio con FEM triangular $P_1$: malla, solución y error absoluto para $u=\sin(\pi x)\sin(\pi y)$. Se ensambla y resuelve el sistema; no es un resultado del mecanismo ni una simulación piezoeléctrica.}\label{fig:fem}\end{figure}
+
+\subsection{Estimación a posteriori y refinamiento hp}
+Un estimador a posteriori utiliza la solución discreta. Para Poisson de coeficiente unitario con elementos conformes, un indicador ilustrativo es
+\begin{equation}
+\eta_K^2=h_K^2\|f+\Delta u_h\|_{L^2(K)}^2+\tfrac12\sum_{e\subset\partial K\cap\Omega}h_e\|[\nabla u_h\cdot n_e]\|_{L^2(e)}^2.
+\label{eq:estimator}\end{equation}
+$h_K$ es diámetro, $h_e$ longitud de arista y los corchetes denotan salto con orientación común. Con Neumann se añaden discrepancias de frontera. Las cotas de error requieren hipótesis sobre malla, operador y datos; el indicador no es una identidad con el error. La marcación de Dörfler selecciona $\mathcal M$ con $\sum_{K\in\mathcal M}\eta_K^2\geq\vartheta\sum_K\eta_K^2$, $0<\vartheta<1$ \cite{dorfler1996}. Refinar $h$ subdivide elementos; $p$ aumenta grado polinómico; $hp$ combina ambos según regularidad. El ciclo es resolver, estimar, marcar y adaptar. La malla puede asignar resolución local, pero redes con descomposición o bases adaptativas también disponen de instrumentos de localidad.
+
+\begin{figure}[htbp]\centering\includegraphics[width=.68\linewidth]{figuras/fem_convergencia.png}\caption{Convergencia comprobada de la demostración FEM en tres mallas. No valida el controlador futuro.}\label{fig:convergencia}\end{figure}
+
+\section{Aprendizaje informado por física y estado del arte}
+El estado del arte (SOTA, por sus siglas en inglés) se organiza por el objeto modificado: evaluación, pérdida, representación o entrenamiento. Esta sección establece conceptos y comparadores; la pregunta posterior aprovecha el mapa sin repetir el catálogo.
+
+\subsection{De inteligencia artificial a ANN, DNN y MLP}
+Inteligencia artificial engloba sistemas de percepción, inferencia o decisión. El aprendizaje automático (ML) ajusta modelos a ejemplos u objetivos; el aprendizaje profundo (DL) usa composiciones de varias capas. Una red neuronal artificial (ANN) es una familia de aproximadores; una red profunda (DNN) utiliza varias capas transformadoras. Ninguna denominación implica por sí sola información física.
+
+El perceptrón multicapa (MLP) conecta capas de neuronas. Cada neurona combina una transformación afín y una activación no lineal. Con $h^{(0)}=z$,
+\begin{equation}a_j^{(\ell+1)}=\sum_iW_{ji}^{(\ell)}h_i^{(\ell)}+b_j^{(\ell)},\qquad h_j^{(\ell+1)}=\sigma(a_j^{(\ell+1)}).\end{equation}
+$W,b$ se aprenden; la forma de $\sigma$ suele fijarse, por ejemplo $\tanh$. Para residuales fuertes de segundo orden se necesitan derivadas apropiadas: una ReLU ordinaria tiene segunda derivada nula casi en todas partes. La retropropagación aplica la regla de la cadena a parámetros. La diferenciación automática deriva la función implementada; no elimina errores de modelo o aproximación \cite{lagaris1998,raissi2019}.
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figuras/arquitecturas.png}\caption{MLP con pesos en aristas y activación en nodos; KAN con funciones aprendibles en aristas. Ambos pueden utilizar una pérdida física.}\label{fig:arquitecturas}\end{figure}
+
+\subsection{Redes neuronales informadas por física (PINNs)}
+Una PINN aproxima $\mathbf u$ e incorpora ecuaciones, condiciones y, cuando existen, observaciones. Sean $R_a>0$ escalas físicas de ecuaciones y $U_v>0$ escalas de campos. Se construyen $\widetilde r_a=r_a/R_a$ y discrepancias adimensionales de frontera $\widetilde b_b$ e iniciales $\widetilde i_v$:
+\begin{equation}
+\mathcal L=\sum_a\frac{\lambda_a}{N_r}\sum_i\widetilde r_a(z_i)^2+\sum_b\frac{\lambda_b^B}{N_b}\sum_j\widetilde b_b(z_j)^2+\sum_v\frac{\lambda_v^I}{N_0}\sum_k\widetilde i_v(x_k)^2.
+\label{eq:perdida}\end{equation}
+Los puntos de colocación son posiciones de evaluación del operador, no elementos FEM. Las escalas se fijan antes de comparar métodos; normalizar por el error actual podría ocultar degradación. Datos supervisados añadirían un término declarado. Las PINNs admiten problemas directos e inversos, pero su precisión y costo dependen de condicionamiento, arquitectura y entrenamiento \cite{raissi2019,wang2023expertguide}.
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figuras/perdida_pinn.png}\caption{Construcción de la pérdida física. La referencia para evaluar error permanece fuera del controlador y del entrenamiento.}\label{fig:loss}\end{figure}
+El sesgo espectral describe tendencias de aprendizaje por frecuencia bajo ciertas redes y condiciones \cite{rahaman2019}; no demuestra incapacidad de representar altas frecuencias ni se explica únicamente por ausencia de malla. Se separarán errores de representación, optimización y discretización de la pérdida.
+
+\subsection{KAN y PIKAN: construcción de B-splines}
+El teorema de representación de Kolmogorov--Arnold establece que una función continua $f:[0,1]^d\to\mathbb R$ admite
+\begin{equation}f(x)=\sum_{q=1}^{2d+1}\Phi_q\!\left(\sum_{p=1}^d\psi_{qp}(x_p)\right)\end{equation}
+con funciones univariadas continuas apropiadas. Motiva una estructura, pero no garantiza que una KAN finita, suave y entrenada numéricamente encuentre la representación. Una capa práctica es
+\begin{equation}h_j^{(\ell+1)}=\sum_i\varphi_{ji}^{(\ell)}(h_i^{(\ell)}),\quad\varphi(a)=\alpha b(a)+\sum_{k=0}^{n-1}c_kB_{k,p}(a).\label{eq:kan}\end{equation}
+$b$ puede ser SiLU; $\alpha,c_k$ son parámetros y $p$ es grado. Una red de Kolmogorov--Arnold informada por física (PIKAN) utiliza una KAN en la pérdida física; existen variantes con otras bases \cite{liu2024kan,shukla2024fair}.
+
+Dados nudos no decrecientes $t_0,\ldots,t_{n+p}$, Cox--de Boor construye
+\begin{align}
+B_{k,0}(a)&=\mathbf1_{[t_k,t_{k+1})}(a),\\
+B_{k,p}(a)&=\frac{a-t_k}{t_{k+p}-t_k}B_{k,p-1}(a)+\frac{t_{k+p+1}-a}{t_{k+p+1}-t_{k+1}}B_{k+1,p-1}(a).\label{eq:spline}
+\end{align}
+Los términos con denominador cero valen cero; el extremo final se evalúa por continuidad. El soporte es $[t_k,t_{k+p+1}]$. En nudos simples la continuidad es $C^{p-1}$; multiplicidades la reducen. Derivar da
+\begin{equation}B'_{k,p}=\frac p{t_{k+p}-t_k}B_{k,p-1}-\frac p{t_{k+p+1}-t_{k+1}}B_{k+1,p-1}.\end{equation}
+Reaplicar la identidad construye segundas derivadas. Nudos delimitan intervalos, coeficientes ponderan bases y centros parametrizan otras familias: no son sinónimos. Insertar nudos puede enriquecer el espacio; moverlos puede cambiarlo sin aumentar dimensión.
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figuras/bases.png}\caption{B-splines cúbicas, una función construida con ellas y una base compacta trasladable. Ilustraciones matemáticas sin entrenamiento.}\label{fig:bases}\end{figure}
+Liu et al. ya incluyen extensión de grilla y transferencia entre representaciones \cite{liu2024kan}. Actualizar posiciones por activaciones y aumentar intervalos son operaciones distintas. La mera existencia de una grilla adaptable no es una contribución nueva.
+
+\subsection{Qué redistribuyen las estrategias existentes}
+RAR y RAD modifican colocación mediante residual \cite{wu2023sampling}. Una densidad tipo RAD es $q\propto |r|^k/\mathbb E|r|^k+c$. Si $q$ es densidad respecto a una medida uniforme $\mu$, $\mathbb E_q[r^2/q]=\mathbb E_\mu[r^2]$; omitir la corrección cambia el funcional esperado. Muestreo y ponderación pueden estar relacionados sin ser implementaciones idénticas.
+
+Para explicitar otras construcciones del SOTA, un residual variacional local es $R_{K,j}=\int_K r(z;\theta)v_j(z)\,dz$; integrar por partes según el operador reduce el orden de derivación del aproximador. Una pérdida hp-VPINN suma $|R_{K,j}|^2$ sobre elementos y pruebas, con condiciones de frontera declaradas. En entrenamiento causal, una forma habitual de peso es $w_n=\exp(-\epsilon_c\sum_{j<n}\mathcal L_j)$, donde $\mathcal L_j$ mide residual de tiempos anteriores: el peso responde al avance temporal, no modifica por sí mismo el espacio representacional. En el entrenamiento básico, $\theta_{k+1}=\theta_k-\eta\nabla_\theta\mathcal L$ ilustra el papel del gradiente; Adam añade estimaciones de momentos. Cambiar pesos, geometría o estado del optimizador son intervenciones distintas.
+
+hp-VPINN incorpora pruebas locales y partición \cite{kharazmi2021hpvpinns}; entrenamiento causal controla contribuciones temporales \cite{wang2024causal}; FBPINN y FBKAN hacen explícita la descomposición de representación \cite{moseley2023,howard2024}. AB-PINNs también adapta y enriquece subdominios durante el entrenamiento \cite{abpinn2025}. Por tanto, no es defendible afirmar que ninguna red informada por física asigna capacidad local.
+\begin{table}[htbp]\centering\small\caption{Objeto intervenido y control relevante; no es un ranking universal de precisión.}\label{tab:rejilla}
+\begin{tabularx}{\linewidth}{p{.27\linewidth}XX}\toprule
+Familia & Intervención & Control\\\midrule
+RAR/RAD & Colocación por residual & Mismo aproximador y costo\\
+hp-VPINN & Pruebas y partición & Formulación variacional\\
+Causal & Pesos por tiempo & Ventanas comunes\\
+FBPINN/FBKAN & Representación local & Descomposición explícita\\
+KAN con extensión & Resolución spline & Igual crecimiento y transferencia\\
+PIKAN adaptativa & Grilla y entrenamiento & Ablaciones por componente\\
+Densidad/curvatura & Distribución de nudos & Señales comparables\\
+Nudos libres/multinivel & Geometría y optimización & Conservación y costo\\\bottomrule
+\end{tabularx}\end{table}
+Rigas et al. estudian adaptación PIKAN y transición del entrenamiento \cite{rigas2024}; el framework de 2026 dirige nudos con densidades de importancia, incluida curvatura \cite{rigas2026}. Nudos libres y entrenamiento multinivel aportan precedentes sobre geometría y optimización \cite{actor2025,actor2026}. RA-PIKAN combina densificación residual y adaptación del entrenamiento \cite{leong2026}. Se usan como respaldo para estudiar rutas aledañas, no como razón para descartar adaptación local. Sus resultados publicados no equivalen a reproducciones realizadas en esta tesis.
+
+\section{Firma matemática de la dificultad}
+La dificultad representacional es relativa al aproximador, presupuesto y norma. Aquí se definen propiedades de soluciones, sin confundirlas con señales que el modelo necesariamente observa. Se emplearán campos y coordenadas adimensionales.
+\subsection{Oscilación, gradiente y curvatura}
+En un dominio periódico, $E_{>k_0}=\sum_{|k|>k_0}|\widehat u_k|^2$ describe energía en frecuencias altas; la localización requiere ventanas. Para una región $A$,
+\begin{equation}G(A)=\int_A\|\nabla u\|^2dx,\qquad H(A)=\int_A\|D^2u\|_F^2dx.\end{equation}
+Miden variación y curvatura, no error. Una cota local $\|u-I_hu\|_{L^2(K)}\leq Ch_K^{p+1}|u|_{H^{p+1}(K)}$, bajo regularidad y condiciones del interpolante, explica reducir resolución donde derivadas altas son grandes. No convierte la segunda derivada en estimador universal para splines cúbicas.
+
+Para densidad $d\geq0$, $C(A)=\int_A d/\int_\Omega d$ se compara con $|A|/|\Omega|$. Denominador cero significa ausencia de señal. Firmas de la referencia sirven para evaluar; firmas de $u_\theta$ son observables que pueden omitir la estructura todavía no aprendida.
+\subsection{Movimiento, no linealidad y acoplamiento}
+La linealización $\mathcal N[u+\delta u]\approx\mathcal N[u]+D\mathcal N[u]\delta u$ muestra sensibilidad a perturbaciones. En sistemas, $D_{u_v}\mathcal N_a$ describe dependencias entre campos. Una interfaz regular $u(x,t)=\gamma$ tiene velocidad normal $V_n=-u_t/\|\nabla u\|$: su movimiento debe comprobarse, no inferirse del nombre de la PDE. En interfaces materiales los coeficientes pueden saltar y requieren transmisión por subdominios.
+
+La cadena es propiedad física, firma matemática, exigencia representacional y observable. Curvatura y residual pueden compartir derivadas sin ser iguales ni independientes. Se medirá su información incremental, sin suponerla por notación.
+
+\section{Pregunta y contribución posible}
+La pregunta propuesta es: \emph{¿puede un controlador decidir dónde reasignar un presupuesto fijo de representación, usando utilidad marginal estimada y restricciones de conservación, para reducir error localizado sin trasladarlo a otras regiones o campos?}
+
+El aporte candidato es la regla de decisión y su caracterización causal, apoyada en grillas y bases publicadas. Se estudiarán información adicional frente a residual/curvatura, beneficio de retirar o desplazar resolución, preservación de derivadas y reparto entre campos. Combinar componentes no asegura una contribución importante: se requiere beneficio reproducible frente a controles cercanos y delimitación de fallas.
+
+La tesis conserva identidad de mecanismo; piezoelectricidad prueba acoplamiento. Permanecen tres rutas: ponderación para esfuerzo, nudos para resolución y centros compactos móviles como alternativa geométrica. La primera será control; las otras son candidatas. La elección final depende del piloto, no de una afirmación anticipada de prioridad. La búsqueda tiene corte el 6 de septiembre de 2026 y debe actualizarse antes de cerrar el manuscrito.
+
+\section{Construcción matemática previa al mecanismo}
+Se especifican objetos, invariantes y una regla candidata, todavía por implementar y falsar. El ciclo es estado, señal, asignación, transferencia, comprobación y aceptación o reversión.
+\subsection{Esfuerzo, representación y localidad efectiva}
+Con geometría $\xi$ y coeficientes $\theta$, el aproximador pertenece a $\mathcal U_\xi$. Ponderar $\sum_iw_ir_i^2$ conserva ese espacio y modifica optimización; cambiar $\xi$ modifica la familia disponible. Actualizar coeficientes locales no crea grados de libertad. Mover bases con cantidad fija redistribuye resolución sin aumentar dimensión total.
+
+Para una spline de una arista interna, la regla de la cadena da
+\begin{equation}\frac{\partial u_v(z)}{\partial c_k^{(\ell)}}=\frac{\partial u_v(z)}{\partial h_j^{(\ell+1)}}B_{k,p}(h_i^{(\ell)}(z)).\label{eq:localidad}\end{equation}
+El soporte está en la coordenada latente; su preimagen física puede ser extensa o disconexa. Una base de primera capa puede cubrir una franja. La localidad física se medirá con sensibilidades. Para un bloque $\theta_j$,
+\begin{equation}I_{jv}(z)=\|\partial_{\theta_j}(u_v/U_v)\|^2,\quad A_{jv}(R)=\frac{\int_R I_{jv}d\mu}{\int_QI_{jv}d\mu+\epsilon}.\end{equation}
+$A$ diagnostica atribución en una parametrización fijada; no es invariante bajo reescalamientos arbitrarios.
+
+\subsection{Nudos y centros móviles}
+Para $G$ intervalos en $[a,b]$, posiciones ordenadas se parametrizan con
+\begin{equation}\Delta_j=\delta+(b-a-G\delta)\frac{e^{\eta_j}}{\sum_ke^{\eta_k}},\quad t_j=a+\sum_{k=1}^j\Delta_k,\quad0<\delta<(b-a)/G.\end{equation}
+Fija extremos y evita intervalos degenerados, sin garantizar buen condicionamiento. Una alternativa compacta es $\varphi(a)=\alpha b(a)+\sum_jc_j\rho((a-\xi_j)/h_j)$, donde
+\begin{equation}\rho(q)=\begin{cases}\exp[-1/(1-q^2)],&|q|<1,\\0,&|q|\geq1.\end{cases}\end{equation}
+Es suave y compacta; su soporte continúa en la coordenada de la arista. Centros libres por gradiente constituyen un comparador obligatorio para aislar el controlador.
+
+\subsection{Señal de utilidad marginal}
+Un residual alto puede reflejar optimización deficiente o representación insuficiente. Se propone una prueba corta: desde un mismo estado se crean una rama sin cambio y otra con acción $a_j$; ambas reciben $K_p$ pasos con iguales datos y presupuesto. En un conjunto diagnóstico independiente $D$ se evalúan ecuaciones y condiciones:
+\begin{equation}
+s_j=\frac{\mathcal L_D(\operatorname{Train}_{K_p}(\theta,\xi))-\mathcal L_D(\operatorname{Train}_{K_p}(\operatorname{Transfer}(\theta,\xi,a_j)))}{C_j+\epsilon}.
+\label{eq:signal}\end{equation}
+$C_j$ incluye ensayo y transferencia. $s_j$ estima beneficio a corto plazo por costo; no es error verdadero ni una garantía causal. Puede ser ruidoso y caro. $D$ no contiene soluciones de referencia; prueba final nunca entra aquí. Se compara contra residual, curvatura, constante y señal permutada. Una señal cara sin beneficio neto será un resultado negativo, no una razón para cambiar retrospectivamente los criterios.
+
+\subsection{Asignación, tipos y presupuesto}
+El estado $S=(\theta,\xi,\mathcal O,D)$ incluye optimizador $\mathcal O$. El extractor $E:S\mapsto\mathbb R^{J\times m}$ produce utilidades de acciones; $T:\mathbb R^{J\times m}\to\Delta^{Jm-1}$ produce una distribución y el asignador $A:(\Delta,S,B)\mapsto\xi'$ devuelve geometría factible. Para unidades $j$ y campos $v$,
+\begin{equation}\pi_{jv}=(1-\alpha)\frac{e^{\widetilde s_{jv}/\tau}}{\sum_{k,w}e^{\widetilde s_{kw}/\tau}}+\frac\alpha{Jm}.\label{eq:density}\end{equation}
+$\tau>0$ controla concentración y $0<\alpha\leq1$ exploración. Escalas de $\widetilde s$ se fijan en piloto. Señal constante produce distribución uniforme, no necesariamente la grilla histórica. La geometría se expresa sobre aristas; las regiones físicas son diagnóstico.
+
+Con $B$ bases y mínimos $B_v^{\min}$ se asignan $B_v=B_v^{\min}+\operatorname{LR}_v((B-\sum_wB_w^{\min})\sum_j\pi_{jv})$, donde mayores restos $\operatorname{LR}$ conserva la suma entera. Esto exige cabezas o subredes identificables por campo. En una red compartida no se atribuye presupuesto a campos sin una definición adicional. La alternativa continua mantiene $B_v$ y desplaza nudos. Una regla general es
+\begin{equation}\max_{\mathcal A}\sum_{a\in\mathcal A}\widehat{\Delta\mathcal L}_a-\lambda_{\rm mov}D(\xi',\xi),\quad P(\xi')\leq P_{\max},\quad C(\mathcal A)\leq C_{\max},\quad\varepsilon_{\rm tr}\leq\varepsilon_{\max}.\end{equation}
+$P$ cuenta parámetros, $C$ costo y $D$ magnitud del cambio. Las ganancias no necesariamente son aditivas: inicialmente se acepta una acción por evento. Añadir una base requiere retirar otra o compararse con igual crecimiento.
+
+\subsection{Transferencia y conservación}
+Mover o retirar bases puede alterar la función aun sin entrenamiento. Se proyecta sobre la nueva representación:
+\begin{equation}
+\theta'=\arg\min_{\vartheta}\sum_{z\in P,v}\left[\left|\frac{u_{\vartheta,\xi',v}-u_{\theta,\xi,v}}{U_v}\right|^2+\beta\left\|\nabla_{\widetilde x}\frac{u_{\vartheta,\xi',v}-u_{\theta,\xi,v}}{U_v}\right\|^2\right].\label{eq:transfer}
+\end{equation}
+$P$ incluye baja señal para prevenir olvido. Ajustar coeficientes de una arista con entradas congeladas es lineal; una proyección global profunda puede no serlo. Se comprueban valores, derivadas requeridas, residual y frontera en puntos ajenos al ajuste. Si falla se revierte. Inserción en espacios anidados puede admitir transferencia exacta; movimiento arbitrario no. En el análisis primario se reinicia el optimizador completo en cada evento, con reinicios simulados en controles en el mismo calendario; transferir momentos será una extensión separada.
+
+\subsection{Reducciones, costo y límites}
+Sin adaptación se recuperan arquitectura inicial y entrenamiento. Residual con cuantiles corresponde a una ruta próxima a adaptación por densidad. Pesos con geometría fija estudian esfuerzo; centros libres sin controlador estudian geometría ordinaria. No se afirma identidad exacta con algoritmos publicados completos.
+
+Con $J_c$ candidatos cada $H$ pasos, el costo extra amortizado es aproximadamente $(C_s+J_c(C_{\rm tr}+K_pC_{\rm paso})+C_{\rm ver})/H$. Puede reutilizarse la rama de control desde el mismo estado. Se registran tiempo, memoria, parámetros y derivadas: igualar épocas no iguala trabajo. PIKAN proporciona un sustrato para observar estos cambios, sin garantizar por arquitectura su utilidad o localidad física.
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figuras/controlador.png}\caption{Controlador propuesto y separación entre entrenamiento, diagnóstico y prueba final. Presupuesto y conservación condicionan aceptar un cambio.}\label{fig:controlador}\end{figure}
+
+\section{Banco de problemas y referencias}
+Los casos se ordenan por estructura distribuida, localizada fija, móvil, ligada a geometría y entre campos. Cada instancia declara ecuación, condiciones, referencia y propósito. Las soluciones exactas siguientes son construcciones para verificación, no resultados entrenados.
+
+\subsection{Poisson distribuido y localizado}
+En $\Omega=(0,1)^2$, $-\Delta u=f$, $u|_{\partial\Omega}=0$:
+\begin{equation}u_*=\sin(k\pi x)\sin(k\pi y),\qquad f=2(k\pi)^2u_*,\qquad k\in\{1,4,8\}.\end{equation}
+Derivar dos veces cada seno obtiene $f$. $k=1$ verifica; $k=4,8$ exigen resolución distribuida. Las derivadas no son constantes, por lo que mejorar aquí no refuta automáticamente focalización. Se controla ausencia de región privilegiada persistente junto a señales permutadas y costo comparable.
+
+En $(0,1)$, un caso localizado usa $u_*=q e^{-ad^2}$, $q=x(1-x)$, $d=x-c$, $a=100$:
+\begin{equation}f=-u_*''=e^{-ad^2}\{2+4ad(1-2x)+(2a-4a^2d^2)q\}.\end{equation}
+Se selecciona con $c=0.5$ y se reservan $c=0.25,0.75$ para comprobar que sigue estructura y no posición. Las fronteras son cero.
+
+\subsection{Burgers: frente estacionario}
+En $[-1,1]$, $uu_x=\nu u_{xx}$ admite $u_*=-\tanh(x/(2\nu))$, con valores exactos en frontera. Si $q=\tanh(x/(2\nu))$, $u_x=-(1-q^2)/(2\nu)$ y $u_{xx}=q(1-q^2)/(2\nu^2)$, de donde el residual es cero. Se usan $\nu\in\{0.1,0.05,0.02\}$ y región crítica $|x|\leq4\nu$. Evalúa focalización sostenida y resolución subgrilla. La estacionariedad pertenece a esta instancia, no a toda Burgers \cite{raissi2019}.
+
+\subsection{Allen--Cahn: movimiento manufacturado}
+En $[-1,1]\times[0,1]$:
+\begin{equation}u_t-\varepsilon^2u_{xx}+u^3-u=f,\quad u_* =\tanh\!\left(\frac{x-c(t)}{\sqrt2\varepsilon}\right),\quad c(t)=-0.5+t.\end{equation}
+Para $q=u_*$, $u_x=(1-q^2)/(\sqrt2\varepsilon)$, $u_{xx}=-q(1-q^2)/\varepsilon^2$ y $u_t=-c'(t)(1-q^2)/(\sqrt2\varepsilon)$. Difusión y reacción se cancelan, por lo que
+\begin{equation}f=-c'(t)(1-u_*^2)/(\sqrt2\varepsilon).\end{equation}
+Se imponen trazas exactas iniciales y de frontera, $\varepsilon\in\{0.1,0.05\}$; región crítica $|x-c(t)|\leq3\varepsilon$. El forzamiento fabrica movimiento: no se atribuye al problema homogéneo. En entrenamiento global la trayectoria es fija en espacio--tiempo; para probar liberación temporal se usan ventanas consecutivas de longitud $0.1$, comunes a los métodos, con memoria y medición del error inicial propagado.
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figuras/soluciones_exactas.png}\caption{Referencias analíticas de oscilación distribuida y frentes fijo y móvil. Curvas calculadas directamente, sin predicciones entrenadas.}\label{fig:soluciones}\end{figure}
+
+\subsection{Navier--Stokes: verificación y geometría}
+Las ecuaciones incompresibles son
+\begin{equation}\partial_t\mathbf v+(\mathbf v\cdot\nabla)\mathbf v+\nabla p-Re^{-1}\Delta\mathbf v=\mathbf f,\qquad\nabla\cdot\mathbf v=0.\end{equation}
+Kovasznay verifica el sistema estacionario con $Re=40$, $\lambda=Re/2-\sqrt{Re^2/4+4\pi^2}$, en $[-0.5,1]\times[-0.5,1.5]$:
+\begin{equation}v_x=1-e^{\lambda x}\cos(2\pi y),\quad v_y=\frac\lambda{2\pi}e^{\lambda x}\sin(2\pi y),\quad p=\tfrac12(1-e^{2\lambda x}).\end{equation}
+$\partial_xv_x+\partial_yv_y=0$ y $\lambda^2-Re\lambda-4\pi^2=0$ verifican las ecuaciones con $\mathbf f=0$. Se imponen velocidades exactas y una referencia de presión. Verifica acoplamiento, pero no representa un obstáculo \cite{jin2021nsfnets}.
+
+El caso geométrico será canal $(0,2.2)\times(0,0.41)$ con cilindro de radio $0.05$ en $(0.2,0.2)$; entrada $v_x=6\bar U y(0.41-y)/0.41^2$, $v_y=0$, $\bar U=0.2$; $\nu=0.001$, $Re=\bar U(0.1)/\nu=20$. Paredes y cilindro sin deslizamiento; salida de tracción nula usando $-pI+2\nu\epsilon(\mathbf v)$. Referencia FEM mixta Taylor--Hood $P_2/P_1$ con convergencia de malla. Se declara esta instancia propuesta sin atribuirla como reproducción literal de otro banco. Turbulencia y alto Reynolds quedan fuera.
+
+\subsection{Piezoelectricidad: derivación y transmisión}
+Se estudia elasticidad lineal y electrostática sin inercia. Para desplazamiento $\mathbf d$, $S=\operatorname{sym}\nabla\mathbf d$ y $\mathbf E=-\nabla\varphi$, la entalpía local
+\begin{equation}H(S,\mathbf E)=\tfrac12S:C^E:S-\mathbf E\cdot(e:S)-\tfrac12\mathbf E\cdot\kappa^S\mathbf E\end{equation}
+produce, al derivar en $S$ y en $-\mathbf E$, $\sigma=C^E:S-e^T\mathbf E$ y $\mathbf D=e:S+\kappa^S\mathbf E$. Los balances son
+\begin{equation}\nabla\cdot\sigma+\mathbf b=0,\qquad\nabla\cdot\mathbf D=\rho_f.\label{eq:piezo}\end{equation}
+En deformación plana, $S_V=(d_{x,x},d_{y,y},d_{x,y}+d_{y,x})^T$ y $g=\nabla\varphi$:
+\begin{equation}
+\begin{bmatrix}\sigma_V\\\mathbf D\end{bmatrix}=\begin{bmatrix}C&e^T\\e&-\kappa\end{bmatrix}\begin{bmatrix}S_V\\g\end{bmatrix},\quad
+C=\begin{bmatrix}C_{11}&C_{12}&C_{16}\\C_{12}&C_{22}&C_{26}\\C_{16}&C_{26}&C_{66}\end{bmatrix},\quad
+e=\begin{bmatrix}e_{11}&e_{12}&e_{16}\\e_{21}&e_{22}&e_{26}\end{bmatrix}.
+\end{equation}
+$\sigma_V=(\sigma_{xx},\sigma_{yy},\sigma_{xy})^T$, $\kappa$ es $2\times2$ simétrica. El tercer componente de deformación usa cortante ingenieril. Tensión plana requiere condensar el constitutivo 3D; las tablas no se intercambian sin transformación. El antecedente local de vigas bimorfas aporta formulación y datos, cuyos signos, unidades y reducción dimensional deben verificarse antes de reproducir PVDF \cite{gonzalez2026pinnpiezo,lahmer2008}.
+
+Integrar balances con pruebas $\mathbf v,\psi$ nulas en fronteras esenciales produce
+\begin{align}\int_\Omega\epsilon(\mathbf v):\sigma\,dx&=\int_\Omega\mathbf v\cdot\mathbf b\,dx+\int_{\Gamma_t}\mathbf v\cdot\bar{\mathbf t}\,ds,\\
+\int_\Omega\nabla\psi\cdot\mathbf D\,dx&=\int_{\Gamma_q}\psi\bar q\,ds-\int_\Omega\psi\rho_f\,dx.
+\end{align}
+El bloque eléctrico negativo define un problema de punto silla, no una energía positiva para minimizar libremente en ambos campos. Sin cargas ni fuerzas superficiales, la interfaz satisface $[\mathbf d]=[\varphi]=0$, $[\sigma n]=[\mathbf D\cdot n]=0$, con normal común. Los gradientes pueden saltar. Las pérdidas fuertes se calculan dentro de cada material y la transmisión por separado; no se derivan coeficientes discontinuos como si fueran suaves.
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figuras/piezo_esquema.png}\caption{Dominio bimorfo y acoplamiento constitutivo. Esquema propuesto, sin resultados FEM piezoeléctricos.}\label{fig:piezo}\end{figure}
+
+El primer caso acoplado será adimensional y reproducible: $\Omega=(0,1)\times(-0.05,0.05)$, $C=\left[\begin{smallmatrix}2&1&0\\1&2&0\\0&0&0.5\end{smallmatrix}\right]$, $\kappa=I_2$, $e^+=\left[\begin{smallmatrix}0&0&0.1\\0.2&0.1&0\end{smallmatrix}\right]$, $e^-=-e^+$. Desplazamiento cero a la izquierda, tracción $(0,1)$ a la derecha, caras horizontales libres; $\varphi=0$ abajo, $\varphi=1$ arriba, flujo eléctrico cero en extremos; $\mathbf b=0$, $\rho_f=0$. Son materiales sintéticos, no constantes PVDF. FEM conforme a interfaz verificará campos y balances.
+
+El caso dimensional usará la geometría publicada $L=0.1\,\mathrm m$, altura $0.001\,\mathrm m$, una vez verificados tensor, polarización, espesor fuera del plano y condiciones eléctricas. Una fuerza de $1\,\mathrm N$ no fija tracción 2D sin espesor. Esto es requisito de reproducción dimensional, no un dato inferible de una imagen.
+
+\subsection{Predicciones previas al desarrollo}
+En Poisson distribuido se espera ausencia de preferencia persistente tras controlar costo; en Burgers, concentración sostenida; en Allen--Cahn por ventanas, seguimiento sin olvido excesivo; en flujo, utilidad en regiones geométricas compatible con continuidad; en piezoelectricidad, mejora del campo peor resuelto sin perjudicar transmisión u otro campo. Son predicciones falsables. La metodología fija los controles y criterios antes de desarrollar el mecanismo.

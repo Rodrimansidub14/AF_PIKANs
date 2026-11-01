@@ -1,0 +1,33 @@
+{
+  "arm": "rbf",
+  "checkpoint": "/kaggle/working/pikan-fe21d67d4f6ddffc/runs/seed-812/burgers-rbf/checkpoint-final.pt",
+  "draft_status": "DRAFT_UNVERIFIED",
+  "endpoint_only": true,
+  "evaluation_gpu_seconds_estimate": 1.0641802909995022,
+  "grid": {
+    "nt": 129,
+    "nx": 1025
+  },
+  "metrics": {
+    "boundary_max_abs_error": 0.010074001867259555,
+    "complement_field_rmse_abs": 0.05721741520143964,
+    "complement_residual_mean_abs": 0.011254838729329097,
+    "complement_residual_rmse_abs": 0.016440950137729334,
+    "field_max_abs": 1.2592630741811053,
+    "field_p95_abs": 0.01775839983872878,
+    "field_relative_l2": 0.1254536479602116,
+    "field_rmse_abs": 0.07606287568391136,
+    "front_field_rmse_abs": 0.47391599301389525,
+    "front_residual_mean_abs": 0.17941551426442218,
+    "front_residual_rmse_abs": 0.23421749007399664,
+    "initial_max_abs_error": 0.013543026065004682,
+    "residual_mean_abs": 0.013163247885048478,
+    "residual_rmse_abs": 0.02982957673827762
+  },
+  "problem": "burgers_pinnacle_1d",
+  "reference": "CUDA Cole-Hopf/Gauss-Hermite order 128",
+  "scientific_accepted": false,
+  "scores_used_for_tuning": false,
+  "scoring_device": "Tesla T4",
+  "seed": 812
+}

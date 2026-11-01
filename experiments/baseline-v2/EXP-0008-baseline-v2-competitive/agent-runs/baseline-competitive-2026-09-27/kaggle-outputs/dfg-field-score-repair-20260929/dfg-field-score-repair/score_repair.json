@@ -1,0 +1,10 @@
+{
+  "actual_session_seconds": 16.751,
+  "error": "ValueError: Could not map 25224 FEM dof coordinates to saved Gmsh nodes",
+  "part": "score_repair",
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "session_elapsed_seconds": 16.751,
+  "status": "failed_partial",
+  "updated_at_utc": "2026-09-29T08:38:54Z"
+}

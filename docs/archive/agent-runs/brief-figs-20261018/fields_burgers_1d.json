@@ -1,0 +1,12 @@
+{
+ "problem": "burgers_1d",
+ "campaign": "burgers-big-20261003",
+ "stage": "lbfgs_final",
+ "seed": "301",
+ "l2": {
+  "rbf_u": 3.730570316689722e-05,
+  "rbf_ckpt": "experiments/burgers/EXP-0008-baseline-v2-competitive/checkpoints/burgers-big-20261003/rbf48-seed-301/checkpoint-lbfgs-final.pt",
+  "mlp_u": 0.00014346290671721275,
+  "mlp_ckpt": "experiments/burgers/EXP-0008-baseline-v2-competitive/checkpoints/burgers-big-20261003/mlp-seed-301/checkpoint-lbfgs-final.pt"
+ }
+}

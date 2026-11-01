@@ -8,7 +8,7 @@
 
 **Tech Stack:** Python 3.12+ estándar (`tomllib`, `json`, `argparse`, `unittest`), TOML, Markdown frontmatter simple, Jupyter `.ipynb` JSON y PowerShell para verificación local.
 
-**Spec:** `docs/superpowers/specs/2026-08-20-research-automation-ontology-design.md`
+**Spec:** `specs/tooling/2026-08-20-research-automation-ontology-design.md`
 
 ## Global Constraints
 

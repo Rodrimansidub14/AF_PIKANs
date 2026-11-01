@@ -1,0 +1,25 @@
+{
+  "status": "synced",
+  "run_count": 3,
+  "synced_count": 3,
+  "source": "download/pikan-7d9fafd823f3e315/verified-extract/runs",
+  "runs": [
+    {
+      "run": "offline-run-20260924_040512-g7w2635j",
+      "status": "synced",
+      "exit_code": 0
+    },
+    {
+      "run": "offline-run-20260924_040512-hc0vt58r",
+      "status": "synced",
+      "exit_code": 0
+    },
+    {
+      "run": "offline-run-20260924_041822-8eerje4z",
+      "status": "synced",
+      "exit_code": 0
+    }
+  ],
+  "credential_values_written": false,
+  "original_results_zip_and_initial_download_tree_were_sync_targets": false
+}

@@ -1,0 +1,126 @@
+{
+  "actual_session_seconds": 89.985,
+  "artifacts": [
+    {
+      "path": "dfg/checkpoint_field_scores.json",
+      "sha256": "4ce2bcd75a0ba74ee590e0c0d2343299db8073d8767ba979037894350d1e6eb9",
+      "size_bytes": 63
+    },
+    {
+      "path": "dfg/meshes/dfg_re20_DFG-L0.msh",
+      "sha256": "3be8d939646948251d269ea28989a82f80718fe483efe2d687906934d2982570",
+      "size_bytes": 404065
+    },
+    {
+      "path": "dfg/summary.json",
+      "sha256": "531c808fd0422620ff2f1cb4fcd8e099630b38e5cabb0990e80b054f9298bc94",
+      "size_bytes": 635
+    },
+    {
+      "path": "dfg-worker.log",
+      "sha256": "252edcfe56d67073350dd8e63e8c4e2ba179efe094394dc533b633602905c4e8",
+      "size_bytes": 61131
+    },
+    {
+      "path": "s1b.json",
+      "sha256": "2ad60336c521314f6d2f747354564c9273cf235509e64ec3f3afedc95e241534",
+      "size_bytes": 999
+    },
+    {
+      "path": "s1b_final.json",
+      "sha256": "272fb9b3f9f998a0f795776b62cd9b52aa97510a653c3fed92982cbf8f4de15e",
+      "size_bytes": 1961
+    },
+    {
+      "path": "s1b_retry.json",
+      "sha256": "d17603a99c81eaa5cf35213225eb454872972467c107b40f74f5082c905825e0",
+      "size_bytes": 235
+    }
+  ],
+  "ended_at_utc": "2026-09-29T06:54:44Z",
+  "fixed_field_scoring_contract": {
+    "cohorts": {
+      "current_rbf": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "refinement_rbf_and_tanh_mlp": [
+        501,
+        502,
+        503,
+        504,
+        505
+      ]
+    },
+    "grid": {
+      "mask": "exclude points with (x-0.2)^2+(y-0.2)^2 <= 0.05^2",
+      "ordering": "numpy.meshgrid(indexing='xy'); row-major flattened",
+      "x": {
+        "count": 221,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 2.2
+      },
+      "y": {
+        "count": 42,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 0.41
+      }
+    },
+    "metrics": [
+      "u_relative_l2",
+      "v_relative_l2",
+      "p_relative_l2_gauge_fixed_outlet"
+    ],
+    "pressure_gauge": {
+      "method": "subtract pressure at fixed outlet point from FEM and each checkpoint",
+      "outlet_anchor_xy": [
+        2.2,
+        0.2
+      ]
+    },
+    "reference_level": "DFG-L2 (third of three requested mesh levels)",
+    "retraining": false
+  },
+  "internal_watchdog_seconds": 1590.0,
+  "kernel_slug": "rodrimandub/af-pikans-dfg-fem-field-followup-retry2-20260929",
+  "kernel_source_files": [
+    {
+      "path": "solve_dfg.py",
+      "sha256": "ff5cd70bd70f4d884f857f46b6d711fbc691a1048ce28290200573f23f8f7ce8"
+    },
+    {
+      "path": "make_mesh.geo",
+      "sha256": "7753bb03d6c394643b1601fe771f1b878d2dc59e70cf9070b8e9b1ca433ffabb"
+    }
+  ],
+  "kernel_sources": [
+    "rodrimandub/af-pikans-dfg-rbf-refinement-20260928",
+    "rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927"
+  ],
+  "machine": {
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "numpy": "2.0.2",
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "visible_gpu_count": 2
+  },
+  "parts": {
+    "s1a": "/kaggle/working/dfg-fem-field-followup-retry2/s1a.json",
+    "s1b": "/kaggle/working/dfg-fem-field-followup-retry2/s1b.json"
+  },
+  "push_cap_seconds": 1636.905,
+  "reference_accepted": false,
+  "schema_version": 1,
+  "scientific_accepted": false,
+  "session": "DFG-FEM-field-followup-retry2-2026-09-29",
+  "started_at_utc": "2026-09-29T06:53:14Z",
+  "status": "partial"
+}

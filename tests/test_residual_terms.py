@@ -182,7 +182,7 @@ def test_ns_blocks_of_preconditioned_model_equal_blocks_of_plain_model_and_refre
 # ------------------------------------------------------------------ DFG: real model (output_scales), terms equal train_dfg's loss
 def test_dfg_terms_loss_equals_the_loss_of_train_dfg_and_blocks_are_finite():
     sys.path.insert(0, str(ROOT))
-    from src.research_pipeline.sciml import dfg
+    from src.sciml import dfg
     pools = dfg.generate_dfg_pools(5, interior_count=64, boundary_count=16)
     T = {k: torch.as_tensor(v, dtype=torch.float32) for k, v in pools.items()}
     model = dfg.DFGRBFPIKAN(seed=3)

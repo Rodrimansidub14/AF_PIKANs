@@ -1,0 +1,18 @@
+{
+  "id": "rodrimandub/af-pikans-heat-b-spline-completion-20260929",
+  "title": "AF PIKANs Heat B-spline Completion 20260929",
+  "code_file": "heat_bspline_followup.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [
+    "rodrimandub/af-pikans-heat-tier2-torch-pilot-t4x2"
+  ],
+  "model_sources": []
+}

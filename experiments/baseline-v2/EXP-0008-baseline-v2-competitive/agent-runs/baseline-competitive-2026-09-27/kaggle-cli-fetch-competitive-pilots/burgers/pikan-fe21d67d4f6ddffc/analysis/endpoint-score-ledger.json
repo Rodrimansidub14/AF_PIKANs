@@ -1,0 +1,157 @@
+{
+  "status": "complete",
+  "score_wave_cap_seconds": 90.0,
+  "waves": [
+    {
+      "seed": 811,
+      "status": "scored",
+      "rows": [
+        {
+          "seed": 811,
+          "arm": "rbf",
+          "checkpoint": "checkpoint-final.pt",
+          "wall_score_wave_seconds": 5.001291085000048,
+          "device": "Tesla T4",
+          "evaluation_gpu_seconds": 1.4440350919994671,
+          "field_relative_l2": 0.1304983490074201,
+          "field_rmse_abs": 0.07912149115548389,
+          "residual_rmse_abs": 0.03673009348724378,
+          "scientific_accepted": false
+        },
+        {
+          "seed": 811,
+          "arm": "vanilla",
+          "checkpoint": "checkpoint-final.pt",
+          "wall_score_wave_seconds": 5.00167570999929,
+          "device": "Tesla T4",
+          "evaluation_gpu_seconds": 1.4276627620001818,
+          "field_relative_l2": 0.12360584034805416,
+          "field_rmse_abs": 0.07494254508391245,
+          "residual_rmse_abs": 0.02414976484717737,
+          "scientific_accepted": false
+        }
+      ]
+    },
+    {
+      "seed": 812,
+      "status": "scored",
+      "rows": [
+        {
+          "seed": 812,
+          "arm": "rbf",
+          "checkpoint": "checkpoint-final.pt",
+          "wall_score_wave_seconds": 5.00139113700061,
+          "device": "Tesla T4",
+          "evaluation_gpu_seconds": 1.0641802909995022,
+          "field_relative_l2": 0.1254536479602116,
+          "field_rmse_abs": 0.07606287568391136,
+          "residual_rmse_abs": 0.02982957673827762,
+          "scientific_accepted": false
+        },
+        {
+          "seed": 812,
+          "arm": "vanilla",
+          "checkpoint": "checkpoint-final.pt",
+          "wall_score_wave_seconds": 5.001642947000619,
+          "device": "Tesla T4",
+          "evaluation_gpu_seconds": 1.0858734980001827,
+          "field_relative_l2": 0.3257611662553298,
+          "field_rmse_abs": 0.1975098492104728,
+          "residual_rmse_abs": 0.09349051930349776,
+          "scientific_accepted": false
+        }
+      ]
+    },
+    {
+      "seed": 813,
+      "status": "scored",
+      "rows": [
+        {
+          "seed": 813,
+          "arm": "rbf",
+          "checkpoint": "checkpoint-final.pt",
+          "wall_score_wave_seconds": 5.001396665999891,
+          "device": "Tesla T4",
+          "evaluation_gpu_seconds": 1.0962489459998324,
+          "field_relative_l2": 0.12063811635053395,
+          "field_rmse_abs": 0.07314320624317078,
+          "residual_rmse_abs": 0.06391781652973776,
+          "scientific_accepted": false
+        },
+        {
+          "seed": 813,
+          "arm": "vanilla",
+          "checkpoint": "checkpoint-final.pt",
+          "wall_score_wave_seconds": 5.001633632999983,
+          "device": "Tesla T4",
+          "evaluation_gpu_seconds": 1.0502647700004673,
+          "field_relative_l2": 0.16770070385627542,
+          "field_rmse_abs": 0.10167737644081813,
+          "residual_rmse_abs": 0.030111132864709,
+          "scientific_accepted": false
+        }
+      ]
+    },
+    {
+      "seed": 814,
+      "status": "scored",
+      "rows": [
+        {
+          "seed": 814,
+          "arm": "rbf",
+          "checkpoint": "checkpoint-final.pt",
+          "wall_score_wave_seconds": 5.001226094000231,
+          "device": "Tesla T4",
+          "evaluation_gpu_seconds": 1.1867195979993994,
+          "field_relative_l2": 0.14496284255686784,
+          "field_rmse_abs": 0.08789135151882159,
+          "residual_rmse_abs": 0.04182567949236737,
+          "scientific_accepted": false
+        },
+        {
+          "seed": 814,
+          "arm": "vanilla",
+          "checkpoint": "checkpoint-final.pt",
+          "wall_score_wave_seconds": 5.0016634630001136,
+          "device": "Tesla T4",
+          "evaluation_gpu_seconds": 1.1070467709996592,
+          "field_relative_l2": 0.13518823759395424,
+          "field_rmse_abs": 0.08196498290187042,
+          "residual_rmse_abs": 0.043906217161375646,
+          "scientific_accepted": false
+        }
+      ]
+    },
+    {
+      "seed": 815,
+      "status": "scored",
+      "rows": [
+        {
+          "seed": 815,
+          "arm": "rbf",
+          "checkpoint": "checkpoint-final.pt",
+          "wall_score_wave_seconds": 5.001283368999793,
+          "device": "Tesla T4",
+          "evaluation_gpu_seconds": 1.1079336450002302,
+          "field_relative_l2": 0.1272464022954935,
+          "field_rmse_abs": 0.077149827337797,
+          "residual_rmse_abs": 0.031626700462491185,
+          "scientific_accepted": false
+        },
+        {
+          "seed": 815,
+          "arm": "vanilla",
+          "checkpoint": "checkpoint-final.pt",
+          "wall_score_wave_seconds": 5.001553158000206,
+          "device": "Tesla T4",
+          "evaluation_gpu_seconds": 1.0777109639993796,
+          "field_relative_l2": 0.174744107655547,
+          "field_rmse_abs": 0.1059478106313448,
+          "residual_rmse_abs": 0.03595964900958662,
+          "scientific_accepted": false
+        }
+      ]
+    }
+  ],
+  "total_wall_seconds": 25.006588351000573
+}

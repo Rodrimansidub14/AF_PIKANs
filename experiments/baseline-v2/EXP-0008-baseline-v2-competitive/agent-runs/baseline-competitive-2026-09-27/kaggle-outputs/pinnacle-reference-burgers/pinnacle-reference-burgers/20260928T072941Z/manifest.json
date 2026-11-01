@@ -1,0 +1,156 @@
+{
+  "environment": {
+    "cuda_runtime": "12.8",
+    "gpu_count": 2,
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "kaggle_run_type": "Batch",
+    "numpy": "2.0.2",
+    "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128"
+  },
+  "evaluation_grid": {
+    "cole_hopf_sha256_f64": "685808b87bb04102870b6d2558885078ca6c3001af4354e53717a1410e1b79d0",
+    "n_t": 129,
+    "n_x": 1025,
+    "order": 128,
+    "quadrature": "Gauss-Hermite",
+    "shape_t_by_x": [
+      129,
+      1025
+    ],
+    "t_sha256_f64": "d7b1fd07f63d583f1f173a3755b697395a6662671d57068e8d3a0b1cfabde520",
+    "x_sha256_f64": "e5ad85b1789097c35dfcbdb4e9a849a3b8116fe238d757bdd8f085346459c038"
+  },
+  "fem_reference": {
+    "available": true,
+    "git_blob_sha1": "341792e6fc1ed1f2b4de0652a53135f3e40e9326",
+    "n_points": 1111,
+    "n_t": 11,
+    "n_x": 101,
+    "sha256": "3b6d31d895022b397330091ace59220167f0918c2ed616ed2ae5b1458eede5eb",
+    "times": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "url": "https://raw.githubusercontent.com/i207M/PINNacle/6f8d69c9c84c41d19644e4ceebdc64c4a11d3adf/ref/burgers1d.dat"
+  },
+  "finalization_reserve_seconds": 120,
+  "global_elapsed_seconds": 1057.470021485,
+  "protocol": {
+    "bc": "u(-1,t)=u(1,t)=0",
+    "epochs": 20000,
+    "evaluation": {
+      "Gauss-Hermite order": 128,
+      "grid_t_by_x": [
+        129,
+        1025
+      ]
+    },
+    "ic": "-sin(pi*x)",
+    "learning_rate": 0.001,
+    "loss": "unweighted sum of PDE, initial and boundary MSE",
+    "n_boundary": 2048,
+    "n_domain": 8192,
+    "n_initial": 2048,
+    "network": {
+      "activation": "tanh",
+      "hidden_layers": 5,
+      "initializer": "Glorot normal, zero bias",
+      "width": 100
+    },
+    "nu": 0.003183098861837907,
+    "official_commit": "6f8d69c9c84c41d19644e4ceebdc64c4a11d3adf",
+    "optimizer": "Adam",
+    "pde_residual_points": 12288,
+    "problem": "Burgers1D-C",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "t": [
+      0,
+      1
+    ],
+    "x": [
+      -1,
+      1
+    ]
+  },
+  "protocol_sha256": "1ee59827883a79f47ab4488ea81c9ad2ec99b54a7bd1168058a038c1ac85f700",
+  "run_finished_utc": "2026-09-28T07:47:19.264887Z",
+  "run_id": "20260928T072941Z",
+  "run_started_utc": "2026-09-28T07:29:41.794899Z",
+  "run_status": "complete",
+  "schema_version": "1.0",
+  "seed_runs": {
+    "0": {
+      "cole_hopf_l2re": 0.006182415742760787,
+      "elapsed_seconds": 353.42672480600004,
+      "epochs_completed": 20000,
+      "fem_l2re": 0.015403354593445382,
+      "status": "complete"
+    },
+    "1": {
+      "cole_hopf_l2re": 0.012211847214853654,
+      "elapsed_seconds": 354.982669427,
+      "epochs_completed": 20000,
+      "fem_l2re": 0.021254939894123005,
+      "status": "complete"
+    },
+    "2": {
+      "cole_hopf_l2re": 0.009590902729741,
+      "elapsed_seconds": 357.19049624499996,
+      "epochs_completed": 20000,
+      "fem_l2re": 0.0175195129747207,
+      "status": "complete"
+    },
+    "3": {
+      "cole_hopf_l2re": 0.0057129217189361295,
+      "elapsed_seconds": 353.283934498,
+      "epochs_completed": 20000,
+      "fem_l2re": 0.01507322602343066,
+      "status": "complete"
+    },
+    "4": {
+      "cole_hopf_l2re": 0.011698524088339426,
+      "elapsed_seconds": 348.3737466550001,
+      "epochs_completed": 20000,
+      "fem_l2re": 0.016746433932398466,
+      "status": "complete"
+    }
+  },
+  "source": {
+    "commit": "6f8d69c9c84c41d19644e4ceebdc64c4a11d3adf",
+    "file_git_blob_sha1": {
+      "benchmark.py": "2066aec1c283b9eb7c0a81ade52adb1aef54e998",
+      "deepxde/data/pde.py": "c2b65d914a5ba3e0873d25673233cb6980b99981",
+      "deepxde/geometry/sampler.py": "7b384eddc0d3763cc3663eed627dfba006665759",
+      "deepxde/geometry/timedomain.py": "9a78a6e5c2f1df2f590704c928db896d7f401943",
+      "deepxde/nn/pytorch/nn.py": "51f56776d352e38a66179b7d60a9313b94583434",
+      "ref/burgers1d.dat": "341792e6fc1ed1f2b4de0652a53135f3e40e9326",
+      "src/optimizer/adam_lbfgs.py": "562f82fe9f3cb45dc16cc5eccd908cf70cb7f3c2",
+      "src/pde/baseclass.py": "b9252bf5758133af8781b5df8d578dea12f10fa9",
+      "src/pde/burgers.py": "923ce2c2ad4c0e0290ee1bbd3a8922c489d9107d",
+      "src/utils/callbacks.py": "3562c4886687990f6dd685c29d9c899495fe98fc"
+    },
+    "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/8c63299fb2820ef41cb05e2ff11836f5-Paper-Datasets_and_Benchmarks_Track.pdf",
+    "repository_url": "https://github.com/i207M/PINNacle"
+  },
+  "wall_clock_cap_seconds": 7200
+}

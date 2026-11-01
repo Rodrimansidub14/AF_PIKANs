@@ -1,0 +1,769 @@
+[{"stream_name":"stderr","time":11.371406218,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.371494066,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.371499478,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.37150224,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":12.140462162,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.140501591,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.140509172,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.140512012,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":13.559536987,"data":"Bundle verified: c349281ede3181b8984ee0de6bf95db8b7406a77e40daa07a4bcdc197ab93a2b source files: 6\n"}
+,{"stream_name":"stdout","time":13.604186205,"data":"Installing pinned dependencies: wandb==0.30.0, plotly==7.1.0, scipy==1.15.3, pandas==2.2.3, pyvista==0.49.0\n"}
+,{"stream_name":"stdout","time":17.300845746,"data":"Collecting wandb==0.30.0\n"}
+,{"stream_name":"stdout","time":17.360151117,"data":"  Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl.metadata (11 kB)\n"}
+,{"stream_name":"stdout","time":17.489887377,"data":"Collecting plotly==7.1.0\n"}
+,{"stream_name":"stdout","time":17.502954273,"data":"Collecting wandb==0.30.0\n"}
+,{"stream_name":"stdout","time":17.502972739,"data":"  Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl.metadata (11 kB)\n"}
+,{"stream_name":"stdout","time":17.502984182,"data":"Collecting plotly==7.1.0\n"}
+,{"stream_name":"stdout","time":17.504382644,"data":"  Downloading plotly-7.1.0-py3-none-any.whl.metadata (8.8 kB)\n"}
+,{"stream_name":"stdout","time":17.706919632,"data":"  Downloading plotly-7.1.0-py3-none-any.whl.metadata (8.8 kB)\n"}
+,{"stream_name":"stdout","time":17.877618194,"data":"Collecting scipy==1.15.3\n"}
+,{"stream_name":"stdout","time":17.89340811,"data":"  Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)\n"}
+,{"stream_name":"stdout","time":17.927467632,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 1.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":18.080431287,"data":"Collecting scipy==1.15.3\n"}
+,{"stream_name":"stdout","time":18.080473369,"data":"  Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)\n"}
+,{"stream_name":"stdout","time":18.080482218,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 1.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":18.300214404,"data":"Collecting pandas==2.2.3\n"}
+,{"stream_name":"stdout","time":18.316272638,"data":"  Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)\n"}
+,{"stream_name":"stdout","time":18.342273155,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 3.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":18.467937851,"data":"Collecting pyvista==0.49.0\n"}
+,{"stream_name":"stdout","time":18.485154426,"data":"  Downloading pyvista-0.49.0-py3-none-any.whl.metadata (14 kB)\n"}
+,{"stream_name":"stdout","time":18.502763138,"data":"Collecting pandas==2.2.3\n"}
+,{"stream_name":"stdout","time":18.502808558,"data":"  Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)\n"}
+,{"stream_name":"stdout","time":18.502813281,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 3.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":18.502817508,"data":"Collecting pyvista==0.49.0\n"}
+,{"stream_name":"stdout","time":18.502820651,"data":"  Downloading pyvista-0.49.0-py3-none-any.whl.metadata (14 kB)\n"}
+,{"stream_name":"stdout","time":18.517156378,"data":"Requirement already satisfied: click\u003e=8.2.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (8.3.3)\n"}
+,{"stream_name":"stdout","time":18.591497672,"data":"Collecting opentelemetry-api\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":18.60568277,"data":"  Downloading opentelemetry_api-1.45.0-py3-none-any.whl.metadata (1.4 kB)\n"}
+,{"stream_name":"stdout","time":18.687087022,"data":"Collecting opentelemetry-exporter-otlp-proto-http\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":18.703072757,"data":"  Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl.metadata (3.1 kB)\n"}
+,{"stream_name":"stdout","time":18.719349844,"data":"Requirement already satisfied: click\u003e=8.2.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (8.3.3)\n"}
+,{"stream_name":"stdout","time":18.719386437,"data":"Collecting opentelemetry-api\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":18.719392343,"data":"  Downloading opentelemetry_api-1.45.0-py3-none-any.whl.metadata (1.4 kB)\n"}
+,{"stream_name":"stdout","time":18.719396895,"data":"Collecting opentelemetry-exporter-otlp-proto-http\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":18.719401085,"data":"  Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl.metadata (3.1 kB)\n"}
+,{"stream_name":"stdout","time":18.794767537,"data":"Collecting opentelemetry-sdk\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":18.809471358,"data":"  Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl.metadata (1.6 kB)\n"}
+,{"stream_name":"stdout","time":18.829121759,"data":"Requirement already satisfied: packaging in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (26.1)\n"}
+,{"stream_name":"stdout","time":18.830302569,"data":"Requirement already satisfied: platformdirs in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.9.6)\n"}
+,{"stream_name":"stdout","time":18.831361495,"data":"Requirement already satisfied: protobuf!=5.28.0,!=5.29.0,\u003c8,\u003e=5 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (5.29.5)\n"}
+,{"stream_name":"stdout","time":18.834272764,"data":"Requirement already satisfied: pydantic\u003c3,\u003e=2.6 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.12.3)\n"}
+,{"stream_name":"stdout","time":18.835436362,"data":"Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (6.0.3)\n"}
+,{"stream_name":"stdout","time":18.836929988,"data":"Requirement already satisfied: requests\u003c3,\u003e=2.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.32.4)\n"}
+,{"stream_name":"stdout","time":18.838177681,"data":"Requirement already satisfied: typing-extensions\u003c5,\u003e=4.8 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.15.0)\n"}
+,{"stream_name":"stdout","time":18.83999074,"data":"Requirement already satisfied: xxhash\u003e=3.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (3.6.0)\n"}
+,{"stream_name":"stdout","time":18.849755242,"data":"Requirement already satisfied: narwhals\u003e=1.15.1 in /usr/local/lib/python3.12/dist-packages (from plotly==7.1.0) (2.20.0)\n"}
+,{"stream_name":"stdout","time":18.860505687,"data":"Requirement already satisfied: numpy\u003c2.5,\u003e=1.23.5 in /usr/local/lib/python3.12/dist-packages (from scipy==1.15.3) (2.0.2)\n"}
+,{"stream_name":"stdout","time":18.874047788,"data":"Requirement already satisfied: python-dateutil\u003e=2.8.2 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2.9.0.post0)\n"}
+,{"stream_name":"stdout","time":18.875793932,"data":"Requirement already satisfied: pytz\u003e=2020.1 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2025.2)\n"}
+,{"stream_name":"stdout","time":18.876888237,"data":"Requirement already satisfied: tzdata\u003e=2022.7 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2026.1)\n"}
+,{"stream_name":"stdout","time":18.993990368,"data":"Collecting cyclopts\u003e=4.0.0 (from pyvista==0.49.0)\n"}
+,{"stream_name":"stdout","time":18.997108902,"data":"Collecting opentelemetry-sdk\u003e=1.43.0 (from wandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":18.997130614,"data":"  Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl.metadata (1.6 kB)\n"}
+,{"stream_name":"stdout","time":18.997141268,"data":"Requirement already satisfied: packaging in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (26.1)\n"}
+,{"stream_name":"stdout","time":18.997144402,"data":"Requirement already satisfied: platformdirs in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.9.6)\n"}
+,{"stream_name":"stdout","time":18.99714723,"data":"Requirement already satisfied: protobuf!=5.28.0,!=5.29.0,\u003c8,\u003e=5 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (5.29.5)\n"}
+,{"stream_name":"stdout","time":18.997150222,"data":"Requirement already satisfied: pydantic\u003c3,\u003e=2.6 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.12.3)\n"}
+,{"stream_name":"stdout","time":18.9971541,"data":"Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (6.0.3)\n"}
+,{"stream_name":"stdout","time":18.997171682,"data":"Requirement already satisfied: requests\u003c3,\u003e=2.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (2.32.4)\n"}
+,{"stream_name":"stdout","time":18.997176565,"data":"Requirement already satisfied: typing-extensions\u003c5,\u003e=4.8 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (4.15.0)\n"}
+,{"stream_name":"stdout","time":18.997181378,"data":"Requirement already satisfied: xxhash\u003e=3.0.0 in /usr/local/lib/python3.12/dist-packages (from wandb==0.30.0) (3.6.0)\n"}
+,{"stream_name":"stdout","time":18.997186048,"data":"Requirement already satisfied: narwhals\u003e=1.15.1 in /usr/local/lib/python3.12/dist-packages (from plotly==7.1.0) (2.20.0)\n"}
+,{"stream_name":"stdout","time":18.99719009,"data":"Requirement already satisfied: numpy\u003c2.5,\u003e=1.23.5 in /usr/local/lib/python3.12/dist-packages (from scipy==1.15.3) (2.0.2)\n"}
+,{"stream_name":"stdout","time":18.997194224,"data":"Requirement already satisfied: python-dateutil\u003e=2.8.2 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2.9.0.post0)\n"}
+,{"stream_name":"stdout","time":18.997198234,"data":"Requirement already satisfied: pytz\u003e=2020.1 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2025.2)\n"}
+,{"stream_name":"stdout","time":18.997202126,"data":"Requirement already satisfied: tzdata\u003e=2022.7 in /usr/local/lib/python3.12/dist-packages (from pandas==2.2.3) (2026.1)\n"}
+,{"stream_name":"stdout","time":18.997206105,"data":"Collecting cyclopts\u003e=4.0.0 (from pyvista==0.49.0)\n"}
+,{"stream_name":"stdout","time":19.008617731,"data":"  Downloading cyclopts-5.0.0-py3-none-any.whl.metadata (12 kB)\n"}
+,{"stream_name":"stdout","time":19.034870341,"data":"Requirement already satisfied: matplotlib\u003e=3.0.1 in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (3.10.0)\n"}
+,{"stream_name":"stdout","time":19.039802761,"data":"Requirement already satisfied: pillow in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (11.3.0)\n"}
+,{"stream_name":"stdout","time":19.04123686,"data":"Requirement already satisfied: pooch in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (1.9.0)\n"}
+,{"stream_name":"stdout","time":19.093456833,"data":"Collecting pyvista-validation==0.2.2 (from pyvista==0.49.0)\n"}
+,{"stream_name":"stdout","time":19.10952941,"data":"  Downloading pyvista_validation-0.2.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.7 kB)\n"}
+,{"stream_name":"stdout","time":19.128199116,"data":"Requirement already satisfied: scooby\u003e=0.5.1 in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (0.11.2)\n"}
+,{"stream_name":"stdout","time":19.129994888,"data":"Requirement already satisfied: vtk!=9.4.0 in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (9.3.1)\n"}
+,{"stream_name":"stdout","time":19.142370178,"data":"Requirement already satisfied: attrs\u003e=23.1.0 in /usr/local/lib/python3.12/dist-packages (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (26.1.0)\n"}
+,{"stream_name":"stdout","time":19.143578631,"data":"Requirement already satisfied: docstring-parser\u003c4.0,\u003e=0.15 in /usr/local/lib/python3.12/dist-packages (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (0.18.0)\n"}
+,{"stream_name":"stdout","time":19.195363488,"data":"Collecting rich-rst\u003c3,\u003e=2.0.1 (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0)\n"}
+,{"stream_name":"stdout","time":19.210097165,"data":"  Downloading rich_rst-2.1.0-py3-none-any.whl.metadata (4.7 kB)\n"}
+,{"stream_name":"stdout","time":19.211052085,"data":"  Downloading cyclopts-5.0.0-py3-none-any.whl.metadata (12 kB)\n"}
+,{"stream_name":"stdout","time":19.211072275,"data":"Requirement already satisfied: matplotlib\u003e=3.0.1 in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (3.10.0)\n"}
+,{"stream_name":"stdout","time":19.211077375,"data":"Requirement already satisfied: pillow in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (11.3.0)\n"}
+,{"stream_name":"stdout","time":19.211081229,"data":"Requirement already satisfied: pooch in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (1.9.0)\n"}
+,{"stream_name":"stdout","time":19.211085359,"data":"Collecting pyvista-validation==0.2.2 (from pyvista==0.49.0)\n"}
+,{"stream_name":"stdout","time":19.211089293,"data":"  Downloading pyvista_validation-0.2.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.7 kB)\n"}
+,{"stream_name":"stdout","time":19.211093253,"data":"Requirement already satisfied: scooby\u003e=0.5.1 in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (0.11.2)\n"}
+,{"stream_name":"stdout","time":19.211097563,"data":"Requirement already satisfied: vtk!=9.4.0 in /usr/local/lib/python3.12/dist-packages (from pyvista==0.49.0) (9.3.1)\n"}
+,{"stream_name":"stdout","time":19.211101722,"data":"Requirement already satisfied: attrs\u003e=23.1.0 in /usr/local/lib/python3.12/dist-packages (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (26.1.0)\n"}
+,{"stream_name":"stdout","time":19.211106241,"data":"Requirement already satisfied: docstring-parser\u003c4.0,\u003e=0.15 in /usr/local/lib/python3.12/dist-packages (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (0.18.0)\n"}
+,{"stream_name":"stdout","time":19.211121871,"data":"Collecting rich-rst\u003c3,\u003e=2.0.1 (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0)\n"}
+,{"stream_name":"stdout","time":19.227514294,"data":"Requirement already satisfied: rich\u003e=13.6.0 in /usr/local/lib/python3.12/dist-packages (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (13.9.4)\n"}
+,{"stream_name":"stdout","time":19.231860709,"data":"Requirement already satisfied: contourpy\u003e=1.0.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (1.3.3)\n"}
+,{"stream_name":"stdout","time":19.233195371,"data":"Requirement already satisfied: cycler\u003e=0.10 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (0.12.1)\n"}
+,{"stream_name":"stdout","time":19.238083399,"data":"Requirement already satisfied: fonttools\u003e=4.22.0 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (4.62.1)\n"}
+,{"stream_name":"stdout","time":19.239519473,"data":"Requirement already satisfied: kiwisolver\u003e=1.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (1.5.0)\n"}
+,{"stream_name":"stdout","time":19.244864623,"data":"Requirement already satisfied: pyparsing\u003e=2.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (3.3.2)\n"}
+,{"stream_name":"stdout","time":19.260173587,"data":"Requirement already satisfied: googleapis-common-protos~=1.52 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (1.74.0)\n"}
+,{"stream_name":"stdout","time":19.304913501,"data":"Collecting opentelemetry-exporter-http-transport==0.66b0 (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":19.319923242,"data":"  Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":19.371433527,"data":"Collecting opentelemetry-exporter-otlp-common==0.66b0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":19.38522613,"data":"  Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl.metadata (1.9 kB)\n"}
+,{"stream_name":"stdout","time":19.41195072,"data":"  Downloading rich_rst-2.1.0-py3-none-any.whl.metadata (4.7 kB)\n"}
+,{"stream_name":"stdout","time":19.411972853,"data":"Requirement already satisfied: rich\u003e=13.6.0 in /usr/local/lib/python3.12/dist-packages (from cyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (13.9.4)\n"}
+,{"stream_name":"stdout","time":19.411976702,"data":"Requirement already satisfied: contourpy\u003e=1.0.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (1.3.3)\n"}
+,{"stream_name":"stdout","time":19.411980322,"data":"Requirement already satisfied: cycler\u003e=0.10 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (0.12.1)\n"}
+,{"stream_name":"stdout","time":19.411997707,"data":"Requirement already satisfied: fonttools\u003e=4.22.0 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (4.62.1)\n"}
+,{"stream_name":"stdout","time":19.412002144,"data":"Requirement already satisfied: kiwisolver\u003e=1.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (1.5.0)\n"}
+,{"stream_name":"stdout","time":19.412007366,"data":"Requirement already satisfied: pyparsing\u003e=2.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib\u003e=3.0.1-\u003epyvista==0.49.0) (3.3.2)\n"}
+,{"stream_name":"stdout","time":19.412022894,"data":"Requirement already satisfied: googleapis-common-protos~=1.52 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (1.74.0)\n"}
+,{"stream_name":"stdout","time":19.412028775,"data":"Collecting opentelemetry-exporter-http-transport==0.66b0 (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":19.412032804,"data":"  Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":19.4120364,"data":"Collecting opentelemetry-exporter-otlp-common==0.66b0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":19.412040342,"data":"  Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl.metadata (1.9 kB)\n"}
+,{"stream_name":"stdout","time":19.458233121,"data":"Collecting opentelemetry-exporter-otlp-proto-common==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":19.472422613,"data":"  Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl.metadata (1.8 kB)\n"}
+,{"stream_name":"stdout","time":19.562009346,"data":"Collecting opentelemetry-proto==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":19.576270325,"data":"  Downloading opentelemetry_proto-1.45.0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":19.605913206,"data":"Requirement already satisfied: urllib3\u003e=1.26 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (2.5.0)\n"}
+,{"stream_name":"stdout","time":19.661074668,"data":"Collecting opentelemetry-exporter-otlp-proto-common==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":19.661117466,"data":"  Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl.metadata (1.8 kB)\n"}
+,{"stream_name":"stdout","time":19.661122876,"data":"Collecting opentelemetry-proto==1.45.0 (from opentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":19.661127011,"data":"  Downloading opentelemetry_proto-1.45.0-py3-none-any.whl.metadata (2.3 kB)\n"}
+,{"stream_name":"stdout","time":19.661131344,"data":"Requirement already satisfied: urllib3\u003e=1.26 in /usr/local/lib/python3.12/dist-packages (from opentelemetry-exporter-http-transport[urllib3]==0.66b0-\u003eopentelemetry-exporter-otlp-proto-http\u003e=1.43.0-\u003ewandb==0.30.0) (2.5.0)\n"}
+,{"stream_name":"stdout","time":19.727151496,"data":"Collecting opentelemetry-semantic-conventions==0.66b0 (from opentelemetry-sdk\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":19.742107377,"data":"  Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl.metadata (2.4 kB)\n"}
+,{"stream_name":"stdout","time":19.774797351,"data":"Requirement already satisfied: annotated-types\u003e=0.6.0 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.7.0)\n"}
+,{"stream_name":"stdout","time":19.776076483,"data":"Requirement already satisfied: pydantic-core==2.41.4 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (2.41.4)\n"}
+,{"stream_name":"stdout","time":19.777713294,"data":"Requirement already satisfied: typing-inspection\u003e=0.4.2 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.4.2)\n"}
+,{"stream_name":"stdout","time":19.783455739,"data":"Requirement already satisfied: six\u003e=1.5 in /usr/local/lib/python3.12/dist-packages (from python-dateutil\u003e=2.8.2-\u003epandas==2.2.3) (1.17.0)\n"}
+,{"stream_name":"stdout","time":19.791347077,"data":"Requirement already satisfied: charset_normalizer\u003c4,\u003e=2 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.4.7)\n"}
+,{"stream_name":"stdout","time":19.792795305,"data":"Requirement already satisfied: idna\u003c4,\u003e=2.5 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.13)\n"}
+,{"stream_name":"stdout","time":19.794620173,"data":"Requirement already satisfied: certifi\u003e=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (2026.4.22)\n"}
+,{"stream_name":"stdout","time":19.853999306,"data":"Requirement already satisfied: markdown-it-py\u003e=2.2.0 in /usr/local/lib/python3.12/dist-packages (from rich\u003e=13.6.0-\u003ecyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (4.0.0)\n"}
+,{"stream_name":"stdout","time":19.855198676,"data":"Requirement already satisfied: pygments\u003c3.0.0,\u003e=2.13.0 in /usr/local/lib/python3.12/dist-packages (from rich\u003e=13.6.0-\u003ecyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (2.20.0)\n"}
+,{"stream_name":"stdout","time":19.870069531,"data":"Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.12/dist-packages (from markdown-it-py\u003e=2.2.0-\u003erich\u003e=13.6.0-\u003ecyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (0.1.2)\n"}
+,{"stream_name":"stdout","time":19.903296047,"data":"Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl (26.1 MB)\n"}
+,{"stream_name":"stdout","time":19.929976325,"data":"Collecting opentelemetry-semantic-conventions==0.66b0 (from opentelemetry-sdk\u003e=1.43.0-\u003ewandb==0.30.0)\n"}
+,{"stream_name":"stdout","time":19.930003438,"data":"  Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl.metadata (2.4 kB)\n"}
+,{"stream_name":"stdout","time":19.930008744,"data":"Requirement already satisfied: annotated-types\u003e=0.6.0 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.7.0)\n"}
+,{"stream_name":"stdout","time":19.930013612,"data":"Requirement already satisfied: pydantic-core==2.41.4 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (2.41.4)\n"}
+,{"stream_name":"stdout","time":19.930020724,"data":"Requirement already satisfied: typing-inspection\u003e=0.4.2 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003c3,\u003e=2.6-\u003ewandb==0.30.0) (0.4.2)\n"}
+,{"stream_name":"stdout","time":19.930028216,"data":"Requirement already satisfied: six\u003e=1.5 in /usr/local/lib/python3.12/dist-packages (from python-dateutil\u003e=2.8.2-\u003epandas==2.2.3) (1.17.0)\n"}
+,{"stream_name":"stdout","time":19.93003122,"data":"Requirement already satisfied: charset_normalizer\u003c4,\u003e=2 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.4.7)\n"}
+,{"stream_name":"stdout","time":19.930034453,"data":"Requirement already satisfied: idna\u003c4,\u003e=2.5 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (3.13)\n"}
+,{"stream_name":"stdout","time":19.930037576,"data":"Requirement already satisfied: certifi\u003e=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests\u003c3,\u003e=2.0.0-\u003ewandb==0.30.0) (2026.4.22)\n"}
+,{"stream_name":"stdout","time":19.930040652,"data":"Requirement already satisfied: markdown-it-py\u003e=2.2.0 in /usr/local/lib/python3.12/dist-packages (from rich\u003e=13.6.0-\u003ecyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (4.0.0)\n"}
+,{"stream_name":"stdout","time":19.930051777,"data":"Requirement already satisfied: pygments\u003c3.0.0,\u003e=2.13.0 in /usr/local/lib/python3.12/dist-packages (from rich\u003e=13.6.0-\u003ecyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (2.20.0)\n"}
+,{"stream_name":"stdout","time":19.930071756,"data":"Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.12/dist-packages (from markdown-it-py\u003e=2.2.0-\u003erich\u003e=13.6.0-\u003ecyclopts\u003e=4.0.0-\u003epyvista==0.49.0) (0.1.2)\n"}
+,{"stream_name":"stdout","time":19.930077087,"data":"Downloading wandb-0.30.0-py3-none-manylinux_2_28_x86_64.whl (26.1 MB)\n"}
+,{"stream_name":"stdout","time":20.175645137,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.1/26.1 MB 62.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":20.190842048,"data":"Downloading plotly-7.1.0-py3-none-any.whl (9.7 MB)\n"}
+,{"stream_name":"stdout","time":20.295063892,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 95.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":20.31400186,"data":"Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.3 MB)\n"}
+,{"stream_name":"stdout","time":20.378848645,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.1/26.1 MB 62.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":20.378877818,"data":"Downloading plotly-7.1.0-py3-none-any.whl (9.7 MB)\n"}
+,{"stream_name":"stdout","time":20.378883268,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 95.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":20.378888335,"data":"Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.3 MB)\n"}
+,{"stream_name":"stdout","time":20.617950225,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 54.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":20.633046212,"data":"Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)\n"}
+,{"stream_name":"stdout","time":20.798360612,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 75.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":20.816323763,"data":"Downloading pyvista-0.49.0-py3-none-any.whl (2.7 MB)\n"}
+,{"stream_name":"stdout","time":20.820449685,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 54.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":20.820474312,"data":"Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)\n"}
+,{"stream_name":"stdout","time":20.820479252,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 75.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":20.82048371,"data":"Downloading pyvista-0.49.0-py3-none-any.whl (2.7 MB)\n"}
+,{"stream_name":"stdout","time":20.861055913,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 65.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":20.878027911,"data":"Downloading pyvista_validation-0.2.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (261 kB)\n"}
+,{"stream_name":"stdout","time":20.909436372000002,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 261.4/261.4 kB 8.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":20.923494473,"data":"Downloading cyclopts-5.0.0-py3-none-any.whl (278 kB)\n"}
+,{"stream_name":"stdout","time":20.947985096,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 278.1/278.1 kB 12.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":20.962152984,"data":"Downloading opentelemetry_api-1.45.0-py3-none-any.whl (60 kB)\n"}
+,{"stream_name":"stdout","time":20.985304096,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.0/60.0 kB 2.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":20.999681072,"data":"Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl (22 kB)\n"}
+,{"stream_name":"stdout","time":21.034561441,"data":"Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":21.062866469,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 65.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":21.062893785,"data":"Downloading pyvista_validation-0.2.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (261 kB)\n"}
+,{"stream_name":"stdout","time":21.062897406,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 261.4/261.4 kB 8.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":21.062901072,"data":"Downloading cyclopts-5.0.0-py3-none-any.whl (278 kB)\n"}
+,{"stream_name":"stdout","time":21.062918633,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 278.1/278.1 kB 12.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":21.062923602,"data":"Downloading opentelemetry_api-1.45.0-py3-none-any.whl (60 kB)\n"}
+,{"stream_name":"stdout","time":21.062928327,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.0/60.0 kB 2.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":21.062933324,"data":"Downloading opentelemetry_exporter_otlp_proto_http-1.45.0-py3-none-any.whl (22 kB)\n"}
+,{"stream_name":"stdout","time":21.062937389,"data":"Downloading opentelemetry_exporter_http_transport-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":21.066779393,"data":"Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":21.099915377,"data":"Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl (15 kB)\n"}
+,{"stream_name":"stdout","time":21.131853377,"data":"Downloading opentelemetry_proto-1.45.0-py3-none-any.whl (72 kB)\n"}
+,{"stream_name":"stdout","time":21.156200443,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 2.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":21.16988195,"data":"Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl (140 kB)\n"}
+,{"stream_name":"stdout","time":21.195202041,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.1/140.1 kB 6.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":21.210659744,"data":"Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl (206 kB)\n"}
+,{"stream_name":"stdout","time":21.23394772,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.3/206.3 kB 9.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":21.248514402,"data":"Downloading rich_rst-2.1.0-py3-none-any.whl (272 kB)\n"}
+,{"stream_name":"stdout","time":21.268925816,"data":"Downloading opentelemetry_exporter_otlp_common-0.66b0-py3-none-any.whl (12 kB)\n"}
+,{"stream_name":"stdout","time":21.268943921,"data":"Downloading opentelemetry_exporter_otlp_proto_common-1.45.0-py3-none-any.whl (15 kB)\n"}
+,{"stream_name":"stdout","time":21.268948429,"data":"Downloading opentelemetry_proto-1.45.0-py3-none-any.whl (72 kB)\n"}
+,{"stream_name":"stdout","time":21.268952754,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 2.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":21.268958261,"data":"Downloading opentelemetry_sdk-1.45.0-py3-none-any.whl (140 kB)\n"}
+,{"stream_name":"stdout","time":21.268962586,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.1/140.1 kB 6.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":21.268967366,"data":"Downloading opentelemetry_semantic_conventions-0.66b0-py3-none-any.whl (206 kB)\n"}
+,{"stream_name":"stdout","time":21.26897128,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.3/206.3 kB 9.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":21.268975394,"data":"Downloading rich_rst-2.1.0-py3-none-any.whl (272 kB)\n"}
+,{"stream_name":"stdout","time":21.275585984,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 273.0/273.0 kB 10.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":21.478019846,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 273.0/273.0 kB 10.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":23.796901878,"data":"Installing collected packages: scipy, pyvista-validation, plotly, opentelemetry-proto, opentelemetry-api, pandas, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, opentelemetry-exporter-http-transport, rich-rst, opentelemetry-sdk, opentelemetry-exporter-otlp-common, cyclopts, pyvista, opentelemetry-exporter-otlp-proto-http, wandb\n"}
+,{"stream_name":"stdout","time":23.797444622,"data":"  Attempting uninstall: scipy\n"}
+,{"stream_name":"stdout","time":23.999474506,"data":"Installing collected packages: scipy, pyvista-validation, plotly, opentelemetry-proto, opentelemetry-api, pandas, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, opentelemetry-exporter-http-transport, rich-rst, opentelemetry-sdk, opentelemetry-exporter-otlp-common, cyclopts, pyvista, opentelemetry-exporter-otlp-proto-http, wandb\n"}
+,{"stream_name":"stdout","time":23.999516301,"data":"  Attempting uninstall: scipy\n"}
+,{"stream_name":"stdout","time":24.013555169,"data":"    Found existing installation: scipy 1.16.3\n"}
+,{"stream_name":"stdout","time":24.216124611,"data":"    Found existing installation: scipy 1.16.3\n"}
+,{"stream_name":"stdout","time":24.368083741,"data":"    Uninstalling scipy-1.16.3:\n"}
+,{"stream_name":"stdout","time":24.570489716,"data":"    Uninstalling scipy-1.16.3:\n"}
+,{"stream_name":"stdout","time":28.288576042,"data":"      Successfully uninstalled scipy-1.16.3\n"}
+,{"stream_name":"stdout","time":28.490799764,"data":"      Successfully uninstalled scipy-1.16.3\n"}
+,{"stream_name":"stdout","time":33.092944306,"data":"  Attempting uninstall: plotly\n"}
+,{"stream_name":"stdout","time":33.295428857,"data":"  Attempting uninstall: plotly\n"}
+,{"stream_name":"stdout","time":33.357006091,"data":"    Found existing installation: plotly 5.24.1\n"}
+,{"stream_name":"stdout","time":33.559455565,"data":"    Found existing installation: plotly 5.24.1\n"}
+,{"stream_name":"stdout","time":36.823239423,"data":"    Uninstalling plotly-5.24.1:\n"}
+,{"stream_name":"stdout","time":37.025716961,"data":"    Uninstalling plotly-5.24.1:\n"}
+,{"stream_name":"stdout","time":57.578766317,"data":"      Successfully uninstalled plotly-5.24.1\n"}
+,{"stream_name":"stdout","time":57.790568827,"data":"      Successfully uninstalled plotly-5.24.1\n"}
+,{"stream_name":"stdout","time":60.285209121,"data":"  Attempting uninstall: opentelemetry-proto\n"}
+,{"stream_name":"stdout","time":60.487726905,"data":"  Attempting uninstall: opentelemetry-proto\n"}
+,{"stream_name":"stdout","time":60.638442136,"data":"    Found existing installation: opentelemetry-proto 1.38.0\n"}
+,{"stream_name":"stdout","time":60.684766203,"data":"    Uninstalling opentelemetry-proto-1.38.0:\n"}
+,{"stream_name":"stdout","time":60.739351249,"data":"      Successfully uninstalled opentelemetry-proto-1.38.0\n"}
+,{"stream_name":"stdout","time":60.840977093,"data":"    Found existing installation: opentelemetry-proto 1.38.0\n"}
+,{"stream_name":"stdout","time":60.841024767,"data":"    Uninstalling opentelemetry-proto-1.38.0:\n"}
+,{"stream_name":"stdout","time":60.841032939,"data":"      Successfully uninstalled opentelemetry-proto-1.38.0\n"}
+,{"stream_name":"stdout","time":60.841468847,"data":"  Attempting uninstall: opentelemetry-api\n"}
+,{"stream_name":"stdout","time":61.043933549,"data":"  Attempting uninstall: opentelemetry-api\n"}
+,{"stream_name":"stdout","time":61.247450209,"data":"    Found existing installation: opentelemetry-api 1.38.0\n"}
+,{"stream_name":"stdout","time":61.290975694,"data":"    Uninstalling opentelemetry-api-1.38.0:\n"}
+,{"stream_name":"stdout","time":61.449403571,"data":"    Found existing installation: opentelemetry-api 1.38.0\n"}
+,{"stream_name":"stdout","time":61.449428332,"data":"    Uninstalling opentelemetry-api-1.38.0:\n"}
+,{"stream_name":"stdout","time":61.462722853,"data":"      Successfully uninstalled opentelemetry-api-1.38.0\n"}
+,{"stream_name":"stdout","time":61.533601172,"data":"  Attempting uninstall: pandas\n"}
+,{"stream_name":"stdout","time":61.579155298,"data":"    Found existing installation: pandas 2.3.3\n"}
+,{"stream_name":"stdout","time":61.665112738,"data":"      Successfully uninstalled opentelemetry-api-1.38.0\n"}
+,{"stream_name":"stdout","time":61.665145041,"data":"  Attempting uninstall: pandas\n"}
+,{"stream_name":"stdout","time":61.665157043,"data":"    Found existing installation: pandas 2.3.3\n"}
+,{"stream_name":"stdout","time":62.344618737,"data":"    Uninstalling pandas-2.3.3:\n"}
+,{"stream_name":"stdout","time":62.547385137,"data":"    Uninstalling pandas-2.3.3:\n"}
+,{"stream_name":"stdout","time":66.026334333,"data":"      Successfully uninstalled pandas-2.3.3\n"}
+,{"stream_name":"stdout","time":66.229367593,"data":"      Successfully uninstalled pandas-2.3.3\n"}
+,{"stream_name":"stdout","time":71.277640423,"data":"  Attempting uninstall: opentelemetry-semantic-conventions\n"}
+,{"stream_name":"stdout","time":71.480559521,"data":"  Attempting uninstall: opentelemetry-semantic-conventions\n"}
+,{"stream_name":"stdout","time":71.651588213,"data":"    Found existing installation: opentelemetry-semantic-conventions 0.59b0\n"}
+,{"stream_name":"stdout","time":71.666221115,"data":"    Uninstalling opentelemetry-semantic-conventions-0.59b0:\n"}
+,{"stream_name":"stdout","time":71.854398723,"data":"    Found existing installation: opentelemetry-semantic-conventions 0.59b0\n"}
+,{"stream_name":"stdout","time":71.85443503,"data":"    Uninstalling opentelemetry-semantic-conventions-0.59b0:\n"}
+,{"stream_name":"stdout","time":71.856806916,"data":"      Successfully uninstalled opentelemetry-semantic-conventions-0.59b0\n"}
+,{"stream_name":"stdout","time":72.006191776,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-common\n"}
+,{"stream_name":"stdout","time":72.059397225,"data":"      Successfully uninstalled opentelemetry-semantic-conventions-0.59b0\n"}
+,{"stream_name":"stdout","time":72.059434568,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-common\n"}
+,{"stream_name":"stdout","time":72.331233751,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-common 1.38.0\n"}
+,{"stream_name":"stdout","time":72.338433142,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-common-1.38.0:\n"}
+,{"stream_name":"stdout","time":72.361276435,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-common-1.38.0\n"}
+,{"stream_name":"stdout","time":72.533601756,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-common 1.38.0\n"}
+,{"stream_name":"stdout","time":72.533637582,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-common-1.38.0:\n"}
+,{"stream_name":"stdout","time":72.533641718,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-common-1.38.0\n"}
+,{"stream_name":"stdout","time":72.640152672,"data":"  Attempting uninstall: opentelemetry-sdk\n"}
+,{"stream_name":"stdout","time":72.818536844,"data":"    Found existing installation: opentelemetry-sdk 1.38.0\n"}
+,{"stream_name":"stdout","time":72.830448785,"data":"    Uninstalling opentelemetry-sdk-1.38.0:\n"}
+,{"stream_name":"stdout","time":72.842580261,"data":"  Attempting uninstall: opentelemetry-sdk\n"}
+,{"stream_name":"stdout","time":72.842605285,"data":"    Found existing installation: opentelemetry-sdk 1.38.0\n"}
+,{"stream_name":"stdout","time":72.842622468,"data":"    Uninstalling opentelemetry-sdk-1.38.0:\n"}
+,{"stream_name":"stdout","time":72.936188795,"data":"      Successfully uninstalled opentelemetry-sdk-1.38.0\n"}
+,{"stream_name":"stdout","time":73.138755721,"data":"      Successfully uninstalled opentelemetry-sdk-1.38.0\n"}
+,{"stream_name":"stdout","time":74.116109644,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-http\n"}
+,{"stream_name":"stdout","time":74.318743042,"data":"  Attempting uninstall: opentelemetry-exporter-otlp-proto-http\n"}
+,{"stream_name":"stdout","time":74.436637515,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-http 1.38.0\n"}
+,{"stream_name":"stdout","time":74.444088465,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-http-1.38.0:\n"}
+,{"stream_name":"stdout","time":74.464525163,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-http-1.38.0\n"}
+,{"stream_name":"stdout","time":74.493009827,"data":"  Attempting uninstall: wandb\n"}
+,{"stream_name":"stdout","time":74.639125638,"data":"    Found existing installation: opentelemetry-exporter-otlp-proto-http 1.38.0\n"}
+,{"stream_name":"stdout","time":74.639163006,"data":"    Uninstalling opentelemetry-exporter-otlp-proto-http-1.38.0:\n"}
+,{"stream_name":"stdout","time":74.639168284,"data":"      Successfully uninstalled opentelemetry-exporter-otlp-proto-http-1.38.0\n"}
+,{"stream_name":"stdout","time":74.639172484,"data":"  Attempting uninstall: wandb\n"}
+,{"stream_name":"stdout","time":74.667310554,"data":"    Found existing installation: wandb 0.26.1\n"}
+,{"stream_name":"stdout","time":74.869438056,"data":"    Found existing installation: wandb 0.26.1\n"}
+,{"stream_name":"stdout","time":74.909669608,"data":"    Uninstalling wandb-0.26.1:\n"}
+,{"stream_name":"stdout","time":75.11207082,"data":"    Uninstalling wandb-0.26.1:\n"}
+,{"stream_name":"stdout","time":114.692764736,"data":"      Successfully uninstalled wandb-0.26.1\n"}
+,{"stream_name":"stdout","time":114.900574289,"data":"      Successfully uninstalled wandb-0.26.1\n"}
+,{"stream_name":"stderr","time":116.213041858,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":116.213077781,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":116.213084281,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":116.213090239,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.213096347,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.2.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.213101563,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.213107009,"data":"google-adk 1.29.0 requires opentelemetry-api\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-api 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.213112657,"data":"google-adk 1.29.0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.213118051,"data":"opentelemetry-exporter-gcp-logging 1.11.0a0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.35.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":116.213301069,"data":"Successfully installed cyclopts-5.0.0 opentelemetry-api-1.45.0 opentelemetry-exporter-http-transport-0.66b0 opentelemetry-exporter-otlp-common-0.66b0 opentelemetry-exporter-otlp-proto-common-1.45.0 opentelemetry-exporter-otlp-proto-http-1.45.0 opentelemetry-proto-1.45.0 opentelemetry-sdk-1.45.0 opentelemetry-semantic-conventions-0.66b0 pandas-2.2.3 plotly-7.1.0 pyvista-0.49.0 pyvista-validation-0.2.2 rich-rst-2.1.0 scipy-1.15.3 wandb-0.30.0\n"}
+,{"stream_name":"stderr","time":116.416267894,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":116.416308824,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":116.416313836,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":116.416317462,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.416320702,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.2.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.416323811,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.416326929,"data":"google-adk 1.29.0 requires opentelemetry-api\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-api 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.416360837,"data":"google-adk 1.29.0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.416366239,"data":"opentelemetry-exporter-gcp-logging 1.11.0a0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.35.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.416371084,"data":"\n"}
+,{"stream_name":"stderr","time":116.416375457,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":116.416379859,"data":"bigframes 2.39.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":116.416383532,"data":"google-adk 1.29.0 requires google-cloud-bigquery-storage\u003e=2.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":116.416387121,"data":"google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.41639066,"data":"google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.2.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.416394187,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.416397721,"data":"google-adk 1.29.0 requires opentelemetry-api\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-api 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.416401476,"data":"google-adk 1.29.0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.36.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":116.416411757,"data":"opentelemetry-exporter-gcp-logging 1.11.0a0 requires opentelemetry-sdk\u003c1.39.0,\u003e=1.35.0, but you have opentelemetry-sdk 1.45.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":116.417125619,"data":"Successfully installed cyclopts-5.0.0 opentelemetry-api-1.45.0 opentelemetry-exporter-http-transport-0.66b0 opentelemetry-exporter-otlp-common-0.66b0 opentelemetry-exporter-otlp-proto-common-1.45.0 opentelemetry-exporter-otlp-proto-http-1.45.0 opentelemetry-proto-1.45.0 opentelemetry-sdk-1.45.0 opentelemetry-semantic-conventions-0.66b0 pandas-2.2.3 plotly-7.1.0 pyvista-0.49.0 pyvista-validation-0.2.2 rich-rst-2.1.0 scipy-1.15.3 wandb-0.30.0\n"}
+,{"stream_name":"stdout","time":125.825639334,"data":"index, name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":125.825682508,"data":"0, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":125.825690385,"data":"1, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":125.836418032,"data":"index, name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":125.836492364,"data":"0, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":125.836500201,"data":"1, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":125.886023664,"data":"Seed schedule: {303: '0', 304: '1'} ; later seeds use the first free assigned GPU.\n"}
+,{"stream_name":"stdout","time":125.8908643,"data":"[campaign] worker=0 started seed=303 slot=0\n"}
+,{"stream_name":"stdout","time":125.893516152,"data":"[campaign] worker=1 started seed=304 slot=1\n"}
+,{"stream_name":"stdout","time":125.896032221,"data":"[campaign] seed=303 assigned_gpu=0\n"}
+,{"stream_name":"stdout","time":125.902866074,"data":"[campaign] seed=304 assigned_gpu=1\n"}
+,{"stream_name":"stderr","time":1338.550397684,"data":"[seed 304 stderr] /kaggle/working/pikan-c349281ede3181b8/bundle/src/research_pipeline/sciml/dfg_campaign.py:183: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.\n"}
+,{"stream_name":"stderr","time":1338.550468699,"data":"\n"}
+,{"stream_name":"stderr","time":1338.550475203,"data":"[seed 304 stderr] /kaggle/working/pikan-c349281ede3181b8/bundle/src/research_pipeline/sciml/dfg_campaign.py:183: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.\n"}
+,{"stream_name":"stderr","time":1338.551327048,"data":"[seed 304 stderr] Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)\n"}
+,{"stream_name":"stderr","time":1338.551367811,"data":"\n"}
+,{"stream_name":"stderr","time":1338.551373496,"data":"[seed 304 stderr] Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)\n"}
+,{"stream_name":"stderr","time":1338.552235948,"data":"[seed 304 stderr]   signals[f\"basis/layer_{index}_coefficient_l2\"] = float(torch.linalg.vector_norm(layer.coefficients).cpu())\n"}
+,{"stream_name":"stderr","time":1338.552266607,"data":"\n"}
+,{"stream_name":"stderr","time":1338.552295693,"data":"[seed 304 stderr]   signals[f\"basis/layer_{index}_coefficient_l2\"] = float(torch.linalg.vector_norm(layer.coefficients).cpu())\n"}
+,{"stream_name":"stderr","time":1338.553050274,"data":"[seed 303 stderr] /kaggle/working/pikan-c349281ede3181b8/bundle/src/research_pipeline/sciml/dfg_campaign.py:183: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.\n"}
+,{"stream_name":"stderr","time":1338.553063141,"data":"\n"}
+,{"stream_name":"stderr","time":1338.553067891,"data":"[seed 303 stderr] /kaggle/working/pikan-c349281ede3181b8/bundle/src/research_pipeline/sciml/dfg_campaign.py:183: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.\n"}
+,{"stream_name":"stderr","time":1338.553894042,"data":"[seed 303 stderr] Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)\n"}
+,{"stream_name":"stderr","time":1338.553912509,"data":"\n"}
+,{"stream_name":"stderr","time":1338.553917159,"data":"[seed 303 stderr] Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)\n"}
+,{"stream_name":"stderr","time":1338.55475185,"data":"[seed 303 stderr]   signals[f\"basis/layer_{index}_coefficient_l2\"] = float(torch.linalg.vector_norm(layer.coefficients).cpu())\n"}
+,{"stream_name":"stderr","time":1338.554769745,"data":"\n"}
+,{"stream_name":"stderr","time":1338.55477829,"data":"[seed 303 stderr]   signals[f\"basis/layer_{index}_coefficient_l2\"] = float(torch.linalg.vector_norm(layer.coefficients).cpu())\n"}
+,{"stream_name":"stderr","time":1343.906458524,"data":"[seed 303 stderr] wandb: WARNING git root /kaggle/working/pikan-c349281ede3181b8/runs/seed-303/wandb does not exist\n"}
+,{"stream_name":"stderr","time":1343.90649775,"data":"\n"}
+,{"stream_name":"stderr","time":1343.906503542,"data":"[seed 303 stderr] wandb: WARNING git root /kaggle/working/pikan-c349281ede3181b8/runs/seed-303/wandb does not exist\n"}
+,{"stream_name":"stderr","time":1343.907723356,"data":"[seed 304 stderr] wandb: WARNING git root /kaggle/working/pikan-c349281ede3181b8/runs/seed-304/wandb does not exist\n"}
+,{"stream_name":"stderr","time":1343.907751052,"data":"\n"}
+,{"stream_name":"stderr","time":1343.907756433,"data":"[seed 304 stderr] wandb: WARNING git root /kaggle/working/pikan-c349281ede3181b8/runs/seed-304/wandb does not exist\n"}
+,{"stream_name":"stderr","time":1344.164425058,"data":"[seed 303 stderr] wandb: Tracking run with wandb version 0.30.0\n"}
+,{"stream_name":"stderr","time":1344.164471701,"data":"\n"}
+,{"stream_name":"stderr","time":1344.164477004,"data":"[seed 303 stderr] wandb: Tracking run with wandb version 0.30.0\n"}
+,{"stream_name":"stderr","time":1344.170649403,"data":"[seed 304 stderr] wandb: Tracking run with wandb version 0.30.0\n"}
+,{"stream_name":"stderr","time":1344.170673708,"data":"\n"}
+,{"stream_name":"stderr","time":1344.173429795,"data":"[seed 304 stderr] wandb: Tracking run with wandb version 0.30.0\n"}
+,{"stream_name":"stderr","time":1344.175014464,"data":"[seed 304 stderr] wandb: W\u0026B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.\n"}
+,{"stream_name":"stderr","time":1344.175033514,"data":"[seed 303 stderr] wandb: W\u0026B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.\n"}
+,{"stream_name":"stderr","time":1344.175038326,"data":"\n"}
+,{"stream_name":"stderr","time":1344.17744128,"data":"[seed 304 stderr] wandb: W\u0026B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.\n"}
+,{"stream_name":"stderr","time":1344.177488514,"data":"[seed 303 stderr] wandb: W\u0026B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.\n"}
+,{"stream_name":"stderr","time":1344.179197931,"data":"[seed 303 stderr] wandb: Run data is saved locally in /kaggle/working/pikan-c349281ede3181b8/runs/seed-303/wandb/wandb/offline-run-20260927_143147-8lc82k8d\n"}
+,{"stream_name":"stderr","time":1344.179215449,"data":"[seed 304 stderr] wandb: Run data is saved locally in /kaggle/working/pikan-c349281ede3181b8/runs/seed-304/wandb/wandb/offline-run-20260927_143147-pof8ds20\n"}
+,{"stream_name":"stderr","time":1344.179220658,"data":"\n"}
+,{"stream_name":"stderr","time":1344.179224567,"data":"[seed 303 stderr] wandb: Run data is saved locally in /kaggle/working/pikan-c349281ede3181b8/runs/seed-303/wandb/wandb/offline-run-20260927_143147-8lc82k8d\n"}
+,{"stream_name":"stderr","time":1344.179229181,"data":"[seed 304 stderr] wandb: Run data is saved locally in /kaggle/working/pikan-c349281ede3181b8/runs/seed-304/wandb/wandb/offline-run-20260927_143147-pof8ds20\n"}
+,{"stream_name":"stderr","time":1344.180919378,"data":"[seed 303 stderr] wandb: View this run in the terminal with `wandb leet`\n"}
+,{"stream_name":"stderr","time":1344.180937523,"data":"[seed 304 stderr] wandb: View this run in the terminal with `wandb leet`\n"}
+,{"stream_name":"stderr","time":1344.180943828,"data":"\n"}
+,{"stream_name":"stderr","time":1344.181194481,"data":"[seed 303 stderr] wandb: View this run in the terminal with `wandb leet`\n"}
+,{"stream_name":"stderr","time":1344.181204392,"data":"[seed 304 stderr] wandb: View this run in the terminal with `wandb leet`\n"}
+,{"stream_name":"stderr","time":1344.936709863,"data":"[seed 303 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":1344.936746346,"data":"\n"}
+,{"stream_name":"stderr","time":1344.936751018,"data":"[seed 303 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":1344.938208133,"data":"[seed 303 stderr] wandb: Run history:\n"}
+,{"stream_name":"stderr","time":1344.938231604,"data":"[seed 304 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":1344.938236692,"data":"\n"}
+,{"stream_name":"stderr","time":1344.938240858,"data":"[seed 303 stderr] wandb: Run history:\n"}
+,{"stream_name":"stderr","time":1344.938276181,"data":"[seed 304 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":1344.939432146,"data":"[seed 304 stderr] wandb: Run history:\n"}
+,{"stream_name":"stderr","time":1344.93946266,"data":"\n"}
+,{"stream_name":"stderr","time":1344.939477372,"data":"[seed 304 stderr] wandb: Run history:\n"}
+,{"stream_name":"stderr","time":1344.940557717,"data":"[seed 303 stderr] wandb:              autodiff/points_per_second ▁\n"}
+,{"stream_name":"stderr","time":1344.940576162,"data":"[seed 304 stderr] wandb:              autodiff/points_per_second ▁\n"}
+,{"stream_name":"stderr","time":1344.940581397,"data":"\n"}
+,{"stream_name":"stderr","time":1344.940585018,"data":"[seed 303 stderr] wandb:              autodiff/points_per_second ▁\n"}
+,{"stream_name":"stderr","time":1344.940588946,"data":"[seed 304 stderr] wandb:              autodiff/points_per_second ▁\n"}
+,{"stream_name":"stderr","time":1344.941381945,"data":"[seed 304 stderr] wandb:                        autodiff/seconds ▁\n"}
+,{"stream_name":"stderr","time":1344.941398712,"data":"\n"}
+,{"stream_name":"stderr","time":1344.941403003,"data":"[seed 304 stderr] wandb:                        autodiff/seconds ▁\n"}
+,{"stream_name":"stderr","time":1344.94237868,"data":"[seed 303 stderr] wandb:                        autodiff/seconds ▁\n"}
+,{"stream_name":"stderr","time":1344.942396562,"data":"\n"}
+,{"stream_name":"stderr","time":1344.94240127,"data":"[seed 303 stderr] wandb:                        autodiff/seconds ▁\n"}
+,{"stream_name":"stderr","time":1344.943313707,"data":"[seed 304 stderr] wandb:              autodiff/seconds_per_point ▁\n"}
+,{"stream_name":"stderr","time":1344.943329244,"data":"[seed 303 stderr] wandb:              autodiff/seconds_per_point ▁\n"}
+,{"stream_name":"stderr","time":1344.943333547,"data":"\n"}
+,{"stream_name":"stderr","time":1344.943337148,"data":"[seed 304 stderr] wandb:              autodiff/seconds_per_point ▁\n"}
+,{"stream_name":"stderr","time":1344.943340968,"data":"[seed 303 stderr] wandb:              autodiff/seconds_per_point ▁\n"}
+,{"stream_name":"stderr","time":1344.944077019,"data":"[seed 304 stderr] wandb:     basis/basis/layer_0_active_fraction ▁\n"}
+,{"stream_name":"stderr","time":1344.944088003,"data":"[seed 303 stderr] wandb:     basis/basis/layer_0_active_fraction ▁\n"}
+,{"stream_name":"stderr","time":1344.944092166,"data":"\n"}
+,{"stream_name":"stderr","time":1344.944095723,"data":"[seed 304 stderr] wandb:     basis/basis/layer_0_active_fraction ▁\n"}
+,{"stream_name":"stderr","time":1344.944099565,"data":"[seed 303 stderr] wandb:     basis/basis/layer_0_active_fraction ▁\n"}
+,{"stream_name":"stderr","time":1344.946764148,"data":"[seed 303 stderr] wandb: basis/basis/layer_0_coefficient_abs_max ▁\n"}
+,{"stream_name":"stderr","time":1344.946781306,"data":"\n"}
+,{"stream_name":"stderr","time":1344.946786308,"data":"[seed 303 stderr] wandb: basis/basis/layer_0_coefficient_abs_max ▁\n"}
+,{"stream_name":"stderr","time":1344.947760834,"data":"[seed 303 stderr] wandb:      basis/basis/layer_0_coefficient_l2 ▁\n"}
+,{"stream_name":"stderr","time":1344.947777506,"data":"[seed 304 stderr] wandb: basis/basis/layer_0_coefficient_abs_max ▁\n"}
+,{"stream_name":"stderr","time":1344.947782798,"data":"\n"}
+,{"stream_name":"stderr","time":1344.94778633,"data":"[seed 303 stderr] wandb:      basis/basis/layer_0_coefficient_l2 ▁\n"}
+,{"stream_name":"stderr","time":1344.947790247,"data":"[seed 304 stderr] wandb: basis/basis/layer_0_coefficient_abs_max ▁\n"}
+,{"stream_name":"stderr","time":1344.94890802,"data":"[seed 303 stderr] wandb:     basis/basis/layer_0_mean_activation ▁\n"}
+,{"stream_name":"stderr","time":1344.948928533,"data":"\n"}
+,{"stream_name":"stderr","time":1344.948933405,"data":"[seed 303 stderr] wandb:     basis/basis/layer_0_mean_activation ▁\n"}
+,{"stream_name":"stderr","time":1344.949967983,"data":"[seed 304 stderr] wandb:      basis/basis/layer_0_coefficient_l2 ▁\n"}
+,{"stream_name":"stderr","time":1344.949994581,"data":"[seed 303 stderr] wandb:     basis/basis/layer_1_active_fraction ▁\n"}
+,{"stream_name":"stderr","time":1344.950000494,"data":"\n"}
+,{"stream_name":"stderr","time":1344.950003907,"data":"[seed 304 stderr] wandb:      basis/basis/layer_0_coefficient_l2 ▁\n"}
+,{"stream_name":"stderr","time":1344.950007448,"data":"[seed 303 stderr] wandb:     basis/basis/layer_1_active_fraction ▁\n"}
+,{"stream_name":"stderr","time":1344.950915101,"data":"[seed 304 stderr] wandb:     basis/basis/layer_0_mean_activation ▁\n"}
+,{"stream_name":"stderr","time":1344.950928436,"data":"[seed 303 stderr] wandb: basis/basis/layer_1_coefficient_abs_max ▁\n"}
+,{"stream_name":"stderr","time":1344.950933468,"data":"\n"}
+,{"stream_name":"stderr","time":1344.950937488,"data":"[seed 304 stderr] wandb:     basis/basis/layer_0_mean_activation ▁\n"}
+,{"stream_name":"stderr","time":1344.950941683,"data":"[seed 303 stderr] wandb: basis/basis/layer_1_coefficient_abs_max ▁\n"}
+,{"stream_name":"stderr","time":1344.955316118,"data":"[seed 304 stderr] wandb:     basis/basis/layer_1_active_fraction ▁\n"}
+,{"stream_name":"stderr","time":1344.955332393,"data":"[seed 303 stderr] wandb:      basis/basis/layer_1_coefficient_l2 ▁\n"}
+,{"stream_name":"stderr","time":1344.95533709,"data":"\n"}
+,{"stream_name":"stderr","time":1344.955340848,"data":"[seed 304 stderr] wandb:     basis/basis/layer_1_active_fraction ▁\n"}
+,{"stream_name":"stderr","time":1344.955344796,"data":"[seed 303 stderr] wandb:      basis/basis/layer_1_coefficient_l2 ▁\n"}
+,{"stream_name":"stderr","time":1344.957219225,"data":"[seed 303 stderr] wandb:                                     +79 ...\n"}
+,{"stream_name":"stderr","time":1344.957235518,"data":"\n"}
+,{"stream_name":"stderr","time":1344.957239834,"data":"[seed 303 stderr] wandb:                                     +79 ...\n"}
+,{"stream_name":"stderr","time":1344.958956737,"data":"[seed 304 stderr] wandb: basis/basis/layer_1_coefficient_abs_max ▁\n"}
+,{"stream_name":"stderr","time":1344.9589799,"data":"\n"}
+,{"stream_name":"stderr","time":1344.958984563,"data":"[seed 304 stderr] wandb: basis/basis/layer_1_coefficient_abs_max ▁\n"}
+,{"stream_name":"stderr","time":1344.960868582,"data":"[seed 303 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":1344.96088339,"data":"[seed 304 stderr] wandb:      basis/basis/layer_1_coefficient_l2 ▁\n"}
+,{"stream_name":"stderr","time":1344.960887964,"data":"\n"}
+,{"stream_name":"stderr","time":1344.961082279,"data":"[seed 303 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":1344.961089934,"data":"[seed 304 stderr] wandb:      basis/basis/layer_1_coefficient_l2 ▁\n"}
+,{"stream_name":"stderr","time":1344.963046828,"data":"[seed 304 stderr] wandb:                                     +79 ...\n"}
+,{"stream_name":"stderr","time":1344.963063161,"data":"\n"}
+,{"stream_name":"stderr","time":1344.963193457,"data":"[seed 304 stderr] wandb:                                     +79 ...\n"}
+,{"stream_name":"stderr","time":1344.96463495,"data":"[seed 303 stderr] wandb: Run summary:\n"}
+,{"stream_name":"stderr","time":1344.964650475,"data":"[seed 304 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":1344.964654965,"data":"\n"}
+,{"stream_name":"stderr","time":1344.96490468,"data":"[seed 303 stderr] wandb: Run summary:\n"}
+,{"stream_name":"stderr","time":1344.964914538,"data":"[seed 304 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":1344.966339543,"data":"[seed 303 stderr] wandb:              autodiff/points_per_second 42380.4242\n"}
+,{"stream_name":"stderr","time":1344.966354956,"data":"[seed 304 stderr] wandb: Run summary:\n"}
+,{"stream_name":"stderr","time":1344.96637109,"data":"\n"}
+,{"stream_name":"stderr","time":1344.966374809,"data":"[seed 303 stderr] wandb:              autodiff/points_per_second 42380.4242\n"}
+,{"stream_name":"stderr","time":1344.966378434,"data":"[seed 304 stderr] wandb: Run summary:\n"}
+,{"stream_name":"stderr","time":1344.967770573,"data":"[seed 304 stderr] wandb:              autodiff/points_per_second 45114.7886\n"}
+,{"stream_name":"stderr","time":1344.967801878,"data":"\n"}
+,{"stream_name":"stderr","time":1344.967924418,"data":"[seed 304 stderr] wandb:              autodiff/points_per_second 45114.7886\n"}
+,{"stream_name":"stderr","time":1344.969822176,"data":"[seed 303 stderr] wandb:                        autodiff/seconds 0.38659\n"}
+,{"stream_name":"stderr","time":1344.969838461,"data":"[seed 304 stderr] wandb:                        autodiff/seconds 0.36316\n"}
+,{"stream_name":"stderr","time":1344.969843519,"data":"\n"}
+,{"stream_name":"stderr","time":1344.970024763,"data":"[seed 303 stderr] wandb:                        autodiff/seconds 0.38659\n"}
+,{"stream_name":"stderr","time":1344.970034076,"data":"[seed 304 stderr] wandb:                        autodiff/seconds 0.36316\n"}
+,{"stream_name":"stderr","time":1344.971233661,"data":"[seed 304 stderr] wandb:              autodiff/seconds_per_point 2e-05\n"}
+,{"stream_name":"stderr","time":1344.971266711,"data":"[seed 303 stderr] wandb:              autodiff/seconds_per_point 2e-05\n"}
+,{"stream_name":"stderr","time":1344.971273936,"data":"\n"}
+,{"stream_name":"stderr","time":1344.971424418,"data":"[seed 304 stderr] wandb:              autodiff/seconds_per_point 2e-05\n"}
+,{"stream_name":"stderr","time":1344.971432017,"data":"[seed 303 stderr] wandb:              autodiff/seconds_per_point 2e-05\n"}
+,{"stream_name":"stderr","time":1344.973204653,"data":"[seed 304 stderr] wandb:     basis/basis/layer_0_active_fraction 1\n"}
+,{"stream_name":"stderr","time":1344.973220385,"data":"[seed 303 stderr] wandb:     basis/basis/layer_0_active_fraction 1\n"}
+,{"stream_name":"stderr","time":1344.973224762,"data":"\n"}
+,{"stream_name":"stderr","time":1344.973509204,"data":"[seed 304 stderr] wandb:     basis/basis/layer_0_active_fraction 1\n"}
+,{"stream_name":"stderr","time":1344.973524527,"data":"[seed 303 stderr] wandb:     basis/basis/layer_0_active_fraction 1\n"}
+,{"stream_name":"stderr","time":1344.975344281,"data":"[seed 303 stderr] wandb: basis/basis/layer_0_coefficient_abs_max 0.62858\n"}
+,{"stream_name":"stderr","time":1344.975435307,"data":"[seed 304 stderr] wandb: basis/basis/layer_0_coefficient_abs_max 0.58486\n"}
+,{"stream_name":"stderr","time":1344.975442351,"data":"\n"}
+,{"stream_name":"stderr","time":1344.975449452,"data":"[seed 303 stderr] wandb: basis/basis/layer_0_coefficient_abs_max 0.62858\n"}
+,{"stream_name":"stderr","time":1344.975454162,"data":"[seed 304 stderr] wandb: basis/basis/layer_0_coefficient_abs_max 0.58486\n"}
+,{"stream_name":"stderr","time":1344.977925348,"data":"[seed 304 stderr] wandb:      basis/basis/layer_0_coefficient_l2 3.20967\n"}
+,{"stream_name":"stderr","time":1344.977942042,"data":"[seed 303 stderr] wandb:      basis/basis/layer_0_coefficient_l2 3.35088\n"}
+,{"stream_name":"stderr","time":1344.977946851,"data":"\n"}
+,{"stream_name":"stderr","time":1344.97795051,"data":"[seed 304 stderr] wandb:      basis/basis/layer_0_coefficient_l2 3.20967\n"}
+,{"stream_name":"stderr","time":1344.977954874,"data":"[seed 303 stderr] wandb:      basis/basis/layer_0_coefficient_l2 3.35088\n"}
+,{"stream_name":"stderr","time":1344.978872633,"data":"[seed 304 stderr] wandb:     basis/basis/layer_0_mean_activation 0.2667\n"}
+,{"stream_name":"stderr","time":1344.978888729,"data":"\n"}
+,{"stream_name":"stderr","time":1344.979051997,"data":"[seed 304 stderr] wandb:     basis/basis/layer_0_mean_activation 0.2667\n"}
+,{"stream_name":"stderr","time":1344.980219345,"data":"[seed 304 stderr] wandb:     basis/basis/layer_1_active_fraction 1\n"}
+,{"stream_name":"stderr","time":1344.980234558,"data":"[seed 303 stderr] wandb:     basis/basis/layer_0_mean_activation 0.26671\n"}
+,{"stream_name":"stderr","time":1344.980238681,"data":"\n"}
+,{"stream_name":"stderr","time":1344.980376255,"data":"[seed 304 stderr] wandb:     basis/basis/layer_1_active_fraction 1\n"}
+,{"stream_name":"stderr","time":1344.98038799,"data":"[seed 303 stderr] wandb:     basis/basis/layer_0_mean_activation 0.26671\n"}
+,{"stream_name":"stderr","time":1344.982270256,"data":"[seed 304 stderr] wandb: basis/basis/layer_1_coefficient_abs_max 1.26485\n"}
+,{"stream_name":"stderr","time":1344.98228798,"data":"[seed 303 stderr] wandb:     basis/basis/layer_1_active_fraction 0.90909\n"}
+,{"stream_name":"stderr","time":1344.982293398,"data":"\n"}
+,{"stream_name":"stderr","time":1344.982455232,"data":"[seed 304 stderr] wandb: basis/basis/layer_1_coefficient_abs_max 1.26485\n"}
+,{"stream_name":"stderr","time":1344.982470031,"data":"[seed 303 stderr] wandb:     basis/basis/layer_1_active_fraction 0.90909\n"}
+,{"stream_name":"stderr","time":1344.983525389,"data":"[seed 303 stderr] wandb: basis/basis/layer_1_coefficient_abs_max 2.18732\n"}
+,{"stream_name":"stderr","time":1344.983542038,"data":"\n"}
+,{"stream_name":"stderr","time":1344.983547014,"data":"[seed 303 stderr] wandb: basis/basis/layer_1_coefficient_abs_max 2.18732\n"}
+,{"stream_name":"stderr","time":1344.984513894,"data":"[seed 304 stderr] wandb:      basis/basis/layer_1_coefficient_l2 8.3037\n"}
+,{"stream_name":"stderr","time":1344.984530696,"data":"\n"}
+,{"stream_name":"stderr","time":1344.98453558,"data":"[seed 304 stderr] wandb:      basis/basis/layer_1_coefficient_l2 8.3037\n"}
+,{"stream_name":"stderr","time":1344.985496884,"data":"[seed 303 stderr] wandb:      basis/basis/layer_1_coefficient_l2 8.26575\n"}
+,{"stream_name":"stderr","time":1344.985513,"data":"[seed 304 stderr] wandb:                                     +79 ...\n"}
+,{"stream_name":"stderr","time":1344.985531184,"data":"\n"}
+,{"stream_name":"stderr","time":1344.9855343,"data":"[seed 303 stderr] wandb:      basis/basis/layer_1_coefficient_l2 8.26575\n"}
+,{"stream_name":"stderr","time":1344.985536951,"data":"[seed 304 stderr] wandb:                                     +79 ...\n"}
+,{"stream_name":"stderr","time":1344.986278812,"data":"[seed 304 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":1344.98628968,"data":"[seed 303 stderr] wandb:                                     +79 ...\n"}
+,{"stream_name":"stderr","time":1344.986309192,"data":"\n"}
+,{"stream_name":"stderr","time":1344.986312484,"data":"[seed 304 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":1344.986315198,"data":"[seed 303 stderr] wandb:                                     +79 ...\n"}
+,{"stream_name":"stderr","time":1344.987196912,"data":"[seed 303 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":1344.987207948,"data":"[seed 304 stderr] wandb: You can sync this run to the cloud by running:\n"}
+,{"stream_name":"stderr","time":1344.987212672,"data":"\n"}
+,{"stream_name":"stderr","time":1344.987216448,"data":"[seed 303 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":1344.987220138,"data":"[seed 304 stderr] wandb: You can sync this run to the cloud by running:\n"}
+,{"stream_name":"stderr","time":1344.988191423,"data":"[seed 304 stderr] wandb: wandb sync /kaggle/working/pikan-c349281ede3181b8/runs/seed-304/wandb/wandb/offline-run-20260927_143147-pof8ds20\n"}
+,{"stream_name":"stderr","time":1344.988206167,"data":"[seed 303 stderr] wandb: You can sync this run to the cloud by running:\n"}
+,{"stream_name":"stderr","time":1344.988220731,"data":"\n"}
+,{"stream_name":"stderr","time":1344.988224808,"data":"[seed 304 stderr] wandb: wandb sync /kaggle/working/pikan-c349281ede3181b8/runs/seed-304/wandb/wandb/offline-run-20260927_143147-pof8ds20\n"}
+,{"stream_name":"stderr","time":1344.988228794,"data":"[seed 303 stderr] wandb: You can sync this run to the cloud by running:\n"}
+,{"stream_name":"stderr","time":1344.989241303,"data":"[seed 304 stderr] wandb: Find logs at: /kaggle/working/pikan-c349281ede3181b8/runs/seed-304/wandb/wandb/offline-run-20260927_143147-pof8ds20/logs\n"}
+,{"stream_name":"stderr","time":1344.989276303,"data":"\n"}
+,{"stream_name":"stderr","time":1344.989281721,"data":"[seed 304 stderr] wandb: Find logs at: /kaggle/working/pikan-c349281ede3181b8/runs/seed-304/wandb/wandb/offline-run-20260927_143147-pof8ds20/logs\n"}
+,{"stream_name":"stderr","time":1344.990291249,"data":"[seed 303 stderr] wandb: wandb sync /kaggle/working/pikan-c349281ede3181b8/runs/seed-303/wandb/wandb/offline-run-20260927_143147-8lc82k8d\n"}
+,{"stream_name":"stderr","time":1344.990307087,"data":"\n"}
+,{"stream_name":"stderr","time":1344.990311461,"data":"[seed 303 stderr] wandb: wandb sync /kaggle/working/pikan-c349281ede3181b8/runs/seed-303/wandb/wandb/offline-run-20260927_143147-8lc82k8d\n"}
+,{"stream_name":"stderr","time":1344.991285465,"data":"[seed 303 stderr] wandb: Find logs at: /kaggle/working/pikan-c349281ede3181b8/runs/seed-303/wandb/wandb/offline-run-20260927_143147-8lc82k8d/logs\n"}
+,{"stream_name":"stderr","time":1344.991300987,"data":"\n"}
+,{"stream_name":"stderr","time":1344.991315467,"data":"[seed 303 stderr] wandb: Find logs at: /kaggle/working/pikan-c349281ede3181b8/runs/seed-303/wandb/wandb/offline-run-20260927_143147-8lc82k8d/logs\n"}
+,{"stream_name":"stdout","time":1349.879071891,"data":"[campaign] worker=0 finished seed=303 status=completed\n"}
+,{"stream_name":"stdout","time":1349.880217159,"data":"[campaign] worker=0 started seed=305 slot=0\n"}
+,{"stream_name":"stdout","time":1349.882495677,"data":"[campaign] seed=305 assigned_gpu=0\n"}
+,{"stream_name":"stdout","time":1349.950420737,"data":"[campaign] worker=1 finished seed=304 status=completed\n"}
+,{"stream_name":"stderr","time":2556.107266677,"data":"[seed 305 stderr] /kaggle/working/pikan-c349281ede3181b8/bundle/src/research_pipeline/sciml/dfg_campaign.py:183: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.\n"}
+,{"stream_name":"stderr","time":2556.107311319,"data":"\n"}
+,{"stream_name":"stderr","time":2556.107317981,"data":"[seed 305 stderr] /kaggle/working/pikan-c349281ede3181b8/bundle/src/research_pipeline/sciml/dfg_campaign.py:183: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.\n"}
+,{"stream_name":"stderr","time":2556.108275805,"data":"[seed 305 stderr] Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)\n"}
+,{"stream_name":"stderr","time":2556.108300845,"data":"\n"}
+,{"stream_name":"stderr","time":2556.108309387,"data":"[seed 305 stderr] Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)\n"}
+,{"stream_name":"stderr","time":2556.109101247,"data":"[seed 305 stderr]   signals[f\"basis/layer_{index}_coefficient_l2\"] = float(torch.linalg.vector_norm(layer.coefficients).cpu())\n"}
+,{"stream_name":"stderr","time":2556.109120172,"data":"\n"}
+,{"stream_name":"stderr","time":2556.109125725,"data":"[seed 305 stderr]   signals[f\"basis/layer_{index}_coefficient_l2\"] = float(torch.linalg.vector_norm(layer.coefficients).cpu())\n"}
+,{"stream_name":"stderr","time":2559.291535936,"data":"[seed 305 stderr] wandb: WARNING git root /kaggle/working/pikan-c349281ede3181b8/runs/seed-305/wandb does not exist\n"}
+,{"stream_name":"stderr","time":2559.291568349,"data":"\n"}
+,{"stream_name":"stderr","time":2559.29157321,"data":"[seed 305 stderr] wandb: WARNING git root /kaggle/working/pikan-c349281ede3181b8/runs/seed-305/wandb does not exist\n"}
+,{"stream_name":"stderr","time":2559.537551632,"data":"[seed 305 stderr] wandb: Tracking run with wandb version 0.30.0\n"}
+,{"stream_name":"stderr","time":2559.537581846,"data":"\n"}
+,{"stream_name":"stderr","time":2559.537587772,"data":"[seed 305 stderr] wandb: Tracking run with wandb version 0.30.0\n"}
+,{"stream_name":"stderr","time":2559.539643797,"data":"[seed 305 stderr] wandb: W\u0026B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.\n"}
+,{"stream_name":"stderr","time":2559.539704413,"data":"\n"}
+,{"stream_name":"stderr","time":2559.539712188,"data":"[seed 305 stderr] wandb: W\u0026B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.\n"}
+,{"stream_name":"stderr","time":2559.540680946,"data":"[seed 305 stderr] wandb: Run data is saved locally in /kaggle/working/pikan-c349281ede3181b8/runs/seed-305/wandb/wandb/offline-run-20260927_145203-nymszcff\n"}
+,{"stream_name":"stderr","time":2559.540704368,"data":"\n"}
+,{"stream_name":"stderr","time":2559.540709335,"data":"[seed 305 stderr] wandb: Run data is saved locally in /kaggle/working/pikan-c349281ede3181b8/runs/seed-305/wandb/wandb/offline-run-20260927_145203-nymszcff\n"}
+,{"stream_name":"stderr","time":2559.541695796,"data":"[seed 305 stderr] wandb: View this run in the terminal with `wandb leet`\n"}
+,{"stream_name":"stderr","time":2559.541716536,"data":"\n"}
+,{"stream_name":"stderr","time":2559.541722188,"data":"[seed 305 stderr] wandb: View this run in the terminal with `wandb leet`\n"}
+,{"stream_name":"stderr","time":2560.245696986,"data":"[seed 305 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":2560.245725962,"data":"\n"}
+,{"stream_name":"stderr","time":2560.245730991,"data":"[seed 305 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":2560.247962845,"data":"[seed 305 stderr] wandb: Run history:\n"}
+,{"stream_name":"stderr","time":2560.247985648,"data":"\n"}
+,{"stream_name":"stderr","time":2560.247990528,"data":"[seed 305 stderr] wandb: Run history:\n"}
+,{"stream_name":"stderr","time":2560.249514902,"data":"[seed 305 stderr] wandb:              autodiff/points_per_second ▁\n"}
+,{"stream_name":"stderr","time":2560.249567351,"data":"\n"}
+,{"stream_name":"stderr","time":2560.249617176,"data":"[seed 305 stderr] wandb:              autodiff/points_per_second ▁\n"}
+,{"stream_name":"stderr","time":2560.251346526,"data":"[seed 305 stderr] wandb:                        autodiff/seconds ▁\n"}
+,{"stream_name":"stderr","time":2560.251390808,"data":"\n"}
+,{"stream_name":"stderr","time":2560.251396867,"data":"[seed 305 stderr] wandb:                        autodiff/seconds ▁\n"}
+,{"stream_name":"stderr","time":2560.252865734,"data":"[seed 305 stderr] wandb:              autodiff/seconds_per_point ▁\n"}
+,{"stream_name":"stderr","time":2560.25294495,"data":"\n"}
+,{"stream_name":"stderr","time":2560.252951671,"data":"[seed 305 stderr] wandb:              autodiff/seconds_per_point ▁\n"}
+,{"stream_name":"stderr","time":2560.254347491,"data":"[seed 305 stderr] wandb:     basis/basis/layer_0_active_fraction ▁\n"}
+,{"stream_name":"stderr","time":2560.254371594,"data":"\n"}
+,{"stream_name":"stderr","time":2560.254376302,"data":"[seed 305 stderr] wandb:     basis/basis/layer_0_active_fraction ▁\n"}
+,{"stream_name":"stderr","time":2560.255617571,"data":"[seed 305 stderr] wandb: basis/basis/layer_0_coefficient_abs_max ▁\n"}
+,{"stream_name":"stderr","time":2560.25565072,"data":"\n"}
+,{"stream_name":"stderr","time":2560.25566473,"data":"[seed 305 stderr] wandb: basis/basis/layer_0_coefficient_abs_max ▁\n"}
+,{"stream_name":"stderr","time":2560.257187506,"data":"[seed 305 stderr] wandb:      basis/basis/layer_0_coefficient_l2 ▁\n"}
+,{"stream_name":"stderr","time":2560.25721128,"data":"\n"}
+,{"stream_name":"stderr","time":2560.257215948,"data":"[seed 305 stderr] wandb:      basis/basis/layer_0_coefficient_l2 ▁\n"}
+,{"stream_name":"stderr","time":2560.258447852,"data":"[seed 305 stderr] wandb:     basis/basis/layer_0_mean_activation ▁\n"}
+,{"stream_name":"stderr","time":2560.258471257,"data":"\n"}
+,{"stream_name":"stderr","time":2560.2584755,"data":"[seed 305 stderr] wandb:     basis/basis/layer_0_mean_activation ▁\n"}
+,{"stream_name":"stderr","time":2560.259844439,"data":"[seed 305 stderr] wandb:     basis/basis/layer_1_active_fraction ▁\n"}
+,{"stream_name":"stderr","time":2560.259950247,"data":"\n"}
+,{"stream_name":"stderr","time":2560.259959623,"data":"[seed 305 stderr] wandb:     basis/basis/layer_1_active_fraction ▁\n"}
+,{"stream_name":"stderr","time":2560.261245006,"data":"[seed 305 stderr] wandb: basis/basis/layer_1_coefficient_abs_max ▁\n"}
+,{"stream_name":"stderr","time":2560.261351759,"data":"\n"}
+,{"stream_name":"stderr","time":2560.261356181,"data":"[seed 305 stderr] wandb: basis/basis/layer_1_coefficient_abs_max ▁\n"}
+,{"stream_name":"stderr","time":2560.262654625,"data":"[seed 305 stderr] wandb:      basis/basis/layer_1_coefficient_l2 ▁\n"}
+,{"stream_name":"stderr","time":2560.26273579,"data":"\n"}
+,{"stream_name":"stderr","time":2560.262750875,"data":"[seed 305 stderr] wandb:      basis/basis/layer_1_coefficient_l2 ▁\n"}
+,{"stream_name":"stderr","time":2560.264004162,"data":"[seed 305 stderr] wandb:                                     +79 ...\n"}
+,{"stream_name":"stderr","time":2560.264026883,"data":"\n"}
+,{"stream_name":"stderr","time":2560.264075282,"data":"[seed 305 stderr] wandb:                                     +79 ...\n"}
+,{"stream_name":"stderr","time":2560.265291154,"data":"[seed 305 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":2560.265311918,"data":"\n"}
+,{"stream_name":"stderr","time":2560.265316441,"data":"[seed 305 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":2560.266434015,"data":"[seed 305 stderr] wandb: Run summary:\n"}
+,{"stream_name":"stderr","time":2560.266459445,"data":"\n"}
+,{"stream_name":"stderr","time":2560.266464806,"data":"[seed 305 stderr] wandb: Run summary:\n"}
+,{"stream_name":"stderr","time":2560.267690563,"data":"[seed 305 stderr] wandb:              autodiff/points_per_second 41864.68613\n"}
+,{"stream_name":"stderr","time":2560.267758951,"data":"\n"}
+,{"stream_name":"stderr","time":2560.267765788,"data":"[seed 305 stderr] wandb:              autodiff/points_per_second 41864.68613\n"}
+,{"stream_name":"stderr","time":2560.268963253,"data":"[seed 305 stderr] wandb:                        autodiff/seconds 0.39136\n"}
+,{"stream_name":"stderr","time":2560.269012077,"data":"\n"}
+,{"stream_name":"stderr","time":2560.269022497,"data":"[seed 305 stderr] wandb:                        autodiff/seconds 0.39136\n"}
+,{"stream_name":"stderr","time":2560.270336285,"data":"[seed 305 stderr] wandb:              autodiff/seconds_per_point 2e-05\n"}
+,{"stream_name":"stderr","time":2560.270361027,"data":"\n"}
+,{"stream_name":"stderr","time":2560.270391235,"data":"[seed 305 stderr] wandb:              autodiff/seconds_per_point 2e-05\n"}
+,{"stream_name":"stderr","time":2560.271673851,"data":"[seed 305 stderr] wandb:     basis/basis/layer_0_active_fraction 1\n"}
+,{"stream_name":"stderr","time":2560.271695952,"data":"\n"}
+,{"stream_name":"stderr","time":2560.271700727,"data":"[seed 305 stderr] wandb:     basis/basis/layer_0_active_fraction 1\n"}
+,{"stream_name":"stderr","time":2560.272620671,"data":"[seed 305 stderr] wandb: basis/basis/layer_0_coefficient_abs_max 0.80167\n"}
+,{"stream_name":"stderr","time":2560.272642229,"data":"\n"}
+,{"stream_name":"stderr","time":2560.272647194,"data":"[seed 305 stderr] wandb: basis/basis/layer_0_coefficient_abs_max 0.80167\n"}
+,{"stream_name":"stderr","time":2560.27366941,"data":"[seed 305 stderr] wandb:      basis/basis/layer_0_coefficient_l2 3.28246\n"}
+,{"stream_name":"stderr","time":2560.273690546,"data":"\n"}
+,{"stream_name":"stderr","time":2560.2736964,"data":"[seed 305 stderr] wandb:      basis/basis/layer_0_coefficient_l2 3.28246\n"}
+,{"stream_name":"stderr","time":2560.274647281,"data":"[seed 305 stderr] wandb:     basis/basis/layer_0_mean_activation 0.26671\n"}
+,{"stream_name":"stderr","time":2560.274684567,"data":"\n"}
+,{"stream_name":"stderr","time":2560.274689477,"data":"[seed 305 stderr] wandb:     basis/basis/layer_0_mean_activation 0.26671\n"}
+,{"stream_name":"stderr","time":2560.275682537,"data":"[seed 305 stderr] wandb:     basis/basis/layer_1_active_fraction 0.90909\n"}
+,{"stream_name":"stderr","time":2560.275702095,"data":"\n"}
+,{"stream_name":"stderr","time":2560.275706908,"data":"[seed 305 stderr] wandb:     basis/basis/layer_1_active_fraction 0.90909\n"}
+,{"stream_name":"stderr","time":2560.27664514,"data":"[seed 305 stderr] wandb: basis/basis/layer_1_coefficient_abs_max 0.77996\n"}
+,{"stream_name":"stderr","time":2560.276664897,"data":"\n"}
+,{"stream_name":"stderr","time":2560.276669612,"data":"[seed 305 stderr] wandb: basis/basis/layer_1_coefficient_abs_max 0.77996\n"}
+,{"stream_name":"stderr","time":2560.277594245,"data":"[seed 305 stderr] wandb:      basis/basis/layer_1_coefficient_l2 6.77667\n"}
+,{"stream_name":"stderr","time":2560.277613721,"data":"\n"}
+,{"stream_name":"stderr","time":2560.277618986,"data":"[seed 305 stderr] wandb:      basis/basis/layer_1_coefficient_l2 6.77667\n"}
+,{"stream_name":"stderr","time":2560.278506356,"data":"[seed 305 stderr] wandb:                                     +79 ...\n"}
+,{"stream_name":"stderr","time":2560.278526154,"data":"\n"}
+,{"stream_name":"stderr","time":2560.278531388,"data":"[seed 305 stderr] wandb:                                     +79 ...\n"}
+,{"stream_name":"stderr","time":2560.279420454,"data":"[seed 305 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":2560.27944123,"data":"\n"}
+,{"stream_name":"stderr","time":2560.27944666,"data":"[seed 305 stderr] wandb: \n"}
+,{"stream_name":"stderr","time":2560.280347329,"data":"[seed 305 stderr] wandb: You can sync this run to the cloud by running:\n"}
+,{"stream_name":"stderr","time":2560.280368789,"data":"\n"}
+,{"stream_name":"stderr","time":2560.280374182,"data":"[seed 305 stderr] wandb: You can sync this run to the cloud by running:\n"}
+,{"stream_name":"stderr","time":2560.281269275,"data":"[seed 305 stderr] wandb: wandb sync /kaggle/working/pikan-c349281ede3181b8/runs/seed-305/wandb/wandb/offline-run-20260927_145203-nymszcff\n"}
+,{"stream_name":"stderr","time":2560.281288233,"data":"\n"}
+,{"stream_name":"stderr","time":2560.281293381,"data":"[seed 305 stderr] wandb: wandb sync /kaggle/working/pikan-c349281ede3181b8/runs/seed-305/wandb/wandb/offline-run-20260927_145203-nymszcff\n"}
+,{"stream_name":"stderr","time":2560.28211586,"data":"[seed 305 stderr] wandb: Find logs at: /kaggle/working/pikan-c349281ede3181b8/runs/seed-305/wandb/wandb/offline-run-20260927_145203-nymszcff/logs\n"}
+,{"stream_name":"stderr","time":2560.282147836,"data":"\n"}
+,{"stream_name":"stderr","time":2560.282152842,"data":"[seed 305 stderr] wandb: Find logs at: /kaggle/working/pikan-c349281ede3181b8/runs/seed-305/wandb/wandb/offline-run-20260927_145203-nymszcff/logs\n"}
+,{"stream_name":"stdout","time":2561.692964626,"data":"[campaign] worker=0 finished seed=305 status=completed\n"}
+,{"stream_name":"stdout","time":2564.396929498,"data":"seed-303 optimizer steps: 14258\n"}
+,{"stream_name":"stdout","time":2564.412563494,"data":"seed-304 optimizer steps: 14514\n"}
+,{"stream_name":"stdout","time":2564.427954607,"data":"seed-305 optimizer steps: 15053\n"}
+,{"stream_name":"stderr","time":2565.897505281,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":2565.897538765,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":2565.897545905,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":2565.897715787,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":2565.897744319,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":2565.898012543,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":2565.89852382,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":2565.898541958,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":2565.898548721,"data":"Exception encountered at \"In [9]\":\n"}
+,{"stream_name":"stderr","time":2565.898555434,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":2565.898560663,"data":"ModuleNotFoundError                       Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":2565.898565659,"data":"/tmp/ipykernel_24/150605275.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":2565.898570864,"data":"      2 import numpy as np\n"}
+,{"stream_name":"stderr","time":2565.898575621,"data":"      3 import plotly.express as px\n"}
+,{"stream_name":"stderr","time":2565.898580445,"data":"----\u003e 4 import pyvista as pv\n"}
+,{"stream_name":"stderr","time":2565.898585348,"data":"      5 \n"}
+,{"stream_name":"stderr","time":2565.898590117,"data":"      6 for seed_dir in sorted(RUNS_DIR.glob('seed-*')):\n"}
+,{"stream_name":"stderr","time":2565.898595083,"data":"\n"}
+,{"stream_name":"stderr","time":2565.898599855,"data":"/usr/local/lib/python3.12/dist-packages/pyvista/__init__.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":2565.89860507,"data":"     11 from pyvista._version import __version__ as __version__\n"}
+,{"stream_name":"stderr","time":2565.898615636,"data":"     12 from pyvista._version import version_info as version_info\n"}
+,{"stream_name":"stderr","time":2565.898620187,"data":"---\u003e 13 from pyvista.core import *\n"}
+,{"stream_name":"stderr","time":2565.898623853,"data":"     14 from pyvista.core._typing_core._dataset_types import _DataObjectType as _DataObjectType\n"}
+,{"stream_name":"stderr","time":2565.898627358,"data":"     15 from pyvista.core._typing_core._dataset_types import (\n"}
+,{"stream_name":"stderr","time":2565.898630777,"data":"\n"}
+,{"stream_name":"stderr","time":2565.89863409,"data":"/usr/local/lib/python3.12/dist-packages/pyvista/core/__init__.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":2565.89863776,"data":"      4 \n"}
+,{"stream_name":"stderr","time":2565.898641096,"data":"      5 from ._typing_core import *\n"}
+,{"stream_name":"stderr","time":2565.898653411,"data":"----\u003e 6 from .cell import Cell as Cell\n"}
+,{"stream_name":"stderr","time":2565.898656284,"data":"      7 from .cell import CellArray as CellArray\n"}
+,{"stream_name":"stderr","time":2565.898658995,"data":"      8 from .celltype import CellType as CellType\n"}
+,{"stream_name":"stderr","time":2565.898661598,"data":"\n"}
+,{"stream_name":"stderr","time":2565.898664051,"data":"/usr/local/lib/python3.12/dist-packages/pyvista/core/cell.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":2565.898666843,"data":"     19 from ._typing_core import BoundsTuple\n"}
+,{"stream_name":"stderr","time":2565.898669485,"data":"     20 from .celltype import CellType\n"}
+,{"stream_name":"stderr","time":2565.898672048,"data":"---\u003e 21 from .dataobject import DataObject\n"}
+,{"stream_name":"stderr","time":2565.898674695,"data":"     22 from .errors import CellSizeError\n"}
+,{"stream_name":"stderr","time":2565.89867726,"data":"     23 from .errors import PyVistaDeprecationWarning\n"}
+,{"stream_name":"stderr","time":2565.898679963,"data":"\n"}
+,{"stream_name":"stderr","time":2565.898682408,"data":"/usr/local/lib/python3.12/dist-packages/pyvista/core/dataobject.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":2565.898685123,"data":"     20 from pyvista.typing.mypy_plugin import promote_type\n"}
+,{"stream_name":"stderr","time":2565.898687753,"data":"     21 \n"}
+,{"stream_name":"stderr","time":2565.898690317,"data":"---\u003e 22 from .datasetattributes import DataSetAttributes\n"}
+,{"stream_name":"stderr","time":2565.898692963,"data":"     23 from .pyvista_ndarray import pyvista_ndarray\n"}
+,{"stream_name":"stderr","time":2565.898695566,"data":"     24 from .utilities.accessor_registry import _clear_accessor_cache\n"}
+,{"stream_name":"stderr","time":2565.89869821,"data":"\n"}
+,{"stream_name":"stderr","time":2565.898700743,"data":"/usr/local/lib/python3.12/dist-packages/pyvista/core/datasetattributes.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":2565.898703485,"data":"     17 from pyvista.core._vtk_utilities import VTKObjectWrapperCheckSnakeCase\n"}
+,{"stream_name":"stderr","time":2565.898706135,"data":"     18 \n"}
+,{"stream_name":"stderr","time":2565.89870863,"data":"---\u003e 19 from .pyvista_ndarray import pyvista_ndarray\n"}
+,{"stream_name":"stderr","time":2565.898718217,"data":"     20 from .utilities.arrays import FieldAssociation\n"}
+,{"stream_name":"stderr","time":2565.89872094,"data":"     21 from .utilities.arrays import convert_array\n"}
+,{"stream_name":"stderr","time":2565.898723548,"data":"\n"}
+,{"stream_name":"stderr","time":2565.898726013,"data":"/usr/local/lib/python3.12/dist-packages/pyvista/core/pyvista_ndarray.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":2565.898728763,"data":"     12 from pyvista.core._vtk_utilities import VTKObjectWrapperCheckSnakeCase\n"}
+,{"stream_name":"stderr","time":2565.898731418,"data":"     13 \n"}
+,{"stream_name":"stderr","time":2565.898733885,"data":"---\u003e 14 from .utilities.arrays import FieldAssociation\n"}
+,{"stream_name":"stderr","time":2565.898736553,"data":"     15 from .utilities.arrays import _vtk_array_to_numpy\n"}
+,{"stream_name":"stderr","time":2565.898739208,"data":"     16 from .utilities.misc import _NoNewAttrMixin\n"}
+,{"stream_name":"stderr","time":2565.898741778,"data":"\n"}
+,{"stream_name":"stderr","time":2565.898744212,"data":"/usr/local/lib/python3.12/dist-packages/pyvista/core/utilities/__init__.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":2565.898746886,"data":"     27 from .arrays import vtk_id_list_to_array as vtk_id_list_to_array\n"}
+,{"stream_name":"stderr","time":2565.898752516,"data":"     28 from .arrays import vtkmatrix_from_array as vtkmatrix_from_array\n"}
+,{"stream_name":"stderr","time":2565.898755218,"data":"---\u003e 29 from .cell_quality import cell_quality_info as cell_quality_info\n"}
+,{"stream_name":"stderr","time":2565.898758003,"data":"     30 from .cells import create_mixed_cells as create_mixed_cells\n"}
+,{"stream_name":"stderr","time":2565.898760762,"data":"     31 from .cells import get_mixed_cells as get_mixed_cells\n"}
+,{"stream_name":"stderr","time":2565.898763373,"data":"\n"}
+,{"stream_name":"stderr","time":2565.89876582,"data":"/usr/local/lib/python3.12/dist-packages/pyvista/core/utilities/cell_quality.py in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":2565.898768598,"data":"     73 \n"}
+,{"stream_name":"stderr","time":2565.8987711,"data":"     74 @dataclass\n"}
+,{"stream_name":"stderr","time":2565.89877365,"data":"---\u003e 75 class CellQualityInfo(_NoNewAttrMixin):\n"}
+,{"stream_name":"stderr","time":2565.898776305,"data":"     76     \"\"\"Information about a cell's quality measure.\"\"\"\n"}
+,{"stream_name":"stderr","time":2565.898779142,"data":"     77 \n"}
+,{"stream_name":"stderr","time":2565.898781741,"data":"\n"}
+,{"stream_name":"stderr","time":2565.898784305,"data":"/usr/lib/python3.12/abc.py in __new__(mcls, name, bases, namespace, **kwargs)\n"}
+,{"stream_name":"stderr","time":2565.898786962,"data":"\n"}
+,{"stream_name":"stderr","time":2565.898789515,"data":"/usr/local/lib/python3.12/dist-packages/pyvista/core/utilities/misc.py in __init_subclass__(cls, **kwargs)\n"}
+,{"stream_name":"stderr","time":2565.898792207,"data":"    518         \"\"\"Register each subclass with IPython's completion policy.\"\"\"\n"}
+,{"stream_name":"stderr","time":2565.898794972,"data":"    519         super().__init_subclass__(**kwargs)\n"}
+,{"stream_name":"stderr","time":2565.898797583,"data":"--\u003e 520         _allow_ipython_completion(cls)\n"}
+,{"stream_name":"stderr","time":2565.898800306,"data":"    521 \n"}
+,{"stream_name":"stderr","time":2565.898802821,"data":"    522     def _no_new_attributes(self, this_class: type) -\u003e None:\n"}
+,{"stream_name":"stderr","time":2565.898805528,"data":"\n"}
+,{"stream_name":"stderr","time":2565.898807993,"data":"/usr/local/lib/python3.12/dist-packages/pyvista/core/utilities/misc.py in _allow_ipython_completion(cls)\n"}
+,{"stream_name":"stderr","time":2565.898810794,"data":"    499         return\n"}
+,{"stream_name":"stderr","time":2565.898813335,"data":"    500     # IPython 9.17+ loads the completer lazily, so the module has to be imported here\n"}
+,{"stream_name":"stderr","time":2565.898815973,"data":"--\u003e 501     guarded_eval = importlib.import_module('IPython.core.guarded_eval')\n"}
+,{"stream_name":"stderr","time":2565.898818668,"data":"    502     policy = getattr(guarded_eval, 'EVALUATION_POLICIES', {}).get('limited')\n"}
+,{"stream_name":"stderr","time":2565.898821415,"data":"    503     for name in ('allowed_getattr', 'allowed_getitem'):\n"}
+,{"stream_name":"stderr","time":2565.898824059,"data":"\n"}
+,{"stream_name":"stderr","time":2565.898826819,"data":"/usr/lib/python3.12/importlib/__init__.py in import_module(name, package)\n"}
+,{"stream_name":"stderr","time":2565.898829528,"data":"     88                 break\n"}
+,{"stream_name":"stderr","time":2565.898832113,"data":"     89             level += 1\n"}
+,{"stream_name":"stderr","time":2565.898834659,"data":"---\u003e 90     return _bootstrap._gcd_import(name[level:], package, level)\n"}
+,{"stream_name":"stderr","time":2565.898837433,"data":"     91 \n"}
+,{"stream_name":"stderr","time":2565.89883991,"data":"     92 \n"}
+,{"stream_name":"stderr","time":2565.898845185,"data":"\n"}
+,{"stream_name":"stderr","time":2565.898847731,"data":"ModuleNotFoundError: No module named 'IPython.core.guarded_eval'\n"}
+,{"stream_name":"stderr","time":2565.898850477,"data":"\n"}
+,{"stream_name":"stderr","time":2568.442356615,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":2568.442422332,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":2568.633902968,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":2568.633934084,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":2569.381337395,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":2569.737698285,"data":"[NbConvertApp] Writing 277068 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":2572.488138154,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":2573.420921309,"data":"[NbConvertApp] Writing 565528 bytes to __results__.html\n"}
+]
+

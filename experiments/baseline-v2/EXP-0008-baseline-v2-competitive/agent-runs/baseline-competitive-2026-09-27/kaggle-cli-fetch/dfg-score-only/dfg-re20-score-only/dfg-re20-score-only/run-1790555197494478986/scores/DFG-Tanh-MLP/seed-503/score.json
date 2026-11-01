@@ -1,0 +1,118 @@
+{
+  "arm": "DFG-Tanh-MLP",
+  "checkpoint_selection": "final checkpoint only; no score-based selection",
+  "confirmatory_scoring_only": true,
+  "critical_region_residuals": {
+    "near_cylinder": {
+      "continuity_rms_normalized": 0.3267994636270116,
+      "mask": "fluid 0.05<r_center<0.10",
+      "momentum_x_rms_normalized": 0.20457572959137776,
+      "momentum_y_rms_normalized": 0.09947459203155606,
+      "point_count": 216,
+      "status": "scored"
+    },
+    "wake": {
+      "continuity_rms_normalized": 0.02635506266827856,
+      "mask": "fluid 0.25<=x<=1.0 and abs(y-0.2)<=0.1",
+      "momentum_x_rms_normalized": 0.02575111301862325,
+      "momentum_y_rms_normalized": 0.012725994580230555,
+      "point_count": 1372,
+      "status": "scored"
+    }
+  },
+  "cuda_device_index": 1,
+  "cuda_peak_memory_allocated_bytes": 38156288,
+  "cuda_peak_memory_reserved_bytes": 44040192,
+  "cylinder_velocity_rmse_over_umean": 0.032345615327358246,
+  "device": "Tesla T4",
+  "diagnostics": {
+    "cylinder_velocity_rmse_over_umean": 0.032345615327358246,
+    "heldout_continuity_rms": 0.09899281936236798,
+    "heldout_momentum_x_rms": 0.050958869297586674,
+    "heldout_momentum_y_rms": 0.03721217879338646,
+    "inlet_velocity_rmse_over_umean": 0.043295904994010925,
+    "lower_wall_velocity_rmse_over_umean": 0.02254367619752884,
+    "upper_wall_velocity_rmse_over_umean": 0.02213139459490776
+  },
+  "dtype": "float32",
+  "featflow_reference": {
+    "drag_coefficient": 5.57953523384,
+    "lift_coefficient": 0.010618948146,
+    "pressure_difference": 0.11752016697
+  },
+  "featflow_source": "https://wwwold.mathematik.tu-dortmund.de/~featflow/en/benchmarks/cfdbenchmarking/flow/dfg_benchmark1_re20.html",
+  "field_reference_status": "missing_converged_FEM_field",
+  "field_relative_l2": null,
+  "heldout_test_scored": true,
+  "model_id": "dfg_tanh_mlp_5x64",
+  "phase_wall_seconds": {
+    "critical_region_seconds": 0.07815737700002501,
+    "heldout_and_boundary_seconds": 0.384142914999984,
+    "qoi1024_seconds": 0.007029289999991306,
+    "qoi512_seconds": 0.0064324720001422975
+  },
+  "qoi_errors": {
+    "drag_relative_error_vs_featflow": 1.019047798864189,
+    "lift_absolute_error_vs_featflow": 0.04191595479991208,
+    "pressure_difference_relative_error_vs_featflow": 0.9846545645839273
+  },
+  "qois": {
+    "drag_coefficient": -0.10627786488984045,
+    "drag_force": -0.00021255572977968095,
+    "lift_coefficient": -0.03129700665391208,
+    "lift_force": -6.259401330782417e-05,
+    "pressure_difference": 0.0018033981323242188,
+    "pressure_front": 0.0015091917011886835,
+    "pressure_rear": -0.00029420643113553524,
+    "surface_count": 512
+  },
+  "quadrature_512_to_1024_absolute_change": {
+    "drag_coefficient": 1.840626123739142e-08,
+    "lift_coefficient": 1.646601785476598e-09,
+    "pressure_difference": 0.0
+  },
+  "reference_accepted": false,
+  "reference_status": "FEATFLOW QoI anchors only; no converged FEM field",
+  "saved_pool_sha256": "4e6bc94d82431dc79b23abff2ea4a25701158e48b67f996e5e72ef314e15d389",
+  "scientific_accepted": false,
+  "seed": 503,
+  "source_checkpoint_path": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-re20-competitive-pilot-t4x2/dfg-re20-t4x2/campaign/DFG-Tanh-MLP/seed-503/checkpoint-final.pt",
+  "source_checkpoint_sha256": "0e99943fc35f5e94c364cb885ba2da667256bf173320f4da6261fb25120c1c1a",
+  "source_pool_path": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-re20-competitive-pilot-t4x2/dfg-re20-t4x2/campaign/pools/seed-503.npz",
+  "source_scoring_runner_sha256": "4c02809600beb9b543d1bceffe2037ed7d05f5ff654d010b22984227b2cb35a9",
+  "source_training_status": "score_budget_exhausted",
+  "source_training_summary": {
+    "arm": "DFG-Tanh-MLP",
+    "cap_overrun_seconds": 0.03734896400010257,
+    "device": "Tesla T4",
+    "dtype": "float32",
+    "elapsed_gpu_wall_seconds": 1200.037348964,
+    "field_reference_status": "missing_converged_FEM_field",
+    "field_relative_l2": null,
+    "model_id": "dfg_tanh_mlp_5x64",
+    "parameters": 17027,
+    "pool_provenance": {
+      "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+      "heldout": {
+        "accepted_before_truncation": 16242,
+        "candidate_count": 16384,
+        "sampling": "scrambled Sobol with rejection of closed cylinder",
+        "seed": 900504
+      },
+      "interior": {
+        "accepted_before_truncation": 32484,
+        "candidate_count": 32768,
+        "sampling": "scrambled Sobol with rejection of closed cylinder",
+        "seed": 503
+      }
+    },
+    "scientific_accepted": false,
+    "seed": 503,
+    "smoke_only": false,
+    "status": "DRAFT_UNVERIFIED",
+    "steps": 29251
+  },
+  "status": "score_only_complete",
+  "total_scoring_wall_seconds": 0.4758970140001111,
+  "training_repeated": false
+}

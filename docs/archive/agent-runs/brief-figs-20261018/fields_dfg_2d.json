@@ -1,0 +1,16 @@
+{
+ "problem": "dfg_2d",
+ "campaign": "cohort-B-lbfgs",
+ "stage": "lbfgs_final",
+ "seed": "501",
+ "l2": {
+  "rbf_u": 0.06968157410435075,
+  "rbf_v": 0.06956286754066225,
+  "rbf_p": 0.27276666622580203,
+  "rbf_ckpt": "var/agent_runs/baseline-competitive-2026-09-27/kaggle-outputs/dfg-lbfgs-refinement/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-501/checkpoint-lbfgs.pt",
+  "mlp_u": 0.019078208605540017,
+  "mlp_v": 0.032092137534864826,
+  "mlp_p": 0.026498317874112484,
+  "mlp_ckpt": "var/agent_runs/baseline-competitive-2026-09-27/kaggle-outputs/dfg-lbfgs-refinement/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-501/checkpoint-lbfgs.pt"
+ }
+}

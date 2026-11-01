@@ -1,0 +1,15 @@
+{
+  "historical_rbf_burgers_seconds": [
+    1040.2997196219999,
+    1048.1110016860002,
+    982.265232087
+  ],
+  "training_cap_seconds_per_arm": 1200,
+  "jobs": 10,
+  "parallel_gpus": 2,
+  "total_training_cap_gpu_hours": 3.3333333333333335,
+  "max_worker_slot_hours_including_validation": 5.833333333333333,
+  "nominal_wall_upper_hours_excluding_queue": 3.1666666666666665,
+  "rad_extra_residual_evaluations_per_job_max": 589824,
+  "note": "Wall upper assumes both T4s stay available; provider queue/install failures not predicted. GPU timing of RAD not yet measured."
+}

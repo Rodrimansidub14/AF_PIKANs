@@ -1,0 +1,10 @@
+{
+  "approved_by": "Rodrigo Mansilla",
+  "authorization_source": "Conversation: researcher directed implementation and retraining of Heat+Burgers, requested canonical literature definitions, and has prior approved Kaggle/T4x2 execution.",
+  "bundle_id": "854aa1647cb66eeddefb31bde87de870ff0c124e57f04e2bc4b645aa3a1610e3",
+  "code_surface": "approved",
+  "hypothesis": "approved",
+  "interpretation": "Exploratory paired architecture screen; three seeds; no SOTA claim or scientific acceptance.",
+  "remote_execution": true,
+  "scope": "approved"
+}

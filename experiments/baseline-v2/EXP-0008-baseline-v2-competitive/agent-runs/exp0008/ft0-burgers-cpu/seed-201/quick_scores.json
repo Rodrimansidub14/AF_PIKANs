@@ -1,0 +1,62 @@
+[
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\exp0008\\ft0-burgers-cpu\\seed-201\\c_adam.pt",
+  "step": 20000,
+  "tag": null,
+  "E_ch_l2re_1025x129": 0.022606925839423444,
+  "E_front_rmse": 0.12475251798168549,
+  "E_complement_rmse": 0.0040723293707060765,
+  "E_max_abs_error": 0.2772656866636183,
+  "external_fem_101x11_l2re": 0.03304164316941746,
+  "ch_at_fem_points_l2re": 0.030647435169610233,
+  "fem_floor_fem_vs_ch": 0.013297621025789578
+ },
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\exp0008\\ft0-burgers-cpu\\seed-201\\c_lbfgs_25.pt",
+  "step": 5,
+  "tag": "c_lbfgs_25",
+  "E_ch_l2re_1025x129": 0.009700983320823696,
+  "E_front_rmse": 0.05513034043886649,
+  "E_complement_rmse": 0.0010333329322397018,
+  "E_max_abs_error": 0.12804091882988125,
+  "external_fem_101x11_l2re": 0.01897454431694365,
+  "ch_at_fem_points_l2re": 0.013731758028205764,
+  "fem_floor_fem_vs_ch": 0.013297621025789578
+ },
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\exp0008\\ft0-burgers-cpu\\seed-201\\c_lbfgs_50.pt",
+  "step": 10,
+  "tag": "c_lbfgs_50",
+  "E_ch_l2re_1025x129": 0.006221447251843985,
+  "E_front_rmse": 0.035124234992749845,
+  "E_complement_rmse": 0.0007913969796787628,
+  "E_max_abs_error": 0.07685751390202544,
+  "external_fem_101x11_l2re": 0.0158567766859959,
+  "ch_at_fem_points_l2re": 0.0088957339617292,
+  "fem_floor_fem_vs_ch": 0.013297621025789578
+ },
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\exp0008\\ft0-burgers-cpu\\seed-201\\c_lbfgs_75.pt",
+  "step": 15,
+  "tag": "c_lbfgs_75",
+  "E_ch_l2re_1025x129": 0.0050755848989599995,
+  "E_front_rmse": 0.02869903586619048,
+  "E_complement_rmse": 0.0006228927083735859,
+  "E_max_abs_error": 0.0674867179761829,
+  "external_fem_101x11_l2re": 0.014931648948527903,
+  "ch_at_fem_points_l2re": 0.007243755307177978,
+  "fem_floor_fem_vs_ch": 0.013297621025789578
+ },
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\exp0008\\ft0-burgers-cpu\\seed-201\\c_lbfgs_100.pt",
+  "step": 20,
+  "tag": "c_lbfgs_100",
+  "E_ch_l2re_1025x129": 0.003636570812643103,
+  "E_front_rmse": 0.020550188942381992,
+  "E_complement_rmse": 0.0004526692894797557,
+  "E_max_abs_error": 0.04659649211301836,
+  "external_fem_101x11_l2re": 0.014185508858927911,
+  "ch_at_fem_points_l2re": 0.005198503589841682,
+  "fem_floor_fem_vs_ch": 0.013297621025789578
+ }
+]

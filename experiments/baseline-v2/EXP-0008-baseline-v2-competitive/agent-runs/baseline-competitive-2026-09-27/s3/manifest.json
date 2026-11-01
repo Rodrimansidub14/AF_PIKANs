@@ -1,0 +1,102 @@
+{
+    "session":  "S3",
+    "status":  "complete_downloaded",
+    "kernel_id":  "rodrimandub/af-pikans-ac-lbfgs-continuation-s3-retry-20260928",
+    "kernel_url":  "https://www.kaggle.com/code/rodrimandub/af-pikans-ac-lbfgs-continuation-s3-retry-20260928",
+    "session_cap_hours":  0.7429559307108333,
+    "session_cap_seconds":  2674.641350559,
+    "s3_stage_total_cap_seconds":  2700.0,
+    "previous_s3_attempt_seconds":  25.358649441,
+    "per_arm_seed_cap_seconds":  240,
+    "accelerator":  "private Kaggle T4x2",
+    "arms":  [
+                 "AC-RBF-Sobol",
+                 "AC-DeepXDE-MLP"
+             ],
+    "seeds":  [
+                  401,
+                  402,
+                  403,
+                  404,
+                  405
+              ],
+    "sources":  [
+                    "rodrimandub/af-pikans-allen-cahn-t4x2-20260927",
+                    "rodrimandub/af-pikans-competitive-baseline-s1-20260928"
+                ],
+    "source_hashes":  {
+                          "model_source_sha256":  "47c02c9279e564729feee848f4f9266a746aa19869727dcb47d682ad0a103241",
+                          "checkpoint_hashes":  {
+                                                    "AC-RBF-Sobol":  {
+                                                                         "401":  "083ac1f119d564cff7e3732df9ce7684e577f41ae2d214d00c6a306c812b3239",
+                                                                         "402":  "a90cc8a725659620e365b32898bd850af023e9a64ca213a887e8891aa57e48a4",
+                                                                         "403":  "75c0f1dfd55e62ac01777eedb11fe15b95990a36b0b475278cd2fbfcdcc85635",
+                                                                         "404":  "b0a6b989ecfdbb730b4722622095ef9216cf862850939c2f2960ff82f289f293",
+                                                                         "405":  "97c04caeb60efb5bf3a3fb800c1f7cf113ff75dbf56eee75791a01985d7c12c9"
+                                                                     },
+                                                    "AC-DeepXDE-MLP":  {
+                                                                           "401":  "ae42552e644eda1aef86c1b517bda3d907961f43e907ab6e75096fa75969b99b",
+                                                                           "402":  "bebcbd69edd51bc440b9e1d361c61deb6e6b0c70e71555ee95b335cf74c0ac6e",
+                                                                           "403":  "551bddf472e0d796ff835f9e493a3335eb989ca1a543cbb87d33c5434688ef14",
+                                                                           "404":  "0271a09851e804aa4e31034cb6d63f26be2699647fee81f1835d33bfbd46d30d",
+                                                                           "405":  "b5290fb473e15e6f49a08d45e127bab76b80453977013d8a6c1e76fe42b81e1e"
+                                                                       }
+                                                },
+                          "pool_hashes":  {
+                                              "401":  "067392c7b13d6bf5df896b59b0f603e5837b9469479e1655f735ce9f3b902858",
+                                              "402":  "511159afd3330d1ff79fa980e0020c1bfc5f0d50aa5071d71515acf651570d99",
+                                              "403":  "5352b7d911364dd70db740c766d770beda1895cde40ac3f154ae906b98321e4b",
+                                              "404":  "97267f785cd5a3598d8d2f3a75e6a26ed6f65e2431544070a3cccef9d9bf370a",
+                                              "405":  "2fc0d2999ca42e751aab4e010998c0b681ff18a98c758fea28c9e9681fb72197"
+                                          },
+                          "reference_hashes":  {
+                                                   "FD8192":  "8ce9fb2090e286a55f144e0d32580b04dc058a661d7af504e0a5ca2890a26903",
+                                                   "ETDRK4":  "f004af6ec0d98ff9ae0a4121d3f82ade4db9d01f0943c349871bd47182b4ac94"
+                                               },
+                          "worker_sha256":  "593003f62841080cbd52d20311b22263f30e763f26a7fa61277ceb20f8ae4624",
+                          "campaign_template_sha256":  "e840d5312d1bed1108ee5fac15553892cff086aa91efd20c8dd73b3b2d42fb30",
+                          "entrypoint_sha256":  "027a226d66bf9a0c4b77f014831f8cb3c4b3ed14ba26a373740aa85e3e1be521",
+                          "payload_zip_sha256":  "62ba7826ebfefe8542ff360adb4f8a09da0e52b9a71011f3e129521a8d919074"
+                      },
+    "optimizer":  {
+                      "name":  "PyTorch L-BFGS",
+                      "history_size":  100,
+                      "tolerance_grad":  1E-08,
+                      "tolerance_change":  0.0,
+                      "line_search_fn":  "strong_wolfe",
+                      "per_step_max_iter":  1,
+                      "per_step_max_eval":  8
+                  },
+    "scoring":  "frozen 512x256 common grid against FD8192 and independent ETDRK4 candidates",
+    "scientific_accepted":  false,
+    "reference_accepted":  false,
+    "s1a_status":  "candidate_complete",
+    "s2_status":  "partial_downloaded",
+    "quota_preflight":  "skipped_by_explicit_researcher_instruction",
+    "stage_cap_total_seconds":  2700.0,
+    "previous_s3_attempt":  {
+                                "kernel_id":  "rodrimandub/af-pikans-ac-lbfgs-continuation-s3-20260928",
+                                "status":  "partial",
+                                "actual_session_seconds":  25.358649441,
+                                "failure":  "KeyError: config[\"seeds\"] in worker CLI parser; source hashes verified; no training or scores"
+                            },
+    "remaining_stage_cap_seconds":  2674.641350559,
+    "push_started_utc":  "2026-09-28T21:43:29.254Z",
+    "push_returned_utc":  "2026-09-28T21:43:33.060Z",
+    "status_observed_at_utc":  "2026-09-28T22:06:24Z",
+    "actual_session_seconds":  1276.378235803,
+    "ended_at_utc":  "2026-09-28T22:05:07.771208+00:00",
+    "downloaded_at_utc":  "2026-09-28T22:07:33Z",
+    "output_directory":  "kaggle-outputs/closure-s3-retry-20260928/closure-s3-20260928",
+    "output_manifest_sha256":  "bbc9ed81d1b4c44fcce57849e4c878881c2a6a62511014e220e96f9518a169fb",
+    "artifact_summary":  {
+                             "training_runs_complete":  10,
+                             "scores_complete":  10,
+                             "gpu_names":  [
+                                               "Tesla T4",
+                                               "Tesla T4"
+                                           ],
+                             "scientific_accepted":  false,
+                             "reference_accepted":  false
+                         }
+}

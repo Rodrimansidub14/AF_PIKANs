@@ -1,0 +1,79 @@
+{
+  "created_at_utc": "2026-09-27T15:39:10.258606+00:00",
+  "scientific_accepted": false,
+  "baseline_frozen": false,
+  "local_validation_skipped": true,
+  "gpu_training_this_turn": false,
+  "results": [
+    {
+      "baseline": "Heat / RBF · EXP-0005",
+      "n": 3,
+      "metric": "field_relative_l2",
+      "mean": 8.8723676131e-05,
+      "sample_sd": 4.530022179e-05,
+      "ci95_t_low": -2.3808313169e-05,
+      "ci95_t_high": 0.000201255665432,
+      "reference": "Analítica · 512×256"
+    },
+    {
+      "baseline": "Heat / RBF · extensión",
+      "n": 2,
+      "metric": "field_relative_l2",
+      "mean": 0.000362649580516,
+      "sample_sd": 0.000364428649015,
+      "ci95_t_low": -0.002911611923764,
+      "ci95_t_high": 0.003636911084797,
+      "reference": "Analítica · 512×256"
+    },
+    {
+      "baseline": "Burgers / Sobol",
+      "n": 5,
+      "metric": "field_relative_l2",
+      "mean": 0.039549798175027,
+      "sample_sd": 0.025649147682045,
+      "ci95_t_low": 0.007702174913621,
+      "ci95_t_high": 0.071397421436434,
+      "reference": "Cole–Hopf · 1025×129"
+    },
+    {
+      "baseline": "Allen–Cahn",
+      "n": 5,
+      "metric": "field_relative_l2",
+      "mean": 0.018432329964442,
+      "sample_sd": 0.003375771795116,
+      "ci95_t_low": 0.014240755660294,
+      "ci95_t_high": 0.02262390426859,
+      "reference": "DeepXDE · 201×101 · provisional"
+    },
+    {
+      "baseline": "DFG / Cd",
+      "n": 5,
+      "metric": "qoi/drag_coefficient",
+      "mean": 1.075206034660671,
+      "sample_sd": 0.094585265204785,
+      "ci95_t_low": 0.957762916095334,
+      "ci95_t_high": 1.192649153226008,
+      "reference": "FEATFLOW QoI"
+    },
+    {
+      "baseline": "DFG / Cl",
+      "n": 5,
+      "metric": "qoi/lift_coefficient",
+      "mean": -0.046520748283305,
+      "sample_sd": 0.069257191945506,
+      "ci95_t_low": -0.132514910138727,
+      "ci95_t_high": 0.039473413572117,
+      "reference": "FEATFLOW QoI"
+    },
+    {
+      "baseline": "DFG / Δp",
+      "n": 5,
+      "metric": "qoi/pressure_difference",
+      "mean": 0.077681563328952,
+      "sample_sd": 0.005539700200736,
+      "ci95_t_low": 0.070803117028855,
+      "ci95_t_high": 0.084560009629048,
+      "reference": "FEATFLOW QoI"
+    }
+  ]
+}

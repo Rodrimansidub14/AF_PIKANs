@@ -1,0 +1,197 @@
+{
+  "campaign": "heat-bspline-completion-followup-2026-09-29",
+  "status": "partial",
+  "session_cap_seconds": 6480.0,
+  "accelerator": "NvidiaTeslaT4 (GPU T4 x2)",
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "runs": [
+    {
+      "kind": "tier2",
+      "seed": 901,
+      "arm": "bspline",
+      "return_code": 0,
+      "run_status": "adam_target_complete_lbfgs_stopped",
+      "adam_updates": 20000,
+      "adam_target_reached": true,
+      "lbfgs_updates": 23,
+      "lbfgs_stop_reason": "optimizer_stopped_early",
+      "training_device_seconds": 1750.666227373,
+      "total_device_seconds": 1750.666227373,
+      "pool_sha256": "318cdd951dc76a19ce0be65dd170beaffdf40741d4e11301abda5a8b2fe18f51",
+      "cost_path": "/kaggle/working/heat-bspline-completion-followup/runs/tier2/seed-901/bspline/cost.json",
+      "checkpoint": "/kaggle/working/heat-bspline-completion-followup/runs/tier2/seed-901/bspline/checkpoint-final.pt"
+    },
+    {
+      "kind": "tier2",
+      "seed": 902,
+      "arm": "bspline",
+      "return_code": 0,
+      "run_status": "adam_target_complete_lbfgs_stopped",
+      "adam_updates": 20000,
+      "adam_target_reached": true,
+      "lbfgs_updates": 49,
+      "lbfgs_stop_reason": "optimizer_stopped_early",
+      "training_device_seconds": 1759.603852186,
+      "total_device_seconds": 1759.603852186,
+      "pool_sha256": "c89cd6ae60703dcb8cdf04448e2d50f8cdc02324446c1807dcfb3a2145b926d6",
+      "cost_path": "/kaggle/working/heat-bspline-completion-followup/runs/tier2/seed-902/bspline/cost.json",
+      "checkpoint": "/kaggle/working/heat-bspline-completion-followup/runs/tier2/seed-902/bspline/checkpoint-final.pt"
+    },
+    {
+      "kind": "tier2",
+      "seed": 903,
+      "arm": "bspline",
+      "return_code": 0,
+      "run_status": "adam_target_complete_lbfgs_stopped",
+      "adam_updates": 20000,
+      "adam_target_reached": true,
+      "lbfgs_updates": 49,
+      "lbfgs_stop_reason": "optimizer_stopped_early",
+      "training_device_seconds": 1754.707467316,
+      "total_device_seconds": 1754.707467316,
+      "pool_sha256": "0e3557a470006da65b348dd066ba73ccad768c6682e3c337c5392c1e8bc6d4e7",
+      "cost_path": "/kaggle/working/heat-bspline-completion-followup/runs/tier2/seed-903/bspline/cost.json",
+      "checkpoint": "/kaggle/working/heat-bspline-completion-followup/runs/tier2/seed-903/bspline/checkpoint-final.pt"
+    },
+    {
+      "kind": "tier2",
+      "seed": 904,
+      "arm": "bspline",
+      "return_code": 0,
+      "run_status": "adam_target_complete_lbfgs_time_cap",
+      "adam_updates": 20000,
+      "adam_target_reached": true,
+      "lbfgs_updates": 1800,
+      "lbfgs_stop_reason": "gpu_time_cap",
+      "training_device_seconds": 1930.409583355,
+      "total_device_seconds": 1930.409583355,
+      "pool_sha256": "f3067f1997a1b17947fc3910fd4f70db0e5fded96cb87ef3f87a12f43ea05825",
+      "cost_path": "/kaggle/working/heat-bspline-completion-followup/runs/tier2/seed-904/bspline/cost.json",
+      "checkpoint": "/kaggle/working/heat-bspline-completion-followup/runs/tier2/seed-904/bspline/checkpoint-final.pt"
+    },
+    {
+      "kind": "tier2",
+      "seed": 905,
+      "arm": "bspline",
+      "return_code": 0,
+      "run_status": "adam_target_complete_lbfgs_time_cap",
+      "adam_updates": 20000,
+      "adam_target_reached": true,
+      "lbfgs_updates": 1650,
+      "lbfgs_stop_reason": "gpu_time_cap",
+      "training_device_seconds": 1930.386672096,
+      "total_device_seconds": 1930.386672096,
+      "pool_sha256": "dc567fc082828a68ac5483975659f155644d9040cf01916147758e1b5e6736b0",
+      "cost_path": "/kaggle/working/heat-bspline-completion-followup/runs/tier2/seed-905/bspline/cost.json",
+      "checkpoint": "/kaggle/working/heat-bspline-completion-followup/runs/tier2/seed-905/bspline/checkpoint-final.pt"
+    },
+    {
+      "kind": "confirmation",
+      "seed": 901,
+      "arm": "bspline",
+      "return_code": 0,
+      "run_status": "scored",
+      "evaluation_device_seconds": 1.4480028059997494,
+      "grid_id": "heat-confirmatory-512x256-v1",
+      "metrics_path": "/kaggle/working/heat-bspline-completion-followup/confirmation/seed-901/bspline/confirmation-metrics.json",
+      "cost_path": "/kaggle/working/heat-bspline-completion-followup/confirmation/seed-901/bspline/confirmation-cost.json"
+    },
+    {
+      "kind": "confirmation",
+      "seed": 902,
+      "arm": "bspline",
+      "return_code": 0,
+      "run_status": "scored",
+      "evaluation_device_seconds": 1.4145876090005913,
+      "grid_id": "heat-confirmatory-512x256-v1",
+      "metrics_path": "/kaggle/working/heat-bspline-completion-followup/confirmation/seed-902/bspline/confirmation-metrics.json",
+      "cost_path": "/kaggle/working/heat-bspline-completion-followup/confirmation/seed-902/bspline/confirmation-cost.json"
+    },
+    {
+      "kind": "confirmation",
+      "seed": 903,
+      "arm": "bspline",
+      "return_code": 0,
+      "run_status": "scored",
+      "evaluation_device_seconds": 1.3300859820001278,
+      "grid_id": "heat-confirmatory-512x256-v1",
+      "metrics_path": "/kaggle/working/heat-bspline-completion-followup/confirmation/seed-903/bspline/confirmation-metrics.json",
+      "cost_path": "/kaggle/working/heat-bspline-completion-followup/confirmation/seed-903/bspline/confirmation-cost.json"
+    },
+    {
+      "kind": "confirmation",
+      "seed": 904,
+      "arm": "bspline",
+      "return_code": 0,
+      "run_status": "scored",
+      "evaluation_device_seconds": 1.3110974609999175,
+      "grid_id": "heat-confirmatory-512x256-v1",
+      "metrics_path": "/kaggle/working/heat-bspline-completion-followup/confirmation/seed-904/bspline/confirmation-metrics.json",
+      "cost_path": "/kaggle/working/heat-bspline-completion-followup/confirmation/seed-904/bspline/confirmation-cost.json"
+    },
+    {
+      "kind": "confirmation",
+      "seed": 905,
+      "arm": "bspline",
+      "return_code": 0,
+      "run_status": "scored",
+      "evaluation_device_seconds": 1.3134536779998598,
+      "grid_id": "heat-confirmatory-512x256-v1",
+      "metrics_path": "/kaggle/working/heat-bspline-completion-followup/confirmation/seed-905/bspline/confirmation-metrics.json",
+      "cost_path": "/kaggle/working/heat-bspline-completion-followup/confirmation/seed-905/bspline/confirmation-cost.json"
+    }
+  ],
+  "pool_files": [
+    {
+      "seed": 901,
+      "source": "/kaggle/input/notebooks/rodrimandub/af-pikans-heat-tier2-torch-pilot-t4x2/heat-tier2/pools/heat-seed-901.npz",
+      "local_copy": "/kaggle/working/heat-bspline-completion-followup/pools/heat-seed-901.npz",
+      "pool_sha256": "318cdd951dc76a19ce0be65dd170beaffdf40741d4e11301abda5a8b2fe18f51",
+      "verified_by_runner": true
+    },
+    {
+      "seed": 902,
+      "source": "/kaggle/input/notebooks/rodrimandub/af-pikans-heat-tier2-torch-pilot-t4x2/heat-tier2/pools/heat-seed-902.npz",
+      "local_copy": "/kaggle/working/heat-bspline-completion-followup/pools/heat-seed-902.npz",
+      "pool_sha256": "c89cd6ae60703dcb8cdf04448e2d50f8cdc02324446c1807dcfb3a2145b926d6",
+      "verified_by_runner": true
+    },
+    {
+      "seed": 903,
+      "source": "/kaggle/input/notebooks/rodrimandub/af-pikans-heat-tier2-torch-pilot-t4x2/heat-tier2/pools/heat-seed-903.npz",
+      "local_copy": "/kaggle/working/heat-bspline-completion-followup/pools/heat-seed-903.npz",
+      "pool_sha256": "0e3557a470006da65b348dd066ba73ccad768c6682e3c337c5392c1e8bc6d4e7",
+      "verified_by_runner": true
+    },
+    {
+      "seed": 904,
+      "source": "/kaggle/input/notebooks/rodrimandub/af-pikans-heat-tier2-torch-pilot-t4x2/heat-tier2/pools/heat-seed-904.npz",
+      "local_copy": "/kaggle/working/heat-bspline-completion-followup/pools/heat-seed-904.npz",
+      "pool_sha256": "f3067f1997a1b17947fc3910fd4f70db0e5fded96cb87ef3f87a12f43ea05825",
+      "verified_by_runner": true
+    },
+    {
+      "seed": 905,
+      "source": "/kaggle/input/notebooks/rodrimandub/af-pikans-heat-tier2-torch-pilot-t4x2/heat-tier2/pools/heat-seed-905.npz",
+      "local_copy": "/kaggle/working/heat-bspline-completion-followup/pools/heat-seed-905.npz",
+      "pool_sha256": "dc567fc082828a68ac5483975659f155644d9040cf01916147758e1b5e6736b0",
+      "verified_by_runner": true
+    }
+  ],
+  "session_wall_seconds": 5670.506484892,
+  "kaggle_quota_hours_estimate": 1.575140690646389,
+  "aggregate_device_seconds_estimate": 9132.591029861998,
+  "aggregate_gpu_hours_estimate": 2.536830841628333,
+  "completion": {
+    "training_runs": 5,
+    "requested_seeds": 5,
+    "runs_reaching_adam_20000": 5,
+    "runs_with_terminal_lbfgs_stop": 3,
+    "runs_missing_adam_target": [],
+    "confirmation_scores": 5,
+    "optional_deepxde_reference": "skipped; follow-up cap allocated to DFG and B-spline completion",
+    "scientific_accepted": false,
+    "reference_accepted": false
+  }
+}

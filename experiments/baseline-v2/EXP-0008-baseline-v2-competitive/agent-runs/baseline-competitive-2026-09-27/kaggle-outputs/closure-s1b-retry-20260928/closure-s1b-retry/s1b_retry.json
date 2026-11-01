@@ -1,0 +1,10 @@
+{
+  "actual_session_seconds": 7.51,
+  "exception": "NameError: name 'base64' is not defined",
+  "part": "s1b_retry",
+  "scientific_accepted": false,
+  "session_elapsed_seconds": 7.51,
+  "status": "failed",
+  "traceback": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 709, in s1b_retry_main\n    materialize_dfg_assets()\n  File \"/kaggle/src/script.py\", line 43, in materialize_dfg_assets\n    (SCRIPT_DIR / name).write_bytes(base64.b64decode(encoded))\n                                    ^^^^^^\nNameError: name 'base64' is not defined. Did you forget to import 'base64'\n",
+  "updated_at_utc": "2026-09-28T19:41:41Z"
+}

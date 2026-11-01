@@ -1,0 +1,68 @@
+{
+  "session": "S2",
+  "status": "downloaded_partial",
+  "kernel_id": "rodrimandub/af-pikans-heat-step-matched-s2-20260928",
+  "kernel_url": "https://www.kaggle.com/code/rodrimandub/af-pikans-heat-step-matched-s2-20260928",
+  "session_cap_hours": 1.25,
+  "session_cap_seconds": 4500,
+  "per_run_cap_seconds": 680,
+  "arms": [
+    "rbf",
+    "bspline"
+  ],
+  "seeds": [
+    901,
+    902,
+    903,
+    904,
+    905
+  ],
+  "pool_hashes": {
+    "901": "318cdd951dc76a19ce0be65dd170beaffdf40741d4e11301abda5a8b2fe18f51",
+    "902": "c89cd6ae60703dcb8cdf04448e2d50f8cdc02324446c1807dcfb3a2145b926d6",
+    "903": "0e3557a470006da65b348dd066ba73ccad768c6682e3c337c5392c1e8bc6d4e7",
+    "904": "f3067f1997a1b17947fc3910fd4f70db0e5fded96cb87ef3f87a12f43ea05825",
+    "905": "dc567fc082828a68ac5483975659f155644d9040cf01916147758e1b5e6736b0"
+  },
+  "optimizer": {
+    "adam_updates": 20000,
+    "learning_rate": 0.001,
+    "lbfgs_backend": "PyTorch L-BFGS using DeepXDE 1.12.2 defaults",
+    "maxiter": 15000,
+    "maxfun": 18750,
+    "history_size": 100,
+    "tolerance_grad": 1e-08,
+    "tolerance_change": 0.0,
+    "line_search_fn": "strong_wolfe",
+    "chunk_iter": 25,
+    "chunk_max_eval": 32
+  },
+  "evaluator": "heat-confirmatory-512x256-v1, CUDA after all training",
+  "reference_seed_pairing": "Unpaired to DeepXDE alpha=0.1 seeds 11,22,33,44,55; H-RBF/H-BS paired by seed 901-905",
+  "pool_source": "rodrimandub/af-pikans-heat-tier2-torch-pilot-t4x2 output pools",
+  "human_preregistration_signature": "PENDING",
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "source_hashes": {
+    "campaign_source_sha256": "b9817660fec6edad5b2a159b8d1b6289a6c03fd1278514bb9c6e56204465d985",
+    "runner_sha256": "ddd40c596042014f32439cb74dc31b467c20a74d16d9f0a29df2c014cad3f1f4",
+    "entrypoint_sha256": "a0526d95f79f12db6f2ad45ddb5f23383c917f21c173e3b2ab57d6a9f4ea5c00",
+    "payload_zip_sha256": "2aed99e6b2bd0850be9fb095d2070ec2ae7d521e42536a79ae51d3f994ddcafb"
+  },
+  "quota_before_launch": {
+    "available_hours": 15.75,
+    "used_hours": 14.25,
+    "total_hours": 30.0,
+    "refresh_at_utc": "2026-10-03T00:00:00Z",
+    "checked_at_utc": "2026-09-28T20:32:14Z",
+    "session_cap_hours": 1.25,
+    "projected_available_after_cap_hours": 14.5,
+    "minimum_reserve_hours": 12.0,
+    "preflight_kernel_list_no_plan_kernel_running": true
+  },
+  "status_observed_at_utc": "2026-09-28T21:31:55Z",
+  "kaggle_status": "partial",
+  "actual_session_seconds": 3472.0678236969998,
+  "output_path": "kaggle-outputs/closure-s2-20260928/heat-stepmatched-s2/",
+  "output_manifest_sha256": "00dc78a524451fb62f760cddef1f1db43d2ae66e59bcf8cdc9a10736592f25c5"
+}

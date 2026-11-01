@@ -1,0 +1,16 @@
+{
+  "status": "awaiting_researcher_signature",
+  "kind": "independent_numerical_reference_candidate",
+  "problem": "allen_cahn_deepxde_1_12_2_dirichlet",
+  "hypothesis": "The stated centered-FD/BDF refinement sequence can produce a field reference whose nested spatial changes and independent temporal-tolerance change meet the prespecified error limits.",
+  "falsification": "If two consecutive nested spatial pairs do not meet both 5e-5 relative-L2 criteria by AC-L5, or the tightened BDF time check exceeds 1e-7, the reference remains provisional and cannot be promoted.",
+  "seeds": "none; deterministic numerical solves",
+  "spatial_intervals": [256, 512, 1024, 2048, 4096, 8192],
+  "gpu_seconds": 0,
+  "cpu_budget_planning_cap_core_hours": 8,
+  "local_software_tests": "skipped_per_researcher_instruction",
+  "script_sha256": "608D365FC9B72A078AFD20F3F61AA9D45AEB3CF48427C3ACAC9D6A3170DB6F6B",
+  "protocol_sha256": "527B8C5CC2E6B6A04A4819805A86BE4E1CFDAD0CB637986CDD83D8F118660106",
+  "scientific_accepted": false,
+  "evaluation_ready": false
+}

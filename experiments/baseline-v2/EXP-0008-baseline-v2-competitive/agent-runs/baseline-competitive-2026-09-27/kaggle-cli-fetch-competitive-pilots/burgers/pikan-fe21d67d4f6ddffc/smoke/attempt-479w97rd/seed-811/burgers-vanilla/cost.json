@@ -1,0 +1,30 @@
+{
+  "allocated_gpu_seconds": 60.02215239899999,
+  "available_gpu_time_checkpoints_sec": [],
+  "cap_overshoot_seconds": 0.02215239899999233,
+  "checkpoint": "checkpoint-final.pt",
+  "checkpoint_sha256": "a0862112d3446641509bbd9f37e63931d22fb1a6b846aa99fd070557e2a616b6",
+  "completed_updates": 2491,
+  "device": {
+    "name": "Tesla T4",
+    "timer": "synchronized per-update elapsed device wall time",
+    "visible_device_index": 0
+  },
+  "gpu_seconds_cap": 60,
+  "max_updates_cap": 20000,
+  "model_id": "vanilla_mlp_tanh_5x100",
+  "parameter_count": 40801,
+  "peak_cuda_memory_bytes": 119386624,
+  "pool_archive_sha256": "12a870951f29d02535e168463c389331073e3947f8151622f1599279c2869996",
+  "pool_content_sha256": "d26c9e3f6696acc6a359ff4f8e1226088397459addb893e9846c373afce7b21e",
+  "scoring_performed": false,
+  "seed": 811,
+  "stop_reason": "gpu_time_limit",
+  "training_metrics_at_last_record": {
+    "train/initial_loss": 0.007415800899968196,
+    "train/left_loss": 3.359370019088726e-05,
+    "train/physics_loss": 0.018802546151927724,
+    "train/right_loss": 0.0004773109617545789,
+    "train/total_loss": 0.026729251713841388
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "decision": "Retry the explicitly authorized canonical DFG 2D-1 Re20 fixed-RBF-PIKAN exploratory baseline after r2 crashed before training because the notebook read generated sampling artifacts too early. r3 changes notebook cell order only; same PDE, solver, seeds 301-305, two-T4 budget (1200 s/seed, 6000 GPU-seconds), fixed Sobol policy, metrics, and scientific_accepted=false.",
+  "approved_by": "researcher (explicit instruction in current Codex conversation, 2026-09-27)",
+  "bundle_id": "682b3231055919875ff779f51209aaf0225067eed02704d2eea99abab8c7f29c",
+  "code_surface": "approved",
+  "hypothesis": "approved",
+  "scope": "approved",
+  "remote_execution": true
+}

@@ -1,0 +1,9 @@
+{
+  "steps": 3,
+  "training_and_diagnostics_sec": 0.17713050002930686,
+  "diagnostic_sec": 0.05627910001203418,
+  "parameters": 3648,
+  "device": "cpu",
+  "peak_gpu_bytes": null,
+  "stop_reason": "step_limit"
+}

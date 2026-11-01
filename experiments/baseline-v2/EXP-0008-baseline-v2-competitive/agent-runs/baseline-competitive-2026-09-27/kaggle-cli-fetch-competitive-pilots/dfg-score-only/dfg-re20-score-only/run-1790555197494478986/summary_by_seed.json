@@ -1,0 +1,65 @@
+{
+  "seeds": [
+    {
+      "descriptive_only": true,
+      "pair_scoring_wall_seconds": 3.689042422999819,
+      "pool_sha256": "34cf429bd05508949b76ae068129347fb9e29817e816ef3f1c2fccfb625fce25",
+      "seed": 501,
+      "status": "paired_scored",
+      "tanh_minus_rbf": {
+        "drag_coefficient": -0.03868955329226886,
+        "lift_coefficient": 0.02089641504392726,
+        "pressure_difference": -0.003353677224367857
+      }
+    },
+    {
+      "descriptive_only": true,
+      "pair_scoring_wall_seconds": 0.9860643609999897,
+      "pool_sha256": "ea3b4fd544f998d17b438243aebdffa3448d412297bc4cf3fca452550429c2bb",
+      "seed": 502,
+      "status": "paired_scored",
+      "tanh_minus_rbf": {
+        "drag_coefficient": 0.33576689795414183,
+        "lift_coefficient": 0.04058146830356579,
+        "pressure_difference": 0.014376443112269044
+      }
+    },
+    {
+      "descriptive_only": true,
+      "pair_scoring_wall_seconds": 0.9632591230001708,
+      "pool_sha256": "4e6bc94d82431dc79b23abff2ea4a25701158e48b67f996e5e72ef314e15d389",
+      "seed": 503,
+      "status": "paired_scored",
+      "tanh_minus_rbf": {
+        "drag_coefficient": -1.1458931069519385,
+        "lift_coefficient": -0.04757501524666046,
+        "pressure_difference": -0.06872601574286819
+      }
+    },
+    {
+      "descriptive_only": true,
+      "pair_scoring_wall_seconds": 0.9451703180000095,
+      "pool_sha256": "0d4dde2d82c7ad4ec45ee5e7003097a84dd08fc4f2ee5be400d72bf13fca6b7b",
+      "seed": 504,
+      "status": "paired_scored",
+      "tanh_minus_rbf": {
+        "drag_coefficient": 0.17284683418014635,
+        "lift_coefficient": 0.0326674934251894,
+        "pressure_difference": 0.011008610716089606
+      }
+    },
+    {
+      "descriptive_only": true,
+      "pair_scoring_wall_seconds": 0.9640195079998648,
+      "pool_sha256": "c05a0b6b3c62f7fee7c6cd0c7982df522bad1984bfa4759398d9d6362dad885b",
+      "seed": 505,
+      "status": "paired_scored",
+      "tanh_minus_rbf": {
+        "drag_coefficient": 0.24283958891057877,
+        "lift_coefficient": -0.14648147018072777,
+        "pressure_difference": 0.010561864241026342
+      }
+    }
+  ],
+  "status": "score_only_complete"
+}

@@ -1,0 +1,8 @@
+{
+  "torch": "2.14.0+cpu",
+  "pina-mathlab": "0.3.2.post2609",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "wandb": "0.30.0",
+  "plotly": "7.1.0"
+}

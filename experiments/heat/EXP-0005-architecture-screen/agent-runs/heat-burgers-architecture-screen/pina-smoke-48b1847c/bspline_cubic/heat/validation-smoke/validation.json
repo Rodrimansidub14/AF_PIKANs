@@ -1,0 +1,24 @@
+{
+  "final_test_used": false,
+  "grid": {
+    "kind": "fixed_uniform_tensor",
+    "nt": 65,
+    "nx": 129
+  },
+  "metrics": {
+    "boundary_max_abs_error": 7.682113372783629e-17,
+    "field_max_abs": 0.6178951939521379,
+    "field_p95_abs": 0.5353728279682072,
+    "field_relative_l2": 0.6073557385559923,
+    "field_rmse_abs": 0.28366416198342675,
+    "field_rmse_normalized": 0.28366416198342675,
+    "initial_max_abs_error": 1.1102230246251565e-16,
+    "residual_max_abs": 0.992890033793457,
+    "residual_mean_abs": 0.6189066206611504,
+    "residual_mean_abs_normalized": 0.5626423824192276,
+    "residual_p95_abs": 0.9677082246847851,
+    "residual_rmse_abs": 0.6879061589138519
+  },
+  "problem": "heat",
+  "scientific_accepted": false
+}

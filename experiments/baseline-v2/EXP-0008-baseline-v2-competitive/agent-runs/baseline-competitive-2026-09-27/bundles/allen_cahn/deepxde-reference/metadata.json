@@ -1,0 +1,94 @@
+{
+  "benchmark": "DeepXDE Allen-Cahn reference notebook",
+  "deepxde_version": "1.12.2",
+  "deepxde_tag": "v1.12.2",
+  "deepxde_source_url": "https://github.com/lululxvi/deepxde/blob/v1.12.2/examples/pinn_forward/Allen_Cahn.py",
+  "deepxde_tag_commit_short": "414e457",
+  "dataset": {
+    "filename": "Allen_Cahn.mat",
+    "url": "https://raw.githubusercontent.com/lululxvi/deepxde/v1.12.2/examples/dataset/Allen_Cahn.mat",
+    "tag": "v1.12.2",
+    "sha256": "f9175685675685ab8d2a850f0d212d16c709f55ed89b8fe078493ddcd3724aa0",
+    "git_blob_sha1": "2617d4be2746ea1689e04b9d29f0217ac1899a5f",
+    "raw_shapes": {
+      "t": [
+        1,
+        101
+      ],
+      "u": [
+        101,
+        201
+      ]
+    },
+    "raw_x_variable": "absent",
+    "reference_u_shape": [
+      101,
+      201
+    ],
+    "x_reconstruction": "linspace(-1, 1, u.shape[1]); field u unchanged, no interpolation"
+  },
+  "equation": "u_t - 0.001*u_xx - 5*(u-u^3) = 0",
+  "domain": {
+    "x": [
+      -1,
+      1
+    ],
+    "t": [
+      0,
+      1
+    ]
+  },
+  "initial_condition": "u(x,0)=x^2*cos(pi*x)",
+  "boundary_condition": "u(-1,t)=u(1,t)=-1",
+  "hard_output_transform": "x^2*cos(pi*x) + t*(1-x^2)*NN(x,t)",
+  "network": {
+    "layers": [
+      2,
+      20,
+      20,
+      20,
+      1
+    ],
+    "activation": "tanh",
+    "initializer": "Glorot normal"
+  },
+  "training": {
+    "domain_points": 8000,
+    "boundary_points": 400,
+    "initial_points": 800,
+    "adam_steps": 40000,
+    "adam_lr": 0.001,
+    "optimizer_2": "L-BFGS default for DeepXDE v1.12.2"
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "kaggle": {
+    "backend": "pytorch",
+    "accelerator": "GPU T4x2",
+    "training_device": "cuda:0",
+    "internet_required": true
+  },
+  "budget": {
+    "seconds": 7200,
+    "includes": [
+      "pip setup",
+      "dataset download",
+      "training",
+      "evaluation"
+    ],
+    "starts": "first code cell",
+    "finalization_reserve_seconds": 180
+  },
+  "outputs": [
+    "results.json",
+    "results.csv",
+    "provenance.json",
+    "per-seed progress and logs"
+  ],
+  "completion_rule": "Do not mark or score complete unless all five seeds complete 40000 Adam steps, L-BFGS, and all requested metrics."
+}

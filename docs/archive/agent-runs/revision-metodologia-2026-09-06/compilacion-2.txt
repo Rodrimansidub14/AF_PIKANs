@@ -1,0 +1,348 @@
+log4cxx: setFile(C:\Users\rodri\AppData\Local\MiKTeX\miktex\log/pdflatex.log,true) call failed.
+log4cxx: IO Exception : status code = 720005(Access is denied.  )
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(protocolo-revisado.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(C:\Program Files\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Program Files\MiKTeX\tex/latex/base\size11.clo))
+(C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty)
+(C:\Program Files\MiKTeX\tex/latex/base\fontenc.sty)
+(C:\Program Files\MiKTeX\tex/latex/lm\lmodern.sty)
+(C:\Program Files\MiKTeX\tex/latex/csquotes\csquotes.sty
+(C:\Program Files\MiKTeX\tex/latex/etoolbox\etoolbox.sty)
+(C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty)
+(C:\Program Files\MiKTeX\tex/latex/csquotes\csquotes.def)
+(C:\Program Files\MiKTeX\tex/latex/csquotes\csquotes.cfg))
+(C:\Program Files\MiKTeX\tex/generic/babel\babel.sty
+(C:\Program Files\MiKTeX\tex/generic/babel\txtbabel.def)
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Program Files\MiKTeX\tex/latex/arabi\bblopts.cfg)
+(C:\Program Files\MiKTeX\tex/latex/babel-spanish\spanish.ldf))
+(C:\Program Files\MiKTeX\tex/generic/babel/locale/es\babel-spanish.tex)
+(C:\Program Files\MiKTeX\tex/latex/geometry\geometry.sty
+(C:\Program Files\MiKTeX\tex/generic/iftex\ifvtex.sty
+(C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty))
+(C:\Program Files\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty))
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty)
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty))
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\amssymb.sty
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\amsfonts.sty))
+(C:\Program Files\MiKTeX\tex/latex/tools\bm.sty)
+(C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg)
+(C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def)))
+(C:\Program Files\MiKTeX\tex/latex/booktabs\booktabs.sty)
+(C:\Program Files\MiKTeX\tex/latex/tools\tabularx.sty
+(C:\Program Files\MiKTeX\tex/latex/tools\array.sty))
+(C:\Program Files\MiKTeX\tex/latex/tools\longtable.sty)
+(C:\Program Files\MiKTeX\tex/latex/float\float.sty)
+(C:\Program Files\MiKTeX\tex/latex/xcolor\xcolor.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg)
+(C:\Program Files\MiKTeX\tex/latex/graphics\mathcolor.ltx))
+(C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty
+(C:\Program Files\MiKTeX\tex/generic/infwarerr\infwarerr.sty)
+(C:\Program Files\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty)
+(C:\Program Files\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty)
+(C:\Program Files\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+(C:\Program Files\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+(C:\Program Files\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty))
+(C:\Program Files\MiKTeX\tex/latex/hycolor\hycolor.sty)
+(C:\Program Files\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty)
+(C:\Program Files\MiKTeX\tex/latex/auxhook\auxhook.sty)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Program Files\MiKTeX\tex/latex/refcount\refcount.sty)
+(C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+(C:\Program Files\MiKTeX\tex/latex/kvoptions\kvoptions.sty)))
+(C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def)
+(C:\Program Files\MiKTeX\tex/generic/intcalc\intcalc.sty)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def)
+(C:\Program Files\MiKTeX\tex/latex/url\url.sty)
+(C:\Program Files\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Program Files\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty))
+(C:\Program Files\MiKTeX\tex/latex/base\atbegshi-ltx.sty))
+(C:\Program Files\MiKTeX\tex/latex/hyperref\hpdftex.def
+(C:\Program Files\MiKTeX\tex/latex/base\atveryend-ltx.sty)
+(C:\Program Files\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(C:\Program Files\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty)))
+(C:\Program Files\MiKTeX\tex/latex/xurl\xurl.sty)
+(C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.sty
+(C:\Program Files\MiKTeX\tex/latex/logreq\logreq.sty
+(C:\Program Files\MiKTeX\tex/latex/logreq\logreq.def))
+(C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty)
+(C:\Program Files\MiKTeX\tex/latex/biblatex\blx-dm.def)
+(C:\Program Files\MiKTeX\tex/latex/biblatex\blx-compat.def)
+(C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.def)
+(C:\Program Files\MiKTeX\tex/latex/biblatex-ieee\ieee.bbx
+(C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\numeric-comp.bbx
+(C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
+(C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\standard.bbx))))
+(C:\Program Files\MiKTeX\tex/latex/biblatex-ieee\ieee.cbx
+(C:\Program Files\MiKTeX\tex/latex/biblatex/cbx\numeric-verb.cbx))
+(C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.cfg)
+(C:\Program Files\MiKTeX\tex/latex/l3kernel\expl3.sty
+(C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def))
+(C:\Program Files\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty
+(C:\Program Files\MiKTeX\tex/latex/l3packages/xparse\xparse.sty)))
+(C:\Program Files\MiKTeX\tex/latex/lm\t1lmr.fd) (protocolo-revisado.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+(C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg))
+(protocolo-revisado.out) (protocolo-revisado.out)
+(C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\spanish.lbx)
+No file protocolo-revisado.bbl.
+[1{C:/Users/rodri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Program 
+Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}] (protocolo-revisado.toc
+(C:\Program Files\MiKTeX\tex/latex/lm\ot1lmr.fd)
+(C:\Program Files\MiKTeX\tex/latex/lm\omllmm.fd)
+(C:\Program Files\MiKTeX\tex/latex/lm\omslmsy.fd)
+(C:\Program Files\MiKTeX\tex/latex/lm\omxlmex.fd)
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd)
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd) [1{C:/Program Files/MiKTeX
+/fonts/enc/dvips/lm/lm-mathit.enc}]) [2] (protocolo-revisado.lof) [3{C:/Program
+ Files/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
+Cap\'{\i }tulo 1.
+(d-introduccion.tex
+
+LaTeX Warning: Citation 'grossmann2024' on page 1 undefined on input line 2.
+
+
+LaTeX Warning: Citation 'krishnapriyan2021' on page 1 undefined on input line 2
+.
+
+
+LaTeX Warning: Citation 'raissi2019' on page 1 undefined on input line 4.
+
+
+LaTeX Warning: Citation 'liu2024kan' on page 1 undefined on input line 4.
+
+) [1]
+Cap\'{\i }tulo 2.
+(e-antecedentes.tex
+
+LaTeX Warning: Citation 'dorfler1996' on page 2 undefined on input line 1.
+
+
+LaTeX Warning: Citation 'lagaris1998' on page 2 undefined on input line 1.
+
+
+LaTeX Warning: Citation 'raissi2019' on page 2 undefined on input line 1.
+
+
+LaTeX Warning: Citation 'liu2024kan' on page 2 undefined on input line 3.
+
+
+LaTeX Warning: Citation 'gonzalez2026pinnpiezo' on page 2 undefined on input li
+ne 3.
+
+) [2]
+Cap\'{\i }tulo 3.
+(f-justificacion.tex
+
+LaTeX Warning: Citation 'wu2023sampling' on page 3 undefined on input line 2.
+
+
+LaTeX Warning: Citation 'rigas2026' on page 3 undefined on input line 2.
+
+
+LaTeX Warning: Citation 'leong2026' on page 3 undefined on input line 2.
+
+) [3]
+Cap\'{\i }tulo 4.
+(g-objetivos.tex) [4]
+Cap\'{\i }tulo 5.
+(h-alcance.tex) [5]
+Cap\'{\i }tulo 6.
+(i-marco_teorico.tex
+
+LaTeX Warning: Citation 'evans1998pde' on page 6 undefined on input line 3.
+
+
+LaTeX Warning: Citation 'raissi2019' on page 6 undefined on input line 3.
+
+
+LaTeX Warning: Citation 'grossmann2024' on page 6 undefined on input line 3.
+
+
+LaTeX Warning: Citation 'karniadakis2021' on page 6 undefined on input line 19.
+
+
+
+LaTeX Warning: Citation 'grossmann2024' on page 6 undefined on input line 19.
+
+[6{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/M
+iKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
+
+LaTeX Warning: Citation 'fenics2016' on page 7 undefined on input line 39.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 43.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 43.
+
+
+LaTeX Warning: Citation 'dorfler1996' on page 7 undefined on input line 48.
+
+[7] [8 <./figuras/fem_poisson.png> <./figuras/fem_convergencia.png>]
+
+LaTeX Warning: Citation 'lagaris1998' on page 9 undefined on input line 60.
+
+
+LaTeX Warning: Citation 'raissi2019' on page 9 undefined on input line 60.
+
+[9 <./figuras/arquitecturas.png>]
+
+LaTeX Warning: Citation 'raissi2019' on page 10 undefined on input line 68.
+
+
+LaTeX Warning: Citation 'wang2023expertguide' on page 10 undefined on input lin
+e 68.
+
+
+LaTeX Warning: Citation 'rahaman2019' on page 10 undefined on input line 70.
+
+
+LaTeX Warning: Citation 'liu2024kan' on page 10 undefined on input line 77.
+
+
+LaTeX Warning: Citation 'shukla2024fair' on page 10 undefined on input line 77.
+
+
+[10 <./figuras/perdida_pinn.png>]
+
+LaTeX Warning: Citation 'liu2024kan' on page 11 undefined on input line 88.
+
+
+LaTeX Warning: Citation 'wu2023sampling' on page 11 undefined on input line 91.
+
+
+
+LaTeX Warning: Citation 'kharazmi2021hpvpinns' on page 11 undefined on input li
+ne 93.
+
+
+LaTeX Warning: Citation 'wang2024causal' on page 11 undefined on input line 93.
+
+
+
+LaTeX Warning: Citation 'moseley2023' on page 11 undefined on input line 93.
+
+
+LaTeX Warning: Citation 'howard2024' on page 11 undefined on input line 93.
+
+
+LaTeX Warning: Citation 'abpinn2025' on page 11 undefined on input line 93.
+
+
+LaTeX Warning: Citation 'rigas2024' on page 11 undefined on input line 106.
+
+
+LaTeX Warning: Citation 'rigas2026' on page 11 undefined on input line 106.
+
+
+LaTeX Warning: Citation 'actor2025' on page 11 undefined on input line 106.
+
+
+LaTeX Warning: Citation 'actor2026' on page 11 undefined on input line 106.
+
+
+LaTeX Warning: Citation 'leong2026' on page 11 undefined on input line 106.
+
+[11 <./figuras/bases.png>] [12] [13] [14] [15 <./figuras/controlador.png>]
+
+LaTeX Warning: Citation 'raissi2019' on page 16 undefined on input line 188.
+
+[16]
+
+LaTeX Warning: Citation 'jin2021nsfnets' on page 17 undefined on input line 203
+.
+
+
+LaTeX Warning: Citation 'gonzalez2026pinnpiezo' on page 17 undefined on input l
+ine 218.
+
+
+LaTeX Warning: Citation 'lahmer2008' on page 17 undefined on input line 218.
+
+[17 <./figuras/soluciones_exactas.png>]) (j-capitulos.tex [18 <./figuras/piezo_
+esquema.png>] [19]
+Cap\'{\i }tulo 7.
+
+LaTeX Warning: Citation 'peffers2007dsrm' on page 20 undefined on input line 4.
+
+
+[20] [21]
+
+LaTeX Warning: Citation 'wu2023sampling' on page 22 undefined on input line 47.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+[]|\T1/lmr/m/n/10.95 Muestreo adap-ta-ti-vo
+
+LaTeX Warning: Citation 'rigas2026' on page 22 undefined on input line 49.
+
+
+Underfull \hbox (badness 6380) in paragraph at lines 49--50
+[]|\T1/lmr/m/n/10.95 Ruta de den-si-dad de im-por-tan-cia
+[22]
+
+LaTeX Warning: Command \~ invalid in math mode on input line 64.
+
+[23] [24]
+
+LaTeX Warning: Citation 'zaharia2018mlflow' on page 25 undefined on input line 
+97.
+
+[25]
+Cap\'{\i }tulo 8.
+)
+
+LaTeX Warning: Empty bibliography on input line 39.
+
+[26] (protocolo-revisado.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                protocolo-revisado
+(biblatex)                and rerun LaTeX afterwards.
+
+ )
+(see the transcript file for additional information)<C:/Program Files/MiKTeX/fo
+nts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/l
+mbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/
+type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi1
+2.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Program File
+s/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/p
+ublic/lm/lmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:
+/Program Files/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX/
+fonts/type1/public/lm/lmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/l
+mr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Program F
+iles/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/typ
+e1/public/lm/lmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb
+><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on protocolo-revisado.pdf (30 pages, 1366718 bytes).
+Transcript written on protocolo-revisado.log.

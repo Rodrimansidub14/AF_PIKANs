@@ -1,0 +1,62 @@
+[
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\baseline-competitive-2026-09-27\\kaggle-cli-fetch-20260927-02\\burgers-rerun-v4\\pikan-4393e173686298ee\\runs\\seed-1201\\burgers\\checkpoint-020000.pt",
+  "step": 20000,
+  "tag": null,
+  "E_ch_l2re_1025x129": 0.3008098775188021,
+  "E_front_rmse": 0.875112088216765,
+  "E_complement_rmse": 0.1603280867576378,
+  "E_max_abs_error": 1.592174663798668,
+  "external_fem_101x11_l2re": 0.2802199925023063,
+  "ch_at_fem_points_l2re": 0.2847447992471922,
+  "fem_floor_fem_vs_ch": 0.013297621025789578
+ },
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\baseline-competitive-2026-09-27\\kaggle-cli-fetch-20260927-02\\burgers-rerun-v4\\pikan-4393e173686298ee\\runs\\seed-1202\\burgers\\checkpoint-020000.pt",
+  "step": 20000,
+  "tag": null,
+  "E_ch_l2re_1025x129": 0.2717208501150333,
+  "E_front_rmse": 1.0681560650915711,
+  "E_complement_rmse": 0.12275226951476496,
+  "E_max_abs_error": 1.8817819742508195,
+  "external_fem_101x11_l2re": 0.2622617778705637,
+  "ch_at_fem_points_l2re": 0.2651957935651218,
+  "fem_floor_fem_vs_ch": 0.013297621025789578
+ },
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\baseline-competitive-2026-09-27\\kaggle-cli-fetch-20260927-02\\burgers-rerun-v4\\pikan-4393e173686298ee\\runs\\seed-1203\\burgers\\checkpoint-020000.pt",
+  "step": 20000,
+  "tag": null,
+  "E_ch_l2re_1025x129": 0.1246842677914177,
+  "E_front_rmse": 0.6793254335209159,
+  "E_complement_rmse": 0.025317276165649254,
+  "E_max_abs_error": 1.3868601274784917,
+  "external_fem_101x11_l2re": 0.10828880070791462,
+  "ch_at_fem_points_l2re": 0.1097691360431441,
+  "fem_floor_fem_vs_ch": 0.013297621025789578
+ },
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\baseline-competitive-2026-09-27\\kaggle-cli-fetch-20260927-02\\burgers-rerun-v4\\pikan-4393e173686298ee\\runs\\seed-1204\\burgers\\checkpoint-020000.pt",
+  "step": 20000,
+  "tag": null,
+  "E_ch_l2re_1025x129": 0.15259676162650115,
+  "E_front_rmse": 0.8145085116620924,
+  "E_complement_rmse": 0.03575293665227125,
+  "E_max_abs_error": 1.5849394639579402,
+  "external_fem_101x11_l2re": 0.123336070952464,
+  "ch_at_fem_points_l2re": 0.12576951118918062,
+  "fem_floor_fem_vs_ch": 0.013297621025789578
+ },
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\baseline-competitive-2026-09-27\\kaggle-cli-fetch-20260927-02\\burgers-rerun-v4\\pikan-4393e173686298ee\\runs\\seed-1205\\burgers\\checkpoint-020000.pt",
+  "step": 20000,
+  "tag": null,
+  "E_ch_l2re_1025x129": 0.2121999012333716,
+  "E_front_rmse": 0.9710291281727796,
+  "E_complement_rmse": 0.07976602598173727,
+  "E_max_abs_error": 1.757513082747285,
+  "external_fem_101x11_l2re": 0.19985625538982166,
+  "ch_at_fem_points_l2re": 0.2017778423402834,
+  "fem_floor_fem_vs_ch": 0.013297621025789578
+ }
+]

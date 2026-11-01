@@ -1,0 +1,17 @@
+{
+  "id": "rodrimandub/af-pikans-dfg-force-traction-score-only-20260927",
+  "title": "AF PIKANs DFG Force Traction Score Only 20260927",
+  "code_file": "dfg-re20-force-traction-score-only.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [
+    "rodrimandub/af-pikans-dfg-re20-competitive-pilot-t4x2"
+  ],
+  "model_sources": []
+}

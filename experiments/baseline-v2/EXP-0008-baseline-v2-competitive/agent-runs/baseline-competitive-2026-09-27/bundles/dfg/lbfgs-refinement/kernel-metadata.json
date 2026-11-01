@@ -1,0 +1,18 @@
+{
+  "id": "rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927",
+  "title": "AF PIKANs DFG LBFGS Refinement 20260927",
+  "code_file": "dfg-re20-lbfgs-refinement.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [
+    "rodrimandub/af-pikans-dfg-re20-competitive-pilot-t4x2"
+  ],
+  "model_sources": []
+}

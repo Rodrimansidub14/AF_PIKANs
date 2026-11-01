@@ -7,7 +7,7 @@ try:
 except ImportError:
     raise unittest.SkipTest('Run SciML tests with var/agent_runs/sciml-env/Scripts/python.exe')
 
-from src.research_pipeline.sciml.model import build_model, derivatives
+from src.sciml.model import build_model, derivatives
 
 
 class ArchitectureScreenTests(unittest.TestCase):
@@ -66,8 +66,8 @@ class ArchitectureScreenTests(unittest.TestCase):
 
     def test_canonical_burgers_pina_conditions_use_direct_two_argument_equations(self):
         from pina import LabelTensor
-        from src.research_pipeline.sciml.sampling import pools
-        from src.research_pipeline.sciml.train import make_problem
+        from src.sciml.sampling import pools
+        from src.sciml.train import make_problem
 
         parameters = {
             'definition': 'raissi_pinnacle_1d',

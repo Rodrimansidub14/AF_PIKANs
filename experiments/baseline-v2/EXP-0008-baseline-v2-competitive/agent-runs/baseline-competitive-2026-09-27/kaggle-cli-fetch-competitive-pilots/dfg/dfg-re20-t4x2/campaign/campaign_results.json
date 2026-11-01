@@ -1,0 +1,85 @@
+{
+  "campaign_id": "dfg-re20-t4-competitive-2026-09-27",
+  "campaign_wall_seconds": 6040.349847953001,
+  "featflow_qois": {
+    "drag_coefficient": 5.57953523384,
+    "lift_coefficient": 0.010618948146,
+    "pressure_difference": 0.11752016697
+  },
+  "field_reference_status": "missing_converged_FEM_field",
+  "results": [
+    {
+      "arm": "DFG-RBF-PIKAN",
+      "field_relative_l2": null,
+      "seed": 501,
+      "status": "score_budget_exhausted"
+    },
+    {
+      "arm": "DFG-Tanh-MLP",
+      "field_relative_l2": null,
+      "seed": 501,
+      "status": "score_budget_exhausted"
+    },
+    {
+      "arm": "DFG-RBF-PIKAN",
+      "field_relative_l2": null,
+      "seed": 502,
+      "status": "score_budget_exhausted"
+    },
+    {
+      "arm": "DFG-Tanh-MLP",
+      "field_relative_l2": null,
+      "seed": 502,
+      "status": "score_budget_exhausted"
+    },
+    {
+      "arm": "DFG-RBF-PIKAN",
+      "field_relative_l2": null,
+      "seed": 503,
+      "status": "score_budget_exhausted"
+    },
+    {
+      "arm": "DFG-Tanh-MLP",
+      "field_relative_l2": null,
+      "seed": 503,
+      "status": "score_budget_exhausted"
+    },
+    {
+      "arm": "DFG-RBF-PIKAN",
+      "field_relative_l2": null,
+      "seed": 504,
+      "status": "score_budget_exhausted"
+    },
+    {
+      "arm": "DFG-Tanh-MLP",
+      "field_relative_l2": null,
+      "seed": 504,
+      "status": "score_budget_exhausted"
+    },
+    {
+      "arm": "DFG-RBF-PIKAN",
+      "field_relative_l2": null,
+      "seed": 505,
+      "status": "score_budget_exhausted"
+    },
+    {
+      "arm": "DFG-Tanh-MLP",
+      "field_relative_l2": null,
+      "seed": 505,
+      "status": "score_budget_exhausted"
+    }
+  ],
+  "scientific_accepted": false,
+  "script_wall_cap_seconds": 6900.0,
+  "seeds": [
+    501,
+    502,
+    503,
+    504,
+    505
+  ],
+  "session_quota_cap_seconds": 7200.0,
+  "smoke_only": false,
+  "source_sha256": "4c02809600beb9b543d1bceffe2037ed7d05f5ff654d010b22984227b2cb35a9",
+  "status": "DRAFT_UNVERIFIED"
+}

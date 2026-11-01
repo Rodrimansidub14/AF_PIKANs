@@ -1,0 +1,56 @@
+{
+  "error": "ValueError: Out of range float values are not JSON compliant: nan",
+  "fixed_field_scoring_contract": {
+    "cohorts": {
+      "current_rbf": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "refinement_rbf_and_tanh_mlp": [
+        501,
+        502,
+        503,
+        504,
+        505
+      ]
+    },
+    "grid": {
+      "mask": "exclude points with (x-0.2)^2+(y-0.2)^2 <= 0.05^2",
+      "ordering": "numpy.meshgrid(indexing='xy'); row-major flattened",
+      "source": "saved FEM DFG-L3 fields_on_common_grid.npz; declared before checkpoint scoring",
+      "x": {
+        "count": 221,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 2.2
+      },
+      "y": {
+        "count": 42,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 0.41
+      }
+    },
+    "metrics": [
+      "u_relative_l2",
+      "v_relative_l2",
+      "p_relative_l2_gauge_fixed_outlet"
+    ],
+    "pressure_gauge": {
+      "method": "subtract pressure at fixed outlet grid point",
+      "outlet_anchor_xy": [
+        2.2,
+        0.2
+      ]
+    },
+    "reference_level": "DFG-L3 (third of three requested mesh levels)",
+    "retraining": false
+  },
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "status": "failed_partial",
+  "traceback": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 369, in main\n    write_json(OUT / \"checkpoint_field_scores.partial.json\", diagnostics)\n  File \"/kaggle/src/script.py\", line 50, in write_json\n    temp.write_text(json.dumps(value, indent=2, sort_keys=True, allow_nan=False) + \"\\n\", encoding=\"utf-8\")\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n          ^^^^^^^^^^^\n  File \"/usr/lib/python3.12/json/encoder.py\", line 202, in encode\n    chunks = list(chunks)\n             ^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/json/encoder.py\", line 432, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/usr/lib/python3.12/json/encoder.py\", line 406, in _iterencode_dict\n    yield from chunks\n  File \"/usr/lib/python3.12/json/encoder.py\", line 326, in _iterencode_list\n    yield from chunks\n  File \"/usr/lib/python3.12/json/encoder.py\", line 398, in _iterencode_dict\n    yield _floatstr(value)\n          ^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/json/encoder.py\", line 240, in floatstr\n    raise ValueError(\nValueError: Out of range float values are not JSON compliant: nan\n"
+}

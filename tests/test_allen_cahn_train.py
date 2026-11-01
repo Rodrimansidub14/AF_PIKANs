@@ -5,9 +5,9 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from src.research_pipeline.sciml.model import build_model
-from src.research_pipeline.sciml.sampling import pools
-from src.research_pipeline.sciml.train import allen_cahn_residual, make_problem, train
+from src.sciml.model import build_model
+from src.sciml.sampling import pools
+from src.sciml.train import allen_cahn_residual, make_problem, train
 
 
 class Sink:

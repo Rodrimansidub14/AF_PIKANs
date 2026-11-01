@@ -1,0 +1,44 @@
+\gdef\mpxshipout{\shipout\hbox\bgroup
+  \setbox0=\hbox\bgroup}
+\gdef\stopmpxshipout{\egroup  \dimen0=\ht0 \advance\dimen0\dp0
+  \dimen1=\ht0 \dimen2=\dp0
+  \setbox0=\hbox\bgroup
+    \box0
+    \ifnum\dimen0>0 \vrule width1sp height\dimen1 depth\dimen2 
+    \else \vrule width1sp height1sp depth0sp\relax
+    \fi\egroup
+  \ht0=0pt \dp0=0pt \box0 \egroup}
+\mpxshipout% line 31 ./p4-problem.mp
+cilindro $D=0.1$%
+\stopmpxshipout
+\mpxshipout% line 44 ./p4-problem.mp
+entrada%
+\stopmpxshipout
+\mpxshipout% line 45 ./p4-problem.mp
+perfil parab\'olico%
+\stopmpxshipout
+\mpxshipout% line 46 ./p4-problem.mp
+$u_{\max}=0.3$, $\bar u=0.2$%
+\stopmpxshipout
+\mpxshipout% line 64 ./p4-problem.mp
+no deslizamiento%
+\stopmpxshipout
+\mpxshipout% line 66 ./p4-problem.mp
+no deslizamiento%
+\stopmpxshipout
+\mpxshipout% line 68 ./p4-problem.mp
+salida: $\nu\,\partial_n\mathbf u-p\mathbf n=0$%
+\stopmpxshipout
+\mpxshipout% line 76 ./p4-problem.mp
+longitud $2.2$%
+\stopmpxshipout
+\mpxshipout% line 82 ./p4-problem.mp
+altura $0.41$%
+\stopmpxshipout
+\mpxshipout% line 84 ./p4-problem.mp
+DFG 2D-1: $\nu=0.001$, $Re=20$%
+\stopmpxshipout
+\mpxshipout% line 86 ./p4-problem.mp
+dominio y cilindro; esquema geom\'etrico%
+\stopmpxshipout
+\end{document}

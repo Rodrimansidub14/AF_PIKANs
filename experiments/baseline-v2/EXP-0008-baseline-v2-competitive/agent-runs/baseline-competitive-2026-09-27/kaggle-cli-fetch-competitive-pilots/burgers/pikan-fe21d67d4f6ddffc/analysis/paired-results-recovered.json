@@ -1,0 +1,135 @@
+{
+  "descriptive_metrics": {
+    "boundary_max_abs_error": {
+      "paired_vanilla_minus_rbf": {
+        "mean": 0.013115849558855724
+      },
+      "rbf": {
+        "mean": 0.009426104970858584,
+        "sample_sd": 0.007390353377696165
+      },
+      "vanilla": {
+        "mean": 0.022541954529714307,
+        "sample_sd": 0.018795939959988607
+      }
+    },
+    "complement_field_rmse_abs": {
+      "paired_vanilla_minus_rbf": {
+        "mean": 0.025506682434230637
+      },
+      "rbf": {
+        "mean": 0.05664215985439521,
+        "sample_sd": 0.0004961727813608956
+      },
+      "vanilla": {
+        "mean": 0.08214884228862585,
+        "sample_sd": 0.05124605954453236
+      }
+    },
+    "complement_residual_rmse_abs": {
+      "paired_vanilla_minus_rbf": {
+        "mean": 0.013325327416508744
+      },
+      "rbf": {
+        "mean": 0.02429299024642337,
+        "sample_sd": 0.009571330408530787
+      },
+      "vanilla": {
+        "mean": 0.03761831766293212,
+        "sample_sd": 0.03188608328480806
+      }
+    },
+    "field_relative_l2": {
+      "paired_vanilla_minus_rbf": {
+        "mean": 0.05564013950772672
+      },
+      "rbf": {
+        "mean": 0.1297598716341054,
+        "sample_sd": 0.009216061843438974
+      },
+      "vanilla": {
+        "mean": 0.18540001114183213,
+        "sample_sd": 0.0813446515900199
+      }
+    },
+    "field_rmse_abs": {
+      "paired_vanilla_minus_rbf": {
+        "mean": 0.03373476246584679
+      },
+      "rbf": {
+        "mean": 0.07867375038783693,
+        "sample_sd": 0.005587722459175233
+      },
+      "vanilla": {
+        "mean": 0.11240851285368372,
+        "sample_sd": 0.049319475535738184
+      }
+    },
+    "front_field_rmse_abs": {
+      "paired_vanilla_minus_rbf": {
+        "mean": 0.18380084901381447
+      },
+      "rbf": {
+        "mean": 0.5136119901382706,
+        "sample_sd": 0.07320654373037923
+      },
+      "vanilla": {
+        "mean": 0.6974128391520851,
+        "sample_sd": 0.1856236295413006
+      }
+    },
+    "front_residual_rmse_abs": {
+      "paired_vanilla_minus_rbf": {
+        "mean": -0.11697019522732016
+      },
+      "rbf": {
+        "mean": 0.305328400052684,
+        "sample_sd": 0.10542466157585552
+      },
+      "vanilla": {
+        "mean": 0.18835820482536383,
+        "sample_sd": 0.0964054038453369
+      }
+    },
+    "residual_rmse_abs": {
+      "paired_vanilla_minus_rbf": {
+        "mean": 0.004737483295245739
+      },
+      "rbf": {
+        "mean": 0.04078597334202354,
+        "sample_sd": 0.013752710876012625
+      },
+      "vanilla": {
+        "mean": 0.04552345663726928,
+        "sample_sd": 0.027790715200834922
+      }
+    }
+  },
+  "endpoint_count": 10,
+  "paired_geometric_mean_ratio_95pct_t_interval": [
+    0.4442080234136303,
+    1.2470325068290675
+  ],
+  "paired_geometric_mean_ratio_rbf_over_vanilla": 0.7442726953147513,
+  "per_seed_rbf_over_vanilla": {
+    "811": 1.0557619983000621,
+    "812": 0.38510927929906086,
+    "813": 0.7193655934439278,
+    "814": 1.0723036644080841,
+    "815": 0.7281870845471925
+  },
+  "primary_metric": "field_relative_l2",
+  "raw_summary_has_literal_backslash_n_suffix": true,
+  "raw_summary_sha256": "329a5003ae232de83f3e521c16c8ddfb4c24980ea184bd7f7e0b31e0145a9d93",
+  "rbf_lower_field_error_wins": 3,
+  "scientific_accepted": false,
+  "scores_used_for_tuning": false,
+  "seeds": [
+    811,
+    812,
+    813,
+    814,
+    815
+  ],
+  "source_kernel": "rodrimandub/af-pikans-burgers-rbf-vanilla-paired-20260927-r2"
+}

@@ -1,0 +1,12 @@
+{
+  "descriptive_only": true,
+  "pair_scoring_wall_seconds": 0.9451703180000095,
+  "pool_sha256": "0d4dde2d82c7ad4ec45ee5e7003097a84dd08fc4f2ee5be400d72bf13fca6b7b",
+  "seed": 504,
+  "status": "paired_scored",
+  "tanh_minus_rbf": {
+    "drag_coefficient": 0.17284683418014635,
+    "lift_coefficient": 0.0326674934251894,
+    "pressure_difference": 0.011008610716089606
+  }
+}

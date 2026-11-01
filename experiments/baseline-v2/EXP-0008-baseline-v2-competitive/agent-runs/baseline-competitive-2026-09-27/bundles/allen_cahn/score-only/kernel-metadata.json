@@ -1,0 +1,17 @@
+{
+  "id": "rodrimandub/af-pikans-allen-cahn-score-only-20260927",
+  "title": "AF PIKANs Allen-Cahn Score-Only 20260927",
+  "code_file": "allen-cahn-score-only.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [
+    "rodrimandub/af-pikans-allen-cahn-t4x2-20260927"
+  ],
+  "model_sources": []
+}

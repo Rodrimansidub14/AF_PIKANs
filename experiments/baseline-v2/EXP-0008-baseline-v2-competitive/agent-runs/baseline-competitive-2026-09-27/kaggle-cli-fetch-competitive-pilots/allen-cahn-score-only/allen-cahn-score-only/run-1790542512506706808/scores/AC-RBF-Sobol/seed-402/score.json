@@ -1,0 +1,22 @@
+{
+  "arm": "AC-RBF-Sobol",
+  "boundary_max_abs": 0.0,
+  "confirmatory_scoring_only": true,
+  "heldout_pde_residual_rms_normalized": 0.0020903278700148634,
+  "heldout_test_scored": true,
+  "initial_max_abs": 0.0,
+  "max_absolute_error": 0.2248603655961776,
+  "max_snapshot_relative_l2": 0.04757501080550936,
+  "post_training_score_status": "score_only_complete",
+  "reference_accepted": false,
+  "reference_candidate_sha256": "8ce9fb2090e286a55f144e0d32580b04dc058a661d7af504e0a5ca2890a26903",
+  "reference_status": "candidate_only; independent review still required",
+  "relative_weighted_space_time_l2": 0.0255506876705091,
+  "saved_pool_sha256": "511159afd3330d1ff79fa980e0020c1bfc5f0d50aa5071d71515acf651570d99",
+  "scientific_accepted": false,
+  "seed": 402,
+  "source_checkpoint_sha256": "9868a647d7cbdff371d3daef65240b1f911c27a8a65497dcb876cb3af5da8d59",
+  "source_training_status": "score_budget_exhausted",
+  "status": "DRAFT_UNVERIFIED",
+  "training_repeated": false
+}

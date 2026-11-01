@@ -1,0 +1,15 @@
+{
+  "observed_at_utc": "2026-09-27T15:40:52.146062+00:00",
+  "kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r4",
+  "provider_status": "KernelWorkerStatus.ERROR",
+  "source": "live Kaggle kernels status and kernels logs queries during this delivery",
+  "seeds_completed": [
+    303,
+    304,
+    305
+  ],
+  "error_stage": "post_training_field_visualization",
+  "error": "ModuleNotFoundError: No module named 'IPython.core.guarded_eval' while importing pyvista",
+  "new_training_submitted": false,
+  "local_validation_skipped": true
+}

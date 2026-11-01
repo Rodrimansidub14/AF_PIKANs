@@ -1,0 +1,10 @@
+{
+  "bundle_id": "dc8195220ea79261652c00598dac752a50c6ea85676afd9fcaac68b8afc2e37a",
+  "approved_by": "Rodrigo Mansilla",
+  "scope": "approved",
+  "hypothesis": "approved",
+  "code_surface": "approved",
+  "remote_execution": true,
+  "authorization_source": "Conversation: Haz heat y Burguers en un mismo run; usa wandb; documentar toda decision de parametros.",
+  "interpretation": "User requested point/step tradeoff avoiding 8+ hours. Budget v2: 3 seeds, Heat max5000 steps/300s, Burgers max20000 steps/1200s; max105min runtime +15min setup. No claim or baseline freeze."
+}

@@ -1,0 +1,114 @@
+\chapter{Metodología}
+\label{sec:metodologia}
+\section{Enfoque y unidad de análisis}
+La investigación adopta la Metodología de Investigación en Ciencia del Diseño (DSRM): problema, objetivos del artefacto, construcción, demostración, evaluación y comunicación \cite{peffers2007dsrm}. El artefacto será un controlador de reasignación de representación; esta versión especifica su desarrollo futuro. La unidad estadística será una corrida completa identificada por problema, método y semilla. Puntos del dominio e iteraciones de entrenamiento no se tratarán como réplicas independientes.
+
+La unidad física es el error espacial y por campo, condicionado a presupuesto y estabilidad. La contribución se evaluará frente a métodos cercanos, no únicamente frente a una PIKAN débil. La información publicada en preprints se incorpora como precedente y guía de implementación, diferenciando reproducción literal, adaptación al banco y nueva propuesta.
+
+\section{Fases y productos verificables}
+\begin{enumerate}
+\item \textbf{Cierre del protocolo.} Revisar ecuaciones, fuentes, contratos de problemas y restricciones del controlador; aceptar o modificar explícitamente las hipótesis. La aprobación científica no se infiere de compilar el documento.
+\item \textbf{Referencias y operadores.} Implementar soluciones exactas, residuales, frontera, escalas y evaluación independiente; construir FEM y verificar convergencia antes de usarlo como referencia.
+\item \textbf{Arquitectura y controles.} Reproducir PIKAN fija y adaptación por residual/curvatura. Examinar B-splines móviles y centros compactos con igual presupuesto. El piloto elige un sustrato principal; el otro queda como control de transferencia de la idea.
+\item \textbf{Controlador.} Implementar extracción, normalización, propuesta, transferencia, comprobación y reversión. El desarrollo comienza únicamente después de las verificaciones anteriores.
+\item \textbf{Ablaciones y generalización.} Congelar decisiones usando entrenamiento y validación; ejecutar prueba reservada y casos desplazados. Extender a ventanas temporales y luego a campos acoplados.
+\item \textbf{Síntesis.} Comunicar resultados positivos, negativos, costos y fallas. La interpretación no se convierte automáticamente en conocimiento canónico.
+\end{enumerate}
+
+\section{Contratos de problemas y referencias}
+Cada contrato contendrá dominio, unidades, operador, parámetros, condiciones, escalas, campos, solución o solucionador de referencia, región crítica, cuadratura y tolerancias. Se utilizarán exactamente las instancias de la sección 6.7. El canal con cilindro y el material piezoeléctrico sintético son casos propuestos; no se presentarán como reproducciones idénticas de otros autores. El caso PVDF requiere una ficha de material verificada antes de activarse.
+
+Para verificar el constitutivo acoplado antes de interfaces se usará además una solución manufacturada homogénea: $d_x=x^2y$, $d_y=-xy^2$, $\varphi=x(1-x)y$, con $C,e,\kappa$ sintéticos del marco. Se calcularán $\mathbf b=-\nabla\cdot\sigma$ y $\rho_f=\nabla\cdot\mathbf D$ por sustitución, imponiendo trazas exactas en toda la frontera. Es una prueba del operador, no del dispositivo bimorfo.
+
+Las referencias FEM usarán tres resoluciones anidadas como mínimo. Se reportarán diferencias entre niveles en $L^2$, seminorma $H^1$, cantidades de interés y balances. La referencia se acepta si la diferencia de los dos niveles más finos es menor al 10\% de la diferencia mínima entre métodos que se pretende resolver. Si no, se refina o se declara que la comparación no puede resolverse. Para canal se comprobarán arrastre, flujo y masa; para piezoelectricidad, desplazamiento de punta, carga y transmisión. FEM no se denominará verdad exacta.
+
+\section{Separación de entrenamiento, diagnóstico y prueba}
+Se generarán conjuntos reproducibles con semillas independientes: $R$ para colocación y entrenamiento; $P$ para proyección; $D$ para diagnóstico del controlador; $V$ para elegir hiperparámetros y paradas; $E$ para evaluación final. Las referencias analíticas/FEM se podrán consultar en $V$ durante selección, nunca en $D$ ni $P$. $E$ se abre una sola vez tras congelar configuración. Un conjunto usado repetidamente por el controlador forma parte del desarrollo, aunque no reciba gradientes.
+
+En 1D se usará inicialmente $N_r=2048$, $N_D=4096$, $N_V=4096$ y una cuadratura final fija de 16385 puntos; frontera exacta en extremos. En 2D: $N_r=8192$, $N_D=N_V=16384$, $N_B=1024$ por corrida y cuadratura final de al menos $257\times257$, excluyendo obstáculos y respetando interfaces. Proyección usa una muestra distinta de tamaño $N_r$. En ventanas temporales se mantienen esos tamaños por ventana y se estratifican puntos iniciales, interiores y de memoria. Estos son valores iniciales del piloto; se aumentarán si una comprobación de resolución muestra aliasing. El tamaño final y su justificación quedarán congelados antes del ensayo confirmatorio.
+
+Se fija semilla de generación geométrica distinta de la de inicialización. Las semillas de entrenamiento piloto serán 101, 102 y 103. Las confirmatorias serán 11, 23, 37, 41, 53, 67, 79, 83, 97 y 109, emparejadas entre métodos. Los resultados del piloto no entran en inferencia confirmatoria.
+
+\section{Configuración inicial y elección del sustrato}
+La PIKAN de referencia tendrá dos capas ocultas de ancho 8, B-splines cúbicas, $G=8$ intervalos por arista y coordenadas normalizadas. La salida tendrá $m$ componentes. Se declarará el rango latente observado y una regla idéntica de manejo fuera de rango; no se recortarán silenciosamente activaciones. Se registrará el número real de parámetros, incluidos términos base, sesgos y geometría. Para centros compactos se igualarán parámetros con tolerancia de 1\%, radio inicial de dos separaciones y centros uniformes. En la rama multicampo se utilizarán subredes por campo desde todos los controles, sin atribuir a la focalización el cambio de arquitectura.
+
+Entrenamiento piloto: precisión float64, Adam con tasa $10^{-3}$, máximo 20000 pasos, misma política de lotes por método. La fase primaria no mezcla L-BFGS con geometría variable. Se comprobará sensibilidad a tasas $3\times10^{-4}$ y $3\times10^{-3}$ en validación con igual número de ensayos por método. La comparación confirmatoria conserva el mejor ajuste de cada método elegido sin acceso a $E$. Versiones, hardware, precisión y determinismo se registran; si cambia hardware, no se mezclan tiempos como equivalentes.
+
+La adaptación inicia tras 2000 pasos, con evento cada $H=500$, hasta cuatro candidatos y $K_p=20$ pasos de prueba por candidato. Se utiliza $\alpha=0.1$, $\tau=1$ tras normalización fija y desplazamiento máximo de 0.2 intervalos locales por evento. La señal negativa no fuerza cambios: si ninguna acción cumple beneficio y conservación, se conserva la geometría. En todos los controles se mantienen calendario, reinicios y contabilidad equivalentes. El piloto variará frecuencia y horizonte una vez para detectar dependencia extrema; no se abrirá una búsqueda ilimitada del controlador.
+
+\section{Comparadores y ablaciones obligatorias}
+\begin{longtable}{p{.12\linewidth}p{.39\linewidth}p{.40\linewidth}}
+\caption{Comparaciones para atribuir el efecto del controlador.}\label{tab:baselines}\\\toprule
+ID & Método & Qué permite distinguir\\\midrule\endfirsthead
+\toprule ID & Método & Qué permite distinguir\\\midrule\endhead
+B0 & PIKAN con geometría fija & Referencia base\\
+B1 & Geometría libre por gradiente & Adaptación ordinaria sin controlador\\
+B2 & Ponderación residual normalizada & Cambio de esfuerzo con igual geometría\\
+B3 & RAD sobre PIKAN & Muestreo adaptativo \cite{wu2023sampling}\\
+B4 & Nudos por densidad residual & Adaptación geométrica residual\\
+B5 & Nudos por curvatura & Ruta de densidad de importancia \cite{rigas2026}\\
+B6 & Extensión uniforme & Igual crecimiento si el candidato aumenta parámetros\\
+C & Utilidad marginal con conservación & Propuesta principal\\
+A1 & C sin conservación & Efecto de proteger lo aprendido\\
+A2 & C con señal permutada & Importancia de localizar correctamente\\
+A3 & C sin retiro/movimiento posterior & Necesidad de liberar resolución\\
+A4 & C con reparto uniforme entre campos & Aporte del reparto multicampo\\
+\bottomrule\end{longtable}
+Todos B0--B5 y C se ejecutan en el núcleo Poisson localizado y Burgers. B6 solo cuando cambia dimensión; en presupuesto estrictamente fijo no se necesita atribuirle un crecimiento inexistente. A1--A2 se prueban en el núcleo, A3 en Allen--Cahn por ventanas y A4 en el sistema acoplado. FBPINN/FBKAN se mantienen como control de localidad estructural en un caso representativo si las sensibilidades muestran que el sustrato KAN carece de localidad física suficiente. hp-VPINN y entrenamiento causal son referencias de formulación, no implementaciones supuestamente ejecutadas.
+
+RA-PIKAN y entrenamiento adaptativo publicado orientan los controles B4/B6 y el calendario. Una implementación que cambie componentes se denominará adaptación propia, no reproducción del paper. Si se dispone del algoritmo completo, se añadirá su reproducción con versión y desviaciones documentadas. El resumen público de un preprint no basta para inventar detalles faltantes.
+
+\section{Presupuesto y prevención de comparaciones engañosas}
+Se realizarán dos análisis: mismo máximo de parámetros activos y misma envolvente de tiempo total. Tiempo incluye señal, candidatos descartados, proyección, verificación y entrenamiento. Se reportará adicionalmente error por evaluaciones de residual/derivadas. El presupuesto de tiempo por problema será la mediana del tiempo piloto de B0 a 20000 pasos; todos los métodos reciben ese presupuesto confirmatorio y una curva completa error--tiempo. También se conserva el resultado a igual número de pasos como análisis secundario, sin confundirlo con igualdad de cómputo.
+
+El controlador tendrá límite inicial del 20\% del tiempo total. Si lo supera, se registra fallo de viabilidad de esa configuración; no se elimina el costo de sus pruebas de la gráfica. La campaña se dimensionará con $T_{\text{campaña}}=\sum_{p,m,s}T_{pms}$ a partir del piloto. Las corridas costosas requieren el gate de hipótesis/presupuesto del proyecto. Este documento no autoriza un consumo de GPU indeterminado.
+
+\section{Métricas y regiones críticas}
+Para pesos de cuadratura $q_i$, campo $v$ y región $A$:
+\begin{equation}E_{2,v}(A)=\frac{[\sum_{z_i\in A}q_i|u_{v,i}-u_{v,i}^{\rm ref}|^2]^{1/2}}{\max([\sum_{z_i\in A}q_i|u_{v,i}^{\rm ref}|^2]^{1/2},\epsilon U_v|A|^{1/2})}.\end{equation}
+Se acompaña de RMSE absoluto normalizado por $U_v$, seminorma $H^1$ y percentil 95 de error absoluto. No se usa error relativo puntual cerca de ceros de la referencia. Se reportan residual por ecuación, discrepancias de frontera/transmisión, tiempo, memoria y porcentaje de corridas fallidas.
+
+Las regiones se fijan antes de entrenar: Poisson localizado $|x-c|\leq0.15$; Burgers $|x|\leq4\nu$; Allen--Cahn $|x-c(t)|\leq3\varepsilon$; canal, distancia al cilindro menor de $0.05$ y estela $x\in[0.25,1]$, $|y-0.2|\leq0.1$; piezoelectricidad, banda $|y|\leq0.01$ y vecindad del empotramiento $x\leq0.1$ en coordenadas adimensionales. Se evalúa asimismo el complemento para detectar desplazamiento de error.
+
+Para acoplamiento se utiliza $E_{\rm peor}=\max_v E_{2,v}$ y errores separados. Continuidad no domina una suma por tener unidades distintas: cada residual conserva su escala física fija. Conservación de transferencia se mide antes/después del cambio, antes del entrenamiento posterior. En ventanas temporales se registra tiempo de seguimiento, distancia entre máxima señal y frente, error en ventanas pasadas y error propagado al inicio siguiente.
+
+\section{Hipótesis, criterios y análisis estadístico}
+Los umbrales siguientes son propuestas operativas previas, no resultados ni garantías de potencia estadística.
+\begin{enumerate}
+\item \textbf{H1: utilidad a costo comparable.} C reduce al menos 10\% la mediana de error en región crítica frente al mejor control cercano seleccionado en $V$, a igual tiempo, y no empeora más de 5\% el error global/complementario. Se exige consistencia en ambos casos del núcleo, no un único ejemplo favorable.
+\item \textbf{H2: conservación.} Proteger transferencia reduce saltos y fallas frente a A1; el costo no elimina H1. El cambio relativo RMS de valores será $\leq10^{-3}$, de primeras derivadas $\leq10^{-2}$ y de segundas derivadas requeridas $\leq5\times10^{-2}$, usando escalas físicas fijas. La pérdida diagnóstica posterior a transferencia no aumentará más de 5\%. Se rechaza una acción que falle cualquiera.
+\item \textbf{H3: localización y liberación.} C supera señal permutada en casos localizados y conserva regiones pasadas al mover el frente. El control distribuido no se interpreta mediante una prohibición absoluta de mejora. Si hay mejora comparable con señal permutada, no se atribuye el beneficio a localización.
+\item \textbf{H4: reparto multicampo.} Frente a reparto uniforme, disminuye al menos 10\% $E_{\rm peor}$, sin aumentar más de 5\% el error de otro campo ni violar tolerancias de interfaz.
+\end{enumerate}
+Se publicarán diferencias emparejadas por semilla, mediana, rango intercuartílico y un intervalo bootstrap emparejado del 95\% con 10000 remuestreos. Para inferencia principal se usará prueba de permutación emparejada de logaritmos de cocientes de error, con ajuste Holm sobre las hipótesis confirmatorias activadas. Diez semillas no garantizan potencia: el piloto estimará variabilidad y cualquier aumento se decidirá antes de abrir $E$. Se distinguirá significancia estadística de relevancia práctica. Fallas no se descartan: se reportan tasa, razón y análisis conservador asignándoles peor rango.
+
+\section{Supervisión de la implementación}
+La supervisión combina contratos numéricos y revisión humana del significado científico. Cada componente debe producir evidencia antes de habilitar el siguiente:
+\begin{enumerate}
+\item Operadores: residual de soluciones exactas en float64 $<10^{-8}$ tras normalización en puntos alejados de interfaces; comparación de derivadas automáticas y analíticas. Balance y signos constitutivos verificados con problema manufacturado.
+\item Bases: partición de unidad donde corresponde, soporte y regularidad; orden de nudos, extremos fijos y separación mínima. La base compacta alternativa no se obliga a partición de unidad si su construcción no la tiene.
+\item Controlador: señal constante, nula, negativa, permutada y saturada; presupuesto entero conservado, mínimos por campo y selección reproducible. Desactivar adaptación debe recuperar B0 con idéntico calendario.
+\item Transferencia: verificar valores y derivadas en puntos independientes y revertir de forma transaccional geometría, coeficientes y optimizador. La prueba de reversión compara estado completo, no solo pérdida.
+\item Evaluación: referencia inaccesible al controlador, regiones fijas, contabilidad de costos y corridas fallidas conservadas. Repetir una corrida desde checkpoint verifica trazabilidad.
+\end{enumerate}
+Los contratos propuestos se implementarán con módulos separados para problema, aproximador, controlador, transferencia y evaluación. Interfaz mínima del controlador: observar estado y diagnóstico; proponer acción con costo; comprobar factibilidad; aceptar o revertir; emitir evento. La instrumentación guardará geometría antes/después, señal, beneficio estimado, beneficio observado, causa de rechazo y estado del optimizador.
+
+\section{Registro, visualización y decisiones de avance}
+Cada corrida guardará configuración y hash, versión de código/dependencias, semillas, precisión, hardware, checkpoint, tiempos por fase y métricas en formatos tabulares legibles. Se podrán registrar en MLflow, manteniendo exportación local \cite{zaharia2018mlflow}. Las figuras finales incluirán referencia/predicción/error con misma escala; residual por ecuación; geometría antes/después; sensibilidad espacial; error--tiempo; error por campo; y trayectoria del frente por ventanas.
+
+Las imágenes analíticas y la demostración FEM incluidas en este protocolo explican el banco, pero no satisfacen los gates del entrenamiento futuro. Se avanza de verificación a núcleo solo con operadores y bases comprobados; de núcleo a movilidad con evidencia de localización; a multicampo con transferencia y costo aceptables. Si una hipótesis falla se documenta la falla y se diseña una nueva versión con nueva partición confirmatoria. No se itera indefinidamente sobre el conjunto de prueba hasta obtener una mejora.
+
+\chapter{Plan de desarrollo y entregables}
+El plan está ordenado por dependencias, no por fechas inferidas de disponibilidad de GPU. La estimación calendario se cerrará con tiempos piloto.
+\begin{longtable}{p{.13\linewidth}p{.42\linewidth}p{.35\linewidth}}\toprule
+Etapa & Entregable & Condición de cierre\\\midrule
+P0 & Protocolo y ficha de literatura & Revisión científica del alcance\\
+P1 & Problemas exactos y referencias FEM & Operadores y convergencia verificados\\
+P2 & B0--B5 y piloto de sustrato & Configuración y presupuesto congelados\\
+P3 & Controlador, transferencia y eventos & Invariantes y reversión comprobados\\
+P4 & Núcleo y ablaciones & Análisis emparejado con costo\\
+P5 & Ventanas móviles & Seguimiento y olvido caracterizados\\
+P6 & Caso acoplado sintético y luego PVDF & Balance por campo y ficha material\\
+P7 & Manuscrito y paquete reproducible & Evidencia, límites y claims revisados\\\bottomrule
+\end{longtable}
+El siguiente trabajo técnico concreto es P1, seguido de P2 y P3. No falta inventar retrospectivamente cómo evaluar el mecanismo: esas reglas quedan definidas aquí. La aprobación del alcance científico y la ficha dimensional PVDF son decisiones explícitas que permanecen diferenciadas del desarrollo computacional.

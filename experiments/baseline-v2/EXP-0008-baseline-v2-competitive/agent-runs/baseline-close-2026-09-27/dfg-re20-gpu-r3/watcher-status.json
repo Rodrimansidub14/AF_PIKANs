@@ -1,0 +1,9 @@
+{
+  "bundle_id": "682b3231055919875ff779f51209aaf0225067eed02704d2eea99abab8c7f29c",
+  "error": "Three download attempts failed; partial artifacts were retained.",
+  "kernel": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3",
+  "poll_interval_sec": 60,
+  "provider_status": "rodrimandub/af-pikans-dfg-re20-baseline-20260927-r3 has status \"KernelWorkerStatus.ERROR\"",
+  "status": "fetch_error",
+  "updated_at": "2026-09-27T11:45:57.748670+00:00"
+}

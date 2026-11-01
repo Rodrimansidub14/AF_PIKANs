@@ -1,0 +1,15 @@
+{
+  "id": "rodrimandub/pinnacle-reference-burgers",
+  "title": "PINNacle Reference Burgers",
+  "code_file": "burgers-pinnacle-reference.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

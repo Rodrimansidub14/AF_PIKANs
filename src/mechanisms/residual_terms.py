@@ -13,7 +13,7 @@ for every key; a term whose points are exhausted is simply absent from that chun
 `gram_preconditioning.gn_blocks` calls `gn_blocks_terms` only if the problem defines `residual_terms`; Burgers / Allen-Cahn do not (their scalar path is
 untouched) but have adapters here so the two paths can be compared. Adapters are installed with `install(prob)` (no change to the campaign files):
     ns2d_cg (NSProblem, 8 terms, weight 1, full batch)    burgers_pinnacle_1d / allen_cahn (hard transform, one term)
-    DFGTerms (src/research_pipeline/sciml/dfg.py: DFGRBFPIKAN, output_scales are inside the model's forward, so functional_call carries them)
+    DFGTerms (src/sciml/dfg.py: DFGRBFPIKAN, output_scales are inside the model's forward, so functional_call carries them)
     piezo (converse and direct, PiezoProblem of EXP-0028/piezo): `piezo_residual_terms`, full model (trunk + phase construction + scales + hard BCs) in physical units.
 Derivatives wrt x are taken with torch.func (vmap(jacrev(jacrev))), not autograd.grad: the latter does not compose with jacrev over the coefficients.
 

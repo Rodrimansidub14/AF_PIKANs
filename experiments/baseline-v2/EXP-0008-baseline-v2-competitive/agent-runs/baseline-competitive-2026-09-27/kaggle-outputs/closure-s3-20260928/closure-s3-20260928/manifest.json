@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "session": "S3",
+  "kernel_slug": "rodrimandub/af-pikans-ac-lbfgs-continuation-s3-20260928",
+  "status": "partial",
+  "started_at_utc": "2026-09-28T21:35:34.231834+00:00",
+  "ended_at_utc": "2026-09-28T21:35:59.587769+00:00",
+  "actual_session_seconds": 25.35864944100004,
+  "push_cap_seconds": 2700.0,
+  "session_quota_cap_hours": 0.75,
+  "per_arm_seed_cap_seconds": 240.0,
+  "runtime": {
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "visible_gpu_count": 2
+  },
+  "source_preflight": {
+    "model_source": "47c02c9279e564729feee848f4f9266a746aa19869727dcb47d682ad0a103241",
+    "checkpoints": {
+      "401": {
+        "AC-RBF-Sobol": "083ac1f119d564cff7e3732df9ce7684e577f41ae2d214d00c6a306c812b3239",
+        "AC-DeepXDE-MLP": "ae42552e644eda1aef86c1b517bda3d907961f43e907ab6e75096fa75969b99b"
+      },
+      "402": {
+        "AC-RBF-Sobol": "a90cc8a725659620e365b32898bd850af023e9a64ca213a887e8891aa57e48a4",
+        "AC-DeepXDE-MLP": "bebcbd69edd51bc440b9e1d361c61deb6e6b0c70e71555ee95b335cf74c0ac6e"
+      },
+      "403": {
+        "AC-RBF-Sobol": "75c0f1dfd55e62ac01777eedb11fe15b95990a36b0b475278cd2fbfcdcc85635",
+        "AC-DeepXDE-MLP": "551bddf472e0d796ff835f9e493a3335eb989ca1a543cbb87d33c5434688ef14"
+      },
+      "404": {
+        "AC-RBF-Sobol": "b0a6b989ecfdbb730b4722622095ef9216cf862850939c2f2960ff82f289f293",
+        "AC-DeepXDE-MLP": "0271a09851e804aa4e31034cb6d63f26be2699647fee81f1835d33bfbd46d30d"
+      },
+      "405": {
+        "AC-RBF-Sobol": "97c04caeb60efb5bf3a3fb800c1f7cf113ff75dbf56eee75791a01985d7c12c9",
+        "AC-DeepXDE-MLP": "b5290fb473e15e6f49a08d45e127bab76b80453977013d8a6c1e76fe42b81e1e"
+      }
+    },
+    "pools": {
+      "401": "067392c7b13d6bf5df896b59b0f603e5837b9469479e1655f735ce9f3b902858",
+      "402": "511159afd3330d1ff79fa980e0020c1bfc5f0d50aa5071d71515acf651570d99",
+      "403": "5352b7d911364dd70db740c766d770beda1895cde40ac3f154ae906b98321e4b",
+      "404": "97267f785cd5a3598d8d2f3a75e6a26ed6f65e2431544070a3cccef9d9bf370a",
+      "405": "2fc0d2999ca42e751aab4e010998c0b681ff18a98c758fea28c9e9681fb72197"
+    },
+    "references": {
+      "FD8192": "8ce9fb2090e286a55f144e0d32580b04dc058a661d7af504e0a5ca2890a26903",
+      "ETDRK4": "f004af6ec0d98ff9ae0a4121d3f82ade4db9d01f0943c349871bd47182b4ac94"
+    },
+    "s1a_status": "candidate_complete",
+    "all_hashes_verified": true
+  },
+  "arms": [
+    "AC-RBF-Sobol",
+    "AC-DeepXDE-MLP"
+  ],
+  "seeds": [
+    401,
+    402,
+    403,
+    404,
+    405
+  ],
+  "optimizer": {
+    "name": "PyTorch LBFGS",
+    "history_size": 100,
+    "tolerance_grad": 1e-08,
+    "tolerance_change": 0.0,
+    "line_search_fn": "strong_wolfe",
+    "per_step_max_iter": 1,
+    "per_step_max_eval": 8
+  },
+  "references": [
+    "FD8192 candidate",
+    "independent ETDRK4 candidate"
+  ],
+  "score_grid": "512x256",
+  "kernel_sources": [
+    "rodrimandub/af-pikans-allen-cahn-t4x2-20260927",
+    "rodrimandub/af-pikans-competitive-baseline-s1-20260928"
+  ],
+  "artifacts": [
+    {
+      "path": "campaign-ledger.json",
+      "size_bytes": 6343,
+      "sha256": "7fe2745d4fbb5c62c094eea6a33256850dc9add64ead6756418cf4ea60898e4c"
+    },
+    {
+      "path": "payload/ac_lbfgs_worker.py",
+      "size_bytes": 13042,
+      "sha256": "593003f62841080cbd52d20311b22263f30e763f26a7fa61277ceb20f8ae4624"
+    },
+    {
+      "path": "payload/s3-source-config.json",
+      "size_bytes": 4253,
+      "sha256": "0c5afae647224782c94e1735fc9c5c89b02ad995e1c16504a98bc05cf82f628b"
+    },
+    {
+      "path": "worker-logs/train-seed-401-AC-DeepXDE-MLP.log",
+      "size_bytes": 461,
+      "sha256": "109561ca7a665700eb6929347c364475d8a33c059c91ba76fec3b3f035487c70"
+    },
+    {
+      "path": "worker-logs/train-seed-401-AC-RBF-Sobol.log",
+      "size_bytes": 461,
+      "sha256": "109561ca7a665700eb6929347c364475d8a33c059c91ba76fec3b3f035487c70"
+    },
+    {
+      "path": "worker-logs/train-seed-402-AC-DeepXDE-MLP.log",
+      "size_bytes": 461,
+      "sha256": "109561ca7a665700eb6929347c364475d8a33c059c91ba76fec3b3f035487c70"
+    },
+    {
+      "path": "worker-logs/train-seed-402-AC-RBF-Sobol.log",
+      "size_bytes": 461,
+      "sha256": "109561ca7a665700eb6929347c364475d8a33c059c91ba76fec3b3f035487c70"
+    },
+    {
+      "path": "worker-logs/train-seed-403-AC-DeepXDE-MLP.log",
+      "size_bytes": 461,
+      "sha256": "109561ca7a665700eb6929347c364475d8a33c059c91ba76fec3b3f035487c70"
+    },
+    {
+      "path": "worker-logs/train-seed-403-AC-RBF-Sobol.log",
+      "size_bytes": 461,
+      "sha256": "109561ca7a665700eb6929347c364475d8a33c059c91ba76fec3b3f035487c70"
+    },
+    {
+      "path": "worker-logs/train-seed-404-AC-DeepXDE-MLP.log",
+      "size_bytes": 461,
+      "sha256": "109561ca7a665700eb6929347c364475d8a33c059c91ba76fec3b3f035487c70"
+    },
+    {
+      "path": "worker-logs/train-seed-404-AC-RBF-Sobol.log",
+      "size_bytes": 461,
+      "sha256": "109561ca7a665700eb6929347c364475d8a33c059c91ba76fec3b3f035487c70"
+    },
+    {
+      "path": "worker-logs/train-seed-405-AC-DeepXDE-MLP.log",
+      "size_bytes": 461,
+      "sha256": "109561ca7a665700eb6929347c364475d8a33c059c91ba76fec3b3f035487c70"
+    },
+    {
+      "path": "worker-logs/train-seed-405-AC-RBF-Sobol.log",
+      "size_bytes": 461,
+      "sha256": "109561ca7a665700eb6929347c364475d8a33c059c91ba76fec3b3f035487c70"
+    }
+  ],
+  "scientific_accepted": false,
+  "reference_accepted": false
+}

@@ -1,0 +1,79 @@
+{
+  "cap_overrun_seconds": 0.0,
+  "device": "cpu",
+  "model": {
+    "architecture": [
+      2,
+      16,
+      16,
+      3
+    ],
+    "basis_count": 11,
+    "id": "dfg_rbf_fixed_2_16_16_3"
+  },
+  "outlet_condition": "nu * grad(velocity) n - p n = 0; n=(1,0)",
+  "pool_archive": "dfg_training_pools.npz",
+  "pool_archive_sha256": "f2d4a13b58a1949d7090c03114ab2b2d544fe78a510f434824c95bec3657ec85",
+  "pressure_gauge": "no point pin; FEATFLOW do-nothing outlet includes pressure; pressure difference is front minus rear",
+  "problem": "dfg_2d_1_steady_re20",
+  "qoi_convention": "FEATFLOW sigma=nu*grad(u)-pI; n points radially outward; coefficient 2/(U_mean^2*D)",
+  "qoi_reference": {
+    "field_reference": null,
+    "source": "https://wwwold.mathematik.tu-dortmund.de/~featflow/en/benchmarks/cfdbenchmarking/flow/dfg_benchmark1_re20.html",
+    "values": {
+      "drag_coefficient": 5.57953523384,
+      "lift_coefficient": 0.010618948146,
+      "pressure_difference": 0.11752016697
+    }
+  },
+  "sampling": {
+    "boundary": {
+      "corner_points_excluded": true,
+      "cylinder_parameterization": "theta=2*pi*q; q in (0,1); no duplicated endpoint",
+      "method": "independent_scrambled_sobol_parameterization",
+      "points_per_segment": 4,
+      "scramble_seeds": {
+        "cylinder": 412,
+        "inlet": 112,
+        "lower_wall": 222,
+        "outlet": 514,
+        "upper_wall": 318
+      }
+    },
+    "interior": {
+      "accepted_count": 8,
+      "candidate_count": 8,
+      "dimension": 2,
+      "method": "scrambled_sobol_rejection",
+      "rejected_count": 0,
+      "scramble_seed": 11
+    },
+    "pool_sha256": {
+      "cylinder": "cf49fb86d475c5b7729ecffa5668b297d9968a99395a4b5b39642ba0fa5bc828",
+      "inlet": "923be811de53721ac8b67350dd074405471f0f71075743b9b66b741340d68d53",
+      "interior": "f857122d4735736693acf0e0bd30c94540e62f52296e90c4bdbda0afca6dfb83",
+      "lower_wall": "7b0b33bed3beb4e7fe923a8dd6801321daf94089ace402da02a872d8de934ef5",
+      "outlet": "9b8e7fee73b55c13d3666f305f7a98717133cf14739ff325accd08a12543ccdc",
+      "upper_wall": "0f666952f461712e1a487d0a1b8156a5e4d3ffd008c90131ffed5463c0652d36"
+    },
+    "seed": 11
+  },
+  "schema_version": 1,
+  "scientific_accepted": false,
+  "seed": 11,
+  "stop_reason": "step_limit",
+  "training_config": {
+    "batch_size": 4,
+    "boundary_batch_size": 4,
+    "boundary_count": 4,
+    "device": "cpu",
+    "interior_count": 8,
+    "learning_rate": 0.001,
+    "max_steps": 1,
+    "seed": 11,
+    "time_limit_s": 120.0
+  },
+  "training_seconds": 0.24794899998232722,
+  "training_steps": 1,
+  "training_time_cap_seconds": 120.0
+}

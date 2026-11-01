@@ -1,0 +1,32 @@
+{
+  "rbf_fixed": {
+    "label": "RBF-PIKAN fija",
+    "bundle_id": "854aa1647cb66eeddefb31bde87de870ff0c124e57f04e2bc4b645aa3a1610e3",
+    "parameters": 3648,
+    "execution_valid": true,
+    "wandb_status": "synced",
+    "wandb_runs_synced": 6,
+    "evaluator_thresholds_pass": false,
+    "scientific_accepted": false
+  },
+  "mlp_tanh": {
+    "label": "PINN MLP tanh",
+    "bundle_id": "72cd3b50fc23e8d2491b486462ae7c3f2f610a99ae93483eb06f257762cece78",
+    "parameters": 3655,
+    "execution_valid": true,
+    "wandb_status": "synced",
+    "wandb_runs_synced": 6,
+    "evaluator_thresholds_pass": false,
+    "scientific_accepted": false
+  },
+  "bspline_cubic": {
+    "label": "PIKAN B-spline c\u00fabica",
+    "bundle_id": "32e0ccf4f2d13a83bf5aeba244b6c6aded77a64b80044e125e803e6eb941ade1",
+    "parameters": 3648,
+    "execution_valid": true,
+    "wandb_status": "synced",
+    "wandb_runs_synced": 6,
+    "evaluator_thresholds_pass": false,
+    "scientific_accepted": false
+  }
+}

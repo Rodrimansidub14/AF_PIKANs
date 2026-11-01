@@ -1,0 +1,15 @@
+{
+  "status": "DRAFT_UNVERIFIED",
+  "arm": "H-FNN",
+  "model_id": "torch_tanh_fnn_20x3_hard_trace",
+  "literature_relation": "PyTorch port of the published DeepXDE Heat tutorial architecture/optimizer recipe; not DeepXDE execution or a literal reproduction",
+  "architecture": [2, 20, 20, 20, 1],
+  "activation": "tanh",
+  "initializer": "Xavier normal weights; zero biases",
+  "parameters": 921,
+  "optimizer": {"adam": {"lr": 0.001, "target_updates": 20000}, "lbfgs": {"max_iter": 15000, "only_after_all_adam_updates": true}},
+  "common_contract": "campaign.json",
+  "precision": "float64",
+  "gpu_seconds_per_seed": 600,
+  "smoke_gpu_seconds": 120
+}

@@ -1,0 +1,16 @@
+{
+  "interior_count": 64,
+  "diagnostic_count": 64,
+  "left_count": 16,
+  "right_count": 16,
+  "initial_count": 32,
+  "sobol_centered_discrepancy": 0.0001616442017011721,
+  "nearest_neighbor_min": 0.03884125987018105,
+  "nearest_neighbor_median": 0.0842401816324369,
+  "nearest_neighbor_p95": 0.1378315671921107,
+  "nearest_neighbor_max": 0.17313598927651194,
+  "coordinate_x_min": -0.9782625567167997,
+  "coordinate_x_max": 0.9707977753132582,
+  "coordinate_t_min": 0.0031188959255814552,
+  "coordinate_t_max": 0.9973796308040619
+}

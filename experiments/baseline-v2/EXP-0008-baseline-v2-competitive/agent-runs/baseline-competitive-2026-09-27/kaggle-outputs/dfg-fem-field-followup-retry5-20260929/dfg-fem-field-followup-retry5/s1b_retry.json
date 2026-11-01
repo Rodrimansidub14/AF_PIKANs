@@ -1,0 +1,9 @@
+{
+  "actual_session_seconds": 753.649,
+  "part": "s1b_retry",
+  "s1b_status": "complete",
+  "scientific_accepted": false,
+  "session_elapsed_seconds": 753.649,
+  "status": "candidate_complete",
+  "updated_at_utc": "2026-09-29T08:03:15Z"
+}

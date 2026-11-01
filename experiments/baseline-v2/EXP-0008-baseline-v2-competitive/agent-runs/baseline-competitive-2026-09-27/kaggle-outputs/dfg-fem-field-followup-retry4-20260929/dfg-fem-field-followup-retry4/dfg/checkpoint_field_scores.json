@@ -1,0 +1,226 @@
+{
+  "fixed_field_scoring_contract": {
+    "cohorts": {
+      "current_rbf": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "refinement_rbf_and_tanh_mlp": [
+        501,
+        502,
+        503,
+        504,
+        505
+      ]
+    },
+    "grid": {
+      "mask": "exclude points with (x-0.2)^2+(y-0.2)^2 <= 0.05^2",
+      "ordering": "numpy.meshgrid(indexing='xy'); row-major flattened",
+      "x": {
+        "count": 221,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 2.2
+      },
+      "y": {
+        "count": 42,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 0.41
+      }
+    },
+    "metrics": [
+      "u_relative_l2",
+      "v_relative_l2",
+      "p_relative_l2_gauge_fixed_outlet"
+    ],
+    "pressure_gauge": {
+      "method": "subtract pressure at fixed outlet point from FEM and each checkpoint",
+      "outlet_anchor_xy": [
+        2.2,
+        0.2
+      ]
+    },
+    "reference_level": "DFG-L2 (third of three requested mesh levels)",
+    "retraining": false
+  },
+  "metrics": {
+    "current_301_305": {
+      "rbf": {
+        "p_relative_l2_gauge_fixed_outlet": {
+          "mean": null,
+          "n": 0,
+          "sample_sd": null
+        },
+        "u_relative_l2": {
+          "mean": null,
+          "n": 0,
+          "sample_sd": null
+        },
+        "v_relative_l2": {
+          "mean": null,
+          "n": 0,
+          "sample_sd": null
+        }
+      }
+    },
+    "older_501_505": {
+      "mlp": {
+        "p_relative_l2_gauge_fixed_outlet": {
+          "mean": null,
+          "n": 0,
+          "sample_sd": null
+        },
+        "u_relative_l2": {
+          "mean": null,
+          "n": 0,
+          "sample_sd": null
+        },
+        "v_relative_l2": {
+          "mean": null,
+          "n": 0,
+          "sample_sd": null
+        }
+      },
+      "rbf": {
+        "p_relative_l2_gauge_fixed_outlet": {
+          "mean": null,
+          "n": 0,
+          "sample_sd": null
+        },
+        "u_relative_l2": {
+          "mean": null,
+          "n": 0,
+          "sample_sd": null
+        },
+        "v_relative_l2": {
+          "mean": null,
+          "n": 0,
+          "sample_sd": null
+        }
+      }
+    }
+  },
+  "paired_seed_differences_RBF_minus_MLP_501_505": [],
+  "per_seed": [
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-301/checkpoint-lbfgs.pt",
+      "error": "RuntimeError: current DFG model source is missing",
+      "seed": 301,
+      "status": "scoring_error"
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-302/checkpoint-lbfgs.pt",
+      "error": "RuntimeError: current DFG model source is missing",
+      "seed": 302,
+      "status": "scoring_error"
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-303/checkpoint-lbfgs.pt",
+      "error": "RuntimeError: current DFG model source is missing",
+      "seed": 303,
+      "status": "scoring_error"
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-304/checkpoint-lbfgs.pt",
+      "error": "RuntimeError: current DFG model source is missing",
+      "seed": 304,
+      "status": "scoring_error"
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-305/checkpoint-lbfgs.pt",
+      "error": "RuntimeError: current DFG model source is missing",
+      "seed": 305,
+      "status": "scoring_error"
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-501/checkpoint-lbfgs.pt",
+      "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+      "seed": 501,
+      "status": "scoring_error"
+    },
+    {
+      "arm": "mlp",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-501/checkpoint-lbfgs.pt",
+      "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+      "seed": 501,
+      "status": "scoring_error"
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-502/checkpoint-lbfgs.pt",
+      "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+      "seed": 502,
+      "status": "scoring_error"
+    },
+    {
+      "arm": "mlp",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-502/checkpoint-lbfgs.pt",
+      "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+      "seed": 502,
+      "status": "scoring_error"
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-503/checkpoint-lbfgs.pt",
+      "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+      "seed": 503,
+      "status": "scoring_error"
+    },
+    {
+      "arm": "mlp",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-503/checkpoint-lbfgs.pt",
+      "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+      "seed": 503,
+      "status": "scoring_error"
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-504/checkpoint-lbfgs.pt",
+      "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+      "seed": 504,
+      "status": "scoring_error"
+    },
+    {
+      "arm": "mlp",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-504/checkpoint-lbfgs.pt",
+      "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+      "seed": 504,
+      "status": "scoring_error"
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-505/checkpoint-lbfgs.pt",
+      "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+      "seed": 505,
+      "status": "scoring_error"
+    },
+    {
+      "arm": "mlp",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-505/checkpoint-lbfgs.pt",
+      "error": "ValueError: operands could not be broadcast together with shapes (9203,) (3,) ",
+      "seed": 505,
+      "status": "scoring_error"
+    }
+  ],
+  "pressure_gauge": {
+    "method": "subtract pressure at fixed outlet point from FEM and each checkpoint",
+    "outlet_anchor_xy": [
+      2.2,
+      0.2
+    ]
+  },
+  "reference_accepted": false,
+  "reference_field_sha256": "5234f5e466de47e3c26b1f2d7fd73bc1ba1908da974a56f9ed92c80ee7d90446",
+  "scientific_accepted": false,
+  "status": "partial"
+}

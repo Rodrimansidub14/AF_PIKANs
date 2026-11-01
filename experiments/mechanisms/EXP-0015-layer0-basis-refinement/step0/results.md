@@ -38,7 +38,7 @@ Por componente (v, p/φ) y curvas de error contra iteración: `results/<problema
 cd experiments/mechanisms/EXP-0015-layer0-basis-refinement/step0
 python fit_step0.py --problem burgers --arms C,O11,U41,X11 --seeds 2,3 --adam 2000 --lbfgs 2000 --ntrain 8000 --out results
 ```
-`AF_ROOT` es opcional (por defecto, la raíz del repo). Problemas: `heat`, `burgers`, `allen_cahn`, `ns2d_cg`, `dfg`, `piezo`. Un JSON ya existente se salta. Prueba de equivalencia de la capa 0 contra `src/research_pipeline/sciml/model.py`: `python equiv_test.py` (diferencias ~1e-16).
+`AF_ROOT` es opcional (por defecto, la raíz del repo). Problemas: `heat`, `burgers`, `allen_cahn`, `ns2d_cg`, `dfg`, `piezo`. Un JSON ya existente se salta. Prueba de equivalencia de la capa 0 contra `src/sciml/model.py`: `python equiv_test.py` (diferencias ~1e-16).
 
 ---
 

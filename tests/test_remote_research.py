@@ -154,7 +154,7 @@ class RemoteResearchTests(unittest.TestCase):
         self.manifest['training']['heldout_points'] = 16
         self.save_manifest()
         (bundle / 'manifest.json').write_text(json.dumps(self.manifest), encoding='utf-8')
-        from src.research_pipeline.sciml.sampling import pools
+        from src.sciml.sampling import pools
         import numpy as np
         import pandas as pd
         import plotly.express as px

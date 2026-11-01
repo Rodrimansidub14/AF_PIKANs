@@ -1,0 +1,43 @@
+{
+  "rbf_fixed": {
+    "label": "RBF-PIKAN fija",
+    "role": "modelo primario para exploración de señales",
+    "explicit_basis": true,
+    "fixed_centers_and_widths": true,
+    "directly_observable": [
+      "activación por base y capa",
+      "ocupación y cobertura de centros/ancho fijo",
+      "conteo efectivo de bases",
+      "coeficientes y norma de contribución por base",
+      "sensibilidad espacial y estabilidad entre semillas"
+    ],
+    "claim_limit": "La ventaja interpretativa frente a otras arquitecturas no está establecida; es una hipótesis que se debe medir con estabilidad, localización y ablación.",
+    "interpretability_claim_status": "hypothesis_to_measure"
+  },
+  "bspline_cubic": {
+    "label": "PIKAN B-spline cúbica",
+    "role": "control de representación con base explícita",
+    "explicit_basis": true,
+    "fixed_centers_and_widths": false,
+    "directly_observable": [
+      "activación por base y capa",
+      "soporte local y ocupación de bases",
+      "coeficientes y norma de contribución por base"
+    ],
+    "claim_limit": "Las B-splines también ofrecen bases locales explícitas; no se asume que RBF sea más interpretable.",
+    "interpretability_claim_status": "control_required"
+  },
+  "mlp_tanh": {
+    "label": "PINN MLP tanh",
+    "role": "referencia contextual solicitada por el investigador",
+    "explicit_basis": false,
+    "fixed_centers_and_widths": false,
+    "directly_observable": [
+      "activaciones por capa",
+      "gradientes y sensibilidad de entrada",
+      "pesos y normas agregadas"
+    ],
+    "claim_limit": "La ausencia de una base explícita no impide análisis de sensibilidad; solo hace que el diagnóstico geométrico por centro/ancho no exista de forma nativa.",
+    "interpretability_claim_status": "context_only"
+  }
+}

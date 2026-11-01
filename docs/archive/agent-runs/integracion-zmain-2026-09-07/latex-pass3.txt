@@ -1,0 +1,301 @@
+log4cxx: setFile(C:\Users\rodri\AppData\Local\MiKTeX\miktex\log/pdflatex.log,true) call failed.
+log4cxx: IO Exception : status code = 720005(Access is denied.  )
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(z-main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(0-datos_estudiante.tex) (C:\Program Files\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Program Files\MiKTeX\tex/latex/base\size11.clo))
+(C:\Program Files\MiKTeX\tex/generic/babel\babel.sty
+(C:\Program Files\MiKTeX\tex/generic/babel\txtbabel.def)
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Program Files\MiKTeX\tex/latex/arabi\bblopts.cfg)
+(C:\Program Files\MiKTeX\tex/latex/babel-spanish\spanish.ldf))
+(C:\Program Files\MiKTeX\tex/generic/babel/locale/es\babel-spanish.tex)
+(C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty)
+(C:\Program Files\MiKTeX\tex/latex/base\fontenc.sty) (0-datos_estudiante.tex)
+(1-opciones_adicionales.tex)
+(C:\Program Files\MiKTeX\tex/latex/xcolor\xcolor.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg)
+(C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def)
+(C:\Program Files\MiKTeX\tex/latex/graphics\mathcolor.ltx))
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\amsfonts.sty)
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty))
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty)
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty))
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\amssymb.sty)
+(C:\Program Files\MiKTeX\tex/latex/amscls\amsthm.sty)
+(C:\Program Files\MiKTeX\tex/latex/mathtools\mathtools.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty)
+(C:\Program Files\MiKTeX\tex/latex/tools\calc.sty)
+(C:\Program Files\MiKTeX\tex/latex/mathtools\mhsetup.sty))
+(C:\Program Files\MiKTeX\tex/latex/tools\bm.sty)
+(C:\Program Files\MiKTeX\tex/latex/booktabs\booktabs.sty)
+(C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg)))
+(C:\Program Files\MiKTeX\tex/latex/l3packages/xfrac\xfrac.sty
+(C:\Program Files\MiKTeX\tex/latex/l3kernel\expl3.sty
+(C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def))
+(C:\Program Files\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty)
+(C:\Program Files\MiKTeX\tex/latex/base\textcomp.sty)
+(C:\Program Files\MiKTeX\tex/latex/l3packages/xparse\xparse.sty)
+(C:\Program Files\MiKTeX\tex/latex/l3packages/xtemplate\xtemplate.sty))
+(C:\Program Files\MiKTeX\tex/latex/float\float.sty)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty
+(C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty)
+(C:\Program Files\MiKTeX\tex/generic/infwarerr\infwarerr.sty)
+(C:\Program Files\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty)
+(C:\Program Files\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty)
+(C:\Program Files\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+(C:\Program Files\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+(C:\Program Files\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty))
+(C:\Program Files\MiKTeX\tex/latex/hycolor\hycolor.sty)
+(C:\Program Files\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty)
+(C:\Program Files\MiKTeX\tex/latex/auxhook\auxhook.sty)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Program Files\MiKTeX\tex/latex/refcount\refcount.sty)
+(C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+(C:\Program Files\MiKTeX\tex/latex/kvoptions\kvoptions.sty)))
+(C:\Program Files\MiKTeX\tex/latex/etoolbox\etoolbox.sty)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def)
+(C:\Program Files\MiKTeX\tex/generic/intcalc\intcalc.sty)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def)
+(C:\Program Files\MiKTeX\tex/latex/url\url.sty)
+(C:\Program Files\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Program Files\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty))
+(C:\Program Files\MiKTeX\tex/latex/base\atbegshi-ltx.sty))
+(C:\Program Files\MiKTeX\tex/latex/hyperref\hpdftex.def
+(C:\Program Files\MiKTeX\tex/latex/base\atveryend-ltx.sty)
+(C:\Program Files\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(C:\Program Files\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty)))
+(C:\Program Files\MiKTeX\tex/latex/xurl\xurl.sty)
+(C:\Program Files\MiKTeX\tex/latex/caption\caption.sty
+(C:\Program Files\MiKTeX\tex/latex/caption\caption3.sty))
+(C:\Program Files\MiKTeX\tex/latex/caption\subcaption.sty)
+(C:\Program Files\MiKTeX\tex/latex/csquotes\csquotes.sty
+(C:\Program Files\MiKTeX\tex/latex/csquotes\csquotes.def)
+(C:\Program Files\MiKTeX\tex/latex/csquotes\csquotes.cfg))
+(C:\Program Files\MiKTeX\tex/latex/xpatch\xpatch.sty)
+(C:\Program Files\MiKTeX\tex/latex/emptypage\emptypage.sty)
+(C:\Program Files\MiKTeX\tex/latex/hyphenat\hyphenat.sty)
+(C:\Program Files\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty)
+(C:\Program Files\MiKTeX\tex/latex/pdflscape\pdflscape.sty
+(C:\Program Files\MiKTeX\tex/latex/pdflscape\pdflscape-nometadata.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\lscape.sty)))
+(C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.sty
+(C:\Program Files\MiKTeX\tex/latex/logreq\logreq.sty
+(C:\Program Files\MiKTeX\tex/latex/logreq\logreq.def))
+(C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty)
+(C:\Program Files\MiKTeX\tex/latex/biblatex\blx-dm.def)
+(C:\Program Files\MiKTeX\tex/latex/biblatex\blx-compat.def)
+(C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.def)
+(C:\Program Files\MiKTeX\tex/latex/biblatex-ieee\ieee.bbx
+(C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\numeric-comp.bbx
+(C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
+(C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\standard.bbx))))
+(C:\Program Files\MiKTeX\tex/latex/biblatex-ieee\ieee.cbx
+(C:\Program Files\MiKTeX\tex/latex/biblatex/cbx\numeric-verb.cbx))
+(C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.cfg)
+(C:\Program Files\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty))
+(C:\Program Files\MiKTeX\tex/latex/overpic\overpic.sty
+(C:\Program Files\MiKTeX\tex/latex/eepic\epic.sty
+Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
+)) (C:\Program Files\MiKTeX\tex/latex/chngcntr\chngcntr.sty)
+(C:\Program Files\MiKTeX\tex/latex/geometry\geometry.sty
+(C:\Program Files\MiKTeX\tex/generic/iftex\ifvtex.sty)
+(C:\Program Files\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Program Files\MiKTeX\tex/latex/fncychap\fncychap.sty)
+(2-paquetes_y_comandos_usuario.tex
+(C:\Program Files\MiKTeX\tex/latex/lm\lmodern.sty)
+(C:\Program Files\MiKTeX\tex/latex/tools\tabularx.sty
+(C:\Program Files\MiKTeX\tex/latex/tools\array.sty))
+(C:\Program Files\MiKTeX\tex/latex/tools\longtable.sty))
+(C:\Program Files\MiKTeX\tex/latex/lm\t1lmr.fd) (z-main.aux)
+(C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+(C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg)) (z-main.out)
+(z-main.out) (C:\Program Files\MiKTeX\tex/latex/caption\ltcaption.sty)
+(C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\spanish.lbx) (z-main.bbl)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+[1{C:/Users/rodri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Program 
+Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./plantilla/portadacit.jpg> <./plan
+tilla/fondologo_grande.png> <./plantilla/logoUVGblanco-eps-converted-to.pdf>]
+[1 <./plantilla/escudoUVGnegro-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
+
+[2] (C:\Program Files\MiKTeX\tex/latex/lm\t1lmss.fd) (a-prefacio.tex) [3]
+(z-main.toc
+
+LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined
+(Font)              using `T1/lmr/bx/n' instead on input line 3.
+
+
+Package spanish Warning: Replacing `T1/lmr/bx/sc' by 
+(spanish)                faked small caps on input line 3.
+
+
+Package spanish Warning: Replacing `T1/lmr/bx/sc' by 
+(spanish)                faked small caps on input line 4.
+
+
+Package spanish Warning: Replacing `T1/lmr/bx/sc' by 
+(spanish)                faked small caps on input line 5.
+
+
+Package spanish Warning: Replacing `T1/lmr/bx/sc' by 
+(spanish)                faked small caps on input line 6.
+
+
+Package spanish Warning: Replacing `T1/lmr/bx/sc' by 
+(spanish)                faked small caps on input line 7.
+
+(C:\Program Files\MiKTeX\tex/latex/lm\ot1lmr.fd)
+(C:\Program Files\MiKTeX\tex/latex/lm\omllmm.fd)
+(C:\Program Files\MiKTeX\tex/latex/lm\omslmsy.fd)
+(C:\Program Files\MiKTeX\tex/latex/lm\omxlmex.fd)
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd)
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd) [4] [5]) [6] (z-main.lof
+[7{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/M
+iKTeX/fonts/enc/dvips/lm/lm-rm.enc}]) [8] (z-main.lot) [9] (b-resumen.tex)
+[10] (c-abstract.tex) [11]
+Cap\'{\i }tulo 1.
+(d-introduccion.tex) [1]
+Cap\'{\i }tulo 2.
+(e-antecedentes.tex) [2]
+Cap\'{\i }tulo 3.
+(f-justificacion.tex) [3]
+Cap\'{\i }tulo 4.
+(g-objetivos.tex) [4]
+Cap\'{\i }tulo 5.
+(h-alcance.tex) [5]
+Cap\'{\i }tulo 6.
+(i-marco_teorico.tex (capitulos/marco/01-aproximacion.tex [6{C:/Program Files/M
+iKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] [7{C:/Program Files/MiKTeX/fonts/enc/d
+vips/lm/lm-mathex.enc}] [8] [9] [10 <./figuras/revision2026/fem_poisson.pdf> <.
+/figuras/revision2026/fem_convergencia.pdf>]) (capitulos/marco/02-pinn.tex
+[11] [12 <./figuras/revision2026/arquitecturas.pdf>] [13 <./figuras/revision202
+6/perdida.pdf>] [14]) (capitulos/marco/03-kan.tex [15] [16] [17 <./figuras/revi
+sion2026/bases.pdf>]) (capitulos/marco/04-piezo.tex [18] [19] [20]
+
+pdfTeX warning: pdflatex.exe (file ./figuras/revision2026/tesis-pdf103.pdf): PD
+F inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./figuras/revision2026/tesis-pdf105.pdf): PD
+F inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+) (capitulos/marco/05-sintesis.tex
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]|\T1/lmr/m/n/10.95 FBPINN/FBKAN
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]|\T1/lmr/m/n/10.95 KAN y PI-KAN
+
+Underfull \hbox (badness 1852) in paragraph at lines 13--13
+[]|\T1/lmr/m/n/10.95 Adaptaci�n di-n�-mi-
+
+Underfull \hbox (badness 1087) in paragraph at lines 18--18
+[]|\T1/lmr/m/n/10.95 PINN pie-zo-el�c-tri-ca
+
+Underfull \hbox (badness 1325) in paragraph at lines 18--18
+[]|\T1/lmr/m/n/10.95 Arquitectura pa-ra cam-pos
+
+Underfull \hbox (badness 3503) in paragraph at lines 18--19
+[]|\T1/lmr/m/n/10.95 Antecedente de apli-ca-ci�n y
+[21])) [22] [23 <./figuras/revision2026/tesis-pdf103.pdf>] [24 <./figuras/revis
+ion2026/tesis-pdf105.pdf>] (j-capitulos.tex
+Cap\'{\i }tulo 7.
+(capitulos/metodologia/01-problemas.tex [25]
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+[]|\T1/lmr/m/n/10.95 Soluci�n ana-l�-ti-ca y
+
+Underfull \hbox (badness 6125) in paragraph at lines 16--17
+\T1/lmr/m/n/10.95 ri-fi-ca-ci�n por sus-ti-tu-
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+[]|\T1/lmr/m/n/10.95 Caso de DeepX-DE
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+\T1/lmr/m/n/10.95 1.12.2 y re-fe-ren-cia
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+[]|\T1/lmr/m/n/10.95 Benchmark Re20 de
+
+Underfull \hbox (badness 6825) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/10.95 Escalas, in-ter-faz ma-te-rial,
+[26] [27] [28 <./figuras/revision2026/problemas.pdf>] [29])
+(capitulos/metodologia/02-mecanismo.tex [30] [31] [32 <./figuras/revision2026/m
+ecanismo.pdf>] [33] [34]) (capitulos/metodologia/03-evaluacion.tex [35]
+[36] [37] [38] [39]
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+[]|\T1/lmr/m/n/10.95 Derivadas ana-l�-ti-
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+\T1/lmr/m/n/10.95 cas/autom�ticas y ba-lan-ce
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+\T1/lmr/m/n/10.95 di-men-sio-nal; tra-zas exac-tas
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
+[]|\T1/lmr/m/n/10.95 Coeficientes pro-yec-ta-dos y
+[40] [41]
+Cap\'{\i }tulo 8.
+
+Underfull \hbox (badness 1859) in paragraph at lines 111--111
+[]|\T1/lmr/m/n/10.95 Evidencia, fa-llas y afir-ma-cio-nes
+)) [42] [43]
+Cap\'{\i }tulo 9.
+(k-conclusiones.tex) [44]
+Cap\'{\i }tulo 10.
+(l-recomendaciones.tex) [45]
+Cap\'{\i }tulo 11.
+(C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd) [46] [47]
+Underfull \hbox (badness 1043) in paragraph at lines 443--443
+\T1/lmr/m/n/10.95 informed neu-ral net-works with do-main de-com-po-si-tion,^^T
+ \T1/lmr/m/it/10.95 Com-pu-ter Methods in
+
+Underfull \hbox (badness 1558) in paragraph at lines 443--443
+\T1/lmr/m/it/10.95 Adaptive-Basis Physics-Informed Neu-ral Net-works for Residu
+al-Driven Do-main
+[48] [49]
+Cap\'{\i }tulo 12.
+(n-anexos.tex [50]) [51] (z-main.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )
+(see the transcript file for additional information)<C:/Program Files/MiKTeX/fo
+nts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/l
+mbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Program 
+Files/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files/MiKTeX/fonts/t
+ype1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi10
+.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Program Files
+/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
+blic/lm/lmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/
+Program Files/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX/f
+onts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/l
+mr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Program Fil
+es/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/p
+ublic/lm/lmri10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss12.pfb><
+C:/Program Files/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public
+/lm/lmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Prog
+ram Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKTeX/fonts
+/type1/public/lm/lmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfont
+s/symbols/msbm10.pfb>
+Output written on z-main.pdf (63 pages, 1969326 bytes).
+Transcript written on z-main.log.

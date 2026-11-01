@@ -1,0 +1,84 @@
+{
+  "actual_session_seconds": 21.684,
+  "artifacts": [
+    {
+      "path": "checkpoint_field_scores.partial.json",
+      "sha256": "c9cb07131b61b9e90a4efd54b36b244deef3708f683ff245d3d4f691cfb181e1",
+      "size_bytes": 1975
+    },
+    {
+      "path": "score_repair.json",
+      "sha256": "6125af6d710e527aa3d4249ef869efa66d2cf89e221d4589dc6630da4449f2e4",
+      "size_bytes": 365
+    },
+    {
+      "path": "setup.log",
+      "sha256": "49e8ddad2b4f582d6426601357b6a63ff6136a6f133cae8a19a1bf09b4f38c94",
+      "size_bytes": 963
+    }
+  ],
+  "ended_at_utc": "2026-09-29T09:54:50Z",
+  "error": "FileNotFoundError: No input matched 'dfg_re20_DFG-L3.msh' containing 'dfg-fem-field-follow-up-retry-5-20260929'",
+  "fixed_field_scoring_contract": {
+    "cohorts": {
+      "current_rbf": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "refinement_rbf_and_tanh_mlp": [
+        501,
+        502,
+        503,
+        504,
+        505
+      ]
+    },
+    "grid": {
+      "mask": "exclude points with (x-0.2)^2+(y-0.2)^2 <= 0.05^2",
+      "ordering": "numpy.meshgrid(indexing='xy'); row-major flattened",
+      "source": "saved FEM DFG-L3 fields_on_common_grid.npz; declared before checkpoint scoring",
+      "x": {
+        "count": 221,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 2.2
+      },
+      "y": {
+        "count": 42,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 0.41
+      }
+    },
+    "metrics": [
+      "u_relative_l2",
+      "v_relative_l2",
+      "p_relative_l2_gauge_fixed_outlet"
+    ],
+    "pressure_gauge": {
+      "method": "subtract pressure at fixed outlet grid point",
+      "outlet_anchor_xy": [
+        2.2,
+        0.2
+      ]
+    },
+    "reference_level": "DFG-L3 (third of three requested mesh levels)",
+    "retraining": false
+  },
+  "kernel_slug": "rodrimandub/af-pikans-dfg-field-score-repair-retry-6-20260929",
+  "method": "reconstruct both P2 velocity components from saved DOLFINx coefficients and the saved L3 Gmsh mesh; score frozen checkpoints only",
+  "push_cap_seconds": 373.499,
+  "reference_accepted": false,
+  "retraining": false,
+  "schema_version": 1,
+  "scientific_accepted": false,
+  "session": "DFG-field-score-repair-retry-6-2026-09-29",
+  "source_code_sha256": "05dabe7776f9d0b5a7c2fd0e6cf046ce7f776bdfa7a1ce76da62e48e4899cf87",
+  "source_session": "rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-5-20260929",
+  "started_at_utc": "2026-09-29T09:54:29Z",
+  "status": "failed_partial",
+  "traceback": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 309, in main\n    mesh_path = find_one(\"dfg_re20_DFG-L3.msh\", must_contain=\"dfg-fem-field-follow-up-retry-5-20260929\", level=\"DFG-L3\")\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/kaggle/src/script.py\", line 80, in find_one\n    raise FileNotFoundError(f\"No input matched {pattern!r} containing {must_contain!r}\")\nFileNotFoundError: No input matched 'dfg_re20_DFG-L3.msh' containing 'dfg-fem-field-follow-up-retry-5-20260929'\n"
+}

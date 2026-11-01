@@ -1,0 +1,57 @@
+{
+  "run_count": 10,
+  "runs": [
+    {
+      "exit_code": 0,
+      "run": "offline-run-20260927_013202-6qnm2yse",
+      "status": "synced"
+    },
+    {
+      "exit_code": 0,
+      "run": "offline-run-20260927_014921-m72622um",
+      "status": "synced"
+    },
+    {
+      "exit_code": 0,
+      "run": "offline-run-20260927_020724-434tos57",
+      "status": "synced"
+    },
+    {
+      "exit_code": 0,
+      "run": "offline-run-20260927_022443-dq2u1eiv",
+      "status": "synced"
+    },
+    {
+      "exit_code": 0,
+      "run": "offline-run-20260927_024240-2svxo4go",
+      "status": "synced"
+    },
+    {
+      "exit_code": 0,
+      "run": "offline-run-20260927_013202-dmjrznf7",
+      "status": "synced"
+    },
+    {
+      "exit_code": 0,
+      "run": "offline-run-20260927_014947-gikvmf59",
+      "status": "synced"
+    },
+    {
+      "exit_code": 0,
+      "run": "offline-run-20260927_020654-afnbq20t",
+      "status": "synced"
+    },
+    {
+      "exit_code": 0,
+      "run": "offline-run-20260927_022448-3fcyftyu",
+      "status": "synced"
+    },
+    {
+      "exit_code": 0,
+      "run": "offline-run-20260927_024215-vbe0av6a",
+      "status": "synced"
+    }
+  ],
+  "status": "synced",
+  "synced_count": 10
+}

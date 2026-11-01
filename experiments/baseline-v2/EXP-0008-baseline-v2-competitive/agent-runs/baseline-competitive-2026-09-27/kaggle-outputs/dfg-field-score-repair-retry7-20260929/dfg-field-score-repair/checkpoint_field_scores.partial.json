@@ -1,0 +1,262 @@
+{
+  "fixed_field_scoring_contract": {
+    "cohorts": {
+      "current_rbf": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "refinement_rbf_and_tanh_mlp": [
+        501,
+        502,
+        503,
+        504,
+        505
+      ]
+    },
+    "grid": {
+      "mask": "exclude points with (x-0.2)^2+(y-0.2)^2 <= 0.05^2",
+      "ordering": "numpy.meshgrid(indexing='xy'); row-major flattened",
+      "source": "saved FEM DFG-L3 fields_on_common_grid.npz; declared before checkpoint scoring",
+      "x": {
+        "count": 221,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 2.2
+      },
+      "y": {
+        "count": 42,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 0.41
+      }
+    },
+    "metrics": [
+      "u_relative_l2",
+      "v_relative_l2",
+      "p_relative_l2_gauge_fixed_outlet"
+    ],
+    "pressure_gauge": {
+      "method": "subtract pressure at fixed outlet grid point",
+      "outlet_anchor_xy": [
+        2.2,
+        0.2
+      ]
+    },
+    "reference_level": "DFG-L3 (third of three requested mesh levels)",
+    "retraining": false
+  },
+  "per_seed": [
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-301/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "a8dd18c11ae715a014076654a13187466d5916c1b51b82f0f84affe2a1f6821f",
+      "p_relative_l2_gauge_fixed_outlet": 0.3205462095659476,
+      "seed": 301,
+      "status": "scored",
+      "u_relative_l2": 0.10255680151110268,
+      "v_relative_l2": 0.09766481735918862
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-302/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "8e4c5493f9bcb893634883c4ee387ef199447e15b9f4e101eb2a5c6c203027cc",
+      "p_relative_l2_gauge_fixed_outlet": 0.24029019511014277,
+      "seed": 302,
+      "status": "scored",
+      "u_relative_l2": 0.08166695563357419,
+      "v_relative_l2": 0.07848260822113362
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-303/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "b024883d314c2ecbe88718153fcadc003b0a7d973337197fce3e731ad0f4ef7c",
+      "p_relative_l2_gauge_fixed_outlet": 0.29224546262689616,
+      "seed": 303,
+      "status": "scored",
+      "u_relative_l2": 0.09204554613549273,
+      "v_relative_l2": 0.09165037648793649
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-304/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "85b57fd9939ac9558a9f0a3b55ccf914490436721f56e948fb34a16124b80e17",
+      "p_relative_l2_gauge_fixed_outlet": 0.22019093701826795,
+      "seed": 304,
+      "status": "scored",
+      "u_relative_l2": 0.0697519134030642,
+      "v_relative_l2": 0.07344307149551485
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-rbf-refinement-20260928/dfg-current-cohort-refinement/run-1790606331368753261/training/seed-305/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "d146da0a237da93d0e2c54c9e14af156ef78278336ceb05916df314b3c6dd4e4",
+      "p_relative_l2_gauge_fixed_outlet": 0.3001267217201634,
+      "seed": 305,
+      "status": "scored",
+      "u_relative_l2": 0.08484733154354271,
+      "v_relative_l2": 0.08619406741609505
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-501/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "7488639cadbfd18e1a987ad3a46c31b0703de5768b563932608ef049c9926747",
+      "p_relative_l2_gauge_fixed_outlet": 0.2727666894704606,
+      "seed": 501,
+      "status": "scored",
+      "u_relative_l2": 0.06968154899950325,
+      "v_relative_l2": 0.06956279162345197
+    },
+    {
+      "arm": "mlp",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-501/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "4bbe8af841a4d3d801312952cb6d008537ada53c186bcdcb9277a093e72ce4de",
+      "p_relative_l2_gauge_fixed_outlet": 0.026498530140585026,
+      "seed": 501,
+      "status": "scored",
+      "u_relative_l2": 0.019078179965553884,
+      "v_relative_l2": 0.03209212577134214
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-502/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "3b4694b8a99a796f285f580b3bd86b1fd8d05ce1d02db8c2c8a9040363f40d3c",
+      "p_relative_l2_gauge_fixed_outlet": 0.22909794169303244,
+      "seed": 502,
+      "status": "scored",
+      "u_relative_l2": 0.07276247778373005,
+      "v_relative_l2": 0.07186163896724489
+    },
+    {
+      "arm": "mlp",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-502/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "432ddf521f33fa589a1ae76fc445fd02d86ab5ce98947c9cf6c85f877ef74801",
+      "p_relative_l2_gauge_fixed_outlet": 0.025879415159943353,
+      "seed": 502,
+      "status": "scored",
+      "u_relative_l2": 0.014566994500439403,
+      "v_relative_l2": 0.027251377173925447
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-503/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "99a221f40f94e6a4a624bc819120fef3cc89daf5cce3b547c8a7b354828effa0",
+      "p_relative_l2_gauge_fixed_outlet": 0.2240088197516289,
+      "seed": 503,
+      "status": "scored",
+      "u_relative_l2": 0.0742116684448175,
+      "v_relative_l2": 0.07368987893868552
+    },
+    {
+      "arm": "mlp",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-503/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "a9a31314b33c8f0608b4341a086dbc7aacabd2c18ae7d95f25df4a39ebb2d959",
+      "p_relative_l2_gauge_fixed_outlet": 0.5076812018729617,
+      "seed": 503,
+      "status": "scored",
+      "u_relative_l2": 0.1707202900638987,
+      "v_relative_l2": 0.1398840190540082
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-504/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "c1581085b695c9b094cc42cba120db657727e92af7d21b01b60f46f75c1b2dd2",
+      "p_relative_l2_gauge_fixed_outlet": 0.23701335717046795,
+      "seed": 504,
+      "status": "scored",
+      "u_relative_l2": 0.06515575136133611,
+      "v_relative_l2": 0.059083533672263884
+    },
+    {
+      "arm": "mlp",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-504/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "aa9c0cb102c03abc6e86cf5b0f64a41ed54caffd8511f921edd224f545eda650",
+      "p_relative_l2_gauge_fixed_outlet": 0.030617747960351757,
+      "seed": 504,
+      "status": "scored",
+      "u_relative_l2": 0.016347058194481238,
+      "v_relative_l2": 0.030928903993091922
+    },
+    {
+      "arm": "rbf",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-RBF-PIKAN/seed-505/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "2f4663201434a3416c4cfcacfde48a6c23ab4f9051f0bfc92358d37bf5f304fc",
+      "p_relative_l2_gauge_fixed_outlet": 0.26794318494686975,
+      "seed": 505,
+      "status": "scored",
+      "u_relative_l2": 0.06644763778272021,
+      "v_relative_l2": 0.07127411149330787
+    },
+    {
+      "arm": "mlp",
+      "checkpoint": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927/dfg-re20-lbfgs-refinement/run-1790581871213606372/training/DFG-Tanh-MLP/seed-505/checkpoint-lbfgs.pt",
+      "checkpoint_sha256": "85a809363f16fa6dfa497f7b5999ef9d2e2e8d52230c309ff57c1ec5bff24876",
+      "p_relative_l2_gauge_fixed_outlet": 0.022900560340425997,
+      "seed": 505,
+      "status": "scored",
+      "u_relative_l2": 0.013711535223510814,
+      "v_relative_l2": 0.03002516153390092
+    }
+  ],
+  "reconstruction": {
+    "coefficient_file_sha256": "540254f73e0b49910ec186631c0133cab22ec37fededd4f1f02babb7b817d3fc",
+    "coordinate_mapping": {
+      "pressure": {
+        "dof_to_geometry": {
+          "count": 99200,
+          "distance_tolerance": 1e-06,
+          "max_nearest_distance": 1.3426356273935429e-15,
+          "p99_nearest_distance": 9.036560719766055e-16,
+          "unique_mesh_nodes": 99200
+        },
+        "geometry_to_mesh": {
+          "count": 395252,
+          "distance_tolerance": 1e-06,
+          "max_nearest_distance": 0.0,
+          "p99_nearest_distance": 0.0,
+          "unique_mesh_nodes": 395252
+        },
+        "route": "saved_DOLFINx_geometry"
+      },
+      "velocity": {
+        "dof_to_geometry": {
+          "count": 395252,
+          "distance_tolerance": 1e-06,
+          "max_nearest_distance": 1.3506446028928519e-15,
+          "p99_nearest_distance": 1.1226435567921847e-15,
+          "unique_mesh_nodes": 395252
+        },
+        "geometry_to_mesh": {
+          "count": 395252,
+          "distance_tolerance": 1e-06,
+          "max_nearest_distance": 0.0,
+          "p99_nearest_distance": 0.0,
+          "unique_mesh_nodes": 395252
+        },
+        "route": "saved_DOLFINx_geometry"
+      }
+    },
+    "gmsh_edge_node_order": [
+      3,
+      4,
+      5
+    ],
+    "mesh_file_sha256": "8d8d7113eb5dfd9fe64fcb4cddb0500717cf9873fcb7f4683101d61fceec4aad",
+    "method": "P2 isoparametric interpolation from saved vector coefficients and MSH triangle6 cells; P1 isoparametric pressure interpolation",
+    "pressure_trace_relative_reconstruction_error": 1.6440635803825564e-11,
+    "saved_scalar_trace_relative_reconstruction_error": 2.077158450735213e-12,
+    "saved_scalar_velocity_component": 0,
+    "source_artifact_paths": {
+      "coefficients": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-5-20260929/dfg-fem-field-followup-retry5/dfg/DFG-L3/fem_coefficients.npz",
+      "fields": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-5-20260929/dfg-fem-field-followup-retry5/dfg/DFG-L3/fields_on_common_grid.npz",
+      "mesh": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-5-20260929/dfg-fem-field-followup-retry5/dfg/meshes/dfg_re20_DFG-L3.msh"
+    },
+    "source_field_file_sha256": "0fe1805d096d90ad84abe7ebdc8aed34debb10c4ac38b36a51f32d1a118ee9dc",
+    "velocity_coefficient_layout": "interleaved_by_node"
+  },
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "status": "scoring"
+}

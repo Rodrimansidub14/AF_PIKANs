@@ -1,0 +1,348 @@
+% Fragmento listo para integrarse en el marco teórico.
+% Las cuatro figuras se esperan en la ruta de figuras del documento principal:
+% p1-poisson.pdf, p2-burgers.pdf, p3-allen-cahn.pdf y p4-dfg.pdf.
+% Este fragmento interpreta los contratos de P1--P4; no sustituye la
+% especificación experimental del capítulo de metodología.
+
+\section{Lectura física de los problemas canónicos}
+\label{sec:lectura-fisica-pdes}
+
+Las ecuaciones diferenciales parciales del proyecto no son ejemplos
+intercambiables. Cada una concentra una dificultad física distinta: Poisson
+representa un equilibrio elíptico con variación distribuida; Burgers separa
+transporte no lineal y difusión en una transición estrecha; Allen--Cahn
+combina reacción, difusión y capas de interfaz; y el benchmark DFG exige
+respetar simultáneamente inercia, viscosidad, incompresibilidad, geometría y
+balances integrales. Esta lectura sirve para entender qué significa que una
+aproximación represente bien un campo. Los contratos exactos del banco de
+problemas se conservan en el capítulo de metodología; aquí se explican sus
+consecuencias físicas y las magnitudes que hacen visibles.
+
+Las figuras de esta sección son esquemas matemáticos construidos a partir de
+las ecuaciones y parámetros declarados. Cuando se muestran mapas o curvas
+obtenidos al evaluar una fórmula exacta, se trata de una ilustración analítica
+del problema y no de un resultado de entrenamiento. En particular, ninguna
+figura de esta sección certifica por sí sola una mejora de una red o una
+convergencia numérica.
+
+\subsection{P1. Poisson: equilibrio y frecuencia distribuida}
+
+Considérese el cuadrado unitario $\Omega=(0,1)^2$ y el problema
+\begin{equation}
+-\Delta u=f_k \quad \text{en }\Omega,
+\qquad u=0 \quad \text{en }\partial\Omega,
+\qquad
+u_k^*(x,y)=\sin(k\pi x)\sin(k\pi y),
+\label{eq:expansion-p1-poisson}
+\end{equation}
+donde
+\begin{equation}
+f_k(x,y)=2(k\pi)^2u_k^*(x,y).
+\label{eq:expansion-p1-source}
+\end{equation}
+La función $u_k^*$ se anula en los cuatro lados, por lo que satisface la
+condición de Dirichlet sin corrección adicional. Además,
+$\partial_{xx}u_k^*=-(k\pi)^2u_k^*$ y
+$\partial_{yy}u_k^*=-(k\pi)^2u_k^*$; por tanto,
+$-\Delta u_k^*=2(k\pi)^2u_k^*=f_k$. La igualdad es una verificación por
+sustitución de la solución manufacturada, no una aproximación de los valores
+de $u$.
+
+La interpretación física más simple es un estado estacionario: el operador
+$-\Delta$ mide cómo la curvatura del campo compensa una fuente distribuida.
+Si $u$ representa temperatura en un medio homogéneo, $f$ puede representar
+generación interna de calor; si representa un potencial, $f$ desempeña el
+papel de una densidad de fuente. En ambos casos no hay una dirección de
+propagación ni una condición inicial. La frontera fija el nivel del campo y
+el interior ajusta su curvatura para satisfacer el balance.
+
+El parámetro $k$ cambia la escala espacial sin cambiar la amplitud máxima de
+$u_k^*$. Los ceros consecutivos de $\sin(k\pi x)$ están separados por
+$1/k$, mientras que la curvatura y la fuente crecen como $k^2$. Para leer
+la oscilación sin mezclarla con una región de interés arbitraria, puede
+tomarse el corte
+\begin{equation}
+u_k^*\!\left(x,\frac{1}{2k}\right)=\sin(k\pi x),
+\label{eq:expansion-p1-corte}
+\end{equation}
+porque $\sin(k\pi/(2k))=1$. Así, $k=1$ muestra una variación amplia y
+$k=4$ muestra cuatro semiondas en la misma longitud. La familia permite
+preguntar si la representación resuelve frecuencia distribuida en todo el
+dominio; una ganancia en P1 no puede interpretarse automáticamente como
+localización de capacidad en una interfaz o frente.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{p1-poisson.pdf}
+\caption[Poisson: frecuencia distribuida y corte exacto.]{Esquema analítico
+de P1 construido con $u_k^*(x,y)=\sin(k\pi x)\sin(k\pi y)$ para $k=1$ y
+$k=4$. Los mapas muestran la variación en $\Omega=(0,1)^2$; los cortes se
+evalúan en $y=1/(2k)$, donde la ordenada coincide exactamente con
+$\sin(k\pi x)$. La figura es una ilustración de la solución manufacturada, no
+un resultado de entrenamiento ni una medición FEM.}
+\label{fig:expansion-p1-poisson}
+\end{figure}
+
+La forma débil hace explícita la misma lectura. Para una prueba $v$ que se
+anula en $\partial\Omega$,
+\begin{equation}
+\int_\Omega \nabla u\cdot\nabla v\,\mathrm d x
+ =\int_\Omega f_kv\,\mathrm d x.
+\label{eq:expansion-p1-debil}
+\end{equation}
+El lado izquierdo mide el trabajo asociado a los gradientes y el derecho la
+acción de la fuente. Una discretización puede aproximar esta identidad aun
+cuando el campo local tenga error; por ello se deben distinguir balance
+integral, error de campo y error de derivadas. Esta distinción es central al
+comparar una aproximación neuronal con una referencia clásica
+\cite{evans1998pde,fenics2016}.
+
+\subsection{P2. Burgers: transporte no lineal, difusión y frente}
+
+En $x\in[-1,1]$ y $t\in[0,1]$, el segundo contrato es
+\begin{equation}
+u_t+u\,u_x-\nu u_{xx}=0,
+\qquad
+u^*(x,t)=c-A\tanh q,
+\qquad
+q=\frac{A(x-ct-x_0)}{2\nu}.
+\label{eq:expansion-p2-burgers}
+\end{equation}
+La condición inicial y las dos condiciones de frontera son las trazas de
+$u^*$:
+\begin{equation}
+u(x,0)=u^*(x,0),
+\qquad
+u(-1,t)=u^*(-1,t),
+\qquad
+u(1,t)=u^*(1,t).
+\label{eq:expansion-p2-conditions}
+\end{equation}
+Se fijan $A=0.5$, $x_0=-0.25$,
+$c\in\{0,0.5\}$ y $\nu\in\{0.02,0.005\}$. El centro del frente está en
+$x_f(t)=ct+x_0$: con $c=0$ permanece estacionario y con $c=0.5$ recorre
+media unidad durante el intervalo temporal. La frontera dependiente del
+tiempo no es un forzamiento añadido; es la traza necesaria para mantener la
+onda exacta al entrar o salir del dominio.
+
+La sustitución muestra qué términos se equilibran. Si
+$S=\operatorname{sech}^2q$, entonces
+\begin{equation}
+u_x=-\frac{A^2}{2\nu}S,
+\qquad
+u_t=-c\,u_x,
+\qquad
+u_{xx}=\frac{A^3}{2\nu^2}S\tanh q.
+\label{eq:expansion-p2-derivatives}
+\end{equation}
+Como $u-c=-A\tanh q$,
+\begin{equation}
+u_t+u u_x=(u-c)u_x
+ =\frac{A^3}{2\nu}S\tanh q
+ =\nu u_{xx}.
+\label{eq:expansion-p2-balance}
+\end{equation}
+El término $u u_x$ transporta la forma mediante la velocidad local; la
+difusión $\nu u_{xx}$ impide que la transición se vuelva discontinua. El
+ancho característico $\ell=2\nu/A$ vale $0.08$ cuando $\nu=0.02$ y
+$0.02$ cuando $\nu=0.005$. El máximo del gradiente tiene magnitud
+$A^2/(2\nu)$, que pasa de $6.25$ a $25$ al reducir $\nu$. La amplitud del
+campo apenas cambia, pero la derivada que entra en el residual se concentra
+en una región cuatro veces más estrecha.
+
+Esta relación explica por qué P2 es una prueba de resolución localizada. Una
+aproximación puede tener valores razonables fuera del frente y, al mismo
+tiempo, perder la curvatura que equilibra transporte y difusión. También
+explica por qué movimiento y estrechamiento son dificultades distintas: $c$
+cambia la posición de la señal en el espacio-tiempo, mientras $\nu$ cambia
+la escala de sus derivadas. La familia y sus ondas viajeras tienen antecedente
+analítico en la literatura de Burgers \cite{burgerswaves2025}; los cuatro
+cruces de parámetros pertenecen al contrato finito de este proyecto.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{p2-burgers.pdf}
+\caption[Burgers: frente, movimiento y balance de términos.]{Diagnóstico
+analítico de P2 evaluado en la onda exacta. Se comparan los perfiles iniciales
+para $\nu=0.02$ y $\nu=0.005$ con $c=0.5$, se muestra la concentración de
+$|u_x|$, se sigue la trayectoria $x_f(t)=ct+x_0$ para $\nu=0.02$ y se
+comparan $u_t$, $u u_x$ y $-\nu u_{xx}$ en $t=0.5$. Las curvas satisfacen
+la identidad de balance por construcción; la figura es una ilustración de la
+solución exacta, no una corrida de PINN o PIKAN.}
+\label{fig:expansion-p2-burgers}
+\end{figure}
+
+\subsection{P3. Allen--Cahn: reacción, energía e interfaz}
+
+El tercer problema conserva el contrato del ejemplo documentado de DeepXDE:
+\begin{align}
+u_t-d u_{xx}-5(u-u^3)&=0,
+&&x\in[-1,1],\quad t\in[0,1],\quad d=0.001,\\
+u(x,0)&=x^2\cos(\pi x),
+&&u(-1,t)=u(1,t)=-1.
+\label{eq:expansion-p3-allen-cahn}
+\end{align}
+Puede escribirse como un flujo de gradiente de la energía
+\begin{equation}
+\mathcal E[u]=\int_{-1}^{1}
+\left[\frac d2|u_x|^2+W(u)\right]\,\mathrm d x,
+\qquad
+W(u)=\frac54(u^2-1)^2.
+\label{eq:expansion-p3-energy}
+\end{equation}
+En efecto, $W'(u)=5(u^3-u)$ y la ecuación equivale a
+$u_t=d u_{xx}-W'(u)$. La reacción $5(u-u^3)$ empuja el campo hacia los
+estados estables $u=\pm1$ y hace inestable el estado $u=0$; el término
+difusivo penaliza cambios espaciales demasiado bruscos. La solución debe
+resolver ambos impulsos, además de acomodarse al dato inicial y a las
+fronteras fijadas en $-1$.
+
+La escala de una interfaz se obtiene al equilibrar difusión y reacción. Para
+el perfil estacionario idealizado que conecta $-1$ con $+1$,
+\begin{equation}
+u_{\rm kink}(x)=
+\tanh\!\left(\frac{x-x_c}{\ell_{\rm AC}}\right),
+\qquad
+\ell_{\rm AC}=\sqrt{\frac{2d}{5}}=0.02.
+\label{eq:expansion-p3-kink}
+\end{equation}
+La cifra $0.02$ es la escala del perfil de transición para $d=0.001$; no es
+una afirmación de que la evolución con el dato inicial del contrato tenga una
+única interfaz de ese ancho en todo tiempo. El estado inicial
+$x^2\cos(\pi x)$ puede producir varias zonas de transición, y las
+condiciones $u(\pm1,t)=-1$ influyen en su evolución. La máscara física de
+una interfaz debe construirse a partir del campo de referencia cuando se
+evalúa el problema, no a partir de la forma idealizada de esta explicación.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{p3-allen-cahn.pdf}
+\caption[Allen--Cahn: potencial, reacción y perfil de interfaz.]{Esquema
+analítico de P3 para $d=0.001$: el potencial $W(u)=\tfrac54(u^2-1)^2$
+muestra sus mínimos en $u=\pm1$, la reacción $5(u-u^3)=-W'(u)$ muestra
+los estados favorecidos y el perfil $\tanh((x-x_c)/\sqrt{2d/5})$ ilustra
+la escala de un frente estacionario. No se muestra una evolución numérica ni
+se atribuye al panel un error de referencia; el dato inicial y las fronteras
+del contrato son los de \eqref{eq:expansion-p3-allen-cahn}.}
+\label{fig:expansion-p3-allen-cahn}
+\end{figure}
+
+Allen--Cahn introduce una diferencia importante respecto de Burgers. En
+Burgers la transición se mueve por un balance entre advección y difusión; en
+Allen--Cahn la transición también puede cambiar porque el campo desciende por
+un potencial local con dos estados preferidos. Por eso el valor de $u$ y su
+gradiente tienen interpretaciones simultáneas: estar cerca de $\pm1$ indica
+fase, mientras que $|u_x|$ identifica una interfaz. Una representación que
+suaviza demasiado la interfaz puede reducir una medida global y aun así
+desplazar el lugar donde el campo cambia de fase. La formulación y las
+condiciones se mantienen coherentes con el ejemplo de DeepXDE versión 1.12.2
+\cite{deepxdeAC}.
+
+\subsection{P4. DFG 2D-1: balance de cantidad de movimiento}
+
+El benchmark DFG 2D-1 considera flujo estacionario incompresible alrededor de
+un cilindro. El dominio es el canal
+\begin{equation}
+\Omega=([0,2.2]\times[0,0.41])
+\setminus\overline{B_{0.05}(0.2,0.2)},
+\label{eq:expansion-p4-domain}
+\end{equation}
+con densidad unitaria, viscosidad cinemática $\nu=0.001$ y campos
+$\mathbf u=(u,v)$ y $p$. El sistema local es
+\begin{align}
+u u_x+v u_y+p_x-\nu(u_{xx}+u_{yy})&=0,\\
+u v_x+v v_y+p_y-\nu(v_{xx}+v_{yy})&=0,\\
+u_x+v_y&=0.
+\label{eq:expansion-p4-ns}
+\end{align}
+Los dos primeros renglones expresan el balance de momento: la convección
+transporta momento, el gradiente de presión lo redistribuye y la viscosidad
+disipa gradientes. El tercero impone que el volumen no se comprima; no es una
+ecuación auxiliar que pueda omitirse sin cambiar el problema.
+
+La entrada del canal prescribe el perfil parabólico
+\begin{equation}
+\mathbf u_{\rm in}(y)=
+\left(\frac{4(0.3)y(0.41-y)}{0.41^2},0\right),
+\label{eq:expansion-p4-inlet}
+\end{equation}
+cuya velocidad máxima es $0.3$ en la línea media y cuya media transversal
+es $0.2$. Las paredes del canal y la circunferencia del cilindro tienen
+condición de no deslizamiento, $\mathbf u=\mathbf0$. En la salida se usa,
+con la convención del benchmark para el operador Laplaciano,
+\begin{equation}
+\nu\,\partial_n\mathbf u-p\mathbf n=\mathbf0.
+\label{eq:expansion-p4-outlet}
+\end{equation}
+Esta condición deja salir el flujo sin fijar artificialmente un valor de
+presión adicional. Con $L=0.1$ como diámetro y $U=0.2$ como velocidad de
+referencia, $Re=UL/\nu=20$, de modo que el caso es laminar y permite
+examinar la estela sin convertir el problema en un estudio de turbulencia.
+
+La forma integral conecta la PDE con las cantidades de ingeniería. Como
+$\nabla\cdot\mathbf u=0$ y $\nu$ es constante, para un volumen de control
+$K\subset\Omega$ sin fuerza volumétrica se obtiene
+\begin{equation}
+\int_{\partial K}
+\left[\mathbf u(\mathbf u\cdot\mathbf n)+p\mathbf n
+      -\nu(\nabla\mathbf u)\mathbf n\right]\,\mathrm d s=\mathbf0.
+\label{eq:expansion-p4-integral}
+\end{equation}
+Cada cara intercambia flujo convectivo, presión y esfuerzo viscoso. Sobre el
+cilindro, la tracción según la convención usada en el contrato es
+$\boldsymbol\sigma_b\mathbf n$, con
+$\boldsymbol\sigma_b=\nu\nabla\mathbf u-pI$. Por tanto,
+\begin{equation}
+\begin{pmatrix}F_D\\F_L\end{pmatrix}
+ =\int_S\boldsymbol\sigma_b\mathbf n\,\mathrm d s,
+\qquad
+C_D=\frac{2F_D}{U^2L},
+\qquad
+C_L=\frac{2F_L}{U^2L}.
+\label{eq:expansion-p4-forces}
+\end{equation}
+El benchmark publica valores de arrastre, sustentación y caída de presión que
+se usan como controles externos en la metodología; no son resultados
+producidos por esta propuesta \cite{dfgRe20}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{p4-dfg.pdf}
+\caption[DFG 2D-1: geometría, entrada y balance.]{Esquema matemático del
+benchmark DFG 2D-1 a $Re=20$. Se identifica el canal
+$[0,2.2]\times[0,0.41]$, el cilindro de radio $0.05$ centrado en
+$(0.2,0.2)$, las paredes, la entrada y la salida; se añade el perfil
+parabólico de entrada y un panel de los términos convectivo, de presión y
+viscoso del balance. La figura no contiene líneas de corriente ni una
+solución calculada: su función es fijar geometría, condiciones y signos del
+contrato.}
+\label{fig:expansion-p4-dfg}
+\end{figure}
+
+El carácter canónico de DFG proviene de que un campo visualmente plausible no
+garantiza el balance. Una pequeña violación de $u_x+v_y=0$ acumula flujo
+espurio; una presión con nivel o signo inconsistente altera la tracción; y
+una salida mal impuesta puede contaminar la estela. Por eso el desempeño debe
+leerse en campos y en observables integrales: arrastre, sustentación y caída
+de presión. La geometría curva y el no deslizamiento junto al cilindro
+introducen gradientes donde una descripción global suave puede parecer
+adecuada lejos de la superficie y fallar en la región que determina las
+fuerzas.
+
+\subsection{Lectura conjunta del cuarteto}
+
+P1 cambia la frecuencia en todo el dominio; P2 concentra una derivada en un
+frente que puede moverse; P3 combina un potencial local con una interfaz cuya
+escala se obtiene de un balance reacción--difusión; y P4 exige compatibilidad
+entre campos, frontera curva y cantidades integrales. La secuencia permite
+separar cuatro preguntas físicas: si una representación resuelve variación
+distribuida, si conserva una transición transportada, si mantiene estados y
+interfaces, y si satisface un balance vectorial con incompresibilidad.
+
+Las cuatro figuras acompañan esas preguntas con objetos distintos: funciones
+manufacturadas en P1, derivadas exactas en P2, energía y perfil estacionario
+en P3, y geometría más balance en P4. Su propósito es preparar la lectura de
+las métricas y referencias del capítulo de metodología. La evidencia de una
+hipótesis sobre adaptación solo podrá provenir de comparaciones reproducibles
+con esas referencias; las ilustraciones presentes aquí explican el problema,
+pero no sustituyen tal evidencia.

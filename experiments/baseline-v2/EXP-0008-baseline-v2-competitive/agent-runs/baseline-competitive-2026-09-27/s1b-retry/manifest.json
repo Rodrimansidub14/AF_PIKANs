@@ -1,0 +1,33 @@
+{
+    "session":  "S1b infrastructure retry",
+    "status":  "failed_before_compute",
+    "root_cause":  "Kaggle executes the uploaded code_file in a notebook without materializing closure_s1.py or auxiliary files under /kaggle/src; the spawned worker attempted to execute that missing path.",
+    "repair":  "single-file kernel embeds solve_dfg.py and make_mesh.geo as base64 and materializes both under /kaggle/working before running the DFG worker; skips completed S1a.",
+    "original_s1_slug":  "rodrimandub/af-pikans-competitive-baseline-s1-20260928",
+    "kernel_id":  "rodrimandub/af-pikans-competitive-baseline-s1b-retry-20260928",
+    "session_cap_seconds":  1800,
+    "worker_cap_seconds":  1450,
+    "scientific_accepted":  false,
+    "reference_accepted":  false,
+    "source_hashes":  {
+                          "closure_s1b_retry.py":  "48a2489bd4754b1d3f1e7828fefe0834e1bb82294b5cae25b6a51c185788fcd6",
+                          "solve_dfg.py":  "ae8a7cc487c674d428c9f8ad93da40d8e4b1135daf9752ab2422a0933604cad5",
+                          "make_mesh.geo":  "7753bb03d6c394643b1601fe771f1b878d2dc59e70cf9070b8e9b1ca433ffabb"
+                      },
+    "dependencies":  [
+                         "rodrimandub/af-pikans-allen-cahn-t4x2-20260927",
+                         "rodrimandub/af-pikans-allen-cahn-score-only-20260927",
+                         "rodrimandub/allen-cahn-deepxde-reference-20260928",
+                         "rodrimandub/af-pikans-dfg-rbf-refinement-20260928",
+                         "rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927"
+                     ],
+    "quota_before_push":  {
+                              "available_hours":  15.78,
+                              "session_cap_hours":  0.5,
+                              "projected_available_after_cap_hours":  15.28,
+                              "minimum_required_after_cap_hours":  12,
+                              "refresh_at_utc":  "2026-10-03T00:00:00Z"
+                          },
+    "push_time_utc":  "2026-09-28T19:41:23.301Z",
+    "actual_session_seconds":  7.51
+}

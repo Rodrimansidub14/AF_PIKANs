@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "project": {
+    "name": "AF_PIKANs",
+    "ontology": "pikan-research"
+  },
+  "iteration": {
+    "id": "baseline-competitive-burgers-paired-20260927",
+    "experiment_id": "EXP-0007",
+    "protocol_phase": "confirmatory_baseline",
+    "domain_level": "canonical_pde",
+    "problem_id": "burgers_pinnacle_1d",
+    "model_id": "paired_rbf_vanilla_fixed_sobol",
+    "focalization_id": "fixed_scrambled_sobol",
+    "hypothesis_id": "matched-rbf-pinnacle-vanilla-811-815"
+  },
+  "hypothesis": {
+    "statement": "En cinco pares nuevos 811-815, el Vanilla PINNacle MLP tanh 5x100 se compara con RBF fijo bajo el mismo Burgers, pools Sobol exactas por pareja, referencia Cole-Hopf com\u00fan y cap de sesi\u00f3n igualado. La hip\u00f3tesis propuesta es que el cociente geom\u00e9trico de L2 relativo RBF/Vanilla es como m\u00e1ximo 1.10; este margen requiere firma humana.",
+    "expected_effect": "Cinco parejas de artefactos, hashes exactos, curvas de error/costo predefinidas y documentaci\u00f3n de la adaptaci\u00f3n de entrenamiento Torch-only.",
+    "falsification_condition": "No hay comparaci\u00f3n v\u00e1lida con menos de cinco parejas completas, pools distintas, contrato no finito o score/reference diferentes. El margen de 1.10 solo se usa para una decisi\u00f3n si est\u00e1 firmado antes de ejecutar."
+  },
+  "problem": {
+    "sequence": [
+      "burgers"
+    ],
+    "id": "burgers_pinnacle_1d",
+    "definition": "raissi_pinnacle_1d",
+    "nu": 0.003183098861837907,
+    "x": [
+      -1.0,
+      1.0
+    ],
+    "t": [
+      0.0,
+      1.0
+    ],
+    "initial_condition": "-sin(pi*x)",
+    "dirichlet_boundary": 0.0,
+    "residual_scale": 2.003183098861838,
+    "training_evaluator": "none",
+    "post_training_reference": "Cole-Hopf/Gauss-Hermite order 128; common 1025x129 AF grid"
+  },
+  "model": {
+    "id": "paired_rbf_vanilla_fixed_sobol",
+    "label": "RBF fixed-Sobol vs PINNacle Vanilla",
+    "implementation": "src/research_pipeline/remote/burgers_pinnacle_entrypoint.py",
+    "arms": [
+      {
+        "id": "rbf_fixed",
+        "architecture": "RBF-PIKAN [2,16,16,1], 11 Gaussian bases",
+        "precision": "float64"
+      },
+      {
+        "id": "vanilla_mlp_tanh_5x100",
+        "architecture": "MLP [2,100,100,100,100,100,1], tanh",
+        "precision": "float64"
+      }
+    ]
+  },
+  "training": {
+    "seeds": [
+      811
+    ],
+    "accelerator": "gpu",
+    "machine_shape": "NvidiaTeslaT4",
+    "max_parallel_pairs": 2,
+    "batch_size": 1024,
+    "batch_sampling": "with replacement from identical fixed Sobol pools; same index streams by pair",
+    "interior_points": 8192,
+    "boundary_points": 512,
+    "initial_points": 1024,
+    "sampling": "scrambled_sobol_fixed",
+    "seed_offsets": {
+      "interior": 1,
+      "diagnostic": 2,
+      "boundary": 3,
+      "initial": 4
+    },
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "steps_per_arm": 20000,
+    "seconds_per_arm": 120,
+    "smoke_seconds_per_arm": 120,
+    "checkpoint_gpu_seconds": [
+      120,
+      300,
+      600,
+      900
+    ],
+    "heldout_scoring_during_training": false,
+    "retry_failed_seeds": false,
+    "no_lbfgs_for_vanilla": true
+  },
+  "comparison": {
+    "reference_experiment": "EXP-0006 RBF-Sobol, exact historical configuration/hash audit not run",
+    "arms": [
+      "rbf_fixed",
+      "vanilla_mlp_tanh_5x100"
+    ],
+    "paired_seeds": [
+      811,
+      812,
+      813,
+      814,
+      815
+    ],
+    "historical_seed_reuse": false,
+    "reason_for_new_seeds": "No local historical hash/config check; both arms receive newly generated identical pools.",
+    "pool_source": "src.research_pipeline.sciml.sampling.pools; preinstalled SciPy version recorded and arrays archived",
+    "shared_pool_per_seed": true,
+    "metric": "field_relative_l2, common CUDA Cole-Hopf order-128 reference and 1025x129 grid; score final endpoint only after all training, no interim checkpoint scoring",
+    "paper_anchor": "PINNacle published Vanilla uses FEM-discretized reference; its result is contextual, not directly comparable to the common Cole-Hopf score.",
+    "lbfgs_excluded": true
+  },
+  "parameter_decisions_markdown": "## Contrato y decisiones\n\n- Burgers: nu=0.01/pi, x[-1,1], t[0,1], IC=-sin(pi*x), Dirichlet cero; Cole-Hopf/Gauss-Hermite orden 128, evaluaci\u00f3n com\u00fan 1025x129 en CUDA.\n- Seeds nuevas 811-815. Una pool Sobol por seed, 8192 interiores, 1024 iniciales y 512 por frontera; arrays id\u00e9nticos por pareja y hashes archivados. SciPy preinstalado y versi\u00f3n registrada; no hay pip install.\n- RBF fijo y MLP Vanilla tanh 5x100, float64, Adam 1e-3, hasta 20000 updates o 900 segundos por brazo. Vanilla no concatena L-BFGS.\n- Smoke 120 GPU-s por brazo; sin score ni selecci\u00f3n. Checkpoints 120/300/600/900 s y final; solo final se punt\u00faa tras todo el entrenamiento. No reemplazar seeds.\n- El trainer Torch-only usa minibatches con reemplazo sobre las pools; esto adapta el data loader del paper y queda como diferencia contractual para revisi\u00f3n.\n- El scorer endpoint-only calcula referencia, derivadas, residuales y m\u00e9tricas en CUDA. El paper PINNacle es contextual por referencia FEM. Margen 1.10 propuesto sin firma.\n- Presupuesto total de sesi\u00f3n 7200 s: 300 startup + 300 setup + 240 smoke + 5760 Tier 2 + 450 score + 90 flush + 60 close. Watchdog interno 6900 s desde primera celda. T4x2, dos parejas concurrentes en entrenamiento y dos scorers concurrentes. Aprobaci\u00f3n y ejecuci\u00f3n permanecen falsas.\n",
+  "focalization": {
+    "bounded_edit_surface": []
+  },
+  "acceptance_gates": {
+    "metrics": {
+      "confirmatory_field_relative_l2": {
+        "required": false
+      }
+    },
+    "scientific_acceptance": false,
+    "note": "No automatic acceptance. Proposed 10% margin unsigned."
+  },
+  "artifacts": {
+    "expected": [
+      "metrics.json",
+      "decision_note.md",
+      "config.json",
+      "provenance.json",
+      "versions.json",
+      "hardware.json",
+      "problem_status.json",
+      "paired_pools.npz",
+      "paired_pool_manifest.json",
+      "burgers-rbf/pools.npz",
+      "burgers-rbf/history.jsonl",
+      "burgers-rbf/training_summary.json",
+      "burgers-rbf/checkpoint-final.pt",
+      "burgers-rbf/arm_cost.json",
+      "burgers-vanilla/pools.npz",
+      "burgers-vanilla/run_config.json",
+      "burgers-vanilla/history.jsonl",
+      "burgers-vanilla/cost.csv",
+      "burgers-vanilla/cost.json",
+      "burgers-vanilla/checkpoint-final.pt"
+    ]
+  },
+  "budget": {
+    "approved": true,
+    "approval": "Execution under the stated 7,200-second cap authorized in this session; no approval.json.",
+    "tier2_arm_training_device_seconds": 9000,
+    "smoke_device_seconds": 240,
+    "process_telemetry_allowance_device_seconds": 600,
+    "setup_allowance_session_seconds": 300,
+    "requested_max_session_seconds": 7200,
+    "requested_max_session_hours": 2.0,
+    "device_seconds_planned_excluding_setup_reserve": 9840,
+    "accounting": "Worst-case quota/session wall: 300 startup before first cell + 300 setup/pool preparation + 240 smoke + 5760 Tier2 training/process across three waves + 450 endpoint score (5 waves x 90, both T4s in parallel) + 90 artifact flush + 60 close margin = 7200 seconds. First-cell watchdog is 6900 seconds; Kaggle CLI hard timeout is 7200 seconds. Aggregate device-seconds: 9000 Tier2 training + 240 smoke + 600 process/telemetry allowance + 900 endpoint score = 10740 of 14400; remaining device allowance 3660. All are hard caps/allowances, not measured runtimes.",
+    "paired_seed_timeout_seconds": 1920,
+    "setup_timeout_seconds": 300,
+    "max_parallel_seeds": 2,
+    "retries": 0,
+    "startup_allowance_before_first_cell_seconds": 300,
+    "internal_watchdog_seconds_from_first_cell": 6900,
+    "session_close_margin_seconds": 60,
+    "smoke_wall_seconds": 240,
+    "tier2_parallel_training_wall_seconds": 5760,
+    "endpoint_score_wave_seconds": 90,
+    "endpoint_score_waves": 5,
+    "endpoint_scoring_wall_seconds": 450,
+    "artifact_flush_allowance_session_seconds": 90,
+    "aggregate_device_seconds_cap": 14400,
+    "planned_aggregate_device_seconds": 10740,
+    "unallocated_aggregate_device_seconds": 3660
+  },
+  "research_status": {
+    "execution_authorized": true,
+    "remote_exact_bundle_approval_required": true,
+    "scientific_accepted": false,
+    "scientific_preregistration_signed": false
+  },
+  "remote": {
+    "enable_internet": false,
+    "kernel": "rodrimandub/af-pikans-burgers-rbf-vanilla-paired-20260927-r2",
+    "allow_gpu_count_fallback": false,
+    "machine_shape": "NvidiaTeslaT4",
+    "max_parallel_seeds": 2,
+    "run_timeout_sec": 1920,
+    "setup_timeout_sec": 300,
+    "runtime_dependencies": []
+  }
+}

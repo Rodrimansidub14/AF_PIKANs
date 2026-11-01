@@ -1,0 +1,9 @@
+{
+  "approved_by": "researcher (explicit instruction in Codex conversation, 2026-09-27)",
+  "bundle_id": "bcc43eb34dfe106059f65220430949c92d7e149a63b32b8ef31e3651d090a311",
+  "code_surface": "approved",
+  "decision": "Run the fixed-Sobol Heat + Allen-Cahn extension, seeds 104/105, up to two T4 workers; r3 adds the local reference and optional RAD import modules required for portable validation. Scientific parameters and GPU budget are unchanged; scientific_accepted remains false.",
+  "hypothesis": "approved",
+  "remote_execution": true,
+  "scope": "approved"
+}

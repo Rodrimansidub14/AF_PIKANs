@@ -1,0 +1,258 @@
+% Marco teórico adaptado desde el borrador proporcionado por el estudiante.
+% Las marcas \pendiente deben resolverse antes de la versión final.
+\newcommand{\pendiente}[1]{\textcolor{red!70!black}{\textsf{[pendiente: #1]}}}
+
+% Notación empleada en este capítulo.
+\newcommand{\dom}{\Omega}
+\newcommand{\pde}{\mathcal{N}}
+\newcommand{\res}{r}
+\newcommand{\sig}{s}
+\newcommand{\pesof}{w}
+\newcommand{\despl}{\bm{d}}
+\newcommand{\potel}{\varphi}
+\newcommand{\univ}{\psi}
+
+\label{sec:marco-teorico}
+
+
+\section{El objeto y su dificultad}
+
+La aproximación numérica de ecuaciones diferenciales parciales sostiene buena parte de la ingeniería y las ciencias aplicadas. El problema puede enunciarse en forma general,  dado un operador diferencial $\pde$ sobre un dominio $\dom$ y un conjunto de condiciones sobre $\partial\dom$, se busca $u$ tal que
+\begin{equation}
+  \pde[u(x)] = 0, \quad x \in \dom, \qquad
+  B[u(x)] = 0, \quad x \in \partial\dom .
+  \label{eq:pde-general}
+\end{equation}
+
+La dificultad de resolver \eqref{eq:pde-general} no se distribuye de manera uniforme sobre $\dom$. En la mayoría de los problemas de interés , la solución exige proporcionalmente más capacidad de aproximación en regiones acotadas del dominio que en el resto, capas límite, frentes de onda, interfaces entre materiales, discontinuidades geométricas y zonas de concentración de esfuerzo.
+
+\pendiente{Aquí entra la evidencia concreta de Daniel. \cite{gonzalez2026pinnpiezo}: los mapas de error puntual del efecto piezoeléctrico indirecto localizan la discrepancia en la interfaz entre capas de polarización opuesta. Comprimir  y remitir a la sección del caso piezoeléctrico para el desarrollo.}
+
+
+\section{Precedente: refinamiento donde la solución lo exige}
+
+La concentración local de dificultad no es un descubrimiento reciente ni una particularidad de los métodos basados en aprendizaje. Los métodos numéricos clásicos la reconocieron y construyeron mecanismos explícitos para responder a ella. El refinamiento adaptativo de malla asigna más elementos donde un estimador local de error lo indica, mientras que el refinamiento $hp$ combina la reducción del tamaño de los elementos con el aumento del orden polinomial en las regiones críticas.
+
+\pendiente{Agregar dos o tres oraciones sobre estimadores de error a posteriori, con cita. No desarrollar la teoría: la sección existe para establecer que redistribuir grados de libertad es una necesidad reconocida, no una ocurrencia de este trabajo.}
+
+El método de elementos finitos conserva ventajas de precisión y de garantía teórica que ningún método basado en redes ha igualado \cite{lu2021deepxde}. Su costo, sin embargo, crece con la complejidad de la malla, y las formulaciones inversas o los escenarios que requieren inferencia rápida lo vuelven poco práctico \cite{karniadakis2021}. Esa tensión, y no una supuesta obsolescencia del método clásico, es la que abre espacio a las arquitecturas informadas por física.
+
+\section{Redes informadas por física y la capacidad que se pierde}
+
+Las redes neuronales informadas por física aproximan la solución de \eqref{eq:pde-general} con una red $u_\theta$ e incorporan la información física en la función de pérdida \cite{raissi2019}. El residual se define como la aplicación del operador diferencial a la aproximación,
+\begin{equation}
+  \res(x;\theta) := \pde[u_\theta(x)],
+  \label{eq:residual}
+\end{equation}
+y la pérdida combina el residual evaluado en un conjunto de puntos de colocación del interior con un término que penaliza el incumplimiento de las condiciones de frontera:
+\begin{equation}
+  \mathcal{L}(\theta)
+  = \frac{1}{N}\sum_{i=1}^{N} \left\| \res(x_i;\theta) \right\|^2
+  + \frac{1}{M}\sum_{j=1}^{M} \left\| B[u_\theta(x_j)] \right\|^2 .
+  \label{eq:perdida}
+\end{equation}
+
+La formulación prescinde de la malla y admite con naturalidad la estimación de parámetros desconocidos a partir de observaciones parciales, que es donde el enfoque ofrece ventaja frente a los métodos clásicos \cite{raissi2019}.
+
+Un perceptrón multicapa parametriza la solución de forma global,  cada peso influye sobre el valor de $u_\theta$ en todo el dominio, y no existe un subconjunto de parámetros asociado a una región. Los puntos de colocación en \eqref{eq:perdida} se distribuyen además de manera uniforme o cuasiuniforme, sin relación con dónde la solución exige más capacidad. El resultado es que el mecanismo de refinamiento local que la numérica clásica había construido desaparece del método.
+
+El sesgo espectral es la manifestación medible de esa pérdida, las redes ajustan primero las componentes de baja frecuencia de la solución y convergen con lentitud sobre las de alta frecuencia \pendiente{Agregar y verificar una cita: Rahaman et al. (2019) o Wang, Yu y Perdikaris (2022) para la versión específica de PINNs vía núcleo tangente neuronal.} En problemas con soluciones oscilatorias, comportamiento multiescala o acoplamiento físico fuerte, la degradación se concentra  en las regiones que determinan la validez física de la solución.
+
+\section{Estrategias de reparación existentes}
+
+La literatura respondió a esta pérdida con estrategias que redistribuyen el esfuerzo del entrenamiento. El refinamiento adaptativo basado en residuales añade puntos de colocación donde el residual es mayor \cite{lu2021deepxde}. Las variantes de muestreo por importancia extienden esa idea con distribuciones de probabilidad sobre el dominio. \pendiente{Agregar una cita concreta de muestreo adaptativo; candidatos en el mapa de referencias del proyecto.} Las PINNs variacionales con refinamiento $hp$ adaptan este precedente al paradigma de aprendizaje informado por física mediante la partición del dominio en subdominios y el control del orden de las funciones de prueba \cite{kharazmi2021hpvpinns}. El entrenamiento causal introduce pesos que penalizan los residuales de tiempos posteriores antes de resolver los anteriores \cite{wang2024causal}.
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Estrategias existentes sobre los cuatro ejes de evaluación del capítulo.}
+  \label{tab:rejilla}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lcccc}
+      \toprule
+      Estrategia & Error local & Residual & Estabilidad & Costo \\
+      \midrule
+      RAR \cite{lu2021deepxde} & \textit{Pendiente} & \textit{Pendiente} & \textit{Pendiente} & \textit{Pendiente} \\
+      Muestreo por importancia & \textit{Pendiente} & \textit{Pendiente} & \textit{Pendiente} & \textit{Pendiente} \\
+      $hp$-VPINN \cite{kharazmi2021hpvpinns} & \textit{Pendiente} & \textit{Pendiente} & \textit{Pendiente} & \textit{Pendiente} \\
+      Entrenamiento causal \cite{wang2024causal} & \textit{Pendiente} & \textit{Pendiente} & \textit{Pendiente} & \textit{Pendiente} \\
+      \bottomrule
+    \end{tabular}%
+  }
+\end{table}
+
+Las estrategias comparten una limitación de estructura al reasignar dónde se evalúa el residual o con qué peso se pondera cada término de la pérdida. Ninguna reasigna dónde reside la capacidad representacional del modelo, porque la parametrización global del perceptrón multicapa no lo permite, el añadir puntos de colocación en una región no dota a esa región de parámetros propios. La redistribución ocurre sobre el conjunto de evaluación, no sobre la representación.
+
+\section{PIKAN como banco de medición}
+
+Las redes de Kolmogorov-Arnold sustituyen las funciones de activación fijas sobre los nodos por funciones univariadas aprendibles sobre las aristas \cite{liu2024kan}. La construcción se apoya en el teorema de representación de Kolmogorov-Arnold, según el cual una función multivariada continua admite expresión como suma de composiciones de funciones univariadas.
+
+\pendiente{Enunciar el teorema en forma cerrada y desarrollar la parametrización por B-splines. Esta es la única inyección ascendente del capítulo, y se justifica porque el soporte local de la base es la propiedad que se usa después.}
+
+Cada función univariada $\univ$ se parametriza sobre una grilla de puntos de control, y modificar un coeficiente altera la salida solo en un intervalo acotado. La capacidad representacional del modelo queda así asociada a regiones identificables del espacio de entrada.
+
+Un mecanismo de focalización puede acoplarse a cualquier modelo informado por física que exponga una señal escalar sobre el dominio. En una arquitectura con parametrización global, el efecto de la focalización se confunde con la reorganización global de los parámetros y resulta difícil de atribuir. En una PIKAN, el soporte local permite observar si el mecanismo modifica la distribución espacial del aprendizaje sin que la observación quede mediada por ese efecto de confusión. La PIKAN se elige por esa razón, y no porque el mecanismo dependa de ella.
+
+\pendiente{Decidir cuánta teoría KAN entra. Criterio de corte: entra lo necesario para entender por qué la señal interna existe y qué significa localmente. La discusión de interpretabilidad, poda simbólica y descubrimiento de fórmulas queda fuera.}
+
+\section{Mecanismo de focalización adaptativa}
+
+\subsection{Forma general}
+
+El mecanismo modifica la contribución de cada punto del dominio al entrenamiento mediante un campo de peso derivado del estado interno del modelo:
+\begin{equation}
+  \mathcal{L}_{\text{foc}}(\theta)
+  = \frac{1}{N}\sum_{i=1}^{N} \pesof(x_i;\theta)\,
+    \left\| \res(x_i;\theta) \right\|^2 ,
+  \qquad
+  \pesof = T\big[\sig(\cdot\,;\theta)\big].
+  \label{eq:mecanismo}
+\end{equation}
+
+\pendiente{Confirmar el punto de inyección. La ecuación anterior supone ponderación del residual; las alternativas son modulación del muestreo y modulación de la densidad de la grilla interna. La decisión cambia la firma de $T$ y debe tomarse antes del segundo barrido.}
+
+\subsection{Firma de tipos}
+
+El mecanismo se define sobre tres objetos con dominio y codominio explícitos. La señal interna es un campo escalar sobre el dominio derivable del estado del modelo, $\sig : \dom \to \mathbb{R}$. La transformación lleva ese campo a un campo de peso positivo, $T : (\dom \to \mathbb{R}) \to (\dom \to \mathbb{R}_{+})$. El peso resultante actúa sobre el punto de inyección elegido.
+
+Esta firma no presupone ninguna arquitectura. Requiere únicamente que el modelo exponga una cantidad escalar resoluble sobre el dominio, condición que satisface cualquier modelo informado por física a través del campo de residual \eqref{eq:residual} y de la variación local de la solución aproximada. En este trabajo el mecanismo se instancia sobre una arquitectura PIKAN, y la validación experimental se limita a esa instancia. El alcance de diseño y el alcance de validación se distinguen de forma explícita, y las conclusiones del trabajo se enuncian sobre el segundo.
+
+\subsection{Elección de la señal}
+
+\pendiente{Desarrollar componente por componente, en orden de dependencia: extracción de la señal, normalización o transformación y punto de inyección. Cada uno debe incluir definición, justificación frente a la alternativa obvia y comportamiento en el caso degenerado. Restricción de diseño: la señal se define sobre el residual y la variación local de la solución, cantidades que cualquier modelo informado por física posee. Cualquier lectura desde los internos de la base spline es una instanciación opcional y se documenta como tal, no como parte de la definición.}
+
+\subsection{Casos de reducción}
+
+Si $T$ produce un campo de peso constante, \eqref{eq:mecanismo} se reduce a la pérdida estándar \eqref{eq:perdida} y el modelo recupera la configuración PIKAN base, que es la condición de control del diseño experimental. Si la señal es el residual sin transformación y el punto de inyección es el muestreo, el mecanismo se aproxima al refinamiento adaptativo basado en residuales \cite{lu2021deepxde}. Ambos límites ubican la propuesta respecto de la literatura sin argumentación comparativa adicional.
+
+\subsection{Costo}
+
+\pendiente{Incluir la complejidad adicional por época y la frecuencia de recálculo del campo de peso. Este análisis va aquí y no en resultados.}
+
+\section{Pruebas de Estres}
+% =====================================================================
+
+El mecanismo actúa sobre la distribución espacial del aprendizaje, de
+modo que su evaluación exige problemas donde la dificultad se distribuya
+de maneras distintas. Los problemas de este capítulo no se eligen por ser
+los benchmarks habituales de la literatura, sino porque cada uno aísla un
+tipo de no uniformidad,  ausente, estática en el espacio, móvil en el
+tiempo, no localizada y repartida entre campos acoplados. El cuadro
+\ref{tab:escalera} resume la correspondencia.
+
+\begin{table}[htbp]
+\centering
+\caption{Problemas del banco y tipo de no uniformidad que aísla cada uno.}
+\label{tab:escalera}
+\begin{tabular}{lll}
+\toprule
+Problema & Tipo de no uniformidad & Función en el diseño \\
+\midrule
+Poisson oscilatorio & No localizada           & Verificación y control negativo \\
+Burgers viscosa     & Estática en el espacio  & Localización espacial \\
+Allen-Cahn          & Móvil en el tiempo      & Seguimiento de la región crítica \\
+Navier--Stokes 2D   & Anclada a la geometría  & Localización con acoplamiento \\
+Piezoeléctrico 2D   & Entre campos e interfaz & Acoplamiento físico \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Problemas con referencia analítica}
+
+La ecuación de Poisson establece la línea base y cumple además una
+función de control. Con forzamiento suave, su solución no concentra
+dificultad en ninguna región y la etapa se limita a verificar que la
+implementación PIKAN reproduce soluciones conocidas dentro de la
+tolerancia esperada. Con forzamiento oscilatorio de alta frecuencia, la
+dificultad crece pero permanece repartida de forma homogénea sobre el
+dominio, y el problema opera como control negativo: si el mecanismo
+mejora el error también aquí, la mejora no proviene de la focalización
+espacial y hay que buscar otra explicación, por ejemplo un efecto de
+reponderación equivalente a un cambio de tasa de aprendizaje efectiva.
+\pendiente{Fijar el dominio, la frecuencia del forzamiento y la
+tolerancia de aceptación; la tolerancia va en metodología.}
+
+La ecuación de Burgers viscosa introduce el primer caso de dificultad
+localizada. Para viscosidad pequeña, la solución desarrolla un gradiente
+pronunciado en una región acotada del dominio mientras el resto permanece
+suave \cite{raissi2019}. La localización es estática por lo que la región
+crítica no se desplaza. Es el escenario más favorable al mecanismo y, por
+esa misma razón, el que menos informa por sí solo.
+
+\subsection{Localización móvil y localización estructural}
+
+La ecuación de Allen-Cahn presenta una interfaz delgada que se desplaza
+con el tiempo \cite{raissi2019}. La región de mayor dificultad existe
+en cada instante pero cambia de posición, lo que somete al mecanismo a
+una exigencia distinta de la anterior: no basta con concentrar capacidad
+donde el residual fue alto, hay que reasignarla conforme la región se
+mueve. Un mecanismo que concentre capacidad y no la libere degrada aquí
+respecto de la configuración base, y ese comportamiento es observable.
+
+Las ecuaciones de Navier--Stokes incorporan no linealidad en el término convectivo y acoplamiento entre el campo de velocidad y la presión. Para número de Reynolds moderado y régimen laminar, la dificultad se concentra enregiones determinadas por la geometría del dominio, como las capas límite
+adyacentes a las paredes y la estela aguas abajo de un obstáculo
+\cite{raissi2019,jin2021nsfnets}. La localización no se desplaza como en
+Allen-Cahn ni es puntual como en Burgers, en donde  queda anclada a la frontera y
+persiste durante todo el entrenamiento. Se evalúa si el mecanismo
+distingue esas regiones sin que la señal quede dominada por el residual de
+la ecuación de continuidad, cuyo comportamiento numérico difiere del de
+la ecuación de momento.
+\pendiente{Fijar la configuración y el número de Reynolds. El régimen
+turbulento y los flujos de alto Reynolds quedan fuera del alcance del
+trabajo y deben declararse como tales.}
+
+
+
+\subsection{Sistema piezoeléctrico acoplado}
+
+El efecto piezoeléctrico acopla el comportamiento mecánico y el eléctrico
+de ciertos materiales. Las relaciones constitutivas lineales expresan el
+tensor de esfuerzos y el desplazamiento dieléctrico en función de la
+deformación y del campo eléctrico, y el sistema se cierra con las
+ecuaciones de equilibrio mecánico y de Gauss
+\cite{gonzalez2026pinnpiezo,lahmer2008}:
+\begin{equation}
+\nabla \cdot \sigma + \bm{f} = 0,
+\qquad
+\nabla \cdot \bm{D} = 0 .
+\label{eq:piezo}
+\end{equation}
+
+\pendiente{escribir la forma matricial de las relaciones constitutivas y
+las relaciones cinemáticas, siguiendo la formulación de
+\cite{gonzalez2026pinnpiezo}. Enunciar, no derivar desde el tensor
+completo: la derivación no cambia ninguna interpretación de los
+resultados.}
+
+La localización de la dificultad en
+interfaces. En una viga bimorfa, las capas tienen polarización opuesta, y
+la línea media donde se encuentran concentra la discrepancia entre la
+solución aproximada y la de referencia \cite{gonzalez2026pinnpiezo}. La
+segunda es la asimetría entre campos acoplados,  González et al. informan
+errores relativos $L^2$ del orden de $10^{-1}$ para ambas componentes del
+desplazamiento mecánico frente a $10^{-3}$ para el potencial eléctrico
+\cite{gonzalez2026pinnpiezo}. La capacidad representacional se reparte de
+forma desigual entre variables físicas acopladas, no solo entre regiones
+del dominio.
+
+\pendiente{decidir si el mecanismo se lee también sobre la dimensión
+entre variables o solo sobre la dimensión espacial. Si se incluye, la
+firma de tipos de la sección 6 debe admitirlo desde el principio.}
+
+Conviene distinguir dos fuentes de error en estos mapas. La discrepancia
+en la línea media corresponde a una interfaz física entre capas de
+polarización opuesta. En cambio, la discrepancia en el extremo empotrado
+aparece donde se impone una condición de Dirichlet de valor nulo y el
+error relativo se amplifica cuando la solución de referencia se aproxima
+a cero \cite{gonzalez2026pinnpiezo}. La primera constituye evidencia de
+localización física; la segunda es, en parte, un artefacto de la métrica.
+Esta distinción justifica reportar el residual físico junto con el error
+relativo en el capítulo de resultados.
+
+La referencia numérica para la validación proviene de una simulación por
+elementos finitos con malla triangular bidimensional
+\cite{gonzalez2026pinnpiezo,khan2018bimorph}, con los coeficientes de
+material del PVDF diferenciados por capa según la orientación de
+polarización.
+\pendiente{trasladar el detalle de geometría, coeficientes y condiciones
+de frontera al capítulo de metodología; aquí solo la procedencia.}

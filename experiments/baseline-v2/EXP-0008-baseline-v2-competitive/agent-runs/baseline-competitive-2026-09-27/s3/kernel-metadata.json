@@ -1,0 +1,19 @@
+{
+  "id": "rodrimandub/af-pikans-ac-lbfgs-continuation-s3-retry-20260928",
+  "title": "AF PIKANs AC LBFGS Continuation S3 Retry 20260928",
+  "code_file": "ac-lbfgs-continuation-s3.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [
+    "rodrimandub/af-pikans-allen-cahn-t4x2-20260927",
+    "rodrimandub/af-pikans-competitive-baseline-s1-20260928"
+  ],
+  "model_sources": []
+}

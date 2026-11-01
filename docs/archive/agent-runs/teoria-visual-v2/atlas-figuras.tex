@@ -1,0 +1,72 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage[spanish]{babel}
+\usepackage{lmodern,amsmath,amssymb,graphicx,booktabs,xcolor}
+\usepackage[margin=1.5cm]{geometry}\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\graphicspath{{var/agent_runs/teoria-visual-v2/illustrations/}{var/agent_runs/teoria-visual-v2/solutions/}{var/agent_runs/teoria-visual-v2/dfg/}{var/agent_runs/teoria-visual-v2/pvdf/}{var/agent_runs/teoria-visual/figures/}{figuras/}}
+\begin{document}
+\section*{Poisson: fuente y equilibrio}
+\textbf{Ilustración del problema · Fiziko}\par
+{\centering \includegraphics[width=\linewidth,height=.24\textheight,keepaspectratio]{p1-problem.pdf}\par}
+\textbf{Gráfica de solución}\par
+{\centering \includegraphics[width=\linewidth,height=.48\textheight,keepaspectratio]{p1-solution.pdf}\par}
+{\small Solución exacta de Poisson para $k=1$ y $k=4$, cortes en $y=1/(2k)$ y comprobación independiente por diferencias finitas para $k=4$. Se resuelve el sistema discreto con 33, 65 y 129 nodos por eje. El panel de error compara la aproximación con la fórmula exacta en los nodos interiores; la pendiente de referencia es de segundo orden.}
+\clearpage
+\section*{Burgers: transporte y difusión}
+\textbf{Ilustración del problema · Fiziko}\par
+{\centering \includegraphics[width=\linewidth,height=.24\textheight,keepaspectratio]{p2-problem.pdf}\par}
+\textbf{Gráfica de solución}\par
+{\centering \includegraphics[width=\linewidth,height=.48\textheight,keepaspectratio]{p2-solution.pdf}\par}
+{\small Solución exacta de Burgers con $A=0.5$, $c=0.5$, $x_0=-0.25$ y $\nu=0.02$: mapa espacio--tiempo y perfiles a $t=0,0.5,1$. La línea discontinua del mapa sigue $x_f(t)=ct+x_0$. Las condiciones iniciales y de frontera son las trazas de la misma solución.}
+\clearpage
+\section*{Allen--Cahn: fases e interfaces}
+\textbf{Ilustración del problema · Fiziko}\par
+{\centering \includegraphics[width=\linewidth,height=.24\textheight,keepaspectratio]{p3-problem.pdf}\par}
+\textbf{Gráfica de solución}\par
+{\centering \includegraphics[width=\linewidth,height=.48\textheight,keepaspectratio]{p3-solution.pdf}\par}
+{\small Solución numérica del problema Allen--Cahn con $d=0.001$, $u(x,0)=x^2\cos(\pi x)$ y $u(\pm1,t)=-1$. Se emplean diferencias centradas y BDF, con 1601 nodos en la solución mostrada. Los paneles incluyen campo, cortes, energía discreta y diferencias entre refinamientos, evaluadas en nodos y tiempos comunes.}
+\clearpage
+\section*{Navier--Stokes: flujo alrededor de un cilindro}
+\textbf{Ilustración del problema · Fiziko}\par
+{\centering \includegraphics[width=\linewidth,height=.24\textheight,keepaspectratio]{p4-problem.pdf}\par}
+\textbf{Gráfica de solución}\par
+{\centering \includegraphics[width=\linewidth,height=.48\textheight,keepaspectratio]{p4-solution.pdf}\par}
+{\small Solución FEM calculada del problema estacionario de Navier--Stokes
+DFG 2D-1 a $\mathrm{Re}=20$ en la malla fina Taylor--Hood $P_2/P_1$.
+Las tres filas muestran, respectivamente, la magnitud de velocidad, la
+presión y las líneas de corriente calculadas a partir de los grados de
+libertad resueltos; el cilindro poligonal y su máscara sólida se conservan en
+los tres paneles. La entrada tiene velocidad máxima $0.3\,\mathrm{m/s}$ y
+media $0.2\,\mathrm{m/s}$, las paredes y el cilindro son no deslizantes, y la
+salida usa $\nu\,\partial_n\mathbf u-p\mathbf n=0$. La corrida satisface
+residuo débil y balance de flujo, pero la tabla de refinamiento no estabiliza
+el funcional de sustentación; por tanto la imagen se presenta como solución
+reproducible con verificación de balances, sin certificado de convergencia
+integral.}
+\clearpage
+\section*{PVDF: acoplamiento y flexión}
+\textbf{Ilustración del problema · Fiziko}\par
+{\centering \includegraphics[width=\linewidth,height=.24\textheight,keepaspectratio]{p5-problem.pdf}\par}
+\textbf{Gráfica de solución}\par
+{\centering \includegraphics[width=\linewidth,height=.48\textheight,keepaspectratio]{p5-solution.pdf}\par}
+{\small Solución FEM acoplada calculada para P5 con elementos triangulares
+cuadráticos \(P_2\) y la malla fina alineada con la interfaz. (a) Campo
+vertical \(d_y\) en micrómetros; (b) potencial \(\phi\) en voltios; (c)
+contorno exterior e interfaz originales y deformados, cuya escala visual es el factor calculado
+28.3071; (d) cambio de la flecha de punta y de la carga libre del
+electrodo superior al refinar. La deformada se dibuja con coordenadas
+geométricas \(x,y\) en metros y con razón de aspecto ajustada para facilitar
+la lectura. Como \(L/H=100\), los ejes no usan la misma escala gráfica; además,
+el desplazamiento se multiplica por el factor indicado solo para ser visible.
+La carga mostrada usa
+\(Q_T=-\int_{\Gamma_T}D\!\cdot n\,ds\), mientras el flujo saliente del
+material tiene el signo contrario.}
+\clearpage
+\section*{Arquitecturas: operaciones y conexiones}
+{\centering \includegraphics[width=\linewidth,height=.55\textheight,keepaspectratio]{architecture.pdf}\par}
+\par Diagrama con Fiziko/MetaPost. En MLP se aprenden pesos y sesgos; en KAN se aprenden funciones en aristas y se suman sus contribuciones en nodos.
+\par{\centering \includegraphics[width=\linewidth,height=.30\textheight,keepaspectratio]{pinn-loss.pdf}\par}
+\clearpage\section*{Difusión: transferencia de calor en una varilla}
+{\centering \includegraphics[width=\linewidth,height=.6\textheight,keepaspectratio]{heat-rod.pdf}\par}
+\par El flujo térmico $q=-kT_x$ responde al gradiente de temperatura. El balance $\rho c T_t=-q_x+s$ produce la ecuación de difusión. Es una ilustración introductoria, separada del banco P1--P5.
+\end{document}

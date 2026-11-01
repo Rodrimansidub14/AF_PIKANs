@@ -1,0 +1,19 @@
+{
+  "status": "stopped_cost_unknown",
+  "quota_cap_seconds": 6900.0,
+  "aggregate_device_cap_seconds": 14400.0,
+  "accelerator": "NvidiaTeslaT4 (T4x2)",
+  "runs": [
+    {
+      "kind": "smoke",
+      "seed": 900,
+      "arm": "rbf",
+      "status": "cost_unknown",
+      "return_code": 1
+    }
+  ],
+  "session_wall_seconds": 19.797011803000032,
+  "kaggle_quota_hours_estimate": 0.00549917041861112,
+  "aggregate_device_seconds_estimate": 0.0,
+  "aggregate_gpu_hours_estimate": 0.0
+}

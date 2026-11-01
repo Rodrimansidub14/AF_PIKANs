@@ -1,0 +1,198 @@
+{
+  "status": "didactic_verified_fem_reference_not_research_claim",
+  "runtime": {
+    "python": "C:\\Users\\rodri\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "numpy": "2.3.2",
+    "scipy": "1.18.0",
+    "matplotlib": "3.10.5",
+    "pythondontwritebytecode": "1"
+  },
+  "source_contract": {
+    "methodology": "capitulos/metodologia/01-problemas.tex:P5",
+    "constitutive": "capitulos/marco/04-piezo.tex:eq:constitutivo-2d",
+    "geometry": {
+      "L_m": 0.1,
+      "H_m": 0.001,
+      "interface_y_m": 0.0005
+    },
+    "boundary_conditions": {
+      "mechanical_left": "d=(0,0)",
+      "mechanical_other": "sigma n=0",
+      "potential_top_V": 100.0,
+      "potential_bottom_V": 0.0,
+      "electrical_left_right": "D n=0",
+      "interface": "continuous d, phi, traction, normal D"
+    },
+    "coefficients": {
+      "C11_Pa": 2183600000.0,
+      "C22_Pa": 2183600000.0,
+      "C12_Pa": 633200000.0,
+      "C66_Pa": 775000000.0,
+      "e21_lower_C_per_m2": 0.02904,
+      "e22_lower_C_per_m2": 0.05157,
+      "e21_upper_C_per_m2": -0.02904,
+      "e22_upper_C_per_m2": -0.05157,
+      "kappa_x_F_per_m": 1.062e-10,
+      "kappa_y_F_per_m": 1.041e-10
+    }
+  },
+  "method": {
+    "finite_element": "conforming quadratic Lagrange P2 triangles",
+    "mesh": "structured rectangular cells split into two CCW triangles; interface aligned",
+    "quadrature": "seven-point Dunavant on each triangle",
+    "assembly": "physical coupled weak form with [Kdd Kdphi; Kphid -Kphiphi]",
+    "linear_solver": "scipy.sparse.linalg.spsolve after fixed P5 row/column scaling",
+    "unknown_order": "(d_x,d_y,phi) per global P2 node",
+    "charge_unit": "C/m out-of-plane thickness (effective 2-D model)",
+    "charge_convention": "reported electrode free charge is Q_electrode=-∫Γ D·n ds; the raw prescribed-potential residual is the outward material flux ∫Γ D·n ds"
+  },
+  "fixed_scales": {
+    "E0_V_per_m": 100000.0,
+    "strain_scale": 2.3616962813702145e-06,
+    "displacement_scale_m": 2.3616962813702145e-07,
+    "sigma_scale_Pa": 520857.00000000006,
+    "D_scale_C_per_m2": 2.2799267723026196e-05,
+    "mechanical_residual_scale": 520857000.00000006,
+    "electrical_residual_scale": 0.022799267723026196
+  },
+  "meshes": [
+    {
+      "nx": 24,
+      "elements_per_layer_y": 2,
+      "n_vertices": 125,
+      "n_p2_nodes": 441,
+      "n_elements": 192,
+      "h_x_m": 0.004166666666666667,
+      "h_y_m": 0.00025,
+      "tip_dx_m": -5.355256021145901e-13,
+      "tip_dy_m": -1.0698339387496391e-05,
+      "tip_phi_V": 49.99999789914315,
+      "electrode_free_charge_top_C_per_m": 1.0538504236980894e-06,
+      "electrode_free_charge_bottom_C_per_m": -1.0538504236981705e-06,
+      "electrode_free_charge_balance_C_per_m": -8.110340469959926e-20,
+      "material_outward_flux_top_C_per_m": -1.0538504236980894e-06,
+      "material_outward_flux_bottom_C_per_m": 1.0538504236981705e-06,
+      "clamp_force_x_N_per_m": 3.942492443620438e-10,
+      "clamp_force_y_N_per_m": -4.824601163022635e-09,
+      "free_residual_inf_dimensionless": 9.978021158685954e-19,
+      "free_residual_l2_dimensionless": 4.258641382664128e-18,
+      "full_residual_inf_dimensionless": 1.2841774761574674e-06,
+      "max_displacement_m": 1.0698339387496405e-05,
+      "deformation_amplification": 28.041735182810005,
+      "assembly_seconds": 0.14596929999970598,
+      "solve_seconds": 0.010513199998968048
+    },
+    {
+      "nx": 48,
+      "elements_per_layer_y": 4,
+      "n_vertices": 441,
+      "n_p2_nodes": 1649,
+      "n_elements": 768,
+      "h_x_m": 0.0020833333333333333,
+      "h_y_m": 0.000125,
+      "tip_dx_m": 2.457843681035451e-13,
+      "tip_dy_m": -1.0630971549518304e-05,
+      "tip_phi_V": 49.999996198319174,
+      "electrode_free_charge_top_C_per_m": 1.0538869825066074e-06,
+      "electrode_free_charge_bottom_C_per_m": -1.0538869825066479e-06,
+      "electrode_free_charge_balance_C_per_m": -4.044582323139284e-20,
+      "material_outward_flux_top_C_per_m": -1.0538869825066074e-06,
+      "material_outward_flux_bottom_C_per_m": 1.0538869825066479e-06,
+      "clamp_force_x_N_per_m": 9.821018442934815e-10,
+      "clamp_force_y_N_per_m": 1.5235250394596278e-08,
+      "free_residual_inf_dimensionless": 1.576169330534985e-18,
+      "free_residual_l2_dimensionless": 1.0636824333890728e-17,
+      "full_residual_inf_dimensionless": 6.420532742884792e-07,
+      "max_displacement_m": 1.0630971549518307e-05,
+      "deformation_amplification": 28.219434000234255,
+      "assembly_seconds": 1.4611713999984204,
+      "solve_seconds": 0.09160399999927904,
+      "relative_change_tip_dy_m": 0.006336940858537029,
+      "relative_change_electrode_free_charge_top_C_per_m": 3.4689496240892866e-05
+    },
+    {
+      "nx": 96,
+      "elements_per_layer_y": 8,
+      "n_vertices": 1649,
+      "n_p2_nodes": 6369,
+      "n_elements": 3072,
+      "h_x_m": 0.0010416666666666667,
+      "h_y_m": 6.25e-05,
+      "tip_dx_m": 5.943342674984261e-13,
+      "tip_dy_m": -1.0598062879823785e-05,
+      "tip_phi_V": 49.99999263111875,
+      "electrode_free_charge_top_C_per_m": 1.0539046158561082e-06,
+      "electrode_free_charge_bottom_C_per_m": -1.0539046158569406e-06,
+      "electrode_free_charge_balance_C_per_m": -8.324216289141637e-19,
+      "material_outward_flux_top_C_per_m": -1.0539046158561082e-06,
+      "material_outward_flux_bottom_C_per_m": 1.0539046158569406e-06,
+      "clamp_force_x_N_per_m": 1.42194522823047e-09,
+      "clamp_force_y_N_per_m": 4.3143823624802735e-08,
+      "free_residual_inf_dimensionless": 2.2842103832941227e-18,
+      "free_residual_l2_dimensionless": 2.3525897689395476e-17,
+      "full_residual_inf_dimensionless": 3.21015952779551e-07,
+      "max_displacement_m": 1.0598062879823802e-05,
+      "deformation_amplification": 28.307059827992607,
+      "assembly_seconds": 5.456208700001298,
+      "solve_seconds": 0.7335251000004064,
+      "relative_change_tip_dy_m": 0.0031051589396746486,
+      "relative_change_electrode_free_charge_top_C_per_m": 1.673144726329116e-05,
+      "observed_rate_tip_dy_m": 1.0335922920592144,
+      "estimated_last_change_tip_dy_m": 3.142793616348997e-08,
+      "observed_rate_electrode_free_charge_top_C_per_m": 1.0519125081540348,
+      "estimated_last_change_electrode_free_charge_top_C_per_m": 1.642945697283381e-11
+    }
+  ],
+  "convergence": {
+    "tip_dy_m": -1.0598062879823785e-05,
+    "electrode_free_charge_top_C_per_m": 1.0539046158561082e-06,
+    "estimated_last_change_tip_dy_m": 3.142793616348997e-08,
+    "estimated_last_change_electrode_free_charge_top_C_per_m": 1.642945697283381e-11,
+    "observed_rate_tip_dy_m": 1.0335922920592144,
+    "observed_rate_electrode_free_charge_top_C_per_m": 1.0519125081540348
+  },
+  "patch_checks": {
+    "representative_element_detJ_m2": 1.2500000000000007e-05,
+    "gradient_partition_inf": 1.5916157281026244e-12,
+    "rigid_translation_strain_inf": 1.8189894035458565e-12,
+    "rigid_rotation_strain_inf": 2.842170943040401e-14,
+    "linear_patch_strain_error_inf": 1.4210854715202004e-14,
+    "expected_local_dof_order": "(d_x[0:6], d_y[0:6], phi[0:6])",
+    "global_dof_order": "(d_x,d_y,phi) per node"
+  },
+  "tolerances": {
+    "assembly_quadrature": "exact for polynomial degree of P2 gradient products; 7-point rule used",
+    "linear_residual_target_dimensionless": 1e-09,
+    "tip_coordinate_tolerance_m": 1e-13,
+    "refinement_interpretation": "last-change and observed-rate estimates; no asymptotic theorem claimed"
+  },
+  "figures": {
+    "pdf": "p5-solution.pdf",
+    "png": "p5-solution.png",
+    "svg": "p5-solution.svg",
+    "fields": [
+      "d_y",
+      "phi"
+    ],
+    "deformed_shape": "vertex mesh amplified by factor stored in deformation_amplification",
+    "deformation_amplification": 28.307059827992607
+  },
+  "limitations": [
+    "Effective 2-D constitutive model as written; no plane-stress or plane-strain closure is inferred.",
+    "No dynamics, body force, free volume charge, nonlinear material law, 3-D effects, or experimental validation.",
+    "The electrode charge is per unit out-of-plane thickness.",
+    "Self-convergence is a numerical diagnostic, not an independently certified FEM reference.",
+    "No result is used to approve a research claim or to compare a PIKAN method."
+  ],
+  "artifacts": [
+    "solve_pvdf_fem.py",
+    "pvdf_fem_results.npz",
+    "p5-solution.pdf",
+    "p5-solution.png",
+    "p5-solution.svg",
+    "method.tex",
+    "caption.tex",
+    "evidence.json"
+  ],
+  "elapsed_seconds": 33.612110300000495
+}

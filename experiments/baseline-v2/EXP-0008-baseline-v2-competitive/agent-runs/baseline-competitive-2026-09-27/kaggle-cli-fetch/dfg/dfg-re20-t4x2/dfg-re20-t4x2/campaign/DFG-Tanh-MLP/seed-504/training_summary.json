@@ -1,0 +1,31 @@
+{
+  "arm": "DFG-Tanh-MLP",
+  "cap_overrun_seconds": 0.03477411400035635,
+  "device": "Tesla T4",
+  "dtype": "float32",
+  "elapsed_gpu_wall_seconds": 1200.0347741140004,
+  "field_reference_status": "missing_converged_FEM_field",
+  "field_relative_l2": null,
+  "model_id": "dfg_tanh_mlp_5x64",
+  "parameters": 17027,
+  "pool_provenance": {
+    "boundary_sampling": "per-boundary independent scrambled Sobol arclength/angle; no duplicated corners",
+    "heldout": {
+      "accepted_before_truncation": 16241,
+      "candidate_count": 16384,
+      "sampling": "scrambled Sobol with rejection of closed cylinder",
+      "seed": 900505
+    },
+    "interior": {
+      "accepted_before_truncation": 32482,
+      "candidate_count": 32768,
+      "sampling": "scrambled Sobol with rejection of closed cylinder",
+      "seed": 504
+    }
+  },
+  "scientific_accepted": false,
+  "seed": 504,
+  "smoke_only": false,
+  "status": "DRAFT_UNVERIFIED",
+  "steps": 29646
+}

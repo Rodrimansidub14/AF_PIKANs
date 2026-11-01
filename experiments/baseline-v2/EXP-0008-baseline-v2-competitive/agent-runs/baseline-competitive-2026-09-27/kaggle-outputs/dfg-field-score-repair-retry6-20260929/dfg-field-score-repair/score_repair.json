@@ -1,0 +1,10 @@
+{
+  "actual_session_seconds": 21.685,
+  "error": "FileNotFoundError: No input matched 'dfg_re20_DFG-L3.msh' containing 'dfg-fem-field-follow-up-retry-5-20260929'",
+  "part": "score_repair",
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "session_elapsed_seconds": 21.685,
+  "status": "failed_partial",
+  "updated_at_utc": "2026-09-29T09:54:50Z"
+}

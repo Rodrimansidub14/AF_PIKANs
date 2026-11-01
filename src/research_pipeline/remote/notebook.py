@@ -139,7 +139,7 @@ subprocess.run(['nvidia-smi', '--query-gpu=index,name,memory.total', '--format=c
 from scipy.spatial import cKDTree
 from scipy.stats import qmc
 from IPython.display import display
-from src.research_pipeline.sciml.sampling import pools
+from src.sciml.sampling import pools
 
 manifest = json.loads((BUNDLE_DIR / 'manifest.json').read_text(encoding='utf-8'))
 cfg = manifest['training']
@@ -179,8 +179,8 @@ for problem, points in sampling_points.items():
     if is_allen_cahn_exploration:
         sampling = '''import json, numpy as np, pandas as pd, plotly.express as px
 from IPython.display import display
-from src.research_pipeline.sciml.sampling import pools
-from src.research_pipeline.sciml.train import sampling_signals
+from src.sciml.sampling import pools
+from src.sciml.train import sampling_signals
 
 manifest = json.loads((BUNDLE_DIR / 'manifest.json').read_text(encoding='utf-8'))
 cfg = manifest['training']
@@ -303,7 +303,7 @@ print('Exploratory measurements only; no SOTA or scientific claim is established
         run = run.replace(
             'from runtime import run_bundle',
             "from runtime import run_bundle\n"
-            "from src.research_pipeline.sciml.campaign import assert_exploratory_launch_ready\n"
+            "from src.sciml.campaign import assert_exploratory_launch_ready\n"
             "assert_exploratory_launch_ready(json.loads((BUNDLE_DIR/'manifest.json').read_text(encoding='utf-8')))"
         )
 
@@ -598,11 +598,11 @@ como aceptado.
             if cell['id'] in replacements: cell['source']=replacements[cell['id']].splitlines(keepends=True)
             if cell['id']=='parallel-run':
                 text=''.join(cell['source']).replace('from runtime import run_bundle',
-                    "from runtime import run_bundle\nfrom src.research_pipeline.sciml.rad_campaign import assert_launch_ready\nassert_launch_ready(json.loads((BUNDLE_DIR/'manifest.json').read_text(encoding='utf-8')))")
+                    "from runtime import run_bundle\nfrom src.sciml.rad_campaign import assert_launch_ready\nassert_launch_ready(json.loads((BUNDLE_DIR/'manifest.json').read_text(encoding='utf-8')))")
                 cell['source']=text.splitlines(keepends=True)
             if cell['id']=='sampling-signals':
-                text=''.join(cell['source']).replace('from src.research_pipeline.sciml.sampling import pools',
-                    'from src.research_pipeline.sciml.sampling import pools\nfrom src.research_pipeline.sciml.rad_campaign import job_spec')
+                text=''.join(cell['source']).replace('from src.sciml.sampling import pools',
+                    'from src.sciml.sampling import pools\nfrom src.sciml.rad_campaign import job_spec')
                 text=text.replace("data = pools(problem, seed,", "arm, paired_seed = job_spec(seed)\n        data = pools(problem, paired_seed,")
                 text=text.replace("'problem': problem, 'seed': seed,", "'problem': problem, 'job_id': seed, 'paired_seed': paired_seed, 'arm': arm,")
                 cell['source']=text.splitlines(keepends=True)

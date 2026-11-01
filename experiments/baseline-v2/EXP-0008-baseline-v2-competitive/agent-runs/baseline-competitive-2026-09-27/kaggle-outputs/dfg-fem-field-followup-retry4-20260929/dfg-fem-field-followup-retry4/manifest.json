@@ -1,0 +1,221 @@
+{
+  "actual_session_seconds": 179.537,
+  "artifacts": [
+    {
+      "path": "dfg/DFG-L0/fem_coefficients.npz",
+      "sha256": "cce628c98e4b56de6865b37fcceabbc44d2821955c6ddb5845b4835cfb6cb0b2",
+      "size_bytes": 339150
+    },
+    {
+      "path": "dfg/DFG-L0/fields_on_common_grid.npz",
+      "sha256": "ff48508326a567e2b92d6d44887ae97b75aaf3b9f9e95c6c12b49b071beeb375",
+      "size_bytes": 162266
+    },
+    {
+      "path": "dfg/DFG-L0/mesh.h5",
+      "sha256": "7cc4b351919d36aee49cd71bfa77906e5ecf5361c384919fc5947626c4569dac",
+      "size_bytes": 265128
+    },
+    {
+      "path": "dfg/DFG-L0/mesh.xdmf",
+      "sha256": "8026f4058f14733c1ed14eb310fe51eefcf47b08d53ceaaff47ee5f8a3b86520",
+      "size_bytes": 564
+    },
+    {
+      "path": "dfg/DFG-L0/qois.json",
+      "sha256": "0313a223919907a99e8b9057ca50b88138c10908e48213776648e30e17168fcd",
+      "size_bytes": 1770
+    },
+    {
+      "path": "dfg/DFG-L1/fem_coefficients.npz",
+      "sha256": "6de1cf708ba675b70bd1ca5e9d69285a51d6dad9ff8d249e81111d72b89a6156",
+      "size_bytes": 1304899
+    },
+    {
+      "path": "dfg/DFG-L1/fields_on_common_grid.npz",
+      "sha256": "500381efaef44eae24bd9d818df379aaf381fddcaf065b5fcef4d7111bc0c6a1",
+      "size_bytes": 162264
+    },
+    {
+      "path": "dfg/DFG-L1/mesh.h5",
+      "sha256": "4a9370e9cc869f93982a437279ed640f7469ab5db572db71a5f82d7407e8cc77",
+      "size_bytes": 1005416
+    },
+    {
+      "path": "dfg/DFG-L1/mesh.xdmf",
+      "sha256": "154d525ac3b4dcad596035e2c46d5c13add8c0f2756d7c1041645127d577e4d1",
+      "size_bytes": 567
+    },
+    {
+      "path": "dfg/DFG-L1/qois.json",
+      "sha256": "cbc05399916daca08d0c59eae1b16f8a169ed7f1f3bb85ab020f3f8d742dae33",
+      "size_bytes": 1773
+    },
+    {
+      "path": "dfg/DFG-L2/fem_coefficients.npz",
+      "sha256": "5a034e5e2574090a07324ba7f738d21d054e7195c5c0518b3600200db60ec718",
+      "size_bytes": 5148742
+    },
+    {
+      "path": "dfg/DFG-L2/fields_on_common_grid.npz",
+      "sha256": "5234f5e466de47e3c26b1f2d7fd73bc1ba1908da974a56f9ed92c80ee7d90446",
+      "size_bytes": 162258
+    },
+    {
+      "path": "dfg/DFG-L2/mesh.h5",
+      "sha256": "c25682f4c691e773a95f4e18b02dfad61bcc4d905c6fea8153932b4b098a59a2",
+      "size_bytes": 3973192
+    },
+    {
+      "path": "dfg/DFG-L2/mesh.xdmf",
+      "sha256": "0cfdbbdb251b046038863ba3d8161770beb14c71f02eef168aa64e4e7766b451",
+      "size_bytes": 567
+    },
+    {
+      "path": "dfg/DFG-L2/qois.json",
+      "sha256": "726b693d334b828c029f960d37033a88f2da3fb280358c4887647db9f72e2602",
+      "size_bytes": 1771
+    },
+    {
+      "path": "dfg/checkpoint_field_scores.csv",
+      "sha256": "5f26adb1be2eab880953443cd5bf52563285a58e16c79d0cb4edfd1b69332784",
+      "size_bytes": 4183
+    },
+    {
+      "path": "dfg/checkpoint_field_scores.json",
+      "sha256": "fdbd279da84bbf2fc2067992f88988a4f5ae09899131c835bd5a1885436c24fb",
+      "size_bytes": 8165
+    },
+    {
+      "path": "dfg/checkpoint_field_scores.partial.json",
+      "sha256": "8e20c175d43e911483b9fc682cf5f72704dfb159b6a69b3e4967e821409debf7",
+      "size_bytes": 6671
+    },
+    {
+      "path": "dfg/meshes/dfg_re20_DFG-L0.msh",
+      "sha256": "3be8d939646948251d269ea28989a82f80718fe483efe2d687906934d2982570",
+      "size_bytes": 404065
+    },
+    {
+      "path": "dfg/meshes/dfg_re20_DFG-L1.msh",
+      "sha256": "201870edbccdefe5f165a1264688381c4ab4ad3bcfdcaf438c15a3bfd2cf7e7e",
+      "size_bytes": 1618802
+    },
+    {
+      "path": "dfg/meshes/dfg_re20_DFG-L2.msh",
+      "sha256": "2129934a6013fe5fb683050d83a9aa46cbfcca60ba753d369474d5b219ecff8a",
+      "size_bytes": 6607611
+    },
+    {
+      "path": "dfg/summary.json",
+      "sha256": "24a57317dbacb8ca9d1a3566a6d854094a437a5654a020b132c4e759a4c7dabe",
+      "size_bytes": 7002
+    },
+    {
+      "path": "dfg-worker.log",
+      "sha256": "43d1eeac62a5f23a2ed1138fb7f68a4661f6c075fc27267bcaf915dca51760cb",
+      "size_bytes": 64365
+    },
+    {
+      "path": "s1b.json",
+      "sha256": "b6fe262a50c5d7cec5e2e6af1b66ea9333e5016f8c9aa6e15da4e7184dce6a69",
+      "size_bytes": 7785
+    },
+    {
+      "path": "s1b_final.json",
+      "sha256": "61f1acbad4452f136d1fe63e2b295f3060cb83cd89be921f8b146e76554720aa",
+      "size_bytes": 24512
+    },
+    {
+      "path": "s1b_retry.json",
+      "sha256": "ab7036c8596952ec56fb5f374211addce6a6fe42e0718adb00950e98268c72b3",
+      "size_bytes": 239
+    }
+  ],
+  "ended_at_utc": "2026-09-29T07:27:34Z",
+  "fixed_field_scoring_contract": {
+    "cohorts": {
+      "current_rbf": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "refinement_rbf_and_tanh_mlp": [
+        501,
+        502,
+        503,
+        504,
+        505
+      ]
+    },
+    "grid": {
+      "mask": "exclude points with (x-0.2)^2+(y-0.2)^2 <= 0.05^2",
+      "ordering": "numpy.meshgrid(indexing='xy'); row-major flattened",
+      "x": {
+        "count": 221,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 2.2
+      },
+      "y": {
+        "count": 42,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 0.41
+      }
+    },
+    "metrics": [
+      "u_relative_l2",
+      "v_relative_l2",
+      "p_relative_l2_gauge_fixed_outlet"
+    ],
+    "pressure_gauge": {
+      "method": "subtract pressure at fixed outlet point from FEM and each checkpoint",
+      "outlet_anchor_xy": [
+        2.2,
+        0.2
+      ]
+    },
+    "reference_level": "DFG-L2 (third of three requested mesh levels)",
+    "retraining": false
+  },
+  "internal_watchdog_seconds": 1400.0,
+  "kernel_slug": "rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-4-20260929",
+  "kernel_source_files": [
+    {
+      "path": "solve_dfg.py",
+      "sha256": "992ef0271cf97d95d0d659f4bb7cecd2cf875420ba02bfb8dee343fabc3e68e1"
+    },
+    {
+      "path": "make_mesh.geo",
+      "sha256": "7753bb03d6c394643b1601fe771f1b878d2dc59e70cf9070b8e9b1ca433ffabb"
+    }
+  ],
+  "kernel_sources": [
+    "rodrimandub/af-pikans-dfg-rbf-refinement-20260928",
+    "rodrimandub/af-pikans-dfg-lbfgs-refinement-20260927"
+  ],
+  "machine": {
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "numpy": "2.0.2",
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "visible_gpu_count": 2
+  },
+  "parts": {
+    "s1a": "/kaggle/working/dfg-fem-field-followup-retry4/s1a.json",
+    "s1b": "/kaggle/working/dfg-fem-field-followup-retry4/s1b.json"
+  },
+  "push_cap_seconds": 1460.561,
+  "reference_accepted": false,
+  "schema_version": 1,
+  "scientific_accepted": false,
+  "session": "DFG-FEM-field-followup-retry4-2026-09-29",
+  "started_at_utc": "2026-09-29T07:24:35Z",
+  "status": "candidate_complete"
+}

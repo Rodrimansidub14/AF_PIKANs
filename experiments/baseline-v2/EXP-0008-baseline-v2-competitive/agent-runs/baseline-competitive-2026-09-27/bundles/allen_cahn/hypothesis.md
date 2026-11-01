@@ -1,0 +1,9 @@
+# Allen–Cahn T4x2 paired comparison — preregistration draft
+
+**Status: DRAFT_UNVERIFIED; not authorized for execution.** The physical case matches the DeepXDE forward Allen–Cahn tutorial. The comparator is a budget-matched, hard-constraint, Adam-only adaptation of its tanh MLP; the published 40,000 Adam steps plus L-BFGS are not reproduced.
+
+The directional hypothesis is that the DeepXDE-style MLP has lower weighted space-time relative L2 error than the incumbent RBF PIKAN when both receive five paired seeds, identical Sobol coordinates, PDE, hard transform, float64 precision and 600 seconds on a T4. For each seed report `R_s = E_MLP,s / E_RBF,s`, all five pairs, geometric mean ratio, median ratio and paired bootstrap interval. A geometric mean below one with interval wholly below one supports the direction; a mean ratio at or above one falsifies it; an interval crossing one is inconclusive. Five seeds are a pilot, not a general SOTA claim.
+
+Each seed pair runs both arms in parallel on T4x2. The reference uses `cuda:0` only and is capped at 2,700 seconds. Five training pairs use up to 3,000 seconds wall time, common scoring up to 600 seconds, with 300 seconds reserved for setup outside the script and 600 seconds safety slack. The total Kaggle session quota is capped at 7,200 seconds (2 hours); the five seeds fit only if reference generation passes its cap and paired workers start and finish as designed. Kaggle documents that one hour in a T4x2 session consumes one quota hour: https://www.kaggle.com/product-feedback/361104.
+
+Field comparison requires two consecutive spatial refinements and temporal-halving gates from `campaign.json`, plus independent provenance review. On any failure the field score remains `null`. The trainer cannot read the reference, and no reference score selects checkpoints. The GPU FD-RK4 candidate still needs common-grid comparison against archived BDF AC-L4 and human numerical review.

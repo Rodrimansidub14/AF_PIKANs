@@ -1,0 +1,19 @@
+{
+  "bundle_id": "dfg-re20-score-only:03f58704d4f8914e919cbe041ae3a9fc1067e6cba356fd90f6515e42fba504f7:a5c69f748272607c2c44d6e4dc2e74805f2855de3ba6233948366637746db239",
+  "approved_by": "researcher (explicit instruction in active conversation, 2026-09-27)",
+  "scope": "DFG score-only recovery; no retraining",
+  "remote_execution": true,
+  "source_kernel": "rodrimandub/af-pikans-dfg-re20-competitive-pilot-t4x2",
+  "problem": "Navier-Stokes DFG 2D-1 Re=20",
+  "accelerator": "NvidiaTeslaT4 (2x T4)",
+  "max_session_seconds": 1800,
+  "global_campaign_cap_hours": 8,
+  "scientific_acceptance": false,
+  "scientific_preregistration_signed": false,
+  "field_relative_l2": null,
+  "component_hashes": {
+    "notebook": "03f58704d4f8914e919cbe041ae3a9fc1067e6cba356fd90f6515e42fba504f7",
+    "metadata": "a5c69f748272607c2c44d6e4dc2e74805f2855de3ba6233948366637746db239",
+    "runner": "4c02809600beb9b543d1bceffe2037ed7d05f5ff654d010b22984227b2cb35a9"
+  }
+}

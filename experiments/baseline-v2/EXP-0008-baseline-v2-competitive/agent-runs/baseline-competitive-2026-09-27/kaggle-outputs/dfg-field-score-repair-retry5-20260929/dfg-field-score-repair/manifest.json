@@ -1,0 +1,84 @@
+{
+  "actual_session_seconds": 28.469,
+  "artifacts": [
+    {
+      "path": "checkpoint_field_scores.partial.json",
+      "sha256": "559e8f6aeffc9b48ca39a382d4d7289912269bd3e6c3a18b14513c596c77184b",
+      "size_bytes": 9014
+    },
+    {
+      "path": "score_repair.json",
+      "sha256": "68031778302c6b6df693e26c3b778ef5e25bb7b814c6572bbe0daf296abe39da",
+      "size_bytes": 339
+    },
+    {
+      "path": "setup.log",
+      "sha256": "4c90784d9a890c0e9fe13342f0be89b7b95e370cadfb657f6b31489cacb09f74",
+      "size_bytes": 963
+    }
+  ],
+  "ended_at_utc": "2026-09-29T09:38:02Z",
+  "error": "RuntimeError: P2 vector reconstruction did not reproduce the saved scalar trace: None",
+  "fixed_field_scoring_contract": {
+    "cohorts": {
+      "current_rbf": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "refinement_rbf_and_tanh_mlp": [
+        501,
+        502,
+        503,
+        504,
+        505
+      ]
+    },
+    "grid": {
+      "mask": "exclude points with (x-0.2)^2+(y-0.2)^2 <= 0.05^2",
+      "ordering": "numpy.meshgrid(indexing='xy'); row-major flattened",
+      "source": "saved FEM DFG-L3 fields_on_common_grid.npz; declared before checkpoint scoring",
+      "x": {
+        "count": 221,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 2.2
+      },
+      "y": {
+        "count": 42,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 0.41
+      }
+    },
+    "metrics": [
+      "u_relative_l2",
+      "v_relative_l2",
+      "p_relative_l2_gauge_fixed_outlet"
+    ],
+    "pressure_gauge": {
+      "method": "subtract pressure at fixed outlet grid point",
+      "outlet_anchor_xy": [
+        2.2,
+        0.2
+      ]
+    },
+    "reference_level": "DFG-L3 (third of three requested mesh levels)",
+    "retraining": false
+  },
+  "kernel_slug": "rodrimandub/af-pikans-dfg-field-score-repair-retry-5-20260929",
+  "method": "reconstruct both P2 velocity components from saved DOLFINx coefficients and the saved L3 Gmsh mesh; score frozen checkpoints only",
+  "push_cap_seconds": 401.968,
+  "reference_accepted": false,
+  "retraining": false,
+  "schema_version": 1,
+  "scientific_accepted": false,
+  "session": "DFG-field-score-repair-retry-5-2026-09-29",
+  "source_code_sha256": "dbc2d9b5bf133d6de8ce7e0d3545eea722c41caf309124e8a4ca50f92ec7953c",
+  "source_session": "rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-5-20260929",
+  "started_at_utc": "2026-09-29T09:37:34Z",
+  "status": "failed_partial",
+  "traceback": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 381, in main\n    raise RuntimeError(f\"P2 vector reconstruction did not reproduce the saved scalar trace: {None if best is None else best[0]}\")\nRuntimeError: P2 vector reconstruction did not reproduce the saved scalar trace: None\n"
+}

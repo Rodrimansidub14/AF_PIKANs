@@ -1,0 +1,1146 @@
+PAGE 1
+Universidad del Valle de Guatemala
+Asignación adaptativa de representación en
+PIKANs
+Marco teórico y metodología previa al desarrollo del mecanismo
+Rodrigo Alfonso Mansilla Dubón
+Versión de trabajo para revisión científica
+6 de septiembre de 2026
+Integra anotaciones de GAB, justificación estructural y contraste de literatura reciente. Las hipótesis y
+umbrales son propuestas; no se reportan resultados de entrenamiento del mecanismo.
+
+PAGE 2
+Índice general
+1. Introducción 1
+2. Antecedentes 2
+3. Justificación 3
+4. Objetivos 4
+4.1. Objetivo general . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+4.2. Objetivos específicos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+5. Alcance 5
+6. Marco teórico 6
+6.1. Ecuaciones diferenciales como problemas de aproximación . . . . . . . . . . . . . . . 6
+6.2. Aproximación clásica y resolución adaptativa . . . . . . . . . . . . . . . . . . . . . . 7
+6.2.1. Diferencias y volúmenes finitos . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+6.2.2. Construcción de elementos finitos . . . . . . . . . . . . . . . . . . . . . . . . . 7
+6.2.3. Estimación a posteriori y refinamiento hp . . . . . . . . . . . . . . . . . . . . 7
+6.3. Aprendizaje informado por física y estado del arte . . . . . . . . . . . . . . . . . . . 9
+6.3.1. De inteligencia artificial a ANN, DNN y MLP . . . . . . . . . . . . . . . . . . 9
+6.3.2. Redes neuronales informadas por física (PINNs) . . . . . . . . . . . . . . . . 9
+6.3.3. KAN y PIKAN: construcción de B-splines . . . . . . . . . . . . . . . . . . . . 10
+6.3.4. Qué redistribuyen las estrategias existentes . . . . . . . . . . . . . . . . . . . 11
+6.4. Firma matemática de la dificultad . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+6.4.1. Oscilación, gradiente y curvatura . . . . . . . . . . . . . . . . . . . . . . . . . 12
+6.4.2. Movimiento, no linealidad y acoplamiento . . . . . . . . . . . . . . . . . . . . 13
+6.5. Pregunta y contribución posible . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+6.6. Construcción matemática previa al mecanismo . . . . . . . . . . . . . . . . . . . . . 13
+6.6.1. Esfuerzo, representación y localidad efectiva . . . . . . . . . . . . . . . . . . . 13
+i
+
+PAGE 3
+6.6.2. Nudos y centros móviles . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+6.6.3. Señal de utilidad marginal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+6.6.4. Asignación, tipos y presupuesto . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+6.6.5. Transferencia y conservación . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+6.6.6. Reducciones, costo y límites . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+6.7. Banco de problemas y referencias . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+6.7.1. Poisson distribuido y localizado . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+6.7.2. Burgers: frente estacionario . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+6.7.3. Allen–Cahn: movimiento manufacturado . . . . . . . . . . . . . . . . . . . . . 16
+6.7.4. Navier–Stokes: verificación y geometría . . . . . . . . . . . . . . . . . . . . . 17
+6.7.5. Piezoelectricidad: derivación y transmisión . . . . . . . . . . . . . . . . . . . 17
+6.7.6. Predicciones previas al desarrollo . . . . . . . . . . . . . . . . . . . . . . . . . 19
+7. Metodología 20
+7.1. Enfoque y unidad de análisis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+7.2. Fases y productos verificables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+7.3. Contratos de problemas y referencias . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+7.4. Separación de entrenamiento, diagnóstico y prueba . . . . . . . . . . . . . . . . . . . 21
+7.5. Configuración inicial y elección del sustrato . . . . . . . . . . . . . . . . . . . . . . . 21
+7.6. Comparadores y ablaciones obligatorias . . . . . . . . . . . . . . . . . . . . . . . . . 22
+7.7. Presupuesto y prevención de comparaciones engañosas . . . . . . . . . . . . . . . . . 23
+7.8. Métricas y regiones críticas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+7.9. Hipótesis, criterios y análisis estadístico . . . . . . . . . . . . . . . . . . . . . . . . . 23
+7.10. Supervisión de la implementación . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+7.11. Registro, visualización y decisiones de avance . . . . . . . . . . . . . . . . . . . . . . 25
+8. Plan de desarrollo y entregables 26
+Bibliografía 27
+ii
+
+PAGE 4
+Índice de figuras
+6.1. Cálculo ilustrativo propio con FEM triangularP1: malla, solución y error absoluto
+para u = sin(πx) sin(πy). Se ensambla y resuelve el sistema; no es un resultado del
+mecanismo ni una simulación piezoeléctrica. . . . . . . . . . . . . . . . . . . . . . . . 8
+6.2. Convergencia comprobada de la demostración FEM en tres mallas. No valida el con-
+trolador futuro. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+6.3. MLP con pesos en aristas y activación en nodos; KAN con funciones aprendibles en
+aristas. Ambos pueden utilizar una pérdida física. . . . . . . . . . . . . . . . . . . . . 9
+6.4. Construcción de la pérdida física. La referencia para evaluar error permanece fuera
+del controlador y del entrenamiento. . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+6.5. B-splines cúbicas, una función construida con ellas y una base compacta trasladable.
+Ilustraciones matemáticas sin entrenamiento. . . . . . . . . . . . . . . . . . . . . . . 11
+6.6. Controlador propuesto y separación entre entrenamiento, diagnóstico y prueba final.
+Presupuesto y conservación condicionan aceptar un cambio. . . . . . . . . . . . . . . 16
+6.7. Referencias analíticas de oscilación distribuida y frentes fijo y móvil. Curvas calcula-
+das directamente, sin predicciones entrenadas. . . . . . . . . . . . . . . . . . . . . . . 17
+6.8. Dominio bimorfo y acoplamiento constitutivo. Esquema propuesto, sin resultados
+FEM piezoeléctricos. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+iii
+
+PAGE 5
+Capítulo 1
+Introducción
+Aproximar fenómenos físicos gobernados por ecuaciones diferenciales exige decidir cómo distribuir
+recursos computacionales. Una solución puede tener buen error promedio y aún fallar cerca de una
+interfaz o un frente. La precisión local importa tanto como la capacidad de reconstruir un campo
+completo; su evaluación requiere referencias y presupuestos comparables [1], [2].
+Las redes neuronales informadas por física combinan aproximación y restricciones diferenciales;
+las PIKANs utilizan funciones univariadas aprendibles como componentes del aproximador [3], [4].
+Su flexibilidad abre posibilidades para adaptar representación durante el entrenamiento, junto a
+estrategias existentes de muestreo, ponderación y descomposición. Esta tesis estudia la decisión de
+reasignación, apoyándose en esos antecedentes.
+La propuesta investiga si un controlador puede asignar resolución con presupuesto fijo, conservar lo
+aprendido durante cambios geométricos y evitar trasladar error entre regiones o campos. La contri-
+bución se evaluará mediante ablaciones y costo total, no mediante la presunción de que adaptar una
+grilla sea nuevo. Los fundamentos se desarrollan en el capítulo 6; el capítulo 7 fija la evaluación antes
+de implementar. El caso piezoeléctrico constituye una prueba de extensión a campos acoplados.
+1
+
+PAGE 6
+Capítulo 2
+Antecedentes
+El precedente clásico es la adaptación de discretizaciones mediante estimadores de error. FEM
+permite incorporar resolución local de forma explícita [5]. En aprendizaje informado por física,
+la incorporación de ecuaciones a una pérdida permitió tratar problemas directos e inversos con
+aproximadores neuronales [3], [6].
+El desarrollo posterior incluye muestreo residual, formulaciones variacionales y representación por
+subdominios. KAN y PIKAN añaden funciones aprendibles sobre aristas; la extensión de grilla forma
+parte de esa literatura desde su origen [4]. La investigación local en vigas piezoeléctricas aporta un
+caso acoplado y una referencia de formulación [7].
+La comparación técnica de estrategias se concentra en la sección 6.3. Este capítulo establece la
+genealogía del problema sin duplicar ecuaciones ni el inventario del estado del arte. Los preprints
+recientes se incorporan como trabajos públicos que informan la dirección y las pruebas, sin suponer
+que sus resultados hayan sido reproducidos en este proyecto.
+2
+
+PAGE 7
+Capítulo 3
+Justificación
+La justificación del trabajo es la necesidad de decidir cuándo una modificación de representación
+resulta útil y cuándo solo añade costo o desplaza el error. La existencia de adaptación residual y
+de grillas por curvatura fortalece la pertinencia de esa pregunta: permite construir sobre algoritmos
+concretos y diseñar comparaciones cercanas [8], [9], [10].
+El valor potencial reside en una decisión de reasignación medible, sometida a conservación y presu-
+puesto, y en conocer sus límites. No se afirmará que toda dificultad de PINNs sea representacional
+ni que aumentar parámetros nunca ayude. Optimización, escala de pérdidas y discretización son
+explicaciones alternativas que los controles deben separar.
+Un banco progresivo permite distinguir localización fija, movimiento y acoplamiento. El sistema
+piezoeléctrico añade transmisión entre materiales y equilibrio entre campos; será una prueba más
+exigente de la decisión, sin sustituir la evidencia canónica. La contribución científica dependerá de
+la calidad del contraste y de los resultados, no de denominar nuevo a un componente conocido.
+3
+
+PAGE 8
+Capítulo 4
+Objetivos
+4.1. Objetivo general
+Diseñar y evaluar un controlador de reasignación adaptativa de representación en PIKANs, guiado
+por información del entrenamiento, con presupuesto explícito y conservación de la aproximación,
+para caracterizar su utilidad y límites ante dificultad localizada y campos acoplados.
+4.2. Objetivos específicos
+1. Construir problemas y referencias reproducibles que separen error global, local, de derivadas
+y de transmisión.
+2. Implementar una arquitectura base y controles cercanos de muestreo, ponderación y geometría
+que permitan aislar la contribución del controlador.
+3. Diseñar y verificar extracción de señal, asignación, transferencia y reversión, distinguiendo
+esfuerzo de modificación del espacio representacional.
+4. Evaluar mediante ablaciones emparejadas la utilidad por costo, la conservación y el segui-
+miento de dificultad móvil.
+5. Caracterizar la extensión entre campos en un sistema piezoeléctrico, documentando condicio-
+nes de uso, fallas y restricciones de reproducibilidad.
+4
+
+PAGE 9
+Capítulo 5
+Alcance
+Se estudiará un mecanismo sobre una familia PIKAN seleccionada mediante piloto. B-splines y
+centros compactos permanecerán como candidatos hasta verificar representación, derivadas y costo.
+Se utilizarán PDEs de baja dimensión y un sistema piezoeléctrico lineal estacionario. El objetivo es
+caracterizar un mecanismo, no demostrar superioridad universal de una arquitectura.
+El núcleo confirmatorio incluye Poisson localizado y Burgers; el banco distribuido y las señales per-
+mutadas controlan explicaciones alternativas. Allen–Cahn por ventanas evalúa seguimiento, Navier–
+Stokes verifica acoplamiento y geometría, y piezoelectricidad evalúa transmisión y reparto entre
+campos. El caso dimensional PVDF requiere ficha de material verificada; mientras tanto se dispone
+de un caso sintético completamente especificado.
+Quedan fuera turbulencia, grandes deformaciones, validación experimental de dispositivos y afirma-
+ciones de novedad absoluta. Las referencias FEM se someterán a convergencia. Las figuras analíticas
+y la demostración FEM del protocolo no constituyen evidencia de eficacia del controlador. El alcance
+y los umbrales propuestos requieren revisión científica antes de activar la campaña.
+5
+
+PAGE 10
+Capítulo 6
+Marco teórico
+6.1. Ecuaciones diferenciales como problemas de aproximación
+El objeto de estudio es cómo distribuir recursos de representación para aproximar soluciones de
+ecuaciones diferenciales parciales (PDEs, por sus siglas en inglés). Una PDE relaciona magnitudes
+físicas y derivadas; la solución depende conjuntamente del operador, dominio, parámetros y condi-
+ciones auxiliares. No se presupone que toda PDE carezca de solución cerrada ni que un aproximador
+neuronal sea preferible a un solucionador clásico [1], [3], [11].
+Sea Ω⊂ Rd el dominio espacial,∂Ω su frontera,t∈ [0,T ] el tiempo y u : Q→ Rm el conjunto
+de campos. Para problemas estacionariosQ = Ω; para los evolutivosQ = Ω× (0,T ]. Escribiremos
+z =x o z = (x,t ), respectivamente:
+Na[u;µ](z) =fa(z), Bb[u](z) =gb(z), u(x, 0) = u0(x). (6.1)
+a identifica ecuaciones,b condiciones yµ parámetros físicos.Bb impone valores (Dirichlet), flujos
+(Neumann) o combinaciones (Robin). La condición inicial se omite en problemas estacionarios. Una
+ecuación puede involucrar varios campos: índice de ecuación e índice de campo no son intercambia-
+bles.
+La aproximación uθ pertenece a una familia determinada por arquitectura y parámetros θ. Se
+distinguen errore = uθ− u y residual
+ra(z;θ) =Na[uθ;µ](z)−fa(z). (6.2)
+El forzamiento se mantiene explícito. Un residual pequeño en puntos finitos no certifica una solución
+precisa: intervienen estabilidad, frontera, cobertura y optimización. Usaremos∥v∥2
+L2(Q) =
+∫
+Q|v|2dz
+y|v|2
+H 1(Ω) =
+∫
+Ω∥∇v∥2dx; la segunda detecta discrepancias de gradiente.
+Las soluciones analíticas permiten verificar operadores sin incertidumbre de discretización. FDM,
+FVM y FEM proporcionan referencias cuando no hay solución cerrada. El aprendizaje automático
+científico (SciML) integra física y aprendizaje; su utilidad depende de la tarea y del costo total, in-
+cluido el entrenamiento [1], [12]. La referencia independiente fija qué significa resolver correctamente
+el problema.
+6
+
+PAGE 11
+6.2. Aproximación clásica y resolución adaptativa
+Una discretización convierte funciones en incógnitas finitas. La malla describe puntos, elementos y
+relaciones geométricas; tamaño y orden de aproximación controlan las escalas representables. Es el
+precedente de la adaptación neuronal, sin transferir automáticamente sus garantías.
+6.2.1. Diferencias y volúmenes finitos
+En diferencias finitas (FDM), Taylor dau(xi±h) =ui±hu′
+i +h2u′′
+i/2±h3u′′′
+i /6 +O(h4). Sumando
+y despejando,
+u′′(xi) = ui−1− 2ui +ui+1
+h2 +O(h2). (6.3)
+La precisión requiere suavidad y resolución: iterar más no resuelve una capa que la discretización
+no representa. En volúmenes finitos (FVM), integrarut +∇· F (u) =s sobre una celdaK y aplicar
+divergencia produce
+d
+dt
+∫
+K
+udx +
+∑
+e⊂∂K
+∫
+e
+ˆF·nKds =
+∫
+K
+sdx. (6.4)
+El flujo numéricoˆF compartido entre celdas permite balances discretos conservativos. FDM apro-
+xima derivadas; FVM aproxima balances. Ambos admiten adaptación.
+6.2.2. Construcción de elementos finitos
+El método de elementos finitos (FEM, por sus siglas en inglés) aproxima con funciones asociadas a
+elementos. Considérese−∇· (κ∇u) =f, κ> 0, u = 0 en ΓD, κ∇u·n =gN en ΓN. Multiplicar por
+una pruebav nula en ΓD, integrar y aplicar integración por partes da
+∫
+Ω
+κ∇u·∇vdx
+/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+a(u,v)
+=
+∫
+Ω
+fvdx +
+∫
+ΓN
+gNvds
+/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
+ℓ(v)
+. (6.5)
+Se buscau∈V ={v∈H1(Ω) :v|ΓD = 0}. Con Dirichlet no homogéneo se usa un levantamiento y
+un espacio afín. Una mallaTh defineVh⊂V. Sustituiruh =∑
+jUjϕj y probar con cadaϕi produce
+KU =F, K ij =
+∫
+Ω
+κ∇ϕj·∇ϕidx, F i =ℓ(ϕi). (6.6)
+En un triángulo lineal,ϕj es afín, vale uno en su nodo y cero en los restantes. Su soporte físico
+comprende los elementos que comparten el nodo. Esta construcción explica la asignación local de
+grados de libertad [13].
+6.2.3. Estimación a posteriori y refinamiento hp
+Un estimador a posteriori utiliza la solución discreta. Para Poisson de coeficiente unitario con
+elementos conformes, un indicador ilustrativo es
+η2
+K =h2
+K∥f + ∆uh∥2
+L2(K) + 1
+2
+∑
+e⊂∂K∩Ω
+he∥[∇uh·ne]∥2
+L2(e). (6.7)
+7
+
+PAGE 12
+Figura 6.1: Cálculo ilustrativo propio con FEM triangularP1: malla, solución y error absoluto para
+u = sin(πx) sin(πy). Se ensambla y resuelve el sistema; no es un resultado del mecanismo ni una
+simulación piezoeléctrica.
+hK es diámetro, he longitud de arista y los corchetes denotan salto con orientación común. Con
+Neumann se añaden discrepancias de frontera. Las cotas de error requieren hipótesis sobre malla,
+operador y datos; el indicador no es una identidad con el error. La marcación de Dörfler selecciona
+M con ∑
+K∈Mη2
+K ≥ ϑ∑
+Kη2
+K, 0 < ϑ <1 [5]. Refinar h subdivide elementos; p aumenta grado
+polinómico; hp combina ambos según regularidad. El ciclo es resolver, estimar, marcar y adaptar.
+La malla puede asignar resolución local, pero redes con descomposición o bases adaptativas también
+disponen de instrumentos de localidad.
+Figura 6.2: Convergencia comprobada de la demostración FEM en tres mallas. No valida el contro-
+lador futuro.
+8
+
+PAGE 13
+6.3. Aprendizaje informado por física y estado del arte
+El estado del arte (SOTA, por sus siglas en inglés) se organiza por el objeto modificado: evalua-
+ción, pérdida, representación o entrenamiento. Esta sección establece conceptos y comparadores; la
+pregunta posterior aprovecha el mapa sin repetir el catálogo.
+6.3.1. De inteligencia artificial a ANN, DNN y MLP
+Inteligencia artificial engloba sistemas de percepción, inferencia o decisión. El aprendizaje automáti-
+co (ML) ajusta modelos a ejemplos u objetivos; el aprendizaje profundo (DL) usa composiciones de
+varias capas. Una red neuronal artificial (ANN) es una familia de aproximadores; una red profunda
+(DNN) utiliza varias capas transformadoras. Ninguna denominación implica por sí sola información
+física.
+El perceptrón multicapa (MLP) conecta capas de neuronas. Cada neurona combina una transfor-
+mación afín y una activación no lineal. Conh(0) =z,
+a(ℓ+1)
+j =
+∑
+i
+W (ℓ)
+ji h(ℓ)
+i +b(ℓ)
+j , h (ℓ+1)
+j =σ(a(ℓ+1)
+j ). (6.8)
+W,b se aprenden; la forma deσ suele fijarse, por ejemplotanh. Para residuales fuertes de segundo
+orden se necesitan derivadas apropiadas: una ReLU ordinaria tiene segunda derivada nula casi en
+todas partes. La retropropagación aplica la regla de la cadena a parámetros. La diferenciación
+automática deriva la función implementada; no elimina errores de modelo o aproximación [3], [6].
+Figura 6.3: MLP con pesos en aristas y activación en nodos; KAN con funciones aprendibles en
+aristas. Ambos pueden utilizar una pérdida física.
+6.3.2. Redes neuronales informadas por física (PINNs)
+Una PINN aproximau e incorpora ecuaciones, condiciones y, cuando existen, observaciones. Sean
+Ra > 0 escalas físicas de ecuaciones yUv > 0 escalas de campos. Se construyen~ra = ra/Ra y
+9
+
+PAGE 14
+discrepancias adimensionales de frontera~bb e iniciales~iv:
+L =
+∑
+a
+λa
+Nr
+∑
+i
+~ra(zi)2 +
+∑
+b
+λB
+b
+Nb
+∑
+j
+~bb(zj)2 +
+∑
+v
+λI
+v
+N0
+∑
+k
+~iv(xk)2. (6.9)
+Los puntos de colocación son posiciones de evaluación del operador, no elementos FEM. Las escalas
+se fijan antes de comparar métodos; normalizar por el error actual podría ocultar degradación. Datos
+supervisados añadirían un término declarado. Las PINNs admiten problemas directos e inversos,
+pero su precisión y costo dependen de condicionamiento, arquitectura y entrenamiento [3], [14]. El
+Figura 6.4: Construcción de la pérdida física. La referencia para evaluar error permanece fuera del
+controlador y del entrenamiento.
+sesgo espectral describe tendencias de aprendizaje por frecuencia bajo ciertas redes y condiciones
+[15];nodemuestraincapacidadderepresentaraltasfrecuenciasniseexplicaúnicamenteporausencia
+de malla. Se separarán errores de representación, optimización y discretización de la pérdida.
+6.3.3. KAN y PIKAN: construcción de B-splines
+ElteoremaderepresentacióndeKolmogorov–Arnoldestablecequeunafuncióncontinua f : [0, 1]d→
+R admite
+f(x) =
+2d+1∑
+q=1
+Φq
+
+
+d∑
+p=1
+ψqp(xp)
+
+ (6.10)
+con funciones univariadas continuas apropiadas. Motiva una estructura, pero no garantiza que una
+KAN finita, suave y entrenada numéricamente encuentre la representación. Una capa práctica es
+h(ℓ+1)
+j =
+∑
+i
+φ(ℓ)
+ji (h(ℓ)
+i ), φ (a) =αb(a) +
+n−1∑
+k=0
+ckBk,p(a). (6.11)
+b puede ser SiLU;α,ck son parámetros yp es grado. Una red de Kolmogorov–Arnold informada por
+física (PIKAN) utiliza una KAN en la pérdida física; existen variantes con otras bases [4], [16].
+10
+
+PAGE 15
+Dados nudos no decrecientest0,...,t n+p, Cox–de Boor construye
+Bk,0(a) = 1[tk,tk+1)(a), (6.12)
+Bk,p(a) = a−tk
+tk+p−tk
+Bk,p−1(a) + tk+p+1−a
+tk+p+1−tk+1
+Bk+1,p−1(a). (6.13)
+Los términos con denominador cero valen cero; el extremo final se evalúa por continuidad. El soporte
+es [tk,tk+p+1]. En nudos simples la continuidad esCp−1; multiplicidades la reducen. Derivar da
+B′
+k,p = p
+tk+p−tk
+Bk,p−1− p
+tk+p+1−tk+1
+Bk+1,p−1. (6.14)
+Reaplicar la identidad construye segundas derivadas. Nudos delimitan intervalos, coeficientes ponde-
+ran bases y centros parametrizan otras familias: no son sinónimos. Insertar nudos puede enriquecer
+el espacio; moverlos puede cambiarlo sin aumentar dimensión. Liu et al. ya incluyen extensión de
+Figura 6.5: B-splines cúbicas, una función construida con ellas y una base compacta trasladable.
+Ilustraciones matemáticas sin entrenamiento.
+grilla y transferencia entre representaciones [4]. Actualizar posiciones por activaciones y aumentar
+intervalos son operaciones distintas. La mera existencia de una grilla adaptable no es una contribu-
+ción nueva.
+6.3.4. Qué redistribuyen las estrategias existentes
+RAR y RAD modifican colocación mediante residual [8]. Una densidad tipo RAD esq∝|r|k/E|r|k+
+c. Siq es densidad respecto a una medida uniformeµ, Eq[r2/q] = Eµ[r2]; omitir la corrección cambia
+el funcional esperado. Muestreo y ponderación pueden estar relacionados sin ser implementaciones
+idénticas.
+Para explicitar otras construcciones del SOTA, un residual variacional local es RK,j =∫
+Kr(z;θ)vj(z)dz; integrar por partes según el operador reduce el orden de derivación del aproxima-
+dor. Una pérdida hp-VPINN suma|RK,j|2 sobre elementos y pruebas, con condiciones de frontera
+declaradas. En entrenamiento causal, una forma habitual de peso es wn = exp(−ϵc
+∑
+j<nLj),
+dondeLj mide residual de tiempos anteriores: el peso responde al avance temporal, no modifica
+por sí mismo el espacio representacional. En el entrenamiento básico,θk+1 =θk−η∇θL ilustra el
+papel del gradiente; Adam añade estimaciones de momentos. Cambiar pesos, geometría o estado
+del optimizador son intervenciones distintas.
+11
+
+PAGE 16
+hp-VPINN incorpora pruebas locales y partición [17]; entrenamiento causal controla contribuciones
+temporales [18]; FBPINN y FBKAN hacen explícita la descomposición de representación [19], [20].
+AB-PINNs también adapta y enriquece subdominios durante el entrenamiento [21]. Por tanto, no es
+defendible afirmar que ninguna red informada por física asigna capacidad local. Rigas et al. estudian
+Cuadro 6.1: Objeto intervenido y control relevante; no es un ranking universal de precisión.
+Familia Intervención Control
+RAR/RAD Colocación por residual Mismo aproximador y costo
+hp-VPINN Pruebas y partición Formulación variacional
+Causal Pesos por tiempo Ventanas comunes
+FBPINN/FBKAN Representación local Descomposición explícita
+KAN con extensión Resolución spline Igual crecimiento y transferencia
+PIKAN adaptativa Grilla y entrenamiento Ablaciones por componente
+Densidad/curvatura Distribución de nudos Señales comparables
+Nudos libres/multinivel Geometría y optimización Conservación y costo
+adaptación PIKAN y transición del entrenamiento [22]; el framework de 2026 dirige nudos con
+densidades de importancia, incluida curvatura [9]. Nudos libres y entrenamiento multinivel aportan
+precedentes sobre geometría y optimización [23], [24]. RA-PIKAN combina densificación residual y
+adaptación del entrenamiento [10]. Se usan como respaldo para estudiar rutas aledañas, no como
+razón para descartar adaptación local. Sus resultados publicados no equivalen a reproducciones
+realizadas en esta tesis.
+6.4. Firma matemática de la dificultad
+La dificultad representacional es relativa al aproximador, presupuesto y norma. Aquí se definen
+propiedades de soluciones, sin confundirlas con señales que el modelo necesariamente observa. Se
+emplearán campos y coordenadas adimensionales.
+6.4.1. Oscilación, gradiente y curvatura
+En un dominio periódico,E>k0 =∑
+|k|>k0|ˆuk|2 describe energía en frecuencias altas; la localización
+requiere ventanas. Para una regiónA,
+G(A) =
+∫
+A
+∥∇u∥2dx, H (A) =
+∫
+A
+∥D2u∥2
+Fdx. (6.15)
+Miden variación y curvatura, no error. Una cota local∥u−Ihu∥L2(K) ≤ Chp+1
+K |u|H p+1(K), bajo
+regularidad y condiciones del interpolante, explica reducir resolución donde derivadas altas son
+grandes. No convierte la segunda derivada en estimador universal para splines cúbicas.
+Paradensidad d≥ 0,C(A) =
+∫
+Ad/
+∫
+Ωdsecomparacon |A|/|Ω|.Denominadorcerosignificaausencia
+de señal. Firmas de la referencia sirven para evaluar; firmas deuθ son observables que pueden omitir
+la estructura todavía no aprendida.
+12
+
+PAGE 17
+6.4.2. Movimiento, no linealidad y acoplamiento
+La linealizaciónN [u +δu]≈N [u] +DN [u]δu muestra sensibilidad a perturbaciones. En sistemas,
+DuvNa describe dependencias entre campos. Una interfaz regularu(x,t ) =γ tiene velocidad normal
+Vn =−ut/∥∇u∥: su movimiento debe comprobarse, no inferirse del nombre de la PDE. En interfaces
+materiales los coeficientes pueden saltar y requieren transmisión por subdominios.
+La cadena es propiedad física, firma matemática, exigencia representacional y observable. Curvatura
+y residual pueden compartir derivadas sin ser iguales ni independientes. Se medirá su información
+incremental, sin suponerla por notación.
+6.5. Pregunta y contribución posible
+La pregunta propuesta es:¿puede un controlador decidir dónde reasignar un presupuesto fijo de
+representación, usando utilidad marginal estimada y restricciones de conservación, para reducir
+error localizado sin trasladarlo a otras regiones o campos?
+El aporte candidato es la regla de decisión y su caracterización causal, apoyada en grillas y bases
+publicadas. Se estudiarán información adicional frente a residual/curvatura, beneficio de retirar o
+desplazar resolución, preservación de derivadas y reparto entre campos. Combinar componentes no
+asegura una contribución importante: se requiere beneficio reproducible frente a controles cercanos
+y delimitación de fallas.
+La tesis conserva identidad de mecanismo; piezoelectricidad prueba acoplamiento. Permanecen tres
+rutas: ponderación para esfuerzo, nudos para resolución y centros compactos móviles como alter-
+nativa geométrica. La primera será control; las otras son candidatas. La elección final depende del
+piloto, no de una afirmación anticipada de prioridad. La búsqueda tiene corte el 6 de septiembre de
+2026 y debe actualizarse antes de cerrar el manuscrito.
+6.6. Construcción matemática previa al mecanismo
+Se especifican objetos, invariantes y una regla candidata, todavía por implementar y falsar. El ciclo
+es estado, señal, asignación, transferencia, comprobación y aceptación o reversión.
+6.6.1. Esfuerzo, representación y localidad efectiva
+Con geometría ξ y coeficientes θ, el aproximador pertenece aUξ. Ponderar∑
+iwir2
+i conserva ese
+espacio y modifica optimización; cambiarξ modifica la familia disponible. Actualizar coeficientes
+locales no crea grados de libertad. Mover bases con cantidad fija redistribuye resolución sin aumentar
+dimensión total.
+Para una spline de una arista interna, la regla de la cadena da
+∂uv(z)
+∂c(ℓ)
+k
+= ∂uv(z)
+∂h(ℓ+1)
+j
+Bk,p(h(ℓ)
+i (z)). (6.16)
+El soporte está en la coordenada latente; su preimagen física puede ser extensa o disconexa. Una
+base de primera capa puede cubrir una franja. La localidad física se medirá con sensibilidades. Para
+13
+
+PAGE 18
+un bloqueθj,
+Ijv(z) =∥∂θj(uv/Uv)∥2, A jv(R) =
+∫
+RIjvdµ∫
+QIjvdµ +ϵ. (6.17)
+A diagnostica atribución en una parametrización fijada; no es invariante bajo reescalamientos arbi-
+trarios.
+6.6.2. Nudos y centros móviles
+ParaG intervalos en[a,b ], posiciones ordenadas se parametrizan con
+∆j =δ + (b−a−Gδ) eηj
+∑
+keηk
+, t j =a +
+j∑
+k=1
+∆k, 0<δ < (b−a)/G. (6.18)
+Fija extremos y evita intervalos degenerados, sin garantizar buen condicionamiento. Una alternativa
+compacta esφ(a) =αb(a) +∑
+jcjρ((a−ξj)/hj), donde
+ρ(q) =
+{
+exp[−1/(1−q2)], |q|< 1,
+0, |q|≥ 1. (6.19)
+Es suave y compacta; su soporte continúa en la coordenada de la arista. Centros libres por gradiente
+constituyen un comparador obligatorio para aislar el controlador.
+6.6.3. Señal de utilidad marginal
+Un residual alto puede reflejar optimización deficiente o representación insuficiente. Se propone una
+prueba corta: desde un mismo estado se crean una rama sin cambio y otra con acciónaj; ambas
+reciben Kp pasos con iguales datos y presupuesto. En un conjunto diagnóstico independienteD se
+evalúan ecuaciones y condiciones:
+sj =LD(TrainKp(θ,ξ ))−LD(TrainKp(Transfer(θ,ξ,a j)))
+Cj +ϵ . (6.20)
+Cj incluye ensayo y transferencia.sj estima beneficio a corto plazo por costo; no es error verdadero
+ni una garantía causal. Puede ser ruidoso y caro.D no contiene soluciones de referencia; prueba final
+nunca entra aquí. Se compara contra residual, curvatura, constante y señal permutada. Una señal
+cara sin beneficio neto será un resultado negativo, no una razón para cambiar retrospectivamente
+los criterios.
+6.6.4. Asignación, tipos y presupuesto
+El estadoS = (θ,ξ,O,D ) incluye optimizadorO. El extractorE :S↦→RJ×m produce utilidades de
+acciones; T : RJ×m→ ∆Jm−1 produce una distribución y el asignadorA : (∆,S,B )↦→ξ′ devuelve
+geometría factible. Para unidadesj y camposv,
+πjv = (1−α) e~sjv/τ
+∑
+k,we~skw/τ + α
+Jm. (6.21)
+14
+
+PAGE 19
+τ >0controla concentración y0<α ≤ 1exploración. Escalas de~sse fijan en piloto. Señal constante
+produce distribución uniforme, no necesariamente la grilla histórica. La geometría se expresa sobre
+aristas; las regiones físicas son diagnóstico.
+ConB bases y mínimosBm´ ın
+v se asignanBv =Bm´ ın
+v + LRv((B−∑
+wBm´ ın
+w )∑
+jπjv), donde mayores
+restos LR conserva la suma entera. Esto exige cabezas o subredes identificables por campo. En una
+red compartida no se atribuye presupuesto a campos sin una definición adicional. La alternativa
+continua mantieneBv y desplaza nudos. Una regla general es
+m´ ax
+A
+∑
+a∈A
+ˆ∆La−λmovD(ξ′,ξ ), P (ξ′)≤Pm´ ax, C (A)≤Cm´ ax, ε tr≤εm´ ax. (6.22)
+P cuenta parámetros, C costo y D magnitud del cambio. Las ganancias no necesariamente son
+aditivas: inicialmente se acepta una acción por evento. Añadir una base requiere retirar otra o
+compararse con igual crecimiento.
+6.6.5. Transferencia y conservación
+Mover o retirar bases puede alterar la función aun sin entrenamiento. Se proyecta sobre la nueva
+representación:
+θ′ = arg m´ ın
+ϑ
+∑
+z∈P,v
+[⏐⏐⏐⏐
+uϑ,ξ′,v−uθ,ξ,v
+Uv
+⏐⏐⏐⏐
+2
++β
+‖‖‖‖∇~x
+uϑ,ξ′,v−uθ,ξ,v
+Uv
+‖‖‖‖
+2]
+. (6.23)
+P incluye baja señal para prevenir olvido. Ajustar coeficientes de una arista con entradas conge-
+ladas es lineal; una proyección global profunda puede no serlo. Se comprueban valores, derivadas
+requeridas, residual y frontera en puntos ajenos al ajuste. Si falla se revierte. Inserción en espacios
+anidados puede admitir transferencia exacta; movimiento arbitrario no. En el análisis primario se
+reinicia el optimizador completo en cada evento, con reinicios simulados en controles en el mismo
+calendario; transferir momentos será una extensión separada.
+6.6.6. Reducciones, costo y límites
+Sinadaptaciónserecuperanarquitecturainicialyentrenamiento.Residualconcuantilescorresponde
+a una ruta próxima a adaptación por densidad. Pesos con geometría fija estudian esfuerzo; centros
+libres sin controlador estudian geometría ordinaria. No se afirma identidad exacta con algoritmos
+publicados completos.
+Con Jc candidatos cada H pasos, el costo extra amortizado es aproximadamente(Cs +Jc(Ctr +
+KpCpaso) + Cver)/H. Puede reutilizarse la rama de control desde el mismo estado. Se registran
+tiempo, memoria, parámetros y derivadas: igualar épocas no iguala trabajo. PIKAN proporciona
+un sustrato para observar estos cambios, sin garantizar por arquitectura su utilidad o localidad
+física.
+6.7. Banco de problemas y referencias
+Los casos se ordenan por estructura distribuida, localizada fija, móvil, ligada a geometría y entre
+campos. Cada instancia declara ecuación, condiciones, referencia y propósito. Las soluciones exactas
+siguientes son construcciones para verificación, no resultados entrenados.
+15
+
+PAGE 20
+Figura 6.6: Controlador propuesto y separación entre entrenamiento, diagnóstico y prueba final.
+Presupuesto y conservación condicionan aceptar un cambio.
+6.7.1. Poisson distribuido y localizado
+En Ω = (0, 1)2,−∆u =f, u|∂Ω = 0:
+u∗ = sin(kπx) sin(kπy), f = 2(kπ)2u∗, k ∈{ 1, 4, 8}. (6.24)
+Derivar dos veces cada seno obtienef. k = 1 verifica; k = 4, 8 exigen resolución distribuida. Las
+derivadas no son constantes, por lo que mejorar aquí no refuta automáticamente focalización. Se
+controla ausencia de región privilegiada persistente junto a señales permutadas y costo comparable.
+En (0, 1), un caso localizado usau∗ =qe−ad2
+, q =x(1−x), d =x−c, a = 100:
+f =−u′′
+∗ =e−ad2
+{2 + 4ad(1− 2x) + (2a− 4a2d2)q}. (6.25)
+Se selecciona conc = 0.5 y se reservanc = 0.25, 0.75 para comprobar que sigue estructura y no
+posición. Las fronteras son cero.
+6.7.2. Burgers: frente estacionario
+En [−1, 1], uux = νuxx admite u∗ = − tanh(x/(2ν)), con valores exactos en frontera. Si q =
+tanh(x/(2ν)), ux =−(1−q2)/(2ν) y uxx = q(1−q2)/(2ν2), de donde el residual es cero. Se usan
+ν∈{ 0.1, 0.05, 0.02} y región crítica|x|≤ 4ν. Evalúa focalización sostenida y resolución subgrilla.
+La estacionariedad pertenece a esta instancia, no a toda Burgers [3].
+6.7.3. Allen–Cahn: movimiento manufacturado
+En [−1, 1]× [0, 1]:
+ut−ε2uxx +u3−u =f, u ∗ = tanh
+(x−c(t)√
+2ε
+)
+, c (t) =−0.5 +t. (6.26)
+16
+
+PAGE 21
+Para q = u∗, ux = (1−q2)/(
+√
+2ε), uxx =−q(1−q2)/ε2 y ut =−c′(t)(1−q2)/(
+√
+2ε). Difusión y
+reacción se cancelan, por lo que
+f =−c′(t)(1−u2
+∗)/(
+√
+2ε). (6.27)
+Se imponen trazas exactas iniciales y de frontera,ε∈{ 0.1, 0.05}; región crítica|x−c(t)|≤ 3ε. El
+forzamiento fabrica movimiento: no se atribuye al problema homogéneo. En entrenamiento global la
+trayectoria es fija en espacio–tiempo; para probar liberación temporal se usan ventanas consecutivas
+de longitud 0.1, comunes a los métodos, con memoria y medición del error inicial propagado.
+Figura 6.7: Referencias analíticas de oscilación distribuida y frentes fijo y móvil. Curvas calculadas
+directamente, sin predicciones entrenadas.
+6.7.4. Navier–Stokes: verificación y geometría
+Las ecuaciones incompresibles son
+∂tv + (v·∇ )v +∇p−Re−1∆v = f, ∇· v = 0. (6.28)
+Kovasznay verifica el sistema estacionario conRe = 40, λ =Re/2−
+√
+Re2/4 + 4π2, en [−0.5, 1]×
+[−0.5, 1.5]:
+vx = 1−eλx cos(2πy), v y = λ
+2πeλx sin(2πy), p = 1
+2(1−e2λx). (6.29)
+∂xvx +∂yvy = 0 y λ2−Reλ− 4π2 = 0 verifican las ecuaciones conf = 0. Se imponen velocidades
+exactas y una referencia de presión. Verifica acoplamiento, pero no representa un obstáculo [25].
+El caso geométrico será canal (0, 2.2)× (0, 0.41) con cilindro de radio 0.05 en (0.2, 0.2); entrada
+vx = 6 ¯Uy (0.41−y)/0.412, vy = 0, ¯U = 0.2; ν = 0.001, Re = ¯U(0.1)/ν = 20. Paredes y cilindro
+sin deslizamiento; salida de tracción nula usando−pI + 2νϵ(v). Referencia FEM mixta Taylor–
+Hood P2/P1 con convergencia de malla. Se declara esta instancia propuesta sin atribuirla como
+reproducción literal de otro banco. Turbulencia y alto Reynolds quedan fuera.
+6.7.5. Piezoelectricidad: derivación y transmisión
+Se estudia elasticidad lineal y electrostática sin inercia. Para desplazamientod, S = sym∇d y
+E =−∇φ, la entalpía local
+H(S, E) = 1
+2S :CE :S− E· (e :S)− 1
+2 E·κSE (6.30)
+17
+
+PAGE 22
+produce, al derivar enS y en−E, σ =CE :S−eT E y D =e :S +κSE. Los balances son
+∇· σ + b = 0, ∇· D =ρf. (6.31)
+En deformación plana,SV = (dx,x,dy,y,dx,y +dy,x)T y g =∇φ:
+[
+σV
+D
+]
+=
+[
+C e T
+e −κ
+][
+SV
+g
+]
+, C =
+
+
+C11 C12 C16
+C12 C22 C26
+C16 C26 C66
+
+, e =
+[
+e11 e12 e16
+e21 e22 e26
+]
+. (6.32)
+σV = (σxx,σyy,σxy)T, κ es 2× 2 simétrica. El tercer componente de deformación usa cortante
+ingenieril. Tensión plana requiere condensar el constitutivo 3D; las tablas no se intercambian sin
+transformación. El antecedente local de vigas bimorfas aporta formulación y datos, cuyos signos,
+unidades y reducción dimensional deben verificarse antes de reproducir PVDF [7], [26].
+Integrar balances con pruebasv,ψ nulas en fronteras esenciales produce
+∫
+Ω
+ϵ(v) :σdx =
+∫
+Ω
+v· bdx +
+∫
+Γt
+v· ¯tds, (6.33)
+∫
+Ω
+∇ψ· Ddx =
+∫
+Γq
+ψ¯qds−
+∫
+Ω
+ψρfdx. (6.34)
+El bloque eléctrico negativo define un problema de punto silla, no una energía positiva para
+minimizar libremente en ambos campos. Sin cargas ni fuerzas superficiales, la interfaz satisface
+[d] = [φ] = 0, [σn] = [ D·n] = 0, con normal común. Los gradientes pueden saltar. Las pérdidas
+fuertes se calculan dentro de cada material y la transmisión por separado; no se derivan coeficientes
+discontinuos como si fueran suaves.
+Figura 6.8: Dominio bimorfo y acoplamiento constitutivo. Esquema propuesto, sin resultados FEM
+piezoeléctricos.
+El primer caso acoplado será adimensional y reproducible:Ω = (0, 1)× (−0.05, 0.05),C =
+[2 1 0
+1 2 0
+0 0 0.5
+]
+,
+κ =I2,e+ = [ 0 0 0 .1
+0.2 0.1 0 ],e− =−e+. Desplazamiento cero a la izquierda, tracción(0, 1) a la derecha,
+caras horizontales libres; φ = 0 abajo, φ = 1 arriba, flujo eléctrico cero en extremos; b = 0,
+ρf = 0. Son materiales sintéticos, no constantes PVDF. FEM conforme a interfaz verificará campos
+y balances.
+18
+
+PAGE 23
+El caso dimensional usará la geometría publicadaL = 0.1 m, altura 0.001 m, una vez verificados
+tensor, polarización, espesor fuera del plano y condiciones eléctricas. Una fuerza de 1 N no fija
+tracción 2D sin espesor. Esto es requisito de reproducción dimensional, no un dato inferible de una
+imagen.
+6.7.6. Predicciones previas al desarrollo
+En Poisson distribuido se espera ausencia de preferencia persistente tras controlar costo; en Burgers,
+concentración sostenida; en Allen–Cahn por ventanas, seguimiento sin olvido excesivo; en flujo,
+utilidad en regiones geométricas compatible con continuidad; en piezoelectricidad, mejora del campo
+peor resuelto sin perjudicar transmisión u otro campo. Son predicciones falsables. La metodología
+fija los controles y criterios antes de desarrollar el mecanismo.
+19
+
+PAGE 24
+Capítulo 7
+Metodología
+7.1. Enfoque y unidad de análisis
+La investigación adopta la Metodología de Investigación en Ciencia del Diseño (DSRM): problema,
+objetivos del artefacto, construcción, demostración, evaluación y comunicación [27]. El artefacto será
+un controlador de reasignación de representación; esta versión especifica su desarrollo futuro. La
+unidad estadística será una corrida completa identificada por problema, método y semilla. Puntos
+del dominio e iteraciones de entrenamiento no se tratarán como réplicas independientes.
+La unidad física es el error espacial y por campo, condicionado a presupuesto y estabilidad. La
+contribución se evaluará frente a métodos cercanos, no únicamente frente a una PIKAN débil.
+La información publicada en preprints se incorpora como precedente y guía de implementación,
+diferenciando reproducción literal, adaptación al banco y nueva propuesta.
+7.2. Fases y productos verificables
+1. Cierre del protocolo.Revisar ecuaciones, fuentes, contratos de problemas y restricciones
+del controlador; aceptar o modificar explícitamente las hipótesis. La aprobación científica no
+se infiere de compilar el documento.
+2. Referencias y operadores. Implementar soluciones exactas, residuales, frontera, escalas
+y evaluación independiente; construir FEM y verificar convergencia antes de usarlo como
+referencia.
+3. Arquitectura y controles.Reproducir PIKAN fija y adaptación por residual/curvatura.
+Examinar B-splines móviles y centros compactos con igual presupuesto. El piloto elige un
+sustrato principal; el otro queda como control de transferencia de la idea.
+4. Controlador. Implementar extracción, normalización, propuesta, transferencia, comproba-
+ción y reversión. El desarrollo comienza únicamente después de las verificaciones anteriores.
+5. Ablaciones y generalización.Congelar decisiones usando entrenamiento y validación; eje-
+cutar prueba reservada y casos desplazados. Extender a ventanas temporales y luego a campos
+acoplados.
+20
+
+PAGE 25
+6. Síntesis. Comunicar resultados positivos, negativos, costos y fallas. La interpretación no se
+convierte automáticamente en conocimiento canónico.
+7.3. Contratos de problemas y referencias
+Cada contrato contendrá dominio, unidades, operador, parámetros, condiciones, escalas, campos,
+solución o solucionador de referencia, región crítica, cuadratura y tolerancias. Se utilizarán exacta-
+mente las instancias de la sección 6.7. El canal con cilindro y el material piezoeléctrico sintético son
+casos propuestos; no se presentarán como reproducciones idénticas de otros autores. El caso PVDF
+requiere una ficha de material verificada antes de activarse.
+Para verificar el constitutivo acoplado antes de interfaces se usará además una solución manufactu-
+rada homogénea:dx =x2y,dy =−xy2,φ =x(1−x)y, conC,e,κ sintéticos del marco. Se calcularán
+b =−∇· σ y ρf =∇· D por sustitución, imponiendo trazas exactas en toda la frontera. Es una
+prueba del operador, no del dispositivo bimorfo.
+Las referencias FEM usarán tres resoluciones anidadas como mínimo. Se reportarán diferencias
+entre niveles enL2, seminormaH1, cantidades de interés y balances. La referencia se acepta si la
+diferencia de los dos niveles más finos es menor al 10% de la diferencia mínima entre métodos que
+se pretende resolver. Si no, se refina o se declara que la comparación no puede resolverse. Para canal
+se comprobarán arrastre, flujo y masa; para piezoelectricidad, desplazamiento de punta, carga y
+transmisión. FEM no se denominará verdad exacta.
+7.4. Separación de entrenamiento, diagnóstico y prueba
+Se generarán conjuntos reproducibles con semillas independientes:R para colocación y entrena-
+miento; P para proyección;D para diagnóstico del controlador;V para elegir hiperparámetros y
+paradas;E para evaluación final. Las referencias analíticas/FEM se podrán consultar enV durante
+selección, nunca enD ni P. E se abre una sola vez tras congelar configuración. Un conjunto usado
+repetidamente por el controlador forma parte del desarrollo, aunque no reciba gradientes.
+En 1D se usará inicialmenteNr = 2048,ND = 4096,NV = 4096 y una cuadratura final fija de 16385
+puntos; frontera exacta en extremos. En 2D:Nr = 8192,ND =NV = 16384,NB = 1024 por corrida
+y cuadratura final de al menos257×257, excluyendo obstáculos y respetando interfaces. Proyección
+usa una muestra distinta de tamañoNr. En ventanas temporales se mantienen esos tamaños por
+ventana y se estratifican puntos iniciales, interiores y de memoria. Estos son valores iniciales del
+piloto; se aumentarán si una comprobación de resolución muestra aliasing. El tamaño final y su
+justificación quedarán congelados antes del ensayo confirmatorio.
+Sefijasemilladegeneracióngeométricadistintadeladeinicialización.Lassemillasdeentrenamiento
+piloto serán 101, 102 y 103. Las confirmatorias serán 11, 23, 37, 41, 53, 67, 79, 83, 97 y 109,
+emparejadas entre métodos. Los resultados del piloto no entran en inferencia confirmatoria.
+7.5. Configuración inicial y elección del sustrato
+La PIKAN de referencia tendrá dos capas ocultas de ancho 8, B-splines cúbicas,G = 8 intervalos
+por arista y coordenadas normalizadas. La salida tendrám componentes. Se declarará el rango
+21
+
+PAGE 26
+latente observado y una regla idéntica de manejo fuera de rango; no se recortarán silenciosamente
+activaciones. Se registrará el número real de parámetros, incluidos términos base, sesgos y geome-
+tría. Para centros compactos se igualarán parámetros con tolerancia de 1%, radio inicial de dos
+separaciones y centros uniformes. En la rama multicampo se utilizarán subredes por campo desde
+todos los controles, sin atribuir a la focalización el cambio de arquitectura.
+Entrenamiento piloto: precisión float64, Adam con tasa10−3, máximo 20000 pasos, misma política
+de lotes por método. La fase primaria no mezcla L-BFGS con geometría variable. Se comprobará
+sensibilidad a tasas 3× 10−4 y 3× 10−3 en validación con igual número de ensayos por método.
+La comparación confirmatoria conserva el mejor ajuste de cada método elegido sin acceso aE.
+Versiones, hardware, precisión y determinismo se registran; si cambia hardware, no se mezclan
+tiempos como equivalentes.
+La adaptación inicia tras 2000 pasos, con evento cadaH = 500, hasta cuatro candidatos yKp = 20
+pasos de prueba por candidato. Se utilizaα = 0.1, τ = 1 tras normalización fija y desplazamiento
+máximo de 0.2 intervalos locales por evento. La señal negativa no fuerza cambios: si ninguna acción
+cumple beneficio y conservación, se conserva la geometría. En todos los controles se mantienen
+calendario, reinicios y contabilidad equivalentes. El piloto variará frecuencia y horizonte una vez
+para detectar dependencia extrema; no se abrirá una búsqueda ilimitada del controlador.
+7.6. Comparadores y ablaciones obligatorias
+Cuadro 7.1: Comparaciones para atribuir el efecto del con-
+trolador.
+ID Método Qué permite distinguir
+B0 PIKAN con geometría fija Referencia base
+B1 Geometría libre por gradiente Adaptación ordinaria sin controlador
+B2 Ponderación residual normalizada Cambio de esfuerzo con igual geometría
+B3 RAD sobre PIKAN Muestreo adaptativo [8]
+B4 Nudos por densidad residual Adaptación geométrica residual
+B5 Nudos por curvatura Ruta de densidad de importancia [9]
+B6 Extensión uniforme Igualcrecimientosielcandidatoaumen-
+ta parámetros
+C Utilidad marginal con conservación Propuesta principal
+A1 C sin conservación Efecto de proteger lo aprendido
+A2 C con señal permutada Importancia de localizar correctamente
+A3 C sin retiro/movimiento posterior Necesidad de liberar resolución
+A4 C con reparto uniforme entre campos Aporte del reparto multicampo
+Todos B0–B5 y C se ejecutan en el núcleo Poisson localizado y Burgers. B6 solo cuando cambia
+dimensión; en presupuesto estrictamente fijo no se necesita atribuirle un crecimiento inexistente.
+A1–A2 se prueban en el núcleo, A3 en Allen–Cahn por ventanas y A4 en el sistema acoplado. FB-
+PINN/FBKAN se mantienen como control de localidad estructural en un caso representativo si las
+sensibilidades muestran que el sustrato KAN carece de localidad física suficiente. hp-VPINN y en-
+trenamiento causal son referencias de formulación, no implementaciones supuestamente ejecutadas.
+22
+
+PAGE 27
+RA-PIKAN y entrenamiento adaptativo publicado orientan los controles B4/B6 y el calendario. Una
+implementación que cambie componentes se denominará adaptación propia, no reproducción del
+paper. Si se dispone del algoritmo completo, se añadirá su reproducción con versión y desviaciones
+documentadas. El resumen público de un preprint no basta para inventar detalles faltantes.
+7.7. Presupuesto y prevención de comparaciones engañosas
+Se realizarán dos análisis: mismo máximo de parámetros activos y misma envolvente de tiempo
+total. Tiempo incluye señal, candidatos descartados, proyección, verificación y entrenamiento. Se
+reportará adicionalmente error por evaluaciones de residual/derivadas. El presupuesto de tiempo
+por problema será la mediana del tiempo piloto de B0 a 20000 pasos; todos los métodos reciben ese
+presupuesto confirmatorio y una curva completa error–tiempo. También se conserva el resultado a
+igual número de pasos como análisis secundario, sin confundirlo con igualdad de cómputo.
+El controlador tendrá límite inicial del 20% del tiempo total. Si lo supera, se registra fallo de
+viabilidad de esa configuración; no se elimina el costo de sus pruebas de la gráfica. La campaña
+se dimensionará con Tcampaña = ∑
+p,m,sTpms a partir del piloto. Las corridas costosas requieren
+el gate de hipótesis/presupuesto del proyecto. Este documento no autoriza un consumo de GPU
+indeterminado.
+7.8. Métricas y regiones críticas
+Para pesos de cuadraturaqi, campov y regiónA:
+E2,v(A) = [∑
+zi∈Aqi|uv,i−uref
+v,i|2]1/2
+m´ ax([∑
+zi∈Aqi|uref
+v,i|2]1/2,ϵUv|A|1/2). (7.1)
+SeacompañadeRMSEabsolutonormalizadopor Uv,seminorma H1 ypercentil95deerrorabsoluto.
+No se usa error relativo puntual cerca de ceros de la referencia. Se reportan residual por ecuación,
+discrepancias de frontera/transmisión, tiempo, memoria y porcentaje de corridas fallidas.
+Las regiones se fijan antes de entrenar: Poisson localizado|x−c|≤ 0.15; Burgers|x|≤ 4ν; Allen–
+Cahn|x−c(t)|≤ 3ε; canal, distancia al cilindro menor de0.05 y estelax∈ [0.25, 1],|y− 0.2|≤
+0.1; piezoelectricidad, banda|y| ≤0.01 y vecindad del empotramientox≤ 0.1 en coordenadas
+adimensionales. Se evalúa asimismo el complemento para detectar desplazamiento de error.
+Para acoplamiento se utilizaEpeor = m´ axvE2,v y errores separados. Continuidad no domina una
+suma por tener unidades distintas: cada residual conserva su escala física fija. Conservación de
+transferencia se mide antes/después del cambio, antes del entrenamiento posterior. En ventanas
+temporales se registra tiempo de seguimiento, distancia entre máxima señal y frente, error en ven-
+tanas pasadas y error propagado al inicio siguiente.
+7.9. Hipótesis, criterios y análisis estadístico
+Los umbrales siguientes son propuestas operativas previas, no resultados ni garantías de potencia
+estadística.
+23
+
+PAGE 28
+1. H1: utilidad a costo comparable.C reduce al menos 10% la mediana de error en región
+crítica frente al mejor control cercano seleccionado enV, a igual tiempo, y no empeora más
+de 5% el error global/complementario. Se exige consistencia en ambos casos del núcleo, no un
+único ejemplo favorable.
+2. H2: conservación. Proteger transferencia reduce saltos y fallas frente a A1; el costo no
+elimina H1. El cambio relativo RMS de valores será≤ 10−3, de primeras derivadas≤ 10−2 y
+desegundasderivadasrequeridas ≤ 5×10−2,usandoescalasfísicasfijas.Lapérdidadiagnóstica
+posterior a transferencia no aumentará más de 5%. Se rechaza una acción que falle cualquiera.
+3. H3: localización y liberación.C supera señal permutada en casos localizados y conserva
+regiones pasadas al mover el frente. El control distribuido no se interpreta mediante una
+prohibición absoluta de mejora. Si hay mejora comparable con señal permutada, no se atribuye
+el beneficio a localización.
+4. H4: reparto multicampo.Frente a reparto uniforme, disminuye al menos 10%Epeor, sin
+aumentar más de 5% el error de otro campo ni violar tolerancias de interfaz.
+Se publicarán diferencias emparejadas por semilla, mediana, rango intercuartílico y un intervalo
+bootstrap emparejado del 95% con 10000 remuestreos. Para inferencia principal se usará prueba de
+permutación emparejada de logaritmos de cocientes de error, con ajuste Holm sobre las hipótesis
+confirmatorias activadas. Diez semillas no garantizan potencia: el piloto estimará variabilidad y
+cualquier aumento se decidirá antes de abrirE. Se distinguirá significancia estadística de relevancia
+práctica. Fallas no se descartan: se reportan tasa, razón y análisis conservador asignándoles peor
+rango.
+7.10. Supervisión de la implementación
+La supervisión combina contratos numéricos y revisión humana del significado científico. Cada
+componente debe producir evidencia antes de habilitar el siguiente:
+1. Operadores: residual de soluciones exactas en float64< 10−8 tras normalización en puntos
+alejados de interfaces; comparación de derivadas automáticas y analíticas. Balance y signos
+constitutivos verificados con problema manufacturado.
+2. Bases:particióndeunidaddondecorresponde,soporteyregularidad;ordendenudos,extremos
+fijos y separación mínima. La base compacta alternativa no se obliga a partición de unidad si
+su construcción no la tiene.
+3. Controlador: señal constante, nula, negativa, permutada y saturada; presupuesto entero con-
+servado, mínimos por campo y selección reproducible. Desactivar adaptación debe recuperar
+B0 con idéntico calendario.
+4. Transferencia: verificar valores y derivadas en puntos independientes y revertir de forma tran-
+saccional geometría, coeficientes y optimizador. La prueba de reversión compara estado com-
+pleto, no solo pérdida.
+5. Evaluación: referencia inaccesible al controlador, regiones fijas, contabilidad de costos y corri-
+das fallidas conservadas. Repetir una corrida desde checkpoint verifica trazabilidad.
+24
+
+PAGE 29
+Los contratos propuestos se implementarán con módulos separados para problema, aproximador,
+controlador, transferencia y evaluación. Interfaz mínima del controlador: observar estado y diag-
+nóstico; proponer acción con costo; comprobar factibilidad; aceptar o revertir; emitir evento. La
+instrumentación guardará geometría antes/después, señal, beneficio estimado, beneficio observado,
+causa de rechazo y estado del optimizador.
+7.11. Registro, visualización y decisiones de avance
+Cada corrida guardará configuración y hash, versión de código/dependencias, semillas, precisión,
+hardware, checkpoint, tiempos por fase y métricas en formatos tabulares legibles. Se podrán
+registrar en MLflow, manteniendo exportación local [28]. Las figuras finales incluirán referen-
+cia/predicción/error con misma escala; residual por ecuación; geometría antes/después; sensibilidad
+espacial; error–tiempo; error por campo; y trayectoria del frente por ventanas.
+Las imágenes analíticas y la demostración FEM incluidas en este protocolo explican el banco,
+pero no satisfacen los gates del entrenamiento futuro. Se avanza de verificación a núcleo solo con
+operadores y bases comprobados; de núcleo a movilidad con evidencia de localización; a multicampo
+con transferencia y costo aceptables. Si una hipótesis falla se documenta la falla y se diseña una
+nueva versión con nueva partición confirmatoria. No se itera indefinidamente sobre el conjunto de
+prueba hasta obtener una mejora.
+25
+
+PAGE 30
+Capítulo 8
+Plan de desarrollo y entregables
+El plan está ordenado por dependencias, no por fechas inferidas de disponibilidad de GPU. La
+estimación calendario se cerrará con tiempos piloto.
+Etapa Entregable Condición de cierre
+P0 Protocolo y ficha de literatura Revisión científica del alcance
+P1 Problemas exactos y referencias FEM Operadores y convergencia verifi-
+cados
+P2 B0–B5 y piloto de sustrato Configuración y presupuesto con-
+gelados
+P3 Controlador, transferencia y eventos Invariantes y reversión comproba-
+dos
+P4 Núcleo y ablaciones Análisis emparejado con costo
+P5 Ventanas móviles Seguimiento y olvido caracteriza-
+dos
+P6 Caso acoplado sintético y luego PVDF Balanceporcampoyfichamaterial
+P7 Manuscrito y paquete reproducible Evidencia, límites y claims revisa-
+dos
+El siguiente trabajo técnico concreto es P1, seguido de P2 y P3. No falta inventar retrospectivamente
+cómo evaluar el mecanismo: esas reglas quedan definidas aquí. La aprobación del alcance científico
+y la ficha dimensional PVDF son decisiones explícitas que permanecen diferenciadas del desarrollo
+computacional.
+26
+
+PAGE 31
+Bibliografía
+[1] T. G. Grossmann, U. J. Komorowska, J. Latz y C.-B. Schönlieb, «Can physics-informed neural
+networksbeatthefiniteelementmethod?» IMA Journal of Applied Mathematics,vol.89,n. o1,
+págs. 143-174, 2024.doi: 10.1093/imamat/hxae011
+[2] A. Krishnapriyan et al., «Characterizing possible failure modes in physics-informed neu-
+ral networks,» en Advances in Neural Information Processing Systems , vol. 34, 2021,
+págs. 26548-26560.
+[3] M. Raissi, P. Perdikaris y G. E. Karniadakis, «Physics-informed neural networks: A deep
+learning framework for solving forward and inverse problems involving nonlinear partial dif-
+ferential equations,» Journal of Computational Physics, vol. 378, págs. 686-707, 2019.doi:
+10.1016/j.jcp.2018.10.045
+[4] Z. Liu et al., «KAN: Kolmogorov-Arnold Networks,» enInternational Conference on Learning
+Representations, 2025. doi: 10.48550/arXiv.2404.19756
+[5] W. Dörfler, «A Convergent Adaptive Algorithm for Poisson’s Equation,»SIAM Journal on
+Numerical Analysis, vol. 33, n.o 3, págs. 1106-1124, 1996.doi: 10.1137/0733054
+[6] I. E. Lagaris, A. Likas y D. I. Fotiadis, «Artificial neural networks for solving ordinary
+and partial differential equations,» IEEE Transactions on Neural Networks, vol. 9, n.o 5,
+págs. 987-1000, 1998.doi: 10.1109/72.712178
+[7] D. González, A. Higueros, L. Shaw y G. Barrientos, «Enhanced Multiphysics Simulation
+via a Tailored PINN Architecture for Piezoelectric Cantilever Beam Energy Harvesters,»
+Preprints.org, 2026, Preprint, no arbitrado a la fecha.doi: 10 . 20944 / preprints202606 .
+0462.v1 dirección: https://github.com/Daniel14gonc/PINNs_piezoelectricity
+[8] C. Wu, M. Zhu, Q. Tan, Y. Kartha y L. Lu, «A comprehensive study of non-adaptive and
+residual-based adaptive sampling for physics-informed neural networks,»Computer Methods
+in Applied Mechanics and Engineering, vol. 403, pág. 115671, 2023.doi: 10.1016/j.cma.
+2022.115671
+[9] S. Rigas, T. Papaioannou, P. Trakadas y G. Alexandridis,A Dynamic Framework for Grid
+Adaptation in Kolmogorov-Arnold Networks, Preprint; versión v1 consultada, 2026. arXiv:
+2601.18672. dirección: https://arxiv.org/abs/2601.18672
+[10] D. J. T. Leong y D. Y. Y. Sim,Residual-adaptive physics-informed Kolmogorov-Arnold net-
+works with spatially targeted B-spline grid densification, Preprint; resumen y ficha pública con-
+sultados; algoritmo completo no reproducido, 29 de jun. de 2026.doi: 10.2139/ssrn.7022851
+dirección: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7022851
+[11] L. C. Evans, Partial Differential Equations. Providence: American Mathematical Society,
+1998.
+27
+
+PAGE 32
+[12] G. E. Karniadakis, I. G. Kevrekidis, L. Lu, P. Perdikaris, S. Wang y L. Yang, «Physics-
+informed machine learning,»Nature Reviews Physics, vol. 3, n.o 6, págs. 422-440, 2021.doi:
+10.1038/s42254-021-00314-5
+[13] H. P. Langtangen y A. Logg,Solving PDEs in Python: The FEniCS Tutorial I. Springer, 2016.
+doi: 10.1007/978-3-319-52462-7
+[14] S. Wang, S. Sankaran, H. Wang y P. Perdikaris, An Expert’s Guide to Training Physics-
+informed Neural Networks, 2023. arXiv:2308.08468.
+[15] N. Rahaman et al., «On the spectral bias of neural networks,» enProceedings of the 36th
+International Conference on Machine Learning, vol. 97, 2019, págs. 5301-5310.
+[16] K. Shukla, J. D. Toscano, Z. Wang, Z. Zou y G. E. Karniadakis, «A comprehensive and FAIR
+comparison between MLP and KAN representations for differential equations and operator
+networks,» Computer Methods in Applied Mechanics and Engineering, vol. 431, pág. 117290,
+2024. doi: 10.1016/j.cma.2024.117290
+[17] E.Kharazmi,Z.ZhangyG.E.Karniadakis,«hp-VPINNs:Variationalphysics-informedneural
+networks with domain decomposition,»Computer Methods in Applied Mechanics and Engi-
+neering, vol. 374, pág. 113547, 2021.doi: 10.1016/j.cma.2020.113547
+[18] S. Wang, S. Sankaran y P. Perdikaris, «Respecting causality for training physics-informed
+neural networks,»SIAM Journal on Scientific Computing, 2024, Identificación mediante DOI.
+doi: 10.1137/22M1514275
+[19] B. Moseley, A. Markham y T. Nissen-Meyer, «Finite basis physics-informed neural networks
+(FBPINNs): a scalable domain decomposition approach for solving differential equations,»
+Advances in Computational Mathematics, vol. 49, 2023, artículo 62.doi: 10.1007/s10444-
+023-10065-9
+[20] A. A. Howard, B. Jacob, S. H. Murphy, A. Heinlein y P. Stinis,Finite basis Kolmogorov-Arnold
+networks: domain decomposition for data-driven and physics-informed problems,VersiónarXiv
+consultada, 2024. arXiv:2406.19662. dirección: https://arxiv.org/abs/2406.19662
+[21] J. Botvinick-Greenhouse, W. H. Ali, M. Benosman y S. Mowlavi,AB-PINNs: Adaptive-Basis
+Physics-Informed Neural Networks for Residual-Driven Domain Decomposition, Versión arXiv
+consultada, 2025. arXiv:2510.08924. dirección: https://arxiv.org/abs/2510.08924
+[22] S. Rigas, M. Papachristou, T. Papadopoulos, F. Anagnostopoulos y G. Alexandridis, «Adap-
+tive Training of Grid-Dependent Physics-Informed Kolmogorov-Arnold Networks,»IEEE Ac-
+cess, vol. 12, págs. 176982-176998, 2024. doi: 10.1109/ACCESS.2024.3504962 dirección:
+https://arxiv.org/abs/2407.17611
+[23] J.A.Actor,G.Harper,B.SouthworthyE.C.Cyr, Leveraging KANs for Expedient Training of
+Multichannel MLPs via Preconditioning and Geometric Refinement, 2025. arXiv:2505.18131.
+dirección: https://arxiv.org/abs/2505.18131
+[24] B. S. Southworth, J. A. Actor, G. Harper y E. C. Cyr,Multilevel Training for Kolmogorov
+Arnold Networks, Preprint; versión v1 consultada, 2026. arXiv:2603.04827. dirección:https:
+//arxiv.org/abs/2603.04827
+[25] X. Jin, S. Cai, H. Li y G. E. Karniadakis, «NSFnets (Navier-Stokes Flow Nets): Physics-
+Informed Neural Networks for the Incompressible Navier-Stokes Equations,» Journal of
+Computational Physics, vol. 426, pág. 109951, 2021.doi: 10.1016/j.jcp.2020.109951
+[26] T. Lahmer, «Forward and Inverse Problems in Piezoelectricity,» Tesis doct., 2008. dirección:
+https://d-nb.info/989762831/34
+28
+
+PAGE 33
+[27] K. Peffers, T. Tuunanen, M. A. Rothenberger y S. Chatterjee, «A design science research
+methodologyforinformationsystemsresearch,» Journal of Management Information Systems,
+vol. 24, n.o 3, págs. 45-77, 2007.doi: 10.2753/MIS0742-1222240302
+[28] M. Zaharia et al., «Accelerating the machine learning lifecycle with MLflow,» IEEE Data
+Engineering Bulletin, vol. 41, n.o 4, págs. 39-45, 2018.
+29

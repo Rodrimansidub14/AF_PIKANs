@@ -1,0 +1,14 @@
+{
+  "code_file": "experiment.ipynb",
+  "competition_sources": [],
+  "dataset_sources": [],
+  "enable_gpu": false,
+  "enable_internet": false,
+  "id": "researcher/pikan-smoke",
+  "is_private": true,
+  "kernel_sources": [],
+  "kernel_type": "notebook",
+  "language": "python",
+  "model_sources": [],
+  "title": "pikan smoke"
+}

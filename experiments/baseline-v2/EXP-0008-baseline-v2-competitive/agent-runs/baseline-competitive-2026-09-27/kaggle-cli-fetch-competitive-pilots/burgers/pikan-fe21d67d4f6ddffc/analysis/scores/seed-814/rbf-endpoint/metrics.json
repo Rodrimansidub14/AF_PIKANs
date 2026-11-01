@@ -1,0 +1,16 @@
+{
+  "burgers/boundary_max_abs_error": 0.004295355379905774,
+  "burgers/complement_field_rmse_abs": 0.05641618195110911,
+  "burgers/complement_residual_mean_abs": 0.014155958125730525,
+  "burgers/complement_residual_rmse_abs": 0.022496475369502403,
+  "burgers/field_max_abs": 1.3308605910154354,
+  "burgers/field_p95_abs": 0.01656545236807705,
+  "burgers/field_relative_l2": 0.14496284255686784,
+  "burgers/field_rmse_abs": 0.08789135151882159,
+  "burgers/front_field_rmse_abs": 0.6351481321569998,
+  "burgers/front_residual_mean_abs": 0.2745003881711277,
+  "burgers/front_residual_rmse_abs": 0.33175278055263346,
+  "burgers/initial_max_abs_error": 0.011987720776884224,
+  "burgers/residual_mean_abs": 0.017110535302339778,
+  "burgers/residual_rmse_abs": 0.04182567949236737
+}

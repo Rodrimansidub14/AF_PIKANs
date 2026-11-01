@@ -1,0 +1,17 @@
+{
+  "u": {
+    "best_scale_pred_over_fem": 0.12229419817276384,
+    "shape_residual_after_scaling": 0.2313922452798728,
+    "corr": 0.9747544538902083
+  },
+  "v": {
+    "best_scale_pred_over_fem": 0.10779776946671359,
+    "shape_residual_after_scaling": 0.06462673245925914,
+    "corr": 0.9970032437383609
+  },
+  "phi": {
+    "best_scale_pred_over_fem": 0.23144496766033054,
+    "shape_residual_after_scaling": 0.6780154235424191,
+    "corr": 0.5013170921952508
+  }
+}

@@ -87,7 +87,7 @@
     "geometry_trainable": false,
     "hidden_activation": "tanh",
     "id": "rbf_fixed",
-    "implementation": "src/research_pipeline/sciml/rad_campaign.py",
+    "implementation": "src/sciml/rad_campaign.py",
     "initialization": "Normal(0, 0.1/sqrt(input_width)) for edge coefficients and base weights",
     "label": "RBF-PIKAN fija",
     "width": 0.21

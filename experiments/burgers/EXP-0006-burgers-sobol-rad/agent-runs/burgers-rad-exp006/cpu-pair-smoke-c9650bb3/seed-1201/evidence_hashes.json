@@ -1,0 +1,22 @@
+{
+  "burgers/adaptive_sampling.json": "d5fec4a0a854baa7521ee0f792703084cd61fc5ce242372ded7f9eff161a9eec",
+  "burgers/checkpoint-000008.pt": "34afaa5bfe370c0d315d69a178817517e45da546ff54ffbd40ede7a397274131",
+  "burgers/diagnostic-000000.npz": "7fb0c97b3bd9f0f9bd9be00f654aefcf91d936155e6fe7464649363f9a1d7c49",
+  "burgers/diagnostic-000004.npz": "b5626c9cc838b081f783b996bb85cd043e532de3d6e569b6b2a9aa410f1399e9",
+  "burgers/diagnostic-000008.npz": "0fd5ab7cfbea688c3e452e5e27f69aab7b2a7a3ebf6090a1fec0886825a34cb4",
+  "burgers/diagnostic_signals.json": "54fcd42dd3d24ee4369458999b485ddccfb58d22e0c6ccbe08505b3c7677fb78",
+  "burgers/history.jsonl": "441e1d2cd8b52a181f7174ceeb35bda5481187b20e36a80f2efcbdca15ae6cb5",
+  "burgers/pools.npz": "a4066ea1bee4258185bdf28979d40f827fc57fdf3842e5cfdb5c082abe54a554",
+  "burgers/rad-000002.npz": "27c30c27434d9c90edc123a2af1fb1d6356b095171d5445975ceee9ad9caa299",
+  "burgers/rad-000004.npz": "333e9717fcb9703badf488d88c3cdf2668eabfd60b7eae218614b39060c44d15",
+  "burgers/rad-000006.npz": "e3c782ced39d5124e43526a95523bdee0856bc44c7774d1ed015433887993d0c",
+  "burgers/rad-history.jsonl": "c90d087ea58ad0cb93bd393524909d312c7ee5e5fb9191b78b385dc17e1ce718",
+  "burgers/sampling_signals.json": "6950de5c846a876788132a3afcd14831bee3a51d63dd51e4ae0f1186129fdcab",
+  "burgers/signals.json": "70e63c50722c696148facaa71bbaab199a6de6bd0f8ef8a7f6f0a005501aab36",
+  "burgers/training-losses-log.html": "53ac7dc5472226dbd95ea5d8758ac13883b79187db759994299f851f72230042",
+  "burgers/training-signals-log.html": "01bac8a6a37f3e08ab5cc3c6a9f5f8c3a2a3fbcb7bbcce9ee579408582056e60",
+  "burgers/training_summary.json": "c7c31f8afed73d6e2079fc941b59742ff9fdace831f21245ec3476d1ea5a1017",
+  "burgers/validation.html": "624d7b9ee0a9900ab7c9c58b2d73cfe771e3df012039cda8c6376899b7972ae1",
+  "burgers/validation.json": "0e42f61beea1b952d203499d13608d3b346358b4eb56e8741ee7eaadbf7e3669",
+  "burgers/validation.npz": "4f19957d73ad842c46093902ab22e27cdc9ab94779ce87efaee01a4e009d0d46"
+}

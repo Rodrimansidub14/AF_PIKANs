@@ -1,0 +1,9 @@
+# DFG Re=20 T4x2 paired comparison — preregistration draft
+
+**Status: DRAFT_UNVERIFIED; not authorized for execution.** Compare the incumbent RBF-PIKAN with a five-hidden-layer tanh MLP under the same DFG 2D-1 PDE, geometry, boundary/outlet conditions, sampled pools, losses, seed-specific minibatch schedule, float32 precision and Adam optimizer. This is an internal architecture comparison, not a reproduction of published DFG PINN SOTA.
+
+FEATFLOW is the score anchor: `Cd=5.57953523384`, `Cl=0.010618948146`, `delta_p=0.11752016697`. For every seed report relative absolute error in Cd, absolute error in Cl and relative absolute error in delta-p; do not collapse these into one arbitrary score. Do not use targets in training or checkpoint selection. The directional hypothesis is that the MLP reduces median error for all three QoIs and is Pareto-improving on all three for at least four of five paired seeds. A non-improving median falsifies the joint hypothesis; fewer than four Pareto wins leaves it unsupported. Paired intervals crossing zero are inconclusive.
+
+Each pair runs both arms in parallel on T4x2, five pairs sequentially, up to 1,200 seconds per arm. Training therefore budgets 6,000 seconds wall time and 12,000 active-device allocation seconds; common scoring is capped at 600 seconds, with 300 seconds for setup and 300 seconds of safety slack. The total Kaggle session quota is capped at 7,200 seconds (2 hours). Five seeds fit arithmetically only if both workers execute concurrently and finish on cap. Kaggle documents that one hour in a T4x2 session consumes one quota hour: https://www.kaggle.com/product-feedback/361104.
+
+No converged FEM field is available: `field_relative_l2` remains `null`, and FEATFLOW QoIs do not provide a nodal field. No directly matching published PINN score for stationary DFG 2D-1 Re=20 was identified, so no published-SOTA or field-accuracy claim is allowed.

@@ -1,0 +1,62 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><title>Baselines RBF-PIKAN</title><style>body{font-family:system-ui;margin:3rem auto;max-width:1150px;color:#162c3d}table{border-collapse:collapse;width:100%}td,th{padding:.7rem;border-bottom:1px solid #d4dde4;text-align:left}h1{font-size:2.3rem}a{color:#146c91}iframe{width:100%;height:500px;border:0}p{line-height:1.6}.note{background:#edf4f8;padding:1rem}</style><h1>Baselines RBF-PIKAN</h1><p>27 de septiembre de 2026 · Resultados de GPU recuperados y notebooks de análisis ejecutados.</p><p class="note">Baselines exploratorios. Allen–Cahn usa una referencia provisional; DFG conserva los fallos de cierre y visualización. Media y desviación estándar entre semillas. Sin aceptación científica.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>baseline</th>
+      <th>n</th>
+      <th>mean</th>
+      <th>sample_sd</th>
+      <th>reference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Heat / RBF · EXP-0005</td>
+      <td>3</td>
+      <td>8.872368e-05</td>
+      <td>4.530022e-05</td>
+      <td>Analítica · 512×256</td>
+    </tr>
+    <tr>
+      <td>Heat / RBF · extensión</td>
+      <td>2</td>
+      <td>0.0003626496</td>
+      <td>0.0003644286</td>
+      <td>Analítica · 512×256</td>
+    </tr>
+    <tr>
+      <td>Burgers / Sobol</td>
+      <td>5</td>
+      <td>0.0395498</td>
+      <td>0.02564915</td>
+      <td>Cole–Hopf · 1025×129</td>
+    </tr>
+    <tr>
+      <td>Allen–Cahn</td>
+      <td>5</td>
+      <td>0.01843233</td>
+      <td>0.003375772</td>
+      <td>DeepXDE · 201×101 · provisional</td>
+    </tr>
+    <tr>
+      <td>DFG / Cd</td>
+      <td>5</td>
+      <td>1.075206</td>
+      <td>0.09458527</td>
+      <td>FEATFLOW QoI</td>
+    </tr>
+    <tr>
+      <td>DFG / Cl</td>
+      <td>5</td>
+      <td>-0.04652075</td>
+      <td>0.06925719</td>
+      <td>FEATFLOW QoI</td>
+    </tr>
+    <tr>
+      <td>DFG / Δp</td>
+      <td>5</td>
+      <td>0.07768156</td>
+      <td>0.0055397</td>
+      <td>FEATFLOW QoI</td>
+    </tr>
+  </tbody>
+</table><p><a href="baselines-report.md">Informe completo</a> · <a href="baselines.csv">CSV consolidado</a> · <a href="baselines-results.ipynb">Notebook consolidado</a></p><h2>heat</h2><p>Error relativo L2 con cuadratura trapezoidal en la malla protegida 512×256, solución analítica, inferencia float64. Corrección del informe anterior: las dos cohortes Heat usaron 5,000 pasos y 4,096 puntos interiores; los 20,000 pasos eran el override de Burgers. Se conservan separadas: los hashes archivados de model.py, train.py y sampling.py difieren y esta entrega no ejecuta una auditoría de equivalencia ni validaciones locales. Los tres comparadores de EXP-0005 comparten los topes del protocolo, pero B-spline alcanza el tope temporal antes del de pasos; la tabla registra los pasos y segundos realmente realizados. Ningún entrenamiento nuevo.</p><p><a href="heat-results.ipynb">Notebook ejecutado</a> · <a href="heat-by-seed.csv">CSV por semilla</a></p><iframe src="heat.html" title="heat"></iframe><h2>burgers</h2><p>Cinco pares existentes, 20,000 pasos por corrida; baseline Sobol fijo y RAD como contraste adverso. Se reutiliza la evaluación canónica Cole–Hopf de 1025×129 del experimento, sin reentrenamiento. RAD empeora en los cinco pares; esto solo descarta esta configuración, no toda focalización.</p><p><a href="burgers-results.ipynb">Notebook ejecutado</a> · <a href="burgers-by-seed.csv">CSV por semilla</a></p><iframe src="burgers.html" title="burgers"></iframe><h2>allen-cahn</h2><p>Cinco semillas. Error de campo provisional, calculado directamente con checkpoints en los 201×101 puntos publicados de DeepXDE. Se entregan L2 trapezoidal y L2 discreto sin pesos; el primero es el score mostrado. También se conserva el cálculo histórico en 257×129 con referencia interpolada, para no confundir mallas. Posición de interfaz: cruce u=0 por semiplano. Anchura: distancia entre cruces u=−0.5 y +0.5; un nivel no alcanzado o cruces múltiples producen null, no cero. Referencia con dx=0.01. La convergencia BDF y la procedencia del solver publicado siguen pendientes; no se desbloquea el evaluador protegido.</p><p><a href="allen-cahn-results.ipynb">Notebook ejecutado</a> · <a href="allen-cahn-by-seed.csv">CSV por semilla</a></p><iframe src="allen-cahn.html" title="allen-cahn"></iframe><h2>dfg</h2><p>Semillas 301–302 recuperadas de r3 y 303–305 completadas en r4, 1,200 s nominales por semilla. Kaggle r4 terminó en ERROR al importar PyVista en la celda de visualización: ModuleNotFoundError: No module named 'IPython.core.guarded_eval'. El campaign.json registra tres semillas completed y la evaluación previamente archivada marca execution_valid=true. r3 no tiene cierre válido del harness; se preserva su condición de evidencia recuperada. No se repiten entrenamientos. El budget de r4 declara 2 semillas/3,000 GPU-s, contradictorio con training de 3 semillas/3,600 GPU-s; esta entrega conserva y señala ese defecto. El total nominal de la campaña es 6,000 GPU-s. No hay campo FEM independiente; el error de campo queda sin medir. Umbrales ausentes, scientific_accepted=false.</p><p><a href="dfg-results.ipynb">Notebook ejecutado</a> · <a href="dfg-by-seed.csv">CSV por semilla</a></p><iframe src="dfg.html" title="dfg"></iframe></html>

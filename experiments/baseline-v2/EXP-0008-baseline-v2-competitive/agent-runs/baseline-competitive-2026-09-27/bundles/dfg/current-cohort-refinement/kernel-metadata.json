@@ -1,0 +1,18 @@
+{
+  "id": "rodrimandub/af-pikans-dfg-rbf-refinement-20260928",
+  "title": "AF PIKANs DFG RBF Refinement 20260928",
+  "code_file": "dfg-rbf-current-cohort-refinement.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "rodrimandub/af-pikans-dfg-rbf-inputs-20260928"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

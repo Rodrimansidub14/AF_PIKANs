@@ -1,0 +1,41 @@
+# Plan de cierre del baseline RBF — 2026-09-29
+
+Estado: borrador para revisión del investigador. Preparado para cerrar un control comparativo que pueda servir para probar el mecanismo. No congela baseline, no acepta referencias ni claims y no autoriza una nueva campaña GPU.
+
+## Objetivo
+
+Entregar scorecards trazables de RBF fija + Sobol en Heat 1D, Burgers canónico y Allen–Cahn, con un contrato de entrenamiento y evaluación explícito por problema. Comparar un mecanismo solo contra el control RBF del mismo problema, inicialización/semilla y presupuesto total. DFG queda como extensión porque el cambio de `Cl` entre las dos mallas finas todavía excede el criterio del plan.
+
+El PDF de tesis es contexto conceptual aproximado. La campaña RBF existente define la representación de este cierre; las decisiones antiguas sobre B-splines, Poisson y onda viajera no se importan a esta campaña.
+
+## Estado de la evidencia y brechas
+
+| Problema | Evidencia reutilizable | Brecha para cerrar | Acción propuesta |
+|---|---|---|---|
+| Heat α=0.1 | Solución analítica y grilla de confirmación 512×256. Heat v4 tuvo 500 s Adam por semilla; otra cohorte RBF reporta 20k Adam y después L-BFGS parcial (4 paradas tempranas/1 cap). | Los hashes, código/versión, checkpoint puntuado y terminación deben decidir cuál cohorte corresponde al control. El score `2.060803e-6` no se puede llamar Adam-only sin confirmar qué snapshot se puntuó. | Auditar a nivel de semilla; seleccionar un único snapshot RBF por identidad de modelo, etapa y cap que coincida con el candidato. Para comparación isocosto, usar la cohorte RBF fija de 500 s si el candidato usa el mismo modelo/código y cap; si no, requerir B0 emparejado. No unir cohortes. |
+| Burgers canónico | EXP-0006: cinco parejas Sobol/RAD, semillas 201–205, 20k Adam, pools y referencia Cole–Hopf compartidos. Sobol L2 relativo `0.03955 ± 0.02565`; media geométrica RAD/Sobol `5.865` (IC t pareado 95% `2.844–12.098`); RAD da más error en las cinco parejas. PINNacle Adam→L-BFGS aporta comparación FEM contextual aparte. | Es evidencia útil contra RAD para este contrato; no establece SOTA ni acepta el umbral práctico, que sigue pendiente de firma. El experimento RBF vs PINNacle Vanilla usa semillas 811–815 y no reemplaza EXP-0006. | Auditar hashes y estado final de los diez jobs 201–205 y generar scorecard de pares Cole–Hopf, costo, frente/complemento. Mantener RAD como resultado de comparador; no relanzar si la integridad de artefactos pasa. Presentar PINNacle como comparación distinta. |
+| Allen–Cahn | Cinco checkpoints RBF 401–405 score-only en FD/RK4 candidata; score antes y después de continuación L-BFGS. FD/RK4 y ETDRK4 difieren `3.84e-7` en L2 relativo. | La referencia/procedencia aún necesita revisión humana. Hay que escoger endpoint Adam o continuación L-BFGS; no comparar etapas distintas. El manuscrito previo menciona BDF, mientras el expediente usa FD/RK4 y ETDRK4. | Auditar convergencia, IC/BC, interpolación, scores y costo por etapa. Para comparar mecanismo, usar el endpoint que comparta su presupuesto, probablemente Adam; tratar L-BFGS como scorecard secundario. Si el gate humano no acepta la referencia, mantener `screening_only`. Rerun solo si faltan scores/hashes o no coincide B0. |
+| DFG | FEM Taylor–Hood L3 y scores u/v/p en grilla fija para cohortes existentes. | Cambio de `Cl` L2→L3 es 0.00664849, sobre el umbral declarado de 0.002; discrepancias históricas de evaluador de fuerza. | Dejar fuera del cierre del baseline principal; abrir siguiente protocolo de refinamiento y auditoría. |
+
+## Secuencia
+
+1. **Auditoría local de artefactos (sin GPU).** Por problema, reconstruir una fila por semilla desde manifest/ledger/resultados: identidad del modelo RBF, código y hashes; pool/hash; inicialización; precisión; optimizador y pasos; tiempo; referencia/evaluador/grilla; errores y guardias. Registrar faltantes como `missing`, nunca como cero. No agrupar cohortes con distintos presupuestos.
+2. **Fijar contrato de control por problema.** Usar RBF fija + Sobol con inicialización, pools y semillas comunes entre brazos, pero entrenar B0 y el mecanismo por separado. Reutilizar checkpoints finales solo para scorecards post hoc, nunca como sustituto del entrenamiento de control en una prueba de mecanismo adaptativo. Identificar cada snapshot y etapa (Adam o continuación L-BFGS); no mezclar endpoints. El tiempo total de B0 define el cap isocosto del candidato; incluir selección, instrumentación y evaluación adaptativa en su costo. Informar también pasos y evaluaciones de residual. Si cambia el modelo/código, pools o contrato, generar el B0 emparejado.
+3. **Reconstruir scorecards.** Incluir n, resultados individuales, mediana/media y dispersión, fallos, intervalo descriptivo, tiempo, memoria si existe, y análisis pareado para comparadores contemporáneos. Métrica primaria: error relativo de campo sobre referencia independiente; región crítica, residual, IC/BC y estabilidad como guardias. Para Heat y AC reportar las métricas de interfaz/región que correspondan; para Burgers, frente y complemento además del campo global.
+4. **Cerrar referencias y comparabilidad.** Heat: solución analítica y grilla verificada. Burgers: Cole–Hopf como métrica primaria común; PINNacle FEM como reproducción contextual separada. Allen–Cahn: presentar acuerdo FD/RK4–ETDRK4 y discrepancias contra BDF/`.mat` para el gate humano. Ningún resultado comparativo acepta automáticamente una referencia.
+5. **Preparar decisión humana.** Entregar matriz de elegibilidad por problema: `baseline_candidate`, `screening_only` o `rerun_required`, con hashes y motivo. El investigador decide `scientific_claim` y `eval_integrity`; el agente no modifica `evals/`, umbrales, `registry/claims.jsonl` ni acepta resultados.
+6. **Rerun condicionado, no preventivo.** Solo si la auditoría encuentra pesos, pools, evaluación o etapa incompatibles: correr pares B0 y candidato con la misma arquitectura RBF, pools por semilla, referencia y cap total. Confirmar presupuesto/gate de hipótesis, cuota disponible y reserva mínima antes del push. Sin cuota fresca verificada y presupuesto aprobado no lanzar Tier 2.
+
+## Hallazgos del preflight ya realizado
+
+- **Heat:** la cohorte v4 RBF seed 901 muestra `model_id=rbf_fixed`, float64, 3,648 parámetros, 18,044 updates Adam en el cap de 500 s, sin L-BFGS; usó la malla de desarrollo 257×129 durante esa etapa. La métrica protegida 512×256 está en la confirmación separada. La otra cohorte completó 20k Adam y tuvo continuación L-BFGS parcial; su score de `2.060803e-6` no está establecido aquí como score del checkpoint Adam. Resolver identidad/hash y snapshot puntuado antes de elegir B0.
+- **Burgers:** el bundle recuperado de EXP-0006 trae diez runs (cinco por método), todos con 20,000 pasos; scores de Cole–Hopf en una grilla común y CSV por pareja. La media geométrica RAD/Sobol es 5.865 y RAD empeoró las cinco parejas. El umbral de mejora práctica del 20% no está firmado y no se usa como gate.
+- **Allen–Cahn:** los scorecards existentes separan explícitamente el endpoint Adam (`0.01651 ± 0.00244`) de la continuación L-BFGS (`0.00916 ± 0.00266`); ambos siguen sobre referencias candidatas. El acuerdo FD/RK4–ETDRK4 es `3.84e-7` relativo, pero las referencias no están aceptadas.
+
+## Criterio de salida
+
+El expediente está listo para que el investigador considere congelar un baseline cuando: (a) existe un scorecard RBF por semilla con artefactos verificables; (b) modelo, evaluación y cap que se usarán con el mecanismo quedan escritos y coinciden; (c) los resultados incompletos o de otras cohortes están separados; (d) se conoce el estado de cada referencia; y (e) el candidato puede compararse a igual costo total. El freeze y la aceptación científica siguen siendo decisiones humanas.
+
+## Revisión y límites de ejecución
+
+El plan depende del gate `eval_integrity` para congelación y del gate `scientific_claim` para referencias/claims. Este borrador solo ordena la auditoría reutilizable. No ejecuta Kaggle, no consulta cuota y no edita contratos protegidos. Opus/Sonnet solicitados no pudieron revisarlo todavía: la invocación del adaptador Claude falló con `spawnSync claude ENOENT`; la revisión se debe repetir una vez que el ejecutable local esté disponible.

@@ -1,0 +1,18 @@
+{
+  "bundle_id": "a18c9160cecd06a000587f37c8dd34af15cd01c0292d519e5324945e9ab906f8",
+  "approved_by": "researcher (explicit instruction in active conversation, 2026-09-27)",
+  "scope": "approved",
+  "hypothesis": "approved",
+  "code_surface": "approved",
+  "remote_execution": true,
+  "problem": "Allen-Cahn T4x2 matched baseline pilot",
+  "accelerator": "NvidiaTeslaT4 (2x T4)",
+  "max_session_seconds": 7200,
+  "global_campaign_cap_hours": 8,
+  "scientific_acceptance": false,
+  "component_hashes": {
+    "runner": "47c02c9279e564729feee848f4f9266a746aa19869727dcb47d682ad0a103241",
+    "notebook": "1a92be4b841574075c9d66d59d0352509a97423b4cade7ea16a79085126f9c15",
+    "metadata": "47b44d0aebcb3f9ff324238718b45ee57eb98e8a235db680421f2f949c610b2a"
+  }
+}

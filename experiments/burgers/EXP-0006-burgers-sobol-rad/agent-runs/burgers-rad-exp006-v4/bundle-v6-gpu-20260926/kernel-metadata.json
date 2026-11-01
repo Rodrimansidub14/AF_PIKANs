@@ -1,0 +1,15 @@
+{
+  "code_file": "experiment.ipynb",
+  "competition_sources": [],
+  "dataset_sources": [],
+  "enable_gpu": true,
+  "enable_internet": true,
+  "id": "rodrimandub/af-pikans-burgers-sobol-rad-exp006-rerun-v4",
+  "is_private": true,
+  "kernel_sources": [],
+  "kernel_type": "notebook",
+  "language": "python",
+  "machine_shape": "NvidiaTeslaT4",
+  "model_sources": [],
+  "title": "af pikans burgers sobol rad exp006 rerun v4"
+}

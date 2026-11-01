@@ -8,7 +8,7 @@
 
 **Tech Stack:** Python 3.13 standard library (`argparse`, `dataclasses`, `hashlib`, `difflib`, `pathlib`, `tomllib`, `unittest`), Obsidian Markdown, LaTeX/MiKTeX, PowerShell, Git diff.
 
-**Spec:** `docs/superpowers/specs/2026-08-28-obsidian-thesis-workspace-and-chapter-6-design.md`
+**Spec:** `specs/tooling/2026-08-28-obsidian-thesis-workspace-and-chapter-6-design.md`
 
 ## Estado de esta corrida aprobada
 

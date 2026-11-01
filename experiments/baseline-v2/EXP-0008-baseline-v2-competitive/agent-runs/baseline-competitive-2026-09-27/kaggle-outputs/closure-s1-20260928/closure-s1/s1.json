@@ -1,0 +1,10 @@
+{
+  "actual_session_seconds": 432.171,
+  "part": "s1",
+  "s1a_status": "candidate_complete",
+  "s1b_status": "no_worker_record",
+  "scientific_accepted": false,
+  "session_elapsed_seconds": 432.171,
+  "status": "partial",
+  "updated_at_utc": "2026-09-28T19:30:50Z"
+}

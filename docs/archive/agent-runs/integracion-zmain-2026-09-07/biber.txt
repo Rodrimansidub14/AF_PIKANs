@@ -1,0 +1,22 @@
+log4cxx: setFile(C:\Users\rodri\AppData\Local\MiKTeX\miktex\log/biber.log,true) call failed.
+log4cxx: IO Exception : status code = 720005(Access is denied.  )
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = "C.UTF-8",
+	LC_CTYPE = "C.UTF-8",
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+INFO - This is Biber 2.19
+INFO - Logfile is 'z-main.blg'
+INFO - Reading 'z-main.bcf'
+INFO - Found 42 citekeys in bib section 0
+INFO - Processing section 0
+INFO - Looking for bibtex file 'm-bibliografia.bib' for section 0
+INFO - LaTeX decoding ...
+INFO - Found BibTeX data source 'm-bibliografia.bib'
+INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'es-ES'
+INFO - Writing 'z-main.bbl' with encoding 'UTF-8'
+INFO - Output to z-main.bbl

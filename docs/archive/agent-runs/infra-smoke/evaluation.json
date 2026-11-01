@@ -1,0 +1,65 @@
+{
+  "bundle_id": "6c982f12ce32a5e1c24825b57cbe4ed1cdd0917f650b9115049cf1ea67e58e1e",
+  "eligible_for_review": false,
+  "evidence_kind": "infrastructure",
+  "execution_valid": true,
+  "failures": [],
+  "metrics": {
+    "error": {
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "n": 2,
+      "std": 0.0
+    }
+  },
+  "pending_checks": [
+    "Human interpretation and scientific_claim gate",
+    "Infrastructure probe is not research evidence"
+  ],
+  "requires_human_review": true,
+  "runs": [
+    {
+      "gate": {
+        "accepted": false,
+        "checks": [
+          {
+            "direction": "minimize",
+            "metric": "error",
+            "passed": true,
+            "reason": "within_threshold",
+            "required": true,
+            "value": 0.0
+          }
+        ],
+        "requires_human_review": true,
+        "run_status": "completed",
+        "scope": "single_run_thresholds_only",
+        "technical_pass": true
+      },
+      "seed": 11
+    },
+    {
+      "gate": {
+        "accepted": false,
+        "checks": [
+          {
+            "direction": "minimize",
+            "metric": "error",
+            "passed": true,
+            "reason": "within_threshold",
+            "required": true,
+            "value": 0.0
+          }
+        ],
+        "requires_human_review": true,
+        "run_status": "completed",
+        "scope": "single_run_thresholds_only",
+        "technical_pass": true
+      },
+      "seed": 17
+    }
+  ],
+  "scientific_accepted": false,
+  "thresholds_pass": true
+}

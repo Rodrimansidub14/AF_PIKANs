@@ -1,0 +1,66 @@
+{
+  "status": "DRAFT_UNVERIFIED",
+  "reference_accepted": false,
+  "problem": "DFG 2D-1 stationary cylinder benchmark, Re=20",
+  "geometry": {
+    "channel": [2.2, 0.41],
+    "cylinder_center": [0.2, 0.2],
+    "cylinder_radius": 0.05,
+    "physical_groups": {"inlet": 1, "walls": 2, "cylinder": 3, "outlet": 4, "fluid": 5},
+    "curved_geometry_order": 2
+  },
+  "physics": {
+    "density": 1.0,
+    "kinematic_viscosity": 0.001,
+    "inlet_profile": "u_x(y)=4*0.3*y*(0.41-y)/(0.41^2); u_y=0",
+    "mean_inlet_velocity": 0.2,
+    "characteristic_diameter": 0.1,
+    "walls_and_cylinder": "no-slip",
+    "outlet": "natural do-nothing; no outlet Dirichlet data or explicit boundary integral"
+  },
+  "finite_elements": {"velocity": "Lagrange P2 vector", "pressure": "Lagrange P1 scalar"},
+  "weak_form": "rho*alpha*((u dot grad)u,v) + nu*(grad(u),grad(v)) - (p,div(v)) + (q,div(u)); alpha continued from 0 to 1",
+  "solver": {
+    "initialization": "Stokes alpha=0",
+    "continuation": [0.0, 0.25, 0.5, 0.75, 1.0],
+    "nonlinear": "PETSc SNES Newton line search backtracking",
+    "linear": "PETSc KSP preonly + LU/MUMPS",
+    "status": "API signature matched to DOLFINx 0.11 docs; runtime and convergence criteria not verified"
+  },
+  "mesh_levels": [
+    {"id": "DFG-L0", "bulk_h": 0.04, "cylinder_h": 0.006},
+    {"id": "DFG-L1", "bulk_h": 0.02, "cylinder_h": 0.003},
+    {"id": "DFG-L2", "bulk_h": 0.01, "cylinder_h": 0.0015},
+    {"id": "DFG-L3", "bulk_h": 0.005, "cylinder_h": 0.00075},
+    {"id": "DFG-L4", "bulk_h": 0.0025, "cylinder_h": 0.000375, "contingency": true},
+    {"id": "DFG-L5", "bulk_h": 0.00125, "cylinder_h": 0.0001875, "contingency": true}
+  ],
+  "qois": {
+    "traction_tensor": "sigma = nu*grad(u) - p*I (FEATFLOW convention)",
+    "force_normal": "cylinder outward normal; opposite the fluid-mesh exterior normal",
+    "drag_coefficient": "2*F_D/(rho*Umean^2*D)",
+    "lift_coefficient": "2*F_L/(rho*Umean^2*D)",
+    "pressure_difference": "p(0.15,0.2)-p(0.25,0.2)",
+    "featflow_targets": {"Cd": 5.57953523384, "Cl": 0.010618948146, "delta_p": 0.11752016697}
+  },
+  "convergence_gates_from_protocol": {
+    "two_consecutive_refinements_required": true,
+    "relative_Cd": 0.0002,
+    "relative_delta_p": 0.0005,
+    "absolute_Cl": 0.00002,
+    "relative_velocity_field": 0.005,
+    "relative_pressure_field_after_mean_removal": 0.01,
+    "reference_Cd_relative": 0.001,
+    "reference_delta_p_relative": 0.002,
+    "reference_Cl_absolute": 0.00005
+  },
+  "outputs_per_level": ["mesh.msh", "mesh.xdmf", "fem_coefficients.npz", "fields_on_common_grid.npz", "qois.json"],
+  "environment_spec": "environment.yml (not a resolved lockfile)",
+  "sources": [
+    "reference-protocol-ac-dfg.md",
+    "https://wwwold.mathematik.tu-dortmund.de/~featflow/en/benchmarks/cfdbenchmarking/flow/dfg_benchmark1_re20.html",
+    "https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/generated/dolfinx.fem.petsc.html",
+    "https://docs.fenicsproject.org/dolfinx/v0.11.0.post0/python/generated/dolfinx.io.gmsh.html",
+    "https://gmsh.info/doc/texinfo/"
+  ]
+}

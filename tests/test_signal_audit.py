@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from src.research_pipeline.sciml.signal_audit import localization
+from src.sciml.signal_audit import localization
 
 
 class LocalizationTests(unittest.TestCase):

@@ -8,7 +8,7 @@
 
 **Tech Stack:** Python 3.12 standard library (`tomllib`, `unittest`), Node.js ESM, local Senpi extension API, TOML, JSON, Markdown.
 
-**Spec:** `docs/superpowers/specs/2026-08-20-workflow-auto-routing-design.md`
+**Spec:** `specs/tooling/2026-08-20-workflow-auto-routing-design.md`
 
 ## Global Constraints
 

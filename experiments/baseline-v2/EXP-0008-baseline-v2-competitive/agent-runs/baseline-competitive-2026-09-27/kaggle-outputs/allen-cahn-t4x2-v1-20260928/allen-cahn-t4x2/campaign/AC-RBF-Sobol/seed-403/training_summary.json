@@ -1,0 +1,14 @@
+{
+  "arm": "AC-RBF-Sobol",
+  "cap_overrun_seconds": 0.007387306999817156,
+  "checkpoint_selection": "final state; no reference-based selection",
+  "device": "Tesla T4",
+  "dtype": "float64",
+  "elapsed_gpu_wall_seconds": 600.0073873069998,
+  "optimizer": "adam",
+  "parameters": 3648,
+  "seed": 403,
+  "smoke_only": false,
+  "status": "DRAFT_UNVERIFIED",
+  "steps": 28893
+}

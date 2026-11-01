@@ -1,0 +1,20 @@
+{
+  "bundle_id": "fe21d67d4f6ddffc575383ef1a91ec24773046a1fd07829e99962204b50db1b3",
+  "bundle_zip_sha256": "ae473a19e87d02c03435be6aa55f36248fa35c0612674bdbea9b0db72cfefa7e",
+  "approved_by": "researcher (explicit instruction in active conversation, 2026-09-27)",
+  "scope": "approved",
+  "hypothesis": "execution authorized; decision margin remains descriptive/unsigned",
+  "code_surface": "approved",
+  "remote_execution": true,
+  "problem": "Burgers RBF vs PINNacle Vanilla paired baseline",
+  "accelerator": "NvidiaTeslaT4 (2x T4)",
+  "max_session_seconds": 7200,
+  "global_campaign_cap_hours": 8,
+  "scientific_acceptance": false,
+  "scientific_preregistration_signed": false,
+  "component_hashes": {
+    "notebook": "b7fd3d8d568a075ea46b2de018007e40a03014003b506d7cec65ca4a2d26e9df",
+    "metadata": "ebab93029c6b7e604820ced2a956313bcb2766b65631282e375b53d5e50a3b49",
+    "transport_hashes": "044c69c17c84adf14eedeced7dd37c209bec52583e922e4d9f670dcb79ed78f4"
+  }
+}

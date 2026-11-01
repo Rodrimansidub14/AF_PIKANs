@@ -1,0 +1,17 @@
+{
+  "status": "synced",
+  "run_count": 2,
+  "synced_count": 2,
+  "runs": [
+    {
+      "run": "offline-run-20260927_113815-cy8be123",
+      "status": "synced",
+      "exit_code": 0
+    },
+    {
+      "run": "offline-run-20260927_113815-05m949wk",
+      "status": "synced",
+      "exit_code": 0
+    }
+  ]
+}

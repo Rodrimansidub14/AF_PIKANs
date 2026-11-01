@@ -1,0 +1,78 @@
+{
+  "policy": "Published numeric outcomes are context only unless the complete PDE and experimental contract matches.",
+  "required_match_fields": [
+    "equation",
+    "domain",
+    "initial_condition",
+    "boundary_condition",
+    "physical_parameters",
+    "primary_metric",
+    "evaluation_protocol",
+    "architecture",
+    "optimizer",
+    "training_budget",
+    "training_points"
+  ],
+  "comparators": [
+    {
+      "problem": "Heat 1D",
+      "method": "Free-RBF-KAN",
+      "year": "2026",
+      "source": "https://arxiv.org/abs/2601.07760",
+      "evidence": "Preprint; includes a high-frequency 2D heat problem and compares adaptive RBF shapes/grids with fixed RBF and spline KAN variants.",
+      "published_primary_score": "No score copied into the local leaderboard: the paper's high-frequency 2D heat contract differs from the project's smooth 1D heat equation.",
+      "local_metric": "EXP-0005 fixed-RBF relative field L2 = 8.88e-5 ± 4.54e-5 (n=3); the B-spline screen mean is 2.30e-5 ± 9.49e-6.",
+      "contract_status": "different_problem_contract",
+      "signal_lesson": "Band widths/grid adaptation and high-frequency modal coverage are candidate signals; the project's smooth sin(pi*x), alpha=0.1 heat run is a different PDE instance.",
+      "local_result_comparison": "context_only"
+    },
+    {
+      "problem": "Burgers 1D",
+      "method": "RAMS",
+      "year": "2026",
+      "source": "https://doi.org/10.1002/aidi.202500214",
+      "evidence": "Paper reports 10 independent runs and a random-sampling mean relative-L2 reduction from 0.181 to 0.010 after residual-adversarial sample movement; its MLP, training budget and protocol differ.",
+      "published_primary_score": "relative L2: 0.181 (random) → 0.010 (RAMS), 10 independent runs in the paper.",
+      "local_metric": "EXP-0005 fixed-RBF relative field L2 = 5.40e-2 ± 3.93e-2 (n=3).",
+      "contract_status": "same_problem_family_protocol_unmatched",
+      "signal_lesson": "Measure whether points moved by residual gradients add information beyond residual magnitude, while recording movement overhead and independent held-out field error.",
+      "local_result_comparison": "context_only_no_delta"
+    },
+    {
+      "problem": "Burgers 1D",
+      "method": "vRBA",
+      "year": "2026",
+      "source": "https://doi.org/10.1038/s44387-026-00084-4",
+      "evidence": "For the canonical nu=1/(100*pi) Burgers contract, Table 4 reports relative L2=8.25e-9 for vRBA+SSBroyden (2.90e-8 for prior RAD+Fourier Features+SSBroyden). The paper uses 5,000 Adam warm-up plus 60,000 SSBroyden iterations, Fourier/periodic encoding and adaptive importance sampling; the local run uses fixed RBF-PIKAN and a different training protocol.",
+      "published_primary_score": "relative L2: 8.25e-9 (vRBA+SSBroyden); prior RAD+Fourier Features+SSBroyden: 2.90e-8.",
+      "local_metric": "EXP-0005 fixed-RBF relative field L2 = 5.40e-2 ± 3.93e-2 (n=3). Same canonical equation, domain, initial condition and zero endpoint data; protocol/evaluation details are not aligned.",
+      "contract_status": "same_pde_different_protocol",
+      "signal_lesson": "Residual weighting selects a functional: log/linear/quadratic/exponential potentials test different error-tail behavior. Track distribution weights and gradient signal-to-noise, not only mean residual.",
+      "local_result_comparison": "same_problem_context_not_head_to_head"
+    },
+    {
+      "problem": "Allen-Cahn 1D",
+      "method": "vRBA",
+      "year": "2026",
+      "source": "https://doi.org/10.1038/s44387-026-00084-4",
+      "evidence": "Table 4 reports relative L2=1.88e-6 for vRBA+SSBroyden. Its Allen-Cahn benchmark uses k=1e-4 with periodic spatial boundaries; EXP-0003 uses k=1e-3 and Dirichlet u(+/-1,t)=-1. The project pilot has no field-L2 while its reference is locked.",
+      "published_primary_score": "relative L2: 1.88e-6 (best listed vRBA+SSBroyden result for its Allen-Cahn contract).",
+      "local_metric": "No local field error: reference is locked pending convergence. EXP-0003 has only held-out PDE residual and energy signals.",
+      "contract_status": "different_problem_contract",
+      "signal_lesson": "Use energy dissipation, interface position/width, residual concentration and reference error together; residual alone cannot certify interface accuracy.",
+      "local_result_comparison": "not_comparable"
+    },
+    {
+      "problem": "DFG cylinder Re=20",
+      "method": "FEATFLOW DFG 2D-1 benchmark plus PINNacle/cPIKAN methods as future learned comparators",
+      "year": "benchmark + literature",
+      "source": "https://wwwold.mathematik.tu-dortmund.de/~featflow/en/benchmarks/cfdbenchmarking/flow/dfg_benchmark1_re20.html",
+      "evidence": "Official reference values and quantities of interest exist for DFG 2D-1; no local AF_PIKANs run or contract-matched learned SOTA score is yet recorded.",
+      "published_primary_score": "Official FEM reference/QoIs exist; learned-model score pending contract-matched selection.",
+      "local_metric": "No local run.",
+      "contract_status": "reference_available_learned_comparator_pending",
+      "signal_lesson": "Prioritize continuity, momentum terms, wall shear, pressure and drag/lift errors; validate against converged FEM QoIs before comparing architectures.",
+      "local_result_comparison": "no_local_run"
+    }
+  ]
+}

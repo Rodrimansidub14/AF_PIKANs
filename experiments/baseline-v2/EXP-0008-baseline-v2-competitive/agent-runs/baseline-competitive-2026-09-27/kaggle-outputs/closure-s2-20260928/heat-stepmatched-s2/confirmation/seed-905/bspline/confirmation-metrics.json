@@ -1,0 +1,11 @@
+{
+  "heat/bc_max_abs": 1.2246467991473532e-16,
+  "heat/bc_rmse": 8.659560562354933e-17,
+  "heat/energy_relative_l2": 5.8556903826017406e-05,
+  "heat/field_max_abs": 0.00010141815844910695,
+  "heat/field_relative_l2": 5.4459112446397064e-05,
+  "heat/field_rmse": 2.559333421187855e-05,
+  "heat/ic_max_abs": 0.0,
+  "heat/ic_rmse": 0.0,
+  "heat/pde_residual_rms": 0.0002175735158287656
+}

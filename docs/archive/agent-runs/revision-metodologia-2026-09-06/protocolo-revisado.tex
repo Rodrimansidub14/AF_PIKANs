@@ -1,0 +1,41 @@
+\documentclass[11pt,letterpaper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{csquotes}
+\usepackage[spanish,es-nodecimaldot,es-noquoting]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,bm,graphicx,booktabs,tabularx,longtable,float}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{m-bibliografia.bib}
+\DefineBibliographyStrings{spanish}{artno={artículo}}
+\setlength{\emergencystretch}{3em}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\newcommand{\revision}{Versión de trabajo para revisión científica}
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}\centering
+{\Large Universidad del Valle de Guatemala\par}\vspace{1.7cm}
+{\Huge Asignación adaptativa de representación en PIKANs\par}\vspace{0.7cm}
+{\Large Marco teórico y metodología previa al desarrollo del mecanismo\par}\vfill
+{\large Rodrigo Alfonso Mansilla Dubón\par}\vspace{0.6cm}
+\revision\par 6 de septiembre de 2026\par\vspace{1cm}
+\small Integra anotaciones de GAB, justificación estructural y contraste de literatura reciente. Las hipótesis y umbrales son propuestas; no se reportan resultados de entrenamiento del mecanismo.
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\pagenumbering{roman}
+\tableofcontents\listoffigures
+\clearpage\pagenumbering{arabic}
+\chapter{Introducción}\input{d-introduccion.tex}
+\chapter{Antecedentes}\input{e-antecedentes.tex}
+\chapter{Justificación}\input{f-justificacion.tex}
+\chapter{Objetivos}\input{g-objetivos.tex}
+\chapter{Alcance}\input{h-alcance.tex}
+\chapter{Marco teórico}\input{i-marco_teorico.tex}
+\input{j-capitulos.tex}
+\printbibliography[heading=bibintoc,title={Bibliografía}]
+\end{document}

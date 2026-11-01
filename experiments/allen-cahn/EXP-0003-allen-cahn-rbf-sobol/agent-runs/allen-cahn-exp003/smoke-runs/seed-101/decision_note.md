@@ -1,0 +1,1 @@
+Campaign using rbf_fixed and scrambled_sobol_fixed. Signals in signals.json are direct measurements from saved pools, histories, autodifferentiation snapshots, validation arrays and hardware telemetry. Final test unopened. No scientific claim accepted. See the preregistration for independent seed count, contrast and acceptance limitations.

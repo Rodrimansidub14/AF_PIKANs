@@ -52,7 +52,7 @@ Q6. **Awareness de presupuesto.** ¿Hay señales de entrenamiento (tasa de mejor
 
 ## Candidatas a señal (sin referencia)
 
-Concentración espacial del residuo (Gini, masa en el top-k % de puntos; antecedente: RA-PIKAN); correlación residuo–|∇u|; razón (escala de la estructura)/(espaciado de bases); ocupación y número efectivo de bases, bases muertas; norma y razón de gradientes por término; coseno de conflicto entre términos; rango efectivo y número de condición del jacobiano; relación de actualización ‖Δθ‖/‖θ‖; ganancia y plateau de L-BFGS; simetrías y balances del problema (p. ej. antisimetría en Burgers, caudal en DFG); estabilidad entre semillas. La batería existente (`src/research_pipeline/sciml/signal_battery.py`, `dfg_signals.py`) cubre buena parte; las faltantes se implementan solo como cálculo sobre checkpoints.
+Concentración espacial del residuo (Gini, masa en el top-k % de puntos; antecedente: RA-PIKAN); correlación residuo–|∇u|; razón (escala de la estructura)/(espaciado de bases); ocupación y número efectivo de bases, bases muertas; norma y razón de gradientes por término; coseno de conflicto entre términos; rango efectivo y número de condición del jacobiano; relación de actualización ‖Δθ‖/‖θ‖; ganancia y plateau de L-BFGS; simetrías y balances del problema (p. ej. antisimetría en Burgers, caudal en DFG); estabilidad entre semillas. La batería existente (`src/sciml/signal_battery.py`, `dfg_signals.py`) cubre buena parte; las faltantes se implementan solo como cálculo sobre checkpoints.
 
 ## Análisis (fijado antes de calcular)
 

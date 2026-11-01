@@ -1,0 +1,42 @@
+{
+  "512": {
+    "min_inside_ref_coord": -0.2634589744429504,
+    "sigma_n_dfg_py": {
+      "drag_coefficient": 5.555928893322268,
+      "lift_coefficient": 0.02106251979928818,
+      "pressure_difference": 0.11692742697060647
+    },
+    "tangential_older_scorer": {
+      "drag_coefficient": 1.6968528652717967,
+      "lift_coefficient": 0.017560397518002643
+    },
+    "rel_err_sigma_n_vs_featflow": {
+      "Cd": 0.004230879370482044,
+      "Cl_abs": 0.01044357165328818,
+      "dp": 0.0050437300650266
+    },
+    "rel_err_tangential_Cd_vs_featflow": 0.6958791737741259
+  },
+  "2048": {
+    "min_inside_ref_coord": -0.2634589744429504,
+    "sigma_n_dfg_py": {
+      "drag_coefficient": 5.558286343271808,
+      "lift_coefficient": 0.017545517306275762,
+      "pressure_difference": 0.11692742697060647
+    },
+    "tangential_older_scorer": {
+      "drag_coefficient": 1.7003335194531721,
+      "lift_coefficient": 0.01579660077915015
+    },
+    "rel_err_sigma_n_vs_featflow": {
+      "Cd": 0.003808362108606573,
+      "Cl_abs": 0.006926569160275762,
+      "dp": 0.0050437300650266
+    },
+    "rel_err_tangential_Cd_vs_featflow": 0.6952553486640584
+  },
+  "s1b_dolfinx_own_qois": [
+    5.579374100779504,
+    0.010618884037823113
+  ]
+}

@@ -1,0 +1,354 @@
+{
+  "bundle_id": "dc8195220ea79261652c00598dac752a50c6ea85676afd9fcaac68b8afc2e37a",
+  "eligible_for_review": false,
+  "evidence_kind": "research",
+  "execution_valid": true,
+  "failures": [],
+  "metrics": {
+    "burgers/boundary_max_abs_error": {
+      "max": 0.0017248596702846286,
+      "mean": 0.0015898491144531273,
+      "min": 0.0013668594845105964,
+      "n": 3,
+      "std": 0.0001945411816676251
+    },
+    "burgers/complement_field_rmse_abs": {
+      "max": 0.0010403880544979315,
+      "mean": 0.0010386105791587007,
+      "min": 0.0010352685299516093,
+      "n": 3,
+      "std": 2.8962564520589943e-06
+    },
+    "burgers/complement_field_rmse_normalized": {
+      "max": 0.002080776108995863,
+      "mean": 0.0020772211583174015,
+      "min": 0.0020705370599032186,
+      "n": 3,
+      "std": 5.7925129041179885e-06
+    },
+    "burgers/complement_n_points": {
+      "max": 6370.0,
+      "mean": 6370.0,
+      "min": 6370.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "burgers/complement_residual_max_abs": {
+      "max": 0.005032344788832886,
+      "mean": 0.0028857513764400777,
+      "min": 0.0014275056312641973,
+      "n": 3,
+      "std": 0.0018984423144271132
+    },
+    "burgers/complement_residual_p95_abs": {
+      "max": 0.0009502414309987737,
+      "mean": 0.0006811369176377769,
+      "min": 0.0003556754090670448,
+      "n": 3,
+      "std": 0.0003012627952315601
+    },
+    "burgers/complement_residual_rmse_abs": {
+      "max": 0.0005004062024391915,
+      "mean": 0.00034639290375350676,
+      "min": 0.0001693620219448458,
+      "n": 3,
+      "std": 0.0001667180830306376
+    },
+    "burgers/field_max_abs": {
+      "max": 0.005363360751223985,
+      "mean": 0.004653202894620771,
+      "min": 0.003778776640236098,
+      "n": 3,
+      "std": 0.0008049625960757954
+    },
+    "burgers/field_p95_abs": {
+      "max": 0.0032263220339442842,
+      "mean": 0.002500883582162747,
+      "min": 0.002117311681205607,
+      "n": 3,
+      "std": 0.0006285941015868816
+    },
+    "burgers/field_relative_l2": {
+      "max": 0.00311807941702846,
+      "mean": 0.0027561479663207895,
+      "min": 0.0025405194502893954,
+      "n": 3,
+      "std": 0.00031535264437780684
+    },
+    "burgers/field_rmse_abs": {
+      "max": 0.0014953783565114349,
+      "mean": 0.0013218021303982384,
+      "min": 0.001218390326914632,
+      "n": 3,
+      "std": 0.00015123781533461666
+    },
+    "burgers/field_rmse_normalized": {
+      "max": 0.0029907567130228697,
+      "mean": 0.0026436042607964768,
+      "min": 0.002436780653829264,
+      "n": 3,
+      "std": 0.00030247563066923333
+    },
+    "burgers/front_field_rmse_abs": {
+      "max": 0.0024181936812239994,
+      "mean": 0.0019465766436420253,
+      "min": 0.0016660756327230445,
+      "n": 3,
+      "std": 0.00041087028543788446
+    },
+    "burgers/front_field_rmse_normalized": {
+      "max": 0.004836387362447999,
+      "mean": 0.0038931532872840506,
+      "min": 0.003332151265446089,
+      "n": 3,
+      "std": 0.0008217405708757689
+    },
+    "burgers/front_n_points": {
+      "max": 2015.0,
+      "mean": 2015.0,
+      "min": 2015.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "burgers/front_residual_max_abs": {
+      "max": 0.037394423251168374,
+      "mean": 0.027025535586970472,
+      "min": 0.018301768653432138,
+      "n": 3,
+      "std": 0.009652055820443076
+    },
+    "burgers/front_residual_p95_abs": {
+      "max": 0.022912475772144652,
+      "mean": 0.016971496640020414,
+      "min": 0.01187551739441215,
+      "n": 3,
+      "std": 0.005566788226985909
+    },
+    "burgers/front_residual_rmse_abs": {
+      "max": 0.010261839428449606,
+      "mean": 0.007362047945609237,
+      "min": 0.005120919997765855,
+      "n": 3,
+      "std": 0.002632990958481719
+    },
+    "burgers/initial_max_abs_error": {
+      "max": 0.003709747221087689,
+      "mean": 0.002737581103588646,
+      "min": 0.002104669772038492,
+      "n": 3,
+      "std": 0.0008546278498290874
+    },
+    "burgers/residual_max_abs": {
+      "max": 0.037394423251168374,
+      "mean": 0.027025535586970472,
+      "min": 0.018301768653432138,
+      "n": 3,
+      "std": 0.009652055820443076
+    },
+    "burgers/residual_mean_abs": {
+      "max": 0.0018784597410513879,
+      "mean": 0.0013370506431044323,
+      "min": 0.0008799135515618468,
+      "n": 3,
+      "std": 0.0005045789843360347
+    },
+    "burgers/residual_mean_abs_normalized": {
+      "max": 0.002471657554014984,
+      "mean": 0.001759277161979516,
+      "min": 0.0011577809888971668,
+      "n": 3,
+      "std": 0.0006639197162316245
+    },
+    "burgers/residual_p95_abs": {
+      "max": 0.012238621061818255,
+      "mean": 0.008512512361318498,
+      "min": 0.005885090936181257,
+      "n": 3,
+      "std": 0.0033161983597376765
+    },
+    "burgers/residual_rmse_abs": {
+      "max": 0.005068865766060408,
+      "mean": 0.0036359510900293404,
+      "min": 0.002524444198255204,
+      "n": 3,
+      "std": 0.0013023046884326978
+    },
+    "heat/boundary_max_abs_error": {
+      "max": 7.682113372783629e-17,
+      "mean": 7.682113372783629e-17,
+      "min": 7.682113372783629e-17,
+      "n": 3,
+      "std": 0.0
+    },
+    "heat/field_max_abs": {
+      "max": 0.00024199408073471984,
+      "mean": 0.00014643605702539345,
+      "min": 7.75123942474143e-05,
+      "n": 3,
+      "std": 8.541427388963172e-05
+    },
+    "heat/field_p95_abs": {
+      "max": 0.00014516504293878845,
+      "mean": 8.935944117314795e-05,
+      "min": 4.2690016467600286e-05,
+      "n": 3,
+      "std": 5.184481710858573e-05
+    },
+    "heat/field_relative_l2": {
+      "max": 0.0001366053871509079,
+      "mean": 8.875470098868805e-05,
+      "min": 4.622064353489745e-05,
+      "n": 3,
+      "std": 4.542631809040279e-05
+    },
+    "heat/field_rmse_abs": {
+      "max": 6.380124564347305e-05,
+      "mean": 4.145268790561494e-05,
+      "min": 2.1587249913590234e-05,
+      "n": 3,
+      "std": 2.1216261961635745e-05
+    },
+    "heat/field_rmse_normalized": {
+      "max": 6.380124564347305e-05,
+      "mean": 4.145268790561494e-05,
+      "min": 2.1587249913590234e-05,
+      "n": 3,
+      "std": 2.1216261961635745e-05
+    },
+    "heat/initial_max_abs_error": {
+      "max": 1.1102230246251565e-16,
+      "mean": 1.1102230246251565e-16,
+      "min": 1.1102230246251565e-16,
+      "n": 3,
+      "std": 0.0
+    },
+    "heat/residual_max_abs": {
+      "max": 0.012436884023136764,
+      "mean": 0.010414704882336194,
+      "min": 0.008693737573806138,
+      "n": 3,
+      "std": 0.00188966472190411
+    },
+    "heat/residual_mean_abs": {
+      "max": 0.000738724771435536,
+      "mean": 0.0006328445421781993,
+      "min": 0.0005237790880169018,
+      "n": 3,
+      "std": 0.00010750823665348874
+    },
+    "heat/residual_mean_abs_normalized": {
+      "max": 0.0006715679740323053,
+      "mean": 0.0005753132201619993,
+      "min": 0.00047616280728809247,
+      "n": 3,
+      "std": 9.773476059408063e-05
+    },
+    "heat/residual_p95_abs": {
+      "max": 0.0023957913626922863,
+      "mean": 0.0021120181087977974,
+      "min": 0.0017556366743176715,
+      "n": 3,
+      "std": 0.00032619544322072834
+    },
+    "heat/residual_rmse_abs": {
+      "max": 0.0010189113753102327,
+      "mean": 0.0009224568778516849,
+      "min": 0.0007933500777236883,
+      "n": 3,
+      "std": 0.00011627168354523972
+    }
+  },
+  "pending_checks": [
+    "Human interpretation and scientific_claim gate",
+    "Per-run numerical thresholds have not all passed"
+  ],
+  "requires_human_review": true,
+  "runs": [
+    {
+      "gate": {
+        "accepted": false,
+        "checks": [
+          {
+            "direction": "minimize",
+            "metric": "burgers/field_relative_l2",
+            "passed": false,
+            "reason": "threshold_not_defined",
+            "required": true,
+            "value": 0.0025405194502893954
+          },
+          {
+            "direction": "minimize",
+            "metric": "heat/field_relative_l2",
+            "passed": false,
+            "reason": "threshold_not_defined",
+            "required": true,
+            "value": 0.0001366053871509079
+          }
+        ],
+        "requires_human_review": true,
+        "run_status": "completed",
+        "scope": "single_run_thresholds_only",
+        "technical_pass": false
+      },
+      "seed": 101
+    },
+    {
+      "gate": {
+        "accepted": false,
+        "checks": [
+          {
+            "direction": "minimize",
+            "metric": "burgers/field_relative_l2",
+            "passed": false,
+            "reason": "threshold_not_defined",
+            "required": true,
+            "value": 0.00311807941702846
+          },
+          {
+            "direction": "minimize",
+            "metric": "heat/field_relative_l2",
+            "passed": false,
+            "reason": "threshold_not_defined",
+            "required": true,
+            "value": 4.622064353489745e-05
+          }
+        ],
+        "requires_human_review": true,
+        "run_status": "completed",
+        "scope": "single_run_thresholds_only",
+        "technical_pass": false
+      },
+      "seed": 102
+    },
+    {
+      "gate": {
+        "accepted": false,
+        "checks": [
+          {
+            "direction": "minimize",
+            "metric": "burgers/field_relative_l2",
+            "passed": false,
+            "reason": "threshold_not_defined",
+            "required": true,
+            "value": 0.002609845031644513
+          },
+          {
+            "direction": "minimize",
+            "metric": "heat/field_relative_l2",
+            "passed": false,
+            "reason": "threshold_not_defined",
+            "required": true,
+            "value": 8.343807228025879e-05
+          }
+        ],
+        "requires_human_review": true,
+        "run_status": "completed",
+        "scope": "single_run_thresholds_only",
+        "technical_pass": false
+      },
+      "seed": 103
+    }
+  ],
+  "scientific_accepted": false,
+  "thresholds_pass": false
+}

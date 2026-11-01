@@ -1,0 +1,345 @@
+{
+  "candidate_reconstruction_errors": [
+    {
+      "coefficient_layout": "interleaved_by_node",
+      "gmsh_edge_node_order": [
+        3,
+        4,
+        5
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 0
+    },
+    {
+      "coefficient_layout": "interleaved_by_node",
+      "gmsh_edge_node_order": [
+        3,
+        4,
+        5
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 1
+    },
+    {
+      "coefficient_layout": "component_blocks",
+      "gmsh_edge_node_order": [
+        3,
+        4,
+        5
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 0
+    },
+    {
+      "coefficient_layout": "component_blocks",
+      "gmsh_edge_node_order": [
+        3,
+        4,
+        5
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 1
+    },
+    {
+      "coefficient_layout": "interleaved_by_node",
+      "gmsh_edge_node_order": [
+        3,
+        5,
+        4
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 0
+    },
+    {
+      "coefficient_layout": "interleaved_by_node",
+      "gmsh_edge_node_order": [
+        3,
+        5,
+        4
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 1
+    },
+    {
+      "coefficient_layout": "component_blocks",
+      "gmsh_edge_node_order": [
+        3,
+        5,
+        4
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 0
+    },
+    {
+      "coefficient_layout": "component_blocks",
+      "gmsh_edge_node_order": [
+        3,
+        5,
+        4
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 1
+    },
+    {
+      "coefficient_layout": "interleaved_by_node",
+      "gmsh_edge_node_order": [
+        4,
+        3,
+        5
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 0
+    },
+    {
+      "coefficient_layout": "interleaved_by_node",
+      "gmsh_edge_node_order": [
+        4,
+        3,
+        5
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 1
+    },
+    {
+      "coefficient_layout": "component_blocks",
+      "gmsh_edge_node_order": [
+        4,
+        3,
+        5
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 0
+    },
+    {
+      "coefficient_layout": "component_blocks",
+      "gmsh_edge_node_order": [
+        4,
+        3,
+        5
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 1
+    },
+    {
+      "coefficient_layout": "interleaved_by_node",
+      "gmsh_edge_node_order": [
+        4,
+        5,
+        3
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 0
+    },
+    {
+      "coefficient_layout": "interleaved_by_node",
+      "gmsh_edge_node_order": [
+        4,
+        5,
+        3
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 1
+    },
+    {
+      "coefficient_layout": "component_blocks",
+      "gmsh_edge_node_order": [
+        4,
+        5,
+        3
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 0
+    },
+    {
+      "coefficient_layout": "component_blocks",
+      "gmsh_edge_node_order": [
+        4,
+        5,
+        3
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 1
+    },
+    {
+      "coefficient_layout": "interleaved_by_node",
+      "gmsh_edge_node_order": [
+        5,
+        3,
+        4
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 0
+    },
+    {
+      "coefficient_layout": "interleaved_by_node",
+      "gmsh_edge_node_order": [
+        5,
+        3,
+        4
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 1
+    },
+    {
+      "coefficient_layout": "component_blocks",
+      "gmsh_edge_node_order": [
+        5,
+        3,
+        4
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 0
+    },
+    {
+      "coefficient_layout": "component_blocks",
+      "gmsh_edge_node_order": [
+        5,
+        3,
+        4
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 1
+    },
+    {
+      "coefficient_layout": "interleaved_by_node",
+      "gmsh_edge_node_order": [
+        5,
+        4,
+        3
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 0
+    },
+    {
+      "coefficient_layout": "interleaved_by_node",
+      "gmsh_edge_node_order": [
+        5,
+        4,
+        3
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 1
+    },
+    {
+      "coefficient_layout": "component_blocks",
+      "gmsh_edge_node_order": [
+        5,
+        4,
+        3
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 0
+    },
+    {
+      "coefficient_layout": "component_blocks",
+      "gmsh_edge_node_order": [
+        5,
+        4,
+        3
+      ],
+      "non_finite_prediction_values": 18406,
+      "relative_match": null,
+      "saved_scalar_velocity_component": 1
+    }
+  ],
+  "error": "RuntimeError: P2 vector reconstruction did not reproduce the saved scalar trace: None",
+  "fixed_field_scoring_contract": {
+    "cohorts": {
+      "current_rbf": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "refinement_rbf_and_tanh_mlp": [
+        501,
+        502,
+        503,
+        504,
+        505
+      ]
+    },
+    "grid": {
+      "mask": "exclude points with (x-0.2)^2+(y-0.2)^2 <= 0.05^2",
+      "ordering": "numpy.meshgrid(indexing='xy'); row-major flattened",
+      "source": "saved FEM DFG-L3 fields_on_common_grid.npz; declared before checkpoint scoring",
+      "x": {
+        "count": 221,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 2.2
+      },
+      "y": {
+        "count": 42,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 0.41
+      }
+    },
+    "metrics": [
+      "u_relative_l2",
+      "v_relative_l2",
+      "p_relative_l2_gauge_fixed_outlet"
+    ],
+    "pressure_gauge": {
+      "method": "subtract pressure at fixed outlet grid point",
+      "outlet_anchor_xy": [
+        2.2,
+        0.2
+      ]
+    },
+    "reference_level": "DFG-L3 (third of three requested mesh levels)",
+    "retraining": false
+  },
+  "mesh_point_count": 395252,
+  "pressure_mapped_node_count": 6405,
+  "pressure_mapping": {
+    "count": 6405,
+    "distance_tolerance": 0.0016,
+    "exact_geometry_route_error": "FEM DOF coordinates are not Gmsh nodes within tolerance: {'count': 25231, 'unique_mesh_nodes': 25231, 'max_nearest_distance': 0.0014978431279267968, 'p99_nearest_distance': 0.0013242431058336048, 'distance_tolerance': 1e-06}",
+    "max_nearest_distance": 0.00146342784943357,
+    "p99_nearest_distance": 0.001327292809719727,
+    "route": "nearest_mesh_node_with_saved_trace_check",
+    "unique_mesh_nodes": 6405
+  },
+  "reference_accepted": false,
+  "scientific_accepted": false,
+  "status": "failed_partial",
+  "traceback": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 381, in main\n    raise RuntimeError(f\"P2 vector reconstruction did not reproduce the saved scalar trace: {None if best is None else best[0]}\")\nRuntimeError: P2 vector reconstruction did not reproduce the saved scalar trace: None\n",
+  "triangle6_cell_count": 196852,
+  "triangle6_unique_node_count": 395252,
+  "velocity_mapped_node_count": 25231,
+  "velocity_mapping": {
+    "count": 25231,
+    "distance_tolerance": 0.0016,
+    "exact_geometry_route_error": "FEM DOF coordinates are not Gmsh nodes within tolerance: {'count': 25231, 'unique_mesh_nodes': 25231, 'max_nearest_distance': 0.0014978431279267968, 'p99_nearest_distance': 0.0013242431058336048, 'distance_tolerance': 1e-06}",
+    "max_nearest_distance": 0.0014978431279271806,
+    "p99_nearest_distance": 0.0013242431058332158,
+    "route": "nearest_mesh_node_with_saved_trace_check",
+    "unique_mesh_nodes": 25231
+  }
+}

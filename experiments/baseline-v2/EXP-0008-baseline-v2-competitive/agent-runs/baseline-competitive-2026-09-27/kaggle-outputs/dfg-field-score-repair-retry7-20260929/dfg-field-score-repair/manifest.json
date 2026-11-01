@@ -1,0 +1,266 @@
+{
+  "actual_session_seconds": 31.555,
+  "artifacts": [
+    {
+      "path": "DFG-L3-fields-reconstructed.npz",
+      "sha256": "936fc178e6bc63b1c72388b76c269e2eb56ff78a93c14903df512a7d7202bb7a",
+      "size_bytes": 227422
+    },
+    {
+      "path": "checkpoint_field_scores.csv",
+      "sha256": "b1d29c8975c78da9fcd6ec76539f01ee4f5c38d2bbbdd3ebdc74757df7c42685",
+      "size_bytes": 4850
+    },
+    {
+      "path": "checkpoint_field_scores.json",
+      "sha256": "0895b46478c5b3083809a55d9570bf80c0acba93310cfdaad450c838b8abd602",
+      "size_bytes": 13916
+    },
+    {
+      "path": "checkpoint_field_scores.partial.json",
+      "sha256": "b17a6e35a50e83cb55b1862de552f831062839e5bc60b02e62519837e3af59ac",
+      "size_bytes": 11489
+    },
+    {
+      "path": "score_repair.json",
+      "sha256": "19b1d0c14efaacf664af5db1e4e5a50e4697720a10d63ba7eb7eb67610dfa79d",
+      "size_bytes": 255
+    },
+    {
+      "path": "setup.log",
+      "sha256": "26d7f420bf224a1dba23c47d5ae91a2cf967ea2097b70326d3dd76219f6b43d6",
+      "size_bytes": 963
+    }
+  ],
+  "ended_at_utc": "2026-09-29T10:01:16Z",
+  "fixed_field_scoring_contract": {
+    "cohorts": {
+      "current_rbf": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "refinement_rbf_and_tanh_mlp": [
+        501,
+        502,
+        503,
+        504,
+        505
+      ]
+    },
+    "grid": {
+      "mask": "exclude points with (x-0.2)^2+(y-0.2)^2 <= 0.05^2",
+      "ordering": "numpy.meshgrid(indexing='xy'); row-major flattened",
+      "source": "saved FEM DFG-L3 fields_on_common_grid.npz; declared before checkpoint scoring",
+      "x": {
+        "count": 221,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 2.2
+      },
+      "y": {
+        "count": 42,
+        "endpoint": true,
+        "start": 0.0,
+        "stop": 0.41
+      }
+    },
+    "metrics": [
+      "u_relative_l2",
+      "v_relative_l2",
+      "p_relative_l2_gauge_fixed_outlet"
+    ],
+    "pressure_gauge": {
+      "method": "subtract pressure at fixed outlet grid point",
+      "outlet_anchor_xy": [
+        2.2,
+        0.2
+      ]
+    },
+    "reference_level": "DFG-L3 (third of three requested mesh levels)",
+    "retraining": false
+  },
+  "kernel_slug": "rodrimandub/af-pikans-dfg-field-score-repair-retry-7-20260929",
+  "method": "reconstruct both P2 velocity components from saved DOLFINx coefficients and the saved L3 Gmsh mesh; score frozen checkpoints only",
+  "metrics": {
+    "current_301_305": {
+      "rbf": {
+        "p_relative_l2_gauge_fixed_outlet": {
+          "mean": 0.2746799052082836,
+          "n": 5,
+          "sample_sd": 0.04246029606730395
+        },
+        "u_relative_l2": {
+          "mean": 0.08617370964535531,
+          "n": 5,
+          "sample_sd": 0.012192514765865843
+        },
+        "v_relative_l2": {
+          "mean": 0.08548698819597374,
+          "n": 5,
+          "sample_sd": 0.009758382392961085
+        }
+      }
+    },
+    "older_501_505": {
+      "mlp": {
+        "p_relative_l2_gauge_fixed_outlet": {
+          "mean": 0.12271549109485358,
+          "n": 5,
+          "sample_sd": 0.21521997023082035
+        },
+        "u_relative_l2": {
+          "mean": 0.0468848115895768,
+          "n": 5,
+          "sample_sd": 0.06925658170875233
+        },
+        "v_relative_l2": {
+          "mean": 0.052036317505253726,
+          "n": 5,
+          "sample_sd": 0.049140860317342286
+        }
+      },
+      "rbf": {
+        "p_relative_l2_gauge_fixed_outlet": {
+          "mean": 0.24616599860649196,
+          "n": 5,
+          "sample_sd": 0.022626713118611985
+        },
+        "u_relative_l2": {
+          "mean": 0.06965181687442143,
+          "n": 5,
+          "sample_sd": 0.0039035467970057833
+        },
+        "v_relative_l2": {
+          "mean": 0.06909439093899082,
+          "n": 5,
+          "sample_sd": 0.005787141257048021
+        }
+      }
+    }
+  },
+  "paired_seed_differences_RBF_minus_MLP_501_505": [
+    {
+      "p_relative_l2_gauge_fixed_outlet": 0.24626815932987559,
+      "seed": 501,
+      "u_relative_l2": 0.050603369033949366,
+      "v_relative_l2": 0.03747066585210983
+    },
+    {
+      "p_relative_l2_gauge_fixed_outlet": 0.20321852653308908,
+      "seed": 502,
+      "u_relative_l2": 0.05819548328329064,
+      "v_relative_l2": 0.044610261793319436
+    },
+    {
+      "p_relative_l2_gauge_fixed_outlet": -0.28367238212133283,
+      "seed": 503,
+      "u_relative_l2": -0.09650862161908119,
+      "v_relative_l2": -0.0661941401153227
+    },
+    {
+      "p_relative_l2_gauge_fixed_outlet": 0.20639560921011618,
+      "seed": 504,
+      "u_relative_l2": 0.04880869316685488,
+      "v_relative_l2": 0.028154629679171962
+    },
+    {
+      "p_relative_l2_gauge_fixed_outlet": 0.24504262460644374,
+      "seed": 505,
+      "u_relative_l2": 0.052736102559209394,
+      "v_relative_l2": 0.04124894995940695
+    }
+  ],
+  "push_cap_seconds": 351.814,
+  "reconstruction": {
+    "coefficient_file_sha256": "540254f73e0b49910ec186631c0133cab22ec37fededd4f1f02babb7b817d3fc",
+    "coordinate_mapping": {
+      "pressure": {
+        "dof_to_geometry": {
+          "count": 99200,
+          "distance_tolerance": 1e-06,
+          "max_nearest_distance": 1.3426356273935429e-15,
+          "p99_nearest_distance": 9.036560719766055e-16,
+          "unique_mesh_nodes": 99200
+        },
+        "geometry_to_mesh": {
+          "count": 395252,
+          "distance_tolerance": 1e-06,
+          "max_nearest_distance": 0.0,
+          "p99_nearest_distance": 0.0,
+          "unique_mesh_nodes": 395252
+        },
+        "route": "saved_DOLFINx_geometry"
+      },
+      "velocity": {
+        "dof_to_geometry": {
+          "count": 395252,
+          "distance_tolerance": 1e-06,
+          "max_nearest_distance": 1.3506446028928519e-15,
+          "p99_nearest_distance": 1.1226435567921847e-15,
+          "unique_mesh_nodes": 395252
+        },
+        "geometry_to_mesh": {
+          "count": 395252,
+          "distance_tolerance": 1e-06,
+          "max_nearest_distance": 0.0,
+          "p99_nearest_distance": 0.0,
+          "unique_mesh_nodes": 395252
+        },
+        "route": "saved_DOLFINx_geometry"
+      }
+    },
+    "gmsh_edge_node_order": [
+      3,
+      4,
+      5
+    ],
+    "mesh_file_sha256": "8d8d7113eb5dfd9fe64fcb4cddb0500717cf9873fcb7f4683101d61fceec4aad",
+    "method": "P2 isoparametric interpolation from saved vector coefficients and MSH triangle6 cells; P1 isoparametric pressure interpolation",
+    "pressure_trace_relative_reconstruction_error": 1.6440635803825564e-11,
+    "saved_scalar_trace_relative_reconstruction_error": 2.077158450735213e-12,
+    "saved_scalar_velocity_component": 0,
+    "source_artifact_paths": {
+      "coefficients": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-5-20260929/dfg-fem-field-followup-retry5/dfg/DFG-L3/fem_coefficients.npz",
+      "fields": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-5-20260929/dfg-fem-field-followup-retry5/dfg/DFG-L3/fields_on_common_grid.npz",
+      "mesh": "/kaggle/input/notebooks/rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-5-20260929/dfg-fem-field-followup-retry5/dfg/meshes/dfg_re20_DFG-L3.msh"
+    },
+    "source_field_file_sha256": "0fe1805d096d90ad84abe7ebdc8aed34debb10c4ac38b36a51f32d1a118ee9dc",
+    "velocity_coefficient_layout": "interleaved_by_node"
+  },
+  "reference_accepted": false,
+  "retraining": false,
+  "runtime": {
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "numpy": "2.0.2",
+    "torch": "2.10.0+cu128",
+    "visible_gpu_count": 2
+  },
+  "schema_version": 1,
+  "scientific_accepted": false,
+  "session": "DFG-field-score-repair-retry-7-2026-09-29",
+  "source_code_sha256": "1cf9ffb1de5716f8e0b335e6e5863403586f7c59a22cef0f36e223f92bdeedca",
+  "source_fem_summary": {
+    "evidence_ready_for_human_gate": false,
+    "reference_qoi_errors_vs_featflow": {
+      "Cd_relative": 2.8879297959817696e-05,
+      "Cl_absolute": 6.410817688685955e-08,
+      "delta_p_relative": 0.00012094614422510933
+    },
+    "status": "candidate_complete",
+    "two_finest_mesh_relative_changes": {
+      "Cd_relative": 9.042283579435573e-05,
+      "Cl_absolute": 7.059954653561469e-05,
+      "Cl_relative": 0.006648490207082787,
+      "delta_p_relative": 0.00010646051869512299
+    }
+  },
+  "source_session": "rodrimandub/af-pikans-dfg-fem-field-follow-up-retry-5-20260929",
+  "started_at_utc": "2026-09-29T10:00:44Z",
+  "status": "complete"
+}

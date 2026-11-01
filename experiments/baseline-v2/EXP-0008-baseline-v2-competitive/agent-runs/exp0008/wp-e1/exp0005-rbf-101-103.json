@@ -1,0 +1,38 @@
+[
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-101\\burgers\\checkpoint-020000.pt",
+  "step": 20000,
+  "tag": null,
+  "E_ch_l2re_1025x129": 0.03743713602704801,
+  "E_front_rmse": 0.190074199422052,
+  "E_complement_rmse": 0.010974987104959347,
+  "E_max_abs_error": 0.4419314118490043,
+  "external_fem_101x11_l2re": 0.04611129708627913,
+  "ch_at_fem_points_l2re": 0.04597448614776041,
+  "fem_floor_fem_vs_ch": 0.013297621025789578
+ },
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-102\\burgers\\checkpoint-020000.pt",
+  "step": 20000,
+  "tag": null,
+  "E_ch_l2re_1025x129": 0.09884358352413952,
+  "E_front_rmse": 0.5542827177845777,
+  "E_complement_rmse": 0.014348956315223487,
+  "E_max_abs_error": 1.1247900807339781,
+  "external_fem_101x11_l2re": 0.09916231805847348,
+  "ch_at_fem_points_l2re": 0.09910890752960144,
+  "fem_floor_fem_vs_ch": 0.013297621025789578
+ },
+ {
+  "checkpoint": "C:\\Users\\rodri\\Documents\\AF_PIKANs\\var\\agent_runs\\heat-burgers-architecture-screen\\models\\rbf_fixed\\download-extracted-bundle-logscale-v1\\runs\\seed-103\\burgers\\checkpoint-020000.pt",
+  "step": 20000,
+  "tag": null,
+  "E_ch_l2re_1025x129": 0.025631103838620085,
+  "E_front_rmse": 0.13072689111590852,
+  "E_complement_rmse": 0.0073950706195751335,
+  "E_max_abs_error": 0.33312578081832567,
+  "external_fem_101x11_l2re": 0.03431376711720528,
+  "ch_at_fem_points_l2re": 0.03305338626621049,
+  "fem_floor_fem_vs_ch": 0.013297621025789578
+ }
+]

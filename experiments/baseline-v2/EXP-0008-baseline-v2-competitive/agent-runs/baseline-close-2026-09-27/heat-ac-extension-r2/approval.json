@@ -1,0 +1,9 @@
+{
+  "hypothesis": "approved",
+  "approved_by": "researcher (explicit instruction in current Codex conversation, 2026-09-27)",
+  "code_surface": "approved",
+  "decision": "Run the fixed-Sobol Heat + Allen-Cahn extension, seeds 104/105, up to two T4 workers (fallback to one visible T4), total training cap 3000 GPU seconds; notebook sampling regression fixed; scientific_accepted remains false.",
+  "remote_execution": true,
+  "bundle_id": "5579e97d850d4262ea7493bd755749b2cc1db0dc061c838bac03f825a051967f",
+  "scope": "approved"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "return_code": 0,
+  "wall_seconds": 143.79430529299998,
+  "cap_seconds": 900.0,
+  "gpus": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "hashes": {
+    "pikan_campaign.py": "0fe48b38c83d273a76feba8dea75c941a1f4d6710445ce3e06dba50ad83a1cc3",
+    "ns_0_obstacle.dat": "13e1d9fa1584faf01a9757af1723b2050c68aefc93d64a5309bb1e222f23d465",
+    "Allen_Cahn.mat": "f9175685675685ab8d2a850f0d212d16c709f55ed89b8fe078493ddcd3724aa0"
+  },
+  "scientific_accepted": false,
+  "reference_accepted": false
+}

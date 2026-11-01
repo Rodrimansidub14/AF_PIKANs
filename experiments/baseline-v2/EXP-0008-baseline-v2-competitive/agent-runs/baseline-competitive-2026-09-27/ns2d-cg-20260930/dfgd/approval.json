@@ -1,0 +1,11 @@
+{
+  "approved_by": "researcher, chat 2026-09-30: 'usa tambien la configuracion de daniel para dfg' + standing 12 h approval, >= 6 h reserve",
+  "session_cap_seconds": 3600,
+  "scientific_accepted": false,
+  "reference_accepted": false,
+  "component_sha256": {
+    "pikan_campaign.py": "3a2c836ea3615b4a933a5c35550a6f80cc269ffd1e5cac2623fa82b86b84b619",
+    "dfg_daniel.py": "e222e57285e4cb5a69007762fa3c1360ed8e07ef5cd9fc7bae283eab15e7af9c",
+    "dfg_L3_fields.npz": "936fc178e6bc63b1c72388b76c269e2eb56ff78a93c14903df512a7d7202bb7a"
+  }
+}
