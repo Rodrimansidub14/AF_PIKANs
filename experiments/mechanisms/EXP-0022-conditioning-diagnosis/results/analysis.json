@@ -1,0 +1,83 @@
+{
+ "burgers": {
+  "n": 25,
+  "H_COND_1": {
+   "median_rho_ratio": 0.04212128556020892,
+   "threshold": 0.1,
+   "holds": true,
+   "frac_states_below": 0.96
+  },
+  "H_COND_2": {
+   "median_edge_over_raw": 0.00844059838308489,
+   "median_edge_over_jacobi": 0.3462236551075001,
+   "holds_raw": true,
+   "holds_jacobi": false,
+   "holds": false,
+   "intermediate": true
+  },
+  "descriptive": {
+   "median_input_over_raw": 0.0038912444953832725,
+   "median_edge_over_raw_m10": 0.09840535513408756,
+   "median_kappa_raw_100": 2061.859585980582,
+   "median_disp_norm_rel": 0.04851232366155949,
+   "energy_top20_by_layer_median": {
+    "0": 0.6003123918507324,
+    "1": 0.8007830255527035,
+    "2": 0.6739905968001605
+   },
+   "gram_basis_cond_median_by_layer": {
+    "0": 251919.5381055792,
+    "1": 6052295995.050412,
+    "2": 5268349.293393204
+   },
+   "gram_uniform_cond_median_by_layer": {
+    "0": 249434.05840374267,
+    "1": 248907.0055646705,
+    "2": 248907.0055646705
+   }
+  }
+ },
+ "ac": {
+  "n": 15,
+  "H_COND_1": {
+   "median_rho_ratio": 0.14417407047050385,
+   "threshold": 0.1,
+   "holds": false,
+   "frac_states_below": 0.3333333333333333
+  },
+  "H_COND_2": {
+   "median_edge_over_raw": 0.01677337919027107,
+   "median_edge_over_jacobi": 0.17088104639649207,
+   "holds_raw": true,
+   "holds_jacobi": true,
+   "holds": true,
+   "intermediate": false
+  },
+  "descriptive": {
+   "median_input_over_raw": 0.005282416576358294,
+   "median_edge_over_raw_m10": 0.16172761271227434,
+   "median_kappa_raw_100": 2709.9793885973886,
+   "median_disp_norm_rel": 0.14192782953003258,
+   "energy_top20_by_layer_median": {
+    "0": 0.6007180953889679,
+    "1": 0.5871736023740947,
+    "2": 0.5849236639390759
+   },
+   "gram_basis_cond_median_by_layer": {
+    "0": 218532.93706045812,
+    "1": 3606418730.9591436,
+    "2": 687569.2244076005
+   },
+   "gram_uniform_cond_median_by_layer": {
+    "0": 249434.05840374267,
+    "1": 248069.11196268987,
+    "2": 248069.11196268987
+   }
+  }
+ },
+ "verdict": {
+  "H_COND_1": false,
+  "H_COND_2": false,
+  "intermediate_row": false
+ }
+}
